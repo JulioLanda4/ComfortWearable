@@ -1,0 +1,16 @@
+# Metodología 
+
+Aquí se describe cual fue la metodología a seguir para desarrollar el proyecto
+
+## Elección de variables y sensores
+
+## Elección de hardware y software 
+
+
+## Diseño del primer prototipo de wearable
+
+## Diseño de encuesta de confort térmico en wearable 
+
+De las encuestas de confort existentes, que se va a tomar y como se va adaptar al dispositivo
+
+## Documentación del prototipo 

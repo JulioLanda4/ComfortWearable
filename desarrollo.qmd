@@ -1,0 +1,19 @@
+# Desarrollo del dispositivo 
+
+## Programación de encuestas 
+
+## Programación de sensores 
+
+## Implementación de la plataforma IoT
+
+## Armado del primer prototipo de wearable
+
+## Campaña de pruebas del primer prototipo 
+
+Se requiere una referencia para probar los sensores
+Se prueban cosas como duración de la bateria, ergonomia
+Si es que se programaron alarmas. 
+
+Pruebas en un ambiente real.
+
+Aquí pueden agregarse las conclusiones 

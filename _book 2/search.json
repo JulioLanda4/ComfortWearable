@@ -1,0 +1,170 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Wearable",
+    "section": "",
+    "text": "Resumen\n\n\nAbstract\n\n\nAgradecimientos\nLibro en Quarto para la tesis"
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introducción",
+    "section": "",
+    "text": "Introducción de la tesis\n\nTexto introductorio"
+  },
+  {
+    "objectID": "estado.html#confort-térmico",
+    "href": "estado.html#confort-térmico",
+    "title": "2  Estado del arte",
+    "section": "2.1 Confort térmico",
+    "text": "2.1 Confort térmico\nAquí se puede hablar de las encuestas\nConcepto de confort térmico y como se mide el confort\nInformación acerca del confort térmico"
+  },
+  {
+    "objectID": "estado.html#variables-fisiológicas",
+    "href": "estado.html#variables-fisiológicas",
+    "title": "2  Estado del arte",
+    "section": "2.2 Variables fisiológicas",
+    "text": "2.2 Variables fisiológicas\nQue variables influyen en el confort térmico\nCon que sensores y que principios de medición utilizan"
+  },
+  {
+    "objectID": "estado.html#wearables-en-el-confort-térmico",
+    "href": "estado.html#wearables-en-el-confort-térmico",
+    "title": "2  Estado del arte",
+    "section": "2.3 Wearables en el confort térmico",
+    "text": "2.3 Wearables en el confort térmico\nQue se ha hecho con los wearables en el confort térmico\nHablar de la app Cozie, que es lo que hace, y porque nosotros no lo vamos a utilizar."
+  },
+  {
+    "objectID": "metodologia.html#elección-de-hardware-y-software",
+    "href": "metodologia.html#elección-de-hardware-y-software",
+    "title": "3  Metodología",
+    "section": "3.2 Elección de hardware y software",
+    "text": "3.2 Elección de hardware y software"
+  },
+  {
+    "objectID": "metodologia.html#encuestas-de-confort-térmico",
+    "href": "metodologia.html#encuestas-de-confort-térmico",
+    "title": "3  Metodología",
+    "section": "3.3 Encuestas de confort térmico",
+    "text": "3.3 Encuestas de confort térmico"
+  },
+  {
+    "objectID": "metodologia.html#diseño-del-dispositivo",
+    "href": "metodologia.html#diseño-del-dispositivo",
+    "title": "3  Metodología",
+    "section": "3.4 Diseño del dispositivo",
+    "text": "3.4 Diseño del dispositivo"
+  },
+  {
+    "objectID": "desarrollo.html#programación-de-encuestas",
+    "href": "desarrollo.html#programación-de-encuestas",
+    "title": "4  Desarrollo del dispositivo",
+    "section": "4.1 Programación de encuestas",
+    "text": "4.1 Programación de encuestas"
+  },
+  {
+    "objectID": "desarrollo.html#programación-de-sensores",
+    "href": "desarrollo.html#programación-de-sensores",
+    "title": "4  Desarrollo del dispositivo",
+    "section": "4.2 Programación de sensores",
+    "text": "4.2 Programación de sensores"
+  },
+  {
+    "objectID": "desarrollo.html#implementación-de-la-plataforma-iot",
+    "href": "desarrollo.html#implementación-de-la-plataforma-iot",
+    "title": "4  Desarrollo del dispositivo",
+    "section": "4.3 Implementación de la plataforma IoT",
+    "text": "4.3 Implementación de la plataforma IoT"
+  },
+  {
+    "objectID": "resultados.html#resultados",
+    "href": "resultados.html#resultados",
+    "title": "5  Resultados y conclusiones",
+    "section": "5.1 Resultados",
+    "text": "5.1 Resultados"
+  },
+  {
+    "objectID": "resultados.html#discusión",
+    "href": "resultados.html#discusión",
+    "title": "5  Conclusiones",
+    "section": "5.1 Discusión",
+    "text": "5.1 Discusión\n\n5.1.1 Interpretación de los resultados\n\n\n5.1.2 Contribuciones y limitaciones"
+  },
+  {
+    "objectID": "resultados.html#conclusiones",
+    "href": "resultados.html#conclusiones",
+    "title": "5  Conclusiones",
+    "section": "5.2 Conclusiones",
+    "text": "5.2 Conclusiones"
+  },
+  {
+    "objectID": "metodologia.html#elección-de-variables",
+    "href": "metodologia.html#elección-de-variables",
+    "title": "3  Metodología",
+    "section": "3.1 Elección de variables",
+    "text": "3.1 Elección de variables"
+  },
+  {
+    "objectID": "metodologia.html#elección-de-variables-y-sensores",
+    "href": "metodologia.html#elección-de-variables-y-sensores",
+    "title": "3  Metodología",
+    "section": "3.1 Elección de variables y sensores",
+    "text": "3.1 Elección de variables y sensores"
+  },
+  {
+    "objectID": "metodologia.html#implementación-de-encuesta-de-confort-térmico-en-wearables",
+    "href": "metodologia.html#implementación-de-encuesta-de-confort-térmico-en-wearables",
+    "title": "3  Metodología",
+    "section": "3.3 Implementación de encuesta de confort térmico en wearables",
+    "text": "3.3 Implementación de encuesta de confort térmico en wearables"
+  },
+  {
+    "objectID": "metodologia.html#implementación-de-encuesta-de-confort-térmico-en-wearable",
+    "href": "metodologia.html#implementación-de-encuesta-de-confort-térmico-en-wearable",
+    "title": "3  Metodología",
+    "section": "3.3 Implementación de encuesta de confort térmico en wearable",
+    "text": "3.3 Implementación de encuesta de confort térmico en wearable"
+  },
+  {
+    "objectID": "metodologia.html#diseño-del-primer-prototipo-de-wearable",
+    "href": "metodologia.html#diseño-del-primer-prototipo-de-wearable",
+    "title": "3  Metodología",
+    "section": "3.3 Diseño del primer prototipo de wearable",
+    "text": "3.3 Diseño del primer prototipo de wearable"
+  },
+  {
+    "objectID": "metodologia.html#documentación-del-prototipo",
+    "href": "metodologia.html#documentación-del-prototipo",
+    "title": "3  Metodología",
+    "section": "3.5 Documentación del prototipo",
+    "text": "3.5 Documentación del prototipo"
+  },
+  {
+    "objectID": "metodologia.html#diseño-de-encuesta-de-confort-térmico-en-wearable",
+    "href": "metodologia.html#diseño-de-encuesta-de-confort-térmico-en-wearable",
+    "title": "3  Metodología",
+    "section": "3.4 Diseño de encuesta de confort térmico en wearable",
+    "text": "3.4 Diseño de encuesta de confort térmico en wearable\nDe las encuestas de confort existentes, que se va a tomar y como se va adaptar al dispositivo"
+  },
+  {
+    "objectID": "desarrollo.html#armado-del-primer-prototipo-de-wearable",
+    "href": "desarrollo.html#armado-del-primer-prototipo-de-wearable",
+    "title": "4  Desarrollo del dispositivo",
+    "section": "4.4 Armado del primer prototipo de wearable",
+    "text": "4.4 Armado del primer prototipo de wearable"
+  },
+  {
+    "objectID": "desarrollo.html#pruebas-de-funcionamiento",
+    "href": "desarrollo.html#pruebas-de-funcionamiento",
+    "title": "4  Desarrollo del dispositivo",
+    "section": "4.5 Pruebas de funcionamiento",
+    "text": "4.5 Pruebas de funcionamiento"
+  },
+  {
+    "objectID": "desarrollo.html#campaña-de-pruebas-del-primer-prototipo",
+    "href": "desarrollo.html#campaña-de-pruebas-del-primer-prototipo",
+    "title": "4  Desarrollo del dispositivo",
+    "section": "4.5 Campaña de pruebas del primer prototipo",
+    "text": "4.5 Campaña de pruebas del primer prototipo\nSe requiere una referencia para probar los sensores Se prueban cosas como duración de la bateria, ergonomia Si es que se programaron alarmas.\nPruebas en un ambiente real.\nAquí pueden agregarse las conclusiones"
+  }
+]
