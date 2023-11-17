@@ -6,3 +6,34 @@ Texto introductorio
 
 Definir que es lo que quiero resaltar de confort térmico.
 Que si y que no voy a utilizar en mi tesis relacionado a confort térmico
+
+
+> Propuesta de organización de la tesis
+
+Poner atención en el titulo, no convence "Medición de confort termico", no se puede medir el confort termico
+
+1. Introducción 
+
+hablar de confort - consumo de energía 
+justificación del tema, hablar de energía en edificaciones, aquí puede entrar el IPCC, el balance de energía nacional, democracia energetica.
+Incluir trabajo de Chatellier and Mcneil
+
+2. Antecedentes
+
+En este capitulo se presentarán los antecedentes de evaluación de confort, estudios hechos, variables medidas, etc.
+
+2.1 Evaluacion de CT a través de encuestas
+
+2.2 Estudios para generar modelos predictivos de CT. con variables ambientales
+  PMV - PPD 
+  Etc.
+
+  Sugerencia: incluir el estudio de Oropeza
+
+2.3 Estudios para generar modelos predictivos con mediciones de variables fisiologicas del ocupante
+
+Aqui puedo hablar de las variables comunmente medidas, sensores utilizados, etc.
+
+2.4 Desarrollo de dispositivos 
+
+Hablar ya no del desarrollo de los modelos, si no especificamente de dispositivos para medir las variables
