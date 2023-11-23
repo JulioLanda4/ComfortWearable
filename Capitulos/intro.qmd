@@ -12,28 +12,35 @@ Que si y que no voy a utilizar en mi tesis relacionado a confort térmico
 
 Poner atención en el titulo, no convence "Medición de confort termico", no se puede medir el confort termico
 
-1. Introducción 
+
 
 hablar de confort - consumo de energía 
 justificación del tema, hablar de energía en edificaciones, aquí puede entrar el IPCC, el balance de energía nacional, democracia energetica.
 Incluir trabajo de Chatellier and Mcneil
 
-2. Antecedentes
 
-En este capitulo se presentarán los antecedentes de evaluación de confort, estudios hechos, variables medidas, etc.
 
-2.1 Evaluacion de CT a través de encuestas
 
-2.2 Estudios para generar modelos predictivos de CT. con variables ambientales
-  PMV - PPD 
-  Etc.
 
-  Sugerencia: incluir el estudio de Oropeza
 
-2.3 Estudios para generar modelos predictivos con mediciones de variables fisiologicas del ocupante
+@Chatellier2020 proporciona varias recomendaciones clave para mejorar la eficiencia energética en edificios comerciales y públicos en México. Éstas incluyen:
 
-Aqui puedo hablar de las variables comunmente medidas, sensores utilizados, etc.
+1. Mejorar la eficiencia de la iluminación mediante el uso de tecnología LED y estrategias de iluminación natural.
+2. Optimizar los sistemas de aire acondicionado mediante el uso de equipos de alta eficiencia e implementar programas de mantenimiento.
+3. Reducir la carga de enchufes mediante el uso de equipos de oficina energéticamente eficientes y la implementación de estrategias de administración de energía.
+4. Implementar sistemas de automatización de edificios para optimizar el uso de energía y reducir el desperdicio.
+5. Realizar auditorías energéticas y evaluaciones comparativas para identificar áreas de mejora y realizar un seguimiento del progreso a lo largo del tiempo.
+6. Desarrollar códigos y estándares de eficiencia energética para edificios no residenciales para promover las mejores prácticas y fomentar la innovación.
+7. Proporcionar incentivos y opciones de financiación para que los propietarios y operadores de edificios inviertan en medidas de eficiencia energética.
 
-2.4 Desarrollo de dispositivos 
+Al implementar estas recomendaciones, los edificios comerciales y públicos en México pueden reducir su consumo de energía, disminuir sus costos operativos y contribuir a un entorno construido más sustentable y resiliente.
 
-Hablar ya no del desarrollo de los modelos, si no especificamente de dispositivos para medir las variables
+El principal desafío que enfrentan los edificios no residenciales en México en materia de eficiencia energética es su uso intensivo de electricidad. Si bien el uso de calefacción de espacios y calentamiento de agua es moderado en edificios no residenciales debido al clima templado o cálido de México, el uso de electricidad es alto. Esto presenta importantes oportunidades para reducir costos, insumos de combustible y emisiones de gases de efecto invernadero, pero también requiere esfuerzos específicos para mejorar la eficiencia energética en este sector. El archivo PDF proporciona información sobre la demanda de electricidad de edificios no residenciales en México e identifica áreas clave para mejorar, como iluminación, aire acondicionado y equipos de oficina.
+
+El artículo proporciona varios datos sobre el consumo eléctrico en México, incluyendo:
+
+- Según datos de la OCDE de 2019, el sector de servicios en México representó casi el 65% del tamaño de la economía en 2016 .
+- México es el país en el que el sector de servicios tiene el porcentaje más bajo en consumo de electricidad entre las "economías similares". Los datos muestran que, en comparación con otros países, en México habría entre un 60% y más del 200% menos de consumo de electricidad en el sector de servicios .
+- El consumo total de electricidad en México en 2017 fue de 64.3 TWh, de los cuales el sector de servicios representó el 37% .
+- El consumo de electricidad en edificios no residenciales en México en 2017 fue de 28.5 TWh, lo que representa el 44% del consumo total de electricidad en el sector de servicios .
+- El consumo de electricidad en edificios no residenciales en México se distribuye de la siguiente manera: 38% en iluminación, 33% en aire acondicionado, 18% en equipos de oficina y 11% en otros usos .
