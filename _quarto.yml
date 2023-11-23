@@ -5,7 +5,7 @@ project:
 
 book:
   title: "Desarrollo de un Dispositivo Wearable para la Medición del Confort Térmico en Edificaciones"
-  output-file: "tesis"
+  output-file: "tesis."
   author: "Julio César Landa López"
   date: "10/10/2023"
   language: "es"
