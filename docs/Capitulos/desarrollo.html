@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Julio César Landa López">
-<meta name="dcterms.date" content="2023-10-10">
 
-<title>Wearable</title>
+<title>Desarrollo de un Dispositivo Wearable para la Medición del Confort Térmico en Edificaciones - 4&nbsp; Desarrollo del dispositivo</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,23 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./intro.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../Capitulos/resultados.html" rel="next">
+<link href="../Capitulos/metodologia.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -81,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Resumen</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Capitulos/desarrollo.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Desarrollo del dispositivo</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -96,7 +95,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Wearable</a> 
+      <a href="../">Desarrollo de un Dispositivo Wearable para la Medición del Confort Térmico en Edificaciones</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -108,43 +107,43 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Resumen</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../Capitulos/intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./estado.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Estado del arte</span></span></a>
+  <a href="../Capitulos/estado.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Antecedentes</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./metodologia.html" class="sidebar-item-text sidebar-link">
+  <a href="../Capitulos/metodologia.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Metodología</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./desarrollo.html" class="sidebar-item-text sidebar-link">
+  <a href="../Capitulos/desarrollo.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Desarrollo del dispositivo</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./resultados.html" class="sidebar-item-text sidebar-link">
+  <a href="../Capitulos/resultados.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Conclusiones</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
+  <a href="../Capitulos/references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -158,9 +157,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#resumen" id="toc-resumen" class="nav-link active" data-scroll-target="#resumen">Resumen</a></li>
-  <li><a href="#abstract" id="toc-abstract" class="nav-link" data-scroll-target="#abstract">Abstract</a></li>
-  <li><a href="#agradecimientos" id="toc-agradecimientos" class="nav-link" data-scroll-target="#agradecimientos">Agradecimientos</a></li>
+  <li><a href="#programación-de-encuestas" id="toc-programación-de-encuestas" class="nav-link active" data-scroll-target="#programación-de-encuestas"><span class="header-section-number">4.1</span> Programación de encuestas</a></li>
+  <li><a href="#programación-de-sensores" id="toc-programación-de-sensores" class="nav-link" data-scroll-target="#programación-de-sensores"><span class="header-section-number">4.2</span> Programación de sensores</a></li>
+  <li><a href="#implementación-de-la-plataforma-iot" id="toc-implementación-de-la-plataforma-iot" class="nav-link" data-scroll-target="#implementación-de-la-plataforma-iot"><span class="header-section-number">4.3</span> Implementación de la plataforma IoT</a></li>
+  <li><a href="#armado-del-primer-prototipo-de-wearable" id="toc-armado-del-primer-prototipo-de-wearable" class="nav-link" data-scroll-target="#armado-del-primer-prototipo-de-wearable"><span class="header-section-number">4.4</span> Armado del primer prototipo de wearable</a></li>
+  <li><a href="#campaña-de-pruebas-del-primer-prototipo" id="toc-campaña-de-pruebas-del-primer-prototipo" class="nav-link" data-scroll-target="#campaña-de-pruebas-del-primer-prototipo"><span class="header-section-number">4.5</span> Campaña de pruebas del primer prototipo</a></li>
   </ul>
 </nav>
     </div>
@@ -169,26 +170,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Wearable</h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Desarrollo del dispositivo</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Julio César Landa López </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">October 10, 2023</p>
-    </div>
-  </div>
   
     
   </div>
@@ -196,15 +185,23 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="resumen" class="level1 unnumbered">
-<h1 class="unnumbered">Resumen</h1>
+<section id="programación-de-encuestas" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="programación-de-encuestas"><span class="header-section-number">4.1</span> Programación de encuestas</h2>
 </section>
-<section id="abstract" class="level1 unnumbered">
-<h1 class="unnumbered">Abstract</h1>
+<section id="programación-de-sensores" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="programación-de-sensores"><span class="header-section-number">4.2</span> Programación de sensores</h2>
 </section>
-<section id="agradecimientos" class="level1 unnumbered">
-<h1 class="unnumbered">Agradecimientos</h1>
-<p>Libro en Quarto para la tesis</p>
+<section id="implementación-de-la-plataforma-iot" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="implementación-de-la-plataforma-iot"><span class="header-section-number">4.3</span> Implementación de la plataforma IoT</h2>
+</section>
+<section id="armado-del-primer-prototipo-de-wearable" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="armado-del-primer-prototipo-de-wearable"><span class="header-section-number">4.4</span> Armado del primer prototipo de wearable</h2>
+</section>
+<section id="campaña-de-pruebas-del-primer-prototipo" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="campaña-de-pruebas-del-primer-prototipo"><span class="header-section-number">4.5</span> Campaña de pruebas del primer prototipo</h2>
+<p>Se requiere una referencia para probar los sensores Se prueban cosas como duración de la bateria, ergonomia Si es que se programaron alarmas.</p>
+<p>Pruebas en un ambiente real.</p>
+<p>Aquí pueden agregarse las conclusiones.</p>
 
 
 </section>
@@ -445,10 +442,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../Capitulos/metodologia.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Metodología</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../Capitulos/resultados.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Conclusiones</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
