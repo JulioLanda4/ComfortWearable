@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Julio César Landa López">
+<meta name="dcterms.date" content="2023-10-10">
 
-<title>Desarrollo de un Dispositivo Wearable para la Medición del Confort Térmico en Edificaciones - 1&nbsp; Introducción</title>
+<title>Desarrollo de un Dispositivo Wearable para la Medición del Confort Térmico en Edificaciones</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,46 +22,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../Capitulos/estado.html" rel="next">
-<link href="../index.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./Capitulos/intro.html" rel="next">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -99,7 +81,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Capitulos/intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Resumen</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -114,7 +96,7 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Desarrollo de un Dispositivo Wearable para la Medición del Confort Térmico en Edificaciones</a> 
+      <a href="./">Desarrollo de un Dispositivo Wearable para la Medición del Confort Térmico en Edificaciones</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -126,43 +108,43 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Resumen</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Capitulos/intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="./Capitulos/intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Capitulos/estado.html" class="sidebar-item-text sidebar-link">
+  <a href="./Capitulos/estado.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Antecedentes</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Capitulos/metodologia.html" class="sidebar-item-text sidebar-link">
+  <a href="./Capitulos/metodologia.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Metodología</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Capitulos/desarrollo.html" class="sidebar-item-text sidebar-link">
+  <a href="./Capitulos/desarrollo.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Desarrollo del dispositivo</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Capitulos/resultados.html" class="sidebar-item-text sidebar-link">
+  <a href="./Capitulos/resultados.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Conclusiones</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Capitulos/references.html" class="sidebar-item-text sidebar-link">
+  <a href="./Capitulos/references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -172,21 +154,41 @@ div.csl-indent {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#resumen" id="toc-resumen" class="nav-link active" data-scroll-target="#resumen">Resumen</a></li>
+  <li><a href="#abstract" id="toc-abstract" class="nav-link" data-scroll-target="#abstract">Abstract</a></li>
+  <li><a href="#agradecimientos" id="toc-agradecimientos" class="nav-link" data-scroll-target="#agradecimientos">Agradecimientos</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></h1>
+<h1 class="title">Desarrollo de un Dispositivo Wearable para la Medición del Confort Térmico en Edificaciones</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Julio César Landa López </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 10, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -194,43 +196,18 @@ div.csl-indent {
 
 </header>
 
-<blockquote class="blockquote">
-<p>Introducción de la tesis</p>
-</blockquote>
-<p>Texto introductorio</p>
-<p>Definir que es lo que quiero resaltar de confort térmico. Que si y que no voy a utilizar en mi tesis relacionado a confort térmico</p>
-<blockquote class="blockquote">
-<p>Propuesta de organización de la tesis</p>
-</blockquote>
-<p>Poner atención en el titulo, no convence “Medición de confort termico”, no se puede medir el confort termico</p>
-<p>hablar de confort - consumo de energía justificación del tema, hablar de energía en edificaciones, aquí puede entrar el IPCC, el balance de energía nacional, democracia energetica. Incluir trabajo de Chatellier and Mcneil</p>
-<p><span class="citation" data-cites="Chatellier2020">Lorentzen and McNeil (<a href="references.html#ref-Chatellier2020" role="doc-biblioref">2020</a>)</span> proporciona varias recomendaciones clave para mejorar la eficiencia energética en edificios comerciales y públicos en México. Éstas incluyen:</p>
-<ol type="1">
-<li>Mejorar la eficiencia de la iluminación mediante el uso de tecnología LED y estrategias de iluminación natural.</li>
-<li>Optimizar los sistemas de aire acondicionado mediante el uso de equipos de alta eficiencia e implementar programas de mantenimiento.</li>
-<li>Reducir la carga de enchufes mediante el uso de equipos de oficina energéticamente eficientes y la implementación de estrategias de administración de energía.</li>
-<li>Implementar sistemas de automatización de edificios para optimizar el uso de energía y reducir el desperdicio.</li>
-<li>Realizar auditorías energéticas y evaluaciones comparativas para identificar áreas de mejora y realizar un seguimiento del progreso a lo largo del tiempo.</li>
-<li>Desarrollar códigos y estándares de eficiencia energética para edificios no residenciales para promover las mejores prácticas y fomentar la innovación.</li>
-<li>Proporcionar incentivos y opciones de financiación para que los propietarios y operadores de edificios inviertan en medidas de eficiencia energética.</li>
-</ol>
-<p>Al implementar estas recomendaciones, los edificios comerciales y públicos en México pueden reducir su consumo de energía, disminuir sus costos operativos y contribuir a un entorno construido más sustentable y resiliente.</p>
-<p>El principal desafío que enfrentan los edificios no residenciales en México en materia de eficiencia energética es su uso intensivo de electricidad. Si bien el uso de calefacción de espacios y calentamiento de agua es moderado en edificios no residenciales debido al clima templado o cálido de México, el uso de electricidad es alto. Esto presenta importantes oportunidades para reducir costos, insumos de combustible y emisiones de gases de efecto invernadero, pero también requiere esfuerzos específicos para mejorar la eficiencia energética en este sector. El archivo PDF proporciona información sobre la demanda de electricidad de edificios no residenciales en México e identifica áreas clave para mejorar, como iluminación, aire acondicionado y equipos de oficina.</p>
-<p>El artículo proporciona varios datos sobre el consumo eléctrico en México, incluyendo:</p>
-<ul>
-<li>Según datos de la OCDE de 2019, el sector de servicios en México representó casi el 65% del tamaño de la economía en 2016 .</li>
-<li>México es el país en el que el sector de servicios tiene el porcentaje más bajo en consumo de electricidad entre las “economías similares”. Los datos muestran que, en comparación con otros países, en México habría entre un 60% y más del 200% menos de consumo de electricidad en el sector de servicios .</li>
-<li>El consumo total de electricidad en México en 2017 fue de 64.3 TWh, de los cuales el sector de servicios representó el 37% .</li>
-<li>El consumo de electricidad en edificios no residenciales en México en 2017 fue de 28.5 TWh, lo que representa el 44% del consumo total de electricidad en el sector de servicios .</li>
-<li>El consumo de electricidad en edificios no residenciales en México se distribuye de la siguiente manera: 38% en iluminación, 33% en aire acondicionado, 18% en equipos de oficina y 11% en otros usos .</li>
-</ul>
+<section id="resumen" class="level1 unnumbered">
+<h1 class="unnumbered">Resumen</h1>
+</section>
+<section id="abstract" class="level1 unnumbered">
+<h1 class="unnumbered">Abstract</h1>
+</section>
+<section id="agradecimientos" class="level1 unnumbered">
+<h1 class="unnumbered">Agradecimientos</h1>
+<p>Libro en Quarto para la tesis</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-Chatellier2020" class="csl-entry" role="listitem">
-Lorentzen, Diego M. P. Chatellier, and Michael A. McNeil. 2020. <span>“Electricity Demand of Non-Residential Buildings in Mexico.”</span> <em>Sustainable Cities and Society</em> 59 (August). <a href="https://doi.org/10.1016/j.scs.2020.102165">https://doi.org/10.1016/j.scs.2020.102165</a>.
-</div>
-</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -468,13 +445,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Resumen</span>
-      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../Capitulos/estado.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Antecedentes</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Capitulos/intro.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
