@@ -10,18 +10,52 @@ Que si y que no voy a utilizar en mi tesis relacionado a confort térmico
 
 > Propuesta de organización de la tesis
 
-Poner atención en el titulo, no convence "Medición de confort termico", no se puede medir el confort termico
+Poner atención en el titulo, no convence "Medición de confort térmico", no se puede medir el confort térmico
 
 
+> ----------------------------------------------------------------------------
 
-hablar de confort - consumo de energía 
-justificación del tema, hablar de energía en edificaciones, aquí puede entrar el IPCC, el balance de energía nacional, democracia energetica.
-Incluir trabajo de Chatellier and Mcneil
+El reporte de Cambio Climático 2023 del Panel Intergubernamental sobre Cambio Climático (IPCC) advierte sobre un probable aumento en la temperatura mayor a 1.5 °C entre el año 2021 y 2040, llegando a alcanzar hasta los 5.7 °C para 2100 [@IPCC2023]. Para limitar este calentamiento es imprescindible una reducción drástica de las emisiones globales de gases de efecto invernadero (GEI), los cuales, deberán alcanzar su máximo antes del año 2025 y luego disminuir en un 43% para el año 2030, llegando a cero neto para el año 2050, conforme los Objetivos de Desarrollo Sostenible de la ONU [@Ods2015].
+
+*Una breve introducción a la digitalización energética*
+
+Si bien la digitalización energética es prometedora en este sentido para la eficiencia energética y la descarbonización, también presenta desafíos debido a que se espera un aumento en la demanda de energía a nivel global [@IPCC2022]. Para poder llevar a cabo un proceso de digitalización energética adecuado que permita lograr los objetivos de descarbonización, se debe buscar una democracia energética con tres perspectivas clave: soberanía popular, un gobierno participativo y propiedad civil [@Judson2022].
 
 
+En materia de eficiencia energética, el principal desafío que enfrentan los edificios no residenciales en México es su uso intensivo de electricidad [@Chatellier2020], tan solo en México, el sector residencial, comercial y público representa el 17.16% del consumo final de energía, de los cuales el 34.29% corresponden a consumo eléctrico [@BNE2022]. 
 
 
+ En la búsqueda de un futuro sostenible, la transición hacia fuentes de energía renovables, tecnologías eficientes, edificaciones sustentables y una democracia energética son de vital importancia; aunado a la creciente necesidad de abordar la crisis climática, el consumo energético de edificaciones requiere de acciones inmediatas.
 
+*Comenzar a introducir al concepto de confort térmico, confort térmico en México y concluir con la justificación del tema de tesis*
+
+> ----------------------------------------------------------------------------
+
+**Climate Change 2023: Synthesis Report**
+
+El IPCC establece que existe una probabilidad de más del 50% de que el aumento de la temperatura global alcance o supere los 1.5 °C entre 2021 y 2040 en los escenarios estudiados, y que específicamente en una ruta de altas emisiones, el mundo puede alcanzar este umbral incluso antes, entre 2018 y 2037. El aumento de la temperatura global en un escenario tan intensivo en emisiones de carbono también podría aumentar a entre 3.3 °C y 5.7 °C para 2100. Para poner este grado proyectado de calentamiento en perspectiva, la última vez que las temperaturas globales superaron los 2.5 °C por encima de los niveles preindustriales fue hace más de 3 millones de años.
+
+Según el IPCC, para limitar el calentamiento global a 1,5 °C por encima de los niveles preindustriales, las emisiones globales de gases de efecto invernadero deberán alcanzar su punto máximo antes de 2025 y luego disminuir en un 43% para 2030, llegando a cero neto para 2050, esto con la finalidad de cumplir con los Objetivos de Desarrollo Sostenible planteador por la ONU en el 2015. @Ods2015
+
+Si bien los combustibles fósiles son la fuente número uno de emisiones de GEI, se necesitan reducciones profundas de las emisiones en toda la sociedad para combatir la crisis climática. La generación de energía, los edificios, la industria y el transporte son responsables de cerca del 80 % de las emisiones globales, y el 20 % restante corresponde a la agricultura, la silvicultura y otros usos de la tierra.
+
+La temperatura de la superficie global en las dos primeras décadas del siglo XXI (2001-2020) fue 0,99 [0,84 a 1,10] °C más alta que la del período 1850-1900. La temperatura de la superficie global ha aumentado más rápidamente desde 1970 que en cualquier otro período de 50 años durante al menos los últimos 2000 años. @IPCC2023
+
+**IPCC Climate Change 2022** 
+
+Según el informe del IPCC 2022, la digitalización ofrece tanto oportunidades como desafíos en la mitigación del cambio climático. Si bien puede mejorar la eficiencia y la descarbonización, también se prevé un aumento en la demanda de energía. Para abordar este dilema, se requieren políticas proactivas y regulación de desechos electrónicos. Además, es vital realizar más investigaciones para comprender plenamente el impacto de la digitalización en el consumo de energía. Esto se vuelve aún más urgente considerando la proyección de un aumento inevitable de 1.5 °C en la temperatura global en las próximas dos décadas. En este contexto, la transición lejos de los combustibles fósiles, la adopción de prácticas alimenticias más sostenibles y la reconfiguración de los modelos urbanos son medidas esenciales para abordar el cambio climático. @IPCC2022
+
+
+**Energy democracy: A digital future?** 
+
+examina la relación entre la democracia energética y la digitalización. Destaca tres objetivos principales de la democracia energética y propone tres perspectivas clave: soberanía popular, gobierno participativo y propiedad civil mediante el uso de software de código abierto. El informe también presenta cuatro hallazgos fundamentales, enfocándose en cómo la digitalización puede impactar la sostenibilidad, la innovación en el sector energético, los posibles conflictos de propiedad y la reconfiguración de las relaciones de poder. Estos hallazgos resaltan la importancia de la digitalización en la evolución de la democracia energética y la sociedad en general. @Judson2022
+
+**Balance Nacional de Energía 2022**
+
+El Balance Nacional de Energía Preliminar 2022 publicado por la Secretaría de Energía de México 1 muestra que el consumo final de energía en México se distribuyó en cinco sectores principales: transporte, industrial, residencial, comercial y público, y agropecuario. El sector residencial, comercial y público representó el 17.16% del consumo total de energía en México, con un consumo de 990.36 PJ.  @BNE2022
+
+
+**Demanda eléctrica de edificaciones no residenciales en México**
 
 @Chatellier2020 proporciona varias recomendaciones clave para mejorar la eficiencia energética en edificios comerciales y públicos en México. Éstas incluyen:
 
@@ -44,3 +78,20 @@ El artículo proporciona varios datos sobre el consumo eléctrico en México, in
 - El consumo total de electricidad en México en 2017 fue de 64.3 TWh, de los cuales el sector de servicios representó el 37% .
 - El consumo de electricidad en edificios no residenciales en México en 2017 fue de 28.5 TWh, lo que representa el 44% del consumo total de electricidad en el sector de servicios .
 - El consumo de electricidad en edificios no residenciales en México se distribuye de la siguiente manera: 38% en iluminación, 33% en aire acondicionado, 18% en equipos de oficina y 11% en otros usos .
+
+
+@Rincon2019 examinó la neutralidad térmica y los rangos de confort en Pachuca, Hidalgo. Este estudio se centró en variables controladas, como la temperatura del aire seco, la humedad relativa y la velocidad del viento. Los resultados proporcionaron datos cruciales sobre las preferencias térmicas y los rangos de confort en esta región.
+
+@Cetz2018 llevó a cabo un extenso estudio en México, con una muestra significativa de 255 participantes. Sus mediciones incluyeron parámetros ambientales como la temperatura del aire, la temperatura radiante media y la velocidad del viento. Este estudio destacó las temperaturas preferidas y aceptables en aulas con ventilación natural y aire acondicionado.
+
+@MayTzuc2023 se enfocó en Campeche, México, explorando las variables de adaptación en el contexto del modelo de confort adaptativo. Aunque el número de participantes no se especifica, el estudio abordó el consumo de energía en relación con el confort térmico.
+
+@Oropeza2017 investigó los límites de la temperatura del aire interior para la refrigeración pasiva, así como la comodidad máxima con métodos pasivos. Este estudio, centrado en México, abordó la relación entre la temperatura, la sensación de incomodidad y la minimización del consumo energético.
+
+@Rincon2020 se centró en Ensenada, Baja California, analizando variables ambientales simultáneamente con la aplicación de cuestionarios. El estudio incluyó la temperatura del aire seco, la humedad relativa y la velocidad del viento, proporcionando una comprensión detallada del confort térmico en esta región.
+
+@Becerra2016 llevó a cabo un estudio a gran escala con aproximadamente 1800 participantes en México. Este abordó diversas variables, como la temperatura del aire, la temperatura de globo negro, la velocidad del viento y la humedad relativa. Los resultados contribuyeron a comprender las condiciones térmicas en diferentes tipologías de viviendas.
+
+@LópezPérez2019 se enfocó en Tuxtla Gutiérrez, Chiapas, analizando la percepción de confort térmico de los ocupantes en modo de aire acondicionado y ventilación natural. Este estudio incluyó mediciones de temperatura del aire, temperatura del globo, humedad relativa y velocidad del aire.
+
+@Zepeda2022 El estudio de confort térmico en la meseta central mexicana realizado por expertos, como se describe en ASHRAE 55, abordó las seis variables esenciales para el cálculo del estándar: temperatura del aire, temperatura radiante, velocidad del aire, humedad relativa, tasa metabólica y aislamiento térmico de la ropa.

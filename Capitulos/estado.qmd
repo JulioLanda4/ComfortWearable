@@ -45,14 +45,6 @@ Información acerca del confort térmico
 
 Este trabajo aborda estudios sobre el confort térmico en diversos climas, utilizan la división de climas de Köppen-Geiger. Destaca la diferencia entre edificios con aire acondicionado y edificios naturales en términos de zonas de confort. Mencionan que más del 20% de los ocupantes se sienten incómodos en ambientes con ventilación natural, a pesar de cumplir con estándares de comodidad. También resalta el uso de la running mean temperature como indicador para el confort térmico. @Mishra2013
 
-**IPCC Climate Change 2022** 
-
-Según el informe del IPCC 2022, la digitalización ofrece tanto oportunidades como desafíos en la mitigación del cambio climático. Si bien puede mejorar la eficiencia y la descarbonización, también se prevé un aumento en la demanda de energía. Para abordar este dilema, se requieren políticas proactivas y regulación de desechos electrónicos. Además, es vital realizar más investigaciones para comprender plenamente el impacto de la digitalización en el consumo de energía. Esto se vuelve aún más urgente considerando la proyección de un aumento inevitable de 1.5 °C en la temperatura global en las próximas dos décadas. En este contexto, la transición lejos de los combustibles fósiles, la adopción de prácticas alimenticias más sostenibles y la reconfiguración de los modelos urbanos son medidas esenciales para abordar el cambio climático. @IPCC2022
-
-
-**Energy democracy: A digital future?** 
-
-examina la relación entre la democracia energética y la digitalización. Destaca tres objetivos principales de la democracia energética y propone tres perspectivas clave: soberanía popular, gobierno participativo y propiedad civil mediante el uso de software de código abierto. El informe también presenta cuatro hallazgos fundamentales, enfocándose en cómo la digitalización puede impactar la sostenibilidad, la innovación en el sector energético, los posibles conflictos de propiedad y la reconfiguración de las relaciones de poder. Estos hallazgos resaltan la importancia de la digitalización en la evolución de la democracia energética y la sociedad en general. @Judson2022
 
 
 

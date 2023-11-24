@@ -1,0 +1,18 @@
+{
+    "cSpell.language": "en,es-ES",
+    "spellright.language": [
+        "es"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext",
+        "quarto"
+    ],
+    "cSpell.enableFiletypes": [
+        "quarto"
+    ],
+    "cSpell.words": [
+        "descarbonización"
+    ]
+}
