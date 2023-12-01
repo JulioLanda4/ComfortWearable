@@ -1,0 +1,48 @@
+
+**Climate Change 2023: Synthesis Report**
+
+El IPCC establece que existe una probabilidad de más del 50% de que el aumento de la temperatura global alcance o supere los 1.5 °C entre 2021 y 2040 en los escenarios estudiados, y que específicamente en una ruta de altas emisiones, el mundo puede alcanzar este umbral incluso antes, entre 2018 y 2037. El aumento de la temperatura global en un escenario tan intensivo en emisiones de carbono también podría aumentar a entre 3.3 °C y 5.7 °C para 2100. Para poner este grado proyectado de calentamiento en perspectiva, la última vez que las temperaturas globales superaron los 2.5 °C por encima de los niveles preindustriales fue hace más de 3 millones de años.
+
+Según el IPCC, para limitar el calentamiento global a 1,5 °C por encima de los niveles preindustriales, las emisiones globales de gases de efecto invernadero deberán alcanzar su punto máximo antes de 2025 y luego disminuir en un 43% para 2030, llegando a cero neto para 2050, esto con la finalidad de cumplir con los Objetivos de Desarrollo Sostenible planteador por la ONU en el 2015. @Ods2015
+
+Si bien los combustibles fósiles son la fuente número uno de emisiones de GEI, se necesitan reducciones profundas de las emisiones en toda la sociedad para combatir la crisis climática. La generación de energía, los edificios, la industria y el transporte son responsables de cerca del 80 % de las emisiones globales, y el 20 % restante corresponde a la agricultura, la silvicultura y otros usos de la tierra.
+
+La temperatura de la superficie global en las dos primeras décadas del siglo XXI (2001-2020) fue 0,99 [0,84 a 1,10] °C más alta que la del período 1850-1900. La temperatura de la superficie global ha aumentado más rápidamente desde 1970 que en cualquier otro período de 50 años durante al menos los últimos 2000 años. @IPCC2023
+
+**IPCC Climate Change 2022** 
+
+Según el informe del IPCC 2022, la digitalización ofrece tanto oportunidades como desafíos en la mitigación del cambio climático. Si bien puede mejorar la eficiencia y la descarbonización, también se prevé un aumento en la demanda de energía. Para abordar este dilema, se requieren políticas proactivas y regulación de desechos electrónicos. Además, es vital realizar más investigaciones para comprender plenamente el impacto de la digitalización en el consumo de energía. Esto se vuelve aún más urgente considerando la proyección de un aumento inevitable de 1.5 °C en la temperatura global en las próximas dos décadas. En este contexto, la transición lejos de los combustibles fósiles, la adopción de prácticas alimenticias más sostenibles y la reconfiguración de los modelos urbanos son medidas esenciales para abordar el cambio climático. @IPCC2022
+
+
+**Energy democracy: A digital future?** 
+
+examina la relación entre la democracia energética y la digitalización. Destaca tres objetivos principales de la democracia energética y propone tres perspectivas clave: soberanía popular, gobierno participativo y propiedad civil mediante el uso de software de código abierto. El informe también presenta cuatro hallazgos fundamentales, enfocándose en cómo la digitalización puede impactar la sostenibilidad, la innovación en el sector energético, los posibles conflictos de propiedad y la reconfiguración de las relaciones de poder. Estos hallazgos resaltan la importancia de la digitalización en la evolución de la democracia energética y la sociedad en general. @Judson2022
+
+**Balance Nacional de Energía 2022**
+
+El Balance Nacional de Energía Preliminar 2022 publicado por la Secretaría de Energía de México 1 muestra que el consumo final de energía en México se distribuyó en cinco sectores principales: transporte, industrial, residencial, comercial y público, y agropecuario. El sector residencial, comercial y público representó el 17.16% del consumo total de energía en México, con un consumo de 990.36 PJ.  @BNE2022
+
+
+**Demanda eléctrica de edificaciones no residenciales en México**
+
+@Chatellier2020 proporciona varias recomendaciones clave para mejorar la eficiencia energética en edificios comerciales y públicos en México. Éstas incluyen:
+
+1. Mejorar la eficiencia de la iluminación mediante el uso de tecnología LED y estrategias de iluminación natural.
+2. Optimizar los sistemas de aire acondicionado mediante el uso de equipos de alta eficiencia e implementar programas de mantenimiento.
+3. Reducir la carga de enchufes mediante el uso de equipos de oficina energéticamente eficientes y la implementación de estrategias de administración de energía.
+4. Implementar sistemas de automatización de edificios para optimizar el uso de energía y reducir el desperdicio.
+5. Realizar auditorías energéticas y evaluaciones comparativas para identificar áreas de mejora y realizar un seguimiento del progreso a lo largo del tiempo.
+6. Desarrollar códigos y estándares de eficiencia energética para edificios no residenciales para promover las mejores prácticas y fomentar la innovación.
+7. Proporcionar incentivos y opciones de financiación para que los propietarios y operadores de edificios inviertan en medidas de eficiencia energética.
+
+Al implementar estas recomendaciones, los edificios comerciales y públicos en México pueden reducir su consumo de energía, disminuir sus costos operativos y contribuir a un entorno construido más sustentable y resiliente.
+
+El principal desafío que enfrentan los edificios no residenciales en México en materia de eficiencia energética es su uso intensivo de electricidad. Si bien el uso de calefacción de espacios y calentamiento de agua es moderado en edificios no residenciales debido al clima templado o cálido de México, el uso de electricidad es alto. Esto presenta importantes oportunidades para reducir costos, insumos de combustible y emisiones de gases de efecto invernadero, pero también requiere esfuerzos específicos para mejorar la eficiencia energética en este sector. El archivo PDF proporciona información sobre la demanda de electricidad de edificios no residenciales en México e identifica áreas clave para mejorar, como iluminación, aire acondicionado y equipos de oficina.
+
+El artículo proporciona varios datos sobre el consumo eléctrico en México, incluyendo:
+
+- Según datos de la OCDE de 2019, el sector de servicios en México representó casi el 65% del tamaño de la economía en 2016 .
+- México es el país en el que el sector de servicios tiene el porcentaje más bajo en consumo de electricidad entre las "economías similares". Los datos muestran que, en comparación con otros países, en México habría entre un 60% y más del 200% menos de consumo de electricidad en el sector de servicios .
+- El consumo total de electricidad en México en 2017 fue de 64.3 TWh, de los cuales el sector de servicios representó el 37% .
+- El consumo de electricidad en edificios no residenciales en México en 2017 fue de 28.5 TWh, lo que representa el 44% del consumo total de electricidad en el sector de servicios .
+- El consumo de electricidad en edificios no residenciales en México se distribuye de la siguiente manera: 38% en iluminación, 33% en aire acondicionado, 18% en equipos de oficina y 11% en otros usos .
