@@ -63,6 +63,90 @@
     "text": "2.7 Wearables en el confort térmico\nQue se ha hecho con los wearables en el confort térmico\nHablar de la app Cozie, que es lo que hace, y porque nosotros no lo vamos a utilizar.\nLearning occupants workplace interactions from wearable and stationary ambient sensing systems\nExperimento en el que se monitorizaron 231 participantes durante tres días seguidos en un entorno de oficina (controlado). Se midieron variables como sonido, CO2, intensidad lumínica, temperatura del aire, humedad relativa y presión atmosférica. Los resultados obtenidos muestran que la tecnología de detección ambiental puede ser una herramienta valiosa para mejorar la eficiencia energética de los edificios y mejorar la comodidad de los ocupantes. Ghahramani et al. (2018)\nDesign and Calibration of Low Cost Sensor Node for Thermal Comfort Estimation\nEn este estudio se implementaron unos dispositivos de bajo costo que permitieron la medición de la calidad del aire y confort térmico en edificaciones. Emplearon los índices PMV y PPD para evaluar la percepción de confort. Midieron con cada nodo sensor la temperatura del aire, la humedad relativa, la velocidad del aire, y la temperatura radiante media, comparando los resultados de las mediciones con un dispositivo Testo 480. Los resultados obtenidos muestran que es posible determinar el confort térmico midiendo la temperatura y la humedad. Garces et al. (2021)\nWireless, AI-enabled wearable thermal comfort sensor for energy-efficient, human-in-the-loop control of indoor temperature\nMencionan que el uso de 3 sensores de temperatura brinda una mejor precisión que utilizar tan solo 1. Esto lo deciden basándose en el artículo anterior, más no mencionan que ellos lo hayan comprobado. Este artículo me es útil porque utilizan termistores montados sobre una banda elástica y maleable, brindan fotografías de las mismas y un pequeño diagrama de su funcionamiento. Esto puede ser útil para la colocación del termistor a utilizar en el dispositivo. Cho et al. (2023)\nProject Coolbit: can your watch predict heat stress and thermal comfort sensation?\nUtilizan un wearable (fitbit) y hacen experimentación tanto en una cámara controlada, como en un ambiente exterior no controlado. Encontraron que la temperatura corporal puede ser predecida utilizando la frecuencia cardíaca, la temperatura de la piel y la temperatura del aire en la muñeca. Nazarian et al. (2021)\nPersonal comfort models based on a 6-month experiment using environmental parameters and data from wearables\nEn este estudio implementaron el uso de un reloj fitbit con sensores Ibutton y usaron la aplicación Cozie para realizar encuestas de confort térmico realizaron demuestran como un experimento muy prolongado que involucre encuestas de confort térmico puede volverse tedioso y pesado para los usuarios. Implementaron un método que ellos llamaron micro-EMA para recopilar datos durante periodos prolongados de tiempo. Tartarini et al. (2022)\nLong-Term Thermal Comfort Monitoring via Wearable Sensing Techniques: Correlation between Environmental Metrics and Subjective Perception\nEl artículo presenta una nueva metodología para investigar la correlación entre el Voto de Sensación Térmica (TSV) diario de los individuos y la exposición ambiental. El objetivo es desarrollar modelos de confort personalizados maximizando el bienestar de los ocupantes y minimizando el consumo de energía.\nEstudio a largo plazo en el que capacitaron a los usuarios para usar los sensores iButton por sí mismos, facilitando la implementación de las encuestas de confort térmico y el estudio en sí. Gnecco, Pigliautile, and Pisello (2023)\nMonitoring and Predicting Occupant’s Sleep Quality by Using Wearable Device OURA Ring and Smart Building Sensors Data (Living Laboratory Case Study)\nEste artículo presenta un proyecto que almacena datos de gasto energético en una base de datos. Se apoyaron del dispositivo OURA Ring para monitorear el sueño de los usuarios y se desarrolló un modelo de red neuronal para mejorar la calidad del sueño. En conjunto, los datos recopilados y el modelo ofrecen buenos resultados para evaluar y mejorar la calidad del sueño de los usuarios. Malakhatka et al. (2021)\nWearable Sweat Rate Sensors for Human Thermal Comfort Monitoring\nDesarrollaron un dispositivo wearable para medir la tasa de sudor de la piel a través de una cámara de humedad y sensores de humedad. Mencionan que el estado térmico humano puede ser medido a través del sudor. J. K. Sim, Yoon, and Cho (2018)\nAlert-based wearable sensing system for individualized thermal preference prediction\nDesarrollaron una base de datos y una interfaz para ver los datos medidos en tiempo real. planean implementar un control de HVAC a través de su dispositivo de manera automática. El estudio se realizó solo en dos personas y desarrollaron modelos de confort térmico personalizados. Midieron variables como: la temperatura del aire, la humedad relativa, el nivel de luz, la frecuencia cardiaca, la conductancia eléctrica de la piel, la temperatura de la piel y la actividad basada en el movimiento. Feng et al. (2023)\nEvaluating the comfort of thermally dynamic wearable devices\nEl dispositivo aplica ondas de enfriamiento o calentamiento en la muñeca y ha demostrado un efecto correctivo de hasta 2.5 °C en 3 minutos. Usan el wearable para ayudar a mejorar el confort térmico utilizando ondas de calor o frío para estimular los receptores de temperatura de la piel. Zhe Wang et al. (2020)\nSensitivity study for the PMV thermal comfort model and the use of wearable devices biometric data for metabolic rate estimation\nDeterminaron que la tasa metabólica y la ropa tienen un gran impacto en el modelo PMV, pero son difíciles de medir, por lo que con el uso de un Fitbit estimaron la tasa metabólica a través del acelerómetro del dispositivo. Hasan, Alsaleem, and Rafaie (2016)\n\n\n\n\nAguirre, Verónica Ivette Calixto. 2021. “Thermal Comfort Studies.” Universidad Nacional Autonoma de México. http://132.248.9.195/ptd2021/septiembre/0814603/Index.html.\n\n\nAmerican Society of Heating, Refrigerating and Air-Conditioning Engineers, Inc. 2017. Thermal Environmental Conditions for Human Occupancy. ASHRAE Standard 55-2017. American Society of Heating, Refrigerating; Air-Conditioning Engineers, Inc.\n\n\nBogatu, Dragos Ioan, Jun Shinoda, José Joaquín Aguilera, Bjarne W. Olesen, Futa Watanabe, Yosuke Kaneko, and Ongun B. Kazanci. 2023. “Human Physiology for Personal Thermal Comfort-Based HVAC Control – a Review.” Building and Environment 240 (July): 110418. https://doi.org/10.1016/J.BUILDENV.2023.110418.\n\n\nChaudhuri, Tanaya, Yeng Chai Soh, Hua Li, and Lihua Xie. 2020. “Machine Learning Driven Personal Comfort Prediction by Wearable Sensing of Pulse Rate and Skin Temperature.” Building and Environment 170 (March): 106615. https://doi.org/10.1016/j.buildenv.2019.106615.\n\n\nChaudhuri, Tanaya, Deqing Zhai, Yeng Chai Soh, Hua Li, and Lihua Xie. 2018. “Random Forest Based Thermal Comfort Prediction from Gender-Specific Physiological Parameters Using Wearable Sensing Technology.” Energy and Buildings 166 (May): 391–406. https://doi.org/10.1016/J.ENBUILD.2018.02.035.\n\n\nCho, Seonghun, Hong Jae Nam, Chuanqi Shi, Choong Yeon Kim, Sang-Hyuk Byun, Karen-Christian Agno, Byung Chul Lee, Jianliang Xiao, Joo Yong Sim, and Jae-Woong Jeong. 2023. “Wireless, AI-Enabled Wearable Thermal Comfort Sensor for Energy-Efficient, Human-in-the-Loop Control of Indoor Temperature.” Biosensors and Bioelectronics 223 (March): 115018. https://doi.org/10.1016/j.bios.2022.115018.\n\n\nChoi, Joon Ho, and Dongwoo Yeom. 2017. “Study of Data-Driven Thermal Sensation Prediction Model as a Function of Local Body Skin Temperatures in a Built Environment.” Building and Environment 121 (August): 130–47. https://doi.org/10.1016/J.BUILDENV.2017.05.004.\n\n\nFeng, Yanxiao, Julian Wang, Nan Wang, and Chenshun Chen. 2023. “Alert-Based Wearable Sensing System for Individualized Thermal Preference Prediction.” Building and Environment 232 (March): 110047. https://doi.org/10.1016/J.BUILDENV.2023.110047.\n\n\nGarces, Hugo O., Eduardo Morales, Rodrigo Gomez, Hans Cabrera, and Eduardo Espinosa. 2021. “Design and Calibration of Low Cost Sensor Node for Thermal Comfort Estimation.” 2021 29th Mediterranean Conference on Control and Automation, MED 2021, June, 1215–21. https://doi.org/10.1109/MED51440.2021.9480306.\n\n\nGhahramani, Ali, Jovan Pantelic, Casey Lindberg, Matthias Mehl, Karthik Srinivasan, Brian Gilligan, and Edward Arens. 2018. “Learning Occupants’ Workplace Interactions from Wearable and Stationary Ambient Sensing Systems.” Applied Energy 230 (November): 42–51. https://doi.org/10.1016/J.APENERGY.2018.08.096.\n\n\nGnecco, Veronica Martins, Ilaria Pigliautile, and Anna Laura Pisello. 2023. “Long-Term Thermal Comfort Monitoring via Wearable Sensing Techniques: Correlation Between Environmental Metrics and Subjective Perception.” Sensors 23 (January): 576. https://doi.org/10.3390/s23020576.\n\n\nHasan, Mohammad H., Fadi Alsaleem, and Mostafa Rafaie. 2016. “Sensitivity Study for the PMV Thermal Comfort Model and the Use of Wearable Devices Biometric Data for Metabolic Rate Estimation.” Building and Environment 110 (December): 173–83. https://doi.org/10.1016/j.buildenv.2016.10.007.\n\n\nLiu, Shichao, Stefano Schiavon, Hari Prasanna Das, Ming Jin, and Costas J. Spanos. 2019. “Personal Thermal Comfort Models with Wearable Sensors.” Building and Environment 162 (September): 106281. https://doi.org/10.1016/j.buildenv.2019.106281.\n\n\nMalakhatka, Elena, Anas Al Rahis, Osman Osman, and Per Lundqvist. 2021. “Monitoring and Predicting Occupant’s Sleep Quality by Using Wearable Device OURA Ring and Smart Building Sensors Data (Living Laboratory Case Study).” Buildings 11 (October): 459. https://doi.org/10.3390/buildings11100459.\n\n\nMansi, Silvia Angela, Gloria Cosoli, Anna Laura Pisello, Ilaria Pigliautile, Gian Marco Revel, and Marco Arnesano. 2022. “Thermal Discomfort in the Workplace: Measurement Through the Combined Use of Wearable Sensors and Machine Learning Algorithms.” In 2022 IEEE International Workshop on Metrology for Industry 4.0 and IoT, MetroInd 4.0 and IoT 2022 - Proceedings, 54–59. Institute of Electrical; Electronics Engineers Inc. https://doi.org/10.1109/MetroInd4.0IoT54413.2022.9831610.\n\n\nMishra, Asit Kumar, and Maddali Ramgopal. 2013. “Field Studies on Human Thermal Comfort — an Overview.” Building and Environment 64 (June): 94–106. https://doi.org/10.1016/J.BUILDENV.2013.02.015.\n\n\nNazarian, Negin, Sijie Liu, Manon Kohler, Jason K W Lee, Clayton Miller, Winston T L Chow, Sharifah Badriyah Alhadad, et al. 2021. “Project Coolbit: Can Your Watch Predict Heat Stress and Thermal Comfort Sensation?” Environmental Research Letters 16 (March): 034031. https://doi.org/10.1088/1748-9326/abd130.\n\n\nOmidvar, Amir, and Jungsoo Kim. 2023. “A Novel Theoretical Model for Predicting the Individuals’ Thermal Sensations Based on Air Temperature and Biomarkers Measured by Wearable Devices.” Building and Environment 232 (March): 110050. https://doi.org/10.1016/J.BUILDENV.2023.110050.\n\n\nPark, Hansaem, and Dong Yoon Park. 2022. “Prediction of Individual Thermal Comfort Based on Ensemble Transfer Learning Method Using Wearable and Environmental Sensors.” Building and Environment 207 (January): 108492. https://doi.org/10.1016/J.BUILDENV.2021.108492.\n\n\nSim, Jai Kyoung, Sunghyun Yoon, and Young-Ho Cho. 2018. “Wearable Sweat Rate Sensors for Human Thermal Comfort Monitoring.” Scientific Reports 8 (January): 1181. https://doi.org/10.1038/s41598-018-19239-8.\n\n\nSim, Soo Young, Myung Jun Koh, Kwang Min Joo, Seungwoo Noh, Sangyun Park, Youn Ho Kim, Kwang Suk Park, and Angelo Maria Sabatini. 2016. “Estimation of Thermal Sensation Based on Wrist Skin Temperatures.” https://doi.org/10.3390/s16040420.\n\n\nTartarini, Federico, Stefano Schiavon, Matias Quintana, and Clayton Miller. 2022. “Personal Comfort Models Based on a 6‐month Experiment Using Environmental Parameters and Data from Wearables.” Indoor Air 32 (November). https://doi.org/10.1111/ina.13160.\n\n\nWang, Zhe, Kristen Warren, Maohui Luo, Xuchen He, Hui Zhang, Edward Arens, Wenhua Chen, et al. 2020. “Evaluating the Comfort of Thermally Dynamic Wearable Devices.” Building and Environment 167 (January): 106443. https://doi.org/10.1016/j.buildenv.2019.106443.\n\n\nWang, Ziyang, Ryuji Matsuhashi, and Hiroshi Onodera. 2022. “Towards Wearable Thermal Comfort Assessment Framework by Analysis of Heart Rate Variability.” Building and Environment 223 (September): 109504. https://doi.org/10.1016/j.buildenv.2022.109504."
   },
   {
+    "objectID": "Capitulos/metodologia.html#elección-de-variables-y-sensores",
+    "href": "Capitulos/metodologia.html#elección-de-variables-y-sensores",
+    "title": "3  Metodología",
+    "section": "3.1 Elección de variables y sensores",
+    "text": "3.1 Elección de variables y sensores"
+  },
+  {
+    "objectID": "Capitulos/metodologia.html#elección-de-hardware-y-software",
+    "href": "Capitulos/metodologia.html#elección-de-hardware-y-software",
+    "title": "3  Metodología",
+    "section": "3.2 Elección de hardware y software",
+    "text": "3.2 Elección de hardware y software"
+  },
+  {
+    "objectID": "Capitulos/metodologia.html#diseño-del-primer-prototipo-de-wearable",
+    "href": "Capitulos/metodologia.html#diseño-del-primer-prototipo-de-wearable",
+    "title": "3  Metodología",
+    "section": "3.3 Diseño del primer prototipo de wearable",
+    "text": "3.3 Diseño del primer prototipo de wearable"
+  },
+  {
+    "objectID": "Capitulos/metodologia.html#diseño-de-encuesta-de-confort-térmico-en-wearable",
+    "href": "Capitulos/metodologia.html#diseño-de-encuesta-de-confort-térmico-en-wearable",
+    "title": "3  Metodología",
+    "section": "3.4 Diseño de encuesta de confort térmico en wearable",
+    "text": "3.4 Diseño de encuesta de confort térmico en wearable\nDe las encuestas de confort existentes, que se va a tomar y como se va adaptar al dispositivo"
+  },
+  {
+    "objectID": "Capitulos/metodologia.html#documentación-del-prototipo",
+    "href": "Capitulos/metodologia.html#documentación-del-prototipo",
+    "title": "3  Metodología",
+    "section": "3.5 Documentación del prototipo",
+    "text": "3.5 Documentación del prototipo"
+  },
+  {
+    "objectID": "Capitulos/desarrollo.html#programación-de-encuestas",
+    "href": "Capitulos/desarrollo.html#programación-de-encuestas",
+    "title": "4  Desarrollo del dispositivo",
+    "section": "4.1 Programación de encuestas",
+    "text": "4.1 Programación de encuestas"
+  },
+  {
+    "objectID": "Capitulos/desarrollo.html#programación-de-sensores",
+    "href": "Capitulos/desarrollo.html#programación-de-sensores",
+    "title": "4  Desarrollo del dispositivo",
+    "section": "4.2 Programación de sensores",
+    "text": "4.2 Programación de sensores"
+  },
+  {
+    "objectID": "Capitulos/desarrollo.html#implementación-de-la-plataforma-iot",
+    "href": "Capitulos/desarrollo.html#implementación-de-la-plataforma-iot",
+    "title": "4  Desarrollo del dispositivo",
+    "section": "4.3 Implementación de la plataforma IoT",
+    "text": "4.3 Implementación de la plataforma IoT"
+  },
+  {
+    "objectID": "Capitulos/desarrollo.html#armado-del-primer-prototipo-de-wearable",
+    "href": "Capitulos/desarrollo.html#armado-del-primer-prototipo-de-wearable",
+    "title": "4  Desarrollo del dispositivo",
+    "section": "4.4 Armado del primer prototipo de wearable",
+    "text": "4.4 Armado del primer prototipo de wearable"
+  },
+  {
+    "objectID": "Capitulos/desarrollo.html#campaña-de-pruebas-del-primer-prototipo",
+    "href": "Capitulos/desarrollo.html#campaña-de-pruebas-del-primer-prototipo",
+    "title": "4  Desarrollo del dispositivo",
+    "section": "4.5 Campaña de pruebas del primer prototipo",
+    "text": "4.5 Campaña de pruebas del primer prototipo\nSe requiere una referencia para probar los sensores Se prueban cosas como duración de la bateria, ergonomia Si es que se programaron alarmas.\nPruebas en un ambiente real.\nAquí pueden agregarse las conclusiones."
+  },
+  {
+    "objectID": "Capitulos/resultados.html#discusión",
+    "href": "Capitulos/resultados.html#discusión",
+    "title": "5  Conclusiones",
+    "section": "5.1 Discusión",
+    "text": "5.1 Discusión\n\n5.1.1 Interpretación de los resultados\n\n\n5.1.2 Contribuciones y limitaciones"
+  },
+  {
+    "objectID": "Capitulos/resultados.html#conclusiones",
+    "href": "Capitulos/resultados.html#conclusiones",
+    "title": "5  Conclusiones",
+    "section": "5.2 Conclusiones",
+    "text": "5.2 Conclusiones"
+  },
+  {
     "objectID": "Capitulos/references.html",
     "href": "Capitulos/references.html",
     "title": "References",
