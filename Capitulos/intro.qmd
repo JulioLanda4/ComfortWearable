@@ -1,10 +1,5 @@
 # Introducción
 
-Poner atención en el titulo, no convence "Medición de confort térmico", no se puede medir el confort térmico
-
-
-> ////////////////////////////////////////////////////////////////////////////////////////////
-
 
 El reporte de Cambio Climático 2023 del Panel Intergubernamental sobre Cambio Climático (IPCC) advierte sobre un probable aumento en la temperatura superior a 1.5 °C entre los años 2021 y 2040, alcanzando hasta los 5.7 °C para 2100 [@IPCC2023]. Para limitar este calentamiento, es imprescindible una reducción drástica de las emisiones globales de gases de efecto invernadero (GEI). Estas emisiones deben alcanzar su máximo antes del año 2025 y luego disminuir en un 43% para el año 2030, llegando a cero neto para el año 2050, conforme los Objetivos de Desarrollo Sostenible de la ONU [@Ods2015].
 
@@ -20,21 +15,18 @@ Si bien la digitalización energética es prometedora en este sentido para la ef
 
  En la búsqueda de un futuro sostenible, la transición hacia fuentes de energía renovables, tecnologías eficientes, edificaciones sustentables y una democracia energética son de vital importancia; aunado a la creciente necesidad de abordar la crisis climática, el consumo energético de edificaciones requiere de acciones inmediatas.
 
-*Comenzar a introducir al concepto de confort térmico, confort térmico en México y concluir con la justificación del tema de tesis*
-
 
 El confort térmico se define como una condición mental que expresa la satisfacción con el ambiente, y es un juicio cognitivo influenciado por procesos físicos, fisiológicos y otros factores [@ASHRAE55]. Desempeña un papel esencial en el consumo de energía en edificaciones, pues está intrínsecamente ligado a la forma en que diseñamos las edificaciones. Una gran parte del consumo de energía en estas se ocupa en mantener condiciones óptimas de iluminación, calefacción y ventilación, buscando obtener espacios con condiciones adecuadas para que los ocupantes experimenten confort térmico.
 
+ Para el confort térmico se toman en cuenta seis principales varaibles físicas. Temperatura del aire, humedad relativa, velocidad del aire, temperatura radiante, presión atmosferica, aislamiento térmico de la ropa y nivel metabólico del ocupante [@Enescu2017]. Existen variables fisiológicas altamente relacionadas con el confort térmico que pueden servir como indicadores, tales como, la temperatura de la piel, la frecuencia cardiaca y la variabilidad de la frecuencia cardiaca [@Bogatu2023].
 
-En el diseño de edificaciones entran en juego 6 principales variables físicas. Temperatura del aire, temperatura radiante, humedad relativa, velocidad del aire, aislamiento térmico de la ropa y nivel metabólico del ocupante [@Enescu2017]. A la par hay …….. ingresar variables fisiológicas...
-
-Durante la etapa de diseño de una edificación, realizar evaluaciones de confort térmico se vuelve una herramienta favorable para generar estrategias pasivas y de bajo consumo de energía adecuadas para garantizar confort térmico. También es importante llevar a cabo evaluaciones en la etapa de ocupación. Las encuestas para la evaluación de confort requieren de dos partes principales: mediciones experimentales de las variables físicas que afectan al ambiente y cuestionarios para conocer la opinión de los ocupantes sobre el medio ambiente [@Calixto2021]. 
+Durante la fase de diseño de una edificación, el empleo de modelos predictivos de confort térmico se convierte en una herramienta esencial para desarrollar estrategias efectivas de diseño bioclimático. Además, es crucial realizar encuestas de evaluación durante la ocupación para determinar el nivel de confort térmico y evaluar la efectividad de las estrategias implementadas durante la fase de diseño. Estas encuestas comprenden dos componentes fundamentales: mediciones experimentales de las variables físicas que inciden en el entorno y cuestionarios destinados a recabar la opinión de los ocupantes sobre su experiencia ambiental [@Calixto2021]. 
 
 Existen modelos …. breve descripción del PMV y modelos adaptativos
 
 *Hablar de los estudios para generar mdoelos predictivos*
 
-En este contexto, el diseño y transición hacía edificaciones sustentables no se centra solo en reducir el consumo energético. sino en hacerlo de tal manera que se aprovechen los recursos del medio ambiente aplicando estrategias de diseño bioclimático para garantizar espacios que cumplan con las necesidades y expectativas de los ocupantes, brindándoles condiciones de confort térmico que propicien una buena calidad de vida y productividad.
+En este contexto, la transición hacia edificaciones sustentables no se trata solo de reducir el consumo energético, sino de hacerlo de manera eficiente sin comprometer el confort térmico y aprovechando los recursos del medio ambiente a nuestra disposición. Una parte esencial que favorece la eficiencia energética en edificaciones es la aplicación de estrategias de diseño bioclimático. Esto propicia tener esepacios que satisfagan las necesidades y expectativas de los ocupantes, proporcionando condiciones de confort térmico para una mejor calidad de vida y productividad.
 
 *Hablar del desarrollo de dispositivos para medir confort*
 

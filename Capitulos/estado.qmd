@@ -1,38 +1,49 @@
 # Antecedentes 
 
-@Calixto2021 Abunda en algunos métodos para predecir el confort térmico como el PMV-PPD y métodos adaptativos como el PMV extendido o el PMV adaptativo. Ademas de que describe detalladamente las encuestas de confort térmico
-
-El @ASHRAE55 define claramente el confort térmico, el PMV y las encuestas de confort térmico.
 
 En este capitulo se presentarán los antecedentes de evaluación de confort, estudios hechos, variables medidas, etc.
 
+Retomar tema de confort térmico y hablar de confort térmico en México.
 
 ## Evaluación de confort térmico a través de encuestas
 
+*@Calixto2021 Abunda en algunos métodos para predecir el confort térmico como el PMV-PPD y métodos adaptativos como el PMV extendido o el PMV adaptativo. Ademas de que describe detalladamente las encuestas de confort térmico.*
+
+
 ## Estudios para generar modelos predictivos de confort térmico con variables ambientales
 
-  PMV - PPD 
-  Etc.
+  *El @ASHRAE55 define claramente el confort térmico, el PMV y las encuestas de confort térmico.*
 
-  Sugerencia: incluir el estudio de Oropeza
+  *Sugerencia: incluir el estudio de Oropeza*
 
 ## Estudios para generar modelos predictivos de confort térmico con mediciones de variables fisiologicas del ocupante
 
-Aqui puedo hablar de las variables comunmente medidas, sensores utilizados, etc.
+La temperatura de la piel en la parte superior de la muñeca se destaca como una medida común, siendo evaluada tanto de forma individual como en combinación con otras mediciones en estudios como el de @Sim2016 y @Choi2017. Poner los articulos entre corchetes
+
+Postular suena más como a hipotesis que como una conclusion. Si si demuestra lo de la frecuencia, ya no es hipotesis, si solo tiene la idea si
+
+Si todos los estudios son con dispositivos wearables o hay dispositivos portatiles no wearables en los estudios
+
+quitar análisis integral       
+
+Dos usos medir confort térmico al instante para controlar sistemas (automatización) o relacionaro con variables del ambiente y hacer modelos predictivos
+
+Estudios que relacionan las variables con el confort o estudios para modelos predictivos
+
+Los estudios que existen tienen el objetivo de generar modelos... pero al momento
+
+------------------------------------
+
+En el estudio del confort térmico, diversas variables fisiológicas se consideran relevantes. Estas incluyen la temperatura de la piel en puntos específicos, la frecuencia cardíaca y la variabilidad de la frecuencia cardíaca. La temperatura de la piel en la parte superior de la muñeca se destaca como una medida común, siendo evaluada tanto de forma individual como en combinación con otras mediciones en estudios como el de @Sim2016 y @Choi2017. Además, la frecuencia cardíaca, medida de manera continua, se postula como un indicador clave en estudios como el de @Bogatu2023 y @Chaudhuri2018, donde se menciona que su variabilidad también es un aspecto crucial. La utilización de tecnologías portátiles, como sensores wearables, se evidencia en varios estudios para monitorear estas variables, permitiendo un análisis integral del confort térmico y facilitando la aplicación de algoritmos de machine learning para la predicción de sensaciones térmicas individuales. En resumen, la combinación de mediciones de temperatura de la piel, frecuencia cardíaca y su variabilidad, respaldadas por tecnologías wearables y enfoques de machine learning, emerge como un enfoque integral para comprender y predecir el confort térmico de manera personalizada.
+
+*Comenzar a hablar de sensores* 
 
 ## Desarrollo de dispositivos
 
 Hablar ya no del desarrollo de los modelos, si no especificamente de dispositivos para medir las variables
 
-> -------------------------------------------------------------------------------
+> //////////////////////////////////////////////////////
 
-## Confort térmico 
-
-Aquí se puede hablar de las encuestas (ASHRAE, tesis de Ivette)
-
-Concepto de confort térmico y como se mide el confort 
-
-Información acerca del confort térmico
 
 > **Notas** 
 
@@ -48,7 +59,7 @@ Este trabajo aborda estudios sobre el confort térmico en diversos climas, utili
 
 
 
-## Variables fisiológicas
+> ***Variables fisiológicas***
 
 Que variables influyen en el confort térmico
 
@@ -105,7 +116,7 @@ Este artículo propone un nuevo enfoque para evaluar el confort térmico en tiem
 
 
 
-## Wearables en el confort térmico
+> ***Wearables en el confort térmico***
 
 Que se ha hecho con los wearables en el confort térmico
 
