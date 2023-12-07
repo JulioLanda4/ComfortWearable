@@ -5,6 +5,36 @@ En este capitulo se presentarán los antecedentes de evaluación de confort, est
 
 Retomar tema de confort térmico y hablar de confort térmico en México.
 
+
+
+@Rincon2019 examinó la neutralidad térmica y los rangos de confort en Pachuca, Hidalgo. Este estudio se centró en variables controladas, como la temperatura del aire seco, la humedad relativa y la velocidad del viento. Los resultados proporcionaron datos cruciales sobre las preferencias térmicas y los rangos de confort en esta región.
+
+@Cetz2018 llevó a cabo un extenso estudio en México, con una muestra significativa de 255 participantes. Sus mediciones incluyeron parámetros ambientales como la temperatura del aire, la temperatura radiante media y la velocidad del viento. Este estudio destacó las temperaturas preferidas y aceptables en aulas con ventilación natural y aire acondicionado.
+
+@MayTzuc2023 se enfocó en Campeche, México, explorando las variables de adaptación en el contexto del modelo de confort adaptativo. Aunque el número de participantes no se especifica, el estudio abordó el consumo de energía en relación con el confort térmico.
+
+@Oropeza2017 investigó los límites de la temperatura del aire interior para la refrigeración pasiva, así como la comodidad máxima con métodos pasivos. Este estudio, centrado en México, abordó la relación entre la temperatura, la sensación de incomodidad y la minimización del consumo energético.
+
+@Rincon2020 se centró en Ensenada, Baja California, analizando variables ambientales simultáneamente con la aplicación de cuestionarios. El estudio incluyó la temperatura del aire seco, la humedad relativa y la velocidad del viento, proporcionando una comprensión detallada del confort térmico en esta región.
+
+@Becerra2016 llevó a cabo un estudio a gran escala con aproximadamente 1800 participantes en México. Este abordó diversas variables, como la temperatura del aire, la temperatura de globo negro, la velocidad del viento y la humedad relativa. Los resultados contribuyeron a comprender las condiciones térmicas en diferentes tipologías de viviendas.
+
+@LópezPérez2019 se enfocó en Tuxtla Gutiérrez, Chiapas, analizando la percepción de confort térmico de los ocupantes en modo de aire acondicionado y ventilación natural. Este estudio incluyó mediciones de temperatura del aire, temperatura del globo, humedad relativa y velocidad del aire.
+
+@Zepeda2022 El estudio de confort térmico en la meseta central mexicana realizado por expertos, como se describe en ASHRAE 55, abordó las seis variables esenciales para el cálculo del estándar: temperatura del aire, temperatura radiante, velocidad del aire, humedad relativa, tasa metabólica y aislamiento térmico de la ropa.
+
+
+
+
+
+
+
+
+
+PPD: Del inglés predicted percentage of disatisfaction, predice el porcentaje de personas en disconfort térmico y depende del valor del PMV [@Fanger1970].
+
+PMVe [@Fanger2002]: Es una modificación al PMV. Se observó que el PMV sobrestima el voto de sensación térmica de las personas en edificios sin aire acondicionado en climas cálidos, es por esto que se hizo una modificación al PMV.
+
 ## Evaluación de confort térmico a través de encuestas
 
 *@Calixto2021 Abunda en algunos métodos para predecir el confort térmico como el PMV-PPD y métodos adaptativos como el PMV extendido o el PMV adaptativo. Ademas de que describe detalladamente las encuestas de confort térmico.*
