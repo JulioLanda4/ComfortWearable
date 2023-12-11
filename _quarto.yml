@@ -25,10 +25,20 @@ book:
 
 bibliography: Referencias/references.bib
 
+lang: es
+language: 
+  title-block-author-single: "Autor"
 format:
   html:
     theme: zephyr
+    smooth-scroll: true
+    comments:
+      hypothesis: 
+        theme: clean
+    minimal: true
   pdf:
-    documentclass: scrreprt
+    documentclass: scrreport
+    lof: true
+    lot: true
     
 
