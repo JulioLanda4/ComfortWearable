@@ -5,7 +5,7 @@ En este capitulo se presentarán los antecedentes de evaluación de confort, est
 
 Retomar tema de confort térmico y hablar de confort térmico en México.
 
-
+/////////////////////////////////////////////////////////////////////
 
 @Rincon2019 examinó la neutralidad térmica y los rangos de confort en Pachuca, Hidalgo. Este estudio se centró en variables controladas, como la temperatura del aire seco, la humedad relativa y la velocidad del viento. Los resultados proporcionaron datos cruciales sobre las preferencias térmicas y los rangos de confort en esta región.
 
@@ -23,7 +23,7 @@ Retomar tema de confort térmico y hablar de confort térmico en México.
 
 @Zepeda2022 El estudio de confort térmico en la meseta central mexicana realizado por expertos, como se describe en ASHRAE 55, abordó las seis variables esenciales para el cálculo del estándar: temperatura del aire, temperatura radiante, velocidad del aire, humedad relativa, tasa metabólica y aislamiento térmico de la ropa.
 
-
+////////////////////////////////////////////////////////////////////
 
 
 
