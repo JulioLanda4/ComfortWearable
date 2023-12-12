@@ -24,6 +24,7 @@ book:
     - Capitulos/references.qmd
 
 bibliography: Referencias/references.bib
+biblio-style: plain
 
 lang: es
 language: 

@@ -1,27 +1,125 @@
 # Antecedentes 
 
+En este capitulo se presentan los antecedentes de este proyecto. Los estudios de confort térmico realizados en México. Se indaga más a profundidad los modelos predictivos, la evaluación de confort térmico a través de encuestas y los estudios para generar nuevos modelos de confort térmico
 
-En este capitulo se presentarán los antecedentes de evaluación de confort, estudios hechos, variables medidas, etc.
+## Confort térmico 
 
-Retomar tema de confort térmico y hablar de confort térmico en México.
+Como se mencionó previamente en el capitulo anterior el confort térmico se define como una condición mental que expresa la satisfacción con el ambiente, y es un juicio cognitivo influenciado por procesos físicos, fisiológicos y otros factores [@ASHRAE55] y es de suma importancia en el diseño de las edificaciones sustentables. 
+
+### Confort térmico en México
+
+<!-- En este estudio, los autores utilizaron la metodología del enfoque predictivo para estudiar el confort térmico en un grupo de estudiantes en un ambiente controlado de laboratorio. Se realizaron pruebas experimentales en una cámara de ambiente controlado para estimar la temperatura neutra y los rangos de confort térmico para los períodos térmicos extremos de enero (frío) y mayo (cálido). Los autores compararon los resultados obtenidos en el laboratorio con los resultados obtenidos en estudios de campo previos y encontraron que los valores de confort térmico estimados con los estudios de laboratorio estaban dentro del intervalo generado con los valores térmicos estimados con los estudios de campo. Los autores concluyen que los estudios de laboratorio pueden simular correctamente las condiciones ambientales de un largo período en el campo y permitir acciones específicas de adaptabilidad para lograr el confort térmico. -->
+
+
+En cuanto a investigación sobre confort térmico en México existen diversos estudios, tal es el caso del estudio realizado por @Rincon2019, donde se empleó la metodología del enfoque predictivo para estudiar el confort térmico en un grupo de estudiante en un laboratorio con ambiente controlado. Se realizaron pruebas experimentales con el propósito de calcular la temperatura neutra y los intervalos de confort térmico durante los periodos térmicos extremos de frío (enero) y calor (mayo). Llegaron a la conclusión de que los estudios de laboratorio son capaces de simular de manera adecuada las condiciones ambientales.
+
+Otro caso de estudio realizado por @Cetz2018 consistió en una muestra de 255 participantes donde midieron parámetros ambientales como la temperatura del aire, la temperatura radiante media y la velocidad del viento, obteniendo como resultado las temperaturas preferidas y aceptables en aulas con ventilación natural y aire acondicionado. 
+
+Por otro lado, el estudio de @MayTzuc2023 evaluó la viabilidad del modelo de confort térmico adaptativo en condiciones de clima cálido subhúmedo. Utilizaron dos modelos adaptativos, uno basado en la norma ASHRAE 55-2020 y otro de índole regional para la tipología climática tropical de México. Analizaron trece locaciones en el estado de Campeche. El estudio se centró en el ahorro energético en refrigeración. Mostraron que ambos modelos redujeron el uso de climatización, logrando un ahorro energético y una mejora del confort térmico.
+
+
+@Oropeza2017 llevaron a cabo encuestas a 74 estudiantes voluntarios de la Universidad de las Americas Puebla (UDLAP) cuyas ciudades de origen están distribuidas en cuatro distintas regiones bioclimáticas de México. Llevaron a cabo las encuestas durante sus periodos vacacionales en invierno y verano, tanto en casas con sistemas de aire acondicionado como en casas sin ellos. Desarrollaron propuestas modelos de confort térmico adaptativos para las cuatro regiones. Sus resultados muestran que las personas en regiones áridas prefieren temperaturas interiores más altas en la temporada de frío y son capaces soportar temperaturas interiores más altas en la temporada de calor.
+
+@Rincon2020 se centraron en Ensenada, Baja California, analizando variables ambientales simultáneamente con la aplicación de cuestionarios para evaluar la temperatura del aire seco, la humedad relativa y la velocidad del viento, proporcionando así, una comprensión detallada del confort térmico en esta región. **Revisar**
+
+@Becerra2016 llevaron a cabo un estudio a gran escala con aproximadamente 1800 participantes con la finalidad de comprender las condiciones térmicas en diferentes tipologías de viviendas, en él, se evaluaron variables como la temperatura del aire, la temperatura de globo negro, la velocidad del viento y la humedad relativa. **Revisar**  
+
+@LópezPérez2019 analizaron la percepción de confort térmico de los ocupantes en modo de aire acondicionado y ventilación natural en la región de Tuxtla Gutiérrez, Chiapas, para ello, se evaluaron la temperatura del aire, la temperatura del globo, la humedad relativa y la velocidad del aire. **Revisar**  
+
+@Zepeda2022 estudiaron las seis variables esenciales para el cálculo del estándar [DEL ESTANDAR QUÉ]: temperatura del aire, temperatura radiante, velocidad del aire, humedad relativa, tasa metabólica y aislamiento térmico de la ropa en la meseta central mexicana. [YO PONDRÍA EL RESULTADO QUE OBTUVIERON, ESE NO VIENE ESPECIFICADO] **Revisar**
+
+
+## Evaluación de confort térmico a través de encuestas
+
+ISO 10551 (ISO, 2019) proporciona una guía sobre cómo construir escalas subjetivas. Los cinco tipos principales de escalas se pueden dividir en dos categorías: escalas utilizadas para el estado personal y escalas para describir el entorno físico. Las tres primeras escalas (perceptual, evaluativa y percepción) son para el estado personal y las dos últimas (aceptabilidad y satisfacción) son para el entorno físico. La aceptabilidad personal y la escala de satisfacción dan información de la opinión de los ocupantes sobre su entorno. Estas dos escalas deben aplicarse siempre después de los tres estados personales. Los principales tipos de escalas y el orden que sugieren aplicar en los cuestionarios son
+
+La ISO 10551 [-@ISO10551] establece escalas de juicio subjetivo para evaluar el entorno físico, con el objetivo de garantizar que los espacios sean diseñados teniendo en cuenta al usuario. La norma aborda cinco tipos principales de escalas, divididos en dos categorías: escalas para el estado personal y escalas para describir el entorno físico. Las escalas para el estado personal son tres: perceptual, evaluativa y percepción. Mientras que para el entorno físico son dos: aceptabilidad y satisfacción.
+
+@Calixto2021 presenta las escalas de la siguiente manera: 
+
+### Escalas para el estado personal
+
+1. Escala de percepción del estado personal (¿Cómo te sientes ahora?): Se utiliza para comprender la percepción subjetiva del estado personal en un entorno específico. La escala puede ser unipolar o bipolar. Si es unipolar, se utiliza una graduación de 4 grados, que puede extenderse a 5 grados. El punto de origen se establece en 0, con grados de intensidad 1, 2, 3, (4). Si es bipolar, se utiliza una graduación de 7 grados, ampliables a 9 grados. El punto de indiferencia también es 0, pero esta escala tiene un polo A y un polo B. Los grados negativos de intensidad son -1, -2, -3, -4, siendo -4 el más cercano al polo A y -1 el más cercano a 0. Los grados positivos de intensidad son 1, 2, 3, 4, siendo 4 el más cercano al polo B y 1 el más cercano a 0. El 0 representa la ausencia de sensación en ambas escalas.
+
+2. Escala evaluativa (¿Cómo te encuentras?): Evalúa el nivel de comodidad en un entorno. Es una escala unipolar de 4 grados ampliable a 5. El 0 representa comodidad y el polo representa la incomodidad extrema.
+
+3. Escala de preferencia (¿Cómo preferirías estar?): Utiliza una escala bipolar simétrica con 7 grados para medir la preferencia de las personas respecto a ciertos aspectos del entorno. El 0 representa "sin cambio" en la preferencia.
+
+### Escalas para describir el entorno físico  
+
+1. Aceptabilidad: Esta escala se centra en la aceptabilidad a nivel personal del entorno. Tiene dos grados, se acepta o se rechaza. 
+
+2. Satisfacción: Se centra en la tolerancia al entorno. Es una escala de 5 grados. 0 es perfectamente tolerable, mientras que el polo es intolerable.
+
+En las tablas [-@tbl-unipolar] y [-@tbl-bipolar] se observan las estructuras para las escalas unipolares y bipolares
+
+| Punto de origen | Grados de intensidad |          |
+|:---------------:|:--------------------:|:--------:|
+|        0        |       1,2,3,(4)      | Unipolar |
+
+: Escala unipolar {#tbl-unipolar}
+
+|        | Grados de intensidad | Punto de indiferencia | Grados de intensidad |         |
+|:------:|:--------------------:|:---------------------:|:--------------------:|:-------:|
+| Polo A |     (-4),-3,-2,-1    |           0           |       1,2,3,(4)      | Polo B  |
+
+: Escala bipolar {#tbl-bipolar}
+
+
+
+
+
+## Modelos predictivos de confort térmico
+
+**Falta agregar**
+
+### Edificaciones con sistemas de aire acondicionado
+
+### Edificaciones sin sistemas de aire acondicionado
+
+PPD: Del inglés predicted percentage of disatisfaction, predice el porcentaje de personas en disconfort térmico y depende del valor del PMV [@Fanger1970].
+
+PMVe [@Fanger2002]: Es una modificación al PMV. Se observó que el PMV sobrestima el voto de sensación térmica de las personas en edificios sin aire acondicionado en climas cálidos, es por esto que se hizo una modificación al PMV.
+
+
+## Estudios para generar modelos predictivos de confort térmico con variables ambientales
+
+**falta agregar**
+
+*El @ASHRAE55 define claramente el confort térmico, el PMV y las encuestas de confort térmico.*
+
+*Sugerencia: incluir el estudio de Oropeza*
+
+## Estudios para generar modelos predictivos de confort térmico con mediciones de variables fisiológicas del ocupante
+
+Otro análisis importante es explorar e identificar que variables fisiológicas influyen en la evaluación del confort térmico. Indagando en la bibliografía, se encontraron estudios como el de @Sim2016 donde toman mediciones de la temperatura de la piel en 4 puntos (parte superior de la muñeca, arteria radial, arteria ulnar y punta del dedo índice), se menciona que por cuestiones de ergonomía y practicidad descartan la temperatura del dedo índice y tras la comparación de relación entre las temperaturas medidas y las encuestas de sensación térmica, obtuvieron que al combinar las 3 mediciones de la muñeca se obtenían mejores resultados con una mayor correlación Pearson (0.81) respecto a los votos de sensación térmica. Sin embargo, no representa una diferencia tan grande respecto a las correlaciones de los puntos individuales. Los resultados de las mediciones en la parte superior de la muñeca, como en la arteria radial son iguales (0.76), y deducen que la medición más conveniente es en la parte superior de la muñeca. 
+
+@Bogatu2023 explican que existen diferentes variables que pueden servir como indicadores de confort térmico. En el estudio utilizan la temperatura en la parte superior de la muñeca y la frecuencia cardíaca, debido a que reportan que en estudios previos resultaron ser buenos indicadores, sobre todo el análisis de su variabilidad, reportan que la medición de la temperatura de la piel es comúnmente utilizada por su facilidad de ser capturada y porque puede ser de mucha utilidad, mientras que indicadores como la sudoración no resultan tan favorables por la dificultad que implica hacer la medición.
+Otro registro de variables es el caso de @Liu2019, quienes midieron diferentes variables en un ambiente controlado, tales como: temperatura del aire, humedad relativa, velocidad del aire, temperatura en la superficie del asiento, frecuencia cardíaca, temperatura de la piel (en el tobillo y en la muñeca) y la temperatura del aire cercana al tobillo. Encontrando que la temperatura de la piel medida en el tobillo es más predictiva que la medida en la muñeca. Algo que resaltar es la forma en la que lograron hacer que los participantes validaran la información obtenida, ya que incentivaron económicamente a los participantes para hacer más largo el experimento y responder más encuestas. 
+
+@Chaudhuri2018 realizaron un experimento con 20 participantes, 10 hombres y 10 mujeres, durante dos meses realizaron encuestas de confort térmico y midieron: temperatura del aire, humedad relativa, velocidad del aire, temperatura de globo, temperatura de la piel, conductancia de la piel, frecuencia cardíaca, saturación de oxígeno en la sangre y presión arterial, registrando que la medición de la temperatura de la piel la realizaron en la parte posterior de la mano por el fácil acceso a las arterias radial y ulnar y en la mano no dominante. 
+El estudio de @Choi2017 encontró que medir la temperatura de la piel en varios puntos (frente, brazo, cuello, parte superior de la muñeca, parte inferior de la muñeca, espalda) y aplicar algoritmos de árbol de decisiones para relacionar las temperaturas brinda mejores resultados [¿MEJORES RESULTADOS RESPECTO A QUÉ?]. El estudio concluye que el resultado óptimo lo obtiene de la combinación de la temperatura de la piel en la cintura, la temperatura de la piel en el brazo y la tasa de cambio de la temperatura de la piel de la parte interior de la muñeca. **revisar**
+
+Estudios como el de @Wang2022 proponen un nuevo enfoque para evaluar el confort térmico en tiempo real utilizando la variabilidad de la frecuencia cardíaca. Se demuestra que, al combinar diferentes características de la frecuencia cardíaca, se puede predecir de manera precisa el confort térmico personal. 
+
+Respecto a los modelos y métodos utilizados se tiene el caso de @Omidvar2023, donde proponen un modelo matemático que utiliza la temperatura de la piel, la frecuencia cardíaca y la temperatura del aire para predecir las sensaciones térmicas individuales. Dicho modelo se basa en la teoría fisiológica de que la percepción de la temperatura corporal está influenciada por la temperatura del aire y la temperatura de la piel que a su vez está influenciada por la tasa metabólica y la circulación de la sangre. 
+
+@Park2022 destacan que el modelo híbrido CNN-SVM demostró un impresionante rendimiento con una precisión y puntuación F1 del 95% para el sujeto B. Además, aplicaron con éxito un método de transferencia de aprendizaje para predecir la comodidad térmica de los sujetos A y C, superando al modelo CNN-SVM en términos de rendimiento. [HABLA DE 3 SUJETOS DE PRUEBA, BUSCAR EN EL ARTICULO COMO SEGMENTARON ESOS SUJETOS PARA DESPUES DAR CONTEXTO DE ESTOS RESULTADOS] **revisar** 
+
+Otros estudios implementan algoritmos de aprendizaje automático para analizar los resultados y hacer modelos de predicción de confort térmico, como el caso de@Mansi2022, el cual monitorea señales fisiológicas como el electrocardiograma, el electroencefalograma y la actividad electrodérmica para evaluar el confort térmico en distintas condiciones. Utilizaron sensores portátiles (Empatica E4 e Interaxon MUSE). En sus resultados indican un aumento en las densidades de espectro de potencia (PSD) en las bandas alfa y theta. Por el contrario, en disconfort existe una disminución en las ondas beta y gamma.  
+
+Otro caso de implementación de Machine Learning es el reportado por @Chaudhuri2020, en el que presentan un método mejorado de predicción del índice de estado térmico (TSI) personal, llamado método ePTS, para predecir el confort térmico de los ocupantes de edificios. El método utiliza la temperatura de la piel de la mano, la frecuencia cardíaca (pulso) y la temperatura ambiente para predecir el TSI, para ellos, utilizan la plataforma e-Health sensor.
+
+
+## Desarrollo de dispositivos
+
+**falta agregar**
+
+Hablar ya no del desarrollo de los modelos, si no especificamente de dispositivos para medir las variables
 
 /////////////////////////////////////////////////////////////////////
 
-@Rincon2019 examinó la neutralidad térmica y los rangos de confort en Pachuca, Hidalgo. Este estudio se centró en variables controladas, como la temperatura del aire seco, la humedad relativa y la velocidad del viento. Los resultados proporcionaron datos cruciales sobre las preferencias térmicas y los rangos de confort en esta región.
 
-@Cetz2018 llevó a cabo un extenso estudio en México, con una muestra significativa de 255 participantes. Sus mediciones incluyeron parámetros ambientales como la temperatura del aire, la temperatura radiante media y la velocidad del viento. Este estudio destacó las temperaturas preferidas y aceptables en aulas con ventilación natural y aire acondicionado.
-
-@MayTzuc2023 se enfocó en Campeche, México, explorando las variables de adaptación en el contexto del modelo de confort adaptativo. Aunque el número de participantes no se especifica, el estudio abordó el consumo de energía en relación con el confort térmico.
-
-@Oropeza2017 investigó los límites de la temperatura del aire interior para la refrigeración pasiva, así como la comodidad máxima con métodos pasivos. Este estudio, centrado en México, abordó la relación entre la temperatura, la sensación de incomodidad y la minimización del consumo energético.
-
-@Rincon2020 se centró en Ensenada, Baja California, analizando variables ambientales simultáneamente con la aplicación de cuestionarios. El estudio incluyó la temperatura del aire seco, la humedad relativa y la velocidad del viento, proporcionando una comprensión detallada del confort térmico en esta región.
-
-@Becerra2016 llevó a cabo un estudio a gran escala con aproximadamente 1800 participantes en México. Este abordó diversas variables, como la temperatura del aire, la temperatura de globo negro, la velocidad del viento y la humedad relativa. Los resultados contribuyeron a comprender las condiciones térmicas en diferentes tipologías de viviendas.
-
-@LópezPérez2019 se enfocó en Tuxtla Gutiérrez, Chiapas, analizando la percepción de confort térmico de los ocupantes en modo de aire acondicionado y ventilación natural. Este estudio incluyó mediciones de temperatura del aire, temperatura del globo, humedad relativa y velocidad del aire.
-
-@Zepeda2022 El estudio de confort térmico en la meseta central mexicana realizado por expertos, como se describe en ASHRAE 55, abordó las seis variables esenciales para el cálculo del estándar: temperatura del aire, temperatura radiante, velocidad del aire, humedad relativa, tasa metabólica y aislamiento térmico de la ropa.
 
 ////////////////////////////////////////////////////////////////////
 
@@ -31,56 +129,16 @@ Retomar tema de confort térmico y hablar de confort térmico en México.
 
 
 
-PPD: Del inglés predicted percentage of disatisfaction, predice el porcentaje de personas en disconfort térmico y depende del valor del PMV [@Fanger1970].
-
-PMVe [@Fanger2002]: Es una modificación al PMV. Se observó que el PMV sobrestima el voto de sensación térmica de las personas en edificios sin aire acondicionado en climas cálidos, es por esto que se hizo una modificación al PMV.
-
-## Evaluación de confort térmico a través de encuestas
-
-*@Calixto2021 Abunda en algunos métodos para predecir el confort térmico como el PMV-PPD y métodos adaptativos como el PMV extendido o el PMV adaptativo. Ademas de que describe detalladamente las encuestas de confort térmico.*
 
 
-## Estudios para generar modelos predictivos de confort térmico con variables ambientales
 
-  *El @ASHRAE55 define claramente el confort térmico, el PMV y las encuestas de confort térmico.*
 
-  *Sugerencia: incluir el estudio de Oropeza*
 
-## Estudios para generar modelos predictivos de confort térmico con mediciones de variables fisiologicas del ocupante
 
-La temperatura de la piel en la parte superior de la muñeca se destaca como una medida común, siendo evaluada tanto de forma individual como en combinación con otras mediciones en estudios como el de @Sim2016 y @Choi2017. Poner los articulos entre corchetes
 
-Postular suena más como a hipotesis que como una conclusion. Si si demuestra lo de la frecuencia, ya no es hipotesis, si solo tiene la idea si
-
-Si todos los estudios son con dispositivos wearables o hay dispositivos portatiles no wearables en los estudios
-
-quitar análisis integral       
-
-Dos usos medir confort térmico al instante para controlar sistemas (automatización) o relacionaro con variables del ambiente y hacer modelos predictivos
-
-Estudios que relacionan las variables con el confort o estudios para modelos predictivos
-
-Los estudios que existen tienen el objetivo de generar modelos... pero al momento
-
-------------------------------------
-
-En el estudio del confort térmico, diversas variables fisiológicas se consideran relevantes. Estas incluyen la temperatura de la piel en puntos específicos, la frecuencia cardíaca y la variabilidad de la frecuencia cardíaca. La temperatura de la piel en la parte superior de la muñeca se destaca como una medida común, siendo evaluada tanto de forma individual como en combinación con otras mediciones en estudios como el de @Sim2016 y @Choi2017. Además, la frecuencia cardíaca, medida de manera continua, se postula como un indicador clave en estudios como el de @Bogatu2023 y @Chaudhuri2018, donde se menciona que su variabilidad también es un aspecto crucial. La utilización de tecnologías portátiles, como sensores wearables, se evidencia en varios estudios para monitorear estas variables, permitiendo un análisis integral del confort térmico y facilitando la aplicación de algoritmos de machine learning para la predicción de sensaciones térmicas individuales. En resumen, la combinación de mediciones de temperatura de la piel, frecuencia cardíaca y su variabilidad, respaldadas por tecnologías wearables y enfoques de machine learning, emerge como un enfoque integral para comprender y predecir el confort térmico de manera personalizada.
-
-*Comenzar a hablar de sensores* 
-
-## Desarrollo de dispositivos
-
-Hablar ya no del desarrollo de los modelos, si no especificamente de dispositivos para medir las variables
-
-> //////////////////////////////////////////////////////
 
 
 > **Notas** 
-
-- La mayoría de las encuestas de confort térmico son en conjunto con medición de variables ambientales y del ocupante. ¿Existen encuestas en conjunto de mediciones de variables fisiologicas? 
-- Buscar estudios que obtengan un modelo para la evaluación que utilice variables fisiologicas
-- Articulos de confort térmico en México
-
 
 **Field studies on human thermal comfort — An overview**
 
@@ -89,68 +147,11 @@ Este trabajo aborda estudios sobre el confort térmico en diversos climas, utili
 
 
 
-> ***Variables fisiológicas***
-
-Que variables influyen en el confort térmico
-
-Con que sensores y que principios de medición utilizan
-
-**Estimation of Thermal Sensation Based on Wrist Skin Temperatures**
-
-Toman mediciones de la temperatura de la piel en 4 puntos (parte superior de la muñeca, arteria radial, arteria ulnar y punta del dedo índice). Por cuestiones de ergonomía y practicidad en nuestro caso descartaremos la temperatura en la punta del dedo índice. Tras la comparación de relación entre las temperaturas medidas y encuestas de sensación térmica, obtuvieron que al combinar las 3 mediciones de la muñeca se obtenían mejores resultados con una mayor correlación pearson (0.81) respecto a los votos de sensación térmica. Sin embargo, no es una diferencia tan grande respecto a las correlaciones de los puntos individuales. Los resultados de las mediciones en la parte superior de la muñeca, como en la arteria radial son iguales (0.76). Así que por cuestiones de practicidad es conveniente realizar la medición en la parte superior de la muñeca. @Sim2016
-
-
-
-**Human physiology for personal thermal comfort-based HVAC control – A review** 
-
-Existen diferentes variables que pueden servir como indicadores de confort térmico. Las variables que hemos considerado utilizar (temperatura en la parte superior de la muñeca y frecuencia cardiaca) parecen ser buenos indicadores según estudios previos, sobre todo el análisis de su variabilidad. La medición de la temperatura de la piel es muy comúnmente utilizada por su facilidad de ser capturada y porque puede ser de mucha utilidad. Indicadores como la sudoración quizás no resulten tan favorables, además de la dificultad que implica hacer la medición. @Bogatu2023
-
-**Thermal discomfort in the workplace: measurement through the combined use of wearable sensors and machine learning algorithms** 
-
-Este trabajo se enfoca en monitorear señales fisiológicas como el electrocardiograma, el electroencefalograma y la actividad electrodérmica, para evaluar el confort térmico en distintas condiciones. Utilizaron sensores portátiles (Empatica E4 e Interaxon MUSE). Implementaron algoritmos de machine learning para analizar los resultados y hacer modelos de predicción de confort térmico. Los resultados indican un aumento en las densidades de espectro de potencia (PSD) en las bandas alfa y theta. Por el contrario, en disconfort existe una disminución en las ondas beta y gamma. @Mansi2022
-
-
-**Personal thermal comfort models with wearable sensors**
-
-En este trabajo midieron diferentes variables en un ambiente controlado, tales como: temperatura del aire, humedad relativa, velocidad del aire, temperatura en la superficie del asiento, frecuencia cardiaca, temperatura de la piel (en el tobillo y en la muñeca), temperatura del aire cercana al tobillo. Encontraron que la temperatura de la piel medida en el tobillo es más predictiva que la medida en la muñeca. Incentivaron económicamente a los participantes para hacer más largo el experimento y responder más encuestas. @Liu2019
-
-**Random forest based thermal comfort prediction from gender-speciﬁc physiological parameters using wearable sensing technology**
-
-Realizaron un experimento en 20 participantes, 10 hombres y 10 mujeres durantes dos meses realizando encuestas de confort térmico y midiendo las siguientes variables: temperatura del aire, humedad relativa, velocidad del aire, temperatura de globo, temperatura de la piel, conductancia de la piel, frecuencia cardiaca, saturación de oxígeno en la sangre y presión arterial. La medición de la temperatura de la piel la llevan a cabo en la parte posterior de la mano por el fácil acceso a las arterias radial y ulnar. Al mismo tiempo las mediciones las llevaron a cabo en la mano no dominante. @Chaudhuri2018
-
-**Study of data-driven thermal sensation prediction model as a function of local body skin temperatures in a built environment**
-
-Este estudio encontró que medir la temperatura de la piel en varios puntos (frente, brazo, cuello, parte superior de la muñeca, parte inferior de la muñeca, espalda) y aplicar algoritmos de árbol de decisiones para relacionar las temperaturas brinda mejores resultados. El mejor resultado se obtuvo de la combinación de la temperatura de la piel en la cintura, la temperatura de la piel en el brazo y la tasa de cambio de la temperatura de la piel de la parte interior de la muñeca. @Choi2017
-
-
-**A novel theoretical model for predicting the individuals' thermal sensations based on air temperature and biomarkers measured by wearable devices**
-
-Proponen un modelo matemático que utiliza la temperatura de la piel, la frecuencia cardiaca y la temperatura del aire para predecir las sensaciones térmicas individuales. Dicho modelo se basa en la teoría fisiológica de que la percepción de la temperatura corporal está influenciada por la temperatura del aire y la temperatura de la piel que a su vez está influenciada por la tasa metabólica y la circulación de la sangre. @Omidvar2023
-
-
-**Prediction of individual thermal comfort based on ensemble transfer learning method using wearable and environmental sensors**
-
-
-Destacan que el modelo híbrido CNN-SVM demostró un impresionante rendimiento con una precisión y puntuación F1 del 95% para el sujeto B. Además, aplicaron con éxito un método de transferencia de aprendizaje para predecir la comodidad térmica de los sujetos A y C, superando al modelo CNN-SVM en términos de rendimiento. @Park2022
-
-
-**Machine learning driven personal comfort prediction by wearable sensing of pulse rate and skin temperature**
-
-
-Este artículo presenta un método mejorado de predicción del índice de estado térmico (TSI) personal, llamado método ePTS, para predecir el confort térmico de los ocupantes de edificios. El método utiliza la temperatura de la piel de la mano, la frecuencia cardíaca (pulso) y la temperatura ambiente para predecir el TSI. Utilizan la plataforma e-Health sensor. @Chaudhuri2020
-
-**Towards wearable thermal comfort assessment framework by analysis of heart rate variability**
-
-
-Este artículo propone un nuevo enfoque para evaluar el confort térmico en tiempo real utilizando la variabilidad de la frecuencia cardíaca. Se demuestra que al combinar diferentes características de la frecuencia cardíaca, se puede predecir de manera precisa el confort térmico personal. @Wang2022
-
+> 
 
 
 > ***Wearables en el confort térmico***
 
-Que se ha hecho con los wearables en el confort térmico
-
-Hablar de la app Cozie, que es lo que hace, y porque nosotros no lo vamos a utilizar.
 
 **Learning occupants workplace interactions from wearable and stationary ambient sensing systems**
 

@@ -46,3 +46,75 @@ El artículo proporciona varios datos sobre el consumo eléctrico en México, in
 - El consumo total de electricidad en México en 2017 fue de 64.3 TWh, de los cuales el sector de servicios representó el 37% .
 - El consumo de electricidad en edificios no residenciales en México en 2017 fue de 28.5 TWh, lo que representa el 44% del consumo total de electricidad en el sector de servicios .
 - El consumo de electricidad en edificios no residenciales en México se distribuye de la siguiente manera: 38% en iluminación, 33% en aire acondicionado, 18% en equipos de oficina y 11% en otros usos .
+
+
+//////////////////////////////////////
+
+@Rincon2019 examinó la neutralidad térmica y los rangos de confort en Pachuca, Hidalgo. Este estudio se centró en variables controladas, como la temperatura del aire seco, la humedad relativa y la velocidad del viento. Los resultados proporcionaron datos cruciales sobre las preferencias térmicas y los rangos de confort en esta región.
+
+@Cetz2018 llevó a cabo un extenso estudio en México, con una muestra significativa de 255 participantes. Sus mediciones incluyeron parámetros ambientales como la temperatura del aire, la temperatura radiante media y la velocidad del viento. Este estudio destacó las temperaturas preferidas y aceptables en aulas con ventilación natural y aire acondicionado.
+
+@MayTzuc2023 se enfocó en Campeche, México, explorando las variables de adaptación en el contexto del modelo de confort adaptativo. Aunque el número de participantes no se especifica, el estudio abordó el consumo de energía en relación con el confort térmico.
+
+@Oropeza2017 investigó los límites de la temperatura del aire interior para la refrigeración pasiva, así como la comodidad máxima con métodos pasivos. Este estudio, centrado en México, abordó la relación entre la temperatura, la sensación de incomodidad y la minimización del consumo energético.
+
+@Rincon2020 se centró en Ensenada, Baja California, analizando variables ambientales simultáneamente con la aplicación de cuestionarios. El estudio incluyó la temperatura del aire seco, la humedad relativa y la velocidad del viento, proporcionando una comprensión detallada del confort térmico en esta región.
+
+@Becerra2016 llevó a cabo un estudio a gran escala con aproximadamente 1800 participantes en México. Este abordó diversas variables, como la temperatura del aire, la temperatura de globo negro, la velocidad del viento y la humedad relativa. Los resultados contribuyeron a comprender las condiciones térmicas en diferentes tipologías de viviendas.
+
+@LópezPérez2019 se enfocó en Tuxtla Gutiérrez, Chiapas, analizando la percepción de confort térmico de los ocupantes en modo de aire acondicionado y ventilación natural. Este estudio incluyó mediciones de temperatura del aire, temperatura del globo, humedad relativa y velocidad del aire.
+
+@Zepeda2022 El estudio de confort térmico en la meseta central mexicana realizado por expertos, como se describe en ASHRAE 55, abordó las seis variables esenciales para el cálculo del estándar: temperatura del aire, temperatura radiante, velocidad del aire, humedad relativa, tasa metabólica y aislamiento térmico de la ropa.
+
+
+
+***Variables fisiológicas***
+
+**Estimation of Thermal Sensation Based on Wrist Skin Temperatures**
+
+Toman mediciones de la temperatura de la piel en 4 puntos (parte superior de la muñeca, arteria radial, arteria ulnar y punta del dedo índice). Por cuestiones de ergonomía y practicidad en nuestro caso descartaremos la temperatura en la punta del dedo índice. Tras la comparación de relación entre las temperaturas medidas y encuestas de sensación térmica, obtuvieron que al combinar las 3 mediciones de la muñeca se obtenían mejores resultados con una mayor correlación pearson (0.81) respecto a los votos de sensación térmica. Sin embargo, no es una diferencia tan grande respecto a las correlaciones de los puntos individuales. Los resultados de las mediciones en la parte superior de la muñeca, como en la arteria radial son iguales (0.76). Así que por cuestiones de practicidad es conveniente realizar la medición en la parte superior de la muñeca. @Sim2016
+
+
+
+**Human physiology for personal thermal comfort-based HVAC control – A review** 
+
+Existen diferentes variables que pueden servir como indicadores de confort térmico. Las variables que hemos considerado utilizar (temperatura en la parte superior de la muñeca y frecuencia cardiaca) parecen ser buenos indicadores según estudios previos, sobre todo el análisis de su variabilidad. La medición de la temperatura de la piel es muy comúnmente utilizada por su facilidad de ser capturada y porque puede ser de mucha utilidad. Indicadores como la sudoración quizás no resulten tan favorables, además de la dificultad que implica hacer la medición. @Bogatu2023
+
+**Thermal discomfort in the workplace: measurement through the combined use of wearable sensors and machine learning algorithms** 
+
+Este trabajo se enfoca en monitorear señales fisiológicas como el electrocardiograma, el electroencefalograma y la actividad electrodérmica, para evaluar el confort térmico en distintas condiciones. Utilizaron sensores portátiles (Empatica E4 e Interaxon MUSE). Implementaron algoritmos de machine learning para analizar los resultados y hacer modelos de predicción de confort térmico. Los resultados indican un aumento en las densidades de espectro de potencia (PSD) en las bandas alfa y theta. Por el contrario, en disconfort existe una disminución en las ondas beta y gamma. @Mansi2022
+
+
+**Personal thermal comfort models with wearable sensors**
+
+En este trabajo midieron diferentes variables en un ambiente controlado, tales como: temperatura del aire, humedad relativa, velocidad del aire, temperatura en la superficie del asiento, frecuencia cardiaca, temperatura de la piel (en el tobillo y en la muñeca), temperatura del aire cercana al tobillo. Encontraron que la temperatura de la piel medida en el tobillo es más predictiva que la medida en la muñeca. Incentivaron económicamente a los participantes para hacer más largo el experimento y responder más encuestas. @Liu2019
+
+**Random forest based thermal comfort prediction from gender-speciﬁc physiological parameters using wearable sensing technology**
+
+Realizaron un experimento en 20 participantes, 10 hombres y 10 mujeres durantes dos meses realizando encuestas de confort térmico y midiendo las siguientes variables: temperatura del aire, humedad relativa, velocidad del aire, temperatura de globo, temperatura de la piel, conductancia de la piel, frecuencia cardiaca, saturación de oxígeno en la sangre y presión arterial. La medición de la temperatura de la piel la llevan a cabo en la parte posterior de la mano por el fácil acceso a las arterias radial y ulnar. Al mismo tiempo las mediciones las llevaron a cabo en la mano no dominante. @Chaudhuri2018
+
+**Study of data-driven thermal sensation prediction model as a function of local body skin temperatures in a built environment**
+
+Este estudio encontró que medir la temperatura de la piel en varios puntos (frente, brazo, cuello, parte superior de la muñeca, parte inferior de la muñeca, espalda) y aplicar algoritmos de árbol de decisiones para relacionar las temperaturas brinda mejores resultados. El mejor resultado se obtuvo de la combinación de la temperatura de la piel en la cintura, la temperatura de la piel en el brazo y la tasa de cambio de la temperatura de la piel de la parte interior de la muñeca. @Choi2017
+
+
+**A novel theoretical model for predicting the individuals' thermal sensations based on air temperature and biomarkers measured by wearable devices**
+
+Proponen un modelo matemático que utiliza la temperatura de la piel, la frecuencia cardiaca y la temperatura del aire para predecir las sensaciones térmicas individuales. Dicho modelo se basa en la teoría fisiológica de que la percepción de la temperatura corporal está influenciada por la temperatura del aire y la temperatura de la piel que a su vez está influenciada por la tasa metabólica y la circulación de la sangre. @Omidvar2023
+
+
+**Prediction of individual thermal comfort based on ensemble transfer learning method using wearable and environmental sensors**
+
+
+Destacan que el modelo híbrido CNN-SVM demostró un impresionante rendimiento con una precisión y puntuación F1 del 95% para el sujeto B. Además, aplicaron con éxito un método de transferencia de aprendizaje para predecir la comodidad térmica de los sujetos A y C, superando al modelo CNN-SVM en términos de rendimiento. @Park2022
+
+
+**Machine learning driven personal comfort prediction by wearable sensing of pulse rate and skin temperature**
+
+
+Este artículo presenta un método mejorado de predicción del índice de estado térmico (TSI) personal, llamado método ePTS, para predecir el confort térmico de los ocupantes de edificios. El método utiliza la temperatura de la piel de la mano, la frecuencia cardíaca (pulso) y la temperatura ambiente para predecir el TSI. Utilizan la plataforma e-Health sensor. @Chaudhuri2020
+
+**Towards wearable thermal comfort assessment framework by analysis of heart rate variability**
+
+
+Este artículo propone un nuevo enfoque para evaluar el confort térmico en tiempo real utilizando la variabilidad de la frecuencia cardíaca. Se demuestra que al combinar diferentes características de la frecuencia cardíaca, se puede predecir de manera precisa el confort térmico personal. @Wang2022
