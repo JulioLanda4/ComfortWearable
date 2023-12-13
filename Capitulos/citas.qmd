@@ -118,3 +118,74 @@ Este artículo presenta un método mejorado de predicción del índice de estado
 
 
 Este artículo propone un nuevo enfoque para evaluar el confort térmico en tiempo real utilizando la variabilidad de la frecuencia cardíaca. Se demuestra que al combinar diferentes características de la frecuencia cardíaca, se puede predecir de manera precisa el confort térmico personal. @Wang2022
+
+
+
+
+
+///////////////////////////////////////////////////////////
+
+
+
+**Field studies on human thermal comfort — An overview**
+
+Este trabajo aborda estudios sobre el confort térmico en diversos climas, utilizan la división de climas de Köppen-Geiger. Destaca la diferencia entre edificios con aire acondicionado y edificios naturales en términos de zonas de confort. Mencionan que más del 20% de los ocupantes se sienten incómodos en ambientes con ventilación natural, a pesar de cumplir con estándares de comodidad. También resalta el uso de la running mean temperature como indicador para el confort térmico. @Mishra2013
+
+
+
+
+> 
+
+
+> ***Wearables en el confort térmico***
+
+
+**Learning occupants workplace interactions from wearable and stationary ambient sensing systems**
+
+Experimento en el que se monitorizaron 231 participantes durante tres días seguidos en un entorno de oficina (controlado). Se midieron variables como sonido, CO2, intensidad lumínica, temperatura del aire, humedad relativa y presión atmosférica. Los resultados obtenidos muestran que la tecnología de detección ambiental puede ser una herramienta valiosa para mejorar la eficiencia energética de los edificios y mejorar la comodidad de los ocupantes. @Ghahramani2018
+
+**Design and Calibration of Low Cost Sensor Node for Thermal Comfort Estimation**
+
+
+En este estudio se implementaron unos dispositivos de bajo costo que permitieron la medición de la calidad del aire y confort térmico en edificaciones. Emplearon los índices PMV y PPD para evaluar la percepción de confort. Midieron con cada nodo sensor la temperatura del aire, la humedad relativa, la velocidad del aire, y la temperatura radiante media, comparando los resultados de las mediciones con un dispositivo Testo 480. Los resultados obtenidos muestran que es posible determinar el confort térmico midiendo la temperatura y la humedad. @Garces2021
+
+**Wireless, AI-enabled wearable thermal comfort sensor for energy-efficient, human-in-the-loop control of indoor temperature** 
+
+Mencionan que el uso de 3 sensores de temperatura brinda una mejor precisión que utilizar tan solo 1. Esto lo deciden basándose en el artículo anterior, más no mencionan que ellos lo hayan comprobado. Este artículo me es útil porque utilizan termistores montados sobre una banda elástica y maleable, brindan fotografías de las mismas y un pequeño diagrama de su funcionamiento. Esto puede ser útil para la colocación del termistor a utilizar en el dispositivo. @Cho2023
+
+**Project Coolbit: can your watch predict heat stress and thermal comfort sensation?**
+
+Utilizan un wearable (fitbit) y hacen experimentación tanto en una cámara controlada, como en un ambiente exterior no controlado. Encontraron que la temperatura corporal puede ser predecida utilizando la frecuencia cardíaca, la temperatura de la piel y la temperatura del aire en la muñeca. @Nazarian2021
+
+**Personal comfort models based on a 6-month experiment using environmental parameters and data from wearables**
+
+En este estudio implementaron el uso de un reloj fitbit con sensores Ibutton y usaron la aplicación Cozie para realizar encuestas de confort térmico realizaron demuestran como un experimento muy prolongado que involucre encuestas de confort térmico puede volverse tedioso y pesado para los usuarios. Implementaron un método que ellos llamaron micro-EMA para recopilar datos durante periodos prolongados de tiempo. @Tartarini2022
+
+**Long-Term Thermal Comfort Monitoring via Wearable Sensing Techniques: Correlation between Environmental Metrics and Subjective Perception**
+
+El artículo presenta una nueva metodología para investigar la correlación entre el Voto de Sensación Térmica (TSV) diario de los individuos y la exposición ambiental. El objetivo es desarrollar modelos de confort personalizados maximizando el bienestar de los ocupantes y minimizando el consumo de energía.
+
+Estudio a largo plazo en el que capacitaron a los usuarios para usar los sensores iButton por sí mismos, facilitando la implementación de las encuestas de confort térmico y el estudio en sí. @Vero2023
+
+**Monitoring and Predicting Occupant's Sleep Quality by Using Wearable Device OURA Ring and Smart Building Sensors Data (Living Laboratory Case Study)**
+
+
+Este artículo presenta un proyecto que almacena datos de gasto energético en una base de datos. Se apoyaron del dispositivo OURA Ring para monitorear el sueño de los usuarios y se desarrolló un modelo de red neuronal para mejorar la calidad del sueño. En conjunto, los datos recopilados y el modelo ofrecen buenos resultados para evaluar y mejorar la calidad del sueño de los usuarios. @Malakhatka2021
+
+**Wearable Sweat Rate Sensors for Human Thermal Comfort Monitoring**
+
+
+Desarrollaron un dispositivo wearable para medir la tasa de sudor de la piel a través de una cámara de humedad y sensores de humedad. Mencionan que el estado térmico humano puede ser medido a través del sudor. @Sim2018
+
+
+**Alert-based wearable sensing system for individualized thermal preference prediction**
+
+Desarrollaron una base de datos y una interfaz para ver los datos medidos en tiempo real. planean implementar un control de HVAC a través de su dispositivo de manera automática. El estudio se realizó solo en dos personas y desarrollaron modelos de confort térmico personalizados. Midieron variables como: la temperatura del aire, la humedad relativa, el nivel de luz, la frecuencia cardiaca, la conductancia eléctrica de la piel, la temperatura de la piel y la actividad basada en el movimiento. @Feng2023
+
+**Evaluating the comfort of thermally dynamic wearable devices**
+
+ El dispositivo aplica ondas de enfriamiento o calentamiento en la muñeca y ha demostrado un efecto correctivo de hasta 2.5 °C en 3 minutos. Usan el wearable para ayudar a mejorar el confort térmico utilizando ondas de calor o frío para estimular los receptores de temperatura de la piel. @Wang2020
+
+ **Sensitivity study for the PMV thermal comfort model and the use of wearable devices biometric data for metabolic rate estimation**
+
+Determinaron que la tasa metabólica y la ropa tienen un gran impacto en el modelo PMV, pero son difíciles de medir, por lo que con el uso de un Fitbit estimaron la tasa metabólica a través del acelerómetro del dispositivo. @Hasan2016
