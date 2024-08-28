@@ -1,0 +1,3 @@
+# Antecedentes
+
+-- Aquí van todos los antecedentes de confort térmico, ya están en el archivo estado.qmd --

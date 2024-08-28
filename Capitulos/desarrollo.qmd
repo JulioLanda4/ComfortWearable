@@ -1,19 +1,25 @@
-# Desarrollo del dispositivo 
+# Desarrollo y construcción
 
-## Programación de encuestas 
+## Metodología
+1. **Descripción general del dispositivo:**
 
-## Programación de sensores 
 
-## Implementación de la plataforma IoT
+El dispositivo presentado en esta tesis es un prototipo de reloj inteligente diseñado específicamente para la investigación en el ámbito de confort térmico. Este dispositivo permite la recopilación de datos fisiológicos, tales como, la frecuencia cardíaca y la temperatura de la piel, variables las cuales se ha discutido en el capitulo anterior su posible relación con el confort térmico. Ademas, este dispositivo realiza encuestas periódicas simplificadas de confort térmico mediante una interfaz de usuario intuitiva que permita contestar la encuesta de forma rápida y sencilla. La recopilación de estos datos se lleva a cabo en la plataforma de IoT llamada ThingsBoard, permitiendo la creación de una base de datos de confort térmico en un bioclima cálido semihumedo [@infonavit2024regiones] en Temixco, Morelos que permitirá en un futuro hacer estudios para el entendimiento del confort térmico y el desarrollo de modelos de confort para este tipo de bioclima, así como modelos de confort personalizados.
 
-## Armado del primer prototipo de wearable
+2. **Selección de componentes y diseño:** 
 
-## Campaña de pruebas del primer prototipo 
+***Revisar reporte de elección de componentes***
 
-Se requiere una referencia para probar los sensores
-Se prueban cosas como duración de la bateria, ergonomia
-Si es que se programaron alarmas. 
+## Construcción del dispositivo
+Detallar cuales son los pasos para construir el dispositivo, tips, errores comunes.
 
-Pruebas en un ambiente real.
+## Programación de la interfaz y encuestas
 
-Aquí pueden agregarse las conclusiones. 
+1. Desarrollo del firmware: describe el desarrollo de la interfaz
+2. Implementación de la encuesta: Explica detalladamente la encuesta y porque se eligieron esos preguntas
+
+## Etapa de calibración
+1. Calibración de los sensores 
+
+## Etapa de conexión IoT
+1. Integración con la plataforma

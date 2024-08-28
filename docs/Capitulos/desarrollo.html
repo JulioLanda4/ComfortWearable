@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Desarrollo de un Dispositivo Wearable para la Medición del Confort Térmico en Edificaciones - 4&nbsp; Desarrollo del dispositivo</title>
+<title>Desarrollo de un Dispositivo Wearable para la Medición del Confort Térmico en Edificaciones - 3&nbsp; Desarrollo y construcción</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -31,7 +50,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../Capitulos/resultados.html" rel="next">
-<link href="../Capitulos/metodologia.html" rel="prev">
+<link href="../Capitulos/confort_termico.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
@@ -78,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Capitulos/desarrollo.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Desarrollo del dispositivo</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Capitulos/desarrollo.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Desarrollo y construcción</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -117,26 +136,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Capitulos/estado.html" class="sidebar-item-text sidebar-link">
+  <a href="../Capitulos/confort_termico.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Antecedentes</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Capitulos/metodologia.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Metodología</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../Capitulos/desarrollo.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Desarrollo del dispositivo</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Desarrollo y construcción</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Capitulos/resultados.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Conclusiones</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conclusiones</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -155,11 +168,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#programación-de-encuestas" id="toc-programación-de-encuestas" class="nav-link active" data-scroll-target="#programación-de-encuestas"><span class="header-section-number">4.1</span> Programación de encuestas</a></li>
-  <li><a href="#programación-de-sensores" id="toc-programación-de-sensores" class="nav-link" data-scroll-target="#programación-de-sensores"><span class="header-section-number">4.2</span> Programación de sensores</a></li>
-  <li><a href="#implementación-de-la-plataforma-iot" id="toc-implementación-de-la-plataforma-iot" class="nav-link" data-scroll-target="#implementación-de-la-plataforma-iot"><span class="header-section-number">4.3</span> Implementación de la plataforma IoT</a></li>
-  <li><a href="#armado-del-primer-prototipo-de-wearable" id="toc-armado-del-primer-prototipo-de-wearable" class="nav-link" data-scroll-target="#armado-del-primer-prototipo-de-wearable"><span class="header-section-number">4.4</span> Armado del primer prototipo de wearable</a></li>
-  <li><a href="#campaña-de-pruebas-del-primer-prototipo" id="toc-campaña-de-pruebas-del-primer-prototipo" class="nav-link" data-scroll-target="#campaña-de-pruebas-del-primer-prototipo"><span class="header-section-number">4.5</span> Campaña de pruebas del primer prototipo</a></li>
+  <li><a href="#metodología" id="toc-metodología" class="nav-link active" data-scroll-target="#metodología"><span class="header-section-number">3.1</span> Metodología</a></li>
+  <li><a href="#construcción-del-dispositivo" id="toc-construcción-del-dispositivo" class="nav-link" data-scroll-target="#construcción-del-dispositivo"><span class="header-section-number">3.2</span> Construcción del dispositivo</a></li>
+  <li><a href="#programación-de-la-interfaz-y-encuestas" id="toc-programación-de-la-interfaz-y-encuestas" class="nav-link" data-scroll-target="#programación-de-la-interfaz-y-encuestas"><span class="header-section-number">3.3</span> Programación de la interfaz y encuestas</a></li>
+  <li><a href="#etapa-de-calibración" id="toc-etapa-de-calibración" class="nav-link" data-scroll-target="#etapa-de-calibración"><span class="header-section-number">3.4</span> Etapa de calibración</a></li>
+  <li><a href="#etapa-de-conexión-iot" id="toc-etapa-de-conexión-iot" class="nav-link" data-scroll-target="#etapa-de-conexión-iot"><span class="header-section-number">3.5</span> Etapa de conexión IoT</a></li>
   </ul>
 </nav>
     </div>
@@ -168,7 +181,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Desarrollo del dispositivo</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Desarrollo y construcción</span></h1>
 </div>
 
 
@@ -183,37 +196,58 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="programación-de-encuestas" class="level2" data-number="4.1">
-<h2 data-number="4.1" data-anchor-id="programación-de-encuestas"><span class="header-section-number">4.1</span> Programación de encuestas</h2>
+<section id="metodología" class="level2" data-number="3.1">
+<h2 data-number="3.1" data-anchor-id="metodología"><span class="header-section-number">3.1</span> Metodología</h2>
+<ol type="1">
+<li><strong>Descripción general del dispositivo:</strong></li>
+</ol>
+<p>El dispositivo presentado en esta tesis es un prototipo de reloj inteligente diseñado específicamente para la investigación en el ámbito de confort térmico. Este dispositivo permite la recopilación de datos fisiológicos, tales como, la frecuencia cardíaca y la temperatura de la piel, variables las cuales se ha discutido en el capitulo anterior su posible relación con el confort térmico. Ademas, este dispositivo realiza encuestas periódicas simplificadas de confort térmico mediante una interfaz de usuario intuitiva que permita contestar la encuesta de forma rápida y sencilla. La recopilación de estos datos se lleva a cabo en la plataforma de IoT llamada ThingsBoard, permitiendo la creación de una base de datos de confort térmico en un bioclima cálido semihumedo <span class="citation" data-cites="infonavit2024regiones">(<a href="references.html#ref-infonavit2024regiones" role="doc-biblioref">Instituto del Fondo Nacional de la Vivienda para los Trabajadores (Infonavit) 2024</a>)</span> en Temixco, Morelos que permitirá en un futuro hacer estudios para el entendimiento del confort térmico y el desarrollo de modelos de confort para este tipo de bioclima, así como modelos de confort personalizados.</p>
+<ol start="2" type="1">
+<li><strong>Selección de componentes y diseño:</strong></li>
+</ol>
+<p><strong><em>Revisar reporte de elección de componentes</em></strong></p>
 </section>
-<section id="programación-de-sensores" class="level2" data-number="4.2">
-<h2 data-number="4.2" data-anchor-id="programación-de-sensores"><span class="header-section-number">4.2</span> Programación de sensores</h2>
+<section id="construcción-del-dispositivo" class="level2" data-number="3.2">
+<h2 data-number="3.2" data-anchor-id="construcción-del-dispositivo"><span class="header-section-number">3.2</span> Construcción del dispositivo</h2>
+<p>Detallar cuales son los pasos para construir el dispositivo, tips, errores comunes.</p>
 </section>
-<section id="implementación-de-la-plataforma-iot" class="level2" data-number="4.3">
-<h2 data-number="4.3" data-anchor-id="implementación-de-la-plataforma-iot"><span class="header-section-number">4.3</span> Implementación de la plataforma IoT</h2>
+<section id="programación-de-la-interfaz-y-encuestas" class="level2" data-number="3.3">
+<h2 data-number="3.3" data-anchor-id="programación-de-la-interfaz-y-encuestas"><span class="header-section-number">3.3</span> Programación de la interfaz y encuestas</h2>
+<ol type="1">
+<li>Desarrollo del firmware: describe el desarrollo de la interfaz</li>
+<li>Implementación de la encuesta: Explica detalladamente la encuesta y porque se eligieron esos preguntas</li>
+</ol>
 </section>
-<section id="armado-del-primer-prototipo-de-wearable" class="level2" data-number="4.4">
-<h2 data-number="4.4" data-anchor-id="armado-del-primer-prototipo-de-wearable"><span class="header-section-number">4.4</span> Armado del primer prototipo de wearable</h2>
+<section id="etapa-de-calibración" class="level2" data-number="3.4">
+<h2 data-number="3.4" data-anchor-id="etapa-de-calibración"><span class="header-section-number">3.4</span> Etapa de calibración</h2>
+<ol type="1">
+<li>Calibración de los sensores</li>
+</ol>
 </section>
-<section id="campaña-de-pruebas-del-primer-prototipo" class="level2" data-number="4.5">
-<h2 data-number="4.5" data-anchor-id="campaña-de-pruebas-del-primer-prototipo"><span class="header-section-number">4.5</span> Campaña de pruebas del primer prototipo</h2>
-<p>Se requiere una referencia para probar los sensores Se prueban cosas como duración de la bateria, ergonomia Si es que se programaron alarmas.</p>
-<p>Pruebas en un ambiente real.</p>
-<p>Aquí pueden agregarse las conclusiones.</p>
+<section id="etapa-de-conexión-iot" class="level2" data-number="3.5">
+<h2 data-number="3.5" data-anchor-id="etapa-de-conexión-iot"><span class="header-section-number">3.5</span> Etapa de conexión IoT</h2>
+<ol type="1">
+<li>Integración con la plataforma</li>
+</ol>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-infonavit2024regiones" class="csl-entry" role="listitem">
+Instituto del Fondo Nacional de la Vivienda para los Trabajadores (Infonavit). 2024. <span>«Listado de Regiones Bioclimáticas»</span>. <a href="https://portalmx.infonavit.org.mx/wps/wcm/connect/005dcf74-d918-41aa-acfa-927e7b33d98a/12.%2BAnexo%252B1.%252BListado%252Bde%252Bregiones%252Bbioclim%25C3%25A1ticas.pdf?MOD=AJPERES&amp;CONVERT_TO=url&amp;CACHEID=ROOTWORKSPACE-005dcf74-d918-41aa-acfa-927e7b33d98a-mmCFC0">https://portalmx.infonavit.org.mx/wps/wcm/connect/005dcf74-d918-41aa-acfa-927e7b33d98a/12.%2BAnexo%252B1.%252BListado%252Bde%252Bregiones%252Bbioclim%25C3%25A1ticas.pdf?MOD=AJPERES&amp;CONVERT_TO=url&amp;CACHEID=ROOTWORKSPACE-005dcf74-d918-41aa-acfa-927e7b33d98a-mmCFC0</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../Capitulos/metodologia.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Metodología</span></span>
+      <a href="../Capitulos/confort_termico.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Antecedentes</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../Capitulos/resultados.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Conclusiones</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conclusiones</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

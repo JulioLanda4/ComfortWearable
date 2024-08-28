@@ -7,7 +7,7 @@ book:
   title: "Desarrollo de un Dispositivo Wearable para la Medición del Confort Térmico en Edificaciones"
   output-file: "tesis."
   author: "Julio César Landa López"
-  date: "10/10/2023"
+  date: "10/10/2024"
   language: "es"
 
   comments:
@@ -17,8 +17,7 @@ book:
   chapters:
     - index.qmd
     - Capitulos/intro.qmd
-    - Capitulos/estado.qmd
-    - Capitulos/metodologia.qmd
+    - Capitulos/confort_termico.qmd
     - Capitulos/desarrollo.qmd
     - Capitulos/resultados.qmd
     - Capitulos/references.qmd
