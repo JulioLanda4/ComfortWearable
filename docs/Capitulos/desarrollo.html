@@ -206,8 +206,371 @@ div.csl-indent {
 <ol start="2" type="1">
 <li><strong>Selección de componentes</strong></li>
 </ol>
-<p>La selección de los componentes electrónicos del dispositivo fue un proceso fundamental para asegurar su funcionalidad y precisión en la recopilación de datos relacionados con el confort térmico. En esta sección, se describen los principales componentes utilizados, junto con la justificación de su elección, basados en criterios como la compatibilidad, el consumo de energía, la precisión de los sensores, y la capacidad de procesamiento del microcontrolador.</p>
-<p>Para el monitoreo de las variables fisiológicas, se seleccionaron sensores específicos que ofrecen una alta precisión y estabilidad en las mediciones. El microcontrolador elegido proporciona la capacidad de procesamiento necesaria para manejar los datos en tiempo real y gestionar las interacciones con la interfaz de usuario. Además, se optó por una pantalla táctil que facilita la interacción directa con el usuario, permitiendo la realización de encuestas de manera rápida y eficiente. Cada uno de estos componentes se detallará a continuación, explicando su función dentro del sistema y los criterios que guiaron su selección.</p>
+<p>Para asegurar el funcionamiento preciso y adecuado del dispositivo fue fundamental la correcta elección de todos los componentes. A continuación se describen los principales componentes utilizados, sus características y justificación para el proyecto, basada en criterios como la compatibilidad, consumo de energía, precisión y capacidad de procesamiento en el caso del microcontrolador.</p>
+<p>Los componentes principales descritos son los siguientes:</p>
+<ul>
+<li>Placa de desarrollo</li>
+<li>Pantalla</li>
+<li>Batería</li>
+<li>Sensores</li>
+</ul>
+<p>Escoger la tarjeta o placa de desarrollo fue una de las partes cruciales en el desarrollo del proyecto, se necesitaba una placa de tamaño reducido que cumpliera con las características requeridas: conexión Wifi, velocidad de procesamiento, memoria, comunicación I2C…</p>
+<p>Se buscaron placas con microcontroladores que fueran reducidas de tamaño pero con conectividad inalámbrica. Estas características nos las ofrecen microcontroladores como los de Arduino, ESP y Raspberry. La <a href="#tbl-placas">Tabla&nbsp;<span>3.1</span></a> muestra una comparativa básica de algunas placas con estos microcontroladores.</p>
+<p>Es importante mencionar que dentro de esta búsqueda se encontraron algunas placas que ya tenían integrada una pantalla LCD, lo cual podría significar una ventaja, sin embargo el microcontrolador RP2040 no cuenta con conectividad Wifi o Bluetooth, y la tarjeta LILYGO cuenta con una pantalla que no es táctil, lo que representa una desventaja para la realización de las encuestas de confort.</p>
+<div id="tbl-placas">
+<table class="table">
+<caption>Tabla&nbsp;3.1: Placas de desarrollo</caption>
+<colgroup>
+<col style="width: 27%">
+<col style="width: 5%">
+<col style="width: 10%">
+<col style="width: 30%">
+<col style="width: 12%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Placa de desarrollo</th>
+<th>Wifi</th>
+<th>Bluetooth</th>
+<th>Comunicación</th>
+<th>Cable</th>
+<th>Pines</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Arduino Nano 33 IoT</td>
+<td>si</td>
+<td>4.2</td>
+<td>SPI, I2C, I2S, UART</td>
+<td>Micro USB</td>
+<td>14 d, 6 pwm</td>
+</tr>
+<tr class="even">
+<td>Arduino nano 33 BLE sense</td>
+<td>no</td>
+<td>5</td>
+<td>UART, SPI, I2C</td>
+<td>Micro USB</td>
+<td>14 d-pwm</td>
+</tr>
+<tr class="odd">
+<td>Arduino nano esp32</td>
+<td>si</td>
+<td>LE</td>
+<td>UART, I2C, SPI, I2S, CAN(TWAI)</td>
+<td>USB C</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Arduino nano RP2040 connect</td>
+<td>si</td>
+<td>si</td>
+<td>STI, I2C, I2S, PIO, UART</td>
+<td>USB C</td>
+<td>22 d, 2o pwm</td>
+</tr>
+<tr class="odd">
+<td>Raspberry pi pico W</td>
+<td>si</td>
+<td>5.2</td>
+<td>UART, I2C, SPI</td>
+<td>Micro USB</td>
+<td>26 d, 16 pwm</td>
+</tr>
+<tr class="even">
+<td>ESP32 pico kit</td>
+<td>si</td>
+<td>si</td>
+<td>I2C, I2S, SPI</td>
+<td>Micro USB</td>
+<td>34 gpios</td>
+</tr>
+<tr class="odd">
+<td>Seeed Studio XIAO nRF52840 Sense</td>
+<td>nfc</td>
+<td>5</td>
+<td>1xUART, 1xIIC, 1xSPI, 1xNFC, 1xSWD</td>
+<td>USB C</td>
+<td>11xGPIO(PWM), 6xADC</td>
+</tr>
+<tr class="even">
+<td>Seeed Studio XIAO ESP32C3</td>
+<td>si</td>
+<td>5</td>
+<td>1x UART, 1x IIC, 1x SPI</td>
+<td>USB C</td>
+<td>11x GPIO(PWM), 4x ADC</td>
+</tr>
+<tr class="odd">
+<td>Seeed Studio XIAO ESP32S3</td>
+<td>si</td>
+<td>5</td>
+<td>1x UART, 1x IIC, 1x SPI</td>
+<td>USB C</td>
+<td>11x GPIO(PWM), 9x ADC</td>
+</tr>
+<tr class="even">
+<td>MCU RP2040 con LCD redondo de 1,28 pulgadas</td>
+<td>no</td>
+<td>no</td>
+<td>rp2040</td>
+<td>USB C</td>
+<td>rp2040</td>
+</tr>
+<tr class="odd">
+<td>LILYGO TTGO</td>
+<td>si</td>
+<td>si</td>
+<td>esp32</td>
+<td>USB C</td>
+<td>esp32</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Tras investigar más a detalle las especificaciones de las placas, se elogió la Seeed Studio XIAO ESP32C3. Esta tarjeta se adapta a las necesidades por tener diferentes modos de bajo consumo, conectividad Wifi, tamaño reducido y memoria suficiente. En la <a href="#tbl-esp">Tabla&nbsp;<span>3.2</span></a> se muestran las características de dicha tarjeta.</p>
+<p>También puede ser usada la tarjeta XIAO ESP32S3 que se adapta sin ningún problema al proyecto, la principal diferencia es que esta tiene mayor memoria que la XIAO ESP32C3, sin embargo, su costo es más elevado.</p>
+<div id="tbl-esp">
+<table class="table">
+<caption>Tabla&nbsp;3.2: Características ESP32S3</caption>
+<colgroup>
+<col style="width: 60%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Seeed Studio XIAO ESP32S3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Processor</td>
+<td>ESP32-S3R8<br>Xtensa LX7 dual-core<br>32-bit processor running<br>up to 240 MHz</td>
+</tr>
+<tr class="even">
+<td>Wireless</td>
+<td>Complete 2.4GHz WiFi subsystem<br>BLE: Bluetooth 5.0, Bluetooth mesh</td>
+</tr>
+<tr class="odd">
+<td>On-chip Memory</td>
+<td>8M PSRAM &amp; 8MB Flash</td>
+</tr>
+<tr class="even">
+<td>Interface</td>
+<td>1x UART, 1x IIC, 1x IIS, 1x SPI,11x GPIO(PWM), 9x ADC, 1x User LED, 1x Charge LED<br>1x Reset button, 1x Boot button</td>
+</tr>
+<tr class="odd">
+<td>Dimensions</td>
+<td>21 x 17.5mm</td>
+</tr>
+<tr class="even">
+<td>Power</td>
+<td>Input voltage (Type-C): 5V<br>Input voltage (BAT): 4.2V</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Circuit operating Voltage (ready to operate):<br>- Type-C: 5V@19mA <br>- BAT: 3.8V@22mA</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Charging battery current: 100mA</td>
+</tr>
+<tr class="odd">
+<td>Low Power Consumption Model <br> (Supply Power: 3.8V)</td>
+<td>Modem-sleep Model: ~ 25 mA <br> Light-sleep Model: ~ 2mA <br> Deep Sleep Model: ~ 14 μA</td>
+</tr>
+<tr class="even">
+<td>WiFi Enabled Power Consumption</td>
+<td>Active Model: ~ 100 mA</td>
+</tr>
+<tr class="odd">
+<td>BLE Enabled Power Consumption</td>
+<td>Active Model: ~ 85 mA</td>
+</tr>
+<tr class="even">
+<td>Working Temperature</td>
+<td>-40°C ~ 65°C</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><!-- Actualizar tabla a ESP32C3 --></p>
+<p>Para la elección de la pantalla se realizó una búsqueda priorizando que esta fuera de tamaño reducido y adaptable a la placa de desarrollo seleccionada.</p>
+<p>En la <a href="#tbl-screen">Tabla&nbsp;<span>3.3</span></a> se muestran las características básicas de las pantallas encontradas.</p>
+<div id="tbl-screen">
+<table class="table">
+<caption>Tabla&nbsp;3.3: Pantallas</caption>
+<colgroup>
+<col style="width: 55%">
+<col style="width: 16%">
+<col style="width: 15%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pantalla</th>
+<th>touchscreen</th>
+<th>tecnología</th>
+<th>dimensión</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Seeed Studio Round Display for XIAO</td>
+<td>si</td>
+<td>TFT LCD</td>
+<td>1.28’’</td>
+</tr>
+<tr class="even">
+<td>Waveshare Módulo de visualización</td>
+<td>no</td>
+<td>OLED RGB</td>
+<td>1.5’’</td>
+</tr>
+<tr class="odd">
+<td>GC9A01 Pantalla</td>
+<td>no</td>
+<td>TFT LCD</td>
+<td>1.28’’</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>La pantalla elegida fue la Seeed Studio Round Display for XIAO. La marca Seeed Studio ha desarrollado todo un ecosistema de hardware pensando en dispositivos portátiles y de tipo wearables. Su pantalla se adapta perfectamente a la placa de desarrollo, ademas de tener un display redondo y táctil, lo cual se ajusta bastante bien a lo necesitado para el proyecto.</p>
+<p>El uso de baterías de Ion de Polímero de Litio (LiPo) es muy común en los dispositivos portátiles, esto debido a su reducido tamaño, peso y facilidad de carga. La capacidad minima de carga requerida para la placa de desarrollo en conjunto con la pantalla es de 500 mAh (cita del datasheet de la pantalla). Una batería más pequeña si bien sería un beneficio por su tamaño, implicaría una duración muy limitada. En la <a href="#tbl-bat">Tabla&nbsp;<span>3.4</span></a> se muestran las características de 7 baterías de diferente capacidad que tiene dimensiones reducidas y podrían adaptarse al dispositivo.</p>
+<div id="tbl-bat">
+<table class="table">
+<caption>Tabla&nbsp;3.4: Baterías</caption>
+<thead>
+<tr class="header">
+<th>tipo</th>
+<th>voltaje</th>
+<th>capacidad</th>
+<th>potencia</th>
+<th>dimensiones</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>LiPo</td>
+<td>3.7</td>
+<td>60 mAh</td>
+<td>0.22 Wh</td>
+<td>22x11.5x4 mm</td>
+</tr>
+<tr class="even">
+<td>LiPo</td>
+<td>3.7</td>
+<td>130 mAh</td>
+<td>0.48 Wh</td>
+<td>30x15x3.5 mm</td>
+</tr>
+<tr class="odd">
+<td>LiPo</td>
+<td>3.7</td>
+<td>250 mAh</td>
+<td>0.93 Wh</td>
+<td>20x30x5 mm</td>
+</tr>
+<tr class="even">
+<td>LiPo</td>
+<td>3.7</td>
+<td>400 mAh</td>
+<td>1.48 Wh</td>
+<td>35x20x6 mm</td>
+</tr>
+<tr class="odd">
+<td>LiPo</td>
+<td>3.7</td>
+<td>650 mAh</td>
+<td>2.41 Wh</td>
+<td>40x20x8 mm</td>
+</tr>
+<tr class="even">
+<td>LiPo</td>
+<td>3.7</td>
+<td>1000 mAh</td>
+<td>3.7 Wh</td>
+<td>50x34x5 mm</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Para asegurar un correcto funcionamiento del dispositivo, se eligió una batería con una capacidad de 650 mAh. Esta capacidad de carga no solo cumple con los requisitos mínimos de energía especificados en la hoja de datos del microcontrolador y la pantalla, si no que, da un margen adicional en la duración de la batería. Además de tener un tamaño adecuado para no afectar el diseño del dispositivo.</p>
+<p>Existen 3 tipos diferentes de sensores por su funcionamiento para medir temperatura, estos son:</p>
+<ul>
+<li>Termopares</li>
+<li>Termistores</li>
+<li>Sensores RTD</li>
+</ul>
+<p>Siendo los termistores los más utilizados en aplicaciones de la salud, como por ejemplo medir la temperatura corporal o la temperatura de la piel en algún punto. Un termistor es una resistencia eléctrica que cambia su valor dependiendo de la temperatura a la que esté expuesta, existen termistores tipo PTC que son de respuesta positiva, es decir, aumenta su resistencia cuando hay un aumento en la temperatura, de manera análoga existen los termistores tipo NTC.</p>
+<p>Se realizó una búsqueda de diferentes termistores que pudieran ser útiles. Estos sensores son analógicos, sin embargo existen circuitos integrados que pueden convertir las señales de este sensor en digitales. La <a href="#tbl-temp">Tabla&nbsp;<span>3.5</span></a> muestra algunos de estos sensores con sus características básicas.</p>
+<div id="tbl-temp">
+<table class="table">
+<caption>Tabla&nbsp;3.5: Sensores de temperatura</caption>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 14%">
+<col style="width: 17%">
+<col style="width: 16%">
+<col style="width: 10%">
+<col style="width: 11%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Sensor</th>
+<th>tipo</th>
+<th>rango</th>
+<th>valor</th>
+<th>potencia</th>
+<th>precisión</th>
+<th>resolución</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>temistor NTC MF52AT</td>
+<td>analógico</td>
+<td>-40 C a 120 C</td>
+<td>1k hasta 100k</td>
+<td>0.5 W</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>HiLetgo 2 unidades AHT20</td>
+<td>digital (I2C)</td>
+<td>-40 C a 85 C</td>
+<td></td>
+<td></td>
+<td>0.3 C</td>
+<td>0.01 C</td>
+</tr>
+<tr class="odd">
+<td>HiLetgo SHT31-D</td>
+<td>digital (I2C)</td>
+<td>-40 C a 125 C</td>
+<td></td>
+<td></td>
+<td>0.3 C</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>AHT10</td>
+<td>digital (I2C)</td>
+<td>-40 C a 85 C</td>
+<td></td>
+<td></td>
+<td>0.3 C</td>
+<td>0.01 C</td>
+</tr>
+</tbody>
+</table>
+</div>
 <ol start="3" type="1">
 <li><strong>Diseño del dispositivo</strong></li>
 </ol>
