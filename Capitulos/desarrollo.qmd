@@ -1,10 +1,12 @@
 # Desarrollo y construcción
 
+Texto introductorio del capitulo.
+
 ## Metodología
 1. **Descripción general del dispositivo:**
 
 
-El dispositivo presentado en esta tesis es un prototipo de reloj inteligente diseñado específicamente para la investigación en el ámbito de confort térmico. Este dispositivo permite la recopilación de datos fisiológicos, tales como, la frecuencia cardíaca y la temperatura de la piel, variables las cuales se ha discutido en el capitulo anterior su posible relación con el confort térmico. Ademas, este dispositivo realiza encuestas periódicas simplificadas de confort térmico mediante una interfaz de usuario intuitiva que permita contestar la encuesta de forma rápida y sencilla. La recopilación de estos datos se lleva a cabo en la plataforma de IoT llamada ThingsBoard, permitiendo la creación de una base de datos de confort térmico en un bioclima cálido semihumedo [@infonavit2024regiones] en Temixco, Morelos que permitirá en un futuro hacer estudios para el entendimiento del confort térmico y el desarrollo de modelos de confort para este tipo de bioclima, así como modelos de confort personalizados.
+El dispositivo presentado en esta tesis es un prototipo de reloj inteligente diseñado específicamente para la investigación en el ámbito de confort térmico. Este dispositivo permite la recopilación de datos fisiológicos, tales como, la frecuencia cardíaca y la temperatura de la piel, variables las cuales se ha discutido en el capitulo anterior su relación con el confort térmico. Ademas, este dispositivo realiza encuestas periódicas simplificadas de confort térmico mediante una interfaz de usuario intuitiva que permite contestar la encuesta de forma rápida y sencilla. La recopilación de estos datos se lleva a cabo en la plataforma de IoT llamada ThingsBoard, permitiendo la creación de una base de datos de confort térmico en un bioclima cálido semihumedo [@infonavit2024regiones] en Temixco, Morelos que permitirá en un futuro hacer estudios para el entendimiento del confort térmico y el desarrollo de modelos de confort para este tipo de bioclima, así como modelos de confort personalizados.
 
 2. **Selección de componentes y diseño:** 
 
