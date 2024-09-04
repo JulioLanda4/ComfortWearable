@@ -1,6 +1,8 @@
 # Desarrollo y construcción
 
-Texto introductorio del capitulo.
+
+En esta sección se detalla el proceso de desarrollo y construcción del dispositivo presentado en esta tesis. Se presenta una metodología en donde se aborda una descripción general del dispositivo, la selección y justificación de los componentes a utilizar. Se aborda la etapa de diseño y construcción del dispositivo, el diseño e implementación de las encuestas a través de la interfaz gráfica. Se describe también el proceso de calibración de los sensores utilizados para garantizar precisión y mediciones fiables. Finalmente, se detalla la conexión del dispositivo a una plataforma IoT para el almacenamiento de los datos.
+
 
 ## Metodología
 1. **Descripción general del dispositivo:**
@@ -10,62 +12,62 @@ El dispositivo presentado en esta tesis es un prototipo de reloj inteligente dis
 
 2. **Selección de componentes** 
 
-Para asegurar el funcionamiento preciso y adecuado del dispositivo fue fundamental la correcta elección de todos los componentes. A continuación se describen los principales componentes utilizados, sus características y justificación para el proyecto, basada en criterios como la compatibilidad, consumo de energía, precisión y capacidad de procesamiento en el caso del microcontrolador.
+Para garantizar el funcionamiento preciso y adecuado del dispositivo, es fundamental seleccionar correctamente todos los componentes. A continuación se describen los principales componentes utilizados, junto con sus características y la justificación de su elección en el proyecto. Esta justificación se basa en criterios como compatibilidad, consumo energético, precisión y capacidad de procesamiento en el caso del microcontrolador.
 
-Los componentes principales descritos son los siguientes: 
+Los componentes principales son los siguientes: 
 
 * Placa de desarrollo
 * Pantalla
 * Batería 
 * Sensores
 
-Escoger la tarjeta o placa de desarrollo fue una de las partes cruciales en el desarrollo del proyecto, se necesitaba una placa de tamaño reducido que cumpliera con las características requeridas: conexión Wifi, velocidad de procesamiento, memoria, comunicación I2C...
+**Placa de desarrollo**
 
-Se buscaron placas con microcontroladores que fueran reducidas de tamaño pero con conectividad inalámbrica. Estas características nos las ofrecen microcontroladores como los de Arduino, ESP y Raspberry. La @tbl-placas muestra una comparativa básica de algunas placas con estos microcontroladores. 
+La selección de la tarjeta o placa de desarrollo es una decisión crucial en el desarrollo del proyecto. Se requiere una placa de tamaño reducido que cumpla con características esenciales como conexión Wi-Fi, velocidad de procesamiento, memoria y comunicación I2C. Además, debe tener un bajo consumo energético para garantizar el uso portátil prolongado del dispositivo.
 
-Es importante mencionar que dentro de esta búsqueda se encontraron algunas placas que ya tenían integrada una pantalla LCD, lo cual podría significar una ventaja, sin embargo el microcontrolador RP2040 no cuenta con conectividad Wifi o Bluetooth, y la tarjeta LILYGO cuenta con una pantalla que no es táctil, lo que representa una desventaja para la realización de las encuestas de confort.
+Se buscan placas compactas con conectividad inalámbrica. Opciones con microcontroladores como los de Arduino, ESP y Raspberry ofrecen estas características. En la tabla @tbl-placas se presenta una comparación básica de algunas de estas placas.
+
+Es importante destacar que, durante la búsqueda, se encuentran algunas placas que ya integran una pantalla LCD, lo cual podría representar una ventaja. Sin embargo, el microcontrolador RP2040 no cuenta con conectividad Wi-Fi o Bluetooth, y la tarjeta LILYGO incorpora una pantalla que no es táctil, lo que resulta una desventaja para la realización de las encuestas de confort.
 
 | Placa de desarrollo          | Wifi | Bluetooth | Comunicación                    | Cable       | Pines         |
 |------------------------------|------|-----------|---------------------------------|-------------|---------------|
-| Arduino Nano 33 IoT         | si   | 4.2       | SPI, I2C, I2S, UART            | Micro USB   | 14 d, 6 pwm   |
-| Arduino nano 33 BLE sense   | no   | 5         | UART, SPI, I2C                 | Micro USB   | 14 d-pwm      |
-| Arduino nano esp32          | si   | LE        | UART, I2C, SPI, I2S, CAN(TWAI)  | USB C       |               |
-| Arduino nano RP2040 connect | si   | si        | STI, I2C, I2S, PIO, UART       | USB C       | 22 d, 2o pwm  |
-| Raspberry pi pico W         | si   | 5.2       | UART, I2C, SPI                 | Micro USB   | 26 d, 16 pwm  |
-| ESP32 pico kit              | si   | si        | I2C, I2S, SPI                  | Micro USB   | 34 gpios      |
-| Seeed Studio XIAO nRF52840 Sense | nfc | 5  | 1xUART, 1xIIC, 1xSPI, 1xNFC, 1xSWD | USB C | 11xGPIO(PWM), 6xADC |
-| Seeed Studio XIAO ESP32C3   | si   | 5         | 1x UART, 1x IIC, 1x SPI       | USB C       | 11x GPIO(PWM), 4x ADC |
-| Seeed Studio XIAO ESP32S3   | si   | 5         | 1x UART, 1x IIC, 1x SPI       | USB C       | 11x GPIO(PWM), 9x ADC |
-| MCU RP2040 con LCD redondo de 1,28 pulgadas | no | no | rp2040 | USB C | rp2040 |
-| LILYGO TTGO                | si   | si        | esp32                         | USB C       | esp32         |
+| Arduino Nano 33 IoT         | si   | 4.2       | SPI, I2C, I2S, UART            | Micro USB   | 30 GPIOS, 8 ADC   |
+| Arduino nano 33 BLE sense   | no   | 5         | UART, SPI, I2C                 | Micro USB   | 22 GPIOS, 8 ADC      |
+| Arduino nano esp32          | si   | LE        | UART, I2C, SPI, I2S, CAN(TWAI)  | USB C       |    22 GPIOS, 8 ADC           |
+| Arduino nano RP2040 connect | si   | si        | STI, I2C, I2S, PIO, UART       | USB C       | 30 GPIOS, 8 ADC  |
+| Raspberry pi pico W         | si   | 5.2       | UART, I2C, SPI                 | Micro USB   | 26 GPIOS, 3 ADC  |
+| ESP32 pico kit              | si   | si        | I2C, I2S, SPI                  | Micro USB   | 34 GPIOS      |
+| Seeed Studio XIAO nRF52840 Sense | nfc | 5  | 1xUART, 1xIIC, 1xSPI, 1xNFC, 1xSWD | USB C | 11 GPIOS, 6 ADC |
+| Seeed Studio XIAO ESP32C3   | si   | 5         | 1x UART, 1x IIC, 1x SPI       | USB C       | 11 GPIOS, 4 ADC |
+| Seeed Studio XIAO ESP32S3   | si   | 5         | 1x UART, 1x IIC, 1x SPI       | USB C       | 11 GPIOS, 9 ADC |
+| MCU RP2040 con LCD redondo de 1,28 pulgadas | no | no | rp2040 | USB C | 26 GPIOS, 3 ADC |
+| LILYGO TTGO                | si   | si        | esp32                         | USB C       | 13 GPIOS, 11 ADC         |
 : Placas de desarrollo {#tbl-placas}
 
-Tras investigar más a detalle las especificaciones de las placas, se elogió la Seeed Studio XIAO ESP32C3. Esta tarjeta se adapta a las necesidades por tener diferentes modos de bajo consumo, conectividad Wifi, tamaño reducido y memoria suficiente. En la @tbl-esp se muestran las características de dicha tarjeta.
+Tras analizar en detalle las especificaciones de cada opción, se elige la placa Seeed Studio XIAO ESP32C3. Esta placa cumple con los requisitos del proyecto gracias a sus modos de bajo consumo, conectividad Wi-Fi, tamaño compacto y memoria suficiente. En la tabla @tbl-esp se presentan sus características.
 
-También puede ser usada la tarjeta XIAO ESP32S3 que se adapta sin ningún problema al proyecto, la principal diferencia es que esta tiene mayor memoria que la XIAO ESP32C3, sin embargo, su costo es más elevado.
+También se considera la placa XIAO ESP32S3, que se adapta igualmente al proyecto sin inconvenientes. La principal diferencia es su mayor capacidad de memoria en comparación con la XIAO ESP32C3, aunque su costo es más elevado.
 
-| Parameter                                 | Seeed Studio XIAO ESP32S3 |
+| Parametro                              | Seeed Studio XIAO ESP32C3 |
 |-------------------------------------------|----------------------------|
-| Processor                                 | ESP32-S3R8<br>Xtensa LX7 dual-core<br>32-bit processor running<br>up to 240 MHz                                                                  
-| Wireless                                  | Complete 2.4GHz WiFi subsystem<br>BLE: Bluetooth 5.0, Bluetooth mesh     
-| On-chip Memory                            | 8M PSRAM & 8MB Flash        |
-| Interface                                 | 1x UART, 1x IIC, 1x IIS, 1x SPI,11x GPIO(PWM), 9x ADC, 1x User LED, 1x Charge LED<br>1x Reset button, 1x Boot button                     |
-| Dimensions                                | 21 x 17.5mm                |
-| Power                                     | Input voltage (Type-C): 5V<br>Input voltage (BAT): 4.2V  |
+| Procesador                                 | ESP32-C3 32 bit<br>RISC-V<br>160 MHz                                                                  
+| Conectividad                                  | 2.4GHz WiFi<br>BLE: Bluetooth 5.0, Bluetooth mesh     
+| On-chip Memory                            | 400 KB SRAM & 4MB Flash        |
+| Interfaz                                | 1x UART, 1x IIC, 1x SPI,<br>11x GPIO(PWM), 4x ADC, 1x Reset button, 1x Boot button                     |
+| Dimensiones                               | 21 x 17.8mm                |
+| Características eléctricas                                     | Voltaje de entrada (Typo-C): 5V<br>Voltaje de operación 3.3 V  |
 |                                           | Circuit operating Voltage (ready to operate):<br>- Type-C: 5V@19mA <br>- BAT: 3.8V@22mA           |
-|                                           | Charging battery current: 100mA                      |
-| Low Power Consumption Model <br> (Supply Power: 3.8V)                                         | Modem-sleep Model: ~ 25 mA <br> Light-sleep Model: ~ 2mA <br> Deep Sleep Model: ~ 14 μA  |
-| WiFi Enabled Power Consumption            | Active Model: ~ 100 mA     |
-| BLE Enabled Power Consumption             | Active Model: ~ 85 mA      |
-| Working Temperature                       | -40°C ~ 65°C               |
-: Características ESP32S3 {#tbl-esp} 
-
- <!-- Actualizar tabla a ESP32C3 -->
+|                                           | corriente de carga de bateria: 350mA/100mA                      |
+| Modo de bajo consumo                         | Modo deep-sleep: > 44 µA  |
+| WiFi activado Consumo de energía           | Modo activo: < 75 mA     |
+| Bluetooth activado Consumo de energía             | Modo modem-sleep: < 27 mA      |
+| Temperatura de trabajo                      | -40°C ~ 85°C               |
+: Características ESP32C3 {#tbl-esp} 
 
 
-Para la elección de la pantalla se realizó una búsqueda priorizando que esta fuera de tamaño reducido y adaptable a la placa de desarrollo seleccionada. 
+**Pantalla**
 
- En la @tbl-screen se muestran las características básicas de las pantallas encontradas.
+Para la elección de la pantalla, se realiza una búsqueda priorizando que sea de tamaño reducido y compatible con la placa de desarrollo seleccionada. En la tabla @tbl-screen se presentan las características básicas de las pantallas encontradas.
 
 | Pantalla                                   | touchscreen | tecnología | dimensión |
 |--------------------------------------------|-------------|------------|----------|
@@ -75,11 +77,12 @@ Para la elección de la pantalla se realizó una búsqueda priorizando que esta 
 : Pantallas {#tbl-screen}
 
 
-La pantalla elegida fue la Seeed Studio Round Display for XIAO. La marca Seeed Studio ha desarrollado todo un ecosistema de hardware pensando en dispositivos portátiles y de tipo wearables. Su pantalla se adapta perfectamente a la placa de desarrollo, ademas de tener un display redondo y táctil, lo cual se ajusta bastante bien a lo necesitado para el proyecto.
+La pantalla seleccionada es la Seeed Studio Round Display for XIAO. Seeed Studio ha desarrollado un ecosistema orientado a dispositivos portátiles y wearables, lo que hace que esta pantalla sea perfectamente compatible con la placa de desarrollo. Además, su display redondo y táctil se ajustan de manera adecuada a las necesidades del proyecto.
 
 
+**Batería**
 
-El uso de baterías de Ion de Polímero de Litio (LiPo) es muy común en los dispositivos portátiles, esto debido a su reducido tamaño, peso y facilidad de carga. La capacidad minima de carga requerida para la placa de desarrollo en conjunto con la pantalla es de 500 mAh (cita del datasheet de la pantalla). Una batería más pequeña si bien sería un beneficio por su tamaño, implicaría una duración muy limitada. En la @tbl-bat se muestran las características de 7 baterías de diferente capacidad que tiene dimensiones reducidas y podrían adaptarse al dispositivo. 
+El uso de baterías de polímero de litio (LiPo) es común en dispositivos portátiles debido a su pequeño tamaño, bajo peso y facilidad de carga. La capacidad mínima de carga requerida para la placa de desarrollo, junto con la pantalla, es de 500 mAh (cita datasheet de la pantalla). Aunque una batería de menor capacidad podría ser ventajosa en términos de tamaño, tendría como consecuencia una duración de uso significativamente limitada. En la tabla @tbl-bat se detallan las características de siete baterías que, por su tamaño compacto, podrían integrarse en el dispositivo.
 
 | tipo | voltaje | capacidad | potencia | dimensiones |
 |------|---------|-----------|----------|-------------|
@@ -91,39 +94,107 @@ El uso de baterías de Ion de Polímero de Litio (LiPo) es muy común en los dis
 | LiPo | 3.7     | 1000 mAh  | 3.7 Wh   | 50x34x5 mm  |
 : Baterías {#tbl-bat}
 
-Para asegurar un correcto funcionamiento del dispositivo, se eligió una batería con una capacidad de 650 mAh. Esta capacidad de carga no solo cumple con los requisitos mínimos de energía especificados en la hoja de datos del microcontrolador y la pantalla, si no que, da un margen adicional en la duración de la batería. Además de tener un tamaño adecuado para no afectar el diseño del dispositivo.
 
-Existen 3 tipos diferentes de sensores por su funcionamiento para medir temperatura, estos son: 
+Para asegurar el correcto funcionamiento del dispositivo, se selecciona una batería con una capacidad de 650 mAh. Esta capacidad no solo satisface los requisitos mínimos de energía establecidos en las hojas de datos del microcontrolador y la pantalla, sino que también ofrece un margen adicional en la duración de la batería. Además, su tamaño es apropiado para no afectar el diseño compacto del dispositivo.
 
-* Termopares
-* Termistores
-* Sensores RTD 
 
-Siendo los termistores los más utilizados en aplicaciones de la salud, como por ejemplo medir la temperatura corporal o la temperatura de la piel en algún punto. Un termistor es una resistencia eléctrica que cambia su valor dependiendo de la temperatura a la que esté expuesta, existen termistores tipo PTC que son de respuesta positiva, es decir, aumenta su resistencia cuando hay un aumento en la temperatura, de manera análoga existen los termistores tipo NTC.
+**Sensor de temperatura**
 
-Se realizó una búsqueda de diferentes termistores que pudieran ser útiles. Estos sensores son analógicos, sin embargo existen circuitos integrados que pueden convertir las señales de este sensor en digitales. La @tbl-temp muestra algunos de estos sensores con sus características básicas. 
 
-| Sensor             | tipo         | rango           | valor          | potencia | precisión | resolución |
-|--------------------|--------------|-----------------|----------------|----------|-----------|------------|
-| temistor NTC MF52AT| analógico    | -40 C a 120 C   | 1k hasta 100k  | 0.5 W    |           |            |
-| HiLetgo 2 unidades AHT20| digital (I2C)| -40 C a 85 C |                |     | 0.3 C    | 0.01 C
-| HiLetgo SHT31-D    | digital (I2C)| -40 C a 125 C  |                |     |    0.3 C       |
-| AHT10              | digital (I2C)| -40 C a 85 C   |                |    | 0.3 C    | 0.01 C
+Los sensores de temperatura se clasifican en dos tipos principales: sensores de contacto y sensores sin contacto. Los sensores de contacto, a su vez, se subdividen en tres categorías según su método de medición:
+
+***Termopares***:Utilizan el efecto Seebeck para generar una voltaje por la unión de dos metales diferentes.
+
+***Termistores***: Son resistores sensibles a la temperatura, cuya resistencia eléctrica varía en función de los cambios de temperatura. Están fabricados con materiales cerámicos o poliméricos. Existen dos tipos principales: los NTC (coeficiente de temperatura negativo) y los PTC (coeficiente de temperatura positivo).
+
+***Detectores de temperatura de resistencia (RTD)***: Utilizan metales puros, como el platino, para medir la temperatura a través de la variación lineal y predecible de su resistencia eléctrica.
+
+Por otro lado, los sensores sin contacto incluyen los sensores infrarrojos, diseñados para detectar la radiación infrarroja emitida por un objeto a distancia.
+
+En el sector de la salud, los termistores son ampliamente utilizados debido a su alta precisión en los rangos de temperatura corporal y su rápida respuesta a los cambios de temperatura. Sin embargo, a raíz de la pandemia de COVID-19 en 2020, el uso de sensores infrarrojos se populariza considerablemente. Esto ha impulsado avances en su tecnología, lo que los hace cada vez más comunes para medir la temperatura corporal.
+
+La tabla @tbl-temp muestra una comparación entre distintos sensores de temperatura que podrían ser utilizados en el proyecto, incluyendo termistores, sensores infrarrojos y un sensor de temperatura y humedad.
+
+
+
+| Característica            | Tipo de sensor                      | Rango de temperatura               | Precisión                             | Comunicación                          | Voltaje de operación                | Costo aproximado                    |
+|---------------------------|-------------------------------------|------------------------------------|---------------------------------------|---------------------------------------|-------------------------------------|-------------------------------------|
+| **GY-906 (MLX90614)**      | Sensor de temperatura infrarrojo    | -70°C a 382.2°C                    | ±0.5°C (0°C a 50°C)                   | I2C                             | 3.3V - 5V                          | 250 MNX      |
+| **ZTP-115M**               | Sensor de temperatura infrarrojo    | -20°C a 100°C                      | ±1°C (32°C a 42°C) | Salida analógica                     | 2.7V - 5.5V                        | 480 MNX              |
+| **NTC MF52AT**             | Termistor NTC                      | -55°C a 125°C                      | ±0.2°C (dependiendo de la resistencia) | Ninguna (sensor resistivo)           | Depende del circuito (normalmente 5V) | 2 MNX                  |
+| **BetaTherm 10K3A1**       | Termistor NTC                      | -50°C a 150°C                      | ±0.2°C (25°C a 45°C)                 | Ninguna (sensor resistivo)           | Depende del circuito (normalmente 5V) | 240 MNX              |
+| **AHT20**                  | Sensor de temperatura y humedad digital | -40°C a 85°C                       | ±0.3°C (temperatura) / ±2% HR (humedad) | I2C                                  | 2.0V - 5.5V                        | 100 MNX              |             |
 : Sensores de temperatura {#tbl-temp}
+
+Tras un análisis detallado, se selecciona el sensor GY-906 debido a su tamaño compacto, diseño adecuado y comunicación digital por I2C. Aunque el termistor NTC MF52AT ofrece una alternativa viable, se descarta por ser un sensor analógico. Dado que el dispositivo está diseñado para operar en un espacio reducido, cualquier interferencia en las conexiones internas podría afectar la precisión de los sensores analógicos. Por esta razón, se opta por el GY-906, que garantiza una transmisión de datos más confiable y estable en entornos compactos.
+
+**Sensor de frecuencia cardíaca**
 
 
 3. **Diseño del dispositivo**
 
-## Construcción del dispositivo
-Detallar cuales son los pasos para construir el dispositivo, tips, errores comunes.
 
-## Programación de la interfaz y encuestas
+
+Una vez seleccionados los componentes principales del dispositivo, el diseño se centra en crear una carcasa compacta y adecuada en donde los componentes puedan colocarse sin interferir entre ellos y así mismo el desarrollo de los circuitos internos de conexión
+
+**Carcasa:**
+
+La carcasa del dispositivo esta diseñada para ser impresa en 3D y consta de 3 partes principales y un seguro. La primera parte es la base y esta es la que está en contacto con la muñeca del usuario, cuenta con ranuras para el acomodo y fijación de los sensores y que estos queden en contacto directo con la piel para llevar a cabo las mediciones de forma adecuada
+
+La parte central de la carcasa es la pieza que va arriba de la base y es donde se aloja el microcontrolador, el motor vibrador y el interruptor de encendido. La pieza está diseñada con compartimentos para fijar cada uno de estos componentes. Por la parte exterior de la carcasa, esta pieza cuenta con ranuras para colocar las correas que fijan el dispositivo a la muñeca del usuario.
+
+La parte superior de la carcasa está diseñada con el fin de mantener la pantalla táctil en su posición y cerrar el dispositivo. Todas las piezas se ensamblan una con otra por presión, evitando el uso de tornillos.
+
+Adicional, hay una cuarta pieza que es un seguro para fijar el interruptor de encendido. Esta se coloca por encima del interruptor una ve esté colocado en su posición en la pieza central. El seguro ensambla por presión a la pieza y deja fijo el interruptor.
+
+En la figXXX Se observan las tres piezas principales de la carcasa.
+
+**Diseño de los circuitos**
+
+El diseño de los circuitos se divide en tres circuitos, motor vibratorio para alarmas circuito @fig-conexiones a) , circuito de sensores y
+microcontrolador @fig-conexiones b), y el circuito de la batería @fig-conexiones c). Cada uno de estos circuitos está diseñado para mantener las conexiones lo más simples y cortas posibles. Dado que la placa XIAO ESP32C3 y la pantalla XIAO Round Display se ensamblan directamente, se omite ese circuito.
+
+![Diagrama de conexiones](../Imagenes/Diagrama%20de%20conexiones.png){#fig-conexiones}
+
+El código de colores utilizado en este proyecto, para facilitar las conexiones, es:
+
+* ***Rojo:*** Conexión Vcc (3,3 V).
+* ***Negro:*** GND.
+* ***Azul:*** cable de comunicación SCL.
+* ***Blanco:*** cable de comunicación SDA.
+* ***Verde:*** señal de activación del motor.
+* ***Amarillo:*** conexión entre el pin emisor del transistor y el motor vibratorio.
+
+El Circuito de motor vibrador es un circuito sencillo de control de motor. Este circuito tiene la finalidad de proteger el microcontrolador al evitar que el motor se alimente directamente del pin digital del microcontrolador, si no que lo haga directamente de la alimentación general del dispositivo, dejando al pin del microcontrolador únicamente la tarea de dar la señal de activación.
+
+El circuito de los sensores y el microcontrolador tiene la función de comunicar de forma paralela ambos sensores por protocolo I2C al microcontrolador.
+
+El circuito de la batería sirve para añadir el interruptor de encendido y agregar un conector JST que va directo a la pantalla XIAO Round Display.
+
+En resumen, el diseño del dispositivo está enfocado en optimizar las conexiones, el espacio y facilitar su montaje, esto a la vez que se asegura su funcionalidad y ergonomía.
+
+
+## Construcción del dispositivo
+
+La construcción del dispositivo en tres etapas: La impresión de la carcasa, la conexión de los componentes electrónicos y la integración y montaje de todos los elementos.
+
+***Carcasa:*** los archivos STL para la impresión de la carcasa los puedes encontrar en el Anexo XXX
+
+***Componentes electrónicos:*** Las conexiones de los componentes electrónicos se llevan a cabo siguiendo los diagramas de la imagen XXX. Es importante seguir correctamente los diagramas para facilitar posteriormente su acomodo dentro de la carcasa. 
+
+***Integración y montaje:*** Una vez realizadas las conexiones, se lleva a cabo el montaje de los circuitos dentro de la carcasa y está se ensambla y se colocan las correas.
+
+En el articulo XXX puede encontrar información más detallada acerca del diseño y los pasos a seguir para la construcción del dispositivo.
+
+
+## Encuestas e interfaz
 
 1. Desarrollo del firmware: describe el desarrollo de la interfaz
 2. Implementación de la encuesta: Explica detalladamente la encuesta y porque se eligieron esos preguntas
 
-## Etapa de calibración
+## Calibración
 1. Calibración de los sensores 
 
-## Etapa de conexión IoT
-1. Integración con la plataforma
+## Datos
+1. Integración con la plataforma iot
+2. manejo de los datos
