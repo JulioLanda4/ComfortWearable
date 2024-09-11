@@ -25,28 +25,23 @@ Los componentes principales son los siguientes:
 
 La selección de la tarjeta o placa de desarrollo es una decisión crucial en el desarrollo del proyecto. Se requiere una placa de tamaño reducido que cumpla con características esenciales como conexión Wi-Fi, velocidad de procesamiento, memoria y comunicación I2C. Además, debe tener un bajo consumo energético para garantizar el uso portátil prolongado del dispositivo.
 
-Se buscan placas compactas con conectividad inalámbrica. Opciones con microcontroladores como los de Arduino, ESP y Raspberry ofrecen estas características. En la tabla @tbl-placas se presenta una comparación básica de algunas de estas placas.
+Se buscan placas compactas con conectividad inalámbrica. Opciones con microcontroladores como los de Arduino, ESP y Raspberry ofrecen estas características.
 
-Es importante destacar que, durante la búsqueda, se encuentran algunas placas que ya integran una pantalla LCD, lo cual podría representar una ventaja. Sin embargo, el microcontrolador RP2040 no cuenta con conectividad Wi-Fi o Bluetooth, y la tarjeta LILYGO incorpora una pantalla que no es táctil, lo que resulta una desventaja para la realización de las encuestas de confort.
+Durante el proceso de selección se identifican dos placas con pantallas integradas, que aunque podrían ser útiles, no cumplen con los requisitos del proyecto. La placa LILYGO TTGO, no cuenta con tecnología táctil, lo cual limita su utilidad para realizar encuestas de confort térmico. Por otro lado, la MCU RP2040 con LCD redondo de 1.28 pulgadas, aunque cuenta con una pantalla táctil, no ofrece conectividad Wi-Fi, un requisito esencial. Aunque estas dos placas no son tomadas en cuanta por las razones ya mencionadas, sirven como referencia para la búsqueda de otras opciones. En la tabla @tbl-placas se presenta una comparación de diferentes placas de desarrollo con las características requeridas.
 
 | Placa de desarrollo          | Wifi | Bluetooth | Comunicación                    | Cable       | Pines         |
 |------------------------------|------|-----------|---------------------------------|-------------|---------------|
 | Arduino Nano 33 IoT         | si   | 4.2       | SPI, I2C, I2S, UART            | Micro USB   | 30 GPIOS, 8 ADC   |
-| Arduino nano 33 BLE sense   | no   | 5         | UART, SPI, I2C                 | Micro USB   | 22 GPIOS, 8 ADC      |
 | Arduino nano esp32          | si   | LE        | UART, I2C, SPI, I2S, CAN(TWAI)  | USB C       |    22 GPIOS, 8 ADC           |
 | Arduino nano RP2040 connect | si   | si        | STI, I2C, I2S, PIO, UART       | USB C       | 30 GPIOS, 8 ADC  |
 | Raspberry pi pico W         | si   | 5.2       | UART, I2C, SPI                 | Micro USB   | 26 GPIOS, 3 ADC  |
 | ESP32 pico kit              | si   | si        | I2C, I2S, SPI                  | Micro USB   | 34 GPIOS      |
-| Seeed Studio XIAO nRF52840 Sense | nfc | 5  | 1xUART, 1xIIC, 1xSPI, 1xNFC, 1xSWD | USB C | 11 GPIOS, 6 ADC |
 | Seeed Studio XIAO ESP32C3   | si   | 5         | 1x UART, 1x IIC, 1x SPI       | USB C       | 11 GPIOS, 4 ADC |
 | Seeed Studio XIAO ESP32S3   | si   | 5         | 1x UART, 1x IIC, 1x SPI       | USB C       | 11 GPIOS, 9 ADC |
-| MCU RP2040 con LCD redondo de 1,28 pulgadas | no | no | rp2040 | USB C | 26 GPIOS, 3 ADC |
-| LILYGO TTGO                | si   | si        | esp32                         | USB C       | 13 GPIOS, 11 ADC         |
 : Placas de desarrollo {#tbl-placas}
 
-Tras analizar en detalle las especificaciones de cada opción, se elige la placa Seeed Studio XIAO ESP32C3. Esta placa cumple con los requisitos del proyecto gracias a sus modos de bajo consumo, conectividad Wi-Fi, tamaño compacto y memoria suficiente. En la tabla @tbl-esp se presentan sus características.
+Si bien todas las placas presentadas son opciones viables, Seeed Studio ha desarrollado placas orientadas a aplicaciones de dispositivos portátiles. Estas placas empatan perfectamente con las necesidades del proyecto debido a su tamaño compacto, conectividad, modos de bajo consumo y la posibilidad de la integración con una pantalla táctil desarrollada por la misma marca. Para el desarrollo del proyecto, se elige la XIAO ESPE32C3 sobre la XIAO ESP32S3. Aunque la primera es menos potente, cumple con todos los requerimientos a un menor costo. No obstante, la XIAO ESP32S3 podría ser usada sin ningún problema, ofreciendo incluso aumentar considerablemente la capacidad de memoria para futuras modificaciones o mejoras en el código. La @tbl-esp muestra las características especificas de la placa seleccionada.
 
-También se considera la placa XIAO ESP32S3, que se adapta igualmente al proyecto sin inconvenientes. La principal diferencia es su mayor capacidad de memoria en comparación con la XIAO ESP32C3, aunque su costo es más elevado.
 
 | Parametro                              | Seeed Studio XIAO ESP32C3 |
 |-------------------------------------------|----------------------------|
@@ -67,7 +62,7 @@ También se considera la placa XIAO ESP32S3, que se adapta igualmente al proyect
 
 **Pantalla**
 
-Para la elección de la pantalla, se realiza una búsqueda priorizando que sea de tamaño reducido y compatible con la placa de desarrollo seleccionada. En la tabla @tbl-screen se presentan las características básicas de las pantallas encontradas.
+La elección de la pantalla debe alinearse con los criterios establecidos para la placa de desarrollo. se busca una pantalla que ademas de ser de tamaño reducido, sea compatible con la placa seleccionada. En la tabla @tbl-screen, se presentan las características básicas de las pantallas consideradas durante el proceso.
 
 | Pantalla                                   | touchscreen | tecnología | dimensión |
 |--------------------------------------------|-------------|------------|----------|
@@ -77,23 +72,12 @@ Para la elección de la pantalla, se realiza una búsqueda priorizando que sea d
 : Pantallas {#tbl-screen}
 
 
-La pantalla seleccionada es la Seeed Studio Round Display for XIAO. Seeed Studio ha desarrollado un ecosistema orientado a dispositivos portátiles y wearables, lo que hace que esta pantalla sea perfectamente compatible con la placa de desarrollo. Además, su display redondo y táctil se ajustan de manera adecuada a las necesidades del proyecto.
+La pantalla seleccionada es la Seeed Studio Round Display for XIAO. Este modelo es perfectamente compatible con la placa XIAO ESP32C3, elegida previamente, gracias al enfoque de Seeed Studio para desarrollar un ecosistema orientado a aplicaciones de dispositivos portátiles. La compatibilidad entre los componentes, tecnología táctil y diseño redondo, logran que la pantalla se ajuste a las necesidades del proyecto.
 
 
 **Batería**
 
-El uso de baterías de polímero de litio (LiPo) es común en dispositivos portátiles debido a su pequeño tamaño, bajo peso y facilidad de carga. La capacidad mínima de carga requerida para la placa de desarrollo, junto con la pantalla, es de 500 mAh (cita datasheet de la pantalla). Aunque una batería de menor capacidad podría ser ventajosa en términos de tamaño, tendría como consecuencia una duración de uso significativamente limitada. En la tabla @tbl-bat se detallan las características de siete baterías que, por su tamaño compacto, podrían integrarse en el dispositivo.
-
-| tipo | voltaje | capacidad | potencia | dimensiones |
-|------|---------|-----------|----------|-------------|
-| LiPo | 3.7     | 60 mAh    | 0.22 Wh  | 22x11.5x4 mm |
-| LiPo | 3.7     | 130 mAh   | 0.48 Wh  | 30x15x3.5 mm |
-| LiPo | 3.7     | 250 mAh   | 0.93 Wh  | 20x30x5 mm  |
-| LiPo | 3.7     | 400 mAh   | 1.48 Wh  | 35x20x6 mm  |
-| LiPo | 3.7     | 650 mAh   | 2.41 Wh  | 40x20x8 mm  |
-| LiPo | 3.7     | 1000 mAh  | 3.7 Wh   | 50x34x5 mm  |
-: Baterías {#tbl-bat}
-
+El uso de baterías de polímero de litio (LiPo) es común en dispositivos portátiles debido a su pequeño tamaño, bajo peso y facilidad de carga. La capacidad mínima de carga requerida para la placa de desarrollo, junto con la pantalla, es de 500 mAh (cita datasheet de la pantalla). Aunque una batería de menor capacidad podría ser ventajosa en términos de tamaño, tendría como consecuencia una duración de uso significativamente limitada. 
 
 Para asegurar el correcto funcionamiento del dispositivo, se selecciona una batería con una capacidad de 650 mAh. Esta capacidad no solo satisface los requisitos mínimos de energía establecidos en las hojas de datos del microcontrolador y la pantalla, sino que también ofrece un margen adicional en la duración de la batería. Además, su tamaño es apropiado para no afectar el diseño compacto del dispositivo.
 

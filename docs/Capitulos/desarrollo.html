@@ -216,8 +216,8 @@ div.csl-indent {
 </ul>
 <p><strong>Placa de desarrollo</strong></p>
 <p>La selección de la tarjeta o placa de desarrollo es una decisión crucial en el desarrollo del proyecto. Se requiere una placa de tamaño reducido que cumpla con características esenciales como conexión Wi-Fi, velocidad de procesamiento, memoria y comunicación I2C. Además, debe tener un bajo consumo energético para garantizar el uso portátil prolongado del dispositivo.</p>
-<p>Se buscan placas compactas con conectividad inalámbrica. Opciones con microcontroladores como los de Arduino, ESP y Raspberry ofrecen estas características. En la tabla <a href="#tbl-placas">Tabla&nbsp;<span>3.1</span></a> se presenta una comparación básica de algunas de estas placas.</p>
-<p>Es importante destacar que, durante la búsqueda, se encuentran algunas placas que ya integran una pantalla LCD, lo cual podría representar una ventaja. Sin embargo, el microcontrolador RP2040 no cuenta con conectividad Wi-Fi o Bluetooth, y la tarjeta LILYGO incorpora una pantalla que no es táctil, lo que resulta una desventaja para la realización de las encuestas de confort.</p>
+<p>Se buscan placas compactas con conectividad inalámbrica. Opciones con microcontroladores como los de Arduino, ESP y Raspberry ofrecen estas características.</p>
+<p>Durante el proceso de selección se identifican dos placas con pantallas integradas, que aunque podrían ser útiles, no cumplen con los requisitos del proyecto. La placa LILYGO TTGO, no cuenta con tecnología táctil, lo cual limita su utilidad para realizar encuestas de confort térmico. Por otro lado, la MCU RP2040 con LCD redondo de 1.28 pulgadas, aunque cuenta con una pantalla táctil, no ofrece conectividad Wi-Fi, un requisito esencial. Aunque estas dos placas no son tomadas en cuanta por las razones ya mencionadas, sirven como referencia para la búsqueda de otras opciones. En la tabla <a href="#tbl-placas">Tabla&nbsp;<span>3.1</span></a> se presenta una comparación de diferentes placas de desarrollo con las características requeridas.</p>
 <div id="tbl-placas">
 <table class="table">
 <caption>Tabla&nbsp;3.1: Placas de desarrollo</caption>
@@ -249,14 +249,6 @@ div.csl-indent {
 <td>30 GPIOS, 8 ADC</td>
 </tr>
 <tr class="even">
-<td>Arduino nano 33 BLE sense</td>
-<td>no</td>
-<td>5</td>
-<td>UART, SPI, I2C</td>
-<td>Micro USB</td>
-<td>22 GPIOS, 8 ADC</td>
-</tr>
-<tr class="odd">
 <td>Arduino nano esp32</td>
 <td>si</td>
 <td>LE</td>
@@ -264,7 +256,7 @@ div.csl-indent {
 <td>USB C</td>
 <td>22 GPIOS, 8 ADC</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Arduino nano RP2040 connect</td>
 <td>si</td>
 <td>si</td>
@@ -272,7 +264,7 @@ div.csl-indent {
 <td>USB C</td>
 <td>30 GPIOS, 8 ADC</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Raspberry pi pico W</td>
 <td>si</td>
 <td>5.2</td>
@@ -280,21 +272,13 @@ div.csl-indent {
 <td>Micro USB</td>
 <td>26 GPIOS, 3 ADC</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>ESP32 pico kit</td>
 <td>si</td>
 <td>si</td>
 <td>I2C, I2S, SPI</td>
 <td>Micro USB</td>
 <td>34 GPIOS</td>
-</tr>
-<tr class="odd">
-<td>Seeed Studio XIAO nRF52840 Sense</td>
-<td>nfc</td>
-<td>5</td>
-<td>1xUART, 1xIIC, 1xSPI, 1xNFC, 1xSWD</td>
-<td>USB C</td>
-<td>11 GPIOS, 6 ADC</td>
 </tr>
 <tr class="even">
 <td>Seeed Studio XIAO ESP32C3</td>
@@ -312,27 +296,10 @@ div.csl-indent {
 <td>USB C</td>
 <td>11 GPIOS, 9 ADC</td>
 </tr>
-<tr class="even">
-<td>MCU RP2040 con LCD redondo de 1,28 pulgadas</td>
-<td>no</td>
-<td>no</td>
-<td>rp2040</td>
-<td>USB C</td>
-<td>26 GPIOS, 3 ADC</td>
-</tr>
-<tr class="odd">
-<td>LILYGO TTGO</td>
-<td>si</td>
-<td>si</td>
-<td>esp32</td>
-<td>USB C</td>
-<td>13 GPIOS, 11 ADC</td>
-</tr>
 </tbody>
 </table>
 </div>
-<p>Tras analizar en detalle las especificaciones de cada opción, se elige la placa Seeed Studio XIAO ESP32C3. Esta placa cumple con los requisitos del proyecto gracias a sus modos de bajo consumo, conectividad Wi-Fi, tamaño compacto y memoria suficiente. En la tabla <a href="#tbl-esp">Tabla&nbsp;<span>3.2</span></a> se presentan sus características.</p>
-<p>También se considera la placa XIAO ESP32S3, que se adapta igualmente al proyecto sin inconvenientes. La principal diferencia es su mayor capacidad de memoria en comparación con la XIAO ESP32C3, aunque su costo es más elevado.</p>
+<p>Si bien todas las placas presentadas son opciones viables, Seeed Studio ha desarrollado placas orientadas a aplicaciones de dispositivos portátiles. Estas placas empatan perfectamente con las necesidades del proyecto debido a su tamaño compacto, conectividad, modos de bajo consumo y la posibilidad de la integración con una pantalla táctil desarrollada por la misma marca. Para el desarrollo del proyecto, se elige la XIAO ESPE32C3 sobre la XIAO ESP32S3. Aunque la primera es menos potente, cumple con todos los requerimientos a un menor costo. No obstante, la XIAO ESP32S3 podría ser usada sin ningún problema, ofreciendo incluso aumentar considerablemente la capacidad de memoria para futuras modificaciones o mejoras en el código. La <a href="#tbl-esp">Tabla&nbsp;<span>3.2</span></a> muestra las características especificas de la placa seleccionada.</p>
 <div id="tbl-esp">
 <table class="table">
 <caption>Tabla&nbsp;3.2: Características ESP32C3</caption>
@@ -399,7 +366,7 @@ div.csl-indent {
 </table>
 </div>
 <p><strong>Pantalla</strong></p>
-<p>Para la elección de la pantalla, se realiza una búsqueda priorizando que sea de tamaño reducido y compatible con la placa de desarrollo seleccionada. En la tabla <a href="#tbl-screen">Tabla&nbsp;<span>3.3</span></a> se presentan las características básicas de las pantallas encontradas.</p>
+<p>La elección de la pantalla debe alinearse con los criterios establecidos para la placa de desarrollo. se busca una pantalla que ademas de ser de tamaño reducido, sea compatible con la placa seleccionada. En la tabla <a href="#tbl-screen">Tabla&nbsp;<span>3.3</span></a>, se presentan las características básicas de las pantallas consideradas durante el proceso.</p>
 <div id="tbl-screen">
 <table class="table">
 <caption>Tabla&nbsp;3.3: Pantallas</caption>
@@ -439,67 +406,9 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<p>La pantalla seleccionada es la Seeed Studio Round Display for XIAO. Seeed Studio ha desarrollado un ecosistema orientado a dispositivos portátiles y wearables, lo que hace que esta pantalla sea perfectamente compatible con la placa de desarrollo. Además, su display redondo y táctil se ajustan de manera adecuada a las necesidades del proyecto.</p>
+<p>La pantalla seleccionada es la Seeed Studio Round Display for XIAO. Este modelo es perfectamente compatible con la placa XIAO ESP32C3, elegida previamente, gracias al enfoque de Seeed Studio para desarrollar un ecosistema orientado a aplicaciones de dispositivos portátiles. La compatibilidad entre los componentes, tecnología táctil y diseño redondo, logran que la pantalla se ajuste a las necesidades del proyecto.</p>
 <p><strong>Batería</strong></p>
-<p>El uso de baterías de polímero de litio (LiPo) es común en dispositivos portátiles debido a su pequeño tamaño, bajo peso y facilidad de carga. La capacidad mínima de carga requerida para la placa de desarrollo, junto con la pantalla, es de 500 mAh (cita datasheet de la pantalla). Aunque una batería de menor capacidad podría ser ventajosa en términos de tamaño, tendría como consecuencia una duración de uso significativamente limitada. En la tabla <a href="#tbl-bat">Tabla&nbsp;<span>3.4</span></a> se detallan las características de siete baterías que, por su tamaño compacto, podrían integrarse en el dispositivo.</p>
-<div id="tbl-bat">
-<table class="table">
-<caption>Tabla&nbsp;3.4: Baterías</caption>
-<thead>
-<tr class="header">
-<th>tipo</th>
-<th>voltaje</th>
-<th>capacidad</th>
-<th>potencia</th>
-<th>dimensiones</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>LiPo</td>
-<td>3.7</td>
-<td>60 mAh</td>
-<td>0.22 Wh</td>
-<td>22x11.5x4 mm</td>
-</tr>
-<tr class="even">
-<td>LiPo</td>
-<td>3.7</td>
-<td>130 mAh</td>
-<td>0.48 Wh</td>
-<td>30x15x3.5 mm</td>
-</tr>
-<tr class="odd">
-<td>LiPo</td>
-<td>3.7</td>
-<td>250 mAh</td>
-<td>0.93 Wh</td>
-<td>20x30x5 mm</td>
-</tr>
-<tr class="even">
-<td>LiPo</td>
-<td>3.7</td>
-<td>400 mAh</td>
-<td>1.48 Wh</td>
-<td>35x20x6 mm</td>
-</tr>
-<tr class="odd">
-<td>LiPo</td>
-<td>3.7</td>
-<td>650 mAh</td>
-<td>2.41 Wh</td>
-<td>40x20x8 mm</td>
-</tr>
-<tr class="even">
-<td>LiPo</td>
-<td>3.7</td>
-<td>1000 mAh</td>
-<td>3.7 Wh</td>
-<td>50x34x5 mm</td>
-</tr>
-</tbody>
-</table>
-</div>
+<p>El uso de baterías de polímero de litio (LiPo) es común en dispositivos portátiles debido a su pequeño tamaño, bajo peso y facilidad de carga. La capacidad mínima de carga requerida para la placa de desarrollo, junto con la pantalla, es de 500 mAh (cita datasheet de la pantalla). Aunque una batería de menor capacidad podría ser ventajosa en términos de tamaño, tendría como consecuencia una duración de uso significativamente limitada.</p>
 <p>Para asegurar el correcto funcionamiento del dispositivo, se selecciona una batería con una capacidad de 650 mAh. Esta capacidad no solo satisface los requisitos mínimos de energía establecidos en las hojas de datos del microcontrolador y la pantalla, sino que también ofrece un margen adicional en la duración de la batería. Además, su tamaño es apropiado para no afectar el diseño compacto del dispositivo.</p>
 <p><strong>Sensor de temperatura</strong></p>
 <p>Los sensores de temperatura se clasifican en dos tipos principales: sensores de contacto y sensores sin contacto. Los sensores de contacto, a su vez, se subdividen en tres categorías según su método de medición:</p>
@@ -508,10 +417,10 @@ div.csl-indent {
 <p><strong><em>Detectores de temperatura de resistencia (RTD)</em></strong>: Utilizan metales puros, como el platino, para medir la temperatura a través de la variación lineal y predecible de su resistencia eléctrica.</p>
 <p>Por otro lado, los sensores sin contacto incluyen los sensores infrarrojos, diseñados para detectar la radiación infrarroja emitida por un objeto a distancia.</p>
 <p>En el sector de la salud, los termistores son ampliamente utilizados debido a su alta precisión en los rangos de temperatura corporal y su rápida respuesta a los cambios de temperatura. Sin embargo, a raíz de la pandemia de COVID-19 en 2020, el uso de sensores infrarrojos se populariza considerablemente. Esto ha impulsado avances en su tecnología, lo que los hace cada vez más comunes para medir la temperatura corporal.</p>
-<p>La tabla <a href="#tbl-temp">Tabla&nbsp;<span>3.5</span></a> muestra una comparación entre distintos sensores de temperatura que podrían ser utilizados en el proyecto, incluyendo termistores, sensores infrarrojos y un sensor de temperatura y humedad.</p>
+<p>La tabla <a href="#tbl-temp">Tabla&nbsp;<span>3.4</span></a> muestra una comparación entre distintos sensores de temperatura que podrían ser utilizados en el proyecto, incluyendo termistores, sensores infrarrojos y un sensor de temperatura y humedad.</p>
 <div id="tbl-temp">
 <table class="table">
-<caption>Tabla&nbsp;3.5: Sensores de temperatura</caption>
+<caption>Tabla&nbsp;3.4: Sensores de temperatura</caption>
 <colgroup>
 <col style="width: 10%">
 <col style="width: 14%">
