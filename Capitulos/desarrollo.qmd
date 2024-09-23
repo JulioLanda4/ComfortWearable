@@ -97,7 +97,7 @@ Por otro lado, los sensores sin contacto incluyen los sensores infrarrojos, dise
 
 En el sector de la salud, los termistores son ampliamente utilizados debido a su alta precisión en los rangos de temperatura corporal y su rápida respuesta a los cambios de temperatura. Sin embargo, a raíz de la pandemia de COVID-19 en 2020, el uso de sensores infrarrojos se populariza considerablemente. Esto ha impulsado avances en su tecnología, lo que los hace cada vez más comunes para medir la temperatura corporal.
 
-La tabla @tbl-temp muestra una comparación entre distintos sensores de temperatura que podrían ser utilizados en el proyecto, incluyendo termistores, sensores infrarrojos y un sensor de temperatura y humedad.
+La tabla @tbl-temp muestra una comparación entre distintos sensores de temperatura que podrían ser utilizados en el proyecto, incluyendo termistores, sensores infrarrojos y un sensor de temperatura y humedad. Estos sensores se manejan en un rango de operación entre los 3.3 V y 5 V para garantizar su compatibilidad con la placa de desarrollo seleccionada.
 
 
 | Característica            | Tipo de sensor                      | Rango de temperatura               | Precisión                             | Comunicación                          |
