@@ -38,7 +38,7 @@ Durante el proceso de selección se identifican dos placas con pantallas integra
 | ESP32 pico kit              | si   | si        | I2C, I2S, SPI                  | Micro USB   | 34 GPIOS      |
 | Seeed Studio XIAO ESP32C3   | si   | 5         | 1x UART, 1x IIC, 1x SPI       | USB C       | 11 GPIOS, 4 ADC |
 | Seeed Studio XIAO ESP32S3   | si   | 5         | 1x UART, 1x IIC, 1x SPI       | USB C       | 11 GPIOS, 9 ADC |
-: Placas de desarrollo {#tbl-placas}
+: Comparación de características de conectividad y hardware en placas de desarrollo {#tbl-placas}
 
 Si bien todas las placas presentadas son opciones viables, Seeed Studio ha desarrollado placas orientadas a aplicaciones de dispositivos portátiles. Estas placas empatan perfectamente con las necesidades del proyecto debido a su tamaño compacto, conectividad, modos de bajo consumo y la posibilidad de la integración con una pantalla táctil desarrollada por la misma marca. Para el desarrollo del proyecto, se elige la XIAO ESPE32C3 sobre la XIAO ESP32S3. Aunque la primera es menos potente, cumple con todos los requerimientos a un menor costo. No obstante, la XIAO ESP32S3 podría ser usada sin ningún problema, ofreciendo incluso aumentar considerablemente la capacidad de memoria para futuras modificaciones o mejoras en el código. La @tbl-esp muestra las características especificas de la placa seleccionada.
 
@@ -57,7 +57,7 @@ Si bien todas las placas presentadas son opciones viables, Seeed Studio ha desar
 | WiFi activado Consumo de energía           | Modo activo: < 75 mA     |
 | Bluetooth activado Consumo de energía             | Modo modem-sleep: < 27 mA      |
 | Temperatura de trabajo                      | -40°C ~ 85°C               |
-: Características ESP32C3 {#tbl-esp} 
+: Especificaciones técnicas detalladas de la placa XIAO ESP32C3 {#tbl-esp} 
 
 
 **Pantalla**
@@ -69,7 +69,7 @@ La elección de la pantalla debe alinearse con los criterios establecidos para l
 | Seeed Studio Round Display for XIAO        | si          | TFT LCD    | 1.28''   |
 | Waveshare Módulo de visualización           | no          | OLED RGB   | 1.5''    |
 | GC9A01 Pantalla                            | no          | TFT LCD    | 1.28''   |
-: Pantallas {#tbl-screen}
+: Comparacion de pantallas compatibles con la XIAO ESP32C3 {#tbl-screen}
 
 
 La pantalla seleccionada es la Seeed Studio Round Display for XIAO. Este modelo es perfectamente compatible con la placa XIAO ESP32C3, elegida previamente, gracias al enfoque de Seeed Studio para desarrollar un ecosistema orientado a aplicaciones de dispositivos portátiles. La compatibilidad entre los componentes, tecnología táctil y diseño redondo, logran que la pantalla se ajuste a las necesidades del proyecto.
@@ -100,15 +100,14 @@ En el sector de la salud, los termistores son ampliamente utilizados debido a su
 La tabla @tbl-temp muestra una comparación entre distintos sensores de temperatura que podrían ser utilizados en el proyecto, incluyendo termistores, sensores infrarrojos y un sensor de temperatura y humedad.
 
 
-
-| Característica            | Tipo de sensor                      | Rango de temperatura               | Precisión                             | Comunicación                          | Voltaje de operación                | Costo aproximado                    |
-|---------------------------|-------------------------------------|------------------------------------|---------------------------------------|---------------------------------------|-------------------------------------|-------------------------------------|
-| **GY-906 (MLX90614)**      | Sensor de temperatura infrarrojo    | -70°C a 382.2°C                    | ±0.5°C (0°C a 50°C)                   | I2C                             | 3.3V - 5V                          | 250 MNX      |
-| **ZTP-115M**               | Sensor de temperatura infrarrojo    | -20°C a 100°C                      | ±1°C (32°C a 42°C) | Salida analógica                     | 2.7V - 5.5V                        | 480 MNX              |
-| **NTC MF52AT**             | Termistor NTC                      | -55°C a 125°C                      | ±0.2°C (dependiendo de la resistencia) | Ninguna (sensor resistivo)           | Depende del circuito (normalmente 5V) | 2 MNX                  |
-| **BetaTherm 10K3A1**       | Termistor NTC                      | -50°C a 150°C                      | ±0.2°C (25°C a 45°C)                 | Ninguna (sensor resistivo)           | Depende del circuito (normalmente 5V) | 240 MNX              |
-| **AHT20**                  | Sensor de temperatura y humedad digital | -40°C a 85°C                       | ±0.3°C (temperatura) / ±2% HR (humedad) | I2C                                  | 2.0V - 5.5V                        | 100 MNX              |             |
-: Sensores de temperatura {#tbl-temp}
+| Característica            | Tipo de sensor                      | Rango de temperatura               | Precisión                             | Comunicación                          |
+|---------------------------|-------------------------------------|------------------------------------|---------------------------------------|---------------------------------------|
+| **GY-906 (MLX90614)**     | Sensor de temperatura infrarrojo    | -70°C a 382.2°C                    | ±0.5°C (0°C a 50°C)                   | I2C                                   |
+| **ZTP-115M**              | Sensor de temperatura infrarrojo    | -20°C a 100°C                      | ±1°C (32°C a 42°C)                    | Salida analógica                      |
+| **NTC MF52AT**            | Termistor NTC                       | -55°C a 125°C                      | ±0.2°C (dependiendo de la resistencia) | Ninguna (sensor resistivo)            |
+| **BetaTherm 10K3A1**      | Termistor NTC                       | -50°C a 150°C                      | ±0.2°C (25°C a 45°C)                  | Ninguna (sensor resistivo)            |
+| **AHT20**                 | Sensor de temperatura y humedad digital | -40°C a 85°C                       | ±0.3°C (temperatura) / ±2% HR (humedad)| I2C                                   |
+: Comparación de Sensores de Temperatura por Rango Operativo y Precisión {#tbl-temp}
 
 Tras un análisis detallado, se selecciona el sensor GY-906 debido a su tamaño compacto, diseño adecuado y comunicación digital por I2C. Aunque el termistor NTC MF52AT ofrece una alternativa viable, se descarta por ser un sensor analógico. Dado que el dispositivo está diseñado para operar en un espacio reducido, cualquier interferencia en las conexiones internas podría afectar la precisión de los sensores analógicos. Por esta razón, se opta por el GY-906, que garantiza una transmisión de datos más confiable y estable en entornos compactos.
 

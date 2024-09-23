@@ -4,8 +4,9 @@ project:
 
 
 book:
-  title: "Desarrollo de un Dispositivo Wearable para la Medición del Confort Térmico en Edificaciones"
-  output-file: "tesis."
+  title: "Reloj inteligente IoT basado en tecnologías abiertas para la recopilación de datos de confort térmico
+"
+  output-file: "Tesis"
   author: "Julio César Landa López"
   date: "10/10/2024"
   language: "es"

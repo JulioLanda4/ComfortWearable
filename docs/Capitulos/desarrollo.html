@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Desarrollo de un Dispositivo Wearable para la Medición del Confort Térmico en Edificaciones - 3&nbsp; Desarrollo y construcción</title>
+<title>Reloj inteligente IoT basado en tecnologías abiertas para la recopilación de datos de confort térmico - 3&nbsp; Desarrollo y construcción</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -112,7 +112,7 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Desarrollo de un Dispositivo Wearable para la Medición del Confort Térmico en Edificaciones</a> 
+      <a href="../">Reloj inteligente IoT basado en tecnologías abiertas para la recopilación de datos de confort térmico</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -220,7 +220,7 @@ div.csl-indent {
 <p>Durante el proceso de selección se identifican dos placas con pantallas integradas, que aunque podrían ser útiles, no cumplen con los requisitos del proyecto. La placa LILYGO TTGO, no cuenta con tecnología táctil, lo cual limita su utilidad para realizar encuestas de confort térmico. Por otro lado, la MCU RP2040 con LCD redondo de 1.28 pulgadas, aunque cuenta con una pantalla táctil, no ofrece conectividad Wi-Fi, un requisito esencial. Aunque estas dos placas no son tomadas en cuanta por las razones ya mencionadas, sirven como referencia para la búsqueda de otras opciones. En la tabla <a href="#tbl-placas">Tabla&nbsp;<span>3.1</span></a> se presenta una comparación de diferentes placas de desarrollo con las características requeridas.</p>
 <div id="tbl-placas">
 <table class="table">
-<caption>Tabla&nbsp;3.1: Placas de desarrollo</caption>
+<caption>Tabla&nbsp;3.1: Comparación de características de conectividad y hardware en placas de desarrollo</caption>
 <colgroup>
 <col style="width: 27%">
 <col style="width: 5%">
@@ -302,7 +302,7 @@ div.csl-indent {
 <p>Si bien todas las placas presentadas son opciones viables, Seeed Studio ha desarrollado placas orientadas a aplicaciones de dispositivos portátiles. Estas placas empatan perfectamente con las necesidades del proyecto debido a su tamaño compacto, conectividad, modos de bajo consumo y la posibilidad de la integración con una pantalla táctil desarrollada por la misma marca. Para el desarrollo del proyecto, se elige la XIAO ESPE32C3 sobre la XIAO ESP32S3. Aunque la primera es menos potente, cumple con todos los requerimientos a un menor costo. No obstante, la XIAO ESP32S3 podría ser usada sin ningún problema, ofreciendo incluso aumentar considerablemente la capacidad de memoria para futuras modificaciones o mejoras en el código. La <a href="#tbl-esp">Tabla&nbsp;<span>3.2</span></a> muestra las características especificas de la placa seleccionada.</p>
 <div id="tbl-esp">
 <table class="table">
-<caption>Tabla&nbsp;3.2: Características ESP32C3</caption>
+<caption>Tabla&nbsp;3.2: Especificaciones técnicas detalladas de la placa XIAO ESP32C3</caption>
 <colgroup>
 <col style="width: 60%">
 <col style="width: 39%">
@@ -369,7 +369,7 @@ div.csl-indent {
 <p>La elección de la pantalla debe alinearse con los criterios establecidos para la placa de desarrollo. se busca una pantalla que ademas de ser de tamaño reducido, sea compatible con la placa seleccionada. En la tabla <a href="#tbl-screen">Tabla&nbsp;<span>3.3</span></a>, se presentan las características básicas de las pantallas consideradas durante el proceso.</p>
 <div id="tbl-screen">
 <table class="table">
-<caption>Tabla&nbsp;3.3: Pantallas</caption>
+<caption>Tabla&nbsp;3.3: Comparacion de pantallas compatibles con la XIAO ESP32C3</caption>
 <colgroup>
 <col style="width: 55%">
 <col style="width: 16%">
@@ -420,15 +420,13 @@ div.csl-indent {
 <p>La tabla <a href="#tbl-temp">Tabla&nbsp;<span>3.4</span></a> muestra una comparación entre distintos sensores de temperatura que podrían ser utilizados en el proyecto, incluyendo termistores, sensores infrarrojos y un sensor de temperatura y humedad.</p>
 <div id="tbl-temp">
 <table class="table">
-<caption>Tabla&nbsp;3.4: Sensores de temperatura</caption>
+<caption>Tabla&nbsp;3.4: Comparación de Sensores de Temperatura por Rango Operativo y Precisión</caption>
 <colgroup>
-<col style="width: 10%">
-<col style="width: 14%">
-<col style="width: 14%">
 <col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 14%">
-<col style="width: 14%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 21%">
+<col style="width: 21%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -437,8 +435,6 @@ div.csl-indent {
 <th>Rango de temperatura</th>
 <th>Precisión</th>
 <th>Comunicación</th>
-<th>Voltaje de operación</th>
-<th>Costo aproximado</th>
 </tr>
 </thead>
 <tbody>
@@ -448,8 +444,6 @@ div.csl-indent {
 <td>-70°C a 382.2°C</td>
 <td>±0.5°C (0°C a 50°C)</td>
 <td>I2C</td>
-<td>3.3V - 5V</td>
-<td>250 MNX</td>
 </tr>
 <tr class="even">
 <td><strong>ZTP-115M</strong></td>
@@ -457,8 +451,6 @@ div.csl-indent {
 <td>-20°C a 100°C</td>
 <td>±1°C (32°C a 42°C)</td>
 <td>Salida analógica</td>
-<td>2.7V - 5.5V</td>
-<td>480 MNX</td>
 </tr>
 <tr class="odd">
 <td><strong>NTC MF52AT</strong></td>
@@ -466,8 +458,6 @@ div.csl-indent {
 <td>-55°C a 125°C</td>
 <td>±0.2°C (dependiendo de la resistencia)</td>
 <td>Ninguna (sensor resistivo)</td>
-<td>Depende del circuito (normalmente 5V)</td>
-<td>2 MNX</td>
 </tr>
 <tr class="even">
 <td><strong>BetaTherm 10K3A1</strong></td>
@@ -475,8 +465,6 @@ div.csl-indent {
 <td>-50°C a 150°C</td>
 <td>±0.2°C (25°C a 45°C)</td>
 <td>Ninguna (sensor resistivo)</td>
-<td>Depende del circuito (normalmente 5V)</td>
-<td>240 MNX</td>
 </tr>
 <tr class="odd">
 <td><strong>AHT20</strong></td>
@@ -484,8 +472,6 @@ div.csl-indent {
 <td>-40°C a 85°C</td>
 <td>±0.3°C (temperatura) / ±2% HR (humedad)</td>
 <td>I2C</td>
-<td>2.0V - 5.5V</td>
-<td>100 MNX</td>
 </tr>
 </tbody>
 </table>
