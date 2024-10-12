@@ -23,11 +23,11 @@ Los componentes principales son los siguientes:
 
 **Placa de desarrollo**
 
-La selección de la tarjeta o placa de desarrollo es una decisión crucial en el desarrollo del proyecto. Se requiere una placa de tamaño reducido que cumpla con características esenciales como conexión Wi-Fi, velocidad de procesamiento, memoria y comunicación I2C. Además, debe tener un bajo consumo energético para garantizar el uso portátil prolongado del dispositivo.
+La selección de la tarjeta o placa de desarrollo es una decisión crucial en el desarrollo del proyecto. Se requiere una placa de tamaño reducido que cumpla con características esenciales como conexión WiFi, velocidad de procesamiento, memoria y comunicación I2C. Además, debe tener un bajo consumo energético para garantizar el uso portátil prolongado del dispositivo.
 
 Se buscan placas compactas con conectividad inalámbrica. Opciones con microcontroladores como los de Arduino, ESP y Raspberry ofrecen estas características.
 
-Durante el proceso de selección se identifican dos placas con pantallas integradas, que aunque podrían ser útiles, no cumplen con los requisitos del proyecto. La placa LILYGO TTGO, no cuenta con tecnología táctil, lo cual limita su utilidad para realizar encuestas de confort térmico. Por otro lado, la MCU RP2040 con LCD redondo de 1.28 pulgadas, aunque cuenta con una pantalla táctil, no ofrece conectividad Wi-Fi, un requisito esencial. Aunque estas dos placas no son tomadas en cuanta por las razones ya mencionadas, sirven como referencia para la búsqueda de otras opciones. En la tabla @tbl-placas se presenta una comparación de diferentes placas de desarrollo con las características requeridas.
+Durante el proceso de selección se identifican dos placas con pantallas integradas, que aunque podrían ser útiles, no cumplen con los requisitos del proyecto. La placa LILYGO TTGO, no cuenta con tecnología táctil, lo cual limita su utilidad para realizar encuestas de confort térmico. Por otro lado, la MCU RP2040 con LCD redondo de 1.28 pulgadas, aunque cuenta con una pantalla táctil, no ofrece conectividad WiFi, un requisito esencial. Aunque estas dos placas no son tomadas en cuanta por las razones ya mencionadas, sirven como referencia para la búsqueda de otras opciones. En la tabla @tbl-placas se presenta una comparación de diferentes placas de desarrollo con las características requeridas.
 
 | Placa de desarrollo          | Wifi | Bluetooth | Comunicación                    | Cable       | Pines         |
 |------------------------------|------|-----------|---------------------------------|-------------|---------------|
@@ -46,17 +46,17 @@ Si bien todas las placas presentadas son opciones viables, Seeed Studio ha desar
 | Parametro                              | Seeed Studio XIAO ESP32C3 |
 |-------------------------------------------|----------------------------|
 | Procesador                                 | ESP32-C3 32 bit<br>RISC-V<br>160 MHz                                                                  
-| Conectividad                                  | 2.4GHz WiFi<br>BLE: Bluetooth 5.0, Bluetooth mesh     
-| On-chip Memory                            | 400 KB SRAM & 4MB Flash        |
+| Conectividad                                  | 2.4 GHz WiFi<br>BLE: Bluetooth 5.0, Bluetooth mesh     
+| On-chip Memory                            | 400 KB SRAM & 4 MB Flash        |
 | Interfaz                                | 1x UART, 1x IIC, 1x SPI,<br>11x GPIO(PWM), 4x ADC, 1x Reset button, 1x Boot button                     |
-| Dimensiones                               | 21 x 17.8mm                |
-| Características eléctricas                                     | Voltaje de entrada (Typo-C): 5V<br>Voltaje de operación 3.3 V  |
-|                                           | Circuit operating Voltage (ready to operate):<br>- Type-C: 5V@19mA <br>- BAT: 3.8V@22mA           |
-|                                           | corriente de carga de bateria: 350mA/100mA                      |
+| Dimensiones                               | 21 x 17.8 mm                |
+| Características eléctricas                                     | Voltaje de entrada (Typo-C): 5 V<br>Voltaje de operación 3.3 V  |
+|                                           | Circuit operating Voltage (ready to operate):<br>- Type-C: 5 V@19mA <br>- BAT: 3.8 V@22mA           |
+|                                           | corriente de carga de bateria: 350 mA/100 mA                      |
 | Modo de bajo consumo                         | Modo deep-sleep: > 44 µA  |
 | WiFi activado Consumo de energía           | Modo activo: < 75 mA     |
 | Bluetooth activado Consumo de energía             | Modo modem-sleep: < 27 mA      |
-| Temperatura de trabajo                      | -40°C ~ 85°C               |
+| Temperatura de trabajo                      | -40 °C ~ 85 °C               |
 : Especificaciones técnicas detalladas de la placa XIAO ESP32C3 {#tbl-esp} 
 
 
@@ -73,13 +73,6 @@ La elección de la pantalla debe alinearse con los criterios establecidos para l
 
 
 La pantalla seleccionada es la Seeed Studio Round Display for XIAO. Este modelo es perfectamente compatible con la placa XIAO ESP32C3, elegida previamente, gracias al enfoque de Seeed Studio para desarrollar un ecosistema orientado a aplicaciones de dispositivos portátiles. La compatibilidad entre los componentes, tecnología táctil y diseño redondo, logran que la pantalla se ajuste a las necesidades del proyecto.
-
-
-**Batería**
-
-El uso de baterías de polímero de litio (LiPo) es común en dispositivos portátiles debido a su pequeño tamaño, bajo peso y facilidad de carga. La capacidad mínima de carga requerida para la placa de desarrollo, junto con la pantalla, es de 500 mAh (cita datasheet de la pantalla). Aunque una batería de menor capacidad podría ser ventajosa en términos de tamaño, tendría como consecuencia una duración de uso significativamente limitada. 
-
-Para asegurar el correcto funcionamiento del dispositivo, se selecciona una batería con una capacidad de 650 mAh. Esta capacidad no solo satisface los requisitos mínimos de energía establecidos en las hojas de datos del microcontrolador y la pantalla, sino que también ofrece un margen adicional en la duración de la batería. Además, su tamaño es apropiado para no afectar el diseño compacto del dispositivo.
 
 
 **Sensor de temperatura**
@@ -113,6 +106,17 @@ Tras un análisis detallado, se selecciona el sensor GY-906 debido a su tamaño 
 
 **Sensor de frecuencia cardíaca**
 
+**Circuito vibrador**
+
+**Batería**
+
+XXX revisar cantidades en datasheet y redacción XXX
+
+El uso de baterías de polímero de litio (LiPo) es ampliamente utilizado en dispositivos portátiles debido a sus características de pequeño tamaño, bajo peso y facilidad de carga. Para este proyecto, que integra un microcontrolador XIAO ESP32C3, una pantalla XIAO Round Display, un sensor GY-906, un sensor MAX30102 y un circuito vibrador, es crucial seleccionar una capacidad de batería que asegure un funcionamiento continuo y confiable, considerando el consumo energético de cada componente involucrado.
+
+El microcontrolador XIAO ESP32C3 presenta un consumo promedio de 74.7 mA durante su operación activa, mientras que la pantalla XIAO Round Display demanda aproximadamente 70 mA. Por su parte, el sensor GY-906 tiene un consumo de corriente bajo, en el rango de 1 a 2 mA, el sensor MAX30102 consume entre 0.6 y 1.2 mA durante la medición de la frecuencia cardíaca. Adicionalmente, el motor vibrador registra un consumo estimado de 84 mA, dependiendo de la intensidad de la vibración y la carga aplicada.
+
+El consumo total del dispositivo en condiciones de operación máxima puede alcanzar 232 mA. Sin embargo, este nivel de consumo es poco probable alcanzarse durante el uso típico del dispositivo,ya que, durante la mayor parte del tiempo los sensores y la pantalla permanecen inactivos, y el motor vibrador se enciende únicamente por breves periodos cada hora. Con el fin de asegurar autonomía del dispositivo y evitar interrupciones en su funcionamiento, se selecciona una batería de 650 mAh. Este capacidad satisface los requisitos energéticos, permitiendo el uso prolongado del dispositivo. Además, la batería seleccionada cumple en tamaño y peso, ajustándose adecuadamente al diseño del dispositivo.
 
 3. **Diseño del dispositivo**
 
@@ -178,6 +182,8 @@ En el articulo XXX puede encontrar información más detallada acerca del diseñ
 ## Calibración
 1. Calibración de los sensores 
 
-## Datos
+## Pseudo código
+
+## Instrucciones de uso
 1. Integración con la plataforma iot
 2. manejo de los datos

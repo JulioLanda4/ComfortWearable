@@ -172,7 +172,8 @@ div.csl-indent {
   <li><a href="#construcción-del-dispositivo" id="toc-construcción-del-dispositivo" class="nav-link" data-scroll-target="#construcción-del-dispositivo"><span class="header-section-number">3.2</span> Construcción del dispositivo</a></li>
   <li><a href="#encuestas-e-interfaz" id="toc-encuestas-e-interfaz" class="nav-link" data-scroll-target="#encuestas-e-interfaz"><span class="header-section-number">3.3</span> Encuestas e interfaz</a></li>
   <li><a href="#calibración" id="toc-calibración" class="nav-link" data-scroll-target="#calibración"><span class="header-section-number">3.4</span> Calibración</a></li>
-  <li><a href="#datos" id="toc-datos" class="nav-link" data-scroll-target="#datos"><span class="header-section-number">3.5</span> Datos</a></li>
+  <li><a href="#pseudo-código" id="toc-pseudo-código" class="nav-link" data-scroll-target="#pseudo-código"><span class="header-section-number">3.5</span> Pseudo código</a></li>
+  <li><a href="#instrucciones-de-uso" id="toc-instrucciones-de-uso" class="nav-link" data-scroll-target="#instrucciones-de-uso"><span class="header-section-number">3.6</span> Instrucciones de uso</a></li>
   </ul>
 </nav>
     </div>
@@ -215,9 +216,9 @@ div.csl-indent {
 <li>Sensores</li>
 </ul>
 <p><strong>Placa de desarrollo</strong></p>
-<p>La selección de la tarjeta o placa de desarrollo es una decisión crucial en el desarrollo del proyecto. Se requiere una placa de tamaño reducido que cumpla con características esenciales como conexión Wi-Fi, velocidad de procesamiento, memoria y comunicación I2C. Además, debe tener un bajo consumo energético para garantizar el uso portátil prolongado del dispositivo.</p>
+<p>La selección de la tarjeta o placa de desarrollo es una decisión crucial en el desarrollo del proyecto. Se requiere una placa de tamaño reducido que cumpla con características esenciales como conexión WiFi, velocidad de procesamiento, memoria y comunicación I2C. Además, debe tener un bajo consumo energético para garantizar el uso portátil prolongado del dispositivo.</p>
 <p>Se buscan placas compactas con conectividad inalámbrica. Opciones con microcontroladores como los de Arduino, ESP y Raspberry ofrecen estas características.</p>
-<p>Durante el proceso de selección se identifican dos placas con pantallas integradas, que aunque podrían ser útiles, no cumplen con los requisitos del proyecto. La placa LILYGO TTGO, no cuenta con tecnología táctil, lo cual limita su utilidad para realizar encuestas de confort térmico. Por otro lado, la MCU RP2040 con LCD redondo de 1.28 pulgadas, aunque cuenta con una pantalla táctil, no ofrece conectividad Wi-Fi, un requisito esencial. Aunque estas dos placas no son tomadas en cuanta por las razones ya mencionadas, sirven como referencia para la búsqueda de otras opciones. En la tabla <a href="#tbl-placas">Tabla&nbsp;<span>3.1</span></a> se presenta una comparación de diferentes placas de desarrollo con las características requeridas.</p>
+<p>Durante el proceso de selección se identifican dos placas con pantallas integradas, que aunque podrían ser útiles, no cumplen con los requisitos del proyecto. La placa LILYGO TTGO, no cuenta con tecnología táctil, lo cual limita su utilidad para realizar encuestas de confort térmico. Por otro lado, la MCU RP2040 con LCD redondo de 1.28 pulgadas, aunque cuenta con una pantalla táctil, no ofrece conectividad WiFi, un requisito esencial. Aunque estas dos placas no son tomadas en cuanta por las razones ya mencionadas, sirven como referencia para la búsqueda de otras opciones. En la tabla <a href="#tbl-placas">Tabla&nbsp;<span>3.1</span></a> se presenta una comparación de diferentes placas de desarrollo con las características requeridas.</p>
 <div id="tbl-placas">
 <table class="table">
 <caption>Tabla&nbsp;3.1: Comparación de características de conectividad y hardware en placas de desarrollo</caption>
@@ -320,11 +321,11 @@ div.csl-indent {
 </tr>
 <tr class="even">
 <td>Conectividad</td>
-<td>2.4GHz WiFi<br>BLE: Bluetooth 5.0, Bluetooth mesh</td>
+<td>2.4 GHz WiFi<br>BLE: Bluetooth 5.0, Bluetooth mesh</td>
 </tr>
 <tr class="odd">
 <td>On-chip Memory</td>
-<td>400 KB SRAM &amp; 4MB Flash</td>
+<td>400 KB SRAM &amp; 4 MB Flash</td>
 </tr>
 <tr class="even">
 <td>Interfaz</td>
@@ -332,19 +333,19 @@ div.csl-indent {
 </tr>
 <tr class="odd">
 <td>Dimensiones</td>
-<td>21 x 17.8mm</td>
+<td>21 x 17.8 mm</td>
 </tr>
 <tr class="even">
 <td>Características eléctricas</td>
-<td>Voltaje de entrada (Typo-C): 5V<br>Voltaje de operación 3.3 V</td>
+<td>Voltaje de entrada (Typo-C): 5 V<br>Voltaje de operación 3.3 V</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>Circuit operating Voltage (ready to operate):<br>- Type-C: 5V@19mA <br>- BAT: 3.8V@22mA</td>
+<td>Circuit operating Voltage (ready to operate):<br>- Type-C: 5 V@19mA <br>- BAT: 3.8 V@22mA</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>corriente de carga de bateria: 350mA/100mA</td>
+<td>corriente de carga de bateria: 350 mA/100 mA</td>
 </tr>
 <tr class="odd">
 <td>Modo de bajo consumo</td>
@@ -360,7 +361,7 @@ div.csl-indent {
 </tr>
 <tr class="even">
 <td>Temperatura de trabajo</td>
-<td>-40°C ~ 85°C</td>
+<td>-40 °C ~ 85 °C</td>
 </tr>
 </tbody>
 </table>
@@ -407,9 +408,6 @@ div.csl-indent {
 </table>
 </div>
 <p>La pantalla seleccionada es la Seeed Studio Round Display for XIAO. Este modelo es perfectamente compatible con la placa XIAO ESP32C3, elegida previamente, gracias al enfoque de Seeed Studio para desarrollar un ecosistema orientado a aplicaciones de dispositivos portátiles. La compatibilidad entre los componentes, tecnología táctil y diseño redondo, logran que la pantalla se ajuste a las necesidades del proyecto.</p>
-<p><strong>Batería</strong></p>
-<p>El uso de baterías de polímero de litio (LiPo) es común en dispositivos portátiles debido a su pequeño tamaño, bajo peso y facilidad de carga. La capacidad mínima de carga requerida para la placa de desarrollo, junto con la pantalla, es de 500 mAh (cita datasheet de la pantalla). Aunque una batería de menor capacidad podría ser ventajosa en términos de tamaño, tendría como consecuencia una duración de uso significativamente limitada.</p>
-<p>Para asegurar el correcto funcionamiento del dispositivo, se selecciona una batería con una capacidad de 650 mAh. Esta capacidad no solo satisface los requisitos mínimos de energía establecidos en las hojas de datos del microcontrolador y la pantalla, sino que también ofrece un margen adicional en la duración de la batería. Además, su tamaño es apropiado para no afectar el diseño compacto del dispositivo.</p>
 <p><strong>Sensor de temperatura</strong></p>
 <p>Los sensores de temperatura se clasifican en dos tipos principales: sensores de contacto y sensores sin contacto. Los sensores de contacto, a su vez, se subdividen en tres categorías según su método de medición:</p>
 <p><strong><em>Termopares</em></strong>:Utilizan el efecto Seebeck para generar una voltaje por la unión de dos metales diferentes.</p>
@@ -478,6 +476,12 @@ div.csl-indent {
 </div>
 <p>Tras un análisis detallado, se selecciona el sensor GY-906 debido a su tamaño compacto, diseño adecuado y comunicación digital por I2C. Aunque el termistor NTC MF52AT ofrece una alternativa viable, se descarta por ser un sensor analógico. Dado que el dispositivo está diseñado para operar en un espacio reducido, cualquier interferencia en las conexiones internas podría afectar la precisión de los sensores analógicos. Por esta razón, se opta por el GY-906, que garantiza una transmisión de datos más confiable y estable en entornos compactos.</p>
 <p><strong>Sensor de frecuencia cardíaca</strong></p>
+<p><strong>Circuito vibrador</strong></p>
+<p><strong>Batería</strong></p>
+<p>XXX revisar cantidades en datasheet y redacción XXX</p>
+<p>El uso de baterías de polímero de litio (LiPo) es ampliamente utilizado en dispositivos portátiles debido a sus características de pequeño tamaño, bajo peso y facilidad de carga. Para este proyecto, que integra un microcontrolador XIAO ESP32C3, una pantalla XIAO Round Display, un sensor GY-906, un sensor MAX30102 y un circuito vibrador, es crucial seleccionar una capacidad de batería que asegure un funcionamiento continuo y confiable, considerando el consumo energético de cada componente involucrado.</p>
+<p>El microcontrolador XIAO ESP32C3 presenta un consumo promedio de 74.7 mA durante su operación activa, mientras que la pantalla XIAO Round Display demanda aproximadamente 70 mA. Por su parte, el sensor GY-906 tiene un consumo de corriente bajo, en el rango de 1 a 2 mA, el sensor MAX30102 consume entre 0.6 y 1.2 mA durante la medición de la frecuencia cardíaca. Adicionalmente, el motor vibrador registra un consumo estimado de 84 mA, dependiendo de la intensidad de la vibración y la carga aplicada.</p>
+<p>El consumo total del dispositivo en condiciones de operación máxima puede alcanzar 232 mA. Sin embargo, este nivel de consumo es poco probable alcanzarse durante el uso típico del dispositivo,ya que, durante la mayor parte del tiempo los sensores y la pantalla permanecen inactivos, y el motor vibrador se enciende únicamente por breves periodos cada hora. Con el fin de asegurar autonomía del dispositivo y evitar interrupciones en su funcionamiento, se selecciona una batería de 650 mAh. Este capacidad satisface los requisitos energéticos, permitiendo el uso prolongado del dispositivo. Además, la batería seleccionada cumple en tamaño y peso, ajustándose adecuadamente al diseño del dispositivo.</p>
 <ol start="3" type="1">
 <li><strong>Diseño del dispositivo</strong></li>
 </ol>
@@ -531,8 +535,11 @@ div.csl-indent {
 <li>Calibración de los sensores</li>
 </ol>
 </section>
-<section id="datos" class="level2" data-number="3.5">
-<h2 data-number="3.5" data-anchor-id="datos"><span class="header-section-number">3.5</span> Datos</h2>
+<section id="pseudo-código" class="level2" data-number="3.5">
+<h2 data-number="3.5" data-anchor-id="pseudo-código"><span class="header-section-number">3.5</span> Pseudo código</h2>
+</section>
+<section id="instrucciones-de-uso" class="level2" data-number="3.6">
+<h2 data-number="3.6" data-anchor-id="instrucciones-de-uso"><span class="header-section-number">3.6</span> Instrucciones de uso</h2>
 <ol type="1">
 <li>Integración con la plataforma iot</li>
 <li>manejo de los datos</li>
