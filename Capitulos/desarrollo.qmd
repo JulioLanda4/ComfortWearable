@@ -40,7 +40,7 @@ Durante el proceso de selección se identifican dos placas con pantallas integra
 | Seeed Studio XIAO ESP32S3   | si   | 5         | 1x UART, 1x IIC, 1x SPI       | USB C       | 11 GPIOS, 9 ADC |
 : Comparación de características de conectividad y hardware en placas de desarrollo {#tbl-placas}
 
-Si bien todas las placas presentadas son opciones viables, Seeed Studio ha desarrollado placas orientadas a aplicaciones de dispositivos portátiles. Estas placas empatan perfectamente con las necesidades del proyecto debido a su tamaño compacto, conectividad, modos de bajo consumo y la posibilidad de la integración con una pantalla táctil desarrollada por la misma marca. Para el desarrollo del proyecto, se elige la XIAO ESPE32C3 sobre la XIAO ESP32S3. Aunque la primera es menos potente, cumple con todos los requerimientos a un menor costo. No obstante, la XIAO ESP32S3 podría ser usada sin ningún problema, ofreciendo incluso aumentar considerablemente la capacidad de memoria para futuras modificaciones o mejoras en el código. La @tbl-esp muestra las características especificas de la placa seleccionada.
+Si bien todas las placas presentadas son opciones viables, Seeed Studio ha desarrollado placas orientadas a aplicaciones de dispositivos portátiles. Estas placas empatan perfectamente con las necesidades del proyecto debido a su tamaño compacto, conectividad, modos de bajo consumo y la posibilidad de la integración con una pantalla táctil desarrollada por la misma marca. Para el desarrollo del proyecto, se elige la XIAO ESP32C3 sobre la XIAO ESP32S3. Aunque la primera es menos potente, cumple con todos los requerimientos a un menor costo. No obstante, la XIAO ESP32S3 podría ser usada sin ningún problema, ofreciendo incluso aumentar considerablemente la capacidad de memoria para futuras modificaciones o mejoras en el código. La @tbl-esp muestra las características especificas de la placa seleccionada.
 
 
 | Parametro                              | Seeed Studio XIAO ESP32C3 |
@@ -77,7 +77,7 @@ La pantalla seleccionada es la Seeed Studio Round Display for XIAO. Este modelo 
 
 **Sensor de temperatura**
 
-La @tbl-temp muestra una comparación entre distintos sensores de temperatura que podrían ser utilizados en el proyecto, incluyendo termistores, sensores infrarrojos y un sensor de temperatura y humedad. Estos sensores se manejan en un rango de operación entre los 3.3 V y 5 V para garantizar su compatibilidad con la placa de desarrollo seleccionada.
+La @tbl-temp muestra una comparación entre distintos sensores de temperatura que podrían ser utilizados en el proyecto, incluyendo termistores, sensores infrarrojos y un sensor de temperatura y humedad. Estos sensores se manejan en un rango de operación entre los 3.3 V y 5.0 V para garantizar su compatibilidad con la placa de desarrollo seleccionada.
 
 
 | Característica            | Tipo de sensor                      | Rango de temperatura               | Precisión                             | Comunicación                          |
@@ -103,7 +103,7 @@ Los sensores ópticos se han consolidado como una buena opción para la medició
 | **MAX30105**    | 32-bit FIFO     |   18-bit   | Frecuencia cardíaca, SpO2, detección de partículas | 600 µA a 1.2 mA |
 : Comparación de Sensores de frecuencia cardíaca  {#tbl-pulso}
 
-SEl MAX30102 se elige como la mejor opción para este proyecto por su equilibrio entre funcionalidad, costo y tamaño. A comparación del MAX30105, este es más económico y más compacto. La funcionalidad de detección de partículas no es de interés para este proyecto. Además, el MAX30102 ofrece mejoras significativas respecto al MAX30100, tanto en la resolución como en el tipo de almacenamiento. La medición de oxigenación en la sangre no es una característica actual del dispositivo planteado en esta tesis, pero podría ser una variable de interés en investigaciones futuras.
+El MAX30102 se elige como la mejor opción para este proyecto por su equilibrio entre funcionalidad, costo y tamaño. A comparación del MAX30105, este es más económico y más compacto. La funcionalidad de detección de partículas no es de interés para este proyecto. Además, el MAX30102 ofrece mejoras significativas respecto al MAX30100, tanto en la resolución como en el tipo de almacenamiento. La medición de oxigenación en la sangre no es una característica actual del dispositivo planteado en esta tesis, pero podría ser una variable de interés en investigaciones futuras.
 
 
 **Circuito vibrador**
@@ -114,11 +114,11 @@ El dispositivo cuenta con un sistema de alarma silenciosa compuesta por un motor
 
 **Batería**
 
-El uso de baterías de polímero de litio (LiPo) es ampliamente utilizado en dispositivos portátiles debido a sus características de pequeño tamaño, bajo peso y facilidad de carga. Para este proyecto, que integra un microcontrolador XIAO ESP32C3, una pantalla XIAO Round Display, un sensor GY-906, un sensor MAX30102 y un circuito vibrador, es crucial seleccionar una capacidad de batería que asegure un funcionamiento continuo y confiable, considerando el consumo energético de cada componente involucrado.
+El uso de baterías de polímero de litio (LiPo) es ampliamente utilizado en dispositivos portátiles debido a sus características de pequeño tamaño, bajo peso y facilidad de carga. Para este proyecto, que integra una placa de desarrollo XIAO ESP32C3, una pantalla XIAO Round Display, un sensor GY-906, un sensor MAX30102 y un circuito vibrador, es crucial seleccionar una capacidad de batería que asegure un funcionamiento continuo y confiable, considerando el consumo energético de cada componente involucrado.
 
-El microcontrolador XIAO ESP32C3 presenta un consumo promedio de 74.7 mA durante su operación activa [@xiaoesp32c3], mientras que la pantalla XIAO Round Display demanda aproximadamente 70 mA [@xiaodisplay]. Por su parte, el sensor GY-906 tiene un consumo de corriente bajo, en el rango de 1 a 2 mA [@mlx90614_datasheet], el sensor MAX30102 consume entre 0.6 y 1.2 mA durante la medición de la frecuencia cardíaca [@max30102_datasheet]. Adicionalmente, el motor vibrador registra un consumo estimado de 84 mA [@uelectronics_vibration_motor], dependiendo de la intensidad de la vibración y la carga aplicada.
+La XIAO ESP32C3 presenta un consumo promedio de 74.7 mA durante su operación activa [@xiaoesp32c3], mientras que la pantalla XIAO Round Display demanda aproximadamente 70.0 mA [@xiaodisplay]. Por su parte, el sensor GY-906 tiene un consumo de corriente bajo, en el rango de 1.0 a 2.0 mA [@mlx90614_datasheet], el sensor MAX30102 consume entre 0.6 y 1.2 mA durante la medición de la frecuencia cardíaca [@max30102_datasheet]. Adicionalmente, el motor vibrador registra un consumo estimado de 84.0 mA [@uelectronics_vibration_motor], dependiendo de la intensidad de la vibración y la carga aplicada.
 
-El consumo total del dispositivo en condiciones de operación máxima puede alcanzar 232 mA. Sin embargo, este nivel de consumo es poco probable alcanzarse durante el uso típico del dispositivo,ya que, durante la mayor parte del tiempo los sensores y la pantalla permanecen inactivos, y el motor vibrador se enciende únicamente por breves periodos cada hora. Con el fin de asegurar autonomía del dispositivo y evitar interrupciones en su funcionamiento, se selecciona una batería de 650 mAh. Este capacidad satisface los requisitos energéticos, permitiendo el uso prolongado del dispositivo. Además, la batería seleccionada cumple en tamaño y peso, ajustándose adecuadamente al diseño del dispositivo.
+El consumo total del dispositivo en condiciones de operación máxima puede alcanzar 232.0 mA. Sin embargo, este nivel de consumo es poco probable alcanzarse durante el uso típico del dispositivo,ya que, durante la mayor parte del tiempo los sensores y la pantalla permanecen inactivos y solo se encenderan al momento de llevar a cabo sus mediciones; el motor vibrador se enciende únicamente por breves periodos cada hora. Con el fin de asegurar autonomía del dispositivo y evitar interrupciones en su funcionamiento, se selecciona una batería de 650.0 mAh. Este capacidad satisface los requisitos energéticos, permitiendo el uso prolongado del dispositivo. Además, la batería seleccionada cumple en tamaño y peso, ajustándose adecuadamente al diseño del dispositivo.
 
 
 La @tbl-componentes-seleccionados muestra todos los componentes seleccionados para el desarrollo del dispositivo. 
@@ -145,7 +145,7 @@ Una vez seleccionados los componentes principales del dispositivo, el diseño se
 
 **Carcasa:**
 
-La carcasa del dispositivo esta diseñada para ser impresa en 3D y consta de 3 partes principales y un seguro. La primera parte es la base y esta es la que está en contacto con la muñeca del usuario, cuenta con ranuras para el acomodo y fijación de los sensores y que estos queden en contacto directo con la piel para llevar a cabo las mediciones de forma adecuada
+La carcasa del dispositivo esta diseñada para ser impresa en 3D y consta de tres partes principales y un seguro. La primera parte es la base y esta es la que está en contacto con la muñeca del usuario, cuenta con ranuras para el acomodo y fijación de los sensores y que estos queden en contacto directo con la piel para llevar a cabo las mediciones de forma adecuada
 
 La parte central de la carcasa es la pieza que va arriba de la base y es donde se aloja el microcontrolador, el motor vibrador y el interruptor de encendido. La pieza está diseñada con compartimentos para fijar cada uno de estos componentes. Por la parte exterior de la carcasa, esta pieza cuenta con ranuras para colocar las correas que fijan el dispositivo a la muñeca del usuario.
 
@@ -153,12 +153,14 @@ La parte superior de la carcasa está diseñada con el fin de mantener la pantal
 
 Adicional, hay una cuarta pieza que es un seguro para fijar el interruptor de encendido. Esta se coloca por encima del interruptor una ve esté colocado en su posición en la pieza central. El seguro ensambla por presión a la pieza y deja fijo el interruptor.
 
-En la figXXX Se observan las tres piezas principales de la carcasa.
+En la @fig-partescase Se observan las tres piezas principales de la carcasa.
+
+![Diagrama de conexiones](../Imagenes/PartesCase.png){#fig-partescase width=75%}
 
 **Diseño de los circuitos**
 
-El diseño de los circuitos se divide en tres circuitos, motor vibratorio para alarmas circuito @fig-conexiones a) , circuito de sensores y
-microcontrolador @fig-conexiones b), y el circuito de la batería @fig-conexiones c). Cada uno de estos circuitos está diseñado para mantener las conexiones lo más simples y cortas posibles. Dado que la placa XIAO ESP32C3 y la pantalla XIAO Round Display se ensamblan directamente, se omite ese circuito.
+El diseño de los circuitos se divide en tres circuitos, circuito vibrador para alarma @fig-conexiones a) , circuito de sensores y
+microcontrolador @fig-conexiones b) y el circuito de la batería @fig-conexiones c). Cada uno de estos circuitos está diseñado para mantener las conexiones lo más simples y cortas posibles. Dado que la placa XIAO ESP32C3 y la pantalla XIAO Round Display se ensamblan directamente, se omite ese circuito.
 
 ![Diagrama de conexiones](../Imagenes/Diagrama%20de%20conexiones.png){#fig-conexiones}
 
@@ -171,11 +173,11 @@ El código de colores utilizado en este proyecto, para facilitar las conexiones,
 * ***Verde:*** señal de activación del motor.
 * ***Amarillo:*** conexión entre el pin emisor del transistor y el motor vibratorio.
 
-El Circuito de motor vibrador es un circuito sencillo de control de motor. Este circuito tiene la finalidad de proteger el microcontrolador al evitar que el motor se alimente directamente del pin digital del microcontrolador, si no que lo haga directamente de la alimentación general del dispositivo, dejando al pin del microcontrolador únicamente la tarea de dar la señal de activación.
+El circuito vibrador es un circuito sencillo de control de motor. Este circuito tiene la finalidad de proteger el microcontrolador al evitar que el motor se alimente directamente del pin digital del microcontrolador, si no que lo haga directamente de la alimentación general del dispositivo, dejando al pin del microcontrolador únicamente la tarea de dar la señal de activación.
 
 El circuito de los sensores y el microcontrolador tiene la función de comunicar de forma paralela ambos sensores por protocolo I2C al microcontrolador.
 
-El circuito de la batería sirve para añadir el interruptor de encendido y agregar un conector JST que va directo a la pantalla XIAO Round Display.
+El circuito de la batería sirve para añadir el interruptor de encendido y agregar un conector JST, el cual se conecta a la pantalla XIAO Round Display.
 
 En resumen, el diseño del dispositivo está enfocado en optimizar las conexiones, el espacio y facilitar su montaje, esto a la vez que se asegura su funcionalidad y ergonomía.
 
@@ -184,19 +186,117 @@ En resumen, el diseño del dispositivo está enfocado en optimizar las conexione
 
 La construcción del dispositivo en tres etapas: La impresión de la carcasa, la conexión de los componentes electrónicos y la integración y montaje de todos los elementos.
 
-***Carcasa:*** los archivos STL para la impresión de la carcasa los puedes encontrar en el Anexo XXX
+***Carcasa:*** los archivos STL para la impresión de la carcasa los puedes encontrar en el <a href="https://github.com/JulioLanda4/Reloj_Confort" target="_blank">repositorio del proyecto</a>
 
-***Componentes electrónicos:*** Las conexiones de los componentes electrónicos se llevan a cabo siguiendo los diagramas de la imagen XXX. Es importante seguir correctamente los diagramas para facilitar posteriormente su acomodo dentro de la carcasa. 
+ 
 
-***Integración y montaje:*** Una vez realizadas las conexiones, se lleva a cabo el montaje de los circuitos dentro de la carcasa y está se ensambla y se colocan las correas.
+***Componentes electrónicos:*** Las conexiones de los componentes electrónicos se llevan a cabo siguiendo los diagramas de @fig-conexiones. Es importante seguir correctamente los diagramas para facilitar posteriormente su acomodo dentro de la carcasa. 
+
+***Integración y montaje:*** Una vez realizadas las conexiones, se lleva a cabo el montaje de los circuitos dentro de la carcasa, esta se ensambla y se colocan las correas.
 
 En el articulo XXX puede encontrar información más detallada acerca del diseño y los pasos a seguir para la construcción del dispositivo.
 
 
 ## Encuestas e interfaz
 
-1. Desarrollo del firmware: describe el desarrollo de la interfaz
-2. Implementación de la encuesta: Explica detalladamente la encuesta y porque se eligieron esos preguntas
+Una de las principales características del reloj inteligente presentado, es la capacidad de realizar encuestas de confort térmico de manera periódica y en condiciones reales con el propósito de recolectar datos que permitan estudiar la percepción de confort térmico en el Instituto de Energías Renovables (IER) de la UNAM. A continuación se describe la metodología de implementación de las encuestas, la lógica de la interfaz y las funcionalidades que permiten la interacción eficiente entre el usuario y el dispositivo.
+
+1. Diseño de las Encuestas
+
+El reloj inteligente lleva a cabo encuestas simplificadas de confort térmico cada hora, en horarios específicos entre las 8:00 a. m. y las 9:00 p. m., programadas en las medias horas para alinearse con los horarios de actividades en el IER, permitiendo al usuario aclimatarse antes de responder la encuesta. Al llegar el momento de responder la encuesta, el dispositivo activa una alarma vibradora que consta de tres pulsos cortos en un lapso de un segundo, para notificar al usuario. Si el usuario ignora la alarma, el botón de 'Encuesta' permanece activo hasta que se complete la encuesta, si después de quince minutos la encuesta no ha sido respondida, la alarma se vuelve a activar una vez más. Si esta segunda notificación es ignorada, la alarma no se activa nuevamente hasta la próxima hora programada. 
+
+La encuesta consta de cinco preguntas. Las preguntas seleccionadas se basan en XXX Podría mencionarse a Ibet o buscar la referencia en las notas de la clase con Guadalupe. Las cinco preguntas son las siguientes:
+
+- Vestimenta: Presenta la pregunta: "¿Cuál es tu vestimenta actual?" donde el usuario puede seleccionar todas las prendas que este usando de una lista predefinida. El objetivo de esta pregunta es calcular el nivel de aislamiento térmico del usuario (CLO). La interfaz muestra el cálculo del valor de CLO en la parte inferior de la pantalla a medida que se seleccionan o deseleccionan las prendas. La @tbl-prendas muestra la lista de prendas disponibles para seleccionar con su respectivo calor de CLO.
+
+| **Prenda**          | **Valor de CLO** |
+|---------------------|------------------|
+| Zapato              | 0.02             |
+| Calzón              | 0.04             |
+| Playera             | 0.09             |
+| Camisa              | 0.15             |
+| Pantalón            | 0.25             |
+| Calcetines          | 0.02             |
+| Sombrero            | 0.05             |
+| Bufanda             | 0.10             |
+| Guantes             | 0.10             |
+| Chaqueta            | 0.30             |
+| Suéter              | 0.18             |
+| Falda               | 0.14             |
+| Shorts              | 0.06             |
+| Vestido             | 0.15             |
+| Pantalón de mezclilla| 0.23            |
+| Abrigo              | 0.40             |
+| Gorro de lana       | 0.08             |
+| Bata de baño        | 0.30             |
+| Chaleco             | 0.10             |
+| Botas               | 0.10             |
+| Impermeable         | 0.20             |
+| Sandalias           | 0.02             |
+| Brasier             | 0.02             |
+| Corpiño             | 0.03             |
+: Tabla de equivalencia de prendas a CLO {#tbl-prendas}
+
+- Actividad: Presenta la pregunta: "¿Qué actividad estás realizando?" donde el usuario selecciona una única opción de una lista predefinida de actividades que permiten calcular la tasa metabólica (MET) del usuario. La @tbl-actividad muestra la lista de actividades con su respectivo valor de MET asociado.
+
+| **Actividad**              | **Valor de MET** |
+|----------------------------|------------------|
+| Tomando clase sentado      | 1.3              |
+| Tomando clase de pie       | 1.8              |
+| Dando clase sentado        | 2.0              |
+| Dando clase de pie         | 2.3              |
+| Caminando                  | 2.9              |
+| Comiendo                   | 1.5              |
+| Escribiendo                | 1.3              |
+| Trabajando en computadora  | 1.5              |
+| De pie en un laboratorio   | 2.0              |
+: Tabla equivalencia de actividades a MET  {#tbl-actividad}
+
+- Ubicación: Se presenta la pregunta: "¿Donde te encuentras?" donde el usuario selecciona una única opción de una lista predefinida de ubicaciones  dentro del IER UNAM.
+
+- Escala de confort térmico: Se presenta la pregunta: "¿Cuál es tu sensación térmica en este momento?" donde el usuario puede elegir su sensación térmica actual en un rango de -3 a 3 en intervalos de 0.5. Cada valor tiene una descripción asociada de la sensación térmica. La @tbl-tsv muestra la descripción asociada a cada uno de los valores del voto de sensación térmica.
+
+| Valor de Sensación Térmica | Descripción           |
+|---------------------------|-----------------------|
+| -3                        | Helado                |
+| -2.5                      | Mucho frío            |
+| -2                        | Frío                  |
+| -1.5                      | Ligeramente frío      |
+| -1                        | Fresco                |
+| -0.5                      | Ligeramente fresco    |
+| 0                         | Neutro                |
+| 0.5                       | Ligeramente templado  |
+| 1                         | Templado              |
+| 1.5                       | Ligeramente caluroso  |
+| 2                         | Caluroso              |
+| 2.5                       | Muy caluroso          |
+| 3                         | Ardiendo              |
+: Escala del voto de sensación térmica con su descripción  {#tbl-tsv}
+
+- Aceptación Térmica: Finalmente, se presenta la pregunta: "¿Aceptas la sensación térmica actual?", donde el usuario puede responder "Sí" o "No". Esta pregunta busca evaluar si, independientemente de la sensación térmica reportada, el usuario la percibe como aceptable.
+
+2. Interfaz de Usuario
+
+La interfaz del dispositivo ha sido diseñada utilizando la biblioteca LVGL, que ofrece herramientas para la creación de interfaces gráficas en microcontroladores integrados con pantallas táctiles. Cada una de las preguntas descritas previamente se presenta en una pantalla distinta, permitiendo al usuario navegar de manera intuitiva y sencilla.
+
+- Navegación entre Pantallas: Cada pantalla tiene botones laterales para avanzar o retroceder entre las preguntas de la encuesta. Una vez completadas todas las preguntas, el usuario puede presionar el botón "Finalizar".
+
+- Interacción con Pantallas: Cada pantalla que presenta una lista predefinida de opciones cuenta con botones para moverse entre las diferentes opciones disponibles. Esto permite al usuario seleccionar fácilmente la opción deseada, asegurando una interacción fluida y precisa con el dispositivo.
+
+3. Funcionalidades Adicionales y Validación
+
+Una vez que se completa la encuesta, al pulsar el botón "Finalizar", aparece un mensaje emergente que solicita al usuario mantenerse inmóvil mientras que los sensores de frecuencia cardíaca (MAX30102) y de temperatura de la piel (GY-906) llevan a cabo sus mediciones correspondientes, estas mediciones se realizan en un lapso de diez segundos. Los resultados se muestran al usuario para su validación. Si el usuario considera que los resultados son coherentes, puede enviarlos; de lo contrario, tiene la opción de repetir las mediciones.
+
+Los datos recolectados son enviados a la plataforma Thingsboard para su almacenamiento y análisis posterior. Esta funcionalidad permite construir una base de datos que facilite el estudio del confort térmico en diferentes espacios y condiciones dentro del IER.
+
+La @fig-generica muestra todas las pantallas
+
+![Imagen generica](../Imagenes/ImagenGenerica.png){#fig-generica width=50%}
+
+
+
+
+
 
 ## Calibración
 1. Calibración de los sensores 
