@@ -171,7 +171,11 @@ div.csl-indent {
   <li><a href="#metodología" id="toc-metodología" class="nav-link active" data-scroll-target="#metodología"><span class="header-section-number">3.1</span> Metodología</a></li>
   <li><a href="#construcción-del-dispositivo" id="toc-construcción-del-dispositivo" class="nav-link" data-scroll-target="#construcción-del-dispositivo"><span class="header-section-number">3.2</span> Construcción del dispositivo</a></li>
   <li><a href="#encuestas-e-interfaz" id="toc-encuestas-e-interfaz" class="nav-link" data-scroll-target="#encuestas-e-interfaz"><span class="header-section-number">3.3</span> Encuestas e interfaz</a></li>
-  <li><a href="#calibración" id="toc-calibración" class="nav-link" data-scroll-target="#calibración"><span class="header-section-number">3.4</span> Calibración</a></li>
+  <li><a href="#calibración" id="toc-calibración" class="nav-link" data-scroll-target="#calibración"><span class="header-section-number">3.4</span> Calibración</a>
+  <ul class="collapse">
+  <li><a href="#calibración-del-sensor-max30102" id="toc-calibración-del-sensor-max30102" class="nav-link" data-scroll-target="#calibración-del-sensor-max30102"><span class="header-section-number">3.4.1</span> Calibración del Sensor MAX30102</a></li>
+  <li><a href="#calibración-del-sensor-gy-906" id="toc-calibración-del-sensor-gy-906" class="nav-link" data-scroll-target="#calibración-del-sensor-gy-906"><span class="header-section-number">3.4.2</span> Calibración del Sensor GY-906</a></li>
+  </ul></li>
   <li><a href="#lógica-de-programación" id="toc-lógica-de-programación" class="nav-link" data-scroll-target="#lógica-de-programación"><span class="header-section-number">3.5</span> Lógica de programación</a></li>
   <li><a href="#instrucciones-de-uso" id="toc-instrucciones-de-uso" class="nav-link" data-scroll-target="#instrucciones-de-uso"><span class="header-section-number">3.6</span> Instrucciones de uso</a></li>
   </ul>
@@ -883,9 +887,80 @@ div.csl-indent {
 </section>
 <section id="calibración" class="level2" data-number="3.4">
 <h2 data-number="3.4" data-anchor-id="calibración"><span class="header-section-number">3.4</span> Calibración</h2>
-<ol type="1">
-<li>Calibración de los sensores</li>
-</ol>
+<p>La calibración de los sensores en el dispositivo es esencial para garantizar la precisión y confiabilidad de las mediciones. Esta sección describe el proceso de calibración de los sensores MAX30102 y GY-906, utilizados para medir la frecuencia cardíaca y la temperatura de la piel, respectivamente.</p>
+<section id="calibración-del-sensor-max30102" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" data-anchor-id="calibración-del-sensor-max30102"><span class="header-section-number">3.4.1</span> Calibración del Sensor MAX30102</h3>
+<p>Para la calibración del sensor MAX30102, se utiliza como referencia un oxímetro de pulso Yonker YK-81C, que ofrece una precisión de ± 1 bpm. Dado que las mediciones del reloj inteligente se realizan en intervalos de 10 segundos, este mismo periodo se emplea durante el proceso de calibración. El sensor se configura mediante Arduino y la librería de SparkFun para los sensores MAX3010X. La calibración se enfoca en la configuración óptima de varios parámetros ajustables: <code>ledBrightness</code>, <code>sampleAverage</code>, <code>ledMode</code>, <code>sampleRate</code>, <code>pulseWidth</code>, <code>adcRange</code> y <code>RATE_SIZE</code>.</p>
+<ul>
+<li><strong>ledBrightness</strong> (0 - 255): Controla la intensidad de los LED infrarrojo y rojo, afectando la penetración de la luz en el tejido de la piel y, en consecuencia, la calidad de la señal obtenida. Un valor más alto aumenta la intensidad de la luz, mejorando la detección en condiciones de baja perfusión, pero incrementa el consumo de energía.</li>
+<li><strong>sampleAverage</strong> (1, 2, 4, 8, 16, 32): Define cuántas muestras se promedian antes de almacenarse en la memoria FIFO. Un mayor promedio reduce el ruido y estabiliza la señal, a costa de reducir la capacidad de respuesta a cambios rápidos.</li>
+<li><strong>ledMode</strong> (1 - 3): Establece el modo de operación del sensor. El valor 1 utiliza solo el LED rojo, el valor 2 emplea tanto el LED rojo como el infrarrojo para medir la frecuencia cardíaca y la saturación de oxígeno, y el valor 3 incluye un tercer LED verde en algunos modelos de la serie MAX3010X.</li>
+<li><strong>sampleRate</strong> (50, 100, 200, 400, 800, 1000, 1600, 3200 Hz): Define la frecuencia con la que se toman las muestras de la señal, afectando la resolución temporal y la capacidad de captar variaciones rápidas en la frecuencia cardíaca. Una mayor frecuencia proporciona una mejor resolución temporal, pero puede aumentar el ruido si la señal no se filtra adecuadamente.</li>
+<li><strong>pulseWidth</strong> (69, 118, 215, 411 µs): Controla la duración del pulso de luz emitido por los LED. Un mayor ancho de pulso mejora la resolución de las mediciones, pero también incrementa el consumo de energía del sensor y la cantidad de luz reflejada, lo cual puede saturar el ADC en ciertos tipos de piel.</li>
+<li><strong>adcRange</strong> (2048, 4096, 8192, 16384 nA): Establece el rango de entrada del convertidor analógico-digital. Aumentar el rango permite al sensor manejar señales más intensas sin saturarse, mientras que un rango menor mejora la sensibilidad para señales débiles.</li>
+<li><strong>RATE_SIZE</strong> (tamaño del buffer): Determina el tamaño del buffer para el cálculo de la frecuencia cardíaca. Este parámetro afecta la cantidad de datos utilizados para calcular la frecuencia cardíaca promedio. Aumentar el tamaño del buffer de 4 a 6 mejora la precisión de las lecturas, ya que permite una mayor estabilidad en los cálculos.</li>
+</ul>
+<p>Inicialmente, los parámetros se configuran con valores predeterminados, pero los resultados muestran un error absoluto medio (MAE) de 18.5 bpm respecto al oxímetro de referencia, lo cual no es aceptable. Para mejorar la precisión, se exploran valores extremos del parámetro <code>RATE_SIZE</code>, variando desde 1 hasta 100. Con <code>RATE_SIZE</code> igual a 1, se obtienen resultados rápidos pero poco precisos, mientras que con <code>RATE_SIZE</code> igual a 100, se logra alta precisión, pero se requieren múltiples intervalos de 10 segundos, incrementando el tiempo total de medición. Para encontrar un equilibrio entre precisión y tiempo de medición, se evalúan valores intermedios de <code>RATE_SIZE</code> entre 4 y 16. El valor óptimo encontrado es <code>RATE_SIZE</code> igual a 6, lo cual reduce el MAE a 4.4 bpm.</p>
+<p>La <a href="#tbl-max30102">Tabla&nbsp;<span>3.10</span></a> muestra el error absoluto medio (MAE) obtenido para diferentes valores de <code>RATE_SIZE</code> entre 4 y 16, destacando que el mejor valor para <code>RATE_SIZE</code> es 6:</p>
+<div id="tbl-max30102">
+<table class="table">
+<caption>Tabla&nbsp;3.10: sdfsdfsd</caption>
+<thead>
+<tr class="header">
+<th>Número de Mediciones</th>
+<th>RATE_SIZE</th>
+<th>MAE (bpm)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>20</td>
+<td>4</td>
+<td>18.5</td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td>6</td>
+<td>4.4</td>
+</tr>
+<tr class="odd">
+<td>20</td>
+<td>8</td>
+<td>12.0</td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td>10</td>
+<td>19.6</td>
+</tr>
+<tr class="odd">
+<td>20</td>
+<td>12</td>
+<td>7.7</td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td>14</td>
+<td>13.6</td>
+</tr>
+<tr class="odd">
+<td>20</td>
+<td>16</td>
+<td>15.8</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Posteriormente, con RATE_SIZE fijado en 6, se ajusta el valor de sampleAverage de 4 a 8, logrando un MAE de 3.6 bpm, lo cual representa una mejora en la estabilidad de la señal. La configuración final optimizada incluye los siguientes valores: ledBrightness en 31, sampleAverage en 8, ledMode en 2, sampleRate en 400, pulseWidth en 411, adcRange en 2048 y RATE_SIZE en 6.</p>
+</section>
+<section id="calibración-del-sensor-gy-906" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" data-anchor-id="calibración-del-sensor-gy-906"><span class="header-section-number">3.4.2</span> Calibración del Sensor GY-906</h3>
+<p>Para la calibración del sensor de temperatura GY-906, se utiliza una cámara termográfica Fluke Ti9 como referencia. Tanto el sensor como la cámara se configuran con una emisividad de 0.98, correspondiente a la emisividad promedio de la piel humana. Las pruebas se realizan durante tres días, entre las 10:00 a. m. y las 6:00 p.&nbsp;m., con mediciones cada media hora para capturar diferentes condiciones ambientales.</p>
+<p>Durante cada sesión de medición, el sensor GY-906 realiza diez mediciones consecutivas en un lapso de diez segundos, y el promedio de estas mediciones se envía a la plataforma Thingsboard. Simultáneamente, las lecturas de la cámara termográfica se registran manualmente. Para minimizar el error por movimiento, el dispositivo emite una alerta vibratoria de un segundo, seguida de una pausa de cuatro segundos antes de realizar la medición, permitiendo al usuario mantener la mano inmóvil.</p>
+<p>El análisis de los resultados revela un error sistemático, ya que el sensor GY-906 tiende a medir temperaturas ligeramente inferiores a las registradas por la cámara termográfica. Inicialmente, se registra un error promedio de -0.72 °C, con un error absoluto medio (MAE) de 0.77 °C. Para corregir este error, se aplica un método de calibración que incluye la detección y eliminación de valores atípicos mediante técnicas estadísticas, tales como la envolvente elíptica y la distancia de Mahalanobis, eliminando un total de 7 valores atípicos.</p>
+<p>Posteriormente, se determina un factor de corrección constante de 0.47, que se suma a las lecturas del sensor para alinear los resultados con los valores de la cámara termográfica. La validación de esta corrección se realiza mediante una segunda campaña de medición, que confirma una mejora significativa, reduciendo el error promedio a 0.17 °C y el MAE a 0.34 °C. Esto garantiza que el sensor proporcione mediciones más alineadas con los valores reales, mejorando la calidad y confiabilidad de los datos recopilados.</p>
+<p>A continuación, se presenta la gráfica que muestra la comparación entre las mediciones del sensor GY-906 y la cámara termográfica antes y después de la calibración:</p>
+</section>
 </section>
 <section id="lógica-de-programación" class="level2" data-number="3.5">
 <h2 data-number="3.5" data-anchor-id="lógica-de-programación"><span class="header-section-number">3.5</span> Lógica de programación</h2>
