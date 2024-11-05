@@ -1,6 +1,8 @@
 # Introducción
 
 
+ESTO ES UNA PRUEBA
+
 El reporte de Cambio Climático 2023 del Panel Intergubernamental sobre Cambio Climático (IPCC) advierte sobre un probable aumento en la temperatura superior a 1.5°C entre los años 2021 y 2040, alcanzando hasta los 5.7°C para 2100 [@IPCC2023]. Para limitar este calentamiento, es imprescindible una reducción drástica de las emisiones globales de gases de efecto invernadero (GEI). Estas emisiones deben alcanzar su máximo antes del año 2025 y luego disminuir en un 43% para el año 2030, llegando a cero neto para el año 2050, conforme los Objetivos de Desarrollo Sostenible de la @Ods2015.
 
 Las emisiones de GEI generadas por el uso de energía representan el 73.2% a nivel global, y el uso de energía en edificaciones constituye el 17.5%, desglosado en un 6.6% en edificaciones no residenciales y un 10.9% en edificaciones residenciales [@owid-ghg-emissions-by-sector]. En México, el sector residencial, comercial y público representa el 17.16% del consumo final de energía, de los cuales el 34.29% corresponden a consumo eléctrico [@BNE2022]. En materia de eficiencia energética, el principal desafío que enfrentan los edificios no residenciales en México es su uso intensivo de electricidad [@Chatellier2020].
