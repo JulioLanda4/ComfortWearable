@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Reloj inteligente IoT basado en tecnologías abiertas para la recopilación de datos de confort térmico - 3&nbsp; Desarrollo y construcción</title>
+<title>Reloj inteligente IoT basado en tecnologías abiertas para la recopilación de datos de confort térmico - 3&nbsp; Desarrollo, construcción y validación</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -97,7 +97,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Capitulos/desarrollo.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Desarrollo y construcción</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Capitulos/desarrollo.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Desarrollo, construcción y validación</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -143,7 +143,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Capitulos/desarrollo.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Desarrollo y construcción</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Desarrollo, construcción y validación</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -168,16 +168,17 @@ div.csl-indent {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#metodología" id="toc-metodología" class="nav-link active" data-scroll-target="#metodología"><span class="header-section-number">3.1</span> Metodología</a></li>
-  <li><a href="#construcción-del-dispositivo" id="toc-construcción-del-dispositivo" class="nav-link" data-scroll-target="#construcción-del-dispositivo"><span class="header-section-number">3.2</span> Construcción del dispositivo</a></li>
-  <li><a href="#encuestas-e-interfaz" id="toc-encuestas-e-interfaz" class="nav-link" data-scroll-target="#encuestas-e-interfaz"><span class="header-section-number">3.3</span> Encuestas e interfaz</a></li>
-  <li><a href="#calibración" id="toc-calibración" class="nav-link" data-scroll-target="#calibración"><span class="header-section-number">3.4</span> Calibración</a>
+  <li><a href="#sec-metodología" id="toc-sec-metodología" class="nav-link active" data-scroll-target="#sec-metodología"><span class="header-section-number">3.1</span> Metodología</a></li>
+  <li><a href="#sec-construccion" id="toc-sec-construccion" class="nav-link" data-scroll-target="#sec-construccion"><span class="header-section-number">3.2</span> Construcción del dispositivo</a></li>
+  <li><a href="#sec-encuestas" id="toc-sec-encuestas" class="nav-link" data-scroll-target="#sec-encuestas"><span class="header-section-number">3.3</span> Encuestas e interfaz</a></li>
+  <li><a href="#sec-calibración" id="toc-sec-calibración" class="nav-link" data-scroll-target="#sec-calibración"><span class="header-section-number">3.4</span> Calibración</a>
   <ul class="collapse">
   <li><a href="#calibración-del-sensor-max30102" id="toc-calibración-del-sensor-max30102" class="nav-link" data-scroll-target="#calibración-del-sensor-max30102"><span class="header-section-number">3.4.1</span> Calibración del Sensor MAX30102</a></li>
   <li><a href="#calibración-del-sensor-gy-906" id="toc-calibración-del-sensor-gy-906" class="nav-link" data-scroll-target="#calibración-del-sensor-gy-906"><span class="header-section-number">3.4.2</span> Calibración del Sensor GY-906</a></li>
   </ul></li>
-  <li><a href="#lógica-de-programación" id="toc-lógica-de-programación" class="nav-link" data-scroll-target="#lógica-de-programación"><span class="header-section-number">3.5</span> Lógica de programación</a></li>
-  <li><a href="#instrucciones-de-uso" id="toc-instrucciones-de-uso" class="nav-link" data-scroll-target="#instrucciones-de-uso"><span class="header-section-number">3.6</span> Instrucciones de uso</a></li>
+  <li><a href="#sec-programación" id="toc-sec-programación" class="nav-link" data-scroll-target="#sec-programación"><span class="header-section-number">3.5</span> Lógica de programación</a></li>
+  <li><a href="#sec-instrucciones" id="toc-sec-instrucciones" class="nav-link" data-scroll-target="#sec-instrucciones"><span class="header-section-number">3.6</span> Instrucciones de uso</a></li>
+  <li><a href="#sec-validación" id="toc-sec-validación" class="nav-link" data-scroll-target="#sec-validación"><span class="header-section-number">3.7</span> Validación</a></li>
   </ul>
 </nav>
     </div>
@@ -186,7 +187,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Desarrollo y construcción</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Desarrollo, construcción y validación</span></h1>
 </div>
 
 
@@ -201,9 +202,9 @@ div.csl-indent {
 
 </header>
 
-<p>En esta sección se detalla el proceso de desarrollo y construcción del dispositivo presentado en esta tesis. Se presenta una metodología en donde se aborda una descripción general del dispositivo, la selección y justificación de los componentes a utilizar. Se aborda la etapa de diseño y construcción del dispositivo, el diseño e implementación de las encuestas a través de la interfaz gráfica. Se describe también el proceso de calibración de los sensores utilizados para garantizar precisión y mediciones fiables. Finalmente, se detalla la conexión del dispositivo a una plataforma IoT para el almacenamiento de los datos.</p>
-<section id="metodología" class="level2" data-number="3.1">
-<h2 data-number="3.1" data-anchor-id="metodología"><span class="header-section-number">3.1</span> Metodología</h2>
+<p>En esta sección se describe el proceso completo de desarrollo, construcción y validación del dispositivo presentado en esta tesis. La <a href="#sec-metodología"><span>Sección&nbsp;3.1</span></a> aborda la metodología general del proyecto, incluyendo una descripción detallada del dispositivo, la selección de los componentes y la justificación de su elección. En la <a href="#sec-construccion"><span>Sección&nbsp;3.2</span></a> se desarrolla la etapa de diseño y construcción del dispositivo. La <a href="#sec-encuestas"><span>Sección&nbsp;3.3</span></a> se centra en el diseño y la implementación de las encuestas mediante la interfaz gráfica, mientras que la <a href="#sec-calibración"><span>Sección&nbsp;3.4</span></a> detalla el proceso de calibración de los sensores, para asegurar fiabilidad en las mediciones. En la <a href="#sec-programación"><span>Sección&nbsp;3.5</span></a> se presenta la lógica de programación del dispositivo, y en la <a href="#sec-instrucciones"><span>Sección&nbsp;3.6</span></a> se proporcionan instrucciones de uso. Finalmente, en la <a href="#sec-validación"><span>Sección&nbsp;3.7</span></a> comprueba la funcionalidad del dispositivo para recopilar y almacenar información de confort térmico.</p>
+<section id="sec-metodología" class="level2" data-number="3.1">
+<h2 data-number="3.1" data-anchor-id="sec-metodología"><span class="header-section-number">3.1</span> Metodología</h2>
 <ol type="1">
 <li><strong>Descripción general del dispositivo:</strong></li>
 </ol>
@@ -612,16 +613,16 @@ div.csl-indent {
 <p>El circuito de la batería sirve para añadir el interruptor de encendido y agregar un conector JST, el cual se conecta a la pantalla XIAO Round Display.</p>
 <p>En resumen, el diseño del dispositivo está enfocado en optimizar las conexiones, el espacio y facilitar su montaje, esto a la vez que se asegura su funcionalidad y ergonomía.</p>
 </section>
-<section id="construcción-del-dispositivo" class="level2" data-number="3.2">
-<h2 data-number="3.2" data-anchor-id="construcción-del-dispositivo"><span class="header-section-number">3.2</span> Construcción del dispositivo</h2>
+<section id="sec-construccion" class="level2" data-number="3.2">
+<h2 data-number="3.2" data-anchor-id="sec-construccion"><span class="header-section-number">3.2</span> Construcción del dispositivo</h2>
 <p>La construcción del dispositivo en tres etapas: La impresión de la carcasa, la conexión de los componentes electrónicos y la integración y montaje de todos los elementos.</p>
 <p><strong><em>Carcasa:</em></strong> los archivos STL para la impresión de la carcasa los puedes encontrar en el <a href="https://github.com/JulioLanda4/Reloj_Confort" target="_blank">repositorio del proyecto</a></p>
 <p><strong><em>Componentes electrónicos:</em></strong> Las conexiones de los componentes electrónicos se llevan a cabo siguiendo los diagramas de <a href="#fig-conexiones">Figura&nbsp;<span>3.3</span></a>. Es importante seguir correctamente los diagramas para facilitar posteriormente su acomodo dentro de la carcasa.</p>
 <p><strong><em>Integración y montaje:</em></strong> Una vez realizadas las conexiones, se lleva a cabo el montaje de los circuitos dentro de la carcasa, esta se ensambla y se colocan las correas.</p>
 <p>En el articulo XXX puede encontrar información más detallada acerca del diseño y los pasos a seguir para la construcción del dispositivo.</p>
 </section>
-<section id="encuestas-e-interfaz" class="level2" data-number="3.3">
-<h2 data-number="3.3" data-anchor-id="encuestas-e-interfaz"><span class="header-section-number">3.3</span> Encuestas e interfaz</h2>
+<section id="sec-encuestas" class="level2" data-number="3.3">
+<h2 data-number="3.3" data-anchor-id="sec-encuestas"><span class="header-section-number">3.3</span> Encuestas e interfaz</h2>
 <p>Una de las principales características del reloj inteligente presentado, es la capacidad de realizar encuestas de confort térmico de manera periódica y en condiciones reales con el propósito de recolectar datos que permitan estudiar la percepción de confort térmico en el Instituto de Energías Renovables (IER) de la UNAM. A continuación se describe la metodología de implementación de las encuestas, la lógica de la interfaz y las funcionalidades que permiten la interacción eficiente entre el usuario y el dispositivo.</p>
 <ol type="1">
 <li>Diseño de las Encuestas</li>
@@ -885,8 +886,8 @@ div.csl-indent {
 </figure>
 </div>
 </section>
-<section id="calibración" class="level2" data-number="3.4">
-<h2 data-number="3.4" data-anchor-id="calibración"><span class="header-section-number">3.4</span> Calibración</h2>
+<section id="sec-calibración" class="level2" data-number="3.4">
+<h2 data-number="3.4" data-anchor-id="sec-calibración"><span class="header-section-number">3.4</span> Calibración</h2>
 <p>La calibración de los sensores en el dispositivo es esencial para garantizar la precisión y confiabilidad de las mediciones. Esta sección describe el proceso de calibración de los sensores MAX30102 y GY-906, utilizados para medir la frecuencia cardíaca y la temperatura de la piel, respectivamente.</p>
 <section id="calibración-del-sensor-max30102" class="level3" data-number="3.4.1">
 <h3 data-number="3.4.1" data-anchor-id="calibración-del-sensor-max30102"><span class="header-section-number">3.4.1</span> Calibración del Sensor MAX30102</h3>
@@ -962,16 +963,19 @@ div.csl-indent {
 <p>A continuación, se presenta la gráfica que muestra la comparación entre las mediciones del sensor GY-906 y la cámara termográfica antes y después de la calibración:</p>
 </section>
 </section>
-<section id="lógica-de-programación" class="level2" data-number="3.5">
-<h2 data-number="3.5" data-anchor-id="lógica-de-programación"><span class="header-section-number">3.5</span> Lógica de programación</h2>
+<section id="sec-programación" class="level2" data-number="3.5">
+<h2 data-number="3.5" data-anchor-id="sec-programación"><span class="header-section-number">3.5</span> Lógica de programación</h2>
 <p>XXX Agregar diagrama de flujo del articulo de Francia y después desglozarlo por partes. XXX</p>
 </section>
-<section id="instrucciones-de-uso" class="level2" data-number="3.6">
-<h2 data-number="3.6" data-anchor-id="instrucciones-de-uso"><span class="header-section-number">3.6</span> Instrucciones de uso</h2>
+<section id="sec-instrucciones" class="level2" data-number="3.6">
+<h2 data-number="3.6" data-anchor-id="sec-instrucciones"><span class="header-section-number">3.6</span> Instrucciones de uso</h2>
 <ol type="1">
 <li>Integración con la plataforma iot</li>
 <li>manejo de los datos</li>
 </ol>
+</section>
+<section id="sec-validación" class="level2" data-number="3.7">
+<h2 data-number="3.7" data-anchor-id="sec-validación"><span class="header-section-number">3.7</span> Validación</h2>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">

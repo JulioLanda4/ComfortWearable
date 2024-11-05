@@ -1,10 +1,10 @@
-# Desarrollo y construcción
+# Desarrollo, construcción y validación
 
 
-En esta sección se detalla el proceso de desarrollo y construcción del dispositivo presentado en esta tesis. Se presenta una metodología en donde se aborda una descripción general del dispositivo, la selección y justificación de los componentes a utilizar. Se aborda la etapa de diseño y construcción del dispositivo, el diseño e implementación de las encuestas a través de la interfaz gráfica. Se describe también el proceso de calibración de los sensores utilizados para garantizar precisión y mediciones fiables. Finalmente, se detalla la conexión del dispositivo a una plataforma IoT para el almacenamiento de los datos.
+En esta sección se describe el proceso completo de desarrollo, construcción y validación del dispositivo presentado en esta tesis. La @sec-metodología aborda la metodología general del proyecto, incluyendo una descripción detallada del dispositivo, la selección de los componentes y la justificación de su elección. En la @sec-construccion se desarrolla la etapa de diseño y construcción del dispositivo. La @sec-encuestas se centra en el diseño y la implementación de las encuestas mediante la interfaz gráfica, mientras que la @sec-calibración detalla el proceso de calibración de los sensores, para asegurar fiabilidad en las mediciones. En la @sec-programación se presenta la lógica de programación del dispositivo, y en la @sec-instrucciones se proporcionan instrucciones de uso. Finalmente, en la @sec-validación comprueba la funcionalidad del dispositivo para recopilar y almacenar información de confort térmico.
 
 
-## Metodología
+## Metodología {#sec-metodología}
 1. **Descripción general del dispositivo:**
 
 
@@ -182,7 +182,7 @@ El circuito de la batería sirve para añadir el interruptor de encendido y agre
 En resumen, el diseño del dispositivo está enfocado en optimizar las conexiones, el espacio y facilitar su montaje, esto a la vez que se asegura su funcionalidad y ergonomía.
 
 
-## Construcción del dispositivo
+## Construcción del dispositivo {#sec-construccion}
 
 La construcción del dispositivo en tres etapas: La impresión de la carcasa, la conexión de los componentes electrónicos y la integración y montaje de todos los elementos.
 
@@ -197,7 +197,7 @@ La construcción del dispositivo en tres etapas: La impresión de la carcasa, la
 En el articulo XXX puede encontrar información más detallada acerca del diseño y los pasos a seguir para la construcción del dispositivo.
 
 
-## Encuestas e interfaz
+## Encuestas e interfaz {#sec-encuestas}
 
 Una de las principales características del reloj inteligente presentado, es la capacidad de realizar encuestas de confort térmico de manera periódica y en condiciones reales con el propósito de recolectar datos que permitan estudiar la percepción de confort térmico en el Instituto de Energías Renovables (IER) de la UNAM. A continuación se describe la metodología de implementación de las encuestas, la lógica de la interfaz y las funcionalidades que permiten la interacción eficiente entre el usuario y el dispositivo.
 
@@ -298,7 +298,7 @@ La @fig-generica muestra todas las pantallas
 
 
 
-## Calibración
+## Calibración {#sec-calibración}
 
 
 
@@ -352,10 +352,12 @@ A continuación, se presenta la gráfica que muestra la comparación entre las m
 
 
 
-## Lógica de programación
+## Lógica de programación {#sec-programación}
 
 XXX Agregar diagrama de flujo del articulo de Francia y después desglozarlo por partes. XXX
 
-## Instrucciones de uso
+## Instrucciones de uso {#sec-instrucciones}
 1. Integración con la plataforma iot
 2. manejo de los datos
+
+## Validación {#sec-validación}
