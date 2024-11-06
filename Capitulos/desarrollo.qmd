@@ -112,6 +112,8 @@ El dispositivo cuenta con un sistema de alarma silenciosa compuesta por un motor
 
 ![Circuito de control del motor vibrador](../Imagenes/Circuito_motor.png){#fig-circuito_motor width=50%}
 
+
+
 **Batería**
 
 El uso de baterías de polímero de litio (LiPo) es ampliamente utilizado en dispositivos portátiles debido a sus características de pequeño tamaño, bajo peso y facilidad de carga. Para este proyecto, que integra una placa de desarrollo XIAO ESP32C3, una pantalla XIAO Round Display, un sensor GY-906, un sensor MAX30102 y un circuito vibrador, es crucial seleccionar una capacidad de batería que asegure un funcionamiento continuo y confiable, considerando el consumo energético de cada componente involucrado.
@@ -295,9 +297,6 @@ La @fig-generica muestra todas las pantallas
 
 
 
-
-
-
 ## Calibración {#sec-calibración}
 
 
@@ -344,8 +343,6 @@ El análisis de los resultados revela un error sistemático, ya que el sensor GY
 Posteriormente, se determina un factor de corrección constante de 0.47, que se suma a las lecturas del sensor para alinear los resultados con los valores de la cámara termográfica. La validación de esta corrección se realiza mediante una segunda campaña de medición, que confirma una mejora significativa, reduciendo el error promedio a 0.17 °C y el MAE a 0.34 °C. Esto garantiza que el sensor proporcione mediciones más alineadas con los valores reales, mejorando la calidad y confiabilidad de los datos recopilados.
 
 A continuación, se presenta la gráfica que muestra la comparación entre las mediciones del sensor GY-906 y la cámara termográfica antes y después de la calibración:
-
-
 
 
 
