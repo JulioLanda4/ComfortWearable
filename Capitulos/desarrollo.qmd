@@ -336,15 +336,154 @@ Posteriormente, con RATE\_SIZE fijado en 6, se ajusta el valor de sampleAverage 
 
 Para la calibración del sensor de temperatura GY-906, se utiliza una cámara termográfica Fluke Ti9 como referencia. Tanto el sensor como la cámara se configuran con una emisividad de 0.98, correspondiente a la emisividad promedio de la piel humana. Las pruebas se realizan durante tres días, entre las 10:00 a. m. y las 6:00 p. m., con mediciones cada media hora para capturar diferentes condiciones ambientales.
 
-Durante cada sesión de medición, el sensor GY-906 realiza diez mediciones consecutivas en un lapso de diez segundos, y el promedio de estas mediciones se envía a la plataforma Thingsboard. Simultáneamente, las lecturas de la cámara termográfica se registran manualmente. Para minimizar el error por movimiento, el dispositivo emite una alerta vibratoria de un segundo, seguida de una pausa de cuatro segundos antes de realizar la medición, permitiendo al usuario mantener la mano inmóvil.
+Durante cada sesión de medición, el sensor GY-906 realiza diez mediciones consecutivas en un lapso de diez segundos, y el promedio de estas mediciones se envía a la plataforma Thingsboard, lo cual permite reducir el ruido y aumentar la precisión. Simultáneamente, las lecturas de la cámara termográfica se registran manualmente. Para minimizar el error por movimiento, el dispositivo emite una alerta vibratoria de un segundo, seguida de una pausa de cuatro segundos antes de realizar la medición, permitiendo al usuario mantener la mano inmóvil durante el proceso de medición. Se obtienen 61 pares de mediciones, la @tbl-estadisticas-camara muestra las características estadísticas de ambos conjuntos de datos, mientras que la @fig-dispersion muestra un gráfico de dispersión de datos entre las lecturas hechas por el sensor y las lecturas hechas por la cámara.
 
-El análisis de los resultados revela un error sistemático, ya que el sensor GY-906 tiende a medir temperaturas ligeramente inferiores a las registradas por la cámara termográfica. Inicialmente, se registra un error promedio de -0.72 °C, con un error absoluto medio (MAE) de 0.77 °C. Para corregir este error, se aplica un método de calibración que incluye la detección y eliminación de valores atípicos mediante técnicas estadísticas, tales como la envolvente elíptica y la distancia de Mahalanobis, eliminando un total de 7 valores atípicos.
+| Estadística          | Sensor (°C) | Cámara (°C) |
+|----------------------|-------------|-------------|
+| Media                | 34.58       | 35.30       |
+| Desviación estándar  | 0.75        | 0.63        |
+| Mínimo               | 32.36       | 32.80       |
+| Máximo               | 35.83       | 35.83       |
+: Estadísticas de las Mediciones del Sensor GY-906 y la Cámara Termográfica Fluke Ti9  {#tbl-estadisticas camara}
 
-Posteriormente, se determina un factor de corrección constante de 0.47, que se suma a las lecturas del sensor para alinear los resultados con los valores de la cámara termográfica. La validación de esta corrección se realiza mediante una segunda campaña de medición, que confirma una mejora significativa, reduciendo el error promedio a 0.17 °C y el MAE a 0.34 °C. Esto garantiza que el sensor proporcione mediciones más alineadas con los valores reales, mejorando la calidad y confiabilidad de los datos recopilados.
+```{python}
+#| echo: false
+#| fig-cap: "Gráfico de Dispersión de las Mediciones del Sensor GY-906 y la Cámara Termográfica Fluke Ti9"
+#| label: fig-dispersion
 
-A continuación, se presenta la gráfica que muestra la comparación entre las mediciones del sensor GY-906 y la cámara termográfica antes y después de la calibración:
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+ruta_excel = "../datos/DatosTemperatura.xlsx"
+datos = pd.read_excel(ruta_excel, sheet_name="Sheet1")
+
+# Crear la figura con subplots
+fig, ax = plt.subplots(figsize=(5, 5))
+
+px = [30,40]
+py = [30,40]
+
+ax.plot(px,py,"r--", label="Línea de identidad")
+
+ax.scatter(datos["Sensor"], datos["Camara"], s=25, alpha=0.4,label="Datos")
+
+# Configurar la leyenda y los ejes
+ax.set_xlabel("Sensor GY-906 [°C]")
+ax.set_ylabel("Cámara Fluke Ti9 [°C]")
+ax.grid()
+
+# Calcular los límites de la gráfica para el primer subplot
+limite_max_primero = datos[["Camara", "Sensor"]].max().max() + 0.1
+limite_min_primero = datos[["Camara", "Sensor"]].min().min() - 0.1
+ax.set_xlim(limite_min_primero, limite_max_primero)
+ax.set_ylim(limite_min_primero, limite_max_primero)
+        
+plt.legend()
+plt.legend(loc='lower right')
+#plt.savefig('Scatter.png', dpi=1000)
+plt.show()
+```
 
 
+El análisis de los resultados revela un error sistemático, ya que el sensor GY-906 tiende a medir temperaturas ligeramente inferiores a las registradas por la cámara termográfica. Las estadísticas de los errores son las siguientes: 
+
+- Error Promedio (EM): -0.72°C
+- Error Absoluto Medio (EAM): 0.77°C
+
+La @fig-histograma muestra un histograma del error de medición, donde se puede observa el error sistemático del sensor respecto a la cámara. Se observa que la mayoría de los errores se concentran entre 0 y 0.5°C.
+
+```{python}
+#| echo: false
+#| fig-cap: "Histograma de errores entre las mediciones de la cámara Fluke Ti9 y el sensor GY-906"
+#| label: fig-histograma
+
+error = datos.Sensor - datos.Camara
+
+# Crear el histograma
+fig, ax = plt.subplots()
+ax.hist(error, bins=20, range=(-2.5, 2.5), zorder=3)
+ax.set_xlabel("Error [°C]")
+ax.set_ylabel("Frecuencia")
+
+ax.xaxis.set_minor_locator(plt.MultipleLocator(0.250))  # Define el intervalo de los ticks menores
+
+# Configurar la cuadrícula
+ax.grid(which='minor', linestyle='--', linewidth=0.5, color='gray', zorder=0)
+ax.grid(which='major', linestyle='-', linewidth=0.5, color='gray', zorder=0) 
+
+#plt.savefig('Histogram.png', dpi=300)
+plt.show()
+
+```
+
+Para garantizar que la calibración del sensor GY-906 no utilice datos que puedan distorsionar el análisis, se utiliza el método de la envolvente elíptica, con el que se asegura que solo los datos más representativos y precisos sean utilizados para el proceso de calibración del sensor. Con este método se detectan siete valores atípicos o outliers los cuales son excluidos del conjunto de datos para el proceso de calibración. En la @fig-outliers se observan los valores atípicos detectados y excluidos.
+
+```{python}
+#| echo: false
+#| fig-cap: "Valores atípicos detectados del conjunto de mediciones"
+#| label: fig-outliers
+
+from sklearn.covariance import EllipticEnvelope
+
+# Ajustar la Envolvente Elíptica
+outlier_model = EllipticEnvelope(contamination=0.1)
+outlier_model.fit(error.values.reshape(-1, 1))
+labels = outlier_model.predict(error.values.reshape(-1, 1))
+
+# Crear la figura con subplots
+fig, ax = plt.subplots(figsize=(5, 5))
+
+# Línea de identidad
+px = [min(datos['Sensor']), max(datos['Sensor'])]
+py = [min(datos['Sensor']), max(datos['Sensor'])]
+ax.plot(px, py, "r--", label="Línea de identidad")
+
+# Dibujar todos los datos
+ax.scatter(datos['Sensor'], datos['Camara'], s=25, alpha=0.6, label="Datos")
+
+# Dibujar solo los outliers encima
+outliers = labels == -1
+ax.scatter(datos['Sensor'][outliers], datos['Camara'][outliers], color='red', s=25, edgecolors='k', label="Valores atípicos")
+
+# Configurar la leyenda y los ejes
+ax.set_xlabel("Sensor [°C]")
+ax.set_ylabel("Cámara [°C]")
+ax.grid(True)
+ax.legend()
+plt.legend(loc='lower right')
+plt.show()
+
+```
+
+
+Posteriormente, se utiliza el método de calibración de punto, el cual ajusta el error a través de un factor de corrección constante para alinear las mediciones del sensor con un estándar de referencia, en este caso las mediciones de la cámara. Para obtener este factor se usa un método iterativo que evalúa diferentes factores de corrección dentro de un rango definido. Este rango se define utilizando el EAM y la desviación estándar de los errores (𝜎). El margen de error se calcular siguiendo la @eq-margen-error, donde $Z$ es el $Z_{score}$ que se considera igual a 2.58 para un nivel de confianza del 99% y n es el número de muestras.
+
+$$
+M = Z \times \left( \frac{\sigma}{\sqrt{n}} \right)
+$$ {#eq-margen-error}
+
+Para el cálculo de los límites inferior y superior del intervalo de confianza, se utilizan las  ecuaciones @eq-lim-sup y @eq-lim-inf:
+
+$$
+L_{sup} = EAM + M
+$$ {#eq-lim-sup}
+
+$$
+L_{inf} = EAM - M
+$$ {#eq-lim-inf}
+
+
+Una vez definido el rango, se lleva a cabo el método iterativo con un intervalo de 0.01 para probar distintos factores de corrección. Se obtiene el factor de corrección óptimo en 0.47
+
+Para validar el factor de corrección se aplica al conjunto de datos sin eliminar los valores atípicos siguiendo la @eq-validacion-factor-1, donde $M_c$ son las mediciones corregidas, $M_s$ son las mediciones hechas por el sensor GY-906 y $f_c$ es el factor de corrección
+
+$$
+M_c = M_s + f_c
+$$ {#eq-validacion-factor-1}
+
+
+Al Aplicar el factor de corrección al conjunto de datos, el $ME$ disminuye hasta -0.25°C, mientras que el $EAM$ disminuye hasta XXX°C. Posteriormente se lleva cabo una segunda campaña de medición con el objetivo de validar el factor de corrección y se obtienen un total de 25 pares de mediciones. En este nuevo conjunto de datos se obtiene un $EM = -0.3$, el cual al aplicar el factor de corrección disminuye a 0.17. Por otro lado, se obtiene un $EAM = 0.40$, el cual disminuye a 0.34 tras aplicar el factor de corrección. Logrando una mejora en la precisión de las mediciones del sensor.
 
 
 

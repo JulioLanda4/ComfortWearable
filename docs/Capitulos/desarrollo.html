@@ -101,6 +101,35 @@ div.csl-indent {
   });
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -1051,10 +1080,113 @@ Tabla&nbsp;3.10: sdfsdfsd
 <section id="calibración-del-sensor-gy-906" class="level3" data-number="3.4.2">
 <h3 data-number="3.4.2" class="anchored" data-anchor-id="calibración-del-sensor-gy-906"><span class="header-section-number">3.4.2</span> Calibración del Sensor GY-906</h3>
 <p>Para la calibración del sensor de temperatura GY-906, se utiliza una cámara termográfica Fluke Ti9 como referencia. Tanto el sensor como la cámara se configuran con una emisividad de 0.98, correspondiente a la emisividad promedio de la piel humana. Las pruebas se realizan durante tres días, entre las 10:00 a. m. y las 6:00 p.&nbsp;m., con mediciones cada media hora para capturar diferentes condiciones ambientales.</p>
-<p>Durante cada sesión de medición, el sensor GY-906 realiza diez mediciones consecutivas en un lapso de diez segundos, y el promedio de estas mediciones se envía a la plataforma Thingsboard. Simultáneamente, las lecturas de la cámara termográfica se registran manualmente. Para minimizar el error por movimiento, el dispositivo emite una alerta vibratoria de un segundo, seguida de una pausa de cuatro segundos antes de realizar la medición, permitiendo al usuario mantener la mano inmóvil.</p>
-<p>El análisis de los resultados revela un error sistemático, ya que el sensor GY-906 tiende a medir temperaturas ligeramente inferiores a las registradas por la cámara termográfica. Inicialmente, se registra un error promedio de -0.72 °C, con un error absoluto medio (MAE) de 0.77 °C. Para corregir este error, se aplica un método de calibración que incluye la detección y eliminación de valores atípicos mediante técnicas estadísticas, tales como la envolvente elíptica y la distancia de Mahalanobis, eliminando un total de 7 valores atípicos.</p>
-<p>Posteriormente, se determina un factor de corrección constante de 0.47, que se suma a las lecturas del sensor para alinear los resultados con los valores de la cámara termográfica. La validación de esta corrección se realiza mediante una segunda campaña de medición, que confirma una mejora significativa, reduciendo el error promedio a 0.17 °C y el MAE a 0.34 °C. Esto garantiza que el sensor proporcione mediciones más alineadas con los valores reales, mejorando la calidad y confiabilidad de los datos recopilados.</p>
-<p>A continuación, se presenta la gráfica que muestra la comparación entre las mediciones del sensor GY-906 y la cámara termográfica antes y después de la calibración:</p>
+<p>Durante cada sesión de medición, el sensor GY-906 realiza diez mediciones consecutivas en un lapso de diez segundos, y el promedio de estas mediciones se envía a la plataforma Thingsboard, lo cual permite reducir el ruido y aumentar la precisión. Simultáneamente, las lecturas de la cámara termográfica se registran manualmente. Para minimizar el error por movimiento, el dispositivo emite una alerta vibratoria de un segundo, seguida de una pausa de cuatro segundos antes de realizar la medición, permitiendo al usuario mantener la mano inmóvil durante el proceso de medición. Se obtienen 61 pares de mediciones, la <a href="#tbl-estadisticas-camara" class="quarto-xref">Tabla&nbsp;<span>3.11</span></a> muestra las características estadísticas de ambos conjuntos de datos, mientras que la <a href="#fig-dispersion" class="quarto-xref">Figura&nbsp;<span>3.5</span></a> muestra un gráfico de dispersión de datos entre las lecturas hechas por el sensor y las lecturas hechas por la cámara.</p>
+<div id="tbl-estadisticas-camara" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-estadisticas-camara-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;3.11: Estadísticas de las Mediciones del Sensor GY-906 y la Cámara Termográfica Fluke Ti9
+</figcaption>
+<div aria-describedby="tbl-estadisticas-camara-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Estadística</th>
+<th>Sensor (°C)</th>
+<th>Cámara (°C)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Media</td>
+<td>34.58</td>
+<td>35.30</td>
+</tr>
+<tr class="even">
+<td>Desviación estándar</td>
+<td>0.75</td>
+<td>0.63</td>
+</tr>
+<tr class="odd">
+<td>Mínimo</td>
+<td>32.36</td>
+<td>32.80</td>
+</tr>
+<tr class="even">
+<td>Máximo</td>
+<td>35.83</td>
+<td>35.83</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div id="cell-fig-dispersion" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div id="fig-dispersion" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dispersion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="desarrollo_files/figure-html/fig-dispersion-output-1.png" width="455" height="429" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dispersion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3.5: Gráfico de Dispersión de las Mediciones del Sensor GY-906 y la Cámara Termográfica Fluke Ti9
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>El análisis de los resultados revela un error sistemático, ya que el sensor GY-906 tiende a medir temperaturas ligeramente inferiores a las registradas por la cámara termográfica. Las estadísticas de los errores son las siguientes:</p>
+<ul>
+<li>Error Promedio (EM): -0.72°C</li>
+<li>Error Absoluto Medio (EAM): 0.77°C</li>
+</ul>
+<p>La <a href="#fig-histograma" class="quarto-xref">Figura&nbsp;<span>3.6</span></a> muestra un histograma del error de medición, donde se puede observa el error sistemático del sensor respecto a la cámara. Se observa que la mayoría de los errores se concentran entre 0 y 0.5°C.</p>
+<div id="cell-fig-histograma" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div id="fig-histograma" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-histograma-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="desarrollo_files/figure-html/fig-histograma-output-1.png" width="585" height="429" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histograma-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3.6: Histograma de errores entre las mediciones de la cámara Fluke Ti9 y el sensor GY-906
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Para garantizar que la calibración del sensor GY-906 no utilice datos que puedan distorsionar el análisis, se utiliza el método de la envolvente elíptica, con el que se asegura que solo los datos más representativos y precisos sean utilizados para el proceso de calibración del sensor. Con este método se detectan siete valores atípicos o outliers los cuales son excluidos del conjunto de datos para el proceso de calibración. En la <a href="#fig-outliers" class="quarto-xref">Figura&nbsp;<span>3.7</span></a> se observan los valores atípicos detectados y excluidos.</p>
+<div id="cell-fig-outliers" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div id="fig-outliers" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-outliers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="desarrollo_files/figure-html/fig-outliers-output-1.png" width="450" height="429" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-outliers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3.7: Valores atípicos detectados del conjunto de mediciones
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Posteriormente, se utiliza el método de calibración de punto, el cual ajusta el error a través de un factor de corrección constante para alinear las mediciones del sensor con un estándar de referencia, en este caso las mediciones de la cámara. Para obtener este factor se usa un método iterativo que evalúa diferentes factores de corrección dentro de un rango definido. Este rango se define utilizando el EAM y la desviación estándar de los errores (𝜎). El margen de error se calcular siguiendo la <a href="#eq-margen-error" class="quarto-xref">Ecuación&nbsp;<span>3.1</span></a>, donde <span class="math inline">\(Z\)</span> es el <span class="math inline">\(Z_{score}\)</span> que se considera igual a 2.58 para un nivel de confianza del 99% y n es el número de muestras.</p>
+<p><span id="eq-margen-error"><span class="math display">\[
+M = Z \times \left( \frac{\sigma}{\sqrt{n}} \right)
+\tag{3.1}\]</span></span></p>
+<p>Para el cálculo de los límites inferior y superior del intervalo de confianza, se utilizan las ecuaciones <a href="#eq-lim-sup" class="quarto-xref">Ecuación&nbsp;<span>3.2</span></a> y <a href="#eq-lim-inf" class="quarto-xref">Ecuación&nbsp;<span>3.3</span></a>:</p>
+<p><span id="eq-lim-sup"><span class="math display">\[
+L_{sup} = EAM + M
+\tag{3.2}\]</span></span></p>
+<p><span id="eq-lim-inf"><span class="math display">\[
+L_{inf} = EAM - M
+\tag{3.3}\]</span></span></p>
+<p>Una vez definido el rango, se lleva a cabo el método iterativo con un intervalo de 0.01 para probar distintos factores de corrección. Se obtiene el factor de corrección óptimo en 0.47</p>
+<p>Para validar el factor de corrección se aplica al conjunto de datos sin eliminar los valores atípicos siguiendo la <a href="#eq-validacion-factor-1" class="quarto-xref">Ecuación&nbsp;<span>3.4</span></a>, donde <span class="math inline">\(M_c\)</span> son las mediciones corregidas, <span class="math inline">\(M_s\)</span> son las mediciones hechas por el sensor GY-906 y <span class="math inline">\(f_c\)</span> es el factor de corrección</p>
+<p><span id="eq-validacion-factor-1"><span class="math display">\[
+M_c = M_s + f_c
+\tag{3.4}\]</span></span></p>
+<p>Al Aplicar el factor de corrección al conjunto de datos, el <span class="math inline">\(ME\)</span> disminuye hasta -0.25°C, mientras que el <span class="math inline">\(EAM\)</span> disminuye hasta XXX°C. Posteriormente se lleva cabo una segunda campaña de medición con el objetivo de validar el factor de corrección y se obtienen un total de 25 pares de mediciones. En este nuevo conjunto de datos se obtiene un <span class="math inline">\(EM = -0.3\)</span>, el cual al aplicar el factor de corrección disminuye a 0.17. Por otro lado, se obtiene un <span class="math inline">\(EAM = 0.40\)</span>, el cual disminuye a 0.34 tras aplicar el factor de corrección. Logrando una mejora en la precisión de las mediciones del sensor.</p>
 </section>
 </section>
 <section id="sec-programación" class="level2" data-number="3.5">
