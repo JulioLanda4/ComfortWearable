@@ -175,13 +175,15 @@ El código de colores utilizado en este proyecto, para facilitar las conexiones,
 * ***Verde:*** señal de activación del motor.
 * ***Amarillo:*** conexión entre el pin emisor del transistor y el motor vibratorio.
 
-El circuito vibrador es un circuito sencillo de control de motor. Este circuito tiene la finalidad de proteger el microcontrolador al evitar que el motor se alimente directamente del pin digital del microcontrolador, si no que lo haga directamente de la alimentación general del dispositivo, dejando al pin del microcontrolador únicamente la tarea de dar la señal de activación.
+El circuito vibrador es un circuito sencillo de control de motor. su principal objetivo proteger el microcontrolador, evitando que el motor se alimente directamente desde el pin digital del microcontrolador, si no que lo haga directamente de la fuente de alimentación general del dispositivo, mientras que el pin del microcontrolador se utiliza únicamente para enviar la señal de activación.
 
-El circuito de los sensores y el microcontrolador tiene la función de comunicar de forma paralela ambos sensores por protocolo I2C al microcontrolador.
+El circuito que conecta los sensores con el microcontrolador tiene como propósito establecer la comunicación simultánea de ambos sensores mediante el protocolo I2C.
 
-El circuito de la batería sirve para añadir el interruptor de encendido y agregar un conector JST, el cual se conecta a la pantalla XIAO Round Display.
+El circuito de la batería integra un interruptor de encendido y apagado, que permite al usuario controlar la alimentación del dispositivo; y un conector JST, que proporciona la conexión directa con la pantalla táctil XIAO Round Display. 
 
-En resumen, el diseño del dispositivo está enfocado en optimizar las conexiones, el espacio y facilitar su montaje, esto a la vez que se asegura su funcionalidad y ergonomía.
+Finalmente, en la @fig-DiagramaBloques se ilustra la organización de los distintos componentes del dispositivo, haciendo una separación entre los elementos internos y externos del reloj. Los componentes dentro del recuadro negro son aquellos que están contenidos físicamente dentro de la carcasa del reloj, como los sensores, la batería, la antena WIFI, el circuito de la pantalla, el circuito vibrador y el microcontrolador. Por otro lado, los elementos que se encuentran fuera del recuadro negro corresponden a los componentes externos con los cuales el usuario interactúa directamente, como el interruptor de encendido y apagado, la pantalla táctil y el puerto de carga USB-C. Además, el diagrama indica las interconexiones entre los diferentes componentes con líneas. Se destaca que la conexión entre los sensores y el microcontrolador es mediante el protocolo I2C.
+
+![Diagrama de bloques](../Imagenes/DiagramaBloques.png){#fig-DiagramaBloques}
 
 
 ## Construcción del dispositivo {#sec-construccion}
@@ -205,7 +207,7 @@ Una de las principales características del reloj inteligente presentado, es la 
 
 1. Diseño de las Encuestas
 
-El reloj inteligente lleva a cabo encuestas simplificadas de confort térmico cada hora, en horarios específicos entre las 8:00 a. m. y las 9:00 p. m., programadas en las medias horas para alinearse con los horarios de actividades en el IER, permitiendo al usuario aclimatarse antes de responder la encuesta. Al llegar el momento de responder la encuesta, el dispositivo activa una alarma vibradora que consta de tres pulsos cortos en un lapso de un segundo, para notificar al usuario. Si el usuario ignora la alarma, el botón de 'Encuesta' permanece activo hasta que se complete la encuesta, si después de quince minutos la encuesta no ha sido respondida, la alarma se vuelve a activar una vez más. Si esta segunda notificación es ignorada, la alarma no se activa nuevamente hasta la próxima hora programada. 
+El reloj inteligente lleva a cabo encuestas simplificadas de confort térmico cada hora, en horarios específicos entre las 8:00 a.m. y las 9:00 p.m., programadas en las medias horas para alinearse con los horarios de actividades en el IER, permitiendo al usuario aclimatarse antes de responder la encuesta. Al llegar el momento de responder la encuesta, el dispositivo activa una alarma vibradora que consta de tres pulsos cortos en un lapso de un segundo, para notificar al usuario. Si el usuario ignora la alarma, el botón de 'Encuesta' permanece activo hasta que se complete la encuesta, si después de quince minutos la encuesta no ha sido respondida, la alarma se vuelve a activar una vez más. Si esta segunda notificación es ignorada, la alarma no se activa nuevamente hasta la próxima hora programada. 
 
 La encuesta consta de cinco preguntas. Las preguntas seleccionadas se basan en XXX Podría mencionarse a Ibet o buscar la referencia en las notas de la clase con Guadalupe. Las cinco preguntas son las siguientes:
 

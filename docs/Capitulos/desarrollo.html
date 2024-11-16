@@ -703,10 +703,20 @@ Figura&nbsp;3.3: Diagrama de conexiones
 <li><strong><em>Verde:</em></strong> señal de activación del motor.</li>
 <li><strong><em>Amarillo:</em></strong> conexión entre el pin emisor del transistor y el motor vibratorio.</li>
 </ul>
-<p>El circuito vibrador es un circuito sencillo de control de motor. Este circuito tiene la finalidad de proteger el microcontrolador al evitar que el motor se alimente directamente del pin digital del microcontrolador, si no que lo haga directamente de la alimentación general del dispositivo, dejando al pin del microcontrolador únicamente la tarea de dar la señal de activación.</p>
-<p>El circuito de los sensores y el microcontrolador tiene la función de comunicar de forma paralela ambos sensores por protocolo I2C al microcontrolador.</p>
-<p>El circuito de la batería sirve para añadir el interruptor de encendido y agregar un conector JST, el cual se conecta a la pantalla XIAO Round Display.</p>
-<p>En resumen, el diseño del dispositivo está enfocado en optimizar las conexiones, el espacio y facilitar su montaje, esto a la vez que se asegura su funcionalidad y ergonomía.</p>
+<p>El circuito vibrador es un circuito sencillo de control de motor. su principal objetivo proteger el microcontrolador, evitando que el motor se alimente directamente desde el pin digital del microcontrolador, si no que lo haga directamente de la fuente de alimentación general del dispositivo, mientras que el pin del microcontrolador se utiliza únicamente para enviar la señal de activación.</p>
+<p>El circuito que conecta los sensores con el microcontrolador tiene como propósito establecer la comunicación simultánea de ambos sensores mediante el protocolo I2C.</p>
+<p>El circuito de la batería integra un interruptor de encendido y apagado, que permite al usuario controlar la alimentación del dispositivo; y un conector JST, que proporciona la conexión directa con la pantalla táctil XIAO Round Display.</p>
+<p>Finalmente, en la <a href="#fig-DiagramaBloques" class="quarto-xref">Figura&nbsp;<span>3.4</span></a> se ilustra la organización de los distintos componentes del dispositivo, haciendo una separación entre los elementos internos y externos del reloj. Los componentes dentro del recuadro negro son aquellos que están contenidos físicamente dentro de la carcasa del reloj, como los sensores, la batería, la antena WIFI, el circuito de la pantalla, el circuito vibrador y el microcontrolador. Por otro lado, los elementos que se encuentran fuera del recuadro negro corresponden a los componentes externos con los cuales el usuario interactúa directamente, como el interruptor de encendido y apagado, la pantalla táctil y el puerto de carga USB-C. Además, el diagrama indica las interconexiones entre los diferentes componentes con líneas. Se destaca que la conexión entre los sensores y el microcontrolador es mediante el protocolo I2C.</p>
+<div id="fig-DiagramaBloques" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-DiagramaBloques-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../Imagenes/DiagramaBloques.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-DiagramaBloques-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3.4: Diagrama de bloques
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="sec-construccion" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="sec-construccion"><span class="header-section-number">3.2</span> Construcción del dispositivo</h2>
@@ -722,7 +732,7 @@ Figura&nbsp;3.3: Diagrama de conexiones
 <ol type="1">
 <li>Diseño de las Encuestas</li>
 </ol>
-<p>El reloj inteligente lleva a cabo encuestas simplificadas de confort térmico cada hora, en horarios específicos entre las 8:00 a. m. y las 9:00 p.&nbsp;m., programadas en las medias horas para alinearse con los horarios de actividades en el IER, permitiendo al usuario aclimatarse antes de responder la encuesta. Al llegar el momento de responder la encuesta, el dispositivo activa una alarma vibradora que consta de tres pulsos cortos en un lapso de un segundo, para notificar al usuario. Si el usuario ignora la alarma, el botón de ‘Encuesta’ permanece activo hasta que se complete la encuesta, si después de quince minutos la encuesta no ha sido respondida, la alarma se vuelve a activar una vez más. Si esta segunda notificación es ignorada, la alarma no se activa nuevamente hasta la próxima hora programada.</p>
+<p>El reloj inteligente lleva a cabo encuestas simplificadas de confort térmico cada hora, en horarios específicos entre las 8:00 a.m. y las 9:00 p.m., programadas en las medias horas para alinearse con los horarios de actividades en el IER, permitiendo al usuario aclimatarse antes de responder la encuesta. Al llegar el momento de responder la encuesta, el dispositivo activa una alarma vibradora que consta de tres pulsos cortos en un lapso de un segundo, para notificar al usuario. Si el usuario ignora la alarma, el botón de ‘Encuesta’ permanece activo hasta que se complete la encuesta, si después de quince minutos la encuesta no ha sido respondida, la alarma se vuelve a activar una vez más. Si esta segunda notificación es ignorada, la alarma no se activa nuevamente hasta la próxima hora programada.</p>
 <p>La encuesta consta de cinco preguntas. Las preguntas seleccionadas se basan en XXX Podría mencionarse a Ibet o buscar la referencia en las notas de la clase con Guadalupe. Las cinco preguntas son las siguientes:</p>
 <ul>
 <li>Vestimenta: Presenta la pregunta: “¿Cuál es tu vestimenta actual?” donde el usuario puede seleccionar todas las prendas que este usando de una lista predefinida. El objetivo de esta pregunta es calcular el nivel de aislamiento térmico del usuario (CLO). La interfaz muestra el cálculo del valor de CLO en la parte inferior de la pantalla a medida que se seleccionan o deseleccionan las prendas. La <a href="#tbl-prendas" class="quarto-xref">Tabla&nbsp;<span>3.7</span></a> muestra la lista de prendas disponibles para seleccionar con su respectivo calor de CLO.</li>
@@ -991,14 +1001,14 @@ Tabla&nbsp;3.9: Escala del voto de sensación térmica con su descripción
 </ol>
 <p>Una vez que se completa la encuesta, al pulsar el botón “Finalizar”, aparece un mensaje emergente que solicita al usuario mantenerse inmóvil mientras que los sensores de frecuencia cardíaca (MAX30102) y de temperatura de la piel (GY-906) llevan a cabo sus mediciones correspondientes, estas mediciones se realizan en un lapso de diez segundos. Los resultados se muestran al usuario para su validación. Si el usuario considera que los resultados son coherentes, puede enviarlos; de lo contrario, tiene la opción de repetir las mediciones.</p>
 <p>Los datos recolectados son enviados a la plataforma Thingsboard para su almacenamiento y análisis posterior. Esta funcionalidad permite construir una base de datos que facilite el estudio del confort térmico en diferentes espacios y condiciones dentro del IER.</p>
-<p>La <a href="#fig-generica" class="quarto-xref">Figura&nbsp;<span>3.4</span></a> muestra todas las pantallas</p>
+<p>La <a href="#fig-generica" class="quarto-xref">Figura&nbsp;<span>3.5</span></a> muestra todas las pantallas</p>
 <div id="fig-generica" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-generica-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../Imagenes/ImagenGenerica.png" class="img-fluid figure-img" style="width:50.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-generica-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3.4: Imagen generica
+Figura&nbsp;3.5: Imagen generica
 </figcaption>
 </figure>
 </div>
@@ -1080,7 +1090,7 @@ Tabla&nbsp;3.10: sdfsdfsd
 <section id="calibración-del-sensor-gy-906" class="level3" data-number="3.4.2">
 <h3 data-number="3.4.2" class="anchored" data-anchor-id="calibración-del-sensor-gy-906"><span class="header-section-number">3.4.2</span> Calibración del Sensor GY-906</h3>
 <p>Para la calibración del sensor de temperatura GY-906, se utiliza una cámara termográfica Fluke Ti9 como referencia. Tanto el sensor como la cámara se configuran con una emisividad de 0.98, correspondiente a la emisividad promedio de la piel humana. Las pruebas se realizan durante tres días, entre las 10:00 a. m. y las 6:00 p.&nbsp;m., con mediciones cada media hora para capturar diferentes condiciones ambientales.</p>
-<p>Durante cada sesión de medición, el sensor GY-906 realiza diez mediciones consecutivas en un lapso de diez segundos, y el promedio de estas mediciones se envía a la plataforma Thingsboard, lo cual permite reducir el ruido y aumentar la precisión. Simultáneamente, las lecturas de la cámara termográfica se registran manualmente. Para minimizar el error por movimiento, el dispositivo emite una alerta vibratoria de un segundo, seguida de una pausa de cuatro segundos antes de realizar la medición, permitiendo al usuario mantener la mano inmóvil durante el proceso de medición. Se obtienen 61 pares de mediciones, la <a href="#tbl-estadisticas-camara" class="quarto-xref">Tabla&nbsp;<span>3.11</span></a> muestra las características estadísticas de ambos conjuntos de datos, mientras que la <a href="#fig-dispersion" class="quarto-xref">Figura&nbsp;<span>3.5</span></a> muestra un gráfico de dispersión de datos entre las lecturas hechas por el sensor y las lecturas hechas por la cámara.</p>
+<p>Durante cada sesión de medición, el sensor GY-906 realiza diez mediciones consecutivas en un lapso de diez segundos, y el promedio de estas mediciones se envía a la plataforma Thingsboard, lo cual permite reducir el ruido y aumentar la precisión. Simultáneamente, las lecturas de la cámara termográfica se registran manualmente. Para minimizar el error por movimiento, el dispositivo emite una alerta vibratoria de un segundo, seguida de una pausa de cuatro segundos antes de realizar la medición, permitiendo al usuario mantener la mano inmóvil durante el proceso de medición. Se obtienen 61 pares de mediciones, la <a href="#tbl-estadisticas-camara" class="quarto-xref">Tabla&nbsp;<span>3.11</span></a> muestra las características estadísticas de ambos conjuntos de datos, mientras que la <a href="#fig-dispersion" class="quarto-xref">Figura&nbsp;<span>3.6</span></a> muestra un gráfico de dispersión de datos entre las lecturas hechas por el sensor y las lecturas hechas por la cámara.</p>
 <div id="tbl-estadisticas-camara" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-estadisticas-camara-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1129,7 +1139,7 @@ Tabla&nbsp;3.11: Estadísticas de las Mediciones del Sensor GY-906 y la Cámara 
 <img src="desarrollo_files/figure-html/fig-dispersion-output-1.png" width="455" height="429" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dispersion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3.5: Gráfico de Dispersión de las Mediciones del Sensor GY-906 y la Cámara Termográfica Fluke Ti9
+Figura&nbsp;3.6: Gráfico de Dispersión de las Mediciones del Sensor GY-906 y la Cámara Termográfica Fluke Ti9
 </figcaption>
 </figure>
 </div>
@@ -1140,7 +1150,7 @@ Figura&nbsp;3.5: Gráfico de Dispersión de las Mediciones del Sensor GY-906 y l
 <li>Error Promedio (EM): -0.72°C</li>
 <li>Error Absoluto Medio (EAM): 0.77°C</li>
 </ul>
-<p>La <a href="#fig-histograma" class="quarto-xref">Figura&nbsp;<span>3.6</span></a> muestra un histograma del error de medición, donde se puede observa el error sistemático del sensor respecto a la cámara. Se observa que la mayoría de los errores se concentran entre 0 y 0.5°C.</p>
+<p>La <a href="#fig-histograma" class="quarto-xref">Figura&nbsp;<span>3.7</span></a> muestra un histograma del error de medición, donde se puede observa el error sistemático del sensor respecto a la cámara. Se observa que la mayoría de los errores se concentran entre 0 y 0.5°C.</p>
 <div id="cell-fig-histograma" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div id="fig-histograma" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1149,13 +1159,13 @@ Figura&nbsp;3.5: Gráfico de Dispersión de las Mediciones del Sensor GY-906 y l
 <img src="desarrollo_files/figure-html/fig-histograma-output-1.png" width="585" height="429" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histograma-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3.6: Histograma de errores entre las mediciones de la cámara Fluke Ti9 y el sensor GY-906
+Figura&nbsp;3.7: Histograma de errores entre las mediciones de la cámara Fluke Ti9 y el sensor GY-906
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Para garantizar que la calibración del sensor GY-906 no utilice datos que puedan distorsionar el análisis, se utiliza el método de la envolvente elíptica, con el que se asegura que solo los datos más representativos y precisos sean utilizados para el proceso de calibración del sensor. Con este método se detectan siete valores atípicos o outliers los cuales son excluidos del conjunto de datos para el proceso de calibración. En la <a href="#fig-outliers" class="quarto-xref">Figura&nbsp;<span>3.7</span></a> se observan los valores atípicos detectados y excluidos.</p>
+<p>Para garantizar que la calibración del sensor GY-906 no utilice datos que puedan distorsionar el análisis, se utiliza el método de la envolvente elíptica, con el que se asegura que solo los datos más representativos y precisos sean utilizados para el proceso de calibración del sensor. Con este método se detectan siete valores atípicos o outliers los cuales son excluidos del conjunto de datos para el proceso de calibración. En la <a href="#fig-outliers" class="quarto-xref">Figura&nbsp;<span>3.8</span></a> se observan los valores atípicos detectados y excluidos.</p>
 <div id="cell-fig-outliers" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div id="fig-outliers" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1164,7 +1174,7 @@ Figura&nbsp;3.6: Histograma de errores entre las mediciones de la cámara Fluke 
 <img src="desarrollo_files/figure-html/fig-outliers-output-1.png" width="450" height="429" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-outliers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3.7: Valores atípicos detectados del conjunto de mediciones
+Figura&nbsp;3.8: Valores atípicos detectados del conjunto de mediciones
 </figcaption>
 </figure>
 </div>
