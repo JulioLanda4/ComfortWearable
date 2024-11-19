@@ -1061,7 +1061,37 @@ M_c = M_s + f_c
 </section>
 <section id="sec-programación" class="level2" data-number="3.5">
 <h2 data-number="3.5" class="anchored" data-anchor-id="sec-programación"><span class="header-section-number">3.5</span> Lógica de programación</h2>
-<p>XXX Agregar diagrama de flujo del articulo de Francia y después desglozarlo por partes. XXX</p>
+<p>En este apartado se describe la lógica de programación desarrollada para el reloj inteligente, un dispositivo diseñado para realizar encuestas de confort térmico simplificadas y medir variables fisiológicas como la temperatura de la piel en la muñeca y la frecuencia cardíaca. La programación se lleva a cabo en Arduino, principalmente mediante el uso de la librería LVGL para gestionar la interfaz gráfica. El dispositivo cuenta con un microcontrolador XIAO ESP32C3 y una pantalla táctil, elementos que permiten la interacción directa con el usuario.</p>
+<p>El proyecto consta de varios archivos de código, cada uno con una función específica dentro del sistema. A continuación, se presenta una breve descripción de cada archivo:</p>
+<ol type="1">
+<li><p><strong>Proyecto_confort.ino</strong>: Este es el archivo principal del proyecto. En él se ejecuta el código base, se incluyen las librerías necesarias y se declaran variables y funciones de importancia.</p></li>
+<li><p><strong>ui.c</strong> y <strong>ui.h</strong>: Estos archivos se encargan de la ejecución y configuración general de la interfaz gráfica. El archivo header (<strong>ui.h</strong>) contiene las declaraciones de funciones y variables utilizadas en <strong>ui.c</strong>.</p></li>
+<li><p><strong>ui_Aceptación.c</strong>: Configura la pantalla destinada a la pregunta de aceptación térmica, donde el usuario evalúa si las condiciones térmicas le resultan agradables o no.</p></li>
+<li><p><strong>ui_Clo.c</strong>: Configura la pantalla para la pregunta sobre el nivel de aislamiento térmico de la ropa que usa el usuario, lo cual contribuye al cálculo del confort térmico.</p></li>
+<li><p><strong>ui_Inicio.c</strong>: Configura la pantalla principal del reloj. En esta pantalla se muestra la hora actual, un contador regresivo que indica cuánto tiempo falta hasta el momento de contestar la siguiente encuesta, y se habilita el botón para iniciar la encuesta cuando está disponible.</p></li>
+<li><p><strong>ui_Met.c</strong>: Configura la pantalla para la pregunta sobre el nivel de actividad metabólica del usuario, considerando si se encuentra en reposo, caminando, o realizando alguna actividad física.</p></li>
+<li><p><strong>ui_Sensacion.c</strong>: Configura la pantalla para la pregunta sobre el nivel de sensación térmica, donde el usuario describe su percepción del ambiente como frío, cálido o neutral.</p></li>
+<li><p><strong>ui_Ubicación.c</strong>: Configura la pantalla para la pregunta sobre la ubicación del usuario, lo cual ayuda a contextualizar las condiciones ambientales que están siendo evaluadas.</p></li>
+<li><p><strong>ui_events.c</strong> y <strong>ui_events.h</strong>: En <strong>ui_events.c</strong> se encuentran la mayoría de las funciones declaradas para el programa, incluyendo aquellas que gestionan los eventos generados por la interfaz. El archivo header (<strong>ui_events.h</strong>) contiene las declaraciones de dichas funciones.</p></li>
+<li><p><strong>ui_helpers.c</strong> y <strong>ui_helpers.h</strong>: Contienen funciones de ayuda utilizadas para facilitar la implementación de la interfaz y realizar operaciones comunes dentro del sistema.</p></li>
+</ol>
+<p>La lógica de programación del dispositivo está diseñada para realizar encuestas de confort térmico entre las 8 de la mañana y las 10 de la noche, en intervalos de media hora. Esto se hace para asegurar que las encuestas se realicen después de un periodo de adaptación climática del usuario en el Instituto de Energías Renovables (IER), donde se lleva a cabo el proyecto. La función denominada <strong>“Actualizar_hora”</strong>, que se encuentra en el archivo <strong>ui_events.c</strong>, se encarga de actualizar la hora en pantalla y, además, habilitar o deshabilitar el botón para iniciar la encuesta según el horario. Esta función también emite una alarma vibratoria para alertar al usuario sobre la disponibilidad de una nueva encuesta. La lógica detallada de esta función se representa en la <a href="#fig-actualizarhora">Figura&nbsp;<span>3.9</span></a>.</p>
+<div id="fig-actualizarhora" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../Imagenes/Actualizar_hora.svg" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption class="figure-caption">Figura&nbsp;3.9: Diagrama de flujo de la función Actulizar hora</figcaption>
+</figure>
+</div>
+<p>Para ahorrar energía, la pantalla del dispositivo permanece apagada mientras el reloj está en reposo. Además, si la pantalla está encendida y el dispositivo detecta inactividad durante más de 10 segundos, esta se apaga automáticamente. Sin embargo, la pantalla puede ser encendida nuevamente al hacer clic sobre ella, lo cual permite al usuario ver la hora en cualquier momento.</p>
+<p>Una vez que el usuario inicia la encuesta, el proceso implica responder a las preguntas de confort térmico, registrar las variables fisiológicas y validar las mediciones. Las variables se actualizan de manera continua a medida que el usuario responde cada pregunta. Al finalizar la encuesta y enviar los datos a la plataforma IoT <strong>Thingsboard</strong> para su análisis, las variables no se reinician. Esto significa que, al iniciar una nueva encuesta, el dispositivo retiene las respuestas de la última encuesta contestada, permitiendo al usuario simplemente continuar con las mismas respuestas o realizar modificaciones si lo requiere. Este enfoque tiene dos propósitos principales: en primer lugar, ahorrar tiempo al contestar encuestas sucesivas, y en segundo lugar, permitir que el usuario observe cómo cambian sus respuestas a lo largo del día. En caso de que el usuario no acepte las mediciones, estas se toman nuevamente. El proceso completo de la encuesta se describe en la <a href="#fig-iniciarencuesta">Figura&nbsp;<span>3.10</span></a>.</p>
+<div id="fig-iniciarencuesta" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../Imagenes/Iniciar_encuesta.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figura&nbsp;3.10: Diagrama de flujo de encuesta y medición de variables</figcaption>
+</figure>
+</div>
+<p>Los diagramas de flujo proporcionan una representación visual de la secuencia de operaciones, ayudando a comprender cómo las funciones interactúan entre sí para llevar a cabo las encuestas y asegurar la correcta recolección de datos. La lógica del programa está centrada en la simplicidad de uso y en la eficiencia del proceso de toma de decisiones, siempre con el objetivo de minimizar la interacción innecesaria del usuario y maximizar la calidad de los datos recolectados.</p>
+<p>En la siguiente sección, “Instrucciones de uso”, se detallan las configuraciones iniciales necesarias para el funcionamiento del dispositivo, tales como la conexión a la red WiFi, la configuración del token del dispositivo y la configuración del servidor de <strong>Thingsboard</strong>. Estas configuraciones son fundamentales para asegurar la conectividad y el correcto funcionamiento del dispositivo durante la recolección y envío de datos.</p>
 </section>
 <section id="sec-instrucciones" class="level2" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="sec-instrucciones"><span class="header-section-number">3.6</span> Instrucciones de uso</h2>
