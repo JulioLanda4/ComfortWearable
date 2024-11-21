@@ -168,7 +168,7 @@ microcontrolador @fig-conexiones b) y el circuito de la batería @fig-conexiones
 
 El código de colores utilizado en este proyecto, para facilitar las conexiones, es:
 
-* ***Rojo:*** Conexión Vcc (3,3 V).
+* ***Rojo:*** Conexión Vcc (3.3 V).
 * ***Negro:*** GND.
 * ***Azul:*** cable de comunicación SCL.
 * ***Blanco:*** cable de comunicación SDA.
@@ -209,36 +209,25 @@ Una de las principales características del reloj inteligente presentado, es la 
 
 El reloj inteligente lleva a cabo encuestas simplificadas de confort térmico cada hora, en horarios específicos entre las 8:00 a.m. y las 9:00 p.m., programadas en las medias horas para alinearse con los horarios de actividades en el IER, permitiendo al usuario aclimatarse antes de responder la encuesta. Al llegar el momento de responder la encuesta, el dispositivo activa una alarma vibradora que consta de tres pulsos cortos en un lapso de un segundo, para notificar al usuario. Si el usuario ignora la alarma, el botón de 'Encuesta' permanece activo hasta que se complete la encuesta, si después de quince minutos la encuesta no ha sido respondida, la alarma se vuelve a activar una vez más. Si esta segunda notificación es ignorada, la alarma no se activa nuevamente hasta la próxima hora programada. 
 
-La encuesta consta de cinco preguntas. Las preguntas seleccionadas se basan en XXX Podría mencionarse a Ibet o buscar la referencia en las notas de la clase con Guadalupe. Las cinco preguntas son las siguientes:
+La encuesta consta de cinco preguntas. Las preguntas seleccionadas se basan en los lineamientos establecidos por la ISO 10551 (@ISO10551). Las cinco preguntas son las siguientes:
+
 
 - Vestimenta: Presenta la pregunta: "¿Cuál es tu vestimenta actual?" donde el usuario puede seleccionar todas las prendas que este usando de una lista predefinida. El objetivo de esta pregunta es calcular el nivel de aislamiento térmico del usuario (CLO). La interfaz muestra el cálculo del valor de CLO en la parte inferior de la pantalla a medida que se seleccionan o deseleccionan las prendas. La @tbl-prendas muestra la lista de prendas disponibles para seleccionar con su respectivo calor de CLO.
 
-| **Prenda**          | **Valor de CLO** |
-|---------------------|------------------|
-| Zapato              | 0.02             |
-| Calzón              | 0.04             |
-| Playera             | 0.09             |
-| Camisa              | 0.15             |
-| Pantalón            | 0.25             |
-| Calcetines          | 0.02             |
-| Sombrero            | 0.05             |
-| Bufanda             | 0.10             |
-| Guantes             | 0.10             |
-| Chaqueta            | 0.30             |
-| Suéter              | 0.18             |
-| Falda               | 0.14             |
-| Shorts              | 0.06             |
-| Vestido             | 0.15             |
-| Pantalón de mezclilla| 0.23            |
-| Abrigo              | 0.40             |
-| Gorro de lana       | 0.08             |
-| Bata de baño        | 0.30             |
-| Chaleco             | 0.10             |
-| Botas               | 0.10             |
-| Impermeable         | 0.20             |
-| Sandalias           | 0.02             |
-| Brasier             | 0.02             |
-| Corpiño             | 0.03             |
+| **Prenda**          | **Valor de CLO** | **Prenda**          | **Valor de CLO** |
+|---------------------|------------------|---------------------|------------------|
+| Zapato              | 0.02             | Shorts              | 0.06             |
+| Calzón              | 0.04             | Vestido             | 0.15             |
+| Playera             | 0.09             | Pantalón de mezclilla| 0.23            |
+| Camisa              | 0.15             | Abrigo              | 0.40             |
+| Pantalón            | 0.25             | Gorro de lana       | 0.08             |
+| Calcetines          | 0.02             | Bata de baño        | 0.30             |
+| Sombrero            | 0.05             | Chaleco             | 0.10             |
+| Bufanda             | 0.10             | Botas               | 0.10             |
+| Guantes             | 0.10             | Impermeable         | 0.20             |
+| Chaqueta            | 0.30             | Sandalias           | 0.02             |
+| Suéter              | 0.18             | Brasier             | 0.02             |
+| Falda               | 0.14             | Corpiño             | 0.03             |
 : Tabla de equivalencia de prendas a CLO {#tbl-prendas}
 
 - Actividad: Presenta la pregunta: "¿Qué actividad estás realizando?" donde el usuario selecciona una única opción de una lista predefinida de actividades que permiten calcular la tasa metabólica (MET) del usuario. La @tbl-actividad muestra la lista de actividades con su respectivo valor de MET asociado.
@@ -336,9 +325,10 @@ Posteriormente, con RATE\_SIZE fijado en 6, se ajusta el valor de sampleAverage 
 
 ### Calibración del Sensor GY-906
 
-Para la calibración del sensor de temperatura GY-906, se utiliza una cámara termográfica Fluke Ti9 como referencia. Tanto el sensor como la cámara se configuran con una emisividad de 0.98, correspondiente a la emisividad promedio de la piel humana. Las pruebas se realizan durante tres días, entre las 10:00 a. m. y las 6:00 p. m., con mediciones cada media hora para capturar diferentes condiciones ambientales.
+Para la calibración del sensor de temperatura GY-906, se utiliza una cámara termográfica Fluke Ti9 como referencia. Tanto el sensor como la cámara se configuran con una emisividad de 0.98, correspondiente a la emisividad promedio de la piel humana. Las pruebas se realizan durante tres días, entre las 10:00 a. m. y las 06:00 p. m., con mediciones cada media hora para capturar diferentes condiciones ambientales.
 
-Durante cada sesión de medición, el sensor GY-906 realiza diez mediciones consecutivas en un lapso de diez segundos, y el promedio de estas mediciones se envía a la plataforma Thingsboard, lo cual permite reducir el ruido y aumentar la precisión. Simultáneamente, las lecturas de la cámara termográfica se registran manualmente. Para minimizar el error por movimiento, el dispositivo emite una alerta vibratoria de un segundo, seguida de una pausa de cuatro segundos antes de realizar la medición, permitiendo al usuario mantener la mano inmóvil durante el proceso de medición. Se obtienen 61 pares de mediciones, la @tbl-estadisticas-camara muestra las características estadísticas de ambos conjuntos de datos, mientras que la @fig-dispersion muestra un gráfico de dispersión de datos entre las lecturas hechas por el sensor y las lecturas hechas por la cámara.
+Durante cada sesión de medición, el sensor GY-906 realiza diez mediciones consecutivas en un lapso de diez segundos, y el promedio de estas mediciones se envía a la plataforma Thingsboard, lo cual permite reducir el ruido y aumentar la precisión. Simultáneamente, las lecturas de la cámara termográfica se registran manualmente. Para minimizar el error por movimiento, el dispositivo emite una alerta vibratoria de un segundo, seguida de una pausa de cuatro segundos antes de realizar la medición, permitiendo al usuario mantener la mano inmóvil durante el proceso de medición. Se obtienen 61 pares de mediciones, la @tbl-estadisticas-camara muestra las características estadísticas de ambos conjuntos de datos.
+
 
 | Estadística          | Sensor (°C) | Cámara (°C) |
 |----------------------|-------------|-------------|
@@ -348,144 +338,189 @@ Durante cada sesión de medición, el sensor GY-906 realiza diez mediciones cons
 | Máximo               | 35.83       | 35.83       |
 : Estadísticas de las Mediciones del Sensor GY-906 y la Cámara Termográfica Fluke Ti9  {#tbl-estadisticas camara}
 
+Se realiza un análisis inicial entre las mediciones de la cámara respecto al sensor y se obtienen los siguientes datos: 
+
+- Error Medio (EM): 0.72°C
+- Error Absoluto Medio (EAM): 0.77°C 
+
+Dada la naturaleza de los datos, se aplica una calibración mediante un modelo de regresión lineal, obteniéndose los siguientes valores clave:
+
+- Pendiente: 0.47
+- Intercepto: 18.99
+
+Una vez obtenidos estos valores, se aplica la función de regresión lineal sobre los datos del sensor para generar una nueva columna con datos corregidos. Al comparar esta nueva columna con las lecturas de la cámara, se obtiene un error estándar de la estimación $S_e$ de 0.54, mientras que los errores obtenidos son los siguientes:
+
+- EM: 2.19x10<sup>-15</sup>
+- EAM: 0.39
+
+La @fig-dispersion muestra la comparación entre las gráficas de dispersión de datos antes y después de la calibración.
+
+
 ```{python}
 #| echo: false
-#| fig-cap: "Gráfico de Dispersión de las Mediciones del Sensor GY-906 y la Cámara Termográfica Fluke Ti9"
+#| fig-cap: "Gráficos de dispersión de las mediciones del sensor GY-906 y la cámara termográfica Fluke Ti9 antes y después de la calibración"
 #| label: fig-dispersion
 
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+from sklearn.linear_model import LinearRegression
 
 ruta_excel = "../datos/DatosTemperatura.xlsx"
 datos = pd.read_excel(ruta_excel, sheet_name="Sheet1")
+datos_nuevos = pd.read_excel(ruta_excel, sheet_name="Sheet2")
 
-# Crear la figura con subplots
-fig, ax = plt.subplots(figsize=(5, 5))
+# Crear la figura con dos subplots (1 fila, 2 columnas)
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))
 
-px = [30,40]
-py = [30,40]
+# Calcular la regresión lineal para los datos originales
+x_original = datos["Sensor"].values.reshape(-1, 1)
+y_original = datos["Camara"].values
+modelo_original = LinearRegression().fit(x_original, y_original)
+pendiente_original = modelo_original.coef_[0]
+intercepto_original = modelo_original.intercept_
 
-ax.plot(px,py,"r--", label="Línea de identidad")
+datos["Valores Corregidos"] = datos["Sensor"] * pendiente_original + intercepto_original
 
-ax.scatter(datos["Sensor"], datos["Camara"], s=25, alpha=0.4,label="Datos")
+# --- Primer subplot: Datos originales --- #
 
-# Configurar la leyenda y los ejes
-ax.set_xlabel("Sensor GY-906 [°C]")
-ax.set_ylabel("Cámara Fluke Ti9 [°C]")
-ax.grid()
+px = [30, 40]
+py = [30, 40]
 
-# Calcular los límites de la gráfica para el primer subplot
+ax1.plot(px, py, "r--", label="Línea de identidad")
+ax1.scatter(datos["Sensor"], datos["Camara"], s=25, alpha=0.4, label="Datos")
+
+# Configurar los límites de la gráfica antes de graficar la línea de regresión
 limite_max_primero = datos[["Camara", "Sensor"]].max().max() + 0.1
 limite_min_primero = datos[["Camara", "Sensor"]].min().min() - 0.1
-ax.set_xlim(limite_min_primero, limite_max_primero)
-ax.set_ylim(limite_min_primero, limite_max_primero)
-        
-plt.legend()
-plt.legend(loc='lower right')
-#plt.savefig('Scatter.png', dpi=1000)
-plt.show()
-```
+ax1.set_xlim(limite_min_primero, limite_max_primero)
+ax1.set_ylim(limite_min_primero, limite_max_primero)
 
-
-El análisis de los resultados revela un error sistemático, ya que el sensor GY-906 tiende a medir temperaturas ligeramente inferiores a las registradas por la cámara termográfica. Las estadísticas de los errores son las siguientes: 
-
-- Error Promedio (EM): -0.72°C
-- Error Absoluto Medio (EAM): 0.77°C
-
-La @fig-histograma muestra un histograma del error de medición, donde se puede observa el error sistemático del sensor respecto a la cámara. Se observa que la mayoría de los errores se concentran entre 0 y 0.5°C.
-
-```{python}
-#| echo: false
-#| fig-cap: "Histograma de errores entre las mediciones de la cámara Fluke Ti9 y el sensor GY-906"
-#| label: fig-histograma
-
-error = datos.Sensor - datos.Camara
-
-# Crear el histograma
-fig, ax = plt.subplots()
-ax.hist(error, bins=20, range=(-2.5, 2.5), zorder=3)
-ax.set_xlabel("Error [°C]")
-ax.set_ylabel("Frecuencia")
-
-ax.xaxis.set_minor_locator(plt.MultipleLocator(0.250))  # Define el intervalo de los ticks menores
-
-# Configurar la cuadrícula
-ax.grid(which='minor', linestyle='--', linewidth=0.5, color='gray', zorder=0)
-ax.grid(which='major', linestyle='-', linewidth=0.5, color='gray', zorder=0) 
-
-#plt.savefig('Histogram.png', dpi=300)
-plt.show()
-
-```
-
-Para garantizar que la calibración del sensor GY-906 no utilice datos que puedan distorsionar el análisis, se utiliza el método de la envolvente elíptica, con el que se asegura que solo los datos más representativos y precisos sean utilizados para el proceso de calibración del sensor. Con este método se detectan siete valores atípicos o outliers los cuales son excluidos del conjunto de datos para el proceso de calibración. En la @fig-outliers se observan los valores atípicos detectados y excluidos.
-
-```{python}
-#| echo: false
-#| fig-cap: "Valores atípicos detectados del conjunto de mediciones"
-#| label: fig-outliers
-
-from sklearn.covariance import EllipticEnvelope
-
-# Ajustar la Envolvente Elíptica
-outlier_model = EllipticEnvelope(contamination=0.1)
-outlier_model.fit(error.values.reshape(-1, 1))
-labels = outlier_model.predict(error.values.reshape(-1, 1))
-
-# Crear la figura con subplots
-fig, ax = plt.subplots(figsize=(5, 5))
-
-# Línea de identidad
-px = [min(datos['Sensor']), max(datos['Sensor'])]
-py = [min(datos['Sensor']), max(datos['Sensor'])]
-ax.plot(px, py, "r--", label="Línea de identidad")
-
-# Dibujar todos los datos
-ax.scatter(datos['Sensor'], datos['Camara'], s=25, alpha=0.6, label="Datos")
-
-# Dibujar solo los outliers encima
-outliers = labels == -1
-ax.scatter(datos['Sensor'][outliers], datos['Camara'][outliers], color='red', s=25, edgecolors='k', label="Valores atípicos")
+# Graficar la línea de regresión para los datos originales
+x_vals = np.linspace(limite_min_primero, limite_max_primero, 100)
+y_vals = intercepto_original + pendiente_original * x_vals
+ax1.plot(x_vals, y_vals, "b-", label="Línea de regresión")
 
 # Configurar la leyenda y los ejes
-ax.set_xlabel("Sensor [°C]")
-ax.set_ylabel("Cámara [°C]")
-ax.grid(True)
-ax.legend()
-plt.legend(loc='lower right')
+ax1.set_xlabel("Sensor [°C]")
+ax1.set_ylabel("Cámara [°C]")
+ax1.grid()
+
+ax1.legend()
+ax1.set_title("Gráfica de dispersión de datos originales")
+
+# --- Segundo subplot: Datos corregidos --- #
+
+ax2.plot(px, py, "r--", label="Línea de identidad")
+ax2.scatter(datos["Valores Corregidos"], datos["Camara"], s=25, alpha=0.4, label="Datos")
+
+# Configurar los límites de la gráfica antes de graficar la línea de regresión
+limite_max_segundo = datos[["Camara", "Valores Corregidos"]].max().max() + 0.1
+limite_min_segundo = datos[["Camara", "Valores Corregidos"]].min().min() - 0.1
+ax2.set_xlim(limite_min_segundo, limite_max_segundo)
+ax2.set_ylim(limite_min_segundo, limite_max_segundo)
+
+
+# Configurar la leyenda y los ejes
+ax2.set_xlabel("Sensor calibrado [°C]")
+ax2.set_ylabel("Cámara [°C]")
+ax2.grid()
+
+ax2.legend()
+ax2.set_title("Gráfica de dispersión de datos corregidos")
+
+# Mostrar la figura completa con ambos subplots
+plt.tight_layout()
+plt.show()
+```
+
+
+Posteriormente, se lleva a cabo una segunda campaña de medición, recopilando 25 pares de datos adicionales, con la finalidad de validar la función de regresión lineal obtenida. Juntando ambos conjuntos de datos, se obtiene un total de 86 pares de mediciones. Los errores iniciales de este conjunto son:
+
+- EM: 0.59 
+- EAM: 0.66
+
+Tras aplicar la función de regresión lineal, se obtiene un error estándar de la estimación $S_e$ de 0.54, lo cual demuestra la consistencia del valor entre el primer conjunto de datos y este nuevo conjunto, mientras que los errores son los siguientes:
+
+- EM: -0.08
+- EAM: 0.41
+
+La @fig-dispersion2 muestra la comparación de las gráficas de dispersión del conjunto total de datos (86 mediciones), antes y después de la calibración.
+
+
+```{python}
+#| echo: false
+#| fig-cap: "Gráficos de dispersión para validación de la calibración del Sensor GY-906."
+#| label: fig-dispersion2
+
+#| label: fig-scatter2
+#| fig-cap: Gráfica de dispersión de datos del nuevo conjunto de datos
+
+datos_unidos = pd.concat([datos, datos_nuevos], ignore_index=True)
+
+# Crear la figura con dos subplots (1 fila, 2 columnas)
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))
+
+
+datos_unidos["Valores Corregidos"] = datos_unidos["Sensor"] * pendiente_original + intercepto_original
+
+# --- Primer subplot: Datos originales --- #
+
+px = [30, 40]
+py = [30, 40]
+
+ax1.plot(px, py, "r--", label="Línea de identidad")
+ax1.scatter(datos_unidos["Sensor"], datos_unidos["Camara"], s=25, alpha=0.4, label="Datos")
+
+# Configurar los límites de la gráfica antes de graficar la línea de regresión
+limite_max_primero = datos_unidos[["Camara", "Sensor"]].max().max() + 0.1
+limite_min_primero = datos_unidos[["Camara", "Sensor"]].min().min() - 0.1
+ax1.set_xlim(limite_min_primero, limite_max_primero)
+ax1.set_ylim(limite_min_primero, limite_max_primero)
+
+# Configurar la leyenda y los ejes
+ax1.set_xlabel("Sensor [°C]")
+ax1.set_ylabel("Cámara [°C]")
+ax1.grid()
+
+ax1.legend()
+ax1.set_title("Gráfica de dispersión de datos originales")
+
+# --- Segundo subplot: Datos corregidos --- #
+
+ax2.plot(px, py, "r--", label="Línea de identidad")
+ax2.scatter(datos_unidos["Valores Corregidos"], datos_unidos["Camara"], s=25, alpha=0.4, label="Datos")
+
+# Configurar los límites de la gráfica antes de graficar la línea de regresión
+limite_max_segundo = datos_unidos[["Camara", "Valores Corregidos"]].max().max() + 0.1
+limite_min_segundo = datos_unidos[["Camara", "Valores Corregidos"]].min().min() - 0.1
+ax2.set_xlim(limite_min_segundo, limite_max_segundo)
+ax2.set_ylim(limite_min_segundo, limite_max_segundo)
+
+
+# Configurar la leyenda y los ejes
+ax2.set_xlabel("Sensor calibrado [°C]")
+ax2.set_ylabel("Cámara [°C]")
+ax2.grid()
+
+ax2.legend()
+ax2.set_title("Gráfica de dispersión de datos corregidos")
+
+# Mostrar la figura completa con ambos subplots
+plt.tight_layout()
 plt.show()
 
 ```
 
+Finalmente, la @tbl-errores-gy muestra los EM y EAM antes y después de la calibración de los dos conjuntos de datos, el conjunto inicial a partir del cual se obtuvo la los parámetros para realizar el modelo de regresión lineal y el conjunto de validación en el cual se llevo a cabo una segunda campaña de medición para obtener más datos y verificar la fiabilidad de la calibración.
 
-Posteriormente, se utiliza el método de calibración de punto, el cual ajusta el error a través de un factor de corrección constante para alinear las mediciones del sensor con un estándar de referencia, en este caso las mediciones de la cámara. Para obtener este factor se usa un método iterativo que evalúa diferentes factores de corrección dentro de un rango definido. Este rango se define utilizando el EAM y la desviación estándar de los errores (𝜎). El margen de error se calcular siguiendo la @eq-margen-error, donde $Z$ es el $Z_{score}$ que se considera igual a 2.58 para un nivel de confianza del 99% y n es el número de muestras.
+|             |**Conjunto inicial**|             |**Conjunto de validación**|             |
+|-------------|--------------------|-------------|--------------------------|-------------|
+|             | **Sin calibrar**   |**Calibrado**| **Sin calibrar**         |**Calibrado**|
+| **ME**      | 0.5                | 0.89        | 0.65                     | -0.08       |
+| **MAE**     | 0.72               | 0.54        | 0.61                     | 0.43        |
+: Tabla de errores promedio (ME) y errores absolutos medios (MAE) para el conjunto inicial y el conjunto de validación {#tbl-errores-gy}
 
-$$
-M = Z \times \left( \frac{\sigma}{\sqrt{n}} \right)
-$$ {#eq-margen-error}
-
-Para el cálculo de los límites inferior y superior del intervalo de confianza, se utilizan las  ecuaciones @eq-lim-sup y @eq-lim-inf:
-
-$$
-L_{sup} = EAM + M
-$$ {#eq-lim-sup}
-
-$$
-L_{inf} = EAM - M
-$$ {#eq-lim-inf}
-
-
-Una vez definido el rango, se lleva a cabo el método iterativo con un intervalo de 0.01 para probar distintos factores de corrección. Se obtiene el factor de corrección óptimo en 0.47
-
-Para validar el factor de corrección se aplica al conjunto de datos sin eliminar los valores atípicos siguiendo la @eq-validacion-factor-1, donde $M_c$ son las mediciones corregidas, $M_s$ son las mediciones hechas por el sensor GY-906 y $f_c$ es el factor de corrección
-
-$$
-M_c = M_s + f_c
-$$ {#eq-validacion-factor-1}
-
-
-Al Aplicar el factor de corrección al conjunto de datos, el $ME$ disminuye hasta -0.25°C, mientras que el $EAM$ disminuye hasta XXX°C. Posteriormente se lleva cabo una segunda campaña de medición con el objetivo de validar el factor de corrección y se obtienen un total de 25 pares de mediciones. En este nuevo conjunto de datos se obtiene un $EM = -0.3$, el cual al aplicar el factor de corrección disminuye a 0.17. Por otro lado, se obtiene un $EAM = 0.40$, el cual disminuye a 0.34 tras aplicar el factor de corrección. Logrando una mejora en la precisión de las mediciones del sensor.
 
 
 
@@ -493,49 +528,47 @@ Al Aplicar el factor de corrección al conjunto de datos, el $ME$ disminuye hast
 ## Lógica de programación {#sec-programación}
 
 
-En este apartado se describe la lógica de programación desarrollada para el reloj inteligente, un dispositivo diseñado para realizar encuestas de confort térmico simplificadas y medir variables fisiológicas como la temperatura de la piel en la muñeca y la frecuencia cardíaca. La programación se lleva a cabo en Arduino, principalmente mediante el uso de la librería LVGL para gestionar la interfaz gráfica. El dispositivo cuenta con un microcontrolador XIAO ESP32C3 y una pantalla táctil, elementos que permiten la interacción directa con el usuario.
+El proyecto consta de varios archivos de código, cada uno con una función específica. A continuación, se presenta una breve descripción de cada archivo:
 
-El proyecto consta de varios archivos de código, cada uno con una función específica dentro del sistema. A continuación, se presenta una breve descripción de cada archivo:
-
-1. **Proyecto\_confort.ino**: Este es el archivo principal del proyecto. En él se ejecuta el código base, se incluyen las librerías necesarias y se declaran variables y funciones de importancia.
+1. **Proyecto\_confort.ino**: Este es el archivo principal del proyecto. En él se ejecuta el código principal, se incluyen las librerías necesarias, y se declaran tanto las variables como las funciones esenciales.
 
 2. **ui.c** y **ui.h**: Estos archivos se encargan de la ejecución y configuración general de la interfaz gráfica. El archivo header (**ui.h**) contiene las declaraciones de funciones y variables utilizadas en **ui.c**.
 
-3. **ui\_Aceptación.c**: Configura la pantalla destinada a la pregunta de aceptación térmica, donde el usuario evalúa si las condiciones térmicas le resultan agradables o no.
+3. **ui\_Inicio.c**: Configura la pantalla principal del reloj. En esta pantalla se muestra la hora actual, un contador regresivo que indica cuánto tiempo falta hasta el momento de contestar la siguiente encuesta, y el botón para iniciar la encuesta cuando está disponible.
 
-4. **ui\_Clo.c**: Configura la pantalla para la pregunta sobre el nivel de aislamiento térmico de la ropa que usa el usuario, lo cual contribuye al cálculo del confort térmico.
+4. **ui\_Clo.c**: Configura la pantalla para la pregunta sobre el nivel de aislamiento térmico de la ropa que usa el usuario. Este archivo contiene un diccionario con distintas prendas de ropa con sus respectivos valores de aislamiento térmico.
 
-5. **ui\_Inicio.c**: Configura la pantalla principal del reloj. En esta pantalla se muestra la hora actual, un contador regresivo que indica cuánto tiempo falta hasta el momento de contestar la siguiente encuesta, y se habilita el botón para iniciar la encuesta cuando está disponible.
+5. **ui\_Met.c**: Configura la pantalla para la pregunta sobre el nivel de actividad metabólica del usuario. Este archivo contiene un diccionario con diversas actividades y sus respectivos valores de nivel metabólico.
 
-6. **ui\_Met.c**: Configura la pantalla para la pregunta sobre el nivel de actividad metabólica del usuario, considerando si se encuentra en reposo, caminando, o realizando alguna actividad física.
+6. **ui\_Ubicación.c**: Configura la pantalla para la pregunta sobre la ubicación del usuario. Este archivo contiene una lista de ubicaciones del lugar donde se llevan a cabo las campañas de mediciones.
 
-7. **ui\_Sensacion.c**: Configura la pantalla para la pregunta sobre el nivel de sensación térmica, donde el usuario describe su percepción del ambiente como frío, cálido o neutral.
+7. **ui\_Sensacion.c**: Configura la pantalla para la pregunta sobre el nivel de sensación térmica. Este archivo contiene un diccionario con la escala de sensación térmica, que va de -3 a 3, y la descripción correspondiente para cada nivel.
 
-8. **ui\_Ubicación.c**: Configura la pantalla para la pregunta sobre la ubicación del usuario, lo cual ayuda a contextualizar las condiciones ambientales que están siendo evaluadas.
+8. **ui\_Aceptación.c**: Configura la pantalla destinada a la pregunta de aceptación térmica.
 
-9. **ui\_events.c** y **ui\_events.h**: En **ui\_events.c** se encuentran la mayoría de las funciones declaradas para el programa, incluyendo aquellas que gestionan los eventos generados por la interfaz. El archivo header (**ui\_events.h**) contiene las declaraciones de dichas funciones.
+9. **ui\_events.c** y **ui\_events.h**: En **ui\_events.c** Contienen todas las funciones creadas específicamente para el proyecto, tanto las relacionadas con la gestión de eventos generados por la interfaz como otras funciones generales del programa. El archivo de encabezado (**ui\_events.h**) contiene las declaraciones de las funciones y variables utilizadas en **ui_events.c**.
 
-10. **ui\_helpers.c** y **ui\_helpers.h**: Contienen funciones de ayuda utilizadas para facilitar la implementación de la interfaz y realizar operaciones comunes dentro del sistema.
+10. **ui\_helpers.c** y **ui\_helpers.h**: Contienen funciones auxiliares de la librería LVGL, diseñadas para facilitar la implementación y el manejo de la interfaz gráfica. El archivo header (**ui_helpers-h**) contiene las declaraciones de funciones y variables utilizadas en **ui_helpers.c**.
 
-La lógica de programación del dispositivo está diseñada para realizar encuestas de confort térmico entre las 8 de la mañana y las 10 de la noche, en intervalos de media hora. Esto se hace para asegurar que las encuestas se realicen después de un periodo de adaptación climática del usuario en el Instituto de Energías Renovables (IER), donde se lleva a cabo el proyecto. La función denominada **"Actualizar\_hora"**, que se encuentra en el archivo **ui\_events.c**, se encarga de actualizar la hora en pantalla y, además, habilitar o deshabilitar el botón para iniciar la encuesta según el horario. Esta función también emite una alarma vibratoria para alertar al usuario sobre la disponibilidad de una nueva encuesta. La lógica detallada de esta función se representa en la @fig-actualizarhora.
+El reloj está programado para realizar encuestas de confort térmico cada hora entre las 08:30 y las 21:30 horas. Programar las encuestas para realizarse en el minuto 30 de cada hora permite proporcionar al usuario un periodo de adaptación térmica previo a responder la primera encuesta. Esto se debe a que las actividades en el IER suelen iniciar en horas exactas, lo que asegura que los usuarios tengan tiempo suficiente para estabilizar su sensación térmica antes de contestar la primera encuesta.
 
-![Diagrama de flujo de la función Actulizar hora](../Imagenes/Actualizar_hora.svg){#fig-actualizarhora width=50%}
+La función denominada **actualizar\_hora**, que se encuentra en el archivo **ui\_events.c**, se encarga de actualizar la hora en pantalla, además habilita o desahibilita el botón para realizar la encuesta según el horario o si esta ya fue o no contestada. Esta función también es la encargada de emitir la alarma para alertar al usuario la disponibilidad de una nueva encuesta. El diagram de flujo de esta función se presenta en la @fig-actualizarhora.
 
-Para ahorrar energía, la pantalla del dispositivo permanece apagada mientras el reloj está en reposo. Además, si la pantalla está encendida y el dispositivo detecta inactividad durante más de 10 segundos, esta se apaga automáticamente. Sin embargo, la pantalla puede ser encendida nuevamente al hacer clic sobre ella, lo cual permite al usuario ver la hora en cualquier momento.
 
-Una vez que el usuario inicia la encuesta, el proceso implica responder a las preguntas de confort térmico, registrar las variables fisiológicas y validar las mediciones. Las variables se actualizan de manera continua a medida que el usuario responde cada pregunta. Al finalizar la encuesta y enviar los datos a la plataforma IoT **Thingsboard** para su análisis, las variables no se reinician. Esto significa que, al iniciar una nueva encuesta, el dispositivo retiene las respuestas de la última encuesta contestada, permitiendo al usuario simplemente continuar con las mismas respuestas o realizar modificaciones si lo requiere. Este enfoque tiene dos propósitos principales: en primer lugar, ahorrar tiempo al contestar encuestas sucesivas, y en segundo lugar, permitir que el usuario observe cómo cambian sus respuestas a lo largo del día. En caso de que el usuario no acepte las mediciones, estas se toman nuevamente. El proceso completo de la encuesta se describe en la @fig-iniciarencuesta.
+![Diagrama de flujo de la función actualizar_hora](../Imagenes/Actualizar_hora.svg){#fig-actualizarhora width=50%}
+
+Para ahorrar energía, la pantalla del dispositivo permanece apagada mientras el reloj está en reposo. Si la pantalla se encuentra encendida y el dispositivo detecta inactividad durante más de 10 segundos, esta se apaga automáticamente. Sin embargo, la pantalla puede ser encendida nuevamente al hacer clic sobre ella, lo cual permite al usuario ver la hora en cualquier momento.
+
+Cuando el usuario presiona el botón para iniciar la encuesta, se da inicio a un proceso que consta de varias etapas: primero, el usuario responde a las preguntas de la encuesta; luego, se registran las variables fisiológicas; seguidamente, se validan las mediciones obtenidas; y, finalmente, se envían los datos a la plataforma Thingsboard.
+
+Es importante destacar que, una vez enviada la encuesta, las respuestas y mediciones no se reinician automáticamente. Esto permite que, al iniciar una nueva encuesta, el reloj conserve las respuestas de la última encuesta realizada. De esta manera, el usuario puede optar por mantener las mismas respuestas o modificarlas según sea necesario. Esta funcionalidad tiene dos objetivos principales: en primer lugar, reducir el tiempo necesario para responder encuestas de manera consecutiva; y, en segundo lugar, permitir al usuario observar cómo evolucionan sus respuestas a lo largo del día.
+
+En caso de que las mediciones de los sensores no sean aceptadas por el usuario, estas se realizan nuevamente. El diagrama de flujo que describe el proceso de la encuesta se presenta en la Figura @fig-iniciarencuesta.
 
 ![Diagrama de flujo de encuesta y medición de variables](../Imagenes/Iniciar_encuesta.svg){#fig-iniciarencuesta}
 
-Los diagramas de flujo proporcionan una representación visual de la secuencia de operaciones, ayudando a comprender cómo las funciones interactúan entre sí para llevar a cabo las encuestas y asegurar la correcta recolección de datos. La lógica del programa está centrada en la simplicidad de uso y en la eficiencia del proceso de toma de decisiones, siempre con el objetivo de minimizar la interacción innecesaria del usuario y maximizar la calidad de los datos recolectados.
 
-En la siguiente sección, "Instrucciones de uso", se detallan las configuraciones iniciales necesarias para el funcionamiento del dispositivo, tales como la conexión a la red WiFi, la configuración del token del dispositivo y la configuración del servidor de **Thingsboard**. Estas configuraciones son fundamentales para asegurar la conectividad y el correcto funcionamiento del dispositivo durante la recolección y envío de datos.
-
-
-
-
-
-
+En la siguiente sección (@sec-instrucciones), se detallan las configuraciones iniciales necesarias para el funcionamiento del dispositivo, tales como la conexión a la red WiFi, la configuración del token del dispositivo y la configuración del servidor de Thingsboard. 
 
 
 
