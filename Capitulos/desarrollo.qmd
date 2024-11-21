@@ -528,7 +528,11 @@ Finalmente, la @tbl-errores-gy muestra los EM y EAM antes y después de la calib
 ## Lógica de programación {#sec-programación}
 
 
-El proyecto consta de varios archivos de código, cada uno con una función específica. A continuación, se presenta una breve descripción de cada archivo:
+A continuación, se describe el funcionamiento general del reloj inteligente, detallando la estructura del sistema y la función de cada uno de los archivos que componen el proyecto desarrollado en Arduino. También se presentan los diagramas de flujo de los procesos clave, como la función actualizar_hora y el procedimiento para responder una encuesta y medir las variables fisiológicas. Además, se destacan aspectos relevantes, como los horarios programados para las encuestas y las estrategias implementadas para el ahorro de energía.
+
+
+El proyecto se desarrolla en Arduino, empleando principalmente la librería LVGL para el diseño de la interfaz gráfica. Está compuesto por varios archivos de código, cada uno con una función específica. A continuación, se ofrece una breve descripción de cada uno de ellos:
+
 
 1. **Proyecto\_confort.ino**: Este es el archivo principal del proyecto. En él se ejecuta el código principal, se incluyen las librerías necesarias, y se declaran tanto las variables como las funciones esenciales.
 
@@ -557,13 +561,14 @@ La función denominada **actualizar\_hora**, que se encuentra en el archivo **ui
 
 ![Diagrama de flujo de la función actualizar_hora](../Imagenes/Actualizar_hora.svg){#fig-actualizarhora width=50%}
 
-Para ahorrar energía, la pantalla del dispositivo permanece apagada mientras el reloj está en reposo. Si la pantalla se encuentra encendida y el dispositivo detecta inactividad durante más de 10 segundos, esta se apaga automáticamente. Sin embargo, la pantalla puede ser encendida nuevamente al hacer clic sobre ella, lo cual permite al usuario ver la hora en cualquier momento.
 
 Cuando el usuario presiona el botón para iniciar la encuesta, se da inicio a un proceso que consta de varias etapas: primero, el usuario responde a las preguntas de la encuesta; luego, se registran las variables fisiológicas; seguidamente, se validan las mediciones obtenidas; y, finalmente, se envían los datos a la plataforma Thingsboard.
 
 Es importante destacar que, una vez enviada la encuesta, las respuestas y mediciones no se reinician automáticamente. Esto permite que, al iniciar una nueva encuesta, el reloj conserve las respuestas de la última encuesta realizada. De esta manera, el usuario puede optar por mantener las mismas respuestas o modificarlas según sea necesario. Esta funcionalidad tiene dos objetivos principales: en primer lugar, reducir el tiempo necesario para responder encuestas de manera consecutiva; y, en segundo lugar, permitir al usuario observar cómo evolucionan sus respuestas a lo largo del día.
 
 En caso de que las mediciones de los sensores no sean aceptadas por el usuario, estas se realizan nuevamente. El diagrama de flujo que describe el proceso de la encuesta se presenta en la Figura @fig-iniciarencuesta.
+
+Para optimizar el consumo de energía, se implementan dos estrategias principales. La primera consiste en mantener la pantalla del reloj apagada mientras el dispositivo está en reposo. Si la pantalla está encendida y no se detecta actividad durante más de 10 segundos, se apaga automáticamente. No obstante, el usuario puede reactivarla en cualquier momento con un simple toque para consultar la hora. La segunda estrategia consiste en mantener apagados el sensor de temperatura (GY-906) y el sensor de frecuencia cardiaca (MAX30102), activándose únicamente durante el proceso de medición de las variables fisiológicas.
 
 ![Diagrama de flujo de encuesta y medición de variables](../Imagenes/Iniciar_encuesta.svg){#fig-iniciarencuesta}
 
