@@ -221,7 +221,13 @@ window.Quarto = {
   <li><a href="#calibración-del-sensor-max30102" id="toc-calibración-del-sensor-max30102" class="nav-link" data-scroll-target="#calibración-del-sensor-max30102"><span class="header-section-number">3.4.1</span> Calibración del Sensor MAX30102</a></li>
   <li><a href="#calibración-del-sensor-gy-906" id="toc-calibración-del-sensor-gy-906" class="nav-link" data-scroll-target="#calibración-del-sensor-gy-906"><span class="header-section-number">3.4.2</span> Calibración del Sensor GY-906</a></li>
   </ul></li>
-  <li><a href="#sec-programación" id="toc-sec-programación" class="nav-link" data-scroll-target="#sec-programación"><span class="header-section-number">3.5</span> Lógica de programación</a></li>
+  <li><a href="#sec-programación" id="toc-sec-programación" class="nav-link" data-scroll-target="#sec-programación"><span class="header-section-number">3.5</span> Lógica de programación</a>
+  <ul class="collapse">
+  <li><a href="#descripción-de-la-funcionalidad-de-los-archivos-del-proyecto" id="toc-descripción-de-la-funcionalidad-de-los-archivos-del-proyecto" class="nav-link" data-scroll-target="#descripción-de-la-funcionalidad-de-los-archivos-del-proyecto"><span class="header-section-number">3.5.1</span> Descripción de la funcionalidad de los archivos del proyecto</a></li>
+  <li><a href="#descripción-de-la-funcion-actualizar_hora" id="toc-descripción-de-la-funcion-actualizar_hora" class="nav-link" data-scroll-target="#descripción-de-la-funcion-actualizar_hora"><span class="header-section-number">3.5.2</span> Descripción de la funcion actualizar_hora</a></li>
+  <li><a href="#descripción-del-proceso-para-contestar-una-encuesta-medir-variables-fisiológicas-y-mandar-los-datos-a-thingsboard" id="toc-descripción-del-proceso-para-contestar-una-encuesta-medir-variables-fisiológicas-y-mandar-los-datos-a-thingsboard" class="nav-link" data-scroll-target="#descripción-del-proceso-para-contestar-una-encuesta-medir-variables-fisiológicas-y-mandar-los-datos-a-thingsboard"><span class="header-section-number">3.5.3</span> Descripción del proceso para contestar una encuesta, medir variables fisiológicas y mandar los datos a Thingsboard</a></li>
+  <li><a href="#estrategias-para-el-ahorro-de-energía" id="toc-estrategias-para-el-ahorro-de-energía" class="nav-link" data-scroll-target="#estrategias-para-el-ahorro-de-energía"><span class="header-section-number">3.5.4</span> Estrategias para el ahorro de energía</a></li>
+  </ul></li>
   <li><a href="#sec-instrucciones" id="toc-sec-instrucciones" class="nav-link" data-scroll-target="#sec-instrucciones"><span class="header-section-number">3.6</span> Instrucciones de uso</a></li>
   <li><a href="#sec-validación" id="toc-sec-validación" class="nav-link" data-scroll-target="#sec-validación"><span class="header-section-number">3.7</span> Validación</a></li>
   </ul>
@@ -1226,6 +1232,8 @@ Tabla&nbsp;3.12: Tabla de errores promedio (ME) y errores absolutos medios (MAE)
 <section id="sec-programación" class="level2" data-number="3.5">
 <h2 data-number="3.5" class="anchored" data-anchor-id="sec-programación"><span class="header-section-number">3.5</span> Lógica de programación</h2>
 <p>A continuación, se describe el funcionamiento general del reloj inteligente, detallando la estructura del sistema y la función de cada uno de los archivos que componen el proyecto desarrollado en Arduino. También se presentan los diagramas de flujo de los procesos clave, como la función actualizar_hora y el procedimiento para responder una encuesta y medir las variables fisiológicas. Además, se destacan aspectos relevantes, como los horarios programados para las encuestas y las estrategias implementadas para el ahorro de energía.</p>
+<section id="descripción-de-la-funcionalidad-de-los-archivos-del-proyecto" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="descripción-de-la-funcionalidad-de-los-archivos-del-proyecto"><span class="header-section-number">3.5.1</span> Descripción de la funcionalidad de los archivos del proyecto</h3>
 <p>El proyecto se desarrolla en Arduino, empleando principalmente la librería LVGL para el diseño de la interfaz gráfica. Está compuesto por varios archivos de código, cada uno con una función específica. A continuación, se ofrece una breve descripción de cada uno de ellos:</p>
 <ol type="1">
 <li><p><strong>Proyecto_confort.ino</strong>: Este es el archivo principal del proyecto. En él se ejecuta el código principal, se incluyen las librerías necesarias, y se declaran tanto las variables como las funciones esenciales.</p></li>
@@ -1240,6 +1248,9 @@ Tabla&nbsp;3.12: Tabla de errores promedio (ME) y errores absolutos medios (MAE)
 <li><p><strong>ui_helpers.c</strong> y <strong>ui_helpers.h</strong>: Contienen funciones auxiliares de la librería LVGL, diseñadas para facilitar la implementación y el manejo de la interfaz gráfica. El archivo header (<strong>ui_helpers-h</strong>) contiene las declaraciones de funciones y variables utilizadas en <strong>ui_helpers.c</strong>.</p></li>
 </ol>
 <p>El reloj está programado para realizar encuestas de confort térmico cada hora entre las 08:30 y las 21:30 horas. Programar las encuestas para realizarse en el minuto 30 de cada hora permite proporcionar al usuario un periodo de adaptación térmica previo a responder la primera encuesta. Esto se debe a que las actividades en el IER suelen iniciar en horas exactas, lo que asegura que los usuarios tengan tiempo suficiente para estabilizar su sensación térmica antes de contestar la primera encuesta.</p>
+</section>
+<section id="descripción-de-la-funcion-actualizar_hora" class="level3" data-number="3.5.2">
+<h3 data-number="3.5.2" class="anchored" data-anchor-id="descripción-de-la-funcion-actualizar_hora"><span class="header-section-number">3.5.2</span> Descripción de la funcion actualizar_hora</h3>
 <p>La función denominada <strong>actualizar_hora</strong>, que se encuentra en el archivo <strong>ui_events.c</strong>, se encarga de actualizar la hora en pantalla, además habilita o desahibilita el botón para realizar la encuesta según el horario o si esta ya fue o no contestada. Esta función también es la encargada de emitir la alarma para alertar al usuario la disponibilidad de una nueva encuesta. El diagram de flujo de esta función se presenta en la <a href="#fig-actualizarhora" class="quarto-xref">Figura&nbsp;<span>3.8</span></a>.</p>
 <div id="fig-actualizarhora" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1251,10 +1262,12 @@ Figura&nbsp;3.8: Diagrama de flujo de la función actualizar_hora
 </figcaption>
 </figure>
 </div>
+</section>
+<section id="descripción-del-proceso-para-contestar-una-encuesta-medir-variables-fisiológicas-y-mandar-los-datos-a-thingsboard" class="level3" data-number="3.5.3">
+<h3 data-number="3.5.3" class="anchored" data-anchor-id="descripción-del-proceso-para-contestar-una-encuesta-medir-variables-fisiológicas-y-mandar-los-datos-a-thingsboard"><span class="header-section-number">3.5.3</span> Descripción del proceso para contestar una encuesta, medir variables fisiológicas y mandar los datos a Thingsboard</h3>
 <p>Cuando el usuario presiona el botón para iniciar la encuesta, se da inicio a un proceso que consta de varias etapas: primero, el usuario responde a las preguntas de la encuesta; luego, se registran las variables fisiológicas; seguidamente, se validan las mediciones obtenidas; y, finalmente, se envían los datos a la plataforma Thingsboard.</p>
 <p>Es importante destacar que, una vez enviada la encuesta, las respuestas y mediciones no se reinician automáticamente. Esto permite que, al iniciar una nueva encuesta, el reloj conserve las respuestas de la última encuesta realizada. De esta manera, el usuario puede optar por mantener las mismas respuestas o modificarlas según sea necesario. Esta funcionalidad tiene dos objetivos principales: en primer lugar, reducir el tiempo necesario para responder encuestas de manera consecutiva; y, en segundo lugar, permitir al usuario observar cómo evolucionan sus respuestas a lo largo del día.</p>
 <p>En caso de que las mediciones de los sensores no sean aceptadas por el usuario, estas se realizan nuevamente. El diagrama de flujo que describe el proceso de la encuesta se presenta en la Figura <a href="#fig-iniciarencuesta" class="quarto-xref">Figura&nbsp;<span>3.9</span></a>.</p>
-<p>Para optimizar el consumo de energía, se implementan dos estrategias principales. La primera consiste en mantener la pantalla del reloj apagada mientras el dispositivo está en reposo. Si la pantalla está encendida y no se detecta actividad durante más de 10 segundos, se apaga automáticamente. No obstante, el usuario puede reactivarla en cualquier momento con un simple toque para consultar la hora. La segunda estrategia consiste en mantener apagados el sensor de temperatura (GY-906) y el sensor de frecuencia cardiaca (MAX30102), activándose únicamente durante el proceso de medición de las variables fisiológicas.</p>
 <div id="fig-iniciarencuesta" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-iniciarencuesta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1265,7 +1278,11 @@ Figura&nbsp;3.9: Diagrama de flujo de encuesta y medición de variables
 </figcaption>
 </figure>
 </div>
-<p>En la siguiente sección (<a href="#sec-instrucciones" class="quarto-xref"><span>Sección 3.6</span></a>), se detallan las configuraciones iniciales necesarias para el funcionamiento del dispositivo, tales como la conexión a la red WiFi, la configuración del token del dispositivo y la configuración del servidor de Thingsboard.</p>
+</section>
+<section id="estrategias-para-el-ahorro-de-energía" class="level3" data-number="3.5.4">
+<h3 data-number="3.5.4" class="anchored" data-anchor-id="estrategias-para-el-ahorro-de-energía"><span class="header-section-number">3.5.4</span> Estrategias para el ahorro de energía</h3>
+<p>Para optimizar el consumo de energía, se implementan dos estrategias principales. La primera consiste en mantener la pantalla del reloj apagada mientras el dispositivo está en reposo. Si la pantalla está encendida y no se detecta actividad durante más de 10 segundos, se apaga automáticamente. No obstante, el usuario puede reactivarla en cualquier momento con un simple toque para consultar la hora. La segunda estrategia consiste en mantener apagados el sensor de temperatura (GY-906) y el sensor de frecuencia cardiaca (MAX30102), activándose únicamente durante el proceso de medición de las variables fisiológicas.</p>
+</section>
 </section>
 <section id="sec-instrucciones" class="level2" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="sec-instrucciones"><span class="header-section-number">3.6</span> Instrucciones de uso</h2>

@@ -530,6 +530,8 @@ Finalmente, la @tbl-errores-gy muestra los EM y EAM antes y después de la calib
 
 A continuación, se describe el funcionamiento general del reloj inteligente, detallando la estructura del sistema y la función de cada uno de los archivos que componen el proyecto desarrollado en Arduino. También se presentan los diagramas de flujo de los procesos clave, como la función actualizar_hora y el procedimiento para responder una encuesta y medir las variables fisiológicas. Además, se destacan aspectos relevantes, como los horarios programados para las encuestas y las estrategias implementadas para el ahorro de energía.
 
+### Descripción de la funcionalidad de los archivos del proyecto
+
 
 El proyecto se desarrolla en Arduino, empleando principalmente la librería LVGL para el diseño de la interfaz gráfica. Está compuesto por varios archivos de código, cada uno con una función específica. A continuación, se ofrece una breve descripción de cada uno de ellos:
 
@@ -556,10 +558,14 @@ El proyecto se desarrolla en Arduino, empleando principalmente la librería LVGL
 
 El reloj está programado para realizar encuestas de confort térmico cada hora entre las 08:30 y las 21:30 horas. Programar las encuestas para realizarse en el minuto 30 de cada hora permite proporcionar al usuario un periodo de adaptación térmica previo a responder la primera encuesta. Esto se debe a que las actividades en el IER suelen iniciar en horas exactas, lo que asegura que los usuarios tengan tiempo suficiente para estabilizar su sensación térmica antes de contestar la primera encuesta.
 
+### Descripción de la funcion actualizar_hora
+
 La función denominada **actualizar\_hora**, que se encuentra en el archivo **ui\_events.c**, se encarga de actualizar la hora en pantalla, además habilita o desahibilita el botón para realizar la encuesta según el horario o si esta ya fue o no contestada. Esta función también es la encargada de emitir la alarma para alertar al usuario la disponibilidad de una nueva encuesta. El diagram de flujo de esta función se presenta en la @fig-actualizarhora.
 
 
 ![Diagrama de flujo de la función actualizar_hora](../Imagenes/Actualizar_hora.svg){#fig-actualizarhora width=50%}
+
+### Descripción del proceso para contestar una encuesta, medir variables fisiológicas y mandar los datos a Thingsboard
 
 
 Cuando el usuario presiona el botón para iniciar la encuesta, se da inicio a un proceso que consta de varias etapas: primero, el usuario responde a las preguntas de la encuesta; luego, se registran las variables fisiológicas; seguidamente, se validan las mediciones obtenidas; y, finalmente, se envían los datos a la plataforma Thingsboard.
@@ -568,12 +574,12 @@ Es importante destacar que, una vez enviada la encuesta, las respuestas y medici
 
 En caso de que las mediciones de los sensores no sean aceptadas por el usuario, estas se realizan nuevamente. El diagrama de flujo que describe el proceso de la encuesta se presenta en la Figura @fig-iniciarencuesta.
 
-Para optimizar el consumo de energía, se implementan dos estrategias principales. La primera consiste en mantener la pantalla del reloj apagada mientras el dispositivo está en reposo. Si la pantalla está encendida y no se detecta actividad durante más de 10 segundos, se apaga automáticamente. No obstante, el usuario puede reactivarla en cualquier momento con un simple toque para consultar la hora. La segunda estrategia consiste en mantener apagados el sensor de temperatura (GY-906) y el sensor de frecuencia cardiaca (MAX30102), activándose únicamente durante el proceso de medición de las variables fisiológicas.
 
 ![Diagrama de flujo de encuesta y medición de variables](../Imagenes/Iniciar_encuesta.svg){#fig-iniciarencuesta}
 
+### Estrategias para el ahorro de energía
 
-En la siguiente sección (@sec-instrucciones), se detallan las configuraciones iniciales necesarias para el funcionamiento del dispositivo, tales como la conexión a la red WiFi, la configuración del token del dispositivo y la configuración del servidor de Thingsboard. 
+Para optimizar el consumo de energía, se implementan dos estrategias principales. La primera consiste en mantener la pantalla del reloj apagada mientras el dispositivo está en reposo. Si la pantalla está encendida y no se detecta actividad durante más de 10 segundos, se apaga automáticamente. No obstante, el usuario puede reactivarla en cualquier momento con un simple toque para consultar la hora. La segunda estrategia consiste en mantener apagados el sensor de temperatura (GY-906) y el sensor de frecuencia cardiaca (MAX30102), activándose únicamente durante el proceso de medición de las variables fisiológicas.
 
 
 
