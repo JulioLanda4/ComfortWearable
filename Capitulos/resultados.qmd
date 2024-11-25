@@ -1,9 +1,59 @@
 # Conclusiones
 
-## Discusión 
+XXX AÚN NO ESTÁ TERMINADO
 
-### Interpretación de los resultados 
+Este proyecto presenta el diseño, desarrollo y validación de un reloj inteligente basado completamente en tecnologías abiertas, capaz de recopilar datos de confort térmico. El dispositivo realiza encuestas simplificadas y mide variables fisiológicas como la frecuencia cardíaca y la temperatura de la piel, integrando esta información con la plataforma IoT ThingsBoard. La utilización de hardware abierto como la placa de desarrollo XIAO ESP32C3 y sensores como el MAX30102 y el GY-906 asegura que el dispositivo sea replicable y adaptable a diversas investigaciones. En pruebas realizadas en Temixco, Morelos, el reloj logró recopilar 52 mediciones en una campaña de cinco días, demostrando su funcionalidad en condiciones reales.
 
-### Contribuciones y limitaciones
+## Contribuciones del proyecto
 
-## Conclusiones
+1. **Diseño basado en tecnologías abiertas**
+
+La totalidad del dispositivo, desde el hardware hasta el software, se desarrolla utilizando tecnologías abiertas, permitiendo su réplica, modificación y mejora sin barreras propietarias. Esto lo posiciona como una herramienta accesible para investigadores con recursos limitados.
+
+2. **Generación de datos contextualizados**
+
+La integración con ThingsBoard facilita la correlación de datos fisiológicos y de percepción térmica con condiciones ambientales, mejorando la precisión de los análisis. Las campañas de prueba permitieron recopilar datos como la temperatura de la piel ($T_w$), frecuencia cardíaca ($H_r$) y parámetros de confort térmico (TSV y TA), proporcionando bases sólidas para futuras investigaciones.
+
+3. **Usabilidad y adaptabilidad**
+
+El diseño modular y compacto del reloj, combinado con una interfaz de usuario intuitiva, permite su implementación en diversos contextos, desde estudios bioclimáticos hasta investigaciones en ergonomía y eficiencia energética.
+
+## Limitantes del proyecto
+
+A pesar de los logros alcanzados, el proyecto enfrenta algunas limitantes:
+
+1. **Precisión de los sensores de bajo costo**
+
+Los sensores utilizados, como el MAX30102 y el GY-906, presentan variaciones en la precisión de las mediciones debido a su diseño económico. Aunque se realizaron calibraciones, estos resultados podrían mejorarse con sensores de mayor precisión.
+
+2. **Validación en diversos contextos**
+
+Aunque las pruebas iniciales validaron la funcionalidad del dispositivo, es necesario ampliar su uso a diferentes bioclimas y grupos demográficos para evaluar su desempeño en contextos variados.
+
+XXX Una limitante es el tamaño y la forma que puede llegar a ser incomodo y fragil.
+
+
+## Trabajo futuro
+
+El desarrollo del reloj inteligente plantea diversas oportunidades para extender su funcionalidad y aplicabilidad:
+
+1. **Algoritmos de Personalización**
+
+Desarrollar algoritmos de aprendizaje automático para generar modelos personalizados de confort térmico que consideren variables como la tasa metabólica y la percepción térmica individual.
+
+2. **Mejoras en Sensores y Calibración**
+
+Incorporar sensores con mayor precisión y explorar métodos avanzados de calibración para mejorar la calidad de las mediciones.
+
+3. **Expansión Geográfica y Colaborativa**
+
+Implementar dispositivos similares en diferentes regiones climáticas, generando datos comparativos que contribuyan al desarrollo de modelos globales de confort térmico. También se plantea la posibilidad de colaborar con disciplinas como diseño industrial para optimizar la estética y ergonomía del dispositivo.
+
+4. **Plataformas Abiertas de Datos**
+
+Crear una base de datos abierta y accesible, donde investigadores puedan consultar y contribuir con mediciones y análisis obtenidos con el dispositivo, promoviendo la cooperación académica.
+
+## Conclusión general
+
+El reloj inteligente desarrollado demuestra ser una herramienta versátil y accesible para investigaciones de confort térmico, aprovechando las ventajas de las tecnologías abiertas. Su diseño y funcionalidad responden a necesidades clave en el ámbito de la sostenibilidad y la eficiencia energética, con el potencial de ser una base sólida para estudios futuros en distintas disciplinas y regiones.
+

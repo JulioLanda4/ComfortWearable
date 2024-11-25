@@ -1,78 +1,80 @@
-# Desarrollo, construcción y validación
+# Diseño, desarrollo y validación
 
 
-En esta sección se describe el proceso completo de desarrollo, construcción y validación del dispositivo presentado en esta tesis. La @sec-metodología aborda la metodología general del proyecto, incluyendo una descripción detallada del dispositivo, la selección de los componentes y la justificación de su elección. En la @sec-construccion se desarrolla la etapa de diseño y construcción del dispositivo. La @sec-encuestas se centra en el diseño y la implementación de las encuestas mediante la interfaz gráfica, mientras que la @sec-calibración detalla el proceso de calibración de los sensores, para asegurar fiabilidad en las mediciones. En la @sec-programación se presenta la lógica de programación del dispositivo, y en la @sec-instrucciones se proporcionan instrucciones de uso. Finalmente, en la @sec-validación comprueba la funcionalidad del dispositivo para recopilar y almacenar información de confort térmico.
+En este capitulo se describe el proceso completo de desarrollo, construcción y validación del reloj inteligente para la recopilación de datos de confort térmico presentado en esta tesis. La @sec-metodología presenta una descripción detallada del reloj inteligente, la selección de los componentes y la justificación de su elección. En la @sec-construccion se desarrolla la etapa de diseño y construcción del dispositivo. La @sec-encuestas se centra en el diseño y la implementación de las encuestas mediante la interfaz gráfica, mientras que la @sec-calibración detalla el proceso de calibración de los sensores. En la @sec-programación se presenta una descripción de la lógica de programación del reloj inteligente, y en la @sec-instrucciones se proporcionan instrucciones de uso. Finalmente, en la @sec-validación se verifica la funcionalidad del reloj inteligente para recopilar información de las encuestas de confort térmico y las mediciones de las variables fisiológicas, como la frecuencia cardíaca y la temperatura de la piel, así como para enviar estos datos a la plataforma Thingsboard.
 
 
 ## Metodología {#sec-metodología}
 1. **Descripción general del dispositivo:**
 
 
-El dispositivo presentado en esta tesis es un prototipo de reloj inteligente diseñado específicamente para la investigación en el ámbito del confort térmico. Este dispositivo permite la recopilación de datos fisiológicos, tales como la frecuencia cardíaca y la temperatura de la piel, variables cuya relación con el confort térmico se discutió en el capítulo anterior. Además, este dispositivo realiza encuestas periódicas simplificadas de confort térmico mediante una interfaz de usuario intuitiva, que permite responder la encuesta de forma rápida y sencilla. La recopilación de estos datos se realiza en la plataforma de IoT llamada ThingsBoard, lo que permite la creación de una base de datos de confort térmico en un bioclima cálido semihúmedo [@infonavit2024regiones] en Temixco, Morelos. Esta base de datos facilitará estudios para el entendimiento del confort térmico y el desarrollo de modelos de confort para este tipo de bioclima, así como de modelos de confort personalizados.
+El dispositivo presentado en esta tesis es un prototipo de reloj inteligente diseñado específicamente para la investigación en el ámbito del confort térmico. Este dispositivo permite la recopilación de la frecuencia cardíaca y de la temperatura de la piel, variables cuya relación con el confort térmico se discutió en el capítulo anterior. Además, este dispositivo realiza encuestas periódicas simplificadas de confort térmico mediante una interfaz de usuario intuitiva, que permite responder la encuesta de forma rápida y sencilla. La recopilación de estos datos se realiza en la plataforma de Internet de las Cosas (IoT, por sus siglas en inglés) llamada ThingsBoard, lo que permite la creación de una base de datos de confort térmico en un bioclima cálido semihúmedo [@infonavit2024regiones] en Temixco, Morelos. Esta base de datos facilitará estudios para el entendimiento del confort térmico y el desarrollo de modelos de confort para este tipo de bioclima, así como de modelos de confort personalizados.
 
 2. **Selección de componentes** 
 
 Para garantizar el funcionamiento preciso y adecuado del dispositivo, es fundamental seleccionar correctamente todos los componentes. A continuación se describen los principales componentes utilizados, junto con sus características y la justificación de su elección en el proyecto. Esta justificación se basa en criterios como compatibilidad, consumo energético, precisión y capacidad de procesamiento en el caso del microcontrolador.
 
-Los componentes principales son los siguientes: 
+Los componentes básicos del reloj inteligente son: 
 
-* Placa de desarrollo
-* Pantalla
-* Batería 
-* Sensores
+* Placa de desarrollo,
+* Pantalla, 
+* Sensor de temperatura,
+* Sensor de frecuencia cardíaca,
+* Circuito vibrador,
+* Batería.
 
 **Placa de desarrollo**
 
-La selección de la tarjeta o placa de desarrollo es una decisión crucial en el desarrollo del proyecto. Se requiere una placa de tamaño reducido que cumpla con características esenciales como conexión WiFi, velocidad de procesamiento, memoria y comunicación I2C. Además, debe tener un bajo consumo energético para garantizar el uso portátil prolongado del dispositivo.
+La selección de la placa o tarjeta de desarrollo es una decisión crucial en el desarrollo del proyecto. Se requiere una placa de tamaño reducido que cumpla con características esenciales como conexión WiFi, velocidad de procesamiento, memoria ROM y comunicación I2C. Además, debe tener un bajo consumo energético para garantizar el uso portátil prolongado del reloj inteligente.
 
-Se buscan placas compactas con conectividad inalámbrica. Opciones con microcontroladores como los de Arduino, ESP y Raspberry ofrecen estas características.
+Durante el proceso de selección se consideraron placas de desarrollo Arduino, ESP y Raspberry. En la tabla @tbl-placas se presenta una comparación de diferentes placas de desarrollo con las características requeridas. 
 
-Durante el proceso de selección se identifican dos placas con pantallas integradas, que aunque podrían ser útiles, no cumplen con los requisitos del proyecto. La placa LILYGO TTGO, no cuenta con tecnología táctil, lo cual limita su utilidad para realizar encuestas de confort térmico. Por otro lado, la MCU RP2040 con LCD redondo de 1.28 pulgadas, aunque cuenta con una pantalla táctil, no ofrece conectividad WiFi, un requisito esencial. Aunque estas dos placas no son tomadas en cuanta por las razones ya mencionadas, sirven como referencia para la búsqueda de otras opciones. En la tabla @tbl-placas se presenta una comparación de diferentes placas de desarrollo con las características requeridas.
+<!-- La placa LILYGO TTGO, no cuenta con tecnología táctil, lo cual limita su utilidad para realizar encuestas de confort térmico. Por otro lado, la MCU RP2040 con LCD redondo de 1.28 pulgadas, aunque cuenta con una pantalla táctil, no ofrece conectividad WiFi, un requisito esencial. Aunque estas dos placas no son tomadas en cuanta por las razones ya mencionadas, sirven como referencia para la búsqueda de otras opciones. --> 
 
-| Placa de desarrollo          | Wifi | Bluetooth | Comunicación                    | Cable       | Pines         |
-|------------------------------|------|-----------|---------------------------------|-------------|---------------|
-| Arduino Nano 33 IoT         | si   | 4.2       | SPI, I2C, I2S, UART            | Micro USB   | 30 GPIOS, 8 ADC   |
-| Arduino nano esp32          | si   | LE        | UART, I2C, SPI, I2S, CAN(TWAI)  | USB C       |    22 GPIOS, 8 ADC           |
-| Arduino nano RP2040 connect | si   | si        | STI, I2C, I2S, PIO, UART       | USB C       | 30 GPIOS, 8 ADC  |
-| Raspberry pi pico W         | si   | 5.2       | UART, I2C, SPI                 | Micro USB   | 26 GPIOS, 3 ADC  |
-| ESP32 pico kit              | si   | si        | I2C, I2S, SPI                  | Micro USB   | 34 GPIOS      |
-| Seeed Studio XIAO ESP32C3   | si   | 5         | 1x UART, 1x IIC, 1x SPI       | USB C       | 11 GPIOS, 4 ADC |
-| Seeed Studio XIAO ESP32S3   | si   | 5         | 1x UART, 1x IIC, 1x SPI       | USB C       | 11 GPIOS, 9 ADC |
-: Comparación de características de conectividad y hardware en placas de desarrollo {#tbl-placas}
+| **Placa de desarrollo**     | **WIFI** | **Bluetooth** | **Comunicación**               | **Cable**   | **Pines**       |
+|-----------------------------|----------|---------------|--------------------------------|-------------|-----------------|
+| Arduino Nano 33 IoT         | si       | 4.2           | SPI, I2C, I2S, UART            | Micro USB   | 30 GPIOS, 8 ADC |
+| Arduino nano esp32          | si       | LE            | UART, I2C, SPI, I2S, CAN(TWAI) | USB C       | 22 GPIOS, 8 ADC |
+| Arduino nano RP2040 connect | si       | si            | STI, I2C, I2S, PIO, UART       | USB C       | 30 GPIOS, 8 ADC |
+| Raspberry pi pico W         | si       | 5.2           | UART, I2C, SPI                 | Micro USB   | 26 GPIOS, 3 ADC |
+| ESP32 pico kit              | si       | si            | I2C, I2S, SPI                  | Micro USB   | 34 GPIOS        |
+| Seeed Studio XIAO ESP32C3   | si       | 5             | 1x UART, 1x IIC, 1x SPI        | USB C       | 11 GPIOS, 4 ADC |
+| Seeed Studio XIAO ESP32S3   | si       | 5             | 1x UART, 1x IIC, 1x SPI        | USB C       | 11 GPIOS, 9 ADC |
+: Comparación de características de conectividad y hardware en placas de desarrollo. {#tbl-placas .hover .sm}
 
-Si bien todas las placas presentadas son opciones viables, Seeed Studio ha desarrollado placas orientadas a aplicaciones de dispositivos portátiles. Estas placas empatan perfectamente con las necesidades del proyecto debido a su tamaño compacto, conectividad, modos de bajo consumo y la posibilidad de la integración con una pantalla táctil desarrollada por la misma marca. Para el desarrollo del proyecto, se elige la XIAO ESP32C3 sobre la XIAO ESP32S3. Aunque la primera es menos potente, cumple con todos los requerimientos a un menor costo. No obstante, la XIAO ESP32S3 podría ser usada sin ningún problema, ofreciendo incluso aumentar considerablemente la capacidad de memoria para futuras modificaciones o mejoras en el código. La @tbl-esp muestra las características especificas de la placa seleccionada.
+Si bien todas las placas presentadas son opciones viables, Seeed Studio ha desarrollado placas orientadas a aplicaciones de dispositivos portátiles. Estas tienen las características deseadas y además placas empatan perfectamente con las necesidades del proyecto debido a su tamaño compacto, conectividad, modos de bajo consumo y la posibilidad de la integración con una pantalla táctil desarrollada por la misma marca. Para el desarrollo del proyecto, se elige la XIAO ESP32C3 sobre la XIAO ESP32S3. Aunque la primera es menos potente, cumple con todos los requerimientos a un menor costo. Además, la limitada disponibilidad de la XIAO ESP32S3 en México durante el desarrollo del proyecto también influye en la decisión. No obstante, la XIAO ESP32S3 podría ser usada sin ningún problema, ofreciendo incluso aumentar considerablemente la capacidad de memoria para futuras modificaciones o mejoras en el código. La @tbl-esp muestra las características especificas de la placa seleccionada.
 
 
-| Parametro                              | Seeed Studio XIAO ESP32C3 |
-|-------------------------------------------|----------------------------|
-| Procesador                                 | ESP32-C3 32 bit<br>RISC-V<br>160 MHz                                                                  
-| Conectividad                                  | 2.4 GHz WiFi<br>BLE: Bluetooth 5.0, Bluetooth mesh     
-| On-chip Memory                            | 400 KB SRAM & 4 MB Flash        |
-| Interfaz                                | 1x UART, 1x IIC, 1x SPI,<br>11x GPIO(PWM), 4x ADC, 1x Reset button, 1x Boot button                     |
-| Dimensiones                               | 21 x 17.8 mm                |
-| Características eléctricas                                     | Voltaje de entrada (Typo-C): 5 V<br>Voltaje de operación 3.3 V  |
-|                                           | Circuit operating Voltage (ready to operate):<br>- Type-C: 5 V@19mA <br>- BAT: 3.8 V@22mA           |
-|                                           | corriente de carga de bateria: 350 mA/100 mA                      |
-| Modo de bajo consumo                         | Modo deep-sleep: > 44 µA  |
-| WiFi activado Consumo de energía           | Modo activo: < 75 mA     |
-| Bluetooth activado Consumo de energía             | Modo modem-sleep: < 27 mA      |
-| Temperatura de trabajo                      | -40 °C ~ 85 °C               |
-: Especificaciones técnicas detalladas de la placa XIAO ESP32C3 {#tbl-esp} 
+| **Parámetro**                              | **Seeed Studio XIAO ESP32C3**                                                         |
+|--------------------------------------------|---------------------------------------------------------------------------------------|
+| Procesador                                 | ESP32-C3 32 bit<br>RISC-V<br>160 MHz                                                  |                                                                 
+| Conectividad                               | 2.4 GHz WiFi<br>BLE: Bluetooth 5.0, malla Bluetooth                                   |
+| On-chip Memory                             | 400 KB SRAM & 4 MB Flash                                                              |
+| Interfaz                                   | 1x UART, 1x IIC, 1x SPI,<br>11x GPIO(PWM), 4x ADC, 1x botón Reset, 1x botón Boot      |
+| Dimensiones                                | 21 x 17.8 mm                                                                          |
+| Características eléctricas                 | Voltaje de entrada (Typo-C): 5 V<br>Voltaje de operación 3.3 V                        |
+|                                            | Voltaje de operación:<br>- Type-C: 5 V@19mA <br>- BAT: 3.8 V@22mA                     |
+|                                            | corriente de carga de batería: 350 mA/100 mA                                          |
+| Modo de bajo consumo                       | Modo deep-sleep: > 44 µA                                                              |
+| Consumo de energía con WIFI activo         | Modo activo: < 75 mA                                                                  |
+| Consumo de energía con Bluetooth activo    | Modo modem-sleep: < 27 mA                                                             |
+| Temperatura de trabajo                     | -40 °C ~ 85 °C                                                                        |
+: Especificaciones técnicas detalladas de la placa XIAO ESP32C3. {#tbl-esp .hover .sm} 
 
 
 **Pantalla**
 
-La elección de la pantalla debe alinearse con los criterios establecidos para la placa de desarrollo. se busca una pantalla que ademas de ser de tamaño reducido, sea compatible con la placa seleccionada. En la tabla @tbl-screen, se presentan las características básicas de las pantallas consideradas durante el proceso.
+La elección de la pantalla debe alinearse con los criterios establecidos para la placa de desarrollo. se busca una pantalla que ademas de ser de tamaño reducido, sea compatible con la placa seleccionada. En la tabla @tbl-screen, se presentan las características básicas de las pantallas compatibles con la placa de desarrollo seleccionada.
 
-| Pantalla                                   | touchscreen | tecnología | dimensión |
-|--------------------------------------------|-------------|------------|----------|
-| Seeed Studio Round Display for XIAO        | si          | TFT LCD    | 1.28''   |
-| Waveshare Módulo de visualización           | no          | OLED RGB   | 1.5''    |
-| GC9A01 Pantalla                            | no          | TFT LCD    | 1.28''   |
-: Comparacion de pantallas compatibles con la XIAO ESP32C3 {#tbl-screen}
+| **Pantalla**                               |**Pantalla táctil**|**tecnología**|**dimensión**|
+|--------------------------------------------|-------------------|--------------|-------------|
+| Seeed Studio Round Display for XIAO        | si                | TFT LCD      | 1.28''      |
+| Waveshare Módulo de visualización           | no               | OLED RGB     | 1.5''       |
+| GC9A01 Pantalla                            | no                | TFT LCD      | 1.28''      |
+: Comparación de pantallas compatibles con la XIAO ESP32C3. {#tbl-screen .hover .sm}
 
 
-La pantalla seleccionada es la Seeed Studio Round Display for XIAO. Este modelo es perfectamente compatible con la placa XIAO ESP32C3, elegida previamente, gracias al enfoque de Seeed Studio para desarrollar un ecosistema orientado a aplicaciones de dispositivos portátiles. La compatibilidad entre los componentes, tecnología táctil y diseño redondo, logran que la pantalla se ajuste a las necesidades del proyecto.
+La pantalla seleccionada es la Seeed Studio Round Display for XIAO. Este modelo es compatible con la placa XIAO ESP32C3, elegida previamente, gracias al enfoque de Seeed Studio para desarrollar un ecosistema orientado a aplicaciones de dispositivos portátiles. La compatibilidad entre los componentes, tecnología táctil y diseño redondo, logran que la pantalla se ajuste a las necesidades del proyecto.
 
 
 **Sensor de temperatura**
@@ -80,18 +82,18 @@ La pantalla seleccionada es la Seeed Studio Round Display for XIAO. Este modelo 
 La @tbl-temp muestra una comparación entre distintos sensores de temperatura que podrían ser utilizados en el proyecto, incluyendo termistores, sensores infrarrojos y un sensor de temperatura y humedad. Estos sensores se manejan en un rango de operación entre los 3.3 V y 5.0 V para garantizar su compatibilidad con la placa de desarrollo seleccionada.
 
 
-| Característica            | Tipo de sensor                      | Rango de temperatura               | Precisión                             | Comunicación                          |
+| **Nombre del sensor**        | **Tipo de sensor**                  | **Rango de temperatura**           | **Precisión**                         | **Comunicación**                      |
 |---------------------------|-------------------------------------|------------------------------------|---------------------------------------|---------------------------------------|
 | **GY-906 (MLX90614)**     | Sensor de temperatura infrarrojo    | -70°C a 382.2°C                    | ±0.5°C (0°C a 50°C)                   | I2C                                   |
 | **ZTP-115M**              | Sensor de temperatura infrarrojo    | -20°C a 100°C                      | ±1°C (32°C a 42°C)                    | Salida analógica                      |
 | **NTC MF52AT**            | Termistor NTC                       | -55°C a 125°C                      | ±0.2°C (dependiendo de la resistencia) | Ninguna (sensor resistivo)            |
 | **BetaTherm 10K3A1**      | Termistor NTC                       | -50°C a 150°C                      | ±0.2°C (25°C a 45°C)                  | Ninguna (sensor resistivo)            |
-| **AHT20**                 | Sensor de temperatura y humedad digital | -40°C a 85°C                       | ±0.3°C (temperatura) / ±2% HR (humedad)| I2C                                   |
-: Comparación de Sensores de Temperatura por Rango Operativo y Precisión {#tbl-temp}
+| **AHT20**                 | Sensor de temperatura y humedad | -40°C a 85°C                       | ±0.3°C (temperatura) / ±2% HR (humedad)| I2C                                   |
+: Comparación de sensores de temperatura por rango operativo y precisión. {#tbl-temp .hover .sm}
 
-Tras un análisis detallado, se selecciona el sensor GY-906 debido a su tamaño compacto, diseño adecuado y comunicación digital por I2C. Aunque el termistor NTC MF52AT ofrece una alternativa viable, se descarta por ser un sensor analógico. Dado que el dispositivo está diseñado para operar en un espacio reducido, cualquier interferencia en las conexiones internas podría afectar la precisión de los sensores analógicos. Por esta razón, se opta por el GY-906, que garantiza una transmisión de datos confiable y estable en entornos compactos.
+Tras un análisis detallado, se selecciona el sensor GY-906 debido a su tamaño compacto, su tecnología infrarroja y comunicación digital por I2C. Aunque el termistor NTC MF52AT ofrece una alternativa viable, se descarta por ser un sensor analógico. Dado que el reloj inteligente está diseñado para operar en un espacio reducido, cualquier interferencia en las conexiones internas podría afectar la precisión de los sensores analógicos. Por esta razón, se opta por el GY-906, que garantiza transmisión de datos en entornos compactos.
 
-**Sensor de pulso cardíaco**
+**Sensor de frecuencia cardíaca**
 
 Los sensores ópticos se han consolidado como una buena opción para la medición de la frecuencia cardíaca en dispositivos portátiles. Maxim Integrated ofrece la línea de sensores MAX3010X para este tipo de aplicaciones. Estos sensores destacan por su bajo consumo de energía, precio accesible, tamaño compacto y protocolo de comunicación I2C. La @tbl-pulso muestra una comparación entre los sensores MAX20100, MAX30102 y MAX30105.
 
@@ -101,16 +103,16 @@ Los sensores ópticos se han consolidado como una buena opción para la medició
 | **MAX30100**    | 16-bit FIFO     |   14-bit   | Frecuencia cardíaca y SpO2          | 600 µA a 1 mA           |
 | **MAX30102**    | 32-bit FIFO     |   18-bit   | Frecuencia cardíaca, SpO2| 600 µA a 1.2 mA         |
 | **MAX30105**    | 32-bit FIFO     |   18-bit   | Frecuencia cardíaca, SpO2, detección de partículas | 600 µA a 1.2 mA |
-: Comparación de Sensores de frecuencia cardíaca  {#tbl-pulso}
+: Comparación de Sensores de frecuencia cardíaca.  {#tbl-pulso .hover .sm}
 
-El MAX30102 se elige como la mejor opción para este proyecto por su equilibrio entre funcionalidad, costo y tamaño. A comparación del MAX30105, este es más económico y más compacto. La funcionalidad de detección de partículas no es de interés para este proyecto. Además, el MAX30102 ofrece mejoras significativas respecto al MAX30100, tanto en la resolución como en el tipo de almacenamiento. La medición de oxigenación en la sangre no es una característica actual del dispositivo planteado en esta tesis, pero podría ser una variable de interés en investigaciones futuras.
+El MAX30102 se elige como la mejor opción para este proyecto por su equilibrio entre funcionalidad, capacidad de captura de datos y costo. A comparación del MAX30105, este es más económico y fácil de conseguir en México, mientras que el MAX30100 se encuentra aproximadamente por el mismo precio. Además, el MAX30102 ofrece mejoras significativas respecto al MAX30100, tanto en la resolución como en el tipo de almacenamiento. Tanto la funcionalidad de detección de partículas, como la medición de oxigenación en la sangre no son una característica actual del reloj inteligente planteado en esta tesis, pero podrían ser una variables de interés en investigaciones futuras.
 
 
 **Circuito vibrador**
 
 El dispositivo cuenta con un sistema de alarma silenciosa compuesta por un motor vibrador circular de 8 mm de diámetro, alimentado a 3.7 V y un circuito de control. La @fig-circuito_motor muestra este circuito. 
 
-![Circuito de control del motor vibrador](../Imagenes/Circuito_motor.png){#fig-circuito_motor width=50%}
+![Circuito de control del motor vibrador.](../Imagenes/Circuito_motor.png){#fig-circuito_motor width=50%}
 
 
 
@@ -134,7 +136,7 @@ La @tbl-componentes-seleccionados muestra todos los componentes seleccionados pa
 | MAX30102                   | Sensor óptico de frecuencia cardíaca           |
 | Circuito vibrador          | Circuito vibrador para notificaciones silenciosas             |
 | Batería 650 mAh            | Batería LiPo recargable      |
-: Tabla de componentes seleccionados  {#tbl-componentes-seleccionados}
+: Tabla de componentes seleccionados.  {#tbl-componentes-seleccionados .hover .sm}
 
 
 
@@ -142,8 +144,7 @@ La @tbl-componentes-seleccionados muestra todos los componentes seleccionados pa
 3. **Diseño del dispositivo**
 
 
-
-Una vez seleccionados los componentes principales del dispositivo, el diseño se centra en crear una carcasa compacta y adecuada en donde los componentes puedan colocarse sin interferir entre ellos y así mismo el desarrollo de los circuitos internos de conexión
+Una vez seleccionados los componentes principales del dispositivo, el diseño se enfoca en crear una carcasa compacta que permita alojar los componentes sin interferencias entre ellos y en desarrollar los circuitos internos de conexión
 
 **Carcasa:**
 
@@ -153,18 +154,18 @@ La parte central de la carcasa es la pieza que va arriba de la base y es donde s
 
 La parte superior de la carcasa está diseñada con el fin de mantener la pantalla táctil en su posición y cerrar el dispositivo. Todas las piezas se ensamblan una con otra por presión, evitando el uso de tornillos.
 
-Adicional, hay una cuarta pieza que es un seguro para fijar el interruptor de encendido. Esta se coloca por encima del interruptor una ve esté colocado en su posición en la pieza central. El seguro ensambla por presión a la pieza y deja fijo el interruptor.
+Adicional, hay una cuarta pieza que es un seguro para fijar el interruptor de encendido. Esta se coloca por encima del interruptor una vez esté colocado en su posición en la pieza central. El seguro ensambla por presión a la pieza y deja fijo el interruptor.
 
 En la @fig-partescase Se observan las tres piezas principales de la carcasa.
 
-![Diagrama de conexiones](../Imagenes/PartesCase.png){#fig-partescase width=75%}
+![Partes de la carcasa del dispositivo (el seguro se muestra a mayor escala para su mejor visualización).](../Imagenes/PartesCase.png){#fig-partescase width=75%}
 
 **Diseño de los circuitos**
 
-El diseño de los circuitos se divide en tres circuitos, circuito vibrador para alarma @fig-conexiones a) , circuito de sensores y
+El diseño de los circuitos del reloj inteligente se divide en tres circuitos, circuito vibrador para alarma @fig-conexiones a) , circuito de sensores y
 microcontrolador @fig-conexiones b) y el circuito de la batería @fig-conexiones c). Cada uno de estos circuitos está diseñado para mantener las conexiones lo más simples y cortas posibles. Dado que la placa XIAO ESP32C3 y la pantalla XIAO Round Display se ensamblan directamente, se omite ese circuito.
 
-![Diagrama de conexiones](../Imagenes/Diagrama%20de%20conexiones.png){#fig-conexiones}
+![Diagrama de conexiones: a) circuito vibrador, b) circuito de sensores y placa de desarrollo, c) circuito de la batería.](../Imagenes/Diagrama%20de%20conexiones.png){#fig-conexiones}
 
 El código de colores utilizado en este proyecto, para facilitar las conexiones, es:
 
@@ -175,22 +176,22 @@ El código de colores utilizado en este proyecto, para facilitar las conexiones,
 * ***Verde:*** señal de activación del motor.
 * ***Amarillo:*** conexión entre el pin emisor del transistor y el motor vibratorio.
 
-El circuito vibrador es un circuito sencillo de control de motor. su principal objetivo proteger el microcontrolador, evitando que el motor se alimente directamente desde el pin digital del microcontrolador, si no que lo haga directamente de la fuente de alimentación general del dispositivo, mientras que el pin del microcontrolador se utiliza únicamente para enviar la señal de activación.
+El circuito vibrador es un circuito sencillo de control de motor. su principal objetivo energizar el motor vibrador y proteger el microcontrolador, evitando que el motor se alimente directamente desde el pin digital del microcontrolador, si no que lo haga directamente de la fuente de alimentación general del dispositivo, mientras que el pin del microcontrolador se utiliza únicamente para enviar la señal de activación.
 
-El circuito que conecta los sensores con el microcontrolador tiene como propósito establecer la comunicación simultánea de ambos sensores mediante el protocolo I2C.
+El circuito de sensores y placa de desarrollo tiene como propósito establecer la comunicación simultánea de ambos sensores a la placa de desarrollo mediante el protocolo I2C.
 
-El circuito de la batería integra un interruptor de encendido y apagado, que permite al usuario controlar la alimentación del dispositivo; y un conector JST, que proporciona la conexión directa con la pantalla táctil XIAO Round Display. 
+El circuito de la batería integra un interruptor de encendido y apagado, que permite al usuario controlar la alimentación del dispositivo; y un conector JST, que proporciona la conexión directa con la pantalla táctil XIAO Round Display que a su vez alimenta a todo el reloj inteligente. 
 
-Finalmente, en la @fig-DiagramaBloques se ilustra la organización de los distintos componentes del dispositivo, haciendo una separación entre los elementos internos y externos del reloj. Los componentes dentro del recuadro negro son aquellos que están contenidos físicamente dentro de la carcasa del reloj, como los sensores, la batería, la antena WIFI, el circuito de la pantalla, el circuito vibrador y el microcontrolador. Por otro lado, los elementos que se encuentran fuera del recuadro negro corresponden a los componentes externos con los cuales el usuario interactúa directamente, como el interruptor de encendido y apagado, la pantalla táctil y el puerto de carga USB-C. Además, el diagrama indica las interconexiones entre los diferentes componentes con líneas. Se destaca que la conexión entre los sensores y el microcontrolador es mediante el protocolo I2C.
+Finalmente, en la @fig-DiagramaBloques se muestra el diagrama de bloques funcional del dispositivo, destacando los componentes del dispositivo y sus conexiones, haciendo una separación entre los elementos internos y externos del reloj. Los componentes dentro del recuadro negro son aquellos que están contenidos físicamente dentro de la carcasa del reloj, como los sensores, la batería, la antena WIFI, el circuito de la pantalla, el circuito vibrador y el microcontrolador. Por otro lado, los elementos que se encuentran fuera del recuadro negro corresponden a los componentes externos con los cuales el usuario interactúa directamente, como el interruptor de encendido y apagado, la pantalla táctil y el puerto de carga USB-C. Además, el diagrama indica las interconexiones entre los diferentes componentes con líneas. Se destaca que la conexión entre los sensores y el microcontrolador es mediante el protocolo I2C.
 
-![Diagrama de bloques](../Imagenes/DiagramaBloques.png){#fig-DiagramaBloques}
+![Diagrama de bloques funcional del reloj inteligente.](../Imagenes/DiagramaBloques.png){#fig-DiagramaBloques}
 
 
 ## Construcción del dispositivo {#sec-construccion}
 
-La construcción del dispositivo en tres etapas: La impresión de la carcasa, la conexión de los componentes electrónicos y la integración y montaje de todos los elementos.
+La construcción del reloj inteligente se puede separar en tres etapas: La impresión de la carcasa, la conexión de los componentes electrónicos y la integración y montaje de todos los elementos en la carcasa.
 
-***Carcasa:*** los archivos STL para la impresión de la carcasa los puedes encontrar en el <a href="https://github.com/JulioLanda4/Reloj_Confort" target="_blank">repositorio del proyecto</a>
+***Carcasa:*** los archivos STL para la impresión de la carcasa los puedes encontrar en el <a href="https://github.com/JulioLanda4/IoT_Reloj_Confort" target="_blank">repositorio del proyecto</a>
 
  
 
@@ -205,14 +206,14 @@ En el articulo XXX puede encontrar información más detallada acerca del diseñ
 
 Una de las principales características del reloj inteligente presentado, es la capacidad de realizar encuestas de confort térmico de manera periódica y en condiciones reales con el propósito de recolectar datos que permitan estudiar la percepción de confort térmico en el Instituto de Energías Renovables (IER) de la UNAM. A continuación se describe la metodología de implementación de las encuestas, la lógica de la interfaz y las funcionalidades que permiten la interacción eficiente entre el usuario y el dispositivo.
 
-1. Diseño de las Encuestas
+1. **Diseño de las Encuestas**
 
-El reloj inteligente lleva a cabo encuestas simplificadas de confort térmico cada hora, en horarios específicos entre las 8:00 a.m. y las 9:00 p.m., programadas en las medias horas para alinearse con los horarios de actividades en el IER, permitiendo al usuario aclimatarse antes de responder la encuesta. Al llegar el momento de responder la encuesta, el dispositivo activa una alarma vibradora que consta de tres pulsos cortos en un lapso de un segundo, para notificar al usuario. Si el usuario ignora la alarma, el botón de 'Encuesta' permanece activo hasta que se complete la encuesta, si después de quince minutos la encuesta no ha sido respondida, la alarma se vuelve a activar una vez más. Si esta segunda notificación es ignorada, la alarma no se activa nuevamente hasta la próxima hora programada. 
+El reloj inteligente lleva a cabo encuestas simplificadas de confort térmico cada hora, en horarios específicos entre las 08:00 a.m. y las 09:00 p.m., programadas en las medias horas para alinearse con los horarios de actividades en el IER, permitiendo al usuario aclimatarse antes de responder la encuesta. Al llegar el momento de responder la encuesta, el dispositivo activa una alarma vibradora que consta de tres pulsos cortos en un lapso de un segundo, para notificar al usuario. Si el usuario ignora la alarma, el botón de 'Encuesta' permanece activo hasta que se complete la encuesta, si después de quince minutos la encuesta no ha sido respondida, la alarma se vuelve a activar una vez más. Si esta segunda notificación es ignorada, la alarma no se activa nuevamente hasta la próxima hora programada. 
 
 La encuesta consta de cinco preguntas. Las preguntas seleccionadas se basan en los lineamientos establecidos por la ISO 10551 (@ISO10551). Las cinco preguntas son las siguientes:
 
 
-- Vestimenta: Presenta la pregunta: "¿Cuál es tu vestimenta actual?" donde el usuario puede seleccionar todas las prendas que este usando de una lista predefinida. El objetivo de esta pregunta es calcular el nivel de aislamiento térmico del usuario (CLO). La interfaz muestra el cálculo del valor de CLO en la parte inferior de la pantalla a medida que se seleccionan o deseleccionan las prendas. La @tbl-prendas muestra la lista de prendas disponibles para seleccionar con su respectivo calor de CLO.
+- **Vestimenta**: Presenta la pregunta: "¿Cuál es tu vestimenta actual?" donde el usuario puede seleccionar todas las prendas que este usando de una lista predefinida. El objetivo de esta pregunta es calcular el nivel de aislamiento térmico del usuario (CLO). La interfaz muestra el cálculo del valor de CLO en la parte inferior de la pantalla a medida que se seleccionan o deseleccionan las prendas. La @tbl-prendas muestra la lista de prendas disponibles para seleccionar con su respectivo calor de CLO.
 
 | **Prenda**          | **Valor de CLO** | **Prenda**          | **Valor de CLO** |
 |---------------------|------------------|---------------------|------------------|
@@ -228,9 +229,9 @@ La encuesta consta de cinco preguntas. Las preguntas seleccionadas se basan en l
 | Chaqueta            | 0.30             | Sandalias           | 0.02             |
 | Suéter              | 0.18             | Brasier             | 0.02             |
 | Falda               | 0.14             | Corpiño             | 0.03             |
-: Tabla de equivalencia de prendas a CLO {#tbl-prendas}
+: Tabla de equivalencia de prendas a CLO. {#tbl-prendas .hover .sm}
 
-- Actividad: Presenta la pregunta: "¿Qué actividad estás realizando?" donde el usuario selecciona una única opción de una lista predefinida de actividades que permiten calcular la tasa metabólica (MET) del usuario. La @tbl-actividad muestra la lista de actividades con su respectivo valor de MET asociado.
+- **Actividad**: Presenta la pregunta: "¿Qué actividad estás realizando?" donde el usuario selecciona una única opción de una lista predefinida de actividades que permiten calcular la tasa metabólica (MET) del usuario. La @tbl-actividad muestra la lista de actividades con su respectivo valor de MET asociado.
 
 | **Actividad**              | **Valor de MET** |
 |----------------------------|------------------|
@@ -243,32 +244,32 @@ La encuesta consta de cinco preguntas. Las preguntas seleccionadas se basan en l
 | Escribiendo                | 1.3              |
 | Trabajando en computadora  | 1.5              |
 | De pie en un laboratorio   | 2.0              |
-: Tabla equivalencia de actividades a MET  {#tbl-actividad}
+: Tabla equivalencia de actividades a MET.  {#tbl-actividad .hover .sm}
 
-- Ubicación: Se presenta la pregunta: "¿Donde te encuentras?" donde el usuario selecciona una única opción de una lista predefinida de ubicaciones  dentro del IER UNAM.
+- **Ubicación**: Presenta la pregunta: "¿Donde te encuentras?" donde el usuario selecciona una única opción de una lista predefinida de ubicaciones  dentro del IER UNAM.
 
-- Escala de confort térmico: Se presenta la pregunta: "¿Cuál es tu sensación térmica en este momento?" donde el usuario puede elegir su sensación térmica actual en un rango de -3 a 3 en intervalos de 0.5. Cada valor tiene una descripción asociada de la sensación térmica. La @tbl-tsv muestra la descripción asociada a cada uno de los valores del voto de sensación térmica.
+- **Escala de confort térmico**: Presenta la pregunta: "¿Cuál es tu sensación térmica en este momento?" donde el usuario puede elegir su sensación térmica actual en un rango de -3 a 3 en intervalos de 0.5. Cada valor tiene una descripción asociada de la sensación térmica. La @tbl-tsv muestra la descripción asociada a cada uno de los valores del voto de sensación térmica.
 
-| Valor de Sensación Térmica | Descripción           |
-|---------------------------|-----------------------|
-| -3                        | Helado                |
-| -2.5                      | Mucho frío            |
-| -2                        | Frío                  |
-| -1.5                      | Ligeramente frío      |
-| -1                        | Fresco                |
-| -0.5                      | Ligeramente fresco    |
-| 0                         | Neutro                |
-| 0.5                       | Ligeramente templado  |
-| 1                         | Templado              |
-| 1.5                       | Ligeramente caluroso  |
-| 2                         | Caluroso              |
-| 2.5                       | Muy caluroso          |
-| 3                         | Ardiendo              |
-: Escala del voto de sensación térmica con su descripción  {#tbl-tsv}
+| **Valor de Sensación Térmica** | **Descripción**           |
+|--------------------------------|---------------------------|
+| -3                             | Helado                    |
+| -2.5                           | Mucho frío                |
+| -2                             | Frío                      |
+| -1.5                           | Ligeramente frío          |
+| -1                             | Fresco                    |
+| -0.5                           | Ligeramente fresco        |
+| 0                              | Neutro                    |
+| 0.5                            | Ligeramente templado      |
+| 1                              | Templado                  |
+| 1.5                            | Ligeramente caluroso      |
+| 2                              | Caluroso                  |
+| 2.5                            | Muy caluroso              |
+| 3                              | Ardiendo                  |
+: Escala del voto de sensación térmica con su descripción.  {#tbl-tsv .hover .sm}
 
-- Aceptación Térmica: Finalmente, se presenta la pregunta: "¿Aceptas la sensación térmica actual?", donde el usuario puede responder "Sí" o "No". Esta pregunta busca evaluar si, independientemente de la sensación térmica reportada, el usuario la percibe como aceptable.
+- **Aceptación Térmica**: Presenta la pregunta: "¿Aceptas la sensación térmica actual?", donde el usuario puede responder "Sí" o "No". Esta pregunta busca evaluar si, independientemente de la sensación térmica reportada, el usuario la percibe como aceptable.
 
-2. Interfaz de Usuario
+2. **Interfaz de Usuario**
 
 La interfaz del dispositivo ha sido diseñada utilizando la biblioteca LVGL, que ofrece herramientas para la creación de interfaces gráficas en microcontroladores integrados con pantallas táctiles. Cada una de las preguntas descritas previamente se presenta en una pantalla distinta, permitiendo al usuario navegar de manera intuitiva y sencilla.
 
@@ -276,15 +277,11 @@ La interfaz del dispositivo ha sido diseñada utilizando la biblioteca LVGL, que
 
 - Interacción con Pantallas: Cada pantalla que presenta una lista predefinida de opciones cuenta con botones para moverse entre las diferentes opciones disponibles. Esto permite al usuario seleccionar fácilmente la opción deseada, asegurando una interacción fluida y precisa con el dispositivo.
 
-3. Funcionalidades Adicionales y Validación
+3. **Funcionalidades Adicionales y Validación**
 
 Una vez que se completa la encuesta, al pulsar el botón "Finalizar", aparece un mensaje emergente que solicita al usuario mantenerse inmóvil mientras que los sensores de frecuencia cardíaca (MAX30102) y de temperatura de la piel (GY-906) llevan a cabo sus mediciones correspondientes, estas mediciones se realizan en un lapso de diez segundos. Los resultados se muestran al usuario para su validación. Si el usuario considera que los resultados son coherentes, puede enviarlos; de lo contrario, tiene la opción de repetir las mediciones.
 
 Los datos recolectados son enviados a la plataforma Thingsboard para su almacenamiento y análisis posterior. Esta funcionalidad permite construir una base de datos que facilite el estudio del confort térmico en diferentes espacios y condiciones dentro del IER.
-
-La @fig-generica muestra todas las pantallas
-
-![Imagen generica](../Imagenes/ImagenGenerica.png){#fig-generica width=50%}
 
 
 
@@ -294,7 +291,7 @@ La @fig-generica muestra todas las pantallas
 
 La calibración de los sensores en el dispositivo es esencial para garantizar la precisión y confiabilidad de las mediciones. Esta sección describe el proceso de calibración de los sensores MAX30102 y GY-906, utilizados para medir la frecuencia cardíaca y la temperatura de la piel, respectivamente.
 
-### Calibración del Sensor MAX30102
+1. **Calibración del Sensor MAX30102**
 
 Para la calibración del sensor MAX30102, se utiliza como referencia un oxímetro de pulso Yonker YK-81C, que ofrece una precisión de ± 1 bpm. Dado que las mediciones del reloj inteligente se realizan en intervalos de 10 segundos, este mismo periodo se emplea durante el proceso de calibración. El sensor se configura mediante Arduino y la librería de SparkFun para los sensores MAX3010X. La calibración se enfoca en la configuración óptima de varios parámetros ajustables: `ledBrightness`, `sampleAverage`, `ledMode`, `sampleRate`, `pulseWidth`, `adcRange` y `RATE_SIZE`.
 
@@ -306,37 +303,37 @@ Para la calibración del sensor MAX30102, se utiliza como referencia un oxímetr
 - **adcRange** (2048, 4096, 8192, 16384 nA): Establece el rango de entrada del convertidor analógico-digital. Aumentar el rango permite al sensor manejar señales más intensas sin saturarse, mientras que un rango menor mejora la sensibilidad para señales débiles.
 - **RATE\_SIZE** (tamaño del buffer): Determina el tamaño del buffer para el cálculo de la frecuencia cardíaca. Este parámetro afecta la cantidad de datos utilizados para calcular la frecuencia cardíaca promedio. Aumentar el tamaño del buffer de 4 a 6 mejora la precisión de las lecturas, ya que permite una mayor estabilidad en los cálculos.
 
-Inicialmente, los parámetros se configuran con valores predeterminados, pero los resultados muestran un error absoluto medio (MAE) de 18.5 bpm respecto al oxímetro de referencia, lo cual no es aceptable. Para mejorar la precisión, se exploran valores extremos del parámetro `RATE_SIZE`, variando desde 1 hasta 100. Con `RATE_SIZE` igual a 1, se obtienen resultados rápidos pero poco precisos, mientras que con `RATE_SIZE` igual a 100, se logra alta precisión, pero se requieren múltiples intervalos de 10 segundos, incrementando el tiempo total de medición. Para encontrar un equilibrio entre precisión y tiempo de medición, se evalúan valores intermedios de `RATE_SIZE` entre 4 y 16. El valor óptimo encontrado es `RATE_SIZE` igual a 6, lo cual reduce el MAE a 4.4 bpm.
+Inicialmente, los parámetros se configuran con valores predeterminados, pero los resultados muestran un Error Absoluto Medio (EAM) de 18.5 bpm respecto al oxímetro de referencia, lo cual no es aceptable. Se decide utilizar únicamente el EAM porque mide la magnitud promedio del error, sin distinguir entre mediciones que están por encima o por debajo del estándar, lo cual es ideal para evaluar la precisión general del sensor. Para mejorar la precisión, se exploran valores extremos del parámetro `RATE_SIZE`, variando desde 1 hasta 100. Con `RATE_SIZE` igual a 1, se obtienen resultados rápidos pero poco precisos, mientras que con `RATE_SIZE` igual a 100, se logra alta precisión, pero se requieren múltiples intervalos de 10 segundos, incrementando el tiempo total de medición. Para encontrar un equilibrio entre precisión y tiempo de medición, se evalúan valores intermedios de `RATE_SIZE` entre 4 y 16. El valor óptimo encontrado es `RATE_SIZE` igual a 6, lo cual reduce el EAM a 4.4 bpm.
 
-La @tbl-max30102 muestra el error absoluto medio (MAE) obtenido para diferentes valores de `RATE_SIZE` entre 4 y 16, destacando que el mejor valor para `RATE_SIZE` es 6:
+La @tbl-max30102 muestra el error absoluto medio (EAM) obtenido para diferentes valores de `RATE_SIZE` entre 4 y 16, destacando que el mejor valor para `RATE_SIZE` es 6:
 
-| Número de Mediciones | RATE\_SIZE | MAE (bpm) |
-| -------------------- | ---------- | --------- |
-| 20                   | 4          | 18.5      |
-| 20                   | 6          | 4.4       |
-| 20                   | 8          | 12.0      |
-| 20                   | 10         | 19.6      |
-| 20                   | 12         | 7.7       |
-| 20                   | 14         | 13.6      |
-| 20                   | 16         | 15.8      |
-: sdfsdfsd  {#tbl-max30102}
+| **Número de Mediciones** | **RATE\_SIZE** | **EAM (bpm)** |
+| ------------------------ | -------------- | ------------- |
+| 20                       | 4              | 18.5          |
+| 20                       | 6              | 4.4           |
+| 20                       | 8              | 12.0          |
+| 20                       | 10             | 19.6          |
+| 20                       | 12             | 7.7           |
+| 20                       | 14             | 13.6          |
+| 20                       | 16             | 15.8          |
+: Error Absoluto Medio (EAM) para diferentes valores de RATE_SIZE en el MAX30102.  {#tbl-max30102 .hover .sm}
 
-Posteriormente, con RATE\_SIZE fijado en 6, se ajusta el valor de sampleAverage de 4 a 8, logrando un MAE de 3.6 bpm, lo cual representa una mejora en la estabilidad de la señal. La configuración final optimizada incluye los siguientes valores: ledBrightness en 31, sampleAverage en 8, ledMode en 2, sampleRate en 400, pulseWidth en 411, adcRange en 2048 y RATE\_SIZE en 6.
+Posteriormente, con `RATE\_SIZE` fijado en 6, se ajusta el valor de `sampleAverage` de 4 a 8, logrando un EAM de 3.6 bpm, lo cual representa una mejora en la estabilidad de la señal. La configuración final optimizada incluye los siguientes valores: `ledBrightness` en 31, `sampleAverage` en 8, `ledMode` en 2, `sampleRate` en 400, `pulseWidth` en 411, `adcRange` en 2048 y `RATE\_SIZE` en 6.
 
-### Calibración del Sensor GY-906
+2. **Calibración del Sensor GY-906**
 
 Para la calibración del sensor de temperatura GY-906, se utiliza una cámara termográfica Fluke Ti9 como referencia. Tanto el sensor como la cámara se configuran con una emisividad de 0.98, correspondiente a la emisividad promedio de la piel humana. Las pruebas se realizan durante tres días, entre las 10:00 a. m. y las 06:00 p. m., con mediciones cada media hora para capturar diferentes condiciones ambientales.
 
 Durante cada sesión de medición, el sensor GY-906 realiza diez mediciones consecutivas en un lapso de diez segundos, y el promedio de estas mediciones se envía a la plataforma Thingsboard, lo cual permite reducir el ruido y aumentar la precisión. Simultáneamente, las lecturas de la cámara termográfica se registran manualmente. Para minimizar el error por movimiento, el dispositivo emite una alerta vibratoria de un segundo, seguida de una pausa de cuatro segundos antes de realizar la medición, permitiendo al usuario mantener la mano inmóvil durante el proceso de medición. Se obtienen 61 pares de mediciones, la @tbl-estadisticas-camara muestra las características estadísticas de ambos conjuntos de datos.
 
 
-| Estadística          | Sensor (°C) | Cámara (°C) |
-|----------------------|-------------|-------------|
-| Media                | 34.58       | 35.30       |
-| Desviación estándar  | 0.75        | 0.63        |
-| Mínimo               | 32.36       | 32.80       |
-| Máximo               | 35.83       | 35.83       |
-: Estadísticas de las Mediciones del Sensor GY-906 y la Cámara Termográfica Fluke Ti9  {#tbl-estadisticas camara}
+| **Estadística**          | **Sensor (°C)** | **Cámara (°C)** |
+|--------------------------|-----------------|-----------------|
+| Media                    | 34.58           | 35.30           |
+| Desviación estándar      | 0.75            | 0.63            |
+| Mínimo                   | 32.36           | 32.80           |
+| Máximo                   | 35.83           | 35.83           |
+: Estadísticas de las Mediciones del Sensor GY-906 y la Cámara Termográfica Fluke Ti9.  {#tbl-estadisticas camara .hover .sm}
 
 Se realiza un análisis inicial entre las mediciones de la cámara respecto al sensor y se obtienen los siguientes datos: 
 
@@ -358,7 +355,7 @@ La @fig-dispersion muestra la comparación entre las gráficas de dispersión de
 
 ```{python}
 #| echo: false
-#| fig-cap: "Gráficos de dispersión de las mediciones del sensor GY-906 y la cámara termográfica Fluke Ti9 antes y después de la calibración"
+#| fig-cap: Gráficos de dispersión de las mediciones del sensor GY-906 y la cámara termográfica Fluke Ti9 antes y después de la calibración.
 #| label: fig-dispersion
 
 import pandas as pd
@@ -440,7 +437,7 @@ Posteriormente, se lleva a cabo una segunda campaña de medición, recopilando 2
 - EM: 0.59 
 - EAM: 0.66
 
-Tras aplicar la función de regresión lineal, se obtiene un error estándar de la estimación $S_e$ de 0.54, lo cual demuestra la consistencia del valor entre el primer conjunto de datos y este nuevo conjunto, mientras que los errores son los siguientes:
+Aplicando la función de regresión lineal, se obtiene un error estándar de la estimación $S_e$ de 0.54, lo cual demuestra la consistencia del valor entre el primer conjunto de datos y este nuevo conjunto, mientras que los errores son los siguientes:
 
 - EM: -0.08
 - EAM: 0.41
@@ -450,7 +447,7 @@ La @fig-dispersion2 muestra la comparación de las gráficas de dispersión del 
 
 ```{python}
 #| echo: false
-#| fig-cap: "Gráficos de dispersión para validación de la calibración del Sensor GY-906."
+#| fig-cap: Gráficos de dispersión para validación de la calibración del Sensor GY-906.
 #| label: fig-dispersion2
 
 #| label: fig-scatter2
@@ -514,14 +511,16 @@ plt.show()
 
 Finalmente, la @tbl-errores-gy muestra los EM y EAM antes y después de la calibración de los dos conjuntos de datos, el conjunto inicial a partir del cual se obtuvo la los parámetros para realizar el modelo de regresión lineal y el conjunto de validación en el cual se llevo a cabo una segunda campaña de medición para obtener más datos y verificar la fiabilidad de la calibración.
 
-|             |**Conjunto inicial**|             |**Conjunto de validación**|             |
-|-------------|--------------------|-------------|--------------------------|-------------|
-|             | **Sin calibrar**   |**Calibrado**| **Sin calibrar**         |**Calibrado**|
-| **ME**      | 0.5                | 0.89        | 0.65                     | -0.08       |
-| **MAE**     | 0.72               | 0.54        | 0.61                     | 0.43        |
-: Tabla de errores promedio (ME) y errores absolutos medios (MAE) para el conjunto inicial y el conjunto de validación {#tbl-errores-gy}
-
-
++-------------+----------------------+-------------+----------------------------+-------------+
+|             | **Conjunto inicial** |             | **Conjunto de validación** |             |
++             +                      +             +                            +             +
+|             | *Sin calibrar*       |*Calibrado*  | *Sin calibrar*             |*Calibrado*  |
++=============+======================+=============+============================+=============+
+| **EM**      | 0.5                  | 0.89        | 0.65                       | -0.08       |
++-------------+----------------------+-------------+----------------------------+-------------+
+| **EAM**     | 0.72                 | 0.54        | 0.61                       | 0.43        |
++-------------+----------------------+-------------+----------------------------+-------------+
+: Error Medio (EM) y Error Absoluto Medio (EAM) para el conjunto inicial y el conjunto de validación antes y después de la calibración. {#tbl-errores-gy .hover .sm}
 
 
 
@@ -530,7 +529,7 @@ Finalmente, la @tbl-errores-gy muestra los EM y EAM antes y después de la calib
 
 A continuación, se describe el funcionamiento general del reloj inteligente, detallando la estructura del sistema y la función de cada uno de los archivos que componen el proyecto desarrollado en Arduino. También se presentan los diagramas de flujo de los procesos clave, como la función actualizar_hora y el procedimiento para responder una encuesta y medir las variables fisiológicas. Además, se destacan aspectos relevantes, como los horarios programados para las encuestas y las estrategias implementadas para el ahorro de energía.
 
-### Descripción de la funcionalidad de los archivos del proyecto
+1. **Descripción de la funcionalidad de los archivos del proyecto**
 
 
 El proyecto se desarrolla en Arduino, empleando principalmente la librería LVGL para el diseño de la interfaz gráfica. Está compuesto por varios archivos de código, cada uno con una función específica. A continuación, se ofrece una breve descripción de cada uno de ellos:
@@ -538,7 +537,7 @@ El proyecto se desarrolla en Arduino, empleando principalmente la librería LVGL
 
 1. **Proyecto\_confort.ino**: Este es el archivo principal del proyecto. En él se ejecuta el código principal, se incluyen las librerías necesarias, y se declaran tanto las variables como las funciones esenciales.
 
-2. **ui.c** y **ui.h**: Estos archivos se encargan de la ejecución y configuración general de la interfaz gráfica. El archivo header (**ui.h**) contiene las declaraciones de funciones y variables utilizadas en **ui.c**.
+2. **ui.c** y **ui.h**: Estos archivos se encargan de la ejecución y configuración general de la interfaz gráfica. El archivo header (`ui.h`) contiene las declaraciones de funciones y variables utilizadas en `ui.c`.
 
 3. **ui\_Inicio.c**: Configura la pantalla principal del reloj. En esta pantalla se muestra la hora actual, un contador regresivo que indica cuánto tiempo falta hasta el momento de contestar la siguiente encuesta, y el botón para iniciar la encuesta cuando está disponible.
 
@@ -552,20 +551,20 @@ El proyecto se desarrolla en Arduino, empleando principalmente la librería LVGL
 
 8. **ui\_Aceptación.c**: Configura la pantalla destinada a la pregunta de aceptación térmica.
 
-9. **ui\_events.c** y **ui\_events.h**: En **ui\_events.c** Contienen todas las funciones creadas específicamente para el proyecto, tanto las relacionadas con la gestión de eventos generados por la interfaz como otras funciones generales del programa. El archivo de encabezado (**ui\_events.h**) contiene las declaraciones de las funciones y variables utilizadas en **ui_events.c**.
+9. **ui\_events.c** y **ui\_events.h**: Contienen todas las funciones creadas específicamente para el proyecto, tanto las relacionadas con la gestión de eventos generados por la interfaz como otras funciones generales del programa. El archivo de encabezado (`ui\_events.h`) contiene las declaraciones de las funciones y variables utilizadas en `ui_events.c`.
 
-10. **ui\_helpers.c** y **ui\_helpers.h**: Contienen funciones auxiliares de la librería LVGL, diseñadas para facilitar la implementación y el manejo de la interfaz gráfica. El archivo header (**ui_helpers-h**) contiene las declaraciones de funciones y variables utilizadas en **ui_helpers.c**.
+10. **ui\_helpers.c** y **ui\_helpers.h**: Contienen funciones auxiliares de la librería LVGL, diseñadas para facilitar la implementación y el manejo de la interfaz gráfica. El archivo header (`ui_helpers-h`) contiene las declaraciones de funciones y variables utilizadas en `ui_helpers.c`.
 
-El reloj está programado para realizar encuestas de confort térmico cada hora entre las 08:30 y las 21:30 horas. Programar las encuestas para realizarse en el minuto 30 de cada hora permite proporcionar al usuario un periodo de adaptación térmica previo a responder la primera encuesta. Esto se debe a que las actividades en el IER suelen iniciar en horas exactas, lo que asegura que los usuarios tengan tiempo suficiente para estabilizar su sensación térmica antes de contestar la primera encuesta.
+El reloj está programado para realizar encuestas de confort térmico cada hora entre las 08:30 a.m. y las 09:30 p.m. Programar las encuestas para realizarse en el minuto 30 de cada hora permite proporcionar al usuario un periodo de adaptación térmica previo a responder la primera encuesta. Esto se debe a que las actividades en el IER suelen iniciar en horas exactas, lo que asegura que los usuarios tengan tiempo suficiente para estabilizar su sensación térmica antes de contestar la primera encuesta.
 
-### Descripción de la funcion actualizar_hora
+2. **Descripción de la función actualizar_hora**
 
-La función denominada **actualizar\_hora**, que se encuentra en el archivo **ui\_events.c**, se encarga de actualizar la hora en pantalla, además habilita o desahibilita el botón para realizar la encuesta según el horario o si esta ya fue o no contestada. Esta función también es la encargada de emitir la alarma para alertar al usuario la disponibilidad de una nueva encuesta. El diagram de flujo de esta función se presenta en la @fig-actualizarhora.
+La función denominada `actualizar\_hora`, que se encuentra en el archivo `ui\_events.c`, se encarga de actualizar la hora en pantalla, además habilita o desahibilita el botón para realizar la encuesta según el horario o si esta ya fue o no contestada. Esta función también es la encargada de emitir la alarma para alertar al usuario la disponibilidad de una nueva encuesta. El diagram de flujo de esta función se presenta en la @fig-actualizarhora.
 
 
-![Diagrama de flujo de la función actualizar_hora](../Imagenes/Actualizar_hora.svg){#fig-actualizarhora width=50%}
+![Diagrama de flujo de la función actualizar_hora.](../Imagenes/Actualizar_hora.svg){#fig-actualizarhora width=50%}
 
-### Descripción del proceso para contestar una encuesta, medir variables fisiológicas y mandar los datos a Thingsboard
+3. **Descripción del proceso para contestar una encuesta, medir variables fisiológicas y mandar los datos a Thingsboard**
 
 
 Cuando el usuario presiona el botón para iniciar la encuesta, se da inicio a un proceso que consta de varias etapas: primero, el usuario responde a las preguntas de la encuesta; luego, se registran las variables fisiológicas; seguidamente, se validan las mediciones obtenidas; y, finalmente, se envían los datos a la plataforma Thingsboard.
@@ -575,16 +574,202 @@ Es importante destacar que, una vez enviada la encuesta, las respuestas y medici
 En caso de que las mediciones de los sensores no sean aceptadas por el usuario, estas se realizan nuevamente. El diagrama de flujo que describe el proceso de la encuesta se presenta en la Figura @fig-iniciarencuesta.
 
 
-![Diagrama de flujo de encuesta y medición de variables](../Imagenes/Iniciar_encuesta.svg){#fig-iniciarencuesta}
+![Diagrama de flujo de encuesta y medición de variables.](../Imagenes/Iniciar_encuesta.svg){#fig-iniciarencuesta}
 
-### Estrategias para el ahorro de energía
+4. **Estrategias para el ahorro de energía**
 
-Para optimizar el consumo de energía, se implementan dos estrategias principales. La primera consiste en mantener la pantalla del reloj apagada mientras el dispositivo está en reposo. Si la pantalla está encendida y no se detecta actividad durante más de 10 segundos, se apaga automáticamente. No obstante, el usuario puede reactivarla en cualquier momento con un simple toque para consultar la hora. La segunda estrategia consiste en mantener apagados el sensor de temperatura (GY-906) y el sensor de frecuencia cardiaca (MAX30102), activándose únicamente durante el proceso de medición de las variables fisiológicas.
+Para optimizar el consumo de energía, se implementan dos estrategias principales. La primera consiste en mantener la pantalla del reloj apagada mientras el dispositivo está en reposo. Si la pantalla está encendida y no se detecta actividad durante más de 10 segundos, se apaga automáticamente. No obstante, el usuario puede reactivarla en cualquier momento con un simple toque para consultar la hora. La segunda estrategia consiste en mantener apagados el sensor de temperatura (GY-906) y el sensor de frecuencia cardíaca (MAX30102), activándose únicamente durante el proceso de medición de las variables fisiológicas.
 
 
 
 ## Instrucciones de uso {#sec-instrucciones}
-1. Integración con la plataforma iot
-2. manejo de los datos
 
-## Validación {#sec-validación}
+
+El procedimiento de configuración e interacción con el reloj inteligente se puede dividir en cuatro etapas. La primera etapa consiste en la preparación del entorno de desarrollo, que implica la instalación del software Arduino con las paqueterías y librerías necesarias, así como la configuración del dispositivo en la plataforma Thingsboard. La segunda etapa se centra en el registro de los datos del usuario mediante un formulario de Google. La tercera etapa corresponde a la configuración y carga del código a la placa de desarrollo. Por última, la cuarta etapa consiste en las instrucciones generales para interactuar con el dispositivo a través de sus diferentes pantallas.
+
+1. **Preparación del entorno de desarrollo**
+
+Para iniciar, se instala la versión más reciente del Arduino IDE, disponible para descarga en su <a href="https://www.arduino.cc/" target="_blank">sitio oficial</a>. A continuación, se agrega el paquete de placas ESP32 al entorno del Arduino IDE. Para ello, se abre el programa, se selecciona la opción "Archivo" y luego "Preferencias". En el cuadro de texto "URLs adicionales para el gestor de tarjetas", se inserta la URL:
+
+ ```bash
+ https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+ ```
+ 
+ tal como se muestra en la @fig-paqueteriaArduino, la flecha roja en la figura señala al recuadro en donde debe colocarse la URL.
+
+![Configuración de las URLs adicionales en el gestor de tarjetas del Arduino IDE para agregar el paquete de placas ESP32.](../Imagenes/Paqueteria_arduino.png){#fig-paqueteriaArduino}
+
+A continuación, se accede al Gestor de placas dando click en "Herramientas", seguido de "Placa" y, finalmente, "Gestor de placas". En el gestor, se busca "esp32" y se procede a instalar el sistema ESP32 de Espressif, como se muestra en la @fig-esp32placas. La flecha roja en la figura señala el paquete que debe instalarse.
+
+![Selección e instalación del paquete ESP32 de Espressif Systems en el Gestor de placas del Arduino IDE.](../Imagenes/esp32_placas.png){#fig-esp32placas}
+
+Posteriormente, se configuran las librerías necesarias para el proyecto. Es importatne instalar las librerías en las versiones especificadas para garantizar el correcto funcionamiento del reloj inteligente. La @tbl-librerias presenta las librerías requeridas junto con las versiones recomendadas. Estas librerías pueden instalarse manualmente, una por una, o, de manera alternativa, se puede descargar la carpeta llamada "Arduino" del <a href="https://github.com/JulioLanda4/IoT_Reloj_Confort" target="_blank">repositorio del proyecto</a> y reemplazarla por la carpeta de librerías existente en la máquina local, que generalmente se encuentra en el directorio "Documentos".
+
+
+| **Librería**                                       | **Versión instalada** |
+|----------------------------------------------------|-----------------------|
+| Adafruit BusIO                                     | 1.16.1                |
+| Adafruit GFX Library                               | 1.11.9                |
+| Adafruit MLX90614 Library                          | 2.1.5                 |
+| ArduinoHttpClient                                  | 0.6.0                 |
+| ArduinoJson                                        | 7.0.4                 |
+| I2C BM8563 RTC                                     | 1.0.4                 |
+| lvgl                                               | 8.3.10                |
+| Seeed Arduino Round display                        | 1.0.0                 |
+| SparkFun MAX3010x Pulse and Proximity Sensor Library | 1.1.2               |
+| TBPubSubClient                                     | 2.9.4                 |
+| TFT_eSPI                                           | 2.5.34                |
+| ThingsBoard                                        | 0.13.0                |
+: Librerías utilizadas y sus versiones recomendadas para el funcionamiento del reloj inteligente. {#tbl-librerias tbl-colwidths="[70,30]" .hover .sm}
+
+Una vez configurado el entorno de Arduino, es necesario registrar el dispositivo en la plataforma IoT ThingsBoard instalada en los servidores del IER. Se requiere una cuenta activa e iniciar sesión en el servidor de ThingsBoard del IER. Una vez dentro, se accede a la sección "Devices" y se selecciona "Add new device". En la ventana de configuración, es fundamental asignar un nombre que identifique claramente el reloj inteligente asociado al usuario. Además, se puede optar por utilizar el token generado automáticamente por ThingsBoard o definir uno personalizado. Este token es indispensable para enlazar el reloj inteligente con la plataforma.
+
+2. **Registro de datos del usuario**
+
+Al asignar el reloj inteligente a un usuario, es necesario recopilar información básica sobre este. Para ello, se diseña un formulario que debe ser completado con los datos del usuario una vez que se le ha asignado el dispositivo. Las preguntas incluidas en el formulario son las siguientes:
+
+- Nombre y apellidos
+- Indique su fecha de nacimiento
+- ¿Cuál es su peso? [kg]
+- ¿Cuál es su altura? [m]
+- ¿Cuál es su sexo?
+- ¿Con que frecuencia a la semana sueles estar en espacios con aire acondicionado?
+- ¿Cuánto tiempo llevas viviendo en Temixco?
+- Nombre del dispositivo
+- Token
+- ID del dispositivo
+
+El registro de estos datos al inicio de una campaña de medición permite generar una base de datos más robusta y contextualizada. Esto es importante, ya que la percepción de confort térmico personal puede estar influenciada por factores como la edad, peso, altura, sexo, la exposición frecuente a espacios con aire acondicionado y la adaptación del usuario al entorno donde reside.
+
+El formulario se desarrolla utilizando la plataforma Google Forms, lo que facilita su acceso y su rápida respuesta por parte de los usuarios. Además, esta herramienta permite almacenar automáticamente las respuestas en un archivo con formato .xlsx, el cual puede ser procesado de diversas maneras, ya sea con programas de hojas de cálculo como Excel o mediante herramientas de análisis de datos en Python. A continuación se muestra el formulario hecho en Google Forms:
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe1AoBZrI94svNomSRHrP5Qmx0DCZNk-GcGgRVogEUuNz49fQ/viewform?embedded=true" width="640" height="1552" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+
+<!-- Un ejemplo del formulario puede consultarse en el siguiente enlace: <a href="https://forms.gle/ZsjcZm1dNc3Wr1so7" target="_blank">formulario de muestra</a>. --> 
+
+3. **Configuración y carga del código**
+
+El código completo del proyecto se encuentra disponible en la carpeta <a href="https://github.com/JulioLanda4/IoT_Reloj_Confort/tree/main/Proyecto_confort" target="_blank">Proyecto_confort</a> dentro del repositorio. Para inicializar el dispositivo, es necesario realizar configuraciones básicas únicamente en el archivo `Proyecto_confort.ino`. Estas configuraciones incluyen la conexión a la red Wi-Fi donde se utilizará el dispositivo, modificando las siguientes líneas de código:
+
+```cpp
+const char* ssid = "RED_WIFI";
+const char* password = "CLAVE_WIFI";
+```
+Asimismo, se debe configurar el dispositivo para su integración con la plataforma ThingsBoard, especificando el token del dispositivo y la dirección del servidor, mediante la edición de las siguientes líneas:
+
+```cpp
+const char* TOKEN = "TOKEN_DISPOSITIVO";
+const char* THINGSBOARD_SERVER = "URL_SERVIDOR";
+```
+Una vez realizadas estas configuraciones, el código se carga en la placa de desarrollo seleccionando la opción de placa `XIAO_ESP32C3` en el Arduino IDE.
+
+4. **Instrucciones generales de interacción con el reloj inteligente**
+
+El reloj inteligente se carga a través de un puerto USB-C. Es importante que el interruptor del dispositivo permanezca en posición de encendido durante la carga, ya que, de lo contrario, no será posible cargar la batería. La carcasa del reloj incluye pestañas laterales diseñadas para sujetar las correas y ajustarlo cómodamente a la muñeca del usuario.
+
+La interfaz del reloj está compuesta por siete pantallas principales y dos ventanas emergentes. La pantalla principal (@fig-pantallas(a)) permite al usuario visualizar la hora actual y el tiempo restante para la siguiente encuesta.
+
+Cuando se habilita el botón para responder una encuesta, se muestra la pantalla de encuesta (@fig-pantallas(b)), que guía al usuario a través de las preguntas del formulario. Cada una de las preguntas está asociada con una pantalla específica:
+
+- La primera pregunta, relacionada con la vestimenta actual del usuario, se visualiza en la @fig-pantallas(c).
+- La segunda pregunta, relacionada con la actividad que el usuario está realizando en ese momento, se muestra en la @fig-pantallas(d).
+- La tercera pregunta, relacionada con la ubicación actual del usuario, aparece en la @fig-pantallas(e).
+- La cuarta pregunta, relacionada con la sensación térmica del usuario, se despliega en la @fig-pantallas(f).
+- La quinta y última pregunta, relacionada con la aceptación de la sensación térmica, se presenta en la @fig-pantallas(h).
+
+Adicionalmente, el reloj cuenta con dos ventanas emergentes. La primera (@fig-pantallas(i)) aparece al finalizar la encuesta e indica que los sensores han comenzado a realizar mediciones. La segunda ventana emergente (@fig-pantallas(j)) se muestra una vez que los sensores han terminado de medir, presentando los resultados al usuario. En esta ventana, el usuario puede aceptar los resultados y enviarlos a ThingsBoard o rechazarlos para repetir las mediciones.
+
+![Interfaz del reloj inteligente: (a) pantalla principal, (b) activación de la encuesta, (c) pregunta sobre la vestimenta actual, (d) pregunta sobre la actividad realizada, (e) pregunta sobre la ubicación, (f) pregunta sobre la sensación térmica, (h) pregunta sobre la aceptación de la sensación térmica, (i) ventana emergente indicando el inicio de las mediciones, y (j) ventana emergente con los resultados de las mediciones.](../Imagenes/Pantallas.png){#fig-pantallas}
+
+## Validación del funcionamiento del reloj inteligente {#sec-validación}
+
+Los datos generados por el reloj inteligente se almacenan en la plataforma ThingsBoard, desde donde pueden descargarse para su posterior análisis. Para facilitar este proceso, se diseña una libreta de Jupyter, disponible en la carpeta  <a href="https://github.com/JulioLanda4/IoT_Reloj_Confort/tree/main/Thingsboard/descarga_thingsboard" target="_blank">descarga_thingsboard</a> del repositorio. Esta libreta, denominada `Descarga_datos.ipynb`, está programada en Python y requiere realizar configuraciones previas para su ejecución.
+
+
+**Requisitos previos**
+
+Es necesario instalar la herramienta `git`, la cual puede descargarse desde el siguiente enlace:  <a href="https://git-scm.com" target="_blank">descarga git</a>. Asimismo, se requiere la instalación de las siguientes librerías de Python:  `matplotlib`, `datetime`, `pandas` e `iertools`. Esta ultima puede instalarse mediante el comando:
+
+ ```bash
+ pip install git+https://github.com/AltamarMx/iertools.git
+ ```
+
+Además, es necesario contar con el archivo `.xlsx` generado a partir del formulario completado con la información del usuario.
+
+Con las librerías instaladas, se procede a configurar el archivo `config.ini`, en el cual deben ingresarse las credenciales del dispositivo y de la plataforma Thingsboard. Los parámetros a configurar en este archivo son los siguientes: 
+
+- **dispositivo:** Nombre del dispositivo, utilizado para identificarlo en la libreta
+- **token:** Token del dispositivo en Thingsboard
+- **device_id:** ID del dispositivo
+- **tenant:** Cuenta de usuario en Thingsboard
+- **password:** Contraseña de la cuenta
+- **host:** Dirección del servidor de Thingsboard
+- **port:** Puerto del servidor
+
+**Configuración de la libreta** 
+
+Dentro de la libreta `Descarga_datos.ipynb`, se debe indicar: 
+
+- La ruta de ubicación del archivo `.xlsx` del formulario, como se muestra a continuación: 
+
+```python
+formulario = '../data/Formulario.xlsx'         
+```
+
+- El nombre del dispositivo, tal como está definido en el archivo `config.ini`:
+
+```python
+nombre_dispositivo = 'Nombre del dispositivo'   
+```
+
+- El rango de fechas para la descarga de datos:
+
+```python
+fecha1 = parse("2024-01-01")  
+fecha2 = datetime.datetime.now()
+```
+
+**Descarga y procesamiento de datos**
+
+Una vez configurada la libreta, se realiza la descarga de los datos almacenados en ThingsBoard dentro del rango de fechas especificado. Posteriormente, se genera un dataframe que combina estas mediciones con las respuestas obtenidas del formulario. Este proceso permite validar que el dispositivo es capaz de registrar encuestas, medir variables fisiológicas y envíar correctamente los datos a ThingsBoard para su almacenamiento.
+
+**Resultados de la validación** 
+
+Para validar el funcionamiento del reloj inteligente, se lleva a cabo una campaña de prueba con una duración de cinco días, en la cual se recopilan un total de cincuenta y dos mediciones. La @tbl-data_downloaded  presenta una muestra de cinco mediciones obtenidas durante esta campaña. 
+
+En la tabla, la columna correspondiente a la frecuencia de uso de espacios con aire acondicionado ($F$) se muestra de forma numérica. Esto se debe a que los valores de esta columna están codificados según un diccionario, cuyo propósito es simplificar la visualización de los datos. La equivalencia de este diccionario es la siguiente:
+
+```python
+diccionario_frecuencia = {
+    "Todos los días": 3,
+    "3 a 5 días a la semana": 2,
+    "1 a 3 días a la semana": 1,
+    "Nunca": 0
+}
+```
+
+
++---------------------+--------------+-----------+---------------+---------+--------+-------------+-----------+----------+---------+---------+----------+---------+
+| **Fecha**           | **$I_{cl}$** | **$M_r$** | **Ubicación** | **TSV** | **TA** | **$T_{w}$** | **$H_r$** | **Edad** | **$W$** | **$H$** | **Sexo** | **$F$** |
++                     +              +           +               +         +        +             +           +          +         +         +          +         +
+| *AAAA-MM-DD HH:MM*  | *clo*        | *met*     | *-*           | *-*     | *-*    | *°C*        | *bpm*     | *años*   | *kg*    | *m*     | *-*      | *-*     |
++=====================+==============+===========+===============+=========+========+=============+===========+==========+=========+=========+==========+=========+
+| 2024-07-17 13:32    | 0.21         | 1.5       | Aula 1        | 0.0     | Sí     | 34.3        | 66        | 28       | 65      | 1.70    | M        | 1       |
++---------------------+--------------+-----------+---------------+---------+--------+-------------+-----------+----------+---------+---------+----------+---------+
+| 2024-07-17 14:32    | 0.21         | 1.5       | Aula 1        | 0.0     | Sí     | 35.4        | 77        | 28       | 65      | 1.70    | M        | 1       |
++---------------------+--------------+-----------+---------------+---------+--------+-------------+-----------+----------+---------+---------+----------+---------+
+| 2024-07-17 16:45    | 0.21         | 2.0       | Aula 1        | 2.0     | No     | 35.2        | 85        | 28       | 65      | 1.70    | M        | 1       |
++---------------------+--------------+-----------+---------------+---------+--------+-------------+-----------+----------+---------+---------+----------+---------+
+| 2024-07-17 17:43    | 0.21         | 1.8       | Aula 1        | 2.0     | No     | 34.6        | 59        | 28       | 65      | 1.70    | M        | 1       |
++---------------------+--------------+-----------+---------------+---------+--------+-------------+-----------+----------+---------+---------+----------+---------+
+| 2024-07-17 20:50    | 0.21         | 1.8       | Aula 1        | 1.0     | No     | 35.0        | 57        | 28       | 65      | 1.70    | M        | 1       |
++---------------------+--------------+-----------+---------------+---------+--------+-------------+-----------+----------+---------+---------+----------+---------+
+: Conjunto de datos de cinco encuestas térmicas y mediciones, que incluye el nivel de aislamiento de la ropa ($I_{cl}$), la tasa metabólica ($M_r$), la ubicación, el voto de sensación térmica (TSV), la aceptación térmica (TA), la temperatura de la piel de la muñeca ($T_w$), la frecuencia cardíaca ($H_r$), la edad, el peso ($W$), la altura ($H$), el sexo y la frecuencia de uso de espacios con aire acondicionado ($F$). {#tbl-data_downloaded .hover .sm}
+
+
+
+
+
+
+
+

@@ -30,14 +30,20 @@ lang: es
 title-block-author-single: "Autor"
 format:
   html:
-    theme: zephyr
+    #theme: zephyr
+    #theme: yeti
+    #theme: simplex
+    #theme: pulse
+    #theme: journal
+    theme: cosmo
+    fontsize: 1.2em
     smooth-scroll: true
     comments:
       hypothesis: 
         theme: clean
-  #pdf:
-  #  documentclass: scrreport
-  #  lof: true
-  #  lot: true
+  pdf:
+    documentclass: scrreport
+    lof: true
+    lot: true
     
 
