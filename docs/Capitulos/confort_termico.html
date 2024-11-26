@@ -159,8 +159,16 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#sensores-de-temperatura" id="toc-sensores-de-temperatura" class="nav-link active" data-scroll-target="#sensores-de-temperatura"><span class="header-section-number">2.0.1</span> Sensores de temperatura</a></li>
+  <li><a href="#la-aplicación-cozie-y-su-integración-con-smartwatches" id="toc-la-aplicación-cozie-y-su-integración-con-smartwatches" class="nav-link" data-scroll-target="#la-aplicación-cozie-y-su-integración-con-smartwatches"><span class="header-section-number">2.0.2</span> La Aplicación Cozie y su Integración con Smartwatches</a></li>
+  <li><a href="#esolmet-ier" id="toc-esolmet-ier" class="nav-link" data-scroll-target="#esolmet-ier"><span class="header-section-number">2.0.3</span> ESOLMET-IER</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -185,14 +193,66 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>– Aquí van todos los antecedentes de confort térmico, ya están en el archivo estado.qmd –</p>
-<section id="sensores-de-temperatura" class="level6" data-number="2.0.0.0.0.1">
-<h6 data-number="2.0.0.0.0.1" class="anchored" data-anchor-id="sensores-de-temperatura"><span class="header-section-number">2.0.0.0.0.1</span> Sensores de temperatura</h6>
+<section id="sensores-de-temperatura" class="level3" data-number="2.0.1">
+<h3 data-number="2.0.1" class="anchored" data-anchor-id="sensores-de-temperatura"><span class="header-section-number">2.0.1</span> Sensores de temperatura</h3>
 <p>Los sensores de temperatura se clasifican en dos tipos principales: sensores de contacto y sensores sin contacto. Los sensores de contacto, a su vez, se subdividen en tres categorías según su método de medición:</p>
 <p><strong><em>Termopares</em></strong>:Utilizan el efecto Seebeck para generar una voltaje por la unión de dos metales diferentes.</p>
 <p><strong><em>Termistores</em></strong>: Son resistores sensibles a la temperatura, cuya resistencia eléctrica varía en función de los cambios de temperatura. Están fabricados con materiales cerámicos o poliméricos. Existen dos tipos principales: los NTC (coeficiente de temperatura negativo) y los PTC (coeficiente de temperatura positivo).</p>
 <p><strong><em>Detectores de temperatura de resistencia (RTD)</em></strong>: Utilizan metales puros, como el platino, para medir la temperatura a través de la variación lineal y predecible de su resistencia eléctrica.</p>
 <p>Por otro lado, los sensores sin contacto incluyen los sensores infrarrojos, diseñados para detectar la radiación infrarroja emitida por un objeto a distancia.</p>
 <p>En el sector de la salud, los termistores son ampliamente utilizados debido a su alta precisión en los rangos de temperatura corporal y su rápida respuesta a los cambios de temperatura. Sin embargo, a raíz de la pandemia de COVID-19 en 2020, el uso de sensores infrarrojos se populariza considerablemente. Esto ha impulsado avances en su tecnología, lo que los hace cada vez más comunes para medir la temperatura corporal.</p>
+</section>
+<section id="la-aplicación-cozie-y-su-integración-con-smartwatches" class="level3" data-number="2.0.2">
+<h3 data-number="2.0.2" class="anchored" data-anchor-id="la-aplicación-cozie-y-su-integración-con-smartwatches"><span class="header-section-number">2.0.2</span> La Aplicación Cozie y su Integración con Smartwatches</h3>
+<p>Cozie es una aplicación de código abierto desarrollada con el propósito de recopilar datos subjetivos mediante encuestas en tiempo real, enfocándose en estudios de confort térmico y calidad ambiental. Su diseño busca integrar encuestas breves y específicas directamente en dispositivos portátiles, eliminando la necesidad de usar teléfonos inteligentes u otros medios adicionales para registrar las respuestas del usuario. Este enfoque ha facilitado su uso en investigaciones ambientales y ergonomía, proporcionando datos contextuales y en tiempo real.</p>
+<p><strong>Compatibilidad y Funcionamiento</strong></p>
+<p>Inicialmente, Cozie fue diseñada para dispositivos Fitbit, y posteriormente se amplió para incluir Apple Watch, aprovechando la capacidad de estos dispositivos para integrar datos fisiológicos con respuestas subjetivas. Las principales características de Cozie incluyen:</p>
+<ul>
+<li><strong>Compatibilidad con Smartwatches:</strong> Actualmente, Cozie es compatible con ciertos modelos de Fitbit (como el Versa 4) y con el Apple Watch (a partir de Series 3). La versión de Apple Watch incorpora la funcionalidad del framework HealthKit, lo que permite acceder a datos como frecuencia cardíaca y temperatura corporal.</li>
+<li><strong>Encuestas Directamente en el Dispositivo:</strong> Las preguntas se despliegan en la pantalla del smartwatch, y el usuario puede responder con simples interacciones táctiles, lo que hace el proceso rápido y conveniente.</li>
+<li><strong>Integración con Datos Fisiológicos:</strong> En el caso de Apple Watch, Cozie puede combinar las respuestas de las encuestas con mediciones fisiológicas como frecuencia cardíaca y temperatura de la piel, mejorando el contexto de los datos recolectados.</li>
+<li><strong>Código Abierto:</strong> Su naturaleza de código abierto permite a los desarrolladores personalizar ciertas funcionalidades y adaptarlas a las necesidades específicas de un proyecto.</li>
+</ul>
+<p><strong><em>Ventajas</em></strong></p>
+<p>Cozie presenta varias ventajas que la han convertido en una herramienta útil para estudios de confort térmico:</p>
+<ol type="1">
+<li><strong>Conveniencia:</strong> Al permitir que los usuarios respondan encuestas directamente desde sus relojes inteligentes, elimina la necesidad de dispositivos adicionales como teléfonos o tabletas.</li>
+<li><strong>Datos Contextualizados y en Tiempo Real:</strong> Las respuestas se registran junto con datos fisiológicos y temporales, proporcionando una visión más completa de las condiciones del usuario.</li>
+<li><strong>Portabilidad:</strong> Al estar integrada en un smartwatch, facilita la recolección de datos en cualquier lugar, incluso durante actividades cotidianas.</li>
+</ol>
+<p><strong><em>Desventajas</em></strong></p>
+<p>A pesar de sus beneficios, Cozie enfrenta limitaciones que pueden restringir su uso en ciertos contextos:</p>
+<ol type="1">
+<li><strong>Compatibilidad Limitada:</strong> Actualmente, Cozie solo está disponible para Apple Watch y algunos modelos de Fitbit más antiguos. Dispositivos más recientes de Fitbit han eliminado el soporte para aplicaciones de terceros, restringiendo aún más su implementación.</li>
+<li><strong>Costo Elevado de los Dispositivos:</strong> Los dispositivos compatibles, como el Apple Watch Series 8 (aproximadamente $5,500 MXN) y el Fitbit Versa 4 (aproximadamente $4,200 MXN), presentan precios significativamente altos, lo que limita su accesibilidad para usuarios o instituciones con recursos limitados.</li>
+<li><strong>Interfaz poco Intuitiva:</strong> Aunque funcional, la interfaz de Cozie no está optimizada para facilitar encuestas largas o altamente personalizadas, lo que podría ser un obstáculo en estudios más complejos.</li>
+<li><strong>Dificultades en la Descarga de Datos:</strong> Extraer y manejar los datos recopilados no es tan directo como en soluciones personalizadas, ya que depende de las herramientas y plataformas asociadas a cada dispositivo (HealthKit en Apple y Fitbit Dashboard).</li>
+</ol>
+<p><strong><em>Conclusión sobre Cozie</em></strong></p>
+<p>La aplicación Cozie ha demostrado ser una herramienta valiosa en investigaciones sobre confort térmico y calidad ambiental, especialmente para estudios que requieren datos en tiempo real y contextuales. Sin embargo, sus limitaciones en términos de compatibilidad, accesibilidad económica y flexibilidad de la interfaz restringen su adopción en escenarios más amplios. Esto resalta la necesidad de soluciones alternativas, como dispositivos personalizados y basados en tecnologías abiertas, que puedan proporcionar funcionalidades similares a costos más accesibles y con mayor adaptabilidad para diversas investigaciones.</p>
+</section>
+<section id="esolmet-ier" class="level3" data-number="2.0.3">
+<h3 data-number="2.0.3" class="anchored" data-anchor-id="esolmet-ier"><span class="header-section-number">2.0.3</span> ESOLMET-IER</h3>
+<p>El Instituto de Energías Renovables (IER) de la Universidad Nacional Autónoma de México (UNAM) ha establecido un robusto ecosistema de monitoreo ambiental que facilita la investigación y el desarrollo en energías renovables y confort térmico. Este ecosistema se centra en la Estación Solarimétrica y Meteorológica del IER-UNAM (ESOLMET-IER) y en el desarrollo de dispositivos complementarios para mediciones locales en espacios específicos.</p>
+<p>Estación Solarimétrica y Meteorológica del IER-UNAM (ESOLMET-IER):</p>
+<p>La ESOLMET-IER, ubicada en Temixco, Morelos, opera desde 2001 y proporciona datos meteorológicos y solarimétricos esenciales para investigaciones en energías renovables. Esta estación mide variables como:</p>
+<ul>
+<li><strong>Irradiancia solar directa, global, difusa y UV:</strong> Medidas en W/m², fundamentales para estudios de energía solar.</li>
+<li><strong>Temperatura del aire ambiente:</strong> Registrada en grados Celsius.</li>
+<li><strong>Humedad relativa:</strong> Expresada en porcentaje.</li>
+<li><strong>Velocidad del viento:</strong> Medida en metros por segundo.</li>
+<li><strong>Presión barométrica:</strong> Registrada en milibares.</li>
+</ul>
+<p>Los datos recopilados se almacenan en el Sistema de Información de datos Solarimétricos y Meteorológicos IER (SISMET-IER), que permite consultas por día o por rangos de fechas, facilitando el análisis histórico y en tiempo real de las variables medidas. ESOLMET</p>
+<p><strong>Desarrollo de dispositivos para mediciones locales:</strong></p>
+<p>Además de la ESOLMET-IER, el IER está desarrollando dispositivos para medir variables ambientales en espacios específicos, como aulas o áreas delimitadas. Estos dispositivos se centran en:</p>
+<ul>
+<li>Temperatura</li>
+<li>Humedad relativa</li>
+<li>Velocidad del viento</li>
+</ul>
+<p>La implementación de estos dispositivos permite obtener datos más precisos y contextualizados, esenciales para estudios de confort térmico y eficiencia energética en interiores. Al integrar estas mediciones con los datos de la ESOLMET-IER, se logra una comprensión más completa de las condiciones ambientales, tanto a nivel macro como micro, beneficiando proyectos de investigación y aplicaciones prácticas en el diseño de espacios sostenibles.</p>
+<p>Este ecosistema de monitoreo ambiental en el IER refleja el compromiso de la UNAM con la investigación de vanguardia en energías renovables y confort térmico, proporcionando herramientas y datos esenciales para el avance científico y tecnológico en estas áreas.</p>
 
 
 </section>
