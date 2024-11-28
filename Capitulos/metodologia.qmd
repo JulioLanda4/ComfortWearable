@@ -1,21 +1,64 @@
-# Metodología 
-
-Aquí se describe cual fue la metodología a seguir para desarrollar el proyecto
 
 
-**Emisividad de la piel**
 
-La emisividad de la piel puede variar dependiendo muchos factores, por lo que es difícil obtener un valor exacto. @Steketee_1973 reportó una emisividad aproximada de 0.98 con un margen de error $\pm$ 0.01, mientras que @Boylan_1992 obtuvieron un valor de 0.961 con un margen de error de $\pm$ 0.007. Tras varias pruebas con el sensor, se optó por usar una emisividad de ...
+# Marco Teórico
 
-## Elección de variables y sensores
+## 1. Confort Térmico y sus Modelos
 
-## Elección de hardware y software 
+- Definición del confort térmico (ASHRAE).
+- Importancia del confort térmico en la calidad de vida y consumo energético en edificaciones.
+- Modelos de confort térmico:
+  - Fanger (PMV-PPD).
+  - Modelos adaptativos y específicos para edificaciones con/sin aire acondicionado.
+- Limitaciones del modelo Fanger y necesidad de enfoques más precisos, como los dispositivos wearables y algoritmos de aprendizaje automático.
 
+## 2. Estrategias de Diseño Bioclimático
 
-## Diseño del primer prototipo de wearable
+- Importancia del diseño bioclimático para edificaciones que favorezcan el confort térmico.
+- Relación entre eficiencia energética, reducción de emisiones de gases de efecto invernadero y confort térmico en edificaciones residenciales y no residenciales.
 
-## Diseño de encuesta de confort térmico en wearable 
+## 3. Variables Físicas y Fisiológicas del Confort Térmico
 
-De las encuestas de confort existentes, que se va a tomar y como se va adaptar al dispositivo
+- Descripción de las siete variables físicas que influyen en el confort térmico:
+  - Temperatura, humedad relativa, velocidad del aire, etc.
+- Variables fisiológicas relacionadas con el confort térmico:
+  - Temperatura de la piel, frecuencia cardíaca y variabilidad de la frecuencia cardíaca.
+- Importancia de la correlación entre estas variables para evaluar el confort térmico.
 
-## Documentación del prototipo 
+## 4. Aplicación de Dispositivos Wearables en Estudios de Confort
+
+- Uso de dispositivos wearables para recopilar datos ambientales y fisiológicos que mejoran la precisión de los modelos de confort térmico.
+- Comparación entre dispositivos wearables y métodos tradicionales para el estudio del confort térmico.
+
+## 5. Revisión de Herramientas Preexistentes: Cozie y su Integración con Smartwatches
+
+- Descripción de la aplicación Cozie y su uso para recopilar datos de confort térmico.
+- Compatibilidad de Cozie con diferentes dispositivos, sus ventajas y limitaciones.
+- Necesidad de alternativas basadas en tecnologías abiertas para proporcionar mayor flexibilidad y menores costos.
+
+## 6. Ecosistema de Monitoreo en el Instituto de Energías Renovables
+
+- Infraestructura del IER y la Estación Solarimétrica y Meteorológica del IER-UNAM (ESOLMET-IER).
+- Dispositivos complementarios desarrollados por el IER para estudios específicos del confort térmico.
+
+## 7. Sensores Utilizados en el Proyecto
+
+- Clasificación de sensores de temperatura (contacto y sin contacto).
+- Descripción del funcionamiento de los sensores seleccionados, como el GY-906.
+- Uso de sensores de frecuencia cardíaca, específicamente los sensores MAX30102, y sus características.
+
+## 8. Metodologías para la Evaluación del Confort Térmico
+
+- Metodologías para realizar encuestas de confort térmico y su integración con datos fisiológicos.
+- Importancia de las encuestas en el proyecto y alineación con normas internacionales como la ISO 10551.
+
+## 9. Tecnologías Digitales y el Internet de las Cosas (IoT) en la Eficiencia Energética
+
+- Contribución de la digitalización energética a la eficiencia y fiabilidad del sistema energético mediante el uso del IoT.
+- Uso de plataformas IoT, como ThingsBoard, para la recopilación y análisis de datos de confort térmico.
+
+## 10. Contexto del Proyecto y su Relevancia
+
+- Colocación del proyecto en el contexto de la transición energética y la lucha contra el cambio climático.
+- Relevancia del desarrollo de dispositivos de bajo costo y basados en tecnologías abiertas para el estudio del confort térmico en diferentes entornos.
+

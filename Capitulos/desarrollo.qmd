@@ -324,16 +324,16 @@ Posteriormente, con `RATE\_SIZE` fijado en 6, se ajusta el valor de `sampleAvera
 
 Para la calibración del sensor de temperatura GY-906, se utiliza una cámara termográfica Fluke Ti9 como referencia. Tanto el sensor como la cámara se configuran con una emisividad de 0.98, correspondiente a la emisividad promedio de la piel humana. Las pruebas se realizan durante tres días, entre las 10:00 a. m. y las 06:00 p. m., con mediciones cada media hora para capturar diferentes condiciones ambientales.
 
-Durante cada sesión de medición, el sensor GY-906 realiza diez mediciones consecutivas en un lapso de diez segundos, y el promedio de estas mediciones se envía a la plataforma Thingsboard, lo cual permite reducir el ruido y aumentar la precisión. Simultáneamente, las lecturas de la cámara termográfica se registran manualmente. Para minimizar el error por movimiento, el dispositivo emite una alerta vibratoria de un segundo, seguida de una pausa de cuatro segundos antes de realizar la medición, permitiendo al usuario mantener la mano inmóvil durante el proceso de medición. Se obtienen 61 pares de mediciones, la @tbl-estadisticas-camara muestra las características estadísticas de ambos conjuntos de datos.
+Durante cada sesión de medición, el sensor GY-906 realiza diez mediciones consecutivas en un lapso de diez segundos, y el promedio de estas mediciones se envía a la plataforma Thingsboard, lo cual permite reducir el ruido y aumentar la precisión. Simultáneamente, las lecturas de la cámara termográfica se registran manualmente. Para minimizar el error por movimiento, el dispositivo emite una alerta vibratoria de un segundo, seguida de una pausa de cuatro segundos antes de realizar la medición, permitiendo al usuario mantener la mano inmóvil durante el proceso de medición. Se obtienen 86 pares de mediciones, la @tbl-estadisticas-camara muestra las características estadísticas de ambos conjuntos de datos.
 
 
 | **Estadística**          | **Sensor (°C)** | **Cámara (°C)** |
 |--------------------------|-----------------|-----------------|
-| Media                    | 34.58           | 35.30           |
-| Desviación estándar      | 0.75            | 0.63            |
+| Media                    | 34.65           | 35.25           |
+| Desviación estándar      | 0.72            | 0.65            |
 | Mínimo                   | 32.36           | 32.80           |
-| Máximo                   | 35.83           | 35.83           |
-: Estadísticas de las Mediciones del Sensor GY-906 y la Cámara Termográfica Fluke Ti9.  {#tbl-estadisticas camara .hover .sm}
+| Máximo                   | 35.87           | 35.87           |
+: Estadísticas de las Mediciones del Sensor GY-906 y la Cámara Termográfica Fluke Ti9.  {#tbl-estadisticas-camara .hover .sm}
 
 Se realiza un análisis inicial entre las mediciones de la cámara respecto al sensor y se obtienen los siguientes datos: 
 
@@ -342,15 +342,15 @@ Se realiza un análisis inicial entre las mediciones de la cámara respecto al s
 
 Dada la naturaleza de los datos, se aplica una calibración mediante un modelo de regresión lineal, obteniéndose los siguientes valores clave:
 
-- Pendiente: 0.47
-- Intercepto: 18.99
+- Pendiente: 0.54 ± 0.08
+- Intercepto: 16.70 ± 2.77
 
-Una vez obtenidos estos valores, se aplica la función de regresión lineal sobre los datos del sensor para generar una nueva columna con datos corregidos. Al comparar esta nueva columna con las lecturas de la cámara, se obtiene un error estándar de la estimación $S_e$ de 0.54, mientras que los errores obtenidos son los siguientes:
+Una vez obtenidos estos valores, se aplica la función de regresión lineal sobre los datos del sensor para generar una nueva columna con datos corregidos. Al comparar esta nueva columna con las lecturas de la cámara se obtienen los siguientes errores:
 
-- EM: 2.19x10<sup>-15</sup>
-- EAM: 0.39
+- EM: -3.39 X 10<sup>-15</sup>°C
+- EAM: 0.41°C
 
-La @fig-dispersion muestra la comparación entre las gráficas de dispersión de datos antes y después de la calibración.
+La @fig-dispersion compara las gráficas de dispersión de los datos, donde la figura a) muestra los datos antes de la calibración y la figura b) presenta los datos después de la calibración.
 
 
 ```{python}
@@ -433,34 +433,6 @@ ax2.text(0.5, 1.05, 'b)', transform=ax2.transAxes, ha='center', fontsize=12)
 plt.tight_layout()
 plt.show()
 ```
-
-
-Posteriormente, se lleva a cabo una segunda campaña de medición, recopilando 25 pares de datos adicionales, con la finalidad de validar la función de regresión lineal obtenida. Juntando ambos conjuntos de datos, se obtiene un total de 86 pares de mediciones. Los errores iniciales de este conjunto son:
-
-- EM: 0.59 
-- EAM: 0.66
-
-Aplicando la función de regresión lineal, se obtiene un error estándar de la estimación $S_e$ de 0.54, lo cual demuestra la consistencia del valor entre el primer conjunto de datos y este nuevo conjunto, mientras que los errores son los siguientes:
-
-- EM: -0.08
-- EAM: 0.41
-
-La @fig-dispersion2 muestra la comparación de las gráficas de dispersión del conjunto total de datos (86 mediciones), antes y después de la calibración.
-
-
-Finalmente, la @tbl-errores-gy muestra los EM y EAM antes y después de la calibración de los dos conjuntos de datos, el conjunto inicial a partir del cual se obtuvo la los parámetros para realizar el modelo de regresión lineal y el conjunto de validación en el cual se llevo a cabo una segunda campaña de medición para obtener más datos y verificar la fiabilidad de la calibración.
-
-+-------------+----------------------+-------------+----------------------------+-------------+
-|             | **Conjunto inicial** |             | **Conjunto de validación** |             |
-+             +                      +             +                            +             +
-|             | *Sin calibrar*       |*Calibrado*  | *Sin calibrar*             |*Calibrado*  |
-+=============+======================+=============+============================+=============+
-| **EM**      | 0.5                  | 0.89        | 0.65                       | -0.08       |
-+-------------+----------------------+-------------+----------------------------+-------------+
-| **EAM**     | 0.72                 | 0.54        | 0.61                       | 0.43        |
-+-------------+----------------------+-------------+----------------------------+-------------+
-: Error Medio (EM) y Error Absoluto Medio (EAM) para el conjunto inicial y el conjunto de validación antes y después de la calibración. {#tbl-errores-gy .hover .sm}
-
 
 
 ## Lógica de programación {#sec-programación}
@@ -674,7 +646,7 @@ Una vez configurada la libreta, se realiza la descarga de los datos almacenados 
 
 **Resultados de la validación** 
 
-Para validar el funcionamiento del reloj inteligente, se lleva a cabo una campaña de prueba con una duración de cinco días, en la cual se recopilan un total de cincuenta y dos mediciones. La @tbl-data_downloaded  presenta una muestra de cinco mediciones obtenidas durante esta campaña. 
+Para validar el funcionamiento del reloj inteligente, se realizan dos campañas de medición, cada una con diferentes individuos, obteniendo un total de 60 mediciones. La @tbl-data_downloaded proporciona una muestra que incluye tres mediciones correspondientes al primer sujeto y tres mediciones del segundo sujeto.
 
 En la tabla, la columna correspondiente a la frecuencia de uso de espacios con aire acondicionado ($F$) se muestra de forma numérica. Esto se debe a que los valores de esta columna están codificados según un diccionario, cuyo propósito es simplificar la visualización de los datos. La equivalencia de este diccionario es la siguiente:
 
@@ -688,22 +660,26 @@ diccionario_frecuencia = {
 ```
 
 
-+---------------------+--------------+-----------+---------------+---------+--------+-------------+-----------+----------+---------+---------+----------+---------+
-| **Fecha**           | **$I_{cl}$** | **$M_r$** | **Ubicación** | **TSV** | **TA** | **$T_{w}$** | **$H_r$** | **Edad** | **$W$** | **$H$** | **Sexo** | **$F$** |
-+                     +              +           +               +         +        +             +           +          +         +         +          +         +
-| *AAAA-MM-DD HH:MM*  | *clo*        | *met*     | *-*           | *-*     | *-*    | *°C*        | *bpm*     | *años*   | *kg*    | *m*     | *-*      | *-*     |
-+=====================+==============+===========+===============+=========+========+=============+===========+==========+=========+=========+==========+=========+
-| 2024-07-17 13:32    | 0.21         | 1.5       | Aula 1        | 0.0     | Sí     | 34.3        | 66        | 28       | 65      | 1.70    | M        | 1       |
-+---------------------+--------------+-----------+---------------+---------+--------+-------------+-----------+----------+---------+---------+----------+---------+
-| 2024-07-17 14:32    | 0.21         | 1.5       | Aula 1        | 0.0     | Sí     | 35.4        | 77        | 28       | 65      | 1.70    | M        | 1       |
-+---------------------+--------------+-----------+---------------+---------+--------+-------------+-----------+----------+---------+---------+----------+---------+
-| 2024-07-17 16:45    | 0.21         | 2.0       | Aula 1        | 2.0     | No     | 35.2        | 85        | 28       | 65      | 1.70    | M        | 1       |
-+---------------------+--------------+-----------+---------------+---------+--------+-------------+-----------+----------+---------+---------+----------+---------+
-| 2024-07-17 17:43    | 0.21         | 1.8       | Aula 1        | 2.0     | No     | 34.6        | 59        | 28       | 65      | 1.70    | M        | 1       |
-+---------------------+--------------+-----------+---------------+---------+--------+-------------+-----------+----------+---------+---------+----------+---------+
-| 2024-07-17 20:50    | 0.21         | 1.8       | Aula 1        | 1.0     | No     | 35.0        | 57        | 28       | 65      | 1.70    | M        | 1       |
-+---------------------+--------------+-----------+---------------+---------+--------+-------------+-----------+----------+---------+---------+----------+---------+
-: Conjunto de datos de cinco encuestas térmicas y mediciones, que incluye el nivel de aislamiento de la ropa ($I_{cl}$), la tasa metabólica ($M_r$), la ubicación, el voto de sensación térmica (TSV), la aceptación térmica (TA), la temperatura de la piel de la muñeca ($T_w$), la frecuencia cardíaca ($H_r$), la edad, el peso ($W$), la altura ($H$), el sexo y la frecuencia de uso de espacios con aire acondicionado ($F$). {#tbl-data_downloaded .hover .sm}
++---------------------+--------------+-----------+---------------+---------+--------+-------------+-----------+----------+---------+---------+----------+---------+---------+
+| **Fecha**           | **$I_{cl}$** | **$M_r$** | **Ubicación** | **TSV** | **TA** | **$T_{w}$** | **$H_r$** | **Edad** | **$W$** | **$H$** | **Sexo** | **$F$** | **$I$** +
++                     +              +           +               +         +        +             +           +          +         +         +          +         +         +
+| *AAAA-MM-DD HH:MM*  | *clo*        | *met*     | *-*           | *-*     | *-*    | *°C*        | *bpm*     | *años*   | *kg*    | *m*     | *-*      | *-*     | *-*     +
++=====================+==============+===========+===============+=========+========+=============+===========+==========+=========+=========+==========+=========+=========+
+| 2024-07-17 13:32    | 0.21         | 1.5       | Aula 1        | 0.0     | Sí     | 34.3        | 66        | 28       | 65      | 1.70    | M        | 1       | 1       +
++---------------------+--------------+-----------+---------------+---------+--------+-------------+-----------+----------+---------+---------+----------+---------+---------+
+| 2024-07-17 14:32    | 0.21         | 1.5       | Aula 1        | 0.0     | Sí     | 35.4        | 77        | 28       | 65      | 1.70    | M        | 1       | 1       +
++---------------------+--------------+-----------+---------------+---------+--------+-------------+-----------+----------+---------+---------+----------+---------+---------+
+| 2024-07-17 16:45    | 0.21         | 2.0       | Aula 1        | 2.0     | No     | 35.2        | 85        | 28       | 65      | 1.70    | M        | 1       | 1       +
++---------------------+--------------+-----------+---------------+---------+--------+-------------+-----------+----------+---------+---------+----------+---------+---------+
+| ...                 | ...          | ...       | ...           | ...     | ...    | ...         | ...       | ...      | ...     | ...     | ...      | ...     | ...     +
++---------------------+--------------+-----------+---------------+---------+--------+-------------+-----------+----------+---------+---------+----------+---------+---------+
+| 2024-11-13 08:46    | 0.48         | 1.3       | Aula 2        | 0.0     | Sí     | 33.6        | 62        | 46       | 73      | 1.70    | M        | 1       | 2       +
++---------------------+--------------+-----------+---------------+---------+--------+-------------+-----------+----------+---------+---------+----------+---------+---------+
+| 2024-11-14 16:45    | 0.40         | 1.3       | Aula 2        | 0.0     | Sí     | 36.9        | 64        | 46       | 73      | 1.70    | M        | 1       | 2       +
++---------------------+--------------+-----------+---------------+---------+--------+-------------+-----------+----------+---------+---------+----------+---------+---------+
+| 2024-11-14 20:45    | 0.40         | 1.3       | Aula 2        | 0.0     | Sí     | 35.0        | 93        | 46       | 70      | 1.70    | M        | 1       | 2       +
++---------------------+--------------+-----------+---------------+---------+--------+-------------+-----------+----------+---------+---------+----------+---------+---------+
+: Conjunto de datos de cinco encuestas térmicas y mediciones, que incluye el nivel de aislamiento de la ropa ($I_{cl}$), la tasa metabólica ($M_r$), la ubicación, el voto de sensación térmica (TSV), la aceptación térmica (TA), la temperatura de la piel de la muñeca ($T_w$), la frecuencia cardíaca ($H_r$), la edad, el peso ($W$), la altura ($H$), el sexo, la frecuencia de uso de espacios con aire acondicionado ($F$) y el identificador del individuo que está usando el reloj inteligente ($I$). {#tbl-data_downloaded .hover .sm}
 
 
 
