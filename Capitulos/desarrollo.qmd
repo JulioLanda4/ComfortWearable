@@ -337,8 +337,8 @@ Durante cada sesión de medición, el sensor GY-906 realiza diez mediciones cons
 
 Se realiza un análisis inicial entre las mediciones de la cámara respecto al sensor y se obtienen los siguientes datos: 
 
-- Error Medio (EM): 0.72°C
-- Error Absoluto Medio (EAM): 0.77°C 
+- Error Medio (EM): 0.60°C
+- Error Absoluto Medio (EAM): 0.66°C 
 
 Dada la naturaleza de los datos, se aplica una calibración mediante un modelo de regresión lineal, obteniéndose los siguientes valores clave:
 
@@ -366,18 +366,19 @@ from sklearn.linear_model import LinearRegression
 ruta_excel = "../datos/DatosTemperatura.xlsx"
 datos = pd.read_excel(ruta_excel, sheet_name="Sheet1")
 datos_nuevos = pd.read_excel(ruta_excel, sheet_name="Sheet2")
+datos_unidos = pd.concat([datos, datos_nuevos], ignore_index=True)
 
 # Crear la figura con dos subplots (1 fila, 2 columnas)
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))
 
 # Calcular la regresión lineal para los datos originales
-x_original = datos["Sensor"].values.reshape(-1, 1)
-y_original = datos["Camara"].values
+x_original = datos_unidos["Sensor"].values.reshape(-1, 1)
+y_original = datos_unidos["Camara"].values
 modelo_original = LinearRegression().fit(x_original, y_original)
 pendiente_original = modelo_original.coef_[0]
 intercepto_original = modelo_original.intercept_
 
-datos["Valores Corregidos"] = datos["Sensor"] * pendiente_original + intercepto_original
+datos_unidos["Valores Corregidos"] = datos_unidos["Sensor"] * pendiente_original + intercepto_original
 
 # --- Primer subplot: Datos originales --- #
 
@@ -385,11 +386,11 @@ px = [30, 40]
 py = [30, 40]
 
 ax1.plot(px, py, "r--", label="Línea de identidad")
-ax1.scatter(datos["Sensor"], datos["Camara"], s=25, alpha=0.4, label="Datos")
+ax1.scatter(datos_unidos["Sensor"], datos_unidos["Camara"], s=25, alpha=0.4, label="Datos")
 
 # Configurar los límites de la gráfica antes de graficar la línea de regresión
-limite_max_primero = datos[["Camara", "Sensor"]].max().max() + 0.1
-limite_min_primero = datos[["Camara", "Sensor"]].min().min() - 0.1
+limite_max_primero = datos_unidos[["Camara", "Sensor"]].max().max() + 0.1
+limite_min_primero = datos_unidos[["Camara", "Sensor"]].min().min() - 0.1
 ax1.set_xlim(limite_min_primero, limite_max_primero)
 ax1.set_ylim(limite_min_primero, limite_max_primero)
 
@@ -403,17 +404,18 @@ ax1.set_xlabel("Sensor [°C]")
 ax1.set_ylabel("Cámara [°C]")
 ax1.grid()
 
-ax1.legend()
-ax1.set_title("Gráfica de dispersión de datos originales")
+ax1.legend(loc='lower right')
+ax1.text(0.5, 1.05, 'a)', transform=ax1.transAxes, ha='center', fontsize=12)
+#ax1.set_title("Gráfica de dispersión de datos originales")
 
 # --- Segundo subplot: Datos corregidos --- #
 
 ax2.plot(px, py, "r--", label="Línea de identidad")
-ax2.scatter(datos["Valores Corregidos"], datos["Camara"], s=25, alpha=0.4, label="Datos")
+ax2.scatter(datos_unidos["Valores Corregidos"], datos_unidos["Camara"], s=25, alpha=0.4, label="Datos")
 
 # Configurar los límites de la gráfica antes de graficar la línea de regresión
-limite_max_segundo = datos[["Camara", "Valores Corregidos"]].max().max() + 0.1
-limite_min_segundo = datos[["Camara", "Valores Corregidos"]].min().min() - 0.1
+limite_max_segundo = datos_unidos[["Camara", "Valores Corregidos"]].max().max() + 0.1
+limite_min_segundo = datos_unidos[["Camara", "Valores Corregidos"]].min().min() - 0.1
 ax2.set_xlim(limite_min_segundo, limite_max_segundo)
 ax2.set_ylim(limite_min_segundo, limite_max_segundo)
 
@@ -423,8 +425,9 @@ ax2.set_xlabel("Sensor calibrado [°C]")
 ax2.set_ylabel("Cámara [°C]")
 ax2.grid()
 
-ax2.legend()
-ax2.set_title("Gráfica de dispersión de datos corregidos")
+ax2.legend(loc='lower right')
+ax2.text(0.5, 1.05, 'b)', transform=ax2.transAxes, ha='center', fontsize=12)
+#ax2.set_title("Gráfica de dispersión de datos corregidos")
 
 # Mostrar la figura completa con ambos subplots
 plt.tight_layout()
@@ -444,70 +447,6 @@ Aplicando la función de regresión lineal, se obtiene un error estándar de la 
 
 La @fig-dispersion2 muestra la comparación de las gráficas de dispersión del conjunto total de datos (86 mediciones), antes y después de la calibración.
 
-
-```{python}
-#| echo: false
-#| fig-cap: Gráficos de dispersión para validación de la calibración del Sensor GY-906.
-#| label: fig-dispersion2
-
-#| label: fig-scatter2
-#| fig-cap: Gráfica de dispersión de datos del nuevo conjunto de datos
-
-datos_unidos = pd.concat([datos, datos_nuevos], ignore_index=True)
-
-# Crear la figura con dos subplots (1 fila, 2 columnas)
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))
-
-
-datos_unidos["Valores Corregidos"] = datos_unidos["Sensor"] * pendiente_original + intercepto_original
-
-# --- Primer subplot: Datos originales --- #
-
-px = [30, 40]
-py = [30, 40]
-
-ax1.plot(px, py, "r--", label="Línea de identidad")
-ax1.scatter(datos_unidos["Sensor"], datos_unidos["Camara"], s=25, alpha=0.4, label="Datos")
-
-# Configurar los límites de la gráfica antes de graficar la línea de regresión
-limite_max_primero = datos_unidos[["Camara", "Sensor"]].max().max() + 0.1
-limite_min_primero = datos_unidos[["Camara", "Sensor"]].min().min() - 0.1
-ax1.set_xlim(limite_min_primero, limite_max_primero)
-ax1.set_ylim(limite_min_primero, limite_max_primero)
-
-# Configurar la leyenda y los ejes
-ax1.set_xlabel("Sensor [°C]")
-ax1.set_ylabel("Cámara [°C]")
-ax1.grid()
-
-ax1.legend()
-ax1.set_title("Gráfica de dispersión de datos originales")
-
-# --- Segundo subplot: Datos corregidos --- #
-
-ax2.plot(px, py, "r--", label="Línea de identidad")
-ax2.scatter(datos_unidos["Valores Corregidos"], datos_unidos["Camara"], s=25, alpha=0.4, label="Datos")
-
-# Configurar los límites de la gráfica antes de graficar la línea de regresión
-limite_max_segundo = datos_unidos[["Camara", "Valores Corregidos"]].max().max() + 0.1
-limite_min_segundo = datos_unidos[["Camara", "Valores Corregidos"]].min().min() - 0.1
-ax2.set_xlim(limite_min_segundo, limite_max_segundo)
-ax2.set_ylim(limite_min_segundo, limite_max_segundo)
-
-
-# Configurar la leyenda y los ejes
-ax2.set_xlabel("Sensor calibrado [°C]")
-ax2.set_ylabel("Cámara [°C]")
-ax2.grid()
-
-ax2.legend()
-ax2.set_title("Gráfica de dispersión de datos corregidos")
-
-# Mostrar la figura completa con ambos subplots
-plt.tight_layout()
-plt.show()
-
-```
 
 Finalmente, la @tbl-errores-gy muestra los EM y EAM antes y después de la calibración de los dos conjuntos de datos, el conjunto inicial a partir del cual se obtuvo la los parámetros para realizar el modelo de regresión lineal y el conjunto de validación en el cual se llevo a cabo una segunda campaña de medición para obtener más datos y verificar la fiabilidad de la calibración.
 

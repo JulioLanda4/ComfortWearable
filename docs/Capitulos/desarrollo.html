@@ -1139,8 +1139,8 @@ Tabla&nbsp;3.11: Estadísticas de las Mediciones del Sensor GY-906 y la Cámara 
 </div>
 <p>Se realiza un análisis inicial entre las mediciones de la cámara respecto al sensor y se obtienen los siguientes datos:</p>
 <ul>
-<li>Error Medio (EM): 0.72°C</li>
-<li>Error Absoluto Medio (EAM): 0.77°C</li>
+<li>Error Medio (EM): 0.60°C</li>
+<li>Error Absoluto Medio (EAM): 0.66°C</li>
 </ul>
 <p>Dada la naturaleza de los datos, se aplica una calibración mediante un modelo de regresión lineal, obteniéndose los siguientes valores clave:</p>
 <ul>
@@ -1158,7 +1158,7 @@ Tabla&nbsp;3.11: Estadísticas de las Mediciones del Sensor GY-906 y la Cámara 
 <div id="fig-dispersion" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dispersion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="desarrollo_files/figure-html/fig-dispersion-output-1.png" width="949" height="470" class="figure-img">
+<img src="desarrollo_files/figure-html/fig-dispersion-output-1.png" width="949" height="471" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dispersion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;3.5: Gráficos de dispersión de las mediciones del sensor GY-906 y la cámara termográfica Fluke Ti9 antes y después de la calibración.
@@ -1177,21 +1177,7 @@ Figura&nbsp;3.5: Gráficos de dispersión de las mediciones del sensor GY-906 y 
 <li>EM: -0.08</li>
 <li>EAM: 0.41</li>
 </ul>
-<p>La <a href="#fig-dispersion2" class="quarto-xref">Figura&nbsp;<span>3.6</span></a> muestra la comparación de las gráficas de dispersión del conjunto total de datos (86 mediciones), antes y después de la calibración.</p>
-<div id="cell-fig-dispersion2" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display">
-<div id="fig-dispersion2" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-dispersion2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="desarrollo_files/figure-html/fig-dispersion2-output-1.png" width="949" height="470" class="figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dispersion2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3.6: Gráficos de dispersión para validación de la calibración del Sensor GY-906.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
+<p>La <span class="quarto-unresolved-ref">?fig-dispersion2</span> muestra la comparación de las gráficas de dispersión del conjunto total de datos (86 mediciones), antes y después de la calibración.</p>
 <p>Finalmente, la <a href="#tbl-errores-gy" class="quarto-xref">Tabla&nbsp;<span>3.12</span></a> muestra los EM y EAM antes y después de la calibración de los dos conjuntos de datos, el conjunto inicial a partir del cual se obtuvo la los parámetros para realizar el modelo de regresión lineal y el conjunto de validación en el cual se llevo a cabo una segunda campaña de medición para obtener más datos y verificar la fiabilidad de la calibración.</p>
 <div id="tbl-errores-gy" class="hover sm quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -1264,14 +1250,14 @@ Tabla&nbsp;3.12: Error Medio (EM) y Error Absoluto Medio (EAM) para el conjunto 
 <ol start="2" type="1">
 <li><strong>Descripción de la función actualizar_hora</strong></li>
 </ol>
-<p>La función denominada <code>actualizar\_hora</code>, que se encuentra en el archivo <code>ui\_events.c</code>, se encarga de actualizar la hora en pantalla, además habilita o desahibilita el botón para realizar la encuesta según el horario o si esta ya fue o no contestada. Esta función también es la encargada de emitir la alarma para alertar al usuario la disponibilidad de una nueva encuesta. El diagram de flujo de esta función se presenta en la <a href="#fig-actualizarhora" class="quarto-xref">Figura&nbsp;<span>3.7</span></a>.</p>
+<p>La función denominada <code>actualizar\_hora</code>, que se encuentra en el archivo <code>ui\_events.c</code>, se encarga de actualizar la hora en pantalla, además habilita o desahibilita el botón para realizar la encuesta según el horario o si esta ya fue o no contestada. Esta función también es la encargada de emitir la alarma para alertar al usuario la disponibilidad de una nueva encuesta. El diagram de flujo de esta función se presenta en la <a href="#fig-actualizarhora" class="quarto-xref">Figura&nbsp;<span>3.6</span></a>.</p>
 <div id="fig-actualizarhora" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-actualizarhora-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../Imagenes/Actualizar_hora.svg" class="img-fluid figure-img" style="width:50.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-actualizarhora-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3.7: Diagrama de flujo de la función actualizar_hora.
+Figura&nbsp;3.6: Diagrama de flujo de la función actualizar_hora.
 </figcaption>
 </figure>
 </div>
@@ -1280,14 +1266,14 @@ Figura&nbsp;3.7: Diagrama de flujo de la función actualizar_hora.
 </ol>
 <p>Cuando el usuario presiona el botón para iniciar la encuesta, se da inicio a un proceso que consta de varias etapas: primero, el usuario responde a las preguntas de la encuesta; luego, se registran las variables fisiológicas; seguidamente, se validan las mediciones obtenidas; y, finalmente, se envían los datos a la plataforma Thingsboard.</p>
 <p>Es importante destacar que, una vez enviada la encuesta, las respuestas y mediciones no se reinician automáticamente. Esto permite que, al iniciar una nueva encuesta, el reloj conserve las respuestas de la última encuesta realizada. De esta manera, el usuario puede optar por mantener las mismas respuestas o modificarlas según sea necesario. Esta funcionalidad tiene dos objetivos principales: en primer lugar, reducir el tiempo necesario para responder encuestas de manera consecutiva; y, en segundo lugar, permitir al usuario observar cómo evolucionan sus respuestas a lo largo del día.</p>
-<p>En caso de que las mediciones de los sensores no sean aceptadas por el usuario, estas se realizan nuevamente. El diagrama de flujo que describe el proceso de la encuesta se presenta en la Figura <a href="#fig-iniciarencuesta" class="quarto-xref">Figura&nbsp;<span>3.8</span></a>.</p>
+<p>En caso de que las mediciones de los sensores no sean aceptadas por el usuario, estas se realizan nuevamente. El diagrama de flujo que describe el proceso de la encuesta se presenta en la Figura <a href="#fig-iniciarencuesta" class="quarto-xref">Figura&nbsp;<span>3.7</span></a>.</p>
 <div id="fig-iniciarencuesta" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-iniciarencuesta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../Imagenes/Iniciar_encuesta.svg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-iniciarencuesta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3.8: Diagrama de flujo de encuesta y medición de variables.
+Figura&nbsp;3.7: Diagrama de flujo de encuesta y medición de variables.
 </figcaption>
 </figure>
 </div>
@@ -1304,25 +1290,25 @@ Figura&nbsp;3.8: Diagrama de flujo de encuesta y medición de variables.
 </ol>
 <p>Para iniciar, se instala la versión más reciente del Arduino IDE, disponible para descarga en su <a href="https://www.arduino.cc/" target="_blank">sitio oficial</a>. A continuación, se agrega el paquete de placas ESP32 al entorno del Arduino IDE. Para ello, se abre el programa, se selecciona la opción “Archivo” y luego “Preferencias”. En el cuadro de texto “URLs adicionales para el gestor de tarjetas”, se inserta la URL:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>tal como se muestra en la <a href="#fig-paqueteriaArduino" class="quarto-xref">Figura&nbsp;<span>3.9</span></a>, la flecha roja en la figura señala al recuadro en donde debe colocarse la URL.</p>
+<p>tal como se muestra en la <a href="#fig-paqueteriaArduino" class="quarto-xref">Figura&nbsp;<span>3.8</span></a>, la flecha roja en la figura señala al recuadro en donde debe colocarse la URL.</p>
 <div id="fig-paqueteriaArduino" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-paqueteriaArduino-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../Imagenes/Paqueteria_arduino.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-paqueteriaArduino-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3.9: Configuración de las URLs adicionales en el gestor de tarjetas del Arduino IDE para agregar el paquete de placas ESP32.
+Figura&nbsp;3.8: Configuración de las URLs adicionales en el gestor de tarjetas del Arduino IDE para agregar el paquete de placas ESP32.
 </figcaption>
 </figure>
 </div>
-<p>A continuación, se accede al Gestor de placas dando click en “Herramientas”, seguido de “Placa” y, finalmente, “Gestor de placas”. En el gestor, se busca “esp32” y se procede a instalar el sistema ESP32 de Espressif, como se muestra en la <a href="#fig-esp32placas" class="quarto-xref">Figura&nbsp;<span>3.10</span></a>. La flecha roja en la figura señala el paquete que debe instalarse.</p>
+<p>A continuación, se accede al Gestor de placas dando click en “Herramientas”, seguido de “Placa” y, finalmente, “Gestor de placas”. En el gestor, se busca “esp32” y se procede a instalar el sistema ESP32 de Espressif, como se muestra en la <a href="#fig-esp32placas" class="quarto-xref">Figura&nbsp;<span>3.9</span></a>. La flecha roja en la figura señala el paquete que debe instalarse.</p>
 <div id="fig-esp32placas" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-esp32placas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../Imagenes/esp32_placas.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-esp32placas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3.10: Selección e instalación del paquete ESP32 de Espressif Systems en el Gestor de placas del Arduino IDE.
+Figura&nbsp;3.9: Selección e instalación del paquete ESP32 de Espressif Systems en el Gestor de placas del Arduino IDE.
 </figcaption>
 </figure>
 </div>
@@ -1435,23 +1421,23 @@ Cargando…
 <li><strong>Instrucciones generales de interacción con el reloj inteligente</strong></li>
 </ol>
 <p>El reloj inteligente se carga a través de un puerto USB-C. Es importante que el interruptor del dispositivo permanezca en posición de encendido durante la carga, ya que, de lo contrario, no será posible cargar la batería. La carcasa del reloj incluye pestañas laterales diseñadas para sujetar las correas y ajustarlo cómodamente a la muñeca del usuario.</p>
-<p>La interfaz del reloj está compuesta por siete pantallas principales y dos ventanas emergentes. La pantalla principal (<a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.11</span></a>(a)) permite al usuario visualizar la hora actual y el tiempo restante para la siguiente encuesta.</p>
-<p>Cuando se habilita el botón para responder una encuesta, se muestra la pantalla de encuesta (<a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.11</span></a>(b)), que guía al usuario a través de las preguntas del formulario. Cada una de las preguntas está asociada con una pantalla específica:</p>
+<p>La interfaz del reloj está compuesta por siete pantallas principales y dos ventanas emergentes. La pantalla principal (<a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.10</span></a>(a)) permite al usuario visualizar la hora actual y el tiempo restante para la siguiente encuesta.</p>
+<p>Cuando se habilita el botón para responder una encuesta, se muestra la pantalla de encuesta (<a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.10</span></a>(b)), que guía al usuario a través de las preguntas del formulario. Cada una de las preguntas está asociada con una pantalla específica:</p>
 <ul>
-<li>La primera pregunta, relacionada con la vestimenta actual del usuario, se visualiza en la <a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.11</span></a>(c).</li>
-<li>La segunda pregunta, relacionada con la actividad que el usuario está realizando en ese momento, se muestra en la <a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.11</span></a>(d).</li>
-<li>La tercera pregunta, relacionada con la ubicación actual del usuario, aparece en la <a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.11</span></a>(e).</li>
-<li>La cuarta pregunta, relacionada con la sensación térmica del usuario, se despliega en la <a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.11</span></a>(f).</li>
-<li>La quinta y última pregunta, relacionada con la aceptación de la sensación térmica, se presenta en la <a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.11</span></a>(h).</li>
+<li>La primera pregunta, relacionada con la vestimenta actual del usuario, se visualiza en la <a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.10</span></a>(c).</li>
+<li>La segunda pregunta, relacionada con la actividad que el usuario está realizando en ese momento, se muestra en la <a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.10</span></a>(d).</li>
+<li>La tercera pregunta, relacionada con la ubicación actual del usuario, aparece en la <a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.10</span></a>(e).</li>
+<li>La cuarta pregunta, relacionada con la sensación térmica del usuario, se despliega en la <a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.10</span></a>(f).</li>
+<li>La quinta y última pregunta, relacionada con la aceptación de la sensación térmica, se presenta en la <a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.10</span></a>(h).</li>
 </ul>
-<p>Adicionalmente, el reloj cuenta con dos ventanas emergentes. La primera ventana emergente (<a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.11</span></a>(i)) se activa al finalizar la encuesta e indica que los sensores han comenzado a realizar mediciones. La segunda ventana emergente (<a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.11</span></a>(j)) se muestra una vez que los sensores han terminado de medir, presentando los resultados al usuario. En esta ventana, el usuario puede aceptar los resultados y enviarlos a ThingsBoard o rechazarlos para repetir las mediciones. Es importante mencionar que cada pantalla de la encuesta cuenta con botones que permiten navegar entre las pantallas y seleccionar las opciones según las necesidades del usuario.</p>
+<p>Adicionalmente, el reloj cuenta con dos ventanas emergentes. La primera ventana emergente (<a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.10</span></a>(i)) se activa al finalizar la encuesta e indica que los sensores han comenzado a realizar mediciones. La segunda ventana emergente (<a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.10</span></a>(j)) se muestra una vez que los sensores han terminado de medir, presentando los resultados al usuario. En esta ventana, el usuario puede aceptar los resultados y enviarlos a ThingsBoard o rechazarlos para repetir las mediciones. Es importante mencionar que cada pantalla de la encuesta cuenta con botones que permiten navegar entre las pantallas y seleccionar las opciones según las necesidades del usuario.</p>
 <div id="fig-pantallas" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pantallas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../Imagenes/Pantallas.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pantallas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3.11: Interfaz del reloj inteligente: (a) pantalla principal, (b) activación de la encuesta, (c) pregunta sobre la vestimenta actual, (d) pregunta sobre la actividad realizada, (e) pregunta sobre la ubicación, (f) pregunta sobre la sensación térmica, (h) pregunta sobre la aceptación de la sensación térmica, (i) ventana emergente indicando el inicio de las mediciones, y (j) ventana emergente con los resultados de las mediciones.
+Figura&nbsp;3.10: Interfaz del reloj inteligente: (a) pantalla principal, (b) activación de la encuesta, (c) pregunta sobre la vestimenta actual, (d) pregunta sobre la actividad realizada, (e) pregunta sobre la ubicación, (f) pregunta sobre la sensación térmica, (h) pregunta sobre la aceptación de la sensación térmica, (i) ventana emergente indicando el inicio de las mediciones, y (j) ventana emergente con los resultados de las mediciones.
 </figcaption>
 </figure>
 </div>
