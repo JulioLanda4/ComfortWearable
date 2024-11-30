@@ -103,12 +103,6 @@ Este estudio encontró que medir la temperatura de la piel en varios puntos (fre
 Proponen un modelo matemático que utiliza la temperatura de la piel, la frecuencia cardiaca y la temperatura del aire para predecir las sensaciones térmicas individuales. Dicho modelo se basa en la teoría fisiológica de que la percepción de la temperatura corporal está influenciada por la temperatura del aire y la temperatura de la piel que a su vez está influenciada por la tasa metabólica y la circulación de la sangre. @Omidvar2023
 
 
-**Prediction of individual thermal comfort based on ensemble transfer learning method using wearable and environmental sensors**
-
-
-Destacan que el modelo híbrido CNN-SVM demostró un impresionante rendimiento con una precisión y puntuación F1 del 95% para el sujeto B. Además, aplicaron con éxito un método de transferencia de aprendizaje para predecir la comodidad térmica de los sujetos A y C, superando al modelo CNN-SVM en términos de rendimiento. @Park2022
-
-
 **Machine learning driven personal comfort prediction by wearable sensing of pulse rate and skin temperature**
 
 
@@ -189,3 +183,19 @@ Desarrollaron una base de datos y una interfaz para ver los datos medidos en tie
  **Sensitivity study for the PMV thermal comfort model and the use of wearable devices biometric data for metabolic rate estimation**
 
 Determinaron que la tasa metabólica y la ropa tienen un gran impacto en el modelo PMV, pero son difíciles de medir, por lo que con el uso de un Fitbit estimaron la tasa metabólica a través del acelerómetro del dispositivo. @Hasan2016
+
+**An IMU dataset for human thermal comfort activities identification: Experimental designs and applications**
+
+presenta un conjunto de datos basado en dispositivos de unidades de medida inercial (IMU) para reconocer actividades humanas relacionadas con el confort térmico. Este enfoque permite detectar estados de confort térmico de forma no intrusiva mediante dispositivos portátiles y aprendizaje automático.
+
+El estudio incluye:
+
+Diseño de base de datos: IMU se utilizó para recopilar datos de 30 participantes mientras realizaban 30 actividades (10 relacionadas con frío, 10 con calor y 10 neutras).
+Estructura de datos: Los datos abarcan actividades individuales y múltiples actividades continuas para permitir el entrenamiento y la prueba de modelos de reconocimiento.
+Modelo de reconocimiento: Se desarrolló un modelo basado en redes neuronales 1D-CNN y LSTM, que alcanzó una precisión del 82.51%.
+Aplicaciones: Los datos pueden integrarse en sistemas HVAC inteligentes para ajustar condiciones ambientales según el confort térmico detectado.
+El estudio aborda las limitaciones actuales en términos de diversidad demográfica y propone futuros desarrollos que integren factores fisiológicos y ambientales (@He2025IMU).
+
+**Emisividad de la piel**
+
+La emisividad de la piel puede variar dependiendo muchos factores, por lo que es difícil obtener un valor exacto. @Steketee_1973 reportó una emisividad aproximada de 0.98 con un margen de error $\pm$ 0.01, mientras que @Boylan_1992 obtuvieron un valor de 0.961 con un margen de error de $\pm$ 0.007. Tras varias pruebas con el sensor, se optó por usar una emisividad de ...
