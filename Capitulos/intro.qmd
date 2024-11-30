@@ -1,7 +1,5 @@
 # Introducción {#cap-intro}
 
-## Contexto global
-   - **Cambio climático y eficiencia energética**:
 
 El cambio climático es una de las principales amenazas a nivel global y ha tomado gran relevancia en años recientes. Según el  Grupo Intergubernamental de Expertos sobre el Cambio Climático (IPCC, por sus siglas en inglés), para limitar el calentamiento global a 1.5°C por encima de los niveles preindustriales, es imprescindible una reducción drástica de las emisiones globales de gases de efecto invernadero (GEI). Estas emisiones deben alcanzar su máximo antes del año 2025 y disminuir en un 43% para el año 2030, llegando a cero neto para el año 2050. Esto es esencial para cumplir con los Objetivos de Desarrollo Sostenible planteados por la @Ods2015.
 
@@ -13,7 +11,6 @@ Para mejorar la eficiencia energética en las edificaciones en México, se propo
 
 Ante este panorama, la digitalización se presenta como una herramienta con el potencial de mejorar la eficiencia energética, favorecer la descarbonización y ayudar a mitigar el cambio climático. La digitalización permite una gestión más eficiente de los sistemas de edificios mediante el monitoreo en tiempo real, el mantenimiento predictivo y la optimización del uso energético. Tecnologías como los medidores inteligentes, sensores de internet de las cosas (IoT, por sus siglas en inglés) y sistemas de automatización de edificios ayudan a reducir el consumo de energía al gestionar de manera eficiente servicios como sistemas de aire acondicionado, calefacción e iluminación [@Olabi2023]. Sin embargo, la digitalización también implica un aumento en la demanda de energía. Para enfrentar este desafío, el @IPCC2022 destaca la necesidad de políticas proactivas y regulación del desecho electrónico, así como la transición hacia fuentes de energía sostenibles, prácticas alimenticias más sostenibles y la reconfiguración urbana.
    
-   - **Importancia del confort térmico en edificaciones**:
 
 El confort térmico está fuertemente relacionado con el consumo de energía en edificaciones y es un factor crucial en la calidad de vida de los ocupantes. Una gran parte del consumo de energía en estas se ocupa en mantener condiciones óptimas de iluminación, temperatura y humedad del aire, buscando obtener espacios con condiciones adecuadas para que los ocupantes se encuentren confort térmico, lumínico y acústico. La @ASHRAE55 es una organización global que desarrolla estándares y guías para sistemas de construcción, eficiencia energética, calidad del aire al interior y sostenibilidad. Define confort térmico como la condición mental que expresa satisfacción con el ambiente, y es un juicio personal cognitivo que es influenciado por procesos físicos, fisiológicos y otros factores. 
 

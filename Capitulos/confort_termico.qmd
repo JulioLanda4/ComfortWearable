@@ -1,0 +1,40 @@
+# Antecedentes y Marco Teórico {#cap-marco}
+
+## Confort Térmico
+   - **Definición del Confort Térmico**:
+     - Utilizar la cita de **ASHRAE** y **ISO** para proporcionar la definición del confort térmico.
+   - **Factores que Afectan el Confort Térmico**:
+     - Usar las citas de **Sim2016**, **Choi2017**, **Liu2019**, **Mansi2022**, **Bogatu2023**, **boylan_1992**, y **steketee_1973** para describir las variables ambientales (temperatura, humedad, velocidad del aire) y las características individuales que afectan el confort térmico.
+
+## Variables Relacionadas con el Confort Térmico
+   - **Variables Físicas y Fisiológicas**:
+     - Usar **Sim2018**, **Cho2023**, **Bogatu2023**, y **Mansi2022** para describir la importancia de medir variables físicas y fisiológicas relacionadas con el confort térmico.
+     - Referenciar **MAX30102** y **GY-906** para describir los sensores utilizados en el proyecto.
+
+## Modelos de Confort Térmico
+   - **Modelo de Fanger (PMV-PPD)**:
+     - Utilizar las citas de **Fanger**, **cheung2019**, y **Omidvar2023** para explicar el modelo de Fanger, incluyendo sus limitaciones.
+   - **Modelos Adaptativos**:
+     - Usar **YAO2009**, **Hasan2016**, **gomez**, y **Masterton1979humidex** para describir los modelos adaptativos aplicables a edificaciones sin sistemas avanzados de climatización.
+
+## Confort Térmico en México
+   - Usar las citas de **Rincon2019**, **Rincon2020**, **Oropeza2017**, **LopezPerez2019**, y **Zepeda2022** para contextualizar qué se ha hecho en México relacionado con el confort térmico, mencionando estudios previos y experiencias locales.
+
+## Herramientas Existentes para la Evaluación del Confort Térmico
+   - **Métodos Tradicionales**:
+     - Usar **Calixto2021** y **estado.qmd** para describir los métodos tradicionales de medición del confort térmico, como encuestas subjetivas y mediciones ambientales.
+
+## Wearables y su Aplicación en el Confort Térmico
+   - **Avances en Tecnología Wearable**:
+     - Utilizar las citas de **Tartarini2022**, **Feng2023**, **Nazarian2021**, **He2025IMU**, y **Garces2021** para explicar cómo los wearables han aportado al área del confort térmico, especialmente para medir variables fisiológicas que se relacionan con el confort térmico.
+
+## Tecnologías Abiertas y Digitalización Energética
+   - **Internet de las Cosas (IoT)**:
+     - Utilizar **olabi2023** para explicar cómo el IoT facilita la recopilación de datos en tiempo real.
+   - **Ventajas de las Tecnologías Abiertas**:
+     - Usar **olabi2023** y **Judson2022** para explicar por qué se eligieron tecnologías abiertas, destacando la accesibilidad, bajo costo, y facilidad de personalización.
+
+## Revisión de la Literatura Relacionada
+   - **Estudios Precedentes sobre Confort Térmico**:
+     - Usar las citas de **Becerra2016**, **Cetz2018**, **MayTzuc2023**, **Chaudhuri2018**, y **Chaudhuri2020** para citar estudios previos sobre la evaluación del confort térmico.
+
