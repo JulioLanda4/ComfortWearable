@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -69,6 +88,8 @@ ul.task-list li input[type="checkbox"] {
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -153,10 +174,18 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#confort-térmico" id="toc-confort-térmico" class="nav-link active" data-scroll-target="#confort-térmico"><span class="header-section-number">2.1</span> Confort Térmico</a></li>
-  <li><a href="#variables-relacionadas-con-el-confort-térmico" id="toc-variables-relacionadas-con-el-confort-térmico" class="nav-link" data-scroll-target="#variables-relacionadas-con-el-confort-térmico"><span class="header-section-number">2.2</span> Variables Relacionadas con el Confort Térmico</a></li>
-  <li><a href="#modelos-de-confort-térmico" id="toc-modelos-de-confort-térmico" class="nav-link" data-scroll-target="#modelos-de-confort-térmico"><span class="header-section-number">2.3</span> Modelos de Confort Térmico</a></li>
-  <li><a href="#confort-térmico-en-méxico" id="toc-confort-térmico-en-méxico" class="nav-link" data-scroll-target="#confort-térmico-en-méxico"><span class="header-section-number">2.4</span> Confort Térmico en México</a></li>
-  <li><a href="#herramientas-existentes-para-la-evaluación-del-confort-térmico" id="toc-herramientas-existentes-para-la-evaluación-del-confort-térmico" class="nav-link" data-scroll-target="#herramientas-existentes-para-la-evaluación-del-confort-térmico"><span class="header-section-number">2.5</span> Herramientas Existentes para la Evaluación del Confort Térmico</a></li>
+  <li><a href="#evaluación-de-confort-térmico-a-través-de-encuestas" id="toc-evaluación-de-confort-térmico-a-través-de-encuestas" class="nav-link" data-scroll-target="#evaluación-de-confort-térmico-a-través-de-encuestas"><span class="header-section-number">2.2</span> Evaluación de confort térmico a través de encuestas</a>
+  <ul class="collapse">
+  <li><a href="#escalas-para-el-estado-personal" id="toc-escalas-para-el-estado-personal" class="nav-link" data-scroll-target="#escalas-para-el-estado-personal"><span class="header-section-number">2.2.1</span> Escalas para el estado personal</a></li>
+  <li><a href="#escalas-para-describir-el-entorno-físico" id="toc-escalas-para-describir-el-entorno-físico" class="nav-link" data-scroll-target="#escalas-para-describir-el-entorno-físico"><span class="header-section-number">2.2.2</span> Escalas para describir el entorno físico</a></li>
+  </ul></li>
+  <li><a href="#modelos-de-confort-térmico" id="toc-modelos-de-confort-térmico" class="nav-link" data-scroll-target="#modelos-de-confort-térmico"><span class="header-section-number">2.3</span> Modelos de confort térmico</a>
+  <ul class="collapse">
+  <li><a href="#modelos-para-edificaciones-con-sistemas-de-aire-acondicionado" id="toc-modelos-para-edificaciones-con-sistemas-de-aire-acondicionado" class="nav-link" data-scroll-target="#modelos-para-edificaciones-con-sistemas-de-aire-acondicionado"><span class="header-section-number">2.3.1</span> Modelos para edificaciones con sistemas de aire acondicionado</a></li>
+  <li><a href="#modelos-para-edificaciones-sin-sistemas-de-aire-acondicionado" id="toc-modelos-para-edificaciones-sin-sistemas-de-aire-acondicionado" class="nav-link" data-scroll-target="#modelos-para-edificaciones-sin-sistemas-de-aire-acondicionado"><span class="header-section-number">2.3.2</span> Modelos para edificaciones sin sistemas de aire acondicionado</a></li>
+  </ul></li>
+  <li><a href="#variables-fisiológicas-como-indicadores-de-confort-térmico" id="toc-variables-fisiológicas-como-indicadores-de-confort-térmico" class="nav-link" data-scroll-target="#variables-fisiológicas-como-indicadores-de-confort-térmico"><span class="header-section-number">2.4</span> Variables fisiológicas como indicadores de confort térmico</a></li>
+  <li><a href="#confort-térmico-en-méxico" id="toc-confort-térmico-en-méxico" class="nav-link" data-scroll-target="#confort-térmico-en-méxico"><span class="header-section-number">2.5</span> Confort Térmico en México</a></li>
   <li><a href="#wearables-y-su-aplicación-en-el-confort-térmico" id="toc-wearables-y-su-aplicación-en-el-confort-térmico" class="nav-link" data-scroll-target="#wearables-y-su-aplicación-en-el-confort-térmico"><span class="header-section-number">2.6</span> Wearables y su Aplicación en el Confort Térmico</a></li>
   <li><a href="#tecnologías-abiertas-y-digitalización-energética" id="toc-tecnologías-abiertas-y-digitalización-energética" class="nav-link" data-scroll-target="#tecnologías-abiertas-y-digitalización-energética"><span class="header-section-number">2.7</span> Tecnologías Abiertas y Digitalización Energética</a></li>
   <li><a href="#revisión-de-la-literatura-relacionada" id="toc-revisión-de-la-literatura-relacionada" class="nav-link" data-scroll-target="#revisión-de-la-literatura-relacionada"><span class="header-section-number">2.8</span> Revisión de la Literatura Relacionada</a></li>
@@ -185,53 +214,264 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="confort-térmico" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="confort-térmico"><span class="header-section-number">2.1</span> Confort Térmico</h2>
+<p>El confort térmico es un concepto subjetivo, ya que depende de las percepciones individuales y está influenciado por factores ambientales y personales. La sociedad estadounidense de ingenieros de calefacción, refrigeración y aire acondicionado (ASHRAE, por sus siglas en inglés) lo define como <em>la condición mental que expresa satisfacción con el ambiente térmico</em> <span class="citation" data-cites="ASHRAE55">(ASHRAE55 <a href="references.html#ref-ASHRAE55" role="doc-biblioref">2017</a>)</span>, mientras que la organización internacional de normalización (ISO, por sus siglas en inglés) en su norma 7730 lo describe como <em>la sensación de bienestar térmico que experimenta una persona en un entorno dado, considerando aspectos físicos, fisiológicos y psicológicos</em> <span class="citation" data-cites="ISO7730">(<a href="references.html#ref-ISO7730" role="doc-biblioref">2005</a>)</span>. Podemos decir entonces que el confort térmico es la sensación de satisfacción o insatisfacción con el ambiente térmico y este se define por percepciones individuales y como los individuos reaccionan ante las condiciones térmicas de su entorno.</p>
+<p>El confort térmico es más complejo que un simple estado de satisfacción o insatisfacción, se puede considerar un rango de sensaciones que van desde una percepción extrema de frío hasta una sensación de extremo calor. En este sentido, se puede considerar como un equilibrio térmico entre el cuerpo humano y su entorno, donde la temperatura corporal se regula a través de procesos fisiológicos, como la sudoración, la vasoconstricción y la vasodilatación <span class="citation" data-cites="tomonori_sakoi__2023">(<a href="references.html#ref-tomonori_sakoi__2023" role="doc-biblioref">Sakoi et&nbsp;al. 2023</a>)</span>. Además, el confort térmico no solo depende de las condiciones ambientales, sino también de cómo los individuos interpretan estas condiciones según sus experiencias y expectativas personales <span class="citation" data-cites="ASHRAE55">(ASHRAE55 <a href="references.html#ref-ASHRAE55" role="doc-biblioref">2017</a>)</span>.</p>
+<p>Los factores que afectan la sensación de confort térmico se pueden agrupar en dos categorías principales: factores ambientales y factores personales.</p>
+<p><strong>Factores ambientales</strong></p>
+<p>Los factores ambientales incluyen la temperatura del aire, la temperatura radiante media, la velocidad del aire, la humedad relativa, y la presión atmosférica <span class="citation" data-cites="ASHRAE55">(ASHRAE55 <a href="references.html#ref-ASHRAE55" role="doc-biblioref">2017</a>)</span>. Estos factores son fundamentales para evaluar el entorno y diseñar estrategias que mejoren el confort térmico, ya que afectan directamente la capacidad del cuerpo para mantener un equilibrio térmico adecuado.</p>
 <ul>
-<li><strong>Definición del Confort Térmico</strong>:
+<li><p><strong>Temperatura del aire:</strong> Influye en la sensación de calor o frío percibida a través de la piel. Para <span class="citation" data-cites="Sim2016">S. Y. Sim et&nbsp;al. (<a href="references.html#ref-Sim2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="Choi2017">Choi y Yeom (<a href="references.html#ref-Choi2017" role="doc-biblioref">2017</a>)</span> y <span class="citation" data-cites="Liu2019">Liu et&nbsp;al. (<a href="references.html#ref-Liu2019" role="doc-biblioref">2019</a>)</span>, la temperatura ambiente es uno de los principales factores que afecta al confort térmico.</p></li>
+<li><p><strong>Temperatura radiante media:</strong> Es la temperatura promedio de las superficies que rodean a una persona. Las superficies frías pueden absorber el calor del cuerpo humano, mientras que las superficies calientes pueden irradiar calor hacia el cuerpo, afectando la sensación de frío o calor. Este factor es crucial en el diseño de edificaciones, donde la elección de materiales influye directamente en la transferencia de calor.</p></li>
+<li><p><strong>Velocidad del aire:</strong> Juega un papel importante en la sensación de frescura o calor. El flujo de aire sobre la piel humana favorece la evaporación del sudor, lo cual genera un efecto refrescante. Según estudios, la velocidad óptima del aire mejora significativamente los niveles de confort térmico, el rendimiento cognitivo y la satisfacción general <span class="citation" data-cites="chao_cen__2023">(<a href="references.html#ref-chao_cen__2023" role="doc-biblioref">Cen, Cheng, y Wong 2023</a>)</span>.</p></li>
+<li><p><strong>Humedad relativa:</strong> Afecta la capacidad del cuerpo humano para disipar el calor a través de la sudoración. En ambientes muy húmedos, la evaporación del sudor se ve disminuida, generando una mayor sensación de calor, mientras que en ambientes secos la sudoración se acelera, aumentando la sensación de frescura.</p></li>
+<li><p><strong>Presión atmosférica:</strong> La presión atmosférica también puede influir en la percepción del confort térmico, especialmente en entornos de gran altitud o en condiciones climáticas extremas.</p></li>
+</ul>
+<p><strong>Factores personales</strong></p>
+<p>Los factores personales incluyen la actividad física, la vestimenta, la edad, el sexo y aspectos culturales y socioeconómicos.</p>
 <ul>
-<li>Utilizar la cita de <strong>ASHRAE</strong> y <strong>ISO</strong> para proporcionar la definición del confort térmico.</li>
-</ul></li>
-<li><strong>Factores que Afectan el Confort Térmico</strong>:
-<ul>
-<li>Usar las citas de <strong>Sim2016</strong>, <strong>Choi2017</strong>, <strong>Liu2019</strong>, <strong>Mansi2022</strong>, <strong>Bogatu2023</strong>, <strong>boylan_1992</strong>, y <strong>steketee_1973</strong> para describir las variables ambientales (temperatura, humedad, velocidad del aire) y las características individuales que afectan el confort térmico.</li>
-</ul></li>
+<li><p><strong>Actividad física:</strong> Influye directamente en la producción de calor del cuerpo. Una persona que realiza una actividad física intensa produce más calor que una persona en reposo. La producción de calor se mide en unidades de “<em>met</em>”, donde 1 <em>met</em> equivale a la producción de calor de una persona en reposo, aproximadamente 58.2 W/m² <span class="citation" data-cites="ASHRAE2009">(ASHRAE <a href="references.html#ref-ASHRAE2009" role="doc-biblioref">2009</a>)</span>.</p></li>
+<li><p><strong>Vestimenta:</strong> Actúa como un aislante térmico que ayuda a retener el calor en el cuerpo. El nivel de aislamiento térmico de la ropa se mide en unidades de “<em>clo</em>”. Un valor de 1 <em>clo</em> equivale al aislamiento proporcionado por un traje típico de negocios, aproximadamente 0.155 m²·K/W <span class="citation" data-cites="ASHRAE2009">(ASHRAE <a href="references.html#ref-ASHRAE2009" role="doc-biblioref">2009</a>)</span>.</p></li>
+<li><p><strong>Edad:</strong> La edad afecta la percepción del confort térmico debido a cambios fisiológicos asociados con el envejecimiento, que reducen la capacidad de termorregulación <span class="citation" data-cites="BaqueroLarriva2019">(<a href="references.html#ref-BaqueroLarriva2019" role="doc-biblioref">Larriva y García 2019</a>)</span>.</p></li>
+<li><p><strong>Sexo:</strong> El sexo también influye en la percepción del confort térmico. <span class="citation" data-cites="junmeng_lyu__2023">J. Lyu et&nbsp;al. (<a href="references.html#ref-junmeng_lyu__2023" role="doc-biblioref">2023</a>)</span> demuestra que las mujeres tienden a soportar temperaturas más cálidas en comparación con los hombres. <span class="citation" data-cites="Chaudhuri2018">Chaudhuri et&nbsp;al. (<a href="references.html#ref-Chaudhuri2018" role="doc-biblioref">2018</a>)</span> y <span class="citation" data-cites="Choi2017">Choi y Yeom (<a href="references.html#ref-Choi2017" role="doc-biblioref">2017</a>)</span> también mencionan que el confort térmico está influenciado por el sexo del individuo.</p></li>
+<li><p><strong>Factores culturales y socioeconómicos:</strong> Las expectativas sobre un ambiente térmicamente confortable varían según la cultura. Además, el estatus socioeconómico puede afectar las preferencias térmicas debido al acceso desigual a recursos como sistemas de aire acondicionado y calefacción <span class="citation" data-cites="sanober_naheed__2021">K. J. Lyu et&nbsp;al. (<a href="references.html#ref-kun_jung_lyu__2023" role="doc-biblioref">2023</a>)</span>.</p></li>
 </ul>
 </section>
-<section id="variables-relacionadas-con-el-confort-térmico" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="variables-relacionadas-con-el-confort-térmico"><span class="header-section-number">2.2</span> Variables Relacionadas con el Confort Térmico</h2>
-<ul>
-<li><strong>Variables Físicas y Fisiológicas</strong>:
-<ul>
-<li>Usar <strong>Sim2018</strong>, <strong>Cho2023</strong>, <strong>Bogatu2023</strong>, y <strong>Mansi2022</strong> para describir la importancia de medir variables físicas y fisiológicas relacionadas con el confort térmico.</li>
-<li>Referenciar <strong>MAX30102</strong> y <strong>GY-906</strong> para describir los sensores utilizados en el proyecto.</li>
-</ul></li>
-</ul>
+<section id="evaluación-de-confort-térmico-a-través-de-encuestas" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="evaluación-de-confort-térmico-a-través-de-encuestas"><span class="header-section-number">2.2</span> Evaluación de confort térmico a través de encuestas</h2>
+<p>A pesar de que el confort térmico es un termino subjetivo, este se puede evaluar a través de encuestas de confort térmico. Para ello, la ISO en su norma 10551 <span class="citation" data-cites="ISO10551">(<a href="references.html#ref-ISO10551" role="doc-biblioref">2019</a>)</span> establece escalas de juicio subjetivo para evaluar el entorno físico, con el objetivo de garantizar que los espacios sean diseñados teniendo en cuenta al usuario. La norma aborda cinco tipos principales de escalas, divididos en dos categorías: escalas para el estado personal y escalas para describir el entorno físico. Las escalas para el estado personal son tres: perceptual, evaluativa y percepción. Mientras que para el entorno físico son dos: aceptabilidad y satisfacción.</p>
+<p><span class="citation" data-cites="Calixto2021">Aguirre (<a href="references.html#ref-Calixto2021" role="doc-biblioref">2021</a>)</span> presenta las escalas de la siguiente manera:</p>
+<section id="escalas-para-el-estado-personal" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="escalas-para-el-estado-personal"><span class="header-section-number">2.2.1</span> Escalas para el estado personal</h3>
+<ol type="1">
+<li><p><strong>Escala de percepción del estado personal</strong> (<em>¿Cómo te sientes ahora?</em>): Se utiliza para comprender la percepción subjetiva del estado personal de un individuo en un entorno específico. La escala puede ser unipolar o bipolar. En el caso de la escala unipolar, se utiliza una graduación de cuatro grados, que puede extenderse a cinco de ser necesario. El punto de origen se establece en 0, que representa un estado neutro, mientras que los grados de intensidad se enumeran como 1, 2, 3 y opcionalmente 4. Por otra parte, si la escala es bipolar, se utiliza una graduación de siete grados, que puede ampliarse hasta nueve de ser necesario. El punto de indiferencia también es 0, pero esta escala se divide en dos polos opuestos: el polo A y el polo B. Los grados negativos de intensidad van de -1 a -3 y -4 opcionalmente, siendo -4 el más cercano al polo A y -1 el más cercano a 0. Los grados positivos de intensidad van de 1 a 3 y 4 opcionalmente, siendo 4 el más cercano al polo B y 1 el más cercano a 0. El 0 representa la ausencia de sensación en ambas escalas.</p></li>
+<li><p><strong>Escala evaluativa</strong> (<em>¿Cómo te encuentras?</em>): Se utiliza para medir el nivel de comodidad en un entorno. Es una escala unipolar de cuatro grados ampliable a cinco. El 0 representa comodidad y el polo representa la incomodidad extrema.</p></li>
+<li><p><strong>Escala de preferencia</strong> (<em>¿Cómo preferirías estar?</em>): Utiliza una escala bipolar simétrica con siete grados para medir la preferencia de las personas respecto a ciertos aspectos del entorno. El 0 representa “sin cambio” en la preferencia.</p></li>
+</ol>
+</section>
+<section id="escalas-para-describir-el-entorno-físico" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="escalas-para-describir-el-entorno-físico"><span class="header-section-number">2.2.2</span> Escalas para describir el entorno físico</h3>
+<ol type="1">
+<li><p><strong>Aceptabilidad:</strong> Esta escala se centra en la aceptabilidad a nivel personal del entorno. Tiene dos grados, se acepta o se rechaza.</p></li>
+<li><p><strong>Satisfacción:</strong> Se centra en la tolerancia al entorno. Es una escala de cinco grados. 0 es perfectamente tolerable, mientras que el polo es intolerable.</p></li>
+</ol>
+<p>En la <a href="#tbl-unipolar">Tabla&nbsp;<span>2.1</span></a> se observa la estructura para la escala unipolar.</p>
+<div id="tbl-unipolar" class="anchored">
+<table class="table">
+<caption>Tabla&nbsp;2.1: Escala unipolar</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Punto de origen</th>
+<th style="text-align: center;">Grados de intensidad</th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1,2,3,(4)</td>
+<td style="text-align: center;">Unipolar</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>En la <a href="#tbl-bipolar">Tabla&nbsp;<span>2.2</span></a> se oberva la estructura para la escala bipolar.</p>
+<div id="tbl-bipolar" class="anchored">
+<table class="table">
+<caption>Tabla&nbsp;2.2: Escala bipolar</caption>
+<colgroup>
+<col style="width: 9%">
+<col style="width: 26%">
+<col style="width: 27%">
+<col style="width: 26%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Grados de intensidad</th>
+<th style="text-align: center;">Punto de indiferencia</th>
+<th style="text-align: center;">Grados de intensidad</th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Polo A</td>
+<td style="text-align: center;">(-4),-3,-2,-1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1,2,3,(4)</td>
+<td style="text-align: center;">Polo B</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </section>
 <section id="modelos-de-confort-térmico" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="modelos-de-confort-térmico"><span class="header-section-number">2.3</span> Modelos de Confort Térmico</h2>
-<ul>
-<li><strong>Modelo de Fanger (PMV-PPD)</strong>:
-<ul>
-<li>Utilizar las citas de <strong>Fanger</strong>, <strong>cheung2019</strong>, y <strong>Omidvar2023</strong> para explicar el modelo de Fanger, incluyendo sus limitaciones.</li>
-</ul></li>
-<li><strong>Modelos Adaptativos</strong>:
-<ul>
-<li>Usar <strong>YAO2009</strong>, <strong>Hasan2016</strong>, <strong>gomez</strong>, y <strong>Masterton1979humidex</strong> para describir los modelos adaptativos aplicables a edificaciones sin sistemas avanzados de climatización.</li>
-</ul></li>
-</ul>
+<h2 data-number="2.3" class="anchored" data-anchor-id="modelos-de-confort-térmico"><span class="header-section-number">2.3</span> Modelos de confort térmico</h2>
+<p>Además de las encuestas utilizadas para evaluar el confort térmico, se han desarrollado modelos diseñados específicamente para predecirlo. Estos modelos se adaptan a condiciones especificas y pueden dividirse en dos categorías: los modelos para edificaciones con sistemas de aire acondicionado y los modelos para edificaciones sin aire acondicionado.</p>
+<section id="modelos-para-edificaciones-con-sistemas-de-aire-acondicionado" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="modelos-para-edificaciones-con-sistemas-de-aire-acondicionado"><span class="header-section-number">2.3.1</span> Modelos para edificaciones con sistemas de aire acondicionado</h3>
+<p><strong>PMV-PPD</strong></p>
+<p>El voto medio previsto (PMV, por sus siglas en inglés) está en función de las siete variables físicas que afectan al confort térmico: temperatura del aire, temperatura radiante, humedad relativa, velocidad del aire, presión atmosférica, nivel metabólico del ocupante y nivel de aislamiento térmico de la ropa. Dispone de una escala de sensación térmica de siete puntos, donde -3 indica una sensación de mucho frío, 0 representa una sensación neutra y +3 representa una sensación de mucho calor. Este es un modelo pensado para edificaciones que cuenten con sistemas de aire acondicionado y fue desarrollado por <span class="citation" data-cites="Fanger1970">Fanger (<a href="references.html#ref-Fanger1970" role="doc-biblioref">1970</a>)</span>.</p>
+<p>Las ecuaciones para calcular el PMV son:</p>
+<div style="overflow-x: auto; display: block; white-space: nowrap;">
+<p><span id="eq-pmv"><span class="math display">\[
+\text{PMV} = \left[ 0.303 \, e^{-0.036 \, M} + 0.028 \right] \Bigg\{ (M - W) - 3.05 \times 10^{-3} \, \big[ 5733 - 6.99 \, (M - W) - p_a \big] - 0.42 \, \big[ (M - W) - 58.15 \big] - 1.7 \times 10^{-5} \, M \, (5867 - p_a) - 0.0014 \, M \, (34 - T_a) - f_{cl} \, h_c \, (T_{cl} - T_a) \Bigg\}
+\tag{2.1}\]</span></span></p>
+</div>
+<div style="overflow-x: auto; display: block; white-space: nowrap;">
+<p><span id="eq-tcl"><span class="math display">\[
+t_{cl} = 35.7 - 0.028 \cdot (M - W) - I_{cl} \cdot \Bigg\{ 3.96 \times 10^{-8} \cdot f_{cl} \cdot \big[(t_{cl} + 273)^4 - (\bar{t}_r + 273)^4\big] + f_{cl} \cdot h_c \cdot (t_{cl} - t_a) \Bigg\}
+\tag{2.2}\]</span></span></p>
+</div>
+<div style="overflow-x: auto; display: block; white-space: nowrap;">
+<p><span id="eq-hc"><span class="math display">\[
+h_c =
+\begin{cases}
+\frac{2.38 \cdot |t_{cl} - t_a|^{0.25}}{12.1 \cdot \sqrt{v_{ar}}} &amp; \text{si } 2.38 \cdot |t_{cl} - t_a|^{0.25} &gt; 12.1 \cdot \sqrt{v_{ar}} \\
+12.1 \cdot \sqrt{v_{ar}} &amp; \text{si } 2.38 \cdot |t_{cl} - t_a|^{0.25} \leq 12.1 \cdot \sqrt{v_{ar}}
+\end{cases}
+\tag{2.3}\]</span></span></p>
+</div>
+<div style="overflow-x: auto; display: block; white-space: nowrap;">
+<p><span id="eq-fcl"><span class="math display">\[
+f_{cl} =
+\begin{cases}
+1.00 + 1.290 \cdot I_{cl} &amp; \text{si } I_{cl} \leq 0.078 \\
+1.00 + 0.645 \cdot I_{cl} &amp; \text{si } I_{cl} &gt; 0.078
+\end{cases}
+\tag{2.4}\]</span></span></p>
+</div>
+<div style="overflow-x: auto; display: block; white-space: nowrap;">
+<p><span id="eq-var"><span class="math display">\[
+v_{ar} = v_{air} + 0.3 \cdot (M - 1)
+\tag{2.5}\]</span></span></p>
+</div>
+<p>donde:</p>
+<p><span class="math inline">\(M\)</span> : Tasa metabólica (<span class="math inline">\(W/m^2\)</span>)<br>
+<span class="math inline">\(W\)</span> : Trabajo mecánico externo (<span class="math inline">\(W/m^2\)</span>)<br>
+<span class="math inline">\(I_{cl}\)</span> : Aislamiento térmico de la ropa (<span class="math inline">\(m^2 \cdot °C/W\)</span>)<br>
+<span class="math inline">\(f_{cl}\)</span> : Factor de cobertura de la ropa (sin unidad)<br>
+<span class="math inline">\(t_a\)</span> : Temperatura del aire (°C)<br>
+<span class="math inline">\(\bar{t}_r\)</span> : Temperatura media radiante (°C)<br>
+<span class="math inline">\(p_a\)</span> : Presión parcial del vapor de agua (Pa)<br>
+<span class="math inline">\(v_{ar}\)</span> : Velocidad relativa del aire (m/s)<br>
+<span class="math inline">\(v_{air}\)</span> : Velocidad del aire (m/s)<br>
+<span class="math inline">\(h_c\)</span> : Coeficiente de transferencia de calor por convección (<span class="math inline">\(W/m^2 \cdot °C\)</span>)<br>
+<span class="math inline">\(t_{cl}\)</span> : Temperatura de la superficie de la ropa (°C)<br>
+<span class="math inline">\(HR\)</span> : Humedad relativa (%)</p>
+<p>El Porcentaje Previsto de Insatisfacción (PPD, por sus siglas en inglés) es un modelo que predice el porcentaje de personas que se sentirán insatisfechas con las condiciones térmicas en un ambiente determinado. Este modelo está directamente relacionado con el PMV y fue propuesto por <span class="citation" data-cites="Fanger1970">Fanger (<a href="references.html#ref-Fanger1970" role="doc-biblioref">1970</a>)</span>. La ecuación que lo define se expresa de la siguiente manera:</p>
+<p><span id="eq-ppd"><span class="math display">\[
+PPD = 100 - 95 \cdot \exp\left(-0.03353 \cdot \text{PMV}^4 - 0.2179 \cdot \text{PMV}^2\right)
+\tag{2.6}\]</span></span></p>
+<p>ASHRAE55 <span class="citation" data-cites="ASHRAE55">(<a href="references.html#ref-ASHRAE55" role="doc-biblioref">2017</a>)</span> indica que el PPD no debe ser mayor al 10%, mientras que la ISO 7730 <span class="citation" data-cites="ISO7730">(<a href="references.html#ref-ISO7730" role="doc-biblioref">2005</a>)</span> indica un valor menor al 10% para edificios nuevos y 15% para edificios ya existentes. En la <a href="#fig-pmvppd">Figura&nbsp;<span>2.1</span></a> observamos la relación entre el PMV y el PPD.</p>
+<div class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div id="fig-pmvppd" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="confort_termico_files/figure-html/fig-pmvppd-output-1.png" width="567" height="567" class="figure-img"></p>
+<figcaption class="figure-caption">Figura&nbsp;2.1: Relación PMV-PPD</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="confort-térmico-en-méxico" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="confort-térmico-en-méxico"><span class="header-section-number">2.4</span> Confort Térmico en México</h2>
+<section id="modelos-para-edificaciones-sin-sistemas-de-aire-acondicionado" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="modelos-para-edificaciones-sin-sistemas-de-aire-acondicionado"><span class="header-section-number">2.3.2</span> Modelos para edificaciones sin sistemas de aire acondicionado</h3>
+<p>Existen modelos pensados para aplicarse en edificaciones sin sistemas de aire acondicionado. Existen dos tipos: adaptativos y no adaptativos.</p>
+<p><strong>Adaptativos</strong></p>
+<p><strong><em>ePMV</em></strong></p>
+<p>el ePMV es una modificación al PMV. Se observó que el PMV sobrestima el voto de sensación térmica de las personas en edificios sin aire acondicionado ubicados en climas cálidos. Para corregir esto, se introdujo un factor de expectativa (<em>e</em>), el cual ajusta los cálculos del PMV teniendo en cuenta la duración del clima cálido a lo largo del año y la presencia de otros edificios en la región que cuentan con sistemas de aire acondicionado <span class="citation" data-cites="Fanger2002">(<a href="references.html#ref-Fanger2002" role="doc-biblioref">Fanger y Toftum 2002</a>)</span>.</p>
+<p>En la <a href="#tbl-factor_e">Tabla&nbsp;<span>2.3</span></a> se presentan los valores del factor <em>e</em> para diferentes escenarios.</p>
+<div id="tbl-factor_e" class="anchored">
+<table class="table">
+<caption>Tabla&nbsp;2.3: Valores de <em>e</em></caption>
+<colgroup>
+<col style="width: 22%">
+<col style="width: 60%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Período Cálido</th>
+<th style="text-align: center;">Edificios Cercanos con Aire Acondicionado</th>
+<th style="text-align: center;">Valor (e)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Todo el año</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">0.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Todo el año</td>
+<td style="text-align: center;">Sí</td>
+<td style="text-align: center;">0.7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Verano</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">0.7-0.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Verano</td>
+<td style="text-align: center;">Sí</td>
+<td style="text-align: center;">0.8-0.9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Período corto en verano</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">0.9-1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Para el calculo del ePMV además de calcular el valor de <em>e</em>, se debe considerar el valor del estado metabólico del ocupante (MET). usualmente el MET se evalúa mediante cuestionarios que determinan el tiempo dedicado a actividades específicas como estar sentado, de pie o caminando. Sin embargo, esto no considera el comportamiento natural de las personas que al sentir calor tienden a reducir su actividad de manera inconsciente para adaptarse al clima, disminuyendo así su tasa metabólica. La solución propuesta para el ePMV es considerar esta reducción en la tasa metabólica en ambientes cálidos. Se considera una disminución del 6.7%.</p>
+<p>De esta manera, para calcular el ePMV se deben seguir los siguientes pasos:</p>
+<ol type="1">
+<li>Calcular el PMV</li>
+<li>Se calcula la nueva tasa metabólica de la siguiente manera: <span id="eq-met-modificado"><span class="math display">\[
+M_{mod} = (0.067*PMV)M
+  \tag{2.7}\]</span></span></li>
+</ol>
+<p>Donde <span class="math inline">\(M_{mod}\)</span> es la tasa metabólica modificada y <span class="math inline">\(M\)</span> es la tasa metabólica estimada para el PMV.</p>
+<ol start="3" type="1">
+<li>Se vuelve a obtener el valor del PMV utilizando <span class="math inline">\(M_{mod}\)</span></li>
+<li>Se multiplica el nuevo valor del PMV por el factor <em>e</em></li>
+</ol>
+<p><strong>aPMV</strong></p>
+<p><em>Adaptative Predicted Mean Vote</em>, es una adaptación del PMV y fue propuesta por <span class="citation" data-cites="YAO2009">Yao, Li, y Liu (<a href="references.html#ref-YAO2009" role="doc-biblioref">2009</a>)</span>. Es un modelo que toma en cuenta la sobrestimación del PMV de los ocupantes en edificios sin aire acondicionado. Se propone un coeficiente adaptativo <span class="math inline">\(\lambda\)</span>, el cual se obtiene realizando encuestas de sensación térmica a los ocupantes del edificio, y en caso de que el edificio aún se encuentre en construcción, se busca un edificio con características similares. El aPMV se calcula de la siguiente manera:</p>
+<p><span id="eq-apmv"><span class="math display">\[
+\text{aPMV} = \frac{\text{PMV}}{1 + \lambda \text{PMV}}
+\tag{2.8}\]</span></span></p>
+<p><strong>No adaptativos</strong></p>
+<p><strong><em>Índice Humidex Ontario</em></strong></p>
+<p>Propuesto por <span class="citation" data-cites="masterton1979humidex">Masterton, Richardson, y atmosphérique (<a href="references.html#ref-masterton1979humidex" role="doc-biblioref">1979</a>)</span>. Representa en un solo valor cómo la temperatura y la humedad del aire afectan la sensación térmica. Utiliza datos recopilados en una encuesta a una muestra representativa de personas. Es un modelo exclusivo para climas cálidos. Se calcula de la siguiente manera:</p>
+<p><span id="eq-humidex"><span class="math display">\[
+Humidex = T + h
+\tag{2.9}\]</span></span> <span id="eq-factor-humedad"><span class="math display">\[
+h = \frac{5}{9}(p_v- 10)
+\tag{2.10}\]</span></span></p>
+<p>donde:</p>
+<p><span class="math inline">\(T\)</span> : Temperatura de bulbo seco (°C)<br>
+<span class="math inline">\(h\)</span> : Factor de humedad (°C)<br>
+<span class="math inline">\(p_v\)</span> : Presión de vapor (mbar)</p>
+<p><strong>Índice Humidex Colima</strong></p>
+<p>Se utiliza la <a href="#eq-humidex">Ecuación&nbsp;<span>2.9</span></a> del Índice Humidex Ontario pero realizado con encuestas en la ciudad de Colima. Modifica la relación con la sensación térmica e incluye época de frío. <span class="citation" data-cites="gomez-azpetia2006adaptacion">(<a href="references.html#ref-gomez-azpetia2006adaptacion" role="doc-biblioref">Gómez-Azpetia, Gómez, y Peña 2006</a>)</span></p>
+</section>
+</section>
+<section id="variables-fisiológicas-como-indicadores-de-confort-térmico" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="variables-fisiológicas-como-indicadores-de-confort-térmico"><span class="header-section-number">2.4</span> Variables fisiológicas como indicadores de confort térmico</h2>
+<p>Si bien existen distintos modelos que permiten predecir el confort térmico, estos no son 100% precisos, por ello se han buscado otras formas de poder medir y predecir el confort térmico. Se ha visto que existen variables fisiológicas que pueden estar fuertemente relacionadas a la sensación de confort térmico del ser humano.</p>
+<p>Las variables fisiológicas que están relacionadas con la respuesta del cuerpo humano a las condiciones ambientales e incluyen la tasa de sudoración, la temperatura de la piel y la frecuencia cardíaca <span class="citation" data-cites="Bogatu2023">(<a href="references.html#ref-Bogatu2023" role="doc-biblioref">Bogatu et&nbsp;al. 2023</a>)</span>. La medición de estas variables permite identificar cómo una persona está reaccionando a las condiciones térmicas y si se encuentra en un estado de confort. <span class="citation" data-cites="Sim2018">J. K. Sim, Yoon, y Cho (<a href="references.html#ref-Sim2018" role="doc-biblioref">2018</a>)</span> midieron la tasa de sudoración a través de una cámara de humedad y mencionaron que el estado térmico puede ser medido a través del sudor. Sin embargo, <span class="citation" data-cites="Bogatu2023">Bogatu et&nbsp;al. (<a href="references.html#ref-Bogatu2023" role="doc-biblioref">2023</a>)</span> señala que la sudoración no siempre es un indicador fiable del confort térmico debido a que la sudoración se puede ver afectada por factores emocionales o estrés. Además de que en ambientes fríos la poca sudoración de la piel dificulta la medición de esta variable. <span class="citation" data-cites="Sim2016">S. Y. Sim et&nbsp;al. (<a href="references.html#ref-Sim2016" role="doc-biblioref">2016</a>)</span> llevaron a cabo un estudio donde midieron la temperatura de la piel en cuatro puntos distintos: parte superior de la muñeca, arteria radial, arteria ulnar y la punta del dedo índice. Los resultados mostraron que combinar las tres mediciones de la muñeca proporciona los mejores resultados, con una correlación de Pearson de 0.81 respecto al vot ode sensación térmica (TSV, por sus siglas en inglés). Sin embargo, las mediciones individuales de la parte superior de la muñeca y de la arteria radial también ofrecieron resultados satisfactorios, con una correlación de Pearson de 0.76. De manera similar, <span class="citation" data-cites="Choi2017">Choi y Yeom (<a href="references.html#ref-Choi2017" role="doc-biblioref">2017</a>)</span> realizaron un estudio en donde a través de un algoritmo de árbol de decisiones crearon modelos para predecir el TSV midiendo la temperatura en diferentes puntos del cuerpo: frente, cuello, espalda, brazo, muñeca (interior), muñeca (posterior), pecho, cintura, vientre. En donde el mejor resultado lo obtuvieron al hacer un modelo combinando las mediciones de la cintura, brazo y la parte interior de la muñeca, con un 95.87% de precisión.</p>
+<p><span class="citation" data-cites="Bogatu2023">Bogatu et&nbsp;al. (<a href="references.html#ref-Bogatu2023" role="doc-biblioref">2023</a>)</span> también concluyeron que la temperatura de la piel es un buen indicador de confort térmico debido a su facilidad de medición, ya que representa el medio de interacción entre el cuerpo humano y su entorno, regulando el intercambio de calor mediante procesos como la vasodilatación y la vasoconstricción. Identificaron que a temperaturas más altas en la piel se registra una mayor tendencia a una sensación de calor, mientras que temperaturas más bajas de la piel se relacionan con una sensación de frío. Además, identificaron la frecuencia cardíaca y su variabilidad (VFC, variabilidad de la frecuencia cardíaca) como buenos indicadores del confort térmico. La VFC está vinculada al estado de homeostasis del cuerpo y puede reflejar el nivel de confort térmico de una persona, con estudios que muestran variaciones de HRV según el entorno térmico y una precisión del 93.7% al predecir el estado térmico de un individuo utilizando algoritmos de clasificación de aprendizaje automático. De hecho, el estudio de <span class="citation" data-cites="Nkurikiyeyezu_2017">Nkurikiyeyezu, Suzuki, y Lopez (<a href="references.html#ref-Nkurikiyeyezu_2017" role="doc-biblioref">2017</a>)</span> refuerza esta idea, mostrando que la VFC puede predecir el estado de confort térmico en diferentes condiciones ambientales. En su estudio, se analizaron índices de la VFC de individuos realizando tareas en ambientes fríos, neutros y cálidos, logrando predecir el estado térmico con una precisión de hasta el 93.7%.</p>
+</section>
+<section id="confort-térmico-en-méxico" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="confort-térmico-en-méxico"><span class="header-section-number">2.5</span> Confort Térmico en México</h2>
 <ul>
 <li>Usar las citas de <strong>Rincon2019</strong>, <strong>Rincon2020</strong>, <strong>Oropeza2017</strong>, <strong>LopezPerez2019</strong>, y <strong>Zepeda2022</strong> para contextualizar qué se ha hecho en México relacionado con el confort térmico, mencionando estudios previos y experiencias locales.</li>
-</ul>
-</section>
-<section id="herramientas-existentes-para-la-evaluación-del-confort-térmico" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="herramientas-existentes-para-la-evaluación-del-confort-térmico"><span class="header-section-number">2.5</span> Herramientas Existentes para la Evaluación del Confort Térmico</h2>
-<ul>
-<li><strong>Métodos Tradicionales</strong>:
-<ul>
-<li>Usar <strong>Calixto2021</strong> y <strong>estado.qmd</strong> para describir los métodos tradicionales de medición del confort térmico, como encuestas subjetivas y mediciones ambientales.</li>
-</ul></li>
 </ul>
 </section>
 <section id="wearables-y-su-aplicación-en-el-confort-térmico" class="level2" data-number="2.6">
@@ -266,6 +506,77 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-Calixto2021" class="csl-entry" role="listitem">
+Aguirre, Verónica Ivette Calixto. 2021. <span>«Thermal comfort studies»</span>. Universidad Nacional Autonoma de México. <a href="http://132.248.9.195/ptd2021/septiembre/0814603/Index.html">http://132.248.9.195/ptd2021/septiembre/0814603/Index.html</a>.
+</div>
+<div id="ref-ASHRAE2009" class="csl-entry" role="listitem">
+American Society of Heating, Refrigerating and Air-Conditioning Engineers. 2009. <em>ASHRAE Handbook—Fundamentals (SI Edition)</em>. Atlanta, GA: ASHRAE.
+</div>
+<div id="ref-ASHRAE55" class="csl-entry" role="listitem">
+American Society of Heating, Refrigerating and Air-Conditioning Engineers, Inc. 2017. <em>Thermal Environmental Conditions for Human Occupancy</em>. ASHRAE Standard 55-2017. American Society of Heating, Refrigerating; Air-Conditioning Engineers, Inc.
+</div>
+<div id="ref-Bogatu2023" class="csl-entry" role="listitem">
+Bogatu, Dragos Ioan, Jun Shinoda, José Joaquín Aguilera, Bjarne W. Olesen, Futa Watanabe, Yosuke Kaneko, y Ongun B. Kazanci. 2023. <span>«Human physiology for personal thermal comfort-based HVAC control – A review»</span>. <em>Building and Environment</em> 240 (julio): 110418. <a href="https://doi.org/10.1016/J.BUILDENV.2023.110418">https://doi.org/10.1016/J.BUILDENV.2023.110418</a>.
+</div>
+<div id="ref-chao_cen__2023" class="csl-entry" role="listitem">
+Cen, Chao, Siyu Cheng, y Nyuk Hien Wong. 2023. <span>«Effect of elevated air temperature and air velocity on thermal comfort and cognitive performance in the tropics»</span>. <em>Building and Environment</em> 234: 110203-3. <a href="https://doi.org/ 10.1016/j.buildenv.2023.110203 ">https://doi.org/ 10.1016/j.buildenv.2023.110203 </a>.
+</div>
+<div id="ref-Chaudhuri2018" class="csl-entry" role="listitem">
+Chaudhuri, Tanaya, Deqing Zhai, Yeng Chai Soh, Hua Li, y Lihua Xie. 2018. <span>«Random forest based thermal comfort prediction from gender-specific physiological parameters using wearable sensing technology»</span>. <em>Energy and Buildings</em> 166 (mayo): 391-406. <a href="https://doi.org/10.1016/J.ENBUILD.2018.02.035">https://doi.org/10.1016/J.ENBUILD.2018.02.035</a>.
+</div>
+<div id="ref-Choi2017" class="csl-entry" role="listitem">
+Choi, Joon Ho, y Dongwoo Yeom. 2017. <span>«Study of data-driven thermal sensation prediction model as a function of local body skin temperatures in a built environment»</span>. <em>Building and Environment</em> 121 (agosto): 130-47. <a href="https://doi.org/10.1016/J.BUILDENV.2017.05.004">https://doi.org/10.1016/J.BUILDENV.2017.05.004</a>.
+</div>
+<div id="ref-Fanger1970" class="csl-entry" role="listitem">
+Fanger, P. O. 1970. <em>Thermal Comfort: Analysis and Applications in Environmental Engineering</em>. Copenhagen: Danish Technical Press. <a href="https://archive.org/details/thermalcomfortan0000fang">https://archive.org/details/thermalcomfortan0000fang</a>.
+</div>
+<div id="ref-Fanger2002" class="csl-entry" role="listitem">
+Fanger, P. O., y Jørn Toftum. 2002. <span>«Extension of the PMV model to non-air-conditioned buildings in warm climates»</span>. <em>Energy and Buildings</em> 34 (6): 533-36. https://doi.org/<a href="https://doi.org/10.1016/S0378-7788(02)00003-8">https://doi.org/10.1016/S0378-7788(02)00003-8</a>.
+</div>
+<div id="ref-gomez-azpetia2006adaptacion" class="csl-entry" role="listitem">
+Gómez-Azpetia, G., E. López Gómez, y M. Peña. 2006. <span>«Adaptaci<span>ó</span>n del <span>ı́</span>ndice Humidex para el clima de la ciudad de Colima, M<span>é</span>xico, de acuerdo con el enfoque adaptativo»</span>. <em>Anuario</em> VIII: 77-92.
+</div>
+<div id="ref-ISO10551" class="csl-entry" role="listitem">
+International Organization for Standardization. 2019. <span>«Ergonomics of the thermal environment – Assessment of the influence of the thermal environment using subjective judgement scales»</span>. ISO Standard 10551. <span>International Organization for Standardization</span>. <a href="https://www.iso.org/standard/45126.html">https://www.iso.org/standard/45126.html</a>.
+</div>
+<div id="ref-ISO7730" class="csl-entry" role="listitem">
+International Standardization Organization (ISO). 2005. <span>«Ergonomics of the thermal environment-analytical determination and interpretation of the thermal comfort using calculation of the PMV and PPD indices and local thermal comfort»</span>. ISO Standard 7730. Geneva.
+</div>
+<div id="ref-BaqueroLarriva2019" class="csl-entry" role="listitem">
+Larriva, María Teresa Baquero, y Ester Higueras García. 2019. <span>«Confort térmico de adultos mayores: una revisión sistemática de la literatura científica»</span>. <em>Revista Española de Geriatría y Gerontología</em> 54 (5): 280-95. <a href="https://doi.org/10.1016/j.regg.2019.01.006">https://doi.org/10.1016/j.regg.2019.01.006</a>.
+</div>
+<div id="ref-Liu2019" class="csl-entry" role="listitem">
+Liu, Shichao, Stefano Schiavon, Hari Prasanna Das, Ming Jin, y Costas J. Spanos. 2019. <span>«Personal thermal comfort models with wearable sensors»</span>. <em>Building and Environment</em> 162 (septiembre): 106281. <a href="https://doi.org/10.1016/j.buildenv.2019.106281">https://doi.org/10.1016/j.buildenv.2019.106281</a>.
+</div>
+<div id="ref-junmeng_lyu__2023" class="csl-entry" role="listitem">
+Lyu, Junmeng, Yongxiang Shi, Heng Du, y Zhiwei Lian. 2023. <span>«Sex-based thermal comfort zones and energy savings in spaces with joint operation of air conditioner and fan»</span>. <em>Building and Environment</em>. <a href="https://doi.org/ 10.1016/j.buildenv.2023.111002 ">https://doi.org/ 10.1016/j.buildenv.2023.111002 </a>.
+</div>
+<div id="ref-kun_jung_lyu__2023" class="csl-entry" role="listitem">
+Lyu, Kun Jung, Arianna Brambilla, Anastasia Globa, y Richard de Dear. 2023. <span>«2. A socio-cultural perspective to semi-outdoor thermal experience and restorative benefits – Comparison between Chinese and Australian cultural groups»</span>. <em>Building and Environment</em>. <a href="https://doi.org/ 10.1016/j.buildenv.2023.110622 ">https://doi.org/ 10.1016/j.buildenv.2023.110622 </a>.
+</div>
+<div id="ref-masterton1979humidex" class="csl-entry" role="listitem">
+Masterton, J. M., F. A. Richardson, y Canada. Service de l’environnement atmosphérique. 1979. <em>Humidex: A Method of Quantifying Human Discomfort Due to Excessive Heat and Humidity, by J.M. Masterton and F.A. Richardson</em>. 28cm. cli,1. Service de l’environnement atmospherique. <a href="https://books.google.com.mx/books?id=DBIazQEACAAJ">https://books.google.com.mx/books?id=DBIazQEACAAJ</a>.
+</div>
+<div id="ref-sanober_naheed__2021" class="csl-entry" role="listitem">
+Naheed, Sanober, y Salman Shooshtarian. 2021. <span>«A Review of Cultural Background and Thermal Perceptions in Urban Environments»</span>. <em>Sustainability</em> 13 (16): 9080-80. <a href="https://doi.org/ 10.3390/SU13169080 ">https://doi.org/ 10.3390/SU13169080 </a>.
+</div>
+<div id="ref-Nkurikiyeyezu_2017" class="csl-entry" role="listitem">
+Nkurikiyeyezu, Kizito N., Yuta Suzuki, y Guillaume F. Lopez. 2017. <span>«Heart rate variability as a predictive biomarker of thermal comfort»</span>. <em>Journal of Ambient Intelligence and Humanized Computing</em> 9 (5): 1465-77. <a href="https://doi.org/10.1007/s12652-017-0567-4">https://doi.org/10.1007/s12652-017-0567-4</a>.
+</div>
+<div id="ref-tomonori_sakoi__2023" class="csl-entry" role="listitem">
+Sakoi, Tomonori, Yoshihito Kurazumi, Sri Rahma Apriliyanthi, Shin-ichi Sawada, y Chuansi Gao. 2023. <span>«5. Human body heat balance equation to consider core body temperature in assessment of heatstroke risk»</span>. <em>Building and Environment</em>. <a href="https://doi.org/ 10.1016/j.buildenv.2023.111020 ">https://doi.org/ 10.1016/j.buildenv.2023.111020 </a>.
+</div>
+<div id="ref-Sim2018" class="csl-entry" role="listitem">
+Sim, Jai Kyoung, Sunghyun Yoon, y Young-Ho Cho. 2018. <span>«Wearable Sweat Rate Sensors for Human Thermal Comfort Monitoring»</span>. <em>Scientific Reports</em> 8 (enero): 1181. <a href="https://doi.org/10.1038/s41598-018-19239-8">https://doi.org/10.1038/s41598-018-19239-8</a>.
+</div>
+<div id="ref-Sim2016" class="csl-entry" role="listitem">
+Sim, Soo Young, Myung Jun Koh, Kwang Min Joo, Seungwoo Noh, Sangyun Park, Youn Ho Kim, Kwang Suk Park, y Angelo Maria Sabatini. 2016. <span>«Estimation of Thermal Sensation Based on Wrist Skin Temperatures»</span>. <a href="https://doi.org/10.3390/s16040420">https://doi.org/10.3390/s16040420</a>.
+</div>
+<div id="ref-YAO2009" class="csl-entry" role="listitem">
+Yao, Runming, Baizhan Li, y Jing Liu. 2009. <span>«A theoretical adaptive model of thermal comfort – Adaptive Predicted Mean&nbsp;Vote&nbsp;(aPMV)»</span>. <em>Building and Environment</em> 44 (10): 2089-96. https://doi.org/<a href="https://doi.org/10.1016/j.buildenv.2009.02.014">https://doi.org/10.1016/j.buildenv.2009.02.014</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
