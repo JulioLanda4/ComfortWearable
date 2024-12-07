@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.32">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Diseño, desarrollo y validación – Reloj inteligente IoT basado en tecnologías abiertas para la recopilación de datos de confort térmico</title>
+<title>Reloj inteligente IoT basado en tecnologías abiertas para la recopilación de datos de confort térmico - 3&nbsp; Diseño, desarrollo y validación</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -58,7 +58,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -91,23 +90,17 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2486e1f0a3ee9ee1fc393803a1361cdb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e2a55d7d189d9ada6bd43e0674cebc09.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "limit": 20,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -116,7 +109,6 @@ div.csl-indent {
     "search-more-match-text": "resultado adicional en este documento",
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
     "search-submit-button-title": "Enviar",
     "search-label": "Buscar"
@@ -129,41 +121,9 @@ div.csl-indent {
 }
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
-<script>
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    document.body.classList.add('hypothesis-enabled');
-  });
-</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -173,13 +133,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Capitulos/desarrollo.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Diseño, desarrollo y validación</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Capitulos/desarrollo.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Diseño, desarrollo y validación</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -188,7 +148,7 @@ window.Quarto = {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Reloj inteligente IoT basado en tecnologías abiertas para la recopilación de datos de confort térmico</a> 
@@ -216,7 +176,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Capitulos/confort_termico.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Antecedentes y Marco Teórico</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Antecedentes y marco teórico</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -240,7 +200,7 @@ window.Quarto = {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -275,11 +235,9 @@ window.Quarto = {
   </div>
   
 
-
 </header>
 
-
-<p>En este capitulo se describe el proceso completo de desarrollo, construcción y validación del reloj inteligente para la recopilación de datos de confort térmico presentado en esta tesis. La <a href="#sec-metodología" class="quarto-xref"><span>Sección 3.1</span></a> presenta una descripción detallada del reloj inteligente, la selección de los componentes y la justificación de su elección. En la <a href="#sec-construccion" class="quarto-xref"><span>Sección 3.2</span></a> se desarrolla la etapa de diseño y construcción del dispositivo. La <a href="#sec-encuestas" class="quarto-xref"><span>Sección 3.3</span></a> se centra en el diseño y la implementación de las encuestas mediante la interfaz gráfica, mientras que la <a href="#sec-calibración" class="quarto-xref"><span>Sección 3.4</span></a> detalla el proceso de calibración de los sensores. En la <a href="#sec-programación" class="quarto-xref"><span>Sección 3.5</span></a> se presenta una descripción de la lógica de programación del reloj inteligente, y en la <a href="#sec-instrucciones" class="quarto-xref"><span>Sección 3.6</span></a> se proporcionan instrucciones de uso. Finalmente, en la <a href="#sec-validación" class="quarto-xref"><span>Sección 3.7</span></a> se verifica la funcionalidad del reloj inteligente para recopilar información de las encuestas de confort térmico y las mediciones de las variables fisiológicas, como la frecuencia cardíaca y la temperatura de la piel, así como para enviar estos datos a la plataforma Thingsboard.</p>
+<p>En este capitulo se describe el proceso completo de desarrollo, construcción y validación del reloj inteligente para la recopilación de datos de confort térmico presentado en esta tesis. La <a href="#sec-metodología"><span>Sección&nbsp;3.1</span></a> presenta una descripción detallada del reloj inteligente, la selección de los componentes y la justificación de su elección. En la <a href="#sec-construccion"><span>Sección&nbsp;3.2</span></a> se desarrolla la etapa de diseño y construcción del dispositivo. La <a href="#sec-encuestas"><span>Sección&nbsp;3.3</span></a> se centra en el diseño y la implementación de las encuestas mediante la interfaz gráfica, mientras que la <a href="#sec-calibración"><span>Sección&nbsp;3.4</span></a> detalla el proceso de calibración de los sensores. En la <a href="#sec-programación"><span>Sección&nbsp;3.5</span></a> se presenta una descripción de la lógica de programación del reloj inteligente, y en la <a href="#sec-instrucciones"><span>Sección&nbsp;3.6</span></a> se proporcionan instrucciones de uso. Finalmente, en la <a href="#sec-validación"><span>Sección&nbsp;3.7</span></a> se verifica la funcionalidad del reloj inteligente para recopilar información de las encuestas de confort térmico y las mediciones de las variables fisiológicas, como la frecuencia cardíaca y la temperatura de la piel, así como para enviar estos datos a la plataforma Thingsboard.</p>
 <section id="sec-metodología" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="sec-metodología"><span class="header-section-number">3.1</span> Metodología</h2>
 <ol type="1">
@@ -301,15 +259,11 @@ window.Quarto = {
 </ul>
 <p><strong>Placa de desarrollo</strong></p>
 <p>La selección de la placa o tarjeta de desarrollo es una decisión crucial en el desarrollo del proyecto. Se requiere una placa de tamaño reducido que cumpla con características esenciales como conexión WiFi, velocidad de procesamiento, memoria ROM y comunicación I2C. Además, debe tener un bajo consumo energético para garantizar el uso portátil prolongado del reloj inteligente.</p>
-<p>Durante el proceso de selección se consideraron placas de desarrollo Arduino, ESP y Raspberry. En la tabla <a href="#tbl-placas" class="quarto-xref">Tabla&nbsp;<span>3.1</span></a> se presenta una comparación de diferentes placas de desarrollo con las características requeridas.</p>
+<p>Durante el proceso de selección se consideraron placas de desarrollo Arduino, ESP y Raspberry. En la tabla <a href="#tbl-placas">Tabla&nbsp;<span>3.1</span></a> se presenta una comparación de diferentes placas de desarrollo con las características requeridas.</p>
 <!-- La placa LILYGO TTGO, no cuenta con tecnología táctil, lo cual limita su utilidad para realizar encuestas de confort térmico. Por otro lado, la MCU RP2040 con LCD redondo de 1.28 pulgadas, aunque cuenta con una pantalla táctil, no ofrece conectividad WiFi, un requisito esencial. Aunque estas dos placas no son tomadas en cuanta por las razones ya mencionadas, sirven como referencia para la búsqueda de otras opciones. -->
-<div id="tbl-placas" class="hover sm quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-placas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;3.1: Comparación de características de conectividad y hardware en placas de desarrollo.
-</figcaption>
-<div aria-describedby="tbl-placas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table-hover table-sm small caption-top table">
+<div id="tbl-placas" class="anchored">
+<table class="table-hover table-sm small table">
+<caption>Tabla&nbsp;3.1: Comparación de características de conectividad y hardware en placas de desarrollo.</caption>
 <colgroup>
 <col style="width: 25%">
 <col style="width: 8%">
@@ -388,16 +342,10 @@ Tabla&nbsp;3.1: Comparación de características de conectividad y hardware en p
 </tbody>
 </table>
 </div>
-</figure>
-</div>
-<p>Si bien todas las placas presentadas son opciones viables, Seeed Studio ha desarrollado placas orientadas a aplicaciones de dispositivos portátiles. Estas tienen las características deseadas y además placas empatan perfectamente con las necesidades del proyecto debido a su tamaño compacto, conectividad, modos de bajo consumo y la posibilidad de la integración con una pantalla táctil desarrollada por la misma marca. Para el desarrollo del proyecto, se elige la XIAO ESP32C3 sobre la XIAO ESP32S3. Aunque la primera es menos potente, cumple con todos los requerimientos a un menor costo. Además, la limitada disponibilidad de la XIAO ESP32S3 en México durante el desarrollo del proyecto también influye en la decisión. No obstante, la XIAO ESP32S3 podría ser usada sin ningún problema, ofreciendo incluso aumentar considerablemente la capacidad de memoria para futuras modificaciones o mejoras en el código. La <a href="#tbl-esp" class="quarto-xref">Tabla&nbsp;<span>3.2</span></a> muestra las características especificas de la placa seleccionada.</p>
-<div id="tbl-esp" class="hover sm quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-esp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;3.2: Especificaciones técnicas detalladas de la placa XIAO ESP32C3.
-</figcaption>
-<div aria-describedby="tbl-esp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table-hover table-sm small caption-top table">
+<p>Si bien todas las placas presentadas son opciones viables, Seeed Studio ha desarrollado placas orientadas a aplicaciones de dispositivos portátiles. Estas tienen las características deseadas y además placas empatan perfectamente con las necesidades del proyecto debido a su tamaño compacto, conectividad, modos de bajo consumo y la posibilidad de la integración con una pantalla táctil desarrollada por la misma marca. Para el desarrollo del proyecto, se elige la XIAO ESP32C3 sobre la XIAO ESP32S3. Aunque la primera es menos potente, cumple con todos los requerimientos a un menor costo. Además, la limitada disponibilidad de la XIAO ESP32S3 en México durante el desarrollo del proyecto también influye en la decisión. No obstante, la XIAO ESP32S3 podría ser usada sin ningún problema, ofreciendo incluso aumentar considerablemente la capacidad de memoria para futuras modificaciones o mejoras en el código. La <a href="#tbl-esp">Tabla&nbsp;<span>3.2</span></a> muestra las características especificas de la placa seleccionada.</p>
+<div id="tbl-esp" class="anchored">
+<table class="table-hover table-sm small table">
+<caption>Tabla&nbsp;3.2: Especificaciones técnicas detalladas de la placa XIAO ESP32C3.</caption>
 <colgroup>
 <col style="width: 33%">
 <col style="width: 66%">
@@ -460,17 +408,11 @@ Tabla&nbsp;3.2: Especificaciones técnicas detalladas de la placa XIAO ESP32C3.
 </tbody>
 </table>
 </div>
-</figure>
-</div>
 <p><strong>Pantalla</strong></p>
-<p>La elección de la pantalla debe alinearse con los criterios establecidos para la placa de desarrollo. se busca una pantalla que ademas de ser de tamaño reducido, sea compatible con la placa seleccionada. En la tabla <a href="#tbl-screen" class="quarto-xref">Tabla&nbsp;<span>3.3</span></a>, se presentan las características básicas de las pantallas compatibles con la placa de desarrollo seleccionada.</p>
-<div id="tbl-screen" class="hover sm quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-screen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;3.3: Comparación de pantallas compatibles con la XIAO ESP32C3.
-</figcaption>
-<div aria-describedby="tbl-screen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table-hover table-sm small caption-top table">
+<p>La elección de la pantalla debe alinearse con los criterios establecidos para la placa de desarrollo. se busca una pantalla que ademas de ser de tamaño reducido, sea compatible con la placa seleccionada. En la tabla <a href="#tbl-screen">Tabla&nbsp;<span>3.3</span></a>, se presentan las características básicas de las pantallas compatibles con la placa de desarrollo seleccionada.</p>
+<div id="tbl-screen" class="anchored">
+<table class="table-hover table-sm small table">
+<caption>Tabla&nbsp;3.3: Comparación de pantallas compatibles con la XIAO ESP32C3.</caption>
 <colgroup>
 <col style="width: 48%">
 <col style="width: 21%">
@@ -507,18 +449,12 @@ Tabla&nbsp;3.3: Comparación de pantallas compatibles con la XIAO ESP32C3.
 </tbody>
 </table>
 </div>
-</figure>
-</div>
 <p>La pantalla seleccionada es la Seeed Studio Round Display for XIAO. Este modelo es compatible con la placa XIAO ESP32C3, elegida previamente, gracias al enfoque de Seeed Studio para desarrollar un ecosistema orientado a aplicaciones de dispositivos portátiles. La compatibilidad entre los componentes, tecnología táctil y diseño redondo, logran que la pantalla se ajuste a las necesidades del proyecto.</p>
 <p><strong>Sensor de temperatura</strong></p>
-<p>La <a href="#tbl-temp" class="quarto-xref">Tabla&nbsp;<span>3.4</span></a> muestra una comparación entre distintos sensores de temperatura que podrían ser utilizados en el proyecto, incluyendo termistores, sensores infrarrojos y un sensor de temperatura y humedad. Estos sensores se manejan en un rango de operación entre los 3.3 V y 5.0 V para garantizar su compatibilidad con la placa de desarrollo seleccionada.</p>
-<div id="tbl-temp" class="hover sm quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-temp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;3.4: Comparación de sensores de temperatura por rango operativo y precisión.
-</figcaption>
-<div aria-describedby="tbl-temp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table-hover table-sm small caption-top table">
+<p>La <a href="#tbl-temp">Tabla&nbsp;<span>3.4</span></a> muestra una comparación entre distintos sensores de temperatura que podrían ser utilizados en el proyecto, incluyendo termistores, sensores infrarrojos y un sensor de temperatura y humedad. Estos sensores se manejan en un rango de operación entre los 3.3 V y 5.0 V para garantizar su compatibilidad con la placa de desarrollo seleccionada.</p>
+<div id="tbl-temp" class="anchored">
+<table class="table-hover table-sm small table">
+<caption>Tabla&nbsp;3.4: Comparación de sensores de temperatura por rango operativo y precisión.</caption>
 <colgroup>
 <col style="width: 15%">
 <col style="width: 20%">
@@ -574,18 +510,12 @@ Tabla&nbsp;3.4: Comparación de sensores de temperatura por rango operativo y pr
 </tbody>
 </table>
 </div>
-</figure>
-</div>
 <p>Tras un análisis detallado, se selecciona el sensor GY-906 debido a su tamaño compacto, su tecnología infrarroja y comunicación digital por I2C. Aunque el termistor NTC MF52AT ofrece una alternativa viable, se descarta por ser un sensor analógico. Dado que el reloj inteligente está diseñado para operar en un espacio reducido, cualquier interferencia en las conexiones internas podría afectar la precisión de los sensores analógicos. Por esta razón, se opta por el GY-906, que garantiza transmisión de datos en entornos compactos.</p>
 <p><strong>Sensor de frecuencia cardíaca</strong></p>
-<p>Los sensores ópticos se han consolidado como una buena opción para la medición de la frecuencia cardíaca en dispositivos portátiles. Maxim Integrated ofrece la línea de sensores MAX3010X para este tipo de aplicaciones. Estos sensores destacan por su bajo consumo de energía, precio accesible, tamaño compacto y protocolo de comunicación I2C. La <a href="#tbl-pulso" class="quarto-xref">Tabla&nbsp;<span>3.5</span></a> muestra una comparación entre los sensores MAX20100, MAX30102 y MAX30105.</p>
-<div id="tbl-pulso" class="hover sm quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-pulso-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;3.5: Comparación de Sensores de frecuencia cardíaca.
-</figcaption>
-<div aria-describedby="tbl-pulso-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table-hover table-sm small caption-top table">
+<p>Los sensores ópticos se han consolidado como una buena opción para la medición de la frecuencia cardíaca en dispositivos portátiles. Maxim Integrated ofrece la línea de sensores MAX3010X para este tipo de aplicaciones. Estos sensores destacan por su bajo consumo de energía, precio accesible, tamaño compacto y protocolo de comunicación I2C. La <a href="#tbl-pulso">Tabla&nbsp;<span>3.5</span></a> muestra una comparación entre los sensores MAX20100, MAX30102 y MAX30105.</p>
+<div id="tbl-pulso" class="anchored">
+<table class="table-hover table-sm small table">
+<caption>Tabla&nbsp;3.5: Comparación de Sensores de frecuencia cardíaca.</caption>
 <colgroup>
 <col style="width: 16%">
 <col style="width: 21%">
@@ -627,33 +557,23 @@ Tabla&nbsp;3.5: Comparación de Sensores de frecuencia cardíaca.
 </tbody>
 </table>
 </div>
-</figure>
-</div>
 <p>El MAX30102 se elige como la mejor opción para este proyecto por su equilibrio entre funcionalidad, capacidad de captura de datos y costo. A comparación del MAX30105, este es más económico y fácil de conseguir en México, mientras que el MAX30100 se encuentra aproximadamente por el mismo precio. Además, el MAX30102 ofrece mejoras significativas respecto al MAX30100, tanto en la resolución como en el tipo de almacenamiento. Tanto la funcionalidad de detección de partículas, como la medición de oxigenación en la sangre no son una característica actual del reloj inteligente planteado en esta tesis, pero podrían ser una variables de interés en investigaciones futuras.</p>
 <p><strong>Circuito vibrador</strong></p>
-<p>El dispositivo cuenta con un sistema de alarma silenciosa compuesta por un motor vibrador circular de 8 mm de diámetro, alimentado a 3.7 V y un circuito de control. La <a href="#fig-circuito_motor" class="quarto-xref">Figura&nbsp;<span>3.1</span></a> muestra este circuito.</p>
-<div id="fig-circuito_motor" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-circuito_motor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../Imagenes/Circuito_motor.png" class="img-fluid figure-img" style="width:50.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-circuito_motor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3.1: Circuito de control del motor vibrador.
-</figcaption>
+<p>El dispositivo cuenta con un sistema de alarma silenciosa compuesta por un motor vibrador circular de 8 mm de diámetro, alimentado a 3.7 V y un circuito de control. La <a href="#fig-circuito_motor">Figura&nbsp;<span>3.1</span></a> muestra este circuito.</p>
+<div id="fig-circuito_motor" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../Imagenes/Circuito_motor.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption class="figure-caption">Figura&nbsp;3.1: Circuito de control del motor vibrador.</figcaption>
 </figure>
 </div>
 <p><strong>Batería</strong></p>
 <p>El uso de baterías de polímero de litio (LiPo) es ampliamente utilizado en dispositivos portátiles debido a sus características de pequeño tamaño, bajo peso y facilidad de carga. Para este proyecto, que integra una placa de desarrollo XIAO ESP32C3, una pantalla XIAO Round Display, un sensor GY-906, un sensor MAX30102 y un circuito vibrador, es crucial seleccionar una capacidad de batería que asegure un funcionamiento continuo y confiable, considerando el consumo energético de cada componente involucrado.</p>
 <p>La XIAO ESP32C3 presenta un consumo promedio de 74.7 mA durante su operación activa <span class="citation" data-cites="xiaoesp32c3">(<a href="references.html#ref-xiaoesp32c3" role="doc-biblioref">Studio 2024</a>)</span>, mientras que la pantalla XIAO Round Display demanda aproximadamente 70.0 mA <span class="citation" data-cites="xiaodisplay">(<a href="references.html#ref-xiaodisplay" role="doc-biblioref">Solution 2024</a>)</span>. Por su parte, el sensor GY-906 tiene un consumo de corriente bajo, en el rango de 1.0 a 2.0 mA <span class="citation" data-cites="mlx90614_datasheet">(<a href="references.html#ref-mlx90614_datasheet" role="doc-biblioref">Melexis 2009</a>)</span>, el sensor MAX30102 consume entre 0.6 y 1.2 mA durante la medición de la frecuencia cardíaca <span class="citation" data-cites="max30102_datasheet">(<a href="references.html#ref-max30102_datasheet" role="doc-biblioref">Integrated 2015</a>)</span>. Adicionalmente, el motor vibrador registra un consumo estimado de 84.0 mA <span class="citation" data-cites="uelectronics_vibration_motor">(<a href="references.html#ref-uelectronics_vibration_motor" role="doc-biblioref">uElectronics 2024</a>)</span>, dependiendo de la intensidad de la vibración y la carga aplicada.</p>
 <p>El consumo total del dispositivo en condiciones de operación máxima puede alcanzar 232.0 mA. Sin embargo, este nivel de consumo es poco probable alcanzarse durante el uso típico del dispositivo,ya que, durante la mayor parte del tiempo los sensores y la pantalla permanecen inactivos y solo se encenderan al momento de llevar a cabo sus mediciones; el motor vibrador se enciende únicamente por breves periodos cada hora. Con el fin de asegurar autonomía del dispositivo y evitar interrupciones en su funcionamiento, se selecciona una batería de 650.0 mAh. Este capacidad satisface los requisitos energéticos, permitiendo el uso prolongado del dispositivo. Además, la batería seleccionada cumple en tamaño y peso, ajustándose adecuadamente al diseño del dispositivo.</p>
-<p>La <a href="#tbl-componentes-seleccionados" class="quarto-xref">Tabla&nbsp;<span>3.6</span></a> muestra todos los componentes seleccionados para el desarrollo del dispositivo.</p>
-<div id="tbl-componentes-seleccionados" class="hover sm quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-componentes-seleccionados-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;3.6: Tabla de componentes seleccionados.
-</figcaption>
-<div aria-describedby="tbl-componentes-seleccionados-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table-hover table-sm small caption-top table">
+<p>La <a href="#tbl-componentes-seleccionados">Tabla&nbsp;<span>3.6</span></a> muestra todos los componentes seleccionados para el desarrollo del dispositivo.</p>
+<div id="tbl-componentes-seleccionados" class="anchored">
+<table class="table-hover table-sm small table">
+<caption>Tabla&nbsp;3.6: Tabla de componentes seleccionados.</caption>
 <colgroup>
 <col style="width: 31%">
 <col style="width: 68%">
@@ -692,8 +612,6 @@ Tabla&nbsp;3.6: Tabla de componentes seleccionados.
 </tbody>
 </table>
 </div>
-</figure>
-</div>
 <ol start="3" type="1">
 <li><strong>Diseño del dispositivo</strong></li>
 </ol>
@@ -703,27 +621,19 @@ Tabla&nbsp;3.6: Tabla de componentes seleccionados.
 <p>La parte central de la carcasa es la pieza que va arriba de la base y es donde se aloja el microcontrolador, el motor vibrador y el interruptor de encendido. La pieza está diseñada con compartimentos para fijar cada uno de estos componentes. Por la parte exterior de la carcasa, esta pieza cuenta con ranuras para colocar las correas que fijan el dispositivo a la muñeca del usuario.</p>
 <p>La parte superior de la carcasa está diseñada con el fin de mantener la pantalla táctil en su posición y cerrar el dispositivo. Todas las piezas se ensamblan una con otra por presión, evitando el uso de tornillos.</p>
 <p>Adicional, hay una cuarta pieza que es un seguro para fijar el interruptor de encendido. Esta se coloca por encima del interruptor una vez esté colocado en su posición en la pieza central. El seguro ensambla por presión a la pieza y deja fijo el interruptor.</p>
-<p>En la <a href="#fig-partescase" class="quarto-xref">Figura&nbsp;<span>3.2</span></a> Se observan las tres piezas principales de la carcasa.</p>
-<div id="fig-partescase" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-partescase-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../Imagenes/PartesCase.png" class="img-fluid figure-img" style="width:75.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-partescase-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3.2: Partes de la carcasa del dispositivo (el seguro se muestra a mayor escala para su mejor visualización).
-</figcaption>
+<p>En la <a href="#fig-partescase">Figura&nbsp;<span>3.2</span></a> Se observan las tres piezas principales de la carcasa.</p>
+<div id="fig-partescase" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../Imagenes/PartesCase.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<figcaption class="figure-caption">Figura&nbsp;3.2: Partes de la carcasa del dispositivo (el seguro se muestra a mayor escala para su mejor visualización).</figcaption>
 </figure>
 </div>
 <p><strong>Diseño de los circuitos</strong></p>
-<p>El diseño de los circuitos del reloj inteligente se divide en tres circuitos, circuito vibrador para alarma <a href="#fig-conexiones" class="quarto-xref">Figura&nbsp;<span>3.3</span></a> a) , circuito de sensores y microcontrolador <a href="#fig-conexiones" class="quarto-xref">Figura&nbsp;<span>3.3</span></a> b) y el circuito de la batería <a href="#fig-conexiones" class="quarto-xref">Figura&nbsp;<span>3.3</span></a> c). Cada uno de estos circuitos está diseñado para mantener las conexiones lo más simples y cortas posibles. Dado que la placa XIAO ESP32C3 y la pantalla XIAO Round Display se ensamblan directamente, se omite ese circuito.</p>
-<div id="fig-conexiones" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-conexiones-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../Imagenes/Diagrama de conexiones.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-conexiones-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3.3: Diagrama de conexiones: a) circuito vibrador, b) circuito de sensores y placa de desarrollo, c) circuito de la batería.
-</figcaption>
+<p>El diseño de los circuitos del reloj inteligente se divide en tres circuitos, circuito vibrador para alarma <a href="#fig-conexiones">Figura&nbsp;<span>3.3</span></a> a) , circuito de sensores y microcontrolador <a href="#fig-conexiones">Figura&nbsp;<span>3.3</span></a> b) y el circuito de la batería <a href="#fig-conexiones">Figura&nbsp;<span>3.3</span></a> c). Cada uno de estos circuitos está diseñado para mantener las conexiones lo más simples y cortas posibles. Dado que la placa XIAO ESP32C3 y la pantalla XIAO Round Display se ensamblan directamente, se omite ese circuito.</p>
+<div id="fig-conexiones" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../Imagenes/Diagrama de conexiones.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figura&nbsp;3.3: Diagrama de conexiones: a) circuito vibrador, b) circuito de sensores y placa de desarrollo, c) circuito de la batería.</figcaption>
 </figure>
 </div>
 <p>El código de colores utilizado en este proyecto, para facilitar las conexiones, es:</p>
@@ -738,15 +648,11 @@ Figura&nbsp;3.3: Diagrama de conexiones: a) circuito vibrador, b) circuito de se
 <p>El circuito vibrador es un circuito sencillo de control de motor. su principal objetivo energizar el motor vibrador y proteger el microcontrolador, evitando que el motor se alimente directamente desde el pin digital del microcontrolador, si no que lo haga directamente de la fuente de alimentación general del dispositivo, mientras que el pin del microcontrolador se utiliza únicamente para enviar la señal de activación.</p>
 <p>El circuito de sensores y placa de desarrollo tiene como propósito establecer la comunicación simultánea de ambos sensores a la placa de desarrollo mediante el protocolo I2C.</p>
 <p>El circuito de la batería integra un interruptor de encendido y apagado, que permite al usuario controlar la alimentación del dispositivo; y un conector JST, que proporciona la conexión directa con la pantalla táctil XIAO Round Display que a su vez alimenta a todo el reloj inteligente.</p>
-<p>Finalmente, en la <a href="#fig-DiagramaBloques" class="quarto-xref">Figura&nbsp;<span>3.4</span></a> se muestra el diagrama de bloques funcional del dispositivo, destacando los componentes del dispositivo y sus conexiones, haciendo una separación entre los elementos internos y externos del reloj. Los componentes dentro del recuadro negro son aquellos que están contenidos físicamente dentro de la carcasa del reloj, como los sensores, la batería, la antena WIFI, el circuito de la pantalla, el circuito vibrador y el microcontrolador. Por otro lado, los elementos que se encuentran fuera del recuadro negro corresponden a los componentes externos con los cuales el usuario interactúa directamente, como el interruptor de encendido y apagado, la pantalla táctil y el puerto de carga USB-C. Además, el diagrama indica las interconexiones entre los diferentes componentes con líneas. Se destaca que la conexión entre los sensores y el microcontrolador es mediante el protocolo I2C.</p>
-<div id="fig-DiagramaBloques" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-DiagramaBloques-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../Imagenes/DiagramaBloques.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-DiagramaBloques-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3.4: Diagrama de bloques funcional del reloj inteligente.
-</figcaption>
+<p>Finalmente, en la <a href="#fig-DiagramaBloques">Figura&nbsp;<span>3.4</span></a> se muestra el diagrama de bloques funcional del dispositivo, destacando los componentes del dispositivo y sus conexiones, haciendo una separación entre los elementos internos y externos del reloj. Los componentes dentro del recuadro negro son aquellos que están contenidos físicamente dentro de la carcasa del reloj, como los sensores, la batería, la antena WIFI, el circuito de la pantalla, el circuito vibrador y el microcontrolador. Por otro lado, los elementos que se encuentran fuera del recuadro negro corresponden a los componentes externos con los cuales el usuario interactúa directamente, como el interruptor de encendido y apagado, la pantalla táctil y el puerto de carga USB-C. Además, el diagrama indica las interconexiones entre los diferentes componentes con líneas. Se destaca que la conexión entre los sensores y el microcontrolador es mediante el protocolo I2C.</p>
+<div id="fig-DiagramaBloques" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../Imagenes/DiagramaBloques.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figura&nbsp;3.4: Diagrama de bloques funcional del reloj inteligente.</figcaption>
 </figure>
 </div>
 </section>
@@ -754,7 +660,7 @@ Figura&nbsp;3.4: Diagrama de bloques funcional del reloj inteligente.
 <h2 data-number="3.2" class="anchored" data-anchor-id="sec-construccion"><span class="header-section-number">3.2</span> Construcción del dispositivo</h2>
 <p>La construcción del reloj inteligente se puede separar en tres etapas: La impresión de la carcasa, la conexión de los componentes electrónicos y la integración y montaje de todos los elementos en la carcasa.</p>
 <p><strong><em>Carcasa:</em></strong> los archivos STL para la impresión de la carcasa los puedes encontrar en el <a href="https://github.com/JulioLanda4/IoT_Reloj_Confort" target="_blank">repositorio del proyecto</a></p>
-<p><strong><em>Componentes electrónicos:</em></strong> Las conexiones de los componentes electrónicos se llevan a cabo siguiendo los diagramas de <a href="#fig-conexiones" class="quarto-xref">Figura&nbsp;<span>3.3</span></a>. Es importante seguir correctamente los diagramas para facilitar posteriormente su acomodo dentro de la carcasa.</p>
+<p><strong><em>Componentes electrónicos:</em></strong> Las conexiones de los componentes electrónicos se llevan a cabo siguiendo los diagramas de <a href="#fig-conexiones">Figura&nbsp;<span>3.3</span></a>. Es importante seguir correctamente los diagramas para facilitar posteriormente su acomodo dentro de la carcasa.</p>
 <p><strong><em>Integración y montaje:</em></strong> Una vez realizadas las conexiones, se lleva a cabo el montaje de los circuitos dentro de la carcasa, esta se ensambla y se colocan las correas.</p>
 <p>En el articulo XXX puede encontrar información más detallada acerca del diseño y los pasos a seguir para la construcción del dispositivo.</p>
 </section>
@@ -767,15 +673,11 @@ Figura&nbsp;3.4: Diagrama de bloques funcional del reloj inteligente.
 <p>El reloj inteligente lleva a cabo encuestas simplificadas de confort térmico cada hora, en horarios específicos entre las 08:00 a.m. y las 09:00 p.m., programadas en las medias horas para alinearse con los horarios de actividades en el IER, permitiendo al usuario aclimatarse antes de responder la encuesta. Al llegar el momento de responder la encuesta, el dispositivo activa una alarma vibradora que consta de tres pulsos cortos en un lapso de un segundo, para notificar al usuario. Si el usuario ignora la alarma, el botón de ‘Encuesta’ permanece activo hasta que se complete la encuesta, si después de quince minutos la encuesta no ha sido respondida, la alarma se vuelve a activar una vez más. Si esta segunda notificación es ignorada, la alarma no se activa nuevamente hasta la próxima hora programada.</p>
 <p>La encuesta consta de cinco preguntas. Las preguntas seleccionadas se basan en los lineamientos establecidos por la ISO 10551 (<span class="citation" data-cites="ISO10551">International Organization for Standardization (<a href="references.html#ref-ISO10551" role="doc-biblioref">2019</a>)</span>). Las cinco preguntas son las siguientes:</p>
 <ul>
-<li><strong>Vestimenta</strong>: Presenta la pregunta: “¿Cuál es tu vestimenta actual?” donde el usuario puede seleccionar todas las prendas que este usando de una lista predefinida. El objetivo de esta pregunta es calcular el nivel de aislamiento térmico del usuario (CLO). La interfaz muestra el cálculo del valor de CLO en la parte inferior de la pantalla a medida que se seleccionan o deseleccionan las prendas. La <a href="#tbl-prendas" class="quarto-xref">Tabla&nbsp;<span>3.7</span></a> muestra la lista de prendas disponibles para seleccionar con su respectivo calor de CLO.</li>
+<li><strong>Vestimenta</strong>: Presenta la pregunta: “¿Cuál es tu vestimenta actual?” donde el usuario puede seleccionar todas las prendas que este usando de una lista predefinida. El objetivo de esta pregunta es calcular el nivel de aislamiento térmico del usuario (CLO). La interfaz muestra el cálculo del valor de CLO en la parte inferior de la pantalla a medida que se seleccionan o deseleccionan las prendas. La <a href="#tbl-prendas">Tabla&nbsp;<span>3.7</span></a> muestra la lista de prendas disponibles para seleccionar con su respectivo calor de CLO.</li>
 </ul>
-<div id="tbl-prendas" class="hover sm quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-prendas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;3.7: Tabla de equivalencia de prendas a CLO.
-</figcaption>
-<div aria-describedby="tbl-prendas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table-hover table-sm small caption-top table">
+<div id="tbl-prendas" class="anchored">
+<table class="table-hover table-sm small table">
+<caption>Tabla&nbsp;3.7: Tabla de equivalencia de prendas a CLO.</caption>
 <colgroup>
 <col style="width: 26%">
 <col style="width: 23%">
@@ -866,18 +768,12 @@ Tabla&nbsp;3.7: Tabla de equivalencia de prendas a CLO.
 </tbody>
 </table>
 </div>
-</figure>
-</div>
 <ul>
-<li><strong>Actividad</strong>: Presenta la pregunta: “¿Qué actividad estás realizando?” donde el usuario selecciona una única opción de una lista predefinida de actividades que permiten calcular la tasa metabólica (MET) del usuario. La <a href="#tbl-actividad" class="quarto-xref">Tabla&nbsp;<span>3.8</span></a> muestra la lista de actividades con su respectivo valor de MET asociado.</li>
+<li><strong>Actividad</strong>: Presenta la pregunta: “¿Qué actividad estás realizando?” donde el usuario selecciona una única opción de una lista predefinida de actividades que permiten calcular la tasa metabólica (MET) del usuario. La <a href="#tbl-actividad">Tabla&nbsp;<span>3.8</span></a> muestra la lista de actividades con su respectivo valor de MET asociado.</li>
 </ul>
-<div id="tbl-actividad" class="hover sm quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-actividad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;3.8: Tabla equivalencia de actividades a MET.
-</figcaption>
-<div aria-describedby="tbl-actividad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table-hover table-sm small caption-top table">
+<div id="tbl-actividad" class="anchored">
+<table class="table-hover table-sm small table">
+<caption>Tabla&nbsp;3.8: Tabla equivalencia de actividades a MET.</caption>
 <thead>
 <tr class="header">
 <th><strong>Actividad</strong></th>
@@ -924,19 +820,13 @@ Tabla&nbsp;3.8: Tabla equivalencia de actividades a MET.
 </tbody>
 </table>
 </div>
-</figure>
-</div>
 <ul>
 <li><p><strong>Ubicación</strong>: Presenta la pregunta: “¿Donde te encuentras?” donde el usuario selecciona una única opción de una lista predefinida de ubicaciones &nbsp;dentro del IER UNAM.</p></li>
-<li><p><strong>Escala de confort térmico</strong>: Presenta la pregunta: “¿Cuál es tu sensación térmica en este momento?” donde el usuario puede elegir su sensación térmica actual en un rango de -3 a 3 en intervalos de 0.5. Cada valor tiene una descripción asociada de la sensación térmica. La <a href="#tbl-tsv" class="quarto-xref">Tabla&nbsp;<span>3.9</span></a> muestra la descripción asociada a cada uno de los valores del voto de sensación térmica.</p></li>
+<li><p><strong>Escala de confort térmico</strong>: Presenta la pregunta: “¿Cuál es tu sensación térmica en este momento?” donde el usuario puede elegir su sensación térmica actual en un rango de -3 a 3 en intervalos de 0.5. Cada valor tiene una descripción asociada de la sensación térmica. La <a href="#tbl-tsv">Tabla&nbsp;<span>3.9</span></a> muestra la descripción asociada a cada uno de los valores del voto de sensación térmica.</p></li>
 </ul>
-<div id="tbl-tsv" class="hover sm quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tsv-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;3.9: Escala del voto de sensación térmica con su descripción.
-</figcaption>
-<div aria-describedby="tbl-tsv-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table-hover table-sm small caption-top table">
+<div id="tbl-tsv" class="anchored">
+<table class="table-hover table-sm small table">
+<caption>Tabla&nbsp;3.9: Escala del voto de sensación térmica con su descripción.</caption>
 <thead>
 <tr class="header">
 <th><strong>Valor de Sensación Térmica</strong></th>
@@ -999,8 +889,6 @@ Tabla&nbsp;3.9: Escala del voto de sensación térmica con su descripción.
 </tbody>
 </table>
 </div>
-</figure>
-</div>
 <ul>
 <li><strong>Aceptación Térmica</strong>: Presenta la pregunta: “¿Aceptas la sensación térmica actual?”, donde el usuario puede responder “Sí” o “No”. Esta pregunta busca evaluar si, independientemente de la sensación térmica reportada, el usuario la percibe como aceptable.</li>
 </ul>
@@ -1035,14 +923,10 @@ Tabla&nbsp;3.9: Escala del voto de sensación térmica con su descripción.
 <li><strong>RATE_SIZE</strong> (tamaño del buffer): Determina el tamaño del buffer para el cálculo de la frecuencia cardíaca. Este parámetro afecta la cantidad de datos utilizados para calcular la frecuencia cardíaca promedio. Aumentar el tamaño del buffer de 4 a 6 mejora la precisión de las lecturas, ya que permite una mayor estabilidad en los cálculos.</li>
 </ul>
 <p>Inicialmente, los parámetros se configuran con valores predeterminados, pero los resultados muestran un Error Absoluto Medio (EAM) de 18.5 bpm respecto al oxímetro de referencia, lo cual no es aceptable. Se decide utilizar únicamente el EAM porque mide la magnitud promedio del error, sin distinguir entre mediciones que están por encima o por debajo del estándar, lo cual es ideal para evaluar la precisión general del sensor. Para mejorar la precisión, se exploran valores extremos del parámetro <code>RATE_SIZE</code>, variando desde 1 hasta 100. Con <code>RATE_SIZE</code> igual a 1, se obtienen resultados rápidos pero poco precisos, mientras que con <code>RATE_SIZE</code> igual a 100, se logra alta precisión, pero se requieren múltiples intervalos de 10 segundos, incrementando el tiempo total de medición. Para encontrar un equilibrio entre precisión y tiempo de medición, se evalúan valores intermedios de <code>RATE_SIZE</code> entre 4 y 16. El valor óptimo encontrado es <code>RATE_SIZE</code> igual a 6, lo cual reduce el EAM a 4.4 bpm.</p>
-<p>La <a href="#tbl-max30102" class="quarto-xref">Tabla&nbsp;<span>3.10</span></a> muestra el error absoluto medio (EAM) obtenido para diferentes valores de <code>RATE_SIZE</code> entre 4 y 16, destacando que el mejor valor para <code>RATE_SIZE</code> es 6:</p>
-<div id="tbl-max30102" class="hover sm quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-max30102-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;3.10: Error Absoluto Medio (EAM) para diferentes valores de RATE_SIZE en el MAX30102.
-</figcaption>
-<div aria-describedby="tbl-max30102-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table-hover table-sm small caption-top table">
+<p>La <a href="#tbl-max30102">Tabla&nbsp;<span>3.10</span></a> muestra el error absoluto medio (EAM) obtenido para diferentes valores de <code>RATE_SIZE</code> entre 4 y 16, destacando que el mejor valor para <code>RATE_SIZE</code> es 6:</p>
+<div id="tbl-max30102" class="anchored">
+<table class="table-hover table-sm small table">
+<caption>Tabla&nbsp;3.10: Error Absoluto Medio (EAM) para diferentes valores de RATE_SIZE en el MAX30102.</caption>
 <thead>
 <tr class="header">
 <th><strong>Número de Mediciones</strong></th>
@@ -1089,21 +973,15 @@ Tabla&nbsp;3.10: Error Absoluto Medio (EAM) para diferentes valores de RATE_SIZE
 </tbody>
 </table>
 </div>
-</figure>
-</div>
 <p>Posteriormente, con <code>RATE\_SIZE</code> fijado en 6, se ajusta el valor de <code>sampleAverage</code> de 4 a 8, logrando un EAM de 3.6 bpm, lo cual representa una mejora en la estabilidad de la señal. La configuración final optimizada incluye los siguientes valores: <code>ledBrightness</code> en 31, <code>sampleAverage</code> en 8, <code>ledMode</code> en 2, <code>sampleRate</code> en 400, <code>pulseWidth</code> en 411, <code>adcRange</code> en 2048 y <code>RATE\_SIZE</code> en 6.</p>
 <ol start="2" type="1">
 <li><strong>Calibración del Sensor GY-906</strong></li>
 </ol>
 <p>Para la calibración del sensor de temperatura GY-906, se utiliza una cámara termográfica Fluke Ti9 como referencia. Tanto el sensor como la cámara se configuran con una emisividad de 0.98, correspondiente a la emisividad promedio de la piel humana. Las pruebas se realizan durante tres días, entre las 10:00 a. m. y las 06:00 p.&nbsp;m., con mediciones cada media hora para capturar diferentes condiciones ambientales.</p>
-<p>Durante cada sesión de medición, el sensor GY-906 realiza diez mediciones consecutivas en un lapso de diez segundos, y el promedio de estas mediciones se envía a la plataforma Thingsboard, lo cual permite reducir el ruido y aumentar la precisión. Simultáneamente, las lecturas de la cámara termográfica se registran manualmente. Para minimizar el error por movimiento, el dispositivo emite una alerta vibratoria de un segundo, seguida de una pausa de cuatro segundos antes de realizar la medición, permitiendo al usuario mantener la mano inmóvil durante el proceso de medición. Se obtienen 86 pares de mediciones, la <a href="#tbl-estadisticas-camara" class="quarto-xref">Tabla&nbsp;<span>3.11</span></a> muestra las características estadísticas de ambos conjuntos de datos.</p>
-<div id="tbl-estadisticas-camara" class="hover sm quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-estadisticas-camara-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;3.11: Estadísticas de las Mediciones del Sensor GY-906 y la Cámara Termográfica Fluke Ti9.
-</figcaption>
-<div aria-describedby="tbl-estadisticas-camara-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table-hover table-sm small caption-top table">
+<p>Durante cada sesión de medición, el sensor GY-906 realiza diez mediciones consecutivas en un lapso de diez segundos, y el promedio de estas mediciones se envía a la plataforma Thingsboard, lo cual permite reducir el ruido y aumentar la precisión. Simultáneamente, las lecturas de la cámara termográfica se registran manualmente. Para minimizar el error por movimiento, el dispositivo emite una alerta vibratoria de un segundo, seguida de una pausa de cuatro segundos antes de realizar la medición, permitiendo al usuario mantener la mano inmóvil durante el proceso de medición. Se obtienen 86 pares de mediciones, la <a href="#tbl-estadisticas-camara">Tabla&nbsp;<span>3.11</span></a> muestra las características estadísticas de ambos conjuntos de datos.</p>
+<div id="tbl-estadisticas-camara" class="anchored">
+<table class="table-hover table-sm small table">
+<caption>Tabla&nbsp;3.11: Estadísticas de las Mediciones del Sensor GY-906 y la Cámara Termográfica Fluke Ti9.</caption>
 <thead>
 <tr class="header">
 <th><strong>Estadística</strong></th>
@@ -1135,8 +1013,6 @@ Tabla&nbsp;3.11: Estadísticas de las Mediciones del Sensor GY-906 y la Cámara 
 </tbody>
 </table>
 </div>
-</figure>
-</div>
 <p>Se realiza un análisis inicial entre las mediciones de la cámara respecto al sensor y se obtienen los siguientes datos:</p>
 <ul>
 <li>Error Medio (EM): 0.60°C</li>
@@ -1152,17 +1028,13 @@ Tabla&nbsp;3.11: Estadísticas de las Mediciones del Sensor GY-906 y la Cámara 
 <li>EM: -3.39 X 10<sup>-15</sup>°C</li>
 <li>EAM: 0.41°C</li>
 </ul>
-<p>La <a href="#fig-dispersion" class="quarto-xref">Figura&nbsp;<span>3.5</span></a> compara las gráficas de dispersión de los datos, donde la figura a) muestra los datos antes de la calibración y la figura b) presenta los datos después de la calibración.</p>
-<div id="cell-fig-dispersion" class="cell" data-execution_count="1">
+<p>La <a href="#fig-dispersion">Figura&nbsp;<span>3.5</span></a> compara las gráficas de dispersión de los datos, donde la figura a) muestra los datos antes de la calibración y la figura b) presenta los datos después de la calibración.</p>
+<div class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
-<div id="fig-dispersion" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-dispersion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="desarrollo_files/figure-html/fig-dispersion-output-1.png" width="949" height="471" class="figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dispersion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3.5: Gráficos de dispersión de las mediciones del sensor GY-906 y la cámara termográfica Fluke Ti9 antes y después de la calibración.
-</figcaption>
+<div id="fig-dispersion" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="desarrollo_files/figure-html/fig-dispersion-output-1.png" width="949" height="471" class="figure-img"></p>
+<figcaption class="figure-caption">Figura&nbsp;3.5: Gráficos de dispersión de las mediciones del sensor GY-906 y la cámara termográfica Fluke Ti9 antes y después de la calibración.</figcaption>
 </figure>
 </div>
 </div>
@@ -1191,15 +1063,11 @@ Figura&nbsp;3.5: Gráficos de dispersión de las mediciones del sensor GY-906 y 
 <ol start="2" type="1">
 <li><strong>Descripción de la función actualizar_hora</strong></li>
 </ol>
-<p>La función denominada <code>actualizar\_hora</code>, que se encuentra en el archivo <code>ui\_events.c</code>, se encarga de actualizar la hora en pantalla, además habilita o desahibilita el botón para realizar la encuesta según el horario o si esta ya fue o no contestada. Esta función también es la encargada de emitir la alarma para alertar al usuario la disponibilidad de una nueva encuesta. El diagram de flujo de esta función se presenta en la <a href="#fig-actualizarhora" class="quarto-xref">Figura&nbsp;<span>3.6</span></a>.</p>
-<div id="fig-actualizarhora" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-actualizarhora-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../Imagenes/Actualizar_hora.svg" class="img-fluid figure-img" style="width:50.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-actualizarhora-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3.6: Diagrama de flujo de la función actualizar_hora.
-</figcaption>
+<p>La función denominada <code>actualizar\_hora</code>, que se encuentra en el archivo <code>ui\_events.c</code>, se encarga de actualizar la hora en pantalla, además habilita o desahibilita el botón para realizar la encuesta según el horario o si esta ya fue o no contestada. Esta función también es la encargada de emitir la alarma para alertar al usuario la disponibilidad de una nueva encuesta. El diagram de flujo de esta función se presenta en la <a href="#fig-actualizarhora">Figura&nbsp;<span>3.6</span></a>.</p>
+<div id="fig-actualizarhora" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../Imagenes/Actualizar_hora.svg" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption class="figure-caption">Figura&nbsp;3.6: Diagrama de flujo de la función actualizar_hora.</figcaption>
 </figure>
 </div>
 <ol start="3" type="1">
@@ -1207,15 +1075,11 @@ Figura&nbsp;3.6: Diagrama de flujo de la función actualizar_hora.
 </ol>
 <p>Cuando el usuario presiona el botón para iniciar la encuesta, se da inicio a un proceso que consta de varias etapas: primero, el usuario responde a las preguntas de la encuesta; luego, se registran las variables fisiológicas; seguidamente, se validan las mediciones obtenidas; y, finalmente, se envían los datos a la plataforma Thingsboard.</p>
 <p>Es importante destacar que, una vez enviada la encuesta, las respuestas y mediciones no se reinician automáticamente. Esto permite que, al iniciar una nueva encuesta, el reloj conserve las respuestas de la última encuesta realizada. De esta manera, el usuario puede optar por mantener las mismas respuestas o modificarlas según sea necesario. Esta funcionalidad tiene dos objetivos principales: en primer lugar, reducir el tiempo necesario para responder encuestas de manera consecutiva; y, en segundo lugar, permitir al usuario observar cómo evolucionan sus respuestas a lo largo del día.</p>
-<p>En caso de que las mediciones de los sensores no sean aceptadas por el usuario, estas se realizan nuevamente. El diagrama de flujo que describe el proceso de la encuesta se presenta en la Figura <a href="#fig-iniciarencuesta" class="quarto-xref">Figura&nbsp;<span>3.7</span></a>.</p>
-<div id="fig-iniciarencuesta" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-iniciarencuesta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../Imagenes/Iniciar_encuesta.svg" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-iniciarencuesta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3.7: Diagrama de flujo de encuesta y medición de variables.
-</figcaption>
+<p>En caso de que las mediciones de los sensores no sean aceptadas por el usuario, estas se realizan nuevamente. El diagrama de flujo que describe el proceso de la encuesta se presenta en la Figura <a href="#fig-iniciarencuesta">Figura&nbsp;<span>3.7</span></a>.</p>
+<div id="fig-iniciarencuesta" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../Imagenes/Iniciar_encuesta.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figura&nbsp;3.7: Diagrama de flujo de encuesta y medición de variables.</figcaption>
 </figure>
 </div>
 <ol start="4" type="1">
@@ -1231,36 +1095,24 @@ Figura&nbsp;3.7: Diagrama de flujo de encuesta y medición de variables.
 </ol>
 <p>Para iniciar, se instala la versión más reciente del Arduino IDE, disponible para descarga en su <a href="https://www.arduino.cc/" target="_blank">sitio oficial</a>. A continuación, se agrega el paquete de placas ESP32 al entorno del Arduino IDE. Para ello, se abre el programa, se selecciona la opción “Archivo” y luego “Preferencias”. En el cuadro de texto “URLs adicionales para el gestor de tarjetas”, se inserta la URL:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>tal como se muestra en la <a href="#fig-paqueteriaArduino" class="quarto-xref">Figura&nbsp;<span>3.8</span></a>, la flecha roja en la figura señala al recuadro en donde debe colocarse la URL.</p>
-<div id="fig-paqueteriaArduino" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-paqueteriaArduino-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../Imagenes/Paqueteria_arduino.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-paqueteriaArduino-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3.8: Configuración de las URLs adicionales en el gestor de tarjetas del Arduino IDE para agregar el paquete de placas ESP32.
-</figcaption>
+<p>tal como se muestra en la <a href="#fig-paqueteriaArduino">Figura&nbsp;<span>3.8</span></a>, la flecha roja en la figura señala al recuadro en donde debe colocarse la URL.</p>
+<div id="fig-paqueteriaArduino" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../Imagenes/Paqueteria_arduino.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figura&nbsp;3.8: Configuración de las URLs adicionales en el gestor de tarjetas del Arduino IDE para agregar el paquete de placas ESP32.</figcaption>
 </figure>
 </div>
-<p>A continuación, se accede al Gestor de placas dando click en “Herramientas”, seguido de “Placa” y, finalmente, “Gestor de placas”. En el gestor, se busca “esp32” y se procede a instalar el sistema ESP32 de Espressif, como se muestra en la <a href="#fig-esp32placas" class="quarto-xref">Figura&nbsp;<span>3.9</span></a>. La flecha roja en la figura señala el paquete que debe instalarse.</p>
-<div id="fig-esp32placas" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-esp32placas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../Imagenes/esp32_placas.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-esp32placas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3.9: Selección e instalación del paquete ESP32 de Espressif Systems en el Gestor de placas del Arduino IDE.
-</figcaption>
+<p>A continuación, se accede al Gestor de placas dando click en “Herramientas”, seguido de “Placa” y, finalmente, “Gestor de placas”. En el gestor, se busca “esp32” y se procede a instalar el sistema ESP32 de Espressif, como se muestra en la <a href="#fig-esp32placas">Figura&nbsp;<span>3.9</span></a>. La flecha roja en la figura señala el paquete que debe instalarse.</p>
+<div id="fig-esp32placas" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../Imagenes/esp32_placas.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figura&nbsp;3.9: Selección e instalación del paquete ESP32 de Espressif Systems en el Gestor de placas del Arduino IDE.</figcaption>
 </figure>
 </div>
-<p>Posteriormente, se configuran las librerías necesarias para el proyecto. Es importatne instalar las librerías en las versiones especificadas para garantizar el correcto funcionamiento del reloj inteligente. La <a href="#tbl-librerias" class="quarto-xref">Tabla&nbsp;<span>3.12</span></a> presenta las librerías requeridas junto con las versiones recomendadas. Estas librerías pueden instalarse manualmente, una por una, o, de manera alternativa, se puede descargar la carpeta llamada “Arduino” del <a href="https://github.com/JulioLanda4/IoT_Reloj_Confort" target="_blank">repositorio del proyecto</a> y reemplazarla por la carpeta de librerías existente en la máquina local, que generalmente se encuentra en el directorio “Documentos”.</p>
-<div id="tbl-librerias" class="hover sm quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[70,30]">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-librerias-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;3.12: Librerías utilizadas y sus versiones recomendadas para el funcionamiento del reloj inteligente.
-</figcaption>
-<div aria-describedby="tbl-librerias-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table-hover table-sm small caption-top table">
+<p>Posteriormente, se configuran las librerías necesarias para el proyecto. Es importatne instalar las librerías en las versiones especificadas para garantizar el correcto funcionamiento del reloj inteligente. La <a href="#tbl-librerias">Tabla&nbsp;<span>3.12</span></a> presenta las librerías requeridas junto con las versiones recomendadas. Estas librerías pueden instalarse manualmente, una por una, o, de manera alternativa, se puede descargar la carpeta llamada “Arduino” del <a href="https://github.com/JulioLanda4/IoT_Reloj_Confort" target="_blank">repositorio del proyecto</a> y reemplazarla por la carpeta de librerías existente en la máquina local, que generalmente se encuentra en el directorio “Documentos”.</p>
+<div id="tbl-librerias" class="anchored">
+<table class="table-hover table-sm small table">
+<caption>Tabla&nbsp;3.12: Librerías utilizadas y sus versiones recomendadas para el funcionamiento del reloj inteligente.</caption>
 <colgroup>
 <col style="width: 70%">
 <col style="width: 30%">
@@ -1323,8 +1175,6 @@ Tabla&nbsp;3.12: Librerías utilizadas y sus versiones recomendadas para el func
 </tbody>
 </table>
 </div>
-</figure>
-</div>
 <p>Una vez configurado el entorno de Arduino, es necesario registrar el dispositivo en la plataforma IoT ThingsBoard instalada en los servidores del IER. Se requiere una cuenta activa e iniciar sesión en el servidor de ThingsBoard del IER. Una vez dentro, se accede a la sección “Devices” y se selecciona “Add new device”. En la ventana de configuración, es fundamental asignar un nombre que identifique claramente el reloj inteligente asociado al usuario. Además, se puede optar por utilizar el token generado automáticamente por ThingsBoard o definir uno personalizado. Este token es indispensable para enlazar el reloj inteligente con la plataforma.</p>
 <ol start="2" type="1">
 <li><strong>Registro de datos del usuario</strong></li>
@@ -1362,24 +1212,20 @@ Cargando…
 <li><strong>Instrucciones generales de interacción con el reloj inteligente</strong></li>
 </ol>
 <p>El reloj inteligente se carga a través de un puerto USB-C. Es importante que el interruptor del dispositivo permanezca en posición de encendido durante la carga, ya que, de lo contrario, no será posible cargar la batería. La carcasa del reloj incluye pestañas laterales diseñadas para sujetar las correas y ajustarlo cómodamente a la muñeca del usuario.</p>
-<p>La interfaz del reloj está compuesta por siete pantallas principales y dos ventanas emergentes. La pantalla principal (<a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.10</span></a>(a)) permite al usuario visualizar la hora actual y el tiempo restante para la siguiente encuesta.</p>
-<p>Cuando se habilita el botón para responder una encuesta, se muestra la pantalla de encuesta (<a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.10</span></a>(b)), que guía al usuario a través de las preguntas del formulario. Cada una de las preguntas está asociada con una pantalla específica:</p>
+<p>La interfaz del reloj está compuesta por siete pantallas principales y dos ventanas emergentes. La pantalla principal (<a href="#fig-pantallas">Figura&nbsp;<span>3.10</span></a>(a)) permite al usuario visualizar la hora actual y el tiempo restante para la siguiente encuesta.</p>
+<p>Cuando se habilita el botón para responder una encuesta, se muestra la pantalla de encuesta (<a href="#fig-pantallas">Figura&nbsp;<span>3.10</span></a>(b)), que guía al usuario a través de las preguntas del formulario. Cada una de las preguntas está asociada con una pantalla específica:</p>
 <ul>
-<li>La primera pregunta, relacionada con la vestimenta actual del usuario, se visualiza en la <a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.10</span></a>(c).</li>
-<li>La segunda pregunta, relacionada con la actividad que el usuario está realizando en ese momento, se muestra en la <a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.10</span></a>(d).</li>
-<li>La tercera pregunta, relacionada con la ubicación actual del usuario, aparece en la <a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.10</span></a>(e).</li>
-<li>La cuarta pregunta, relacionada con la sensación térmica del usuario, se despliega en la <a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.10</span></a>(f).</li>
-<li>La quinta y última pregunta, relacionada con la aceptación de la sensación térmica, se presenta en la <a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.10</span></a>(h).</li>
+<li>La primera pregunta, relacionada con la vestimenta actual del usuario, se visualiza en la <a href="#fig-pantallas">Figura&nbsp;<span>3.10</span></a>(c).</li>
+<li>La segunda pregunta, relacionada con la actividad que el usuario está realizando en ese momento, se muestra en la <a href="#fig-pantallas">Figura&nbsp;<span>3.10</span></a>(d).</li>
+<li>La tercera pregunta, relacionada con la ubicación actual del usuario, aparece en la <a href="#fig-pantallas">Figura&nbsp;<span>3.10</span></a>(e).</li>
+<li>La cuarta pregunta, relacionada con la sensación térmica del usuario, se despliega en la <a href="#fig-pantallas">Figura&nbsp;<span>3.10</span></a>(f).</li>
+<li>La quinta y última pregunta, relacionada con la aceptación de la sensación térmica, se presenta en la <a href="#fig-pantallas">Figura&nbsp;<span>3.10</span></a>(h).</li>
 </ul>
-<p>Adicionalmente, el reloj cuenta con dos ventanas emergentes. La primera ventana emergente (<a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.10</span></a>(i)) se activa al finalizar la encuesta e indica que los sensores han comenzado a realizar mediciones. La segunda ventana emergente (<a href="#fig-pantallas" class="quarto-xref">Figura&nbsp;<span>3.10</span></a>(j)) se muestra una vez que los sensores han terminado de medir, presentando los resultados al usuario. En esta ventana, el usuario puede aceptar los resultados y enviarlos a ThingsBoard o rechazarlos para repetir las mediciones. Es importante mencionar que cada pantalla de la encuesta cuenta con botones que permiten navegar entre las pantallas y seleccionar las opciones según las necesidades del usuario.</p>
-<div id="fig-pantallas" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-pantallas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../Imagenes/Pantallas.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pantallas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3.10: Interfaz del reloj inteligente: (a) pantalla principal, (b) activación de la encuesta, (c) pregunta sobre la vestimenta actual, (d) pregunta sobre la actividad realizada, (e) pregunta sobre la ubicación, (f) pregunta sobre la sensación térmica, (h) pregunta sobre la aceptación de la sensación térmica, (i) ventana emergente indicando el inicio de las mediciones, y (j) ventana emergente con los resultados de las mediciones.
-</figcaption>
+<p>Adicionalmente, el reloj cuenta con dos ventanas emergentes. La primera ventana emergente (<a href="#fig-pantallas">Figura&nbsp;<span>3.10</span></a>(i)) se activa al finalizar la encuesta e indica que los sensores han comenzado a realizar mediciones. La segunda ventana emergente (<a href="#fig-pantallas">Figura&nbsp;<span>3.10</span></a>(j)) se muestra una vez que los sensores han terminado de medir, presentando los resultados al usuario. En esta ventana, el usuario puede aceptar los resultados y enviarlos a ThingsBoard o rechazarlos para repetir las mediciones. Es importante mencionar que cada pantalla de la encuesta cuenta con botones que permiten navegar entre las pantallas y seleccionar las opciones según las necesidades del usuario.</p>
+<div id="fig-pantallas" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../Imagenes/Pantallas.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figura&nbsp;3.10: Interfaz del reloj inteligente: (a) pantalla principal, (b) activación de la encuesta, (c) pregunta sobre la vestimenta actual, (d) pregunta sobre la actividad realizada, (e) pregunta sobre la ubicación, (f) pregunta sobre la sensación térmica, (h) pregunta sobre la aceptación de la sensación térmica, (i) ventana emergente indicando el inicio de las mediciones, y (j) ventana emergente con los resultados de las mediciones.</figcaption>
 </figure>
 </div>
 </section>
@@ -1418,7 +1264,7 @@ Figura&nbsp;3.10: Interfaz del reloj inteligente: (a) pantalla principal, (b) ac
 <p><strong>Descarga y procesamiento de datos</strong></p>
 <p>Una vez configurada la libreta, se realiza la descarga de los datos almacenados en ThingsBoard dentro del rango de fechas especificado. Posteriormente, se genera un dataframe que combina estas mediciones con las respuestas obtenidas del formulario. Este proceso permite validar que el dispositivo es capaz de registrar encuestas, medir variables fisiológicas y envíar correctamente los datos a ThingsBoard para su almacenamiento.</p>
 <p><strong>Resultados de la validación</strong></p>
-<p>Para validar el funcionamiento del reloj inteligente, se realizan dos campañas de medición, cada una con diferentes individuos, obteniendo un total de 60 mediciones. La <a href="#tbl-data_downloaded" class="quarto-xref">Tabla&nbsp;<span>3.13</span></a> proporciona una muestra que incluye tres mediciones correspondientes al primer sujeto y tres mediciones del segundo sujeto.</p>
+<p>Para validar el funcionamiento del reloj inteligente, se realizan dos campañas de medición, cada una con diferentes individuos, obteniendo un total de 60 mediciones. La <a href="#tbl-data_downloaded">Tabla&nbsp;<span>3.13</span></a> proporciona una muestra que incluye tres mediciones correspondientes al primer sujeto y tres mediciones del segundo sujeto.</p>
 <p>En la tabla, la columna correspondiente a la frecuencia de uso de espacios con aire acondicionado (<span class="math inline">\(F\)</span>) se muestra de forma numérica. Esto se debe a que los valores de esta columna están codificados según un diccionario, cuyo propósito es simplificar la visualización de los datos. La equivalencia de este diccionario es la siguiente:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>diccionario_frecuencia <span class="op">=</span> {</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Todos los días"</span>: <span class="dv">3</span>,</span>
@@ -1426,13 +1272,9 @@ Figura&nbsp;3.10: Interfaz del reloj inteligente: (a) pantalla principal, (b) ac
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"1 a 3 días a la semana"</span>: <span class="dv">1</span>,</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Nunca"</span>: <span class="dv">0</span></span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-data_downloaded" class="hover sm quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-data_downloaded-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;3.13: Conjunto de datos de cinco encuestas térmicas y mediciones, que incluye el nivel de aislamiento de la ropa (<span class="math inline">\(I_{cl}\)</span>), la tasa metabólica (<span class="math inline">\(M_r\)</span>), la ubicación, el voto de sensación térmica (TSV), la aceptación térmica (TA), la temperatura de la piel de la muñeca (<span class="math inline">\(T_w\)</span>), la frecuencia cardíaca (<span class="math inline">\(H_r\)</span>), la edad, el peso (<span class="math inline">\(W\)</span>), la altura (<span class="math inline">\(H\)</span>), el sexo, la frecuencia de uso de espacios con aire acondicionado (<span class="math inline">\(F\)</span>) y el identificador del individuo que está usando el reloj inteligente (<span class="math inline">\(I\)</span>).
-</figcaption>
-<div aria-describedby="tbl-data_downloaded-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table-hover table-sm small caption-top table">
+<div id="tbl-data_downloaded" class="anchored">
+<table class="table-hover table-sm small table">
+<caption>Tabla&nbsp;3.13: Conjunto de datos de cinco encuestas térmicas y mediciones, que incluye el nivel de aislamiento de la ropa (<span class="math inline">\(I_{cl}\)</span>), la tasa metabólica (<span class="math inline">\(M_r\)</span>), la ubicación, el voto de sensación térmica (TSV), la aceptación térmica (TA), la temperatura de la piel de la muñeca (<span class="math inline">\(T_w\)</span>), la frecuencia cardíaca (<span class="math inline">\(H_r\)</span>), la edad, el peso (<span class="math inline">\(W\)</span>), la altura (<span class="math inline">\(H\)</span>), el sexo, la frecuencia de uso de espacios con aire acondicionado (<span class="math inline">\(F\)</span>) y el identificador del individuo que está usando el reloj inteligente (<span class="math inline">\(I\)</span>).</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 8%">
@@ -1480,11 +1322,11 @@ Tabla&nbsp;3.13: Conjunto de datos de cinco encuestas térmicas y mediciones, qu
 <th rowspan="4"><p><strong><span class="math inline">\(I\)</span></strong></p>
 <p><em>-</em></p></th>
 </tr>
-<tr class="even">
+<tr class="odd">
 </tr>
 <tr class="header">
 </tr>
-<tr class="even">
+<tr class="odd">
 </tr>
 </thead>
 <tbody>
@@ -1617,11 +1459,9 @@ Tabla&nbsp;3.13: Conjunto de datos de cinco encuestas térmicas y mediciones, qu
 </tbody>
 </table>
 </div>
-</figure>
-</div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-infonavit2024regiones" class="csl-entry" role="listitem">
 Infonavit. 2024. <span>«Listado de Regiones Bioclimáticas»</span>. <a href="https://portalmx.infonavit.org.mx/wps/wcm/connect/005dcf74-d918-41aa-acfa-927e7b33d98a/12.%2BAnexo%252B1.%252BListado%252Bde%252Bregiones%252Bbioclim%25C3%25A1ticas.pdf?MOD=AJPERES&amp;CONVERT_TO=url&amp;CACHEID=ROOTWORKSPACE-005dcf74-d918-41aa-acfa-927e7b33d98a-mmCFC0">https://portalmx.infonavit.org.mx/wps/wcm/connect/005dcf74-d918-41aa-acfa-927e7b33d98a/12.%2BAnexo%252B1.%252BListado%252Bde%252Bregiones%252Bbioclim%25C3%25A1ticas.pdf?MOD=AJPERES&amp;CONVERT_TO=url&amp;CACHEID=ROOTWORKSPACE-005dcf74-d918-41aa-acfa-927e7b33d98a-mmCFC0</a>.
 </div>
@@ -1682,7 +1522,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1714,50 +1565,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1767,17 +1579,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1789,130 +1592,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
+      return note.innerHTML;
     });
   }
       let selectedAnnoteEl;
@@ -1956,7 +1636,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1982,32 +1661,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -2069,18 +1722,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../Capitulos/confort_termico.html" class="pagination-link" aria-label="Antecedentes y Marco Teórico">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Antecedentes y Marco Teórico</span></span>
+      <a href="../Capitulos/confort_termico.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Antecedentes y marco teórico</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../Capitulos/resultados.html" class="pagination-link" aria-label="Conclusiones">
+      <a href="../Capitulos/resultados.html" class="pagination-link">
         <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conclusiones</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-
 
 
 
