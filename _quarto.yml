@@ -6,9 +6,11 @@ project:
 book:
   title: "Reloj inteligente IoT basado en tecnologías abiertas para la recopilación de datos de confort térmico"
   output-file: "Tesis"
-  author: "Julio César Landa López"
-  date: "10/10/2024"
-  # language: "es"
+  author:
+    name: Julio César Landa López
+    email: landajulioc@gmail.com
+  date: "12/06/2024"
+  
 
   comments:
     hypothesis:
@@ -26,8 +28,8 @@ bibliography: Referencias/references.bib
 biblio-style: plain
 
 lang: es
-# language: 
-title-block-author-single: "Autor"
+language:
+  title-block-author-single: "Autor"
 format:
   html:
     #theme: zephyr

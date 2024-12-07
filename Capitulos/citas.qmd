@@ -199,3 +199,194 @@ El estudio aborda las limitaciones actuales en términos de diversidad demográf
 **Emisividad de la piel**
 
 La emisividad de la piel puede variar dependiendo muchos factores, por lo que es difícil obtener un valor exacto. @Steketee_1973 reportó una emisividad aproximada de 0.98 con un margen de error $\pm$ 0.01, mientras que @Boylan_1992 obtuvieron un valor de 0.961 con un margen de error de $\pm$ 0.007. Tras varias pruebas con el sensor, se optó por usar una emisividad de ...
+
+
+
+----------
+
+
+
+Voy a pasarte información acerca de cada articulo que está citado en la sección de "Dispositivos portátiles y Tecnologías Abiertas en el Confort Térmico" para que replantees y reescribas ese apartado. 
+
+Taratarini2022:
+
+El artículo "Personal comfort models based on a 6-month experiment using environmental parameters and data from wearables" describe un estudio longitudinal llevado a cabo durante 180 días, en el cual participaron 20 personas. Para recopilar los datos necesarios, se utilizó una combinación de tecnologías avanzadas que incluyeron relojes inteligentes Fitbit, la aplicación Cozie (desarrollada por el autor del artículo) y el dispositivo iButton.
+
+La aplicación Cozie permitió registrar las preferencias térmicas de los participantes mediante encuestas rápidas basadas en la metodología "Right-Here-Right-Now," realizadas en sus entornos cotidianos. Por su parte, los dispositivos Fitbit capturaron datos fisiológicos relevantes como la temperatura de la piel y la frecuencia cardíaca, proporcionando información continua y detallada de las respuestas corporales de los usuarios.
+
+Además, se empleó el dispositivo iButton para medir de manera precisa las temperaturas ambientales cercanas al cuerpo de los participantes. Este pequeño sensor se colocó estratégicamente en la ropa o accesorios cercanos a la piel, lo que permitió monitorear las condiciones térmicas inmediatas que influían en la percepción térmica personal de los usuarios.
+
+En total, se recopilaron más de 1,080 encuestas por participante, que se integraron con los datos fisiológicos y ambientales obtenidos por los dispositivos. Este enfoque holístico permitió evaluar cómo las condiciones ambientales específicas afectaban el confort térmico percibido por cada persona.
+
+Resultados clave:
+
+El 58% de las respuestas indicaron que los participantes no deseaban cambios en su entorno térmico, incluso en condiciones de temperatura superiores a 26.6°C (observadas en el 75% de las encuestas).
+Se desarrollaron y probaron siete modelos de aprendizaje automático por participante para predecir sus preferencias térmicas. Se obtuvo una precisión promedio de 0.78 (F1-score) en seis de los modelos, demostrando una alta eficacia en las predicciones.
+Las variables más relevantes para la predicción fueron la temperatura de la piel, la temperatura ambiente cercana al cuerpo (medida con el iButton), la temperatura interior del espacio y la frecuencia cardíaca.
+Se identificó que, en promedio, entre 250 y 300 datos por participante eran suficientes para construir un modelo predictivo preciso, aunque se encontraron estrategias para reducir esta cantidad sin afectar significativamente los resultados.
+Conclusiones:
+
+El estudio destaca el valor de integrar múltiples dispositivos tecnológicos para la creación de modelos personalizados de confort térmico. La combinación de Fitbit, Cozie e iButton permitió obtener una visión integral de los factores que influyen en las preferencias térmicas individuales. Los hallazgos validan investigaciones previas sobre confort térmico y subrayan el potencial de estas tecnologías accesibles para desarrollar estrategias más personalizadas y efectivas en la gestión del confort y la eficiencia energética en interiores. Este enfoque no solo mejora la precisión de las predicciones, sino que también ofrece una forma práctica y escalable para avanzar en la investigación del confort térmico.
+
+Feng2023: 
+
+El artículo titulado "Alert-based wearable sensing system for individualized thermal preference prediction" presenta un sistema innovador que combina sensores portátiles y algoritmos de alerta para predecir las preferencias térmicas individuales de los ocupantes en entornos interiores. Este enfoque busca mejorar la eficiencia energética y el confort personal al adaptar las condiciones ambientales a las necesidades específicas de cada persona.
+
+Resumen:
+
+El estudio aborda la variabilidad en las preferencias térmicas individuales y propone un sistema de monitoreo que utiliza sensores portátiles para recopilar datos fisiológicos y ambientales en tiempo real. Mediante un algoritmo de alerta predefinido, el sistema detecta fluctuaciones significativas en los datos y solicita a los usuarios que proporcionen información sobre su confort térmico en esos momentos específicos. Este método permite una recolección de datos más eficiente y menos intrusiva en comparación con las encuestas programadas tradicionales.
+
+Resultados:
+
+Los modelos de predicción de preferencias térmicas individuales alcanzaron una precisión superior al 94% con aproximadamente 110 puntos de datos para un sujeto y 150 para otro.
+El análisis de la importancia relativa de las variables y sus efectos interactivos reveló diferencias significativas en la predicción de las preferencias térmicas entre individuos.
+Conclusiones:
+
+El sistema desarrollado demuestra la eficacia de utilizar sensores portátiles y algoritmos de alerta para predecir las preferencias térmicas individuales de manera precisa y eficiente. La identificación de parámetros clave que influyen en el confort térmico personal puede apoyar la optimización de las condiciones de confort y el uso de energía en edificios. Además, el sistema facilita la integración en entornos de edificios inteligentes al automatizar la recolección de datos subjetivos de los usuarios.
+
+Dispositivos utilizados y su implementación:
+
+El sistema empleó sensores portátiles para monitorear datos fisiológicos y ambientales de los participantes. Aunque el artículo no especifica los dispositivos exactos utilizados, es común en este tipo de estudios el uso de sensores como iButton para medir la temperatura de la piel y dispositivos similares para registrar la frecuencia cardíaca y otros parámetros fisiológicos. Los sensores se colocaron en ubicaciones estratégicas del cuerpo para obtener mediciones precisas y representativas de las condiciones térmicas experimentadas por los individuos. El algoritmo de alerta predefinido analizaba los datos en tiempo real y, al detectar fluctuaciones significativas, enviaba alertas a los participantes para que completaran encuestas sobre su percepción térmica en esos momentos específicos. Este enfoque permitió una recolección de datos más focalizada y menos intrusiva, mejorando la calidad y relevancia de la información recopilada para el desarrollo de modelos predictivos de confort térmico individualizado.
+
+Este estudio destaca la importancia de considerar las diferencias individuales en las preferencias térmicas y ofrece una solución tecnológica viable para personalizar el control ambiental en edificios, contribuyendo tanto al bienestar de los ocupantes como a la eficiencia energética.
+
+Nazarian2021: 
+
+ El artículo presenta el proyecto Coolbit, una metodología centrada en humanos para evaluar el estrés térmico y la sensación de confort térmico mediante dispositivos portátiles. Utilizando relojes Fitbit equipados con sensores iButton, se recopilan datos ambientales (temperatura y humedad del aire) y fisiológicos (frecuencia cardíaca, temperatura y humedad de la piel), junto con retroalimentación subjetiva. El estudio emplea una "estación meteorológica portátil" integrada en la muñeca para realizar mediciones en tiempo real en entornos controlados y semi-controlados.
+
+Resultados:
+
+Predicción de la temperatura central del cuerpo: Utilizando datos del reloj, se predijo la temperatura corporal con un margen de error de ±0.27°C y una precisión del 95%.
+Relación entre temperatura de la piel y actividad física: Un aumento en la temperatura del aire a nivel de la muñeca redujo significativamente la disposición para realizar actividad física, alcanzando niveles mínimos a 36°C.
+Evaluación del confort térmico: Los datos recopilados permitieron predecir la sensación térmica utilizando modelos de regresión, aunque la predicción individualizada sigue siendo limitada (~35%-40% de precisión).
+Conclusiones: El estudio demuestra que los dispositivos portátiles, como relojes Fitbit combinados con sensores iButton, ofrecen un enfoque viable para evaluar la exposición térmica y el confort térmico en tiempo real y de manera no invasiva. Este enfoque tiene aplicaciones en ciudades resilientes al clima y destaca la necesidad de desarrollar modelos personalizados para mejorar la precisión.
+
+Dispositivos utilizados y su implementación:
+
+Fitbit: Usado para medir la frecuencia cardíaca mediante tecnología PurePulse y para proporcionar una interfaz interactiva para recopilar datos subjetivos.
+iButton: Acoplado al Fitbit mediante soportes impresos en 3D, estos sensores registran temperatura y humedad tanto en la piel como en el ambiente circundante.
+Aplicación en el reloj: Aunque el artículo menciona el uso de una aplicación, no queda claro si se empleó Cozie u otra desarrollada específicamente para este estudio.
+Metodología experimental:
+
+Experimentos en entornos controlados: Se realizaron en cámaras climáticas con 15 participantes, variando la tasa metabólica y recolectando datos fisiológicos.
+Pruebas en entornos semi-controlados: Incluyeron caminatas por entornos urbanos con sensores ambientales fijos y encuestas térmicas realizadas en puntos predeterminados.
+Este trabajo establece un marco para mejorar la comprensión y gestión del confort térmico, con posibles extensiones a poblaciones más diversas y escenarios urbanos más amplios.
+
+He2025IMU
+
+El artículo presenta la creación de un conjunto de datos basado en unidades de medición inercial (IMU) para el reconocimiento de actividades relacionadas con el confort térmico humano. Treinta participantes realizaron 30 actividades representativas de confort térmico, que incluyen actividades relacionadas con frío, calor y actividades neutras, mientras se recopilaban datos de movimiento utilizando sensores IMU. El objetivo es mejorar los sistemas HVAC mediante la integración de modelos de aprendizaje automático que utilicen estos datos para detectar estados de confort térmico en tiempo real.
+
+¿Qué es un sensor IMU?
+Una Unidad de Medición Inercial (IMU, por sus siglas en inglés) es un dispositivo que combina múltiples sensores para medir movimientos y orientaciones. Generalmente incluye:
+
+Un acelerómetro, que mide la aceleración lineal en tres ejes.
+Un giroscopio, que mide la velocidad angular en tres ejes.
+A menudo un magnetómetro, que mide la orientación respecto al campo magnético terrestre.
+En este estudio, los IMUs registraron movimientos detallados de las manos de los participantes durante las actividades térmicas, con una alta frecuencia de muestreo (100 Hz).
+Dispositivos utilizados y cómo fueron implementados:
+
+Sensores IMU WT61CL:
+Colocados en ambas manos de los participantes.
+Capaces de medir aceleración en tres ejes, velocidad angular en tres ejes y ángulos de Euler en tres ejes.
+Transmitían datos a una computadora en tiempo real.
+Cámara de apoyo:
+Usada en la fase de actividades continuas para grabar los tiempos de inicio y fin de cada actividad, lo que ayudó en la etiquetación de datos.
+Metodología experimental:
+
+Diseño de las actividades:
+Se definieron 30 actividades representativas (10 relacionadas con el frío, 10 con el calor y 10 neutras) basadas en cuestionarios preliminares y detallados.
+Ejemplos incluyen: frotarse las manos, abrochar botones, abanicarse con las manos, y usar el teléfono.
+Fases experimentales:
+Fase 1 (actividades individuales): Cada participante realizó todas las actividades de forma secuencial cinco veces, generando 4,500 muestras únicas.
+Fase 2 (actividades continuas): Se organizaron conjuntos de actividades (4-8 actividades por conjunto) en un orden aleatorio, permitiendo la evaluación de modelos en escenarios realistas.
+Recopilación y etiquetado de datos:
+Los datos de las IMU fueron etiquetados manualmente utilizando los tiempos grabados por la cámara.
+Resultados clave:
+
+Reconocimiento de actividades:
+Un modelo combinado de 1D-CNN y LSTM logró una precisión del 82.51% en la identificación de las 30 actividades.
+Las actividades más similares, como "rascarse la cabeza" y "levantar el cabello del cuello," fueron las más difíciles de clasificar.
+Control de HVAC basado en actividades:
+Se propuso un índice de confort térmico (TCI) que cuantifica el confort en función de las actividades detectadas.
+Por ejemplo, detectar actividades relacionadas con calor ("abanicarse con las manos") incrementa el TCI, lo que puede activar sistemas HVAC para ajustar la temperatura.
+Conclusiones:
+El estudio proporciona un conjunto de datos accesible y bien estructurado para investigaciones futuras sobre actividades de confort térmico. Este enfoque demuestra que los datos de IMU son efectivos para detectar actividades relacionadas con el confort térmico de manera no invasiva, con aplicaciones prometedoras en sistemas HVAC inteligentes para optimizar el consumo energético y mejorar el bienestar de los ocupantes.
+
+Garces2021
+
+El artículo presenta el diseño, desarrollo y calibración de un nodo sensor de bajo costo para estimar el confort térmico en interiores utilizando el método de Fanger. Este sistema mide variables ambientales clave como temperatura, humedad relativa y velocidad del aire, integrándolas para calcular los índices Predicted Mean Vote (PMV) y Predicted Percentage Dissatisfied (PPD). El objetivo es ofrecer una solución económica y fiable para la gestión eficiente del confort térmico en edificios, con aplicaciones en plataformas de gestión energética.
+
+Cho2023
+
+ El artículo describe un sistema innovador basado en inteligencia artificial para controlar el confort térmico humano en tiempo real utilizando un sensor portátil diseñado como un brazalete. Este sistema combina sensores de temperatura con un modelo de aprendizaje automático para mejorar el confort térmico personal y optimizar el consumo energético de los sistemas de calefacción, ventilación y aire acondicionado (HVAC). El dispositivo mide la temperatura en tres puntos clave de la muñeca y se comunica de forma inalámbrica con un sistema de control de HVAC, ajustando automáticamente la temperatura del ambiente según las necesidades del usuario.
+
+Dispositivos utilizados y cómo fueron implementados:
+
+Sensor de temperatura portátil (brazalete):
+Incluye tres termistores para medir la temperatura en la muñeca (parte superior, arteria radial y arteria cubital).
+Integrado con un sistema en chip Bluetooth Low Energy (BLE SoC) para transmisión inalámbrica de datos.
+Alimentado por una batería de polímero de litio recargable de 100 mAh, con capacidad para operar durante 12 horas con un tiempo de carga de 30 minutos.
+Sensores externos de temperatura y humedad:
+Monitorean las condiciones ambientales para complementar los datos fisiológicos y optimizar el modelo de predicción del confort térmico.
+Sistema de control HVAC:
+Ajusta la temperatura del ambiente en incrementos de ±1 °C según las predicciones del modelo de confort térmico basadas en los datos del sensor portátil.
+Resultados clave:
+
+El modelo de predicción basado en el algoritmo Random Forest logró una precisión del 93.9% en la estimación del confort térmico.
+La medición de temperatura en tres puntos de la muñeca mejoró significativamente la precisión en comparación con sistemas de medición en un solo punto.
+La implementación del sistema "human-in-the-loop" (HIL) redujo el consumo de energía en un 20% en comparación con los sistemas HVAC basados en puntos fijos.
+Conclusiones: El sistema desarrollado demuestra cómo los sensores portátiles habilitados con inteligencia artificial pueden personalizar el confort térmico y mejorar la eficiencia energética en edificios. La integración de datos fisiológicos y ambientales permite una gestión dinámica del HVAC, adaptándose en tiempo real a las necesidades del usuario. Este enfoque tiene implicaciones significativas para la sostenibilidad energética y la mejora del confort en espacios interiores.
+
+Relevancia: El estudio destaca la viabilidad de tecnologías portátiles para gestionar de manera efectiva el confort térmico individual, con potencial para aplicaciones en edificios inteligentes y reducción del impacto ambiental.
+
+Sim2018
+
+Este artículo presenta un sensor portátil de monitoreo de la tasa de sudoración diseñado como un dispositivo tipo reloj para evaluar el confort térmico humano. El sensor utiliza un actuador termo-neumático miniaturizado para la ventilación automática natural de una cámara de humedad y permite mediciones continuas y precisas de la tasa de sudoración. Con un diseño optimizado para bajo consumo de energía, el sensor se implementa como una solución portátil para aplicaciones en sistemas inteligentes de aire acondicionado y ropa inteligente.
+
+Dispositivos utilizados y cómo fueron implementados:
+
+Sensor portátil tipo reloj:
+Actuador termo-neumático: Mueve la cámara de humedad hacia arriba y hacia abajo para permitir la ventilación natural entre mediciones.
+Cámara de humedad: Incluye un sensor capacitivo que mide la tasa de aumento de la humedad para calcular la tasa de sudoración.
+Materiales utilizados:
+Líquido expansivo PF-5060 con un punto de ebullición de 56 °C.
+Membrana deformable de látex de 0.2 mm de grosor.
+Sensor de humedad capacitivo SY-HC-1 para medir la humedad en términos de capacitancia.
+Fuente de alimentación: Dos baterías CR2032 (3 V) que permiten un tiempo de operación de 4 a 5 horas.
+Especificaciones: Tamaño de 35 mm de diámetro y peso de 30 g.
+Método de calibración:
+Se utilizó una piel artificial que emplea el método "wet-cup" para generar tasas de sudoración conocidas y validar las mediciones del sensor.
+Experimentos con humanos:
+El sensor se probó en tres sujetos para medir las tasas de sudoración en diferentes estados térmicos (neutral, ligeramente cálido, cálido y caliente).
+Resultados clave:
+
+Sensibilidad: 0.039 (pF/s)/(g/m²/h) con una linealidad del 97.9% en el rango de 3.76 a 137.68 g/m²/h.
+Resistencia al viento: Los cambios en la sensibilidad fueron menores al 10% para velocidades de aire de hasta 1.5 m/s, lo que equivale a la velocidad promedio de caminar.
+Variación interindividual: Las diferencias promedio de la tasa de sudoración entre estados térmicos fueron de 32.06 ± 27.19 g/m²/h, con una variación promedio entre sujetos del 32.3%.
+Conclusiones:
+El sensor portátil desarrollado demuestra una alta aplicabilidad para monitorear el confort térmico humano en tiempo real y en aplicaciones móviles. Su diseño reduce significativamente el consumo de energía y el peso en comparación con prototipos anteriores, siendo ideal para sistemas de aire acondicionado cognitivos y ropa inteligente. El estudio también sugiere que la individualización de los modelos a través de datos a largo plazo puede mejorar la precisión en la predicción del confort térmico.Dispositivos utilizados y cómo se implementaron:
+
+DHT-22 (Sensor de temperatura y humedad):
+Utilizado para medir temperatura y humedad relativa en el ambiente.
+Fue calibrado comparando sus lecturas con las de un sensor certificado Testo 480, ajustándose un offset de +1.4°C para temperatura y +9.6% para humedad.
+Requiere un periodo de calentamiento de al menos 7 horas para obtener mediciones estables.
+Arduino:
+Procesador central del nodo sensor, encargado de leer las señales de los sensores a intervalos predefinidos y realizar validaciones.
+Comunicación con otros componentes a través de puertos analógicos o digitales.
+Raspberry Pi:
+Actúa como servidor de datos y realiza la comunicación con plataformas externas mediante el estándar OPC UA.
+Recibe datos del Arduino, los organiza y los transmite a una base de datos para su análisis.
+Software de gestión:
+Incluye una interfaz visual que facilita el análisis de patrones en las variables de confort térmico, como temperatura y humedad.
+Resultados clave:
+
+Comparación de sensores: Las mediciones del nodo sensor de bajo costo se contrastaron con las de un sensor certificado, mostrando una desviación mínima (RMSE de 1.91∙10⁻⁵ para PMV y 5.28∙10⁻⁴ para PPD).
+Costos: El nodo sensor propuesto tiene un costo de alrededor de 450 USD, significativamente menor que el equipo certificado Testo 480 (~4,000 USD).
+Fiabilidad: Las mediciones del nodo sensor fueron consistentes y adecuadas para la estimación de confort térmico en entornos interiores, reduciendo el error al calibrar los sensores.
+Conclusiones:
+El nodo sensor desarrollado ofrece una solución económica y precisa para medir el confort térmico en interiores, siendo una alternativa viable a los equipos de alta gama. La integración de este sistema en plataformas de gestión energética permite optimizar el uso de energía en edificios al proporcionar datos confiables sobre el confort térmico. Próximamente, se instalarán 50 nodos en hospitales en Chile para evaluar su desempeño en entornos reales.
+
+Relevancia:
+Este trabajo demuestra cómo los sistemas de bajo costo pueden contribuir significativamente a la sostenibilidad energética, ofreciendo una herramienta accesible para aplicaciones en el diseño de edificios inteligentes y gestión ambiental. Además, su flexibilidad permite integrar mediciones de calidad del aire, como CO2 y VOCs, junto con parámetros térmicos, para un enfoque más holístico del confort y eficiencia energética.
+
+He añadido suficiente información, ademas de que agregupe información de más citas. Reescribelo por favor, quiero que se mencione la combinación fitbit + cozie, pues es lo más parecido a mi proyecto, también quiero que se destaque el uso de tecnologicas abiertas

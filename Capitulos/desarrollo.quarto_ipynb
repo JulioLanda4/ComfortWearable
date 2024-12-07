@@ -4,7 +4,7 @@
       "cell_type": "markdown",
       "metadata": {},
       "source": [
-        "# Diseño, desarrollo y validación\n",
+        "# Diseño, desarrollo y validación {#cap-desarrollo}\n",
         "\n",
         "\n",
         "En este capitulo se describe el proceso completo de desarrollo, construcción y validación del reloj inteligente para la recopilación de datos de confort térmico presentado en esta tesis. La @sec-metodología presenta una descripción detallada del reloj inteligente, la selección de los componentes y la justificación de su elección. En la @sec-construccion se desarrolla la etapa de diseño y construcción del dispositivo. La @sec-encuestas se centra en el diseño y la implementación de las encuestas mediante la interfaz gráfica, mientras que la @sec-calibración detalla el proceso de calibración de los sensores. En la @sec-programación se presenta una descripción de la lógica de programación del reloj inteligente, y en la @sec-instrucciones se proporcionan instrucciones de uso. Finalmente, en la @sec-validación se verifica la funcionalidad del reloj inteligente para recopilar información de las encuestas de confort térmico y las mediciones de las variables fisiológicas, como la frecuencia cardíaca y la temperatura de la piel, así como para enviar estos datos a la plataforma Thingsboard.\n",
@@ -358,7 +358,7 @@
         "\n",
         "La @fig-dispersion compara las gráficas de dispersión de los datos, donde la figura a) muestra los datos antes de la calibración y la figura b) presenta los datos después de la calibración.\n"
       ],
-      "id": "3d9f31b3"
+      "id": "cae865ba"
     },
     {
       "cell_type": "code",
@@ -697,7 +697,7 @@
         "+---------------------+--------------+-----------+---------------+---------+--------+-------------+-----------+----------+---------+---------+----------+---------+---------+\n",
         ": Conjunto de datos de cinco encuestas térmicas y mediciones, que incluye el nivel de aislamiento de la ropa ($I_{cl}$), la tasa metabólica ($M_r$), la ubicación, el voto de sensación térmica (TSV), la aceptación térmica (TA), la temperatura de la piel de la muñeca ($T_w$), la frecuencia cardíaca ($H_r$), la edad, el peso ($W$), la altura ($H$), el sexo, la frecuencia de uso de espacios con aire acondicionado ($F$) y el identificador del individuo que está usando el reloj inteligente ($I$). {#tbl-data_downloaded .hover .sm}\n"
       ],
-      "id": "3f0f1d1c"
+      "id": "2411e0be"
     }
   ],
   "metadata": {
