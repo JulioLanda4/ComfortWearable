@@ -1,5 +1,31 @@
 # Resumen {.unnumbered}
 
+**Resumen**
+
+XXX Esto aún no está listo
+
+**Resumen**
+
+El confort térmico es un aspecto crucial para la calidad de vida de las personas, afectando directamente a su bienestar físico y mental. También juega un papel muy importante en el consumo energético de las edificaciones, donde una gran parte de la energía es utilizada en sistemas de calefacción, ventilación y aire acondicionado (HVAC, por sus siglas en inglés), indirectamente afectando también a las emisiones de gases de efecto invernadero (GEI) y al cambio climático.  XXX Hablar de que para reducir el impacto climatico se deben integrar tecnologias... mencionar a las estrategias de diseño bioclimatico.
+
+ De esta manera, el estudio del confort térmico cobra importancia no unicamente para mejorar la calidad de vida de las personas, sino que también para contribuir en la lucha por el cambio climático.
+
+ -----------
+
+El confort térmico es un aspecto esencial para la calidad de vida de las personas, ya que afecta directamente su bienestar físico y mental. Además, desempeña un papel crucial en el consumo energético de las edificaciones, donde una parte significativa de la energía utilizada se destina a sistemas de calefacción, ventilación y aire acondicionado (HVAC). Estos sistemas, si bien son fundamentales para mantener condiciones adecuadas de confort, contribuyen significativamente a las emisiones de gases de efecto invernadero y al cambio climático. En este contexto, surge la necesidad de desarrollar soluciones accesibles y eficientes para evaluar y optimizar el confort térmico.
+
+Este trabajo presenta el desarrollo de un reloj inteligente basado en tecnologías abiertas para la recopilación de datos relacionados con el confort térmico, diseñado específicamente para un bioclima cálido semihúmedo en Temixco, Morelos. 
+
+El dispositivo combina componentes de bajo costo como la placa XIAO ESP32C3, sensores GY-906 y MAX30102, una pantalla táctil XIAO Round Display, y un circuito vibrador, todo integrado en un diseño compacto y ergonómico. Este permite recopilar variables fisiológicas, como la frecuencia cardíaca y la temperatura de la piel, junto con datos subjetivos obtenidos mediante encuestas simplificadas de confort térmico. Los datos se almacenan en la plataforma IoT ThingsBoard, permitiendo su análisis posterior para el desarrollo de modelos de confort térmico adaptados al contexto local.
+
+El proyecto incluye el diseño, calibración y validación del dispositivo, utilizando equipos de referencia como cámaras termográficas y oxímetros para asegurar la precisión de las mediciones. Los resultados demuestran la viabilidad de las tecnologías abiertas para desarrollar herramientas accesibles y eficientes en la evaluación del confort térmico, contribuyendo al entendimiento y mejora de las condiciones térmicas en edificaciones.
+
+Este trabajo enfatiza el potencial de los dispositivos portátiles e IoT para generar bases de datos robustas y modelos personalizados de confort térmico, destacando la importancia de integrar soluciones tecnológicas accesibles en la lucha contra el cambio climático y la promoción de la eficiencia energética.
+
+
+
+
+
 # Abstract {.unnumbered}
 
 # Agradecimientos {.unnumbered}
