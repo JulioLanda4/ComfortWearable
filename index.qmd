@@ -1,41 +1,34 @@
 # Resumen {.unnumbered}
 
-**Resumen**
-
-XXX Esto aún no está listo
-
-**Resumen**
-
-El confort térmico es un aspecto crucial para la calidad de vida de las personas, afectando directamente a su bienestar físico y mental. También juega un papel muy importante en el consumo energético de las edificaciones, donde una gran parte de la energía es utilizada en sistemas de calefacción, ventilación y aire acondicionado (HVAC, por sus siglas en inglés), indirectamente afectando también a las emisiones de gases de efecto invernadero (GEI) y al cambio climático.  XXX Hablar de que para reducir el impacto climatico se deben integrar tecnologias... mencionar a las estrategias de diseño bioclimatico. XXX
-
- De esta manera, el estudio del confort térmico cobra importancia no unicamente para mejorar la calidad de vida de las personas, sino que también para contribuir en la lucha por el cambio climático.
-
- El confort térmico es un aspecto crucial para la calidad de vida de las personas, afectando directamente a su bienestar físico y mental. También juega un papel muy importante en el consumo energético de las edificaciones, donde una gran parte de la energía es utilizada en sistemas de calefacción, ventilación y aire acondicionado (HVAC, por sus siglas en inglés), indirectamente afectando también a las emisiones de gases de efecto invernadero (GEI) y al cambio climático. Para mitigar este impacto climático, es fundamental integrar tecnologías accesibles y eficientes que permitan optimizar el confort térmico sin incrementar el consumo energético. Estrategias como el diseño bioclimático destacan por su capacidad para aprovechar las condiciones climáticas locales, reduciendo la dependencia de sistemas HVAC y contribuyendo a la sostenibilidad.
-
- -----------
-
-El confort térmico es un aspecto esencial para la calidad de vida de las personas, ya que afecta directamente su bienestar físico y mental. Además, desempeña un papel crucial en el consumo energético de las edificaciones, donde una parte significativa de la energía utilizada se destina a sistemas de calefacción, ventilación y aire acondicionado (HVAC). Estos sistemas, si bien son fundamentales para mantener condiciones adecuadas de confort, contribuyen significativamente a las emisiones de gases de efecto invernadero y al cambio climático. En este contexto, surge la necesidad de desarrollar soluciones accesibles y eficientes para evaluar y optimizar el confort térmico.
+El confort térmico es un aspecto crucial para la calidad de vida de las personas, ya que afecta directamente su bienestar físico y mental. Además, desempeña un papel fundamental en el consumo energético de las edificaciones, donde una gran parte de la energía se destina a sistemas de calefacción, ventilación y aire acondicionado (HVAC, por sus siglas en inglés). Estos sistemas no solo son esenciales para mantener condiciones adecuadas de confort, sino que también contribuyen de manera indirecta a las emisiones de gases de efecto invernadero (GEI) y al cambio climático. Para mitigar este impacto climático, es fundamental integrar tecnologías accesibles y eficientes que permitan optimizar el confort térmico sin incrementar el consumo energético. Estrategias como el diseño bioclimático destacan por su capacidad para aprovechar las condiciones climáticas locales, reduciendo la dependencia de sistemas HVAC y contribuyendo a la sostenibilidad.
 
 Este trabajo presenta el desarrollo de un reloj inteligente basado en tecnologías abiertas para la recopilación de datos relacionados con el confort térmico, diseñado específicamente para un bioclima cálido semihúmedo en Temixco, Morelos. 
 
-El dispositivo combina componentes de bajo costo como la placa XIAO ESP32C3, sensores GY-906 y MAX30102, una pantalla táctil XIAO Round Display, y un circuito vibrador, todo integrado en un diseño compacto y ergonómico. Este permite recopilar variables fisiológicas, como la frecuencia cardíaca y la temperatura de la piel, junto con datos subjetivos obtenidos mediante encuestas simplificadas de confort térmico. Los datos se almacenan en la plataforma IoT ThingsBoard, permitiendo su análisis posterior para el desarrollo de modelos de confort térmico adaptados al contexto local.
+El reloj inteligente integra componentes de bajo costo, como la placa de desarrollo XIAO ESP32C3, los sensores GY-906 y MAX30102, una pantalla táctil XIAO Round Display, y un circuito vibrador, todo encapsulado en una carcasa diseñada e impresa en 3D. Este reloj permite recopilar variables fisiológicas, como la temperatura de la piel y la frecuencia cardíaca, junto con datos subjetivos obtenidos a través de encuestas simplificadas de confort térmico. Los datos son enviados y almacenados en la plataforma ThingsBoard, generando una base de datos contextualizada para el bioclima específico de Temixco, Morelos.
 
-El proyecto incluye el diseño, calibración y validación del dispositivo, utilizando equipos de referencia como cámaras termográficas y oxímetros para asegurar la precisión de las mediciones. Los resultados demuestran la viabilidad de las tecnologías abiertas para desarrollar herramientas accesibles y eficientes en la evaluación del confort térmico, contribuyendo al entendimiento y mejora de las condiciones térmicas en edificaciones.
-
-Este trabajo enfatiza el potencial de los dispositivos portátiles e IoT para generar bases de datos robustas y modelos personalizados de confort térmico, destacando la importancia de integrar soluciones tecnológicas accesibles en la lucha contra el cambio climático y la promoción de la eficiencia energética.
-
-
+El desarrollo de este proyecto incluye el diseño, construcción, calibración y validación del dispositivo. Este trabajo destaca y demuestra el potencial de las tecnologías abiertas y los dispositivos portátiles en el estudio del confort térmico, así como en la generación de bases de datos que pueden facilitar la creación de modelos de confort adaptativos. De esta manera, se contribuye al uso sostenible de los recursos para lograr condiciones de confort térmico.
 
 
 
 # Abstract {.unnumbered}
 
+**Abstract**
+
+Thermal comfort is a crucial aspect of people’s quality of life, as it directly impacts their physical and mental well-being. Furthermore, it plays a fundamental role in the energy consumption of buildings, where a significant portion of energy is allocated to heating, ventilation, and air conditioning (HVAC) systems. These systems are essential for maintaining adequate comfort conditions but also indirectly contribute to greenhouse gas (GHG) emissions and climate change. To mitigate this climatic impact, it is essential to integrate accessible and efficient technologies that optimize thermal comfort without increasing energy consumption. Strategies such as bioclimatic design stand out for leveraging local climatic conditions, reducing dependence on HVAC systems, and promoting sustainability.
+
+This work presents the development of a smart watch based on open technologies for the collection of data related to thermal comfort, specifically designed for a warm semi-humid bioclimate in Temixco, Morelos.
+
+The smart watch integrates low-cost components, such as the XIAO ESP32C3 development board, GY-906 and MAX30102 sensors, a XIAO Round Display touch screen, and a vibration circuit, all encapsulated in a 3D-designed and printed casing. This device enables the collection of physiological variables, such as skin temperature and heart rate, along with subjective data obtained through simplified thermal comfort surveys. The data is transmitted and stored on the ThingsBoard platform, generating a contextualized database for the specific bioclimate of Temixco, Morelos.
+
+The development of this project includes the design, construction, calibration, and validation of the device. This work highlights and demonstrates the potential of open technologies and portable devices in studying thermal comfort and generating databases that can facilitate the creation of adaptive comfort models. In doing so, it contributes to the sustainable use of resources to achieve thermal comfort conditions.
+
+
+
 # Agradecimientos {.unnumbered}
 
 
+Quiero agradecer a:
 
-
-Agradezco a ...
 
 
 
