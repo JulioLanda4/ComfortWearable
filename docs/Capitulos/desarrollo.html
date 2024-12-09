@@ -237,7 +237,7 @@ div.csl-indent {
 
 </header>
 
-<p>En este capitulo se describe el proceso completo de desarrollo, construcción y validación del reloj inteligente para la recopilación de datos de confort térmico presentado en esta tesis. La <a href="#sec-metodología"><span>Sección&nbsp;3.1</span></a> presenta una descripción detallada del reloj inteligente, la selección de los componentes y la justificación de su elección. En la <a href="#sec-construccion"><span>Sección&nbsp;3.2</span></a> se desarrolla la etapa de diseño y construcción del dispositivo. La <a href="#sec-encuestas"><span>Sección&nbsp;3.3</span></a> se centra en el diseño y la implementación de las encuestas mediante la interfaz gráfica, mientras que la <a href="#sec-calibración"><span>Sección&nbsp;3.4</span></a> detalla el proceso de calibración de los sensores. En la <a href="#sec-programación"><span>Sección&nbsp;3.5</span></a> se presenta una descripción de la lógica de programación del reloj inteligente, y en la <a href="#sec-instrucciones"><span>Sección&nbsp;3.6</span></a> se proporcionan instrucciones de uso. Finalmente, en la <a href="#sec-validación"><span>Sección&nbsp;3.7</span></a> se verifica la funcionalidad del reloj inteligente para recopilar información de las encuestas de confort térmico y las mediciones de las variables fisiológicas, como la frecuencia cardíaca y la temperatura de la piel, así como para enviar estos datos a la plataforma Thingsboard.</p>
+<p>En este capitulo se describe el proceso completo de desarrollo, construcción y validación del reloj inteligente para la recopilación de datos de confort térmico presentado en esta tesis. La <a href="#sec-metodología"><span>Sección&nbsp;3.1</span></a> presenta una descripción detallada del reloj inteligente, la selección de los componentes y la justificación de su elección. En la <a href="#sec-construccion"><span>Sección&nbsp;3.2</span></a> se desarrolla la etapa de diseño y construcción del dispositivo. La <a href="#sec-encuestas"><span>Sección&nbsp;3.3</span></a> se centra en el diseño y la implementación de las encuestas mediante la interfaz gráfica, mientras que la <a href="#sec-calibración"><span>Sección&nbsp;3.4</span></a> detalla el proceso de calibración de los sensores. En la <a href="#sec-programación"><span>Sección&nbsp;3.5</span></a> se presenta una descripción de la lógica de programación del reloj inteligente, y en la <a href="#sec-instrucciones"><span>Sección&nbsp;3.6</span></a> se proporcionan instrucciones de uso. Finalmente, en la <a href="#sec-validación"><span>Sección&nbsp;3.7</span></a> se verifica la funcionalidad del reloj inteligente para recopilar información de las encuestas de confort térmico y las mediciones de las variables fisiológicas, como la temperatura de la piel y la frecuencia cardíaca, así como para enviar estos datos a la plataforma ThingsBoard.</p>
 <section id="sec-metodología" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="sec-metodología"><span class="header-section-number">3.1</span> Metodología</h2>
 <ol type="1">
@@ -247,15 +247,15 @@ div.csl-indent {
 <ol start="2" type="1">
 <li><strong>Selección de componentes</strong></li>
 </ol>
-<p>Para garantizar el funcionamiento preciso y adecuado del dispositivo, es fundamental seleccionar correctamente todos los componentes. A continuación se describen los principales componentes utilizados, junto con sus características y la justificación de su elección en el proyecto. Esta justificación se basa en criterios como compatibilidad, consumo energético, precisión y capacidad de procesamiento en el caso del microcontrolador.</p>
+<p>Para garantizar el funcionamiento del dispositivo, es fundamental seleccionar correctamente todos los componentes. A continuación se describen los principales componentes utilizados, junto con sus características y la justificación de su elección en el proyecto. Esta justificación se basa en criterios como compatibilidad, consumo energético, precisión y capacidad de procesamiento en el caso del microcontrolador.</p>
 <p>Los componentes básicos del reloj inteligente son:</p>
 <ul>
-<li>Placa de desarrollo,</li>
-<li>Pantalla,</li>
-<li>Sensor de temperatura,</li>
-<li>Sensor de frecuencia cardíaca,</li>
-<li>Circuito vibrador,</li>
-<li>Batería.</li>
+<li>Placa de desarrollo</li>
+<li>Pantalla</li>
+<li>Sensor de temperatura</li>
+<li>Sensor de frecuencia cardíaca</li>
+<li>Circuito vibrador</li>
+<li>Batería</li>
 </ul>
 <p><strong>Placa de desarrollo</strong></p>
 <p>La selección de la placa o tarjeta de desarrollo es una decisión crucial en el desarrollo del proyecto. Se requiere una placa de tamaño reducido que cumpla con características esenciales como conexión WiFi, velocidad de procesamiento, memoria ROM y comunicación I2C. Además, debe tener un bajo consumo energético para garantizar el uso portátil prolongado del reloj inteligente.</p>
@@ -342,7 +342,7 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<p>Si bien todas las placas presentadas son opciones viables, Seeed Studio ha desarrollado placas orientadas a aplicaciones de dispositivos portátiles. Estas tienen las características deseadas y además placas empatan perfectamente con las necesidades del proyecto debido a su tamaño compacto, conectividad, modos de bajo consumo y la posibilidad de la integración con una pantalla táctil desarrollada por la misma marca. Para el desarrollo del proyecto, se elige la XIAO ESP32C3 sobre la XIAO ESP32S3. Aunque la primera es menos potente, cumple con todos los requerimientos a un menor costo. Además, la limitada disponibilidad de la XIAO ESP32S3 en México durante el desarrollo del proyecto también influye en la decisión. No obstante, la XIAO ESP32S3 podría ser usada sin ningún problema, ofreciendo incluso aumentar considerablemente la capacidad de memoria para futuras modificaciones o mejoras en el código. La <a href="#tbl-esp">Tabla&nbsp;<span>3.2</span></a> muestra las características especificas de la placa seleccionada.</p>
+<p>Si bien todas las placas presentadas son opciones viables, Seeed Studio ha desarrollado placas orientadas a aplicaciones de dispositivos portátiles. Estas placas tienen las características deseadas y además empatan perfectamente con las necesidades del proyecto debido a su tamaño compacto, conectividad, modos de bajo consumo y la posibilidad de la integración con una pantalla táctil desarrollada por la misma marca. Para el desarrollo del proyecto, se elige la XIAO ESP32C3 sobre la XIAO ESP32S3. Aunque la primera es menos potente, cumple con todos los requerimientos a un menor costo. Además, la limitada disponibilidad de la XIAO ESP32S3 en México durante el desarrollo del proyecto también influye en la decisión. No obstante, la XIAO ESP32S3 podría ser usada sin ningún problema, ofreciendo incluso aumentar considerablemente la capacidad de memoria para futuras modificaciones o mejoras en el código. La <a href="#tbl-esp">Tabla&nbsp;<span>3.2</span></a> muestra las características especificas de la placa seleccionada.</p>
 <div id="tbl-esp" class="anchored">
 <table class="table-hover table-sm small table">
 <caption>Tabla&nbsp;3.2: Especificaciones técnicas detalladas de la placa XIAO ESP32C3.</caption>
@@ -438,7 +438,7 @@ div.csl-indent {
 <td>Waveshare Módulo de visualización</td>
 <td>no</td>
 <td>OLED RGB</td>
-<td>1.5’’</td>
+<td>1.50’’</td>
 </tr>
 <tr class="odd">
 <td>GC9A01 Pantalla</td>
@@ -515,7 +515,7 @@ div.csl-indent {
 <p>Los sensores ópticos se han consolidado como una buena opción para la medición de la frecuencia cardíaca en dispositivos portátiles. Maxim Integrated ofrece la línea de sensores MAX3010X para este tipo de aplicaciones. Estos sensores destacan por su bajo consumo de energía, precio accesible, tamaño compacto y protocolo de comunicación I2C. La <a href="#tbl-pulso">Tabla&nbsp;<span>3.5</span></a> muestra una comparación entre los sensores MAX20100, MAX30102 y MAX30105.</p>
 <div id="tbl-pulso" class="anchored">
 <table class="table-hover table-sm small table">
-<caption>Tabla&nbsp;3.5: Comparación de Sensores de frecuencia cardíaca.</caption>
+<caption>Tabla&nbsp;3.5: Comparación de sensores de frecuencia cardíaca.</caption>
 <colgroup>
 <col style="width: 16%">
 <col style="width: 21%">
@@ -569,7 +569,7 @@ div.csl-indent {
 <p><strong>Batería</strong></p>
 <p>El uso de baterías de polímero de litio (LiPo) es ampliamente utilizado en dispositivos portátiles debido a sus características de pequeño tamaño, bajo peso y facilidad de carga. Para este proyecto, que integra una placa de desarrollo XIAO ESP32C3, una pantalla XIAO Round Display, un sensor GY-906, un sensor MAX30102 y un circuito vibrador, es crucial seleccionar una capacidad de batería que asegure un funcionamiento continuo y confiable, considerando el consumo energético de cada componente involucrado.</p>
 <p>La XIAO ESP32C3 presenta un consumo promedio de 74.7 mA durante su operación activa <span class="citation" data-cites="xiaoesp32c3">(<a href="references.html#ref-xiaoesp32c3" role="doc-biblioref">Studio 2024</a>)</span>, mientras que la pantalla XIAO Round Display demanda aproximadamente 70.0 mA <span class="citation" data-cites="xiaodisplay">(<a href="references.html#ref-xiaodisplay" role="doc-biblioref">Solution 2024</a>)</span>. Por su parte, el sensor GY-906 tiene un consumo de corriente bajo, en el rango de 1.0 a 2.0 mA <span class="citation" data-cites="mlx90614_datasheet">(<a href="references.html#ref-mlx90614_datasheet" role="doc-biblioref">Melexis 2009</a>)</span>, el sensor MAX30102 consume entre 0.6 y 1.2 mA durante la medición de la frecuencia cardíaca <span class="citation" data-cites="max30102_datasheet">(<a href="references.html#ref-max30102_datasheet" role="doc-biblioref">Integrated 2015</a>)</span>. Adicionalmente, el motor vibrador registra un consumo estimado de 84.0 mA <span class="citation" data-cites="uelectronics_vibration_motor">(<a href="references.html#ref-uelectronics_vibration_motor" role="doc-biblioref">uElectronics 2024</a>)</span>, dependiendo de la intensidad de la vibración y la carga aplicada.</p>
-<p>El consumo total del dispositivo en condiciones de operación máxima puede alcanzar 232.0 mA. Sin embargo, este nivel de consumo es poco probable alcanzarse durante el uso típico del dispositivo,ya que, durante la mayor parte del tiempo los sensores y la pantalla permanecen inactivos y solo se encenderan al momento de llevar a cabo sus mediciones; el motor vibrador se enciende únicamente por breves periodos cada hora. Con el fin de asegurar autonomía del dispositivo y evitar interrupciones en su funcionamiento, se selecciona una batería de 650.0 mAh. Este capacidad satisface los requisitos energéticos, permitiendo el uso prolongado del dispositivo. Además, la batería seleccionada cumple en tamaño y peso, ajustándose adecuadamente al diseño del dispositivo.</p>
+<p>El consumo total del dispositivo en condiciones de operación máxima puede alcanzar 232.0 mA. Sin embargo, este nivel de consumo es poco probable alcanzarse durante el uso típico del dispositivo,ya que, durante la mayor parte del tiempo los sensores y la pantalla permanecen inactivos y solo se encenderan al momento de llevar a cabo sus mediciones; el motor vibrador se enciende únicamente por breves periodos cada hora. Con el fin de asegurar autonomía del dispositivo y evitar interrupciones en su funcionamiento, se selecciona una batería de 650.0 mAh. Este capacidad satisface los requisitos energéticos, permitiendo el uso prolongado del reloj inteligente. Además, la batería seleccionada cumple en tamaño y peso, ajustándose adecuadamente al diseño del dispositivo.</p>
 <p>La <a href="#tbl-componentes-seleccionados">Tabla&nbsp;<span>3.6</span></a> muestra todos los componentes seleccionados para el desarrollo del dispositivo.</p>
 <div id="tbl-componentes-seleccionados" class="anchored">
 <table class="table-hover table-sm small table">
@@ -615,7 +615,7 @@ div.csl-indent {
 <ol start="3" type="1">
 <li><strong>Diseño del dispositivo</strong></li>
 </ol>
-<p>Una vez seleccionados los componentes principales del dispositivo, el diseño se enfoca en crear una carcasa compacta que permita alojar los componentes sin interferencias entre ellos y en desarrollar los circuitos internos de conexión</p>
+<p>Una vez seleccionados los componentes básicos del reloj inteligente, el diseño se enfoca en crear una carcasa compacta que permita alojar los componentes sin interferencias entre ellos y en desarrollar los circuitos internos de conexión</p>
 <p><strong>Carcasa:</strong></p>
 <p>La carcasa del dispositivo esta diseñada para ser impresa en 3D y consta de tres partes principales y un seguro. La primera parte es la base y esta es la que está en contacto con la muñeca del usuario, cuenta con ranuras para el acomodo y fijación de los sensores y que estos queden en contacto directo con la piel para llevar a cabo las mediciones de forma adecuada</p>
 <p>La parte central de la carcasa es la pieza que va arriba de la base y es donde se aloja el microcontrolador, el motor vibrador y el interruptor de encendido. La pieza está diseñada con compartimentos para fijar cada uno de estos componentes. Por la parte exterior de la carcasa, esta pieza cuenta con ranuras para colocar las correas que fijan el dispositivo a la muñeca del usuario.</p>
@@ -633,7 +633,7 @@ div.csl-indent {
 <div id="fig-conexiones" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../Imagenes/Diagrama de conexiones.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figura&nbsp;3.3: Diagrama de conexiones: a) circuito vibrador, b) circuito de sensores y placa de desarrollo, c) circuito de la batería.</figcaption>
+<figcaption class="figure-caption">Figura&nbsp;3.3: Diagrama de conexiones: a) circuito vibrador de alarma, b) circuito de sensores y placa de desarrollo, c) circuito de la batería.</figcaption>
 </figure>
 </div>
 <p>El código de colores utilizado en este proyecto, para facilitar las conexiones, es:</p>
@@ -645,7 +645,7 @@ div.csl-indent {
 <li><strong><em>Verde:</em></strong> señal de activación del motor.</li>
 <li><strong><em>Amarillo:</em></strong> conexión entre el pin emisor del transistor y el motor vibratorio.</li>
 </ul>
-<p>El circuito vibrador es un circuito sencillo de control de motor. su principal objetivo energizar el motor vibrador y proteger el microcontrolador, evitando que el motor se alimente directamente desde el pin digital del microcontrolador, si no que lo haga directamente de la fuente de alimentación general del dispositivo, mientras que el pin del microcontrolador se utiliza únicamente para enviar la señal de activación.</p>
+<p>El circuito vibrador es un circuito sencillo de control de motor, su principal objetivo energizar el motor vibrador y proteger el microcontrolador, evitando que el motor se alimente directamente desde el pin digital del microcontrolador, si no que lo haga directamente de la fuente de alimentación general del dispositivo, mientras que el pin del microcontrolador se utiliza únicamente para enviar la señal de activación.</p>
 <p>El circuito de sensores y placa de desarrollo tiene como propósito establecer la comunicación simultánea de ambos sensores a la placa de desarrollo mediante el protocolo I2C.</p>
 <p>El circuito de la batería integra un interruptor de encendido y apagado, que permite al usuario controlar la alimentación del dispositivo; y un conector JST, que proporciona la conexión directa con la pantalla táctil XIAO Round Display que a su vez alimenta a todo el reloj inteligente.</p>
 <p>Finalmente, en la <a href="#fig-DiagramaBloques">Figura&nbsp;<span>3.4</span></a> se muestra el diagrama de bloques funcional del dispositivo, destacando los componentes del dispositivo y sus conexiones, haciendo una separación entre los elementos internos y externos del reloj. Los componentes dentro del recuadro negro son aquellos que están contenidos físicamente dentro de la carcasa del reloj, como los sensores, la batería, la antena WIFI, el circuito de la pantalla, el circuito vibrador y el microcontrolador. Por otro lado, los elementos que se encuentran fuera del recuadro negro corresponden a los componentes externos con los cuales el usuario interactúa directamente, como el interruptor de encendido y apagado, la pantalla táctil y el puerto de carga USB-C. Además, el diagrama indica las interconexiones entre los diferentes componentes con líneas. Se destaca que la conexión entre los sensores y el microcontrolador es mediante el protocolo I2C.</p>
@@ -658,7 +658,7 @@ div.csl-indent {
 </section>
 <section id="sec-construccion" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="sec-construccion"><span class="header-section-number">3.2</span> Construcción del dispositivo</h2>
-<p>La construcción del reloj inteligente se puede separar en tres etapas: La impresión de la carcasa, la conexión de los componentes electrónicos y la integración y montaje de todos los elementos en la carcasa.</p>
+<p>La construcción del reloj inteligente se puede separar en tres etapas: La impresión de la carcasa, la conexión de los componentes electrónicos, junto con la integración y el montaje de todos los elementos en la carcasa.</p>
 <p><strong><em>Carcasa:</em></strong> los archivos STL para la impresión de la carcasa los puedes encontrar en el <a href="https://github.com/JulioLanda4/IoT_Reloj_Confort" target="_blank">repositorio del proyecto</a></p>
 <p><strong><em>Componentes electrónicos:</em></strong> Las conexiones de los componentes electrónicos se llevan a cabo siguiendo los diagramas de <a href="#fig-conexiones">Figura&nbsp;<span>3.3</span></a>. Es importante seguir correctamente los diagramas para facilitar posteriormente su acomodo dentro de la carcasa.</p>
 <p><strong><em>Integración y montaje:</em></strong> Una vez realizadas las conexiones, se lleva a cabo el montaje de los circuitos dentro de la carcasa, esta se ensambla y se colocan las correas.</p>
@@ -673,11 +673,11 @@ div.csl-indent {
 <p>El reloj inteligente lleva a cabo encuestas simplificadas de confort térmico cada hora, en horarios específicos entre las 08:00 a.m. y las 09:00 p.m., programadas en las medias horas para alinearse con los horarios de actividades en el IER, permitiendo al usuario aclimatarse antes de responder la encuesta. Al llegar el momento de responder la encuesta, el dispositivo activa una alarma vibradora que consta de tres pulsos cortos en un lapso de un segundo, para notificar al usuario. Si el usuario ignora la alarma, el botón de ‘Encuesta’ permanece activo hasta que se complete la encuesta, si después de quince minutos la encuesta no ha sido respondida, la alarma se vuelve a activar una vez más. Si esta segunda notificación es ignorada, la alarma no se activa nuevamente hasta la próxima hora programada.</p>
 <p>La encuesta consta de cinco preguntas. Las preguntas seleccionadas se basan en los lineamientos establecidos por la ISO 10551 (<span class="citation" data-cites="ISO10551">International Organization for Standardization (<a href="references.html#ref-ISO10551" role="doc-biblioref">2019</a>)</span>). Las cinco preguntas son las siguientes:</p>
 <ul>
-<li><strong>Vestimenta</strong>: Presenta la pregunta: “¿Cuál es tu vestimenta actual?” donde el usuario puede seleccionar todas las prendas que este usando de una lista predefinida. El objetivo de esta pregunta es calcular el nivel de aislamiento térmico del usuario (CLO). La interfaz muestra el cálculo del valor de CLO en la parte inferior de la pantalla a medida que se seleccionan o deseleccionan las prendas. La <a href="#tbl-prendas">Tabla&nbsp;<span>3.7</span></a> muestra la lista de prendas disponibles para seleccionar con su respectivo calor de CLO.</li>
+<li><strong>Vestimenta</strong>: Presenta la pregunta: “¿Cuál es tu vestimenta actual?” donde el usuario puede seleccionar todas las prendas que este usando de una lista predefinida. El objetivo de esta pregunta es calcular el nivel de aislamiento térmico del usuario (clo). La interfaz muestra el cálculo del valor de clo en la parte inferior de la pantalla a medida que se seleccionan o deseleccionan las prendas. La <a href="#tbl-prendas">Tabla&nbsp;<span>3.7</span></a> muestra la lista de prendas disponibles para seleccionar con su respectivo calor de clo.</li>
 </ul>
 <div id="tbl-prendas" class="anchored">
 <table class="table-hover table-sm small table">
-<caption>Tabla&nbsp;3.7: Tabla de equivalencia de prendas a CLO.</caption>
+<caption>Tabla&nbsp;3.7: Tabla de equivalencia de prendas a clo.</caption>
 <colgroup>
 <col style="width: 26%">
 <col style="width: 23%">
@@ -687,9 +687,9 @@ div.csl-indent {
 <thead>
 <tr class="header">
 <th><strong>Prenda</strong></th>
-<th><strong>Valor de CLO</strong></th>
+<th><strong>Valor de clo</strong></th>
 <th><strong>Prenda</strong></th>
-<th><strong>Valor de CLO</strong></th>
+<th><strong>Valor de clo</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -769,15 +769,15 @@ div.csl-indent {
 </table>
 </div>
 <ul>
-<li><strong>Actividad</strong>: Presenta la pregunta: “¿Qué actividad estás realizando?” donde el usuario selecciona una única opción de una lista predefinida de actividades que permiten calcular la tasa metabólica (MET) del usuario. La <a href="#tbl-actividad">Tabla&nbsp;<span>3.8</span></a> muestra la lista de actividades con su respectivo valor de MET asociado.</li>
+<li><strong>Actividad</strong>: Presenta la pregunta: “¿Qué actividad estás realizando?” donde el usuario selecciona una única opción de una lista predefinida de actividades que permiten calcular la tasa metabólica (met) del usuario. La <a href="#tbl-actividad">Tabla&nbsp;<span>3.8</span></a> muestra la lista de actividades con su respectivo valor de met asociado.</li>
 </ul>
 <div id="tbl-actividad" class="anchored">
 <table class="table-hover table-sm small table">
-<caption>Tabla&nbsp;3.8: Tabla equivalencia de actividades a MET.</caption>
+<caption>Tabla&nbsp;3.8: Tabla equivalencia de actividades a met.</caption>
 <thead>
 <tr class="header">
 <th><strong>Actividad</strong></th>
-<th><strong>Valor de MET</strong></th>
+<th><strong>Valor de met</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -821,8 +821,8 @@ div.csl-indent {
 </table>
 </div>
 <ul>
-<li><p><strong>Ubicación</strong>: Presenta la pregunta: “¿Donde te encuentras?” donde el usuario selecciona una única opción de una lista predefinida de ubicaciones &nbsp;dentro del IER UNAM.</p></li>
-<li><p><strong>Escala de confort térmico</strong>: Presenta la pregunta: “¿Cuál es tu sensación térmica en este momento?” donde el usuario puede elegir su sensación térmica actual en un rango de -3 a 3 en intervalos de 0.5. Cada valor tiene una descripción asociada de la sensación térmica. La <a href="#tbl-tsv">Tabla&nbsp;<span>3.9</span></a> muestra la descripción asociada a cada uno de los valores del voto de sensación térmica.</p></li>
+<li><p><strong>Ubicación</strong>: Presenta la pregunta: “¿Donde te encuentras?” donde el usuario selecciona una única opción de una lista predefinida de ubicaciones dentro del nuevo edificio del IER UNAM.</p></li>
+<li><p><strong>Escala de confort térmico</strong>: Presenta la pregunta: “¿Cuál es tu sensación térmica en este momento?” donde el usuario puede elegir su sensación térmica actual en un rango de -3.0 a 3.0 en intervalos de 0.5. Cada valor tiene una descripción asociada de la sensación térmica. La <a href="#tbl-tsv">Tabla&nbsp;<span>3.9</span></a> muestra la descripción asociada a cada uno de los valores del voto de sensación térmica.</p></li>
 </ul>
 <div id="tbl-tsv" class="anchored">
 <table class="table-hover table-sm small table">
@@ -836,7 +836,7 @@ div.csl-indent {
 <tbody>
 <tr class="odd">
 <td>-3</td>
-<td>Helado</td>
+<td>Frío extremo</td>
 </tr>
 <tr class="even">
 <td>-2.5</td>
@@ -884,7 +884,7 @@ div.csl-indent {
 </tr>
 <tr class="odd">
 <td>3</td>
-<td>Ardiendo</td>
+<td>Calor extremo</td>
 </tr>
 </tbody>
 </table>
@@ -895,24 +895,24 @@ div.csl-indent {
 <ol start="2" type="1">
 <li><strong>Interfaz de Usuario</strong></li>
 </ol>
-<p>La interfaz del dispositivo ha sido diseñada utilizando la biblioteca LVGL, que ofrece herramientas para la creación de interfaces gráficas en microcontroladores integrados con pantallas táctiles. Cada una de las preguntas descritas previamente se presenta en una pantalla distinta, permitiendo al usuario navegar de manera intuitiva y sencilla.</p>
+<p>La interfaz del dispositivo ha sido diseñada utilizando la biblioteca LVGL, que ofrece herramientas para la creación de interfaces gráficas en microcontroladores integrados con pantallas táctiles. Cada una de las preguntas descritas previamente se presenta en una pantalla distinta, permitiendo al usuario navegar de manera intuitiva y sencilla. La interfaz se diseñó con los siguientes elementos:</p>
 <ul>
 <li><p>Navegación entre Pantallas: Cada pantalla tiene botones laterales para avanzar o retroceder entre las preguntas de la encuesta. Una vez completadas todas las preguntas, el usuario puede presionar el botón “Finalizar”.</p></li>
 <li><p>Interacción con Pantallas: Cada pantalla que presenta una lista predefinida de opciones cuenta con botones para moverse entre las diferentes opciones disponibles. Esto permite al usuario seleccionar fácilmente la opción deseada, asegurando una interacción fluida y precisa con el dispositivo.</p></li>
 </ul>
 <ol start="3" type="1">
-<li><strong>Funcionalidades Adicionales y Validación</strong></li>
+<li><strong>Funcionalidades adicionales y validación</strong></li>
 </ol>
-<p>Una vez que se completa la encuesta, al pulsar el botón “Finalizar”, aparece un mensaje emergente que solicita al usuario mantenerse inmóvil mientras que los sensores de frecuencia cardíaca (MAX30102) y de temperatura de la piel (GY-906) llevan a cabo sus mediciones correspondientes, estas mediciones se realizan en un lapso de diez segundos. Los resultados se muestran al usuario para su validación. Si el usuario considera que los resultados son coherentes, puede enviarlos; de lo contrario, tiene la opción de repetir las mediciones.</p>
-<p>Los datos recolectados son enviados a la plataforma Thingsboard para su almacenamiento y análisis posterior. Esta funcionalidad permite construir una base de datos que facilite el estudio del confort térmico en diferentes espacios y condiciones dentro del IER.</p>
+<p>Una vez que se completa la encuesta, al pulsar el botón “Finalizar”, aparece un mensaje emergente que solicita al usuario mantenerse inmóvil mientras que los sensores de frecuencia cardíaca (MAX30102) y de temperatura de la piel (GY-906) llevan a cabo sus mediciones correspondientes, estas mediciones se realizan en un lapso de diez segundos. Los resultados se muestran al usuario para su validación. Si el usuario considera que los resultados son válidos, puede enviarlos; de lo contrario, tiene la opción de repetir las mediciones.</p>
+<p>Los datos recolectados son enviados a la plataforma ThingsBoard para su almacenamiento y análisis posterior. Esta funcionalidad permite construir una base de datos que facilite el estudio del confort térmico en diferentes espacios y condiciones dentro del IER.</p>
 </section>
 <section id="sec-calibración" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="sec-calibración"><span class="header-section-number">3.4</span> Calibración</h2>
-<p>La calibración de los sensores en el dispositivo es esencial para garantizar la precisión y confiabilidad de las mediciones. Esta sección describe el proceso de calibración de los sensores MAX30102 y GY-906, utilizados para medir la frecuencia cardíaca y la temperatura de la piel, respectivamente.</p>
+<p>Esta sección describe el proceso de calibración de los sensores MAX30102 y GY-906, utilizados para medir la frecuencia cardíaca y la temperatura de la piel, respectivamente.</p>
 <ol type="1">
 <li><strong>Calibración del Sensor MAX30102</strong></li>
 </ol>
-<p>Para la calibración del sensor MAX30102, se utiliza como referencia un oxímetro de pulso Yonker YK-81C, que ofrece una precisión de ± 1 bpm. Dado que las mediciones del reloj inteligente se realizan en intervalos de 10 segundos, este mismo periodo se emplea durante el proceso de calibración. El sensor se configura mediante Arduino y la librería de SparkFun para los sensores MAX3010X. La calibración se enfoca en la configuración óptima de varios parámetros ajustables: <code>ledBrightness</code>, <code>sampleAverage</code>, <code>ledMode</code>, <code>sampleRate</code>, <code>pulseWidth</code>, <code>adcRange</code> y <code>RATE_SIZE</code>.</p>
+<p>Para la calibración del sensor MAX30102, se utiliza como referencia un oxímetro de pulso Yonker YK-81C, que ofrece una precisión de ± 1 bpm. Dado que las mediciones del reloj inteligente se realizan en intervalos de 10 segundos, este mismo periodo se emplea durante el proceso de calibración. El sensor se configura mediante Arduino y la librería de SparkFun para los sensores MAX3010X. La calibración se enfoca en la configuración de varios parámetros ajustables buscando disminuir el error, los parámetros son: <code>ledBrightness</code>, <code>sampleAverage</code>, <code>ledMode</code>, <code>sampleRate</code>, <code>pulseWidth</code>, <code>adcRange</code> y <code>RATE_SIZE</code>.</p>
 <ul>
 <li><strong>ledBrightness</strong> (0 - 255): Controla la intensidad de los LED infrarrojo y rojo, afectando la penetración de la luz en el tejido de la piel y, en consecuencia, la calidad de la señal obtenida. Un valor más alto aumenta la intensidad de la luz, mejorando la detección en condiciones de baja perfusión, pero incrementa el consumo de energía.</li>
 <li><strong>sampleAverage</strong> (1, 2, 4, 8, 16, 32): Define cuántas muestras se promedian antes de almacenarse en la memoria FIFO. Un mayor promedio reduce el ruido y estabiliza la señal, a costa de reducir la capacidad de respuesta a cambios rápidos.</li>
@@ -922,8 +922,8 @@ div.csl-indent {
 <li><strong>adcRange</strong> (2048, 4096, 8192, 16384 nA): Establece el rango de entrada del convertidor analógico-digital. Aumentar el rango permite al sensor manejar señales más intensas sin saturarse, mientras que un rango menor mejora la sensibilidad para señales débiles.</li>
 <li><strong>RATE_SIZE</strong> (tamaño del buffer): Determina el tamaño del buffer para el cálculo de la frecuencia cardíaca. Este parámetro afecta la cantidad de datos utilizados para calcular la frecuencia cardíaca promedio. Aumentar el tamaño del buffer de 4 a 6 mejora la precisión de las lecturas, ya que permite una mayor estabilidad en los cálculos.</li>
 </ul>
-<p>Inicialmente, los parámetros se configuran con valores predeterminados, pero los resultados muestran un Error Absoluto Medio (EAM) de 18.5 bpm respecto al oxímetro de referencia, lo cual no es aceptable. Se decide utilizar únicamente el EAM porque mide la magnitud promedio del error, sin distinguir entre mediciones que están por encima o por debajo del estándar, lo cual es ideal para evaluar la precisión general del sensor. Para mejorar la precisión, se exploran valores extremos del parámetro <code>RATE_SIZE</code>, variando desde 1 hasta 100. Con <code>RATE_SIZE</code> igual a 1, se obtienen resultados rápidos pero poco precisos, mientras que con <code>RATE_SIZE</code> igual a 100, se logra alta precisión, pero se requieren múltiples intervalos de 10 segundos, incrementando el tiempo total de medición. Para encontrar un equilibrio entre precisión y tiempo de medición, se evalúan valores intermedios de <code>RATE_SIZE</code> entre 4 y 16. El valor óptimo encontrado es <code>RATE_SIZE</code> igual a 6, lo cual reduce el EAM a 4.4 bpm.</p>
-<p>La <a href="#tbl-max30102">Tabla&nbsp;<span>3.10</span></a> muestra el error absoluto medio (EAM) obtenido para diferentes valores de <code>RATE_SIZE</code> entre 4 y 16, destacando que el mejor valor para <code>RATE_SIZE</code> es 6:</p>
+<p>Inicialmente, los parámetros se configuran con valores predeterminados, pero los resultados muestran un Error Absoluto Medio (EAM) de 18.5 bpm respecto al oxímetro de referencia, lo cual no es aceptable. Se decide utilizar únicamente el EAM porque mide la magnitud promedio del error, sin distinguir entre mediciones que están por encima o por debajo del estándar, lo cual es ideal para evaluar la precisión general del sensor. Para mejorar disminuir el error, se exploran valores extremos del parámetro <code>RATE_SIZE</code>, variando desde 1 hasta 100. Con <code>RATE_SIZE</code> igual a 1, se obtienen resultados rápidos pero poco precisos, mientras que con <code>RATE_SIZE</code> igual a 100, se logran errores bajos, pero se requieren múltiples intervalos de 10 segundos, incrementando el tiempo total de medición. Para encontrar un equilibrio entre precisión y tiempo de medición, se evalúan valores intermedios de <code>RATE_SIZE</code> entre 4 y 16. El valor encontrado es <code>RATE_SIZE</code> igual a 6, lo cual reduce el EAM a 4.4 bpm.</p>
+<p>La <a href="#tbl-max30102">Tabla&nbsp;<span>3.10</span></a> muestra el error absoluto medio (EAM) obtenido para diferentes valores de <code>RATE_SIZE</code> entre 4 y 16, destacando que el mejor valor para <code>RATE_SIZE</code> es 6.</p>
 <div id="tbl-max30102" class="anchored">
 <table class="table-hover table-sm small table">
 <caption>Tabla&nbsp;3.10: Error Absoluto Medio (EAM) para diferentes valores de RATE_SIZE en el MAX30102.</caption>
@@ -973,15 +973,15 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<p>Posteriormente, con <code>RATE\_SIZE</code> fijado en 6, se ajusta el valor de <code>sampleAverage</code> de 4 a 8, logrando un EAM de 3.6 bpm, lo cual representa una mejora en la estabilidad de la señal. La configuración final optimizada incluye los siguientes valores: <code>ledBrightness</code> en 31, <code>sampleAverage</code> en 8, <code>ledMode</code> en 2, <code>sampleRate</code> en 400, <code>pulseWidth</code> en 411, <code>adcRange</code> en 2048 y <code>RATE\_SIZE</code> en 6.</p>
+<p>Posteriormente, con <code>RATE\_SIZE</code> fijado en 6, se ajusta el valor de <code>sampleAverage</code> de 4 a 8, logrando un EAM de 3.6 bpm, lo cual representa una mejora en la señal. La configuración final optimizada incluye los siguientes valores: <code>ledBrightness</code> en 31, <code>sampleAverage</code> en 8, <code>ledMode</code> en 2, <code>sampleRate</code> en 400, <code>pulseWidth</code> en 411, <code>adcRange</code> en 2048 y <code>RATE\_SIZE</code> en 6.</p>
 <ol start="2" type="1">
 <li><strong>Calibración del Sensor GY-906</strong></li>
 </ol>
 <p>Para la calibración del sensor de temperatura GY-906, se utiliza una cámara termográfica Fluke Ti9 como referencia. Tanto el sensor como la cámara se configuran con una emisividad de 0.98, correspondiente a la emisividad promedio de la piel humana. Las pruebas se realizan durante tres días, entre las 10:00 a. m. y las 06:00 p.&nbsp;m., con mediciones cada media hora para capturar diferentes condiciones ambientales.</p>
-<p>Durante cada sesión de medición, el sensor GY-906 realiza diez mediciones consecutivas en un lapso de diez segundos, y el promedio de estas mediciones se envía a la plataforma Thingsboard, lo cual permite reducir el ruido y aumentar la precisión. Simultáneamente, las lecturas de la cámara termográfica se registran manualmente. Para minimizar el error por movimiento, el dispositivo emite una alerta vibratoria de un segundo, seguida de una pausa de cuatro segundos antes de realizar la medición, permitiendo al usuario mantener la mano inmóvil durante el proceso de medición. Se obtienen 86 pares de mediciones, la <a href="#tbl-estadisticas-camara">Tabla&nbsp;<span>3.11</span></a> muestra las características estadísticas de ambos conjuntos de datos.</p>
+<p>Durante cada sesión de medición, el sensor GY-906 realiza diez mediciones consecutivas en un lapso de diez segundos, y el promedio de estas mediciones se envía a la plataforma ThingsBoard, lo cual permite reducir el ruido y aumentar la precisión. Simultáneamente, las lecturas de la cámara termográfica se registran manualmente. Para minimizar el error por movimiento, el dispositivo emite una alerta vibratoria de un segundo, seguida de una pausa de cuatro segundos antes de realizar la medición, permitiendo al usuario mantener la mano inmóvil durante el proceso de medición. Se obtienen 86 pares de mediciones, la <a href="#tbl-estadisticas-camara">Tabla&nbsp;<span>3.11</span></a> muestra las características estadísticas de ambos conjuntos de datos.</p>
 <div id="tbl-estadisticas-camara" class="anchored">
 <table class="table-hover table-sm small table">
-<caption>Tabla&nbsp;3.11: Estadísticas de las Mediciones del Sensor GY-906 y la Cámara Termográfica Fluke Ti9.</caption>
+<caption>Tabla&nbsp;3.11: Estadísticas de las mediciones del sensor GY-906 y la cámara termográfica Fluke Ti9.</caption>
 <thead>
 <tr class="header">
 <th><strong>Estadística</strong></th>
@@ -1018,7 +1018,7 @@ div.csl-indent {
 <li>Error Medio (EM): 0.60°C</li>
 <li>Error Absoluto Medio (EAM): 0.66°C</li>
 </ul>
-<p>Dada la naturaleza de los datos, se aplica una calibración mediante un modelo de regresión lineal, obteniéndose los siguientes valores clave:</p>
+<p>Se aplica una calibración mediante un modelo de regresión lineal, obteniéndose los siguientes valores clave:</p>
 <ul>
 <li>Pendiente: 0.54 ± 0.08</li>
 <li>Intercepto: 16.70 ± 2.77</li>
@@ -1042,28 +1042,29 @@ div.csl-indent {
 </section>
 <section id="sec-programación" class="level2" data-number="3.5">
 <h2 data-number="3.5" class="anchored" data-anchor-id="sec-programación"><span class="header-section-number">3.5</span> Lógica de programación</h2>
-<p>A continuación, se describe el funcionamiento general del reloj inteligente, detallando la estructura del sistema y la función de cada uno de los archivos que componen el proyecto desarrollado en Arduino. También se presentan los diagramas de flujo de los procesos clave, como la función actualizar_hora y el procedimiento para responder una encuesta y medir las variables fisiológicas. Además, se destacan aspectos relevantes, como los horarios programados para las encuestas y las estrategias implementadas para el ahorro de energía.</p>
+<p>A continuación, se describe el funcionamiento general del reloj inteligente, detallando la estructura del programa y la función de cada uno de los archivos que componen el proyecto desarrollado en Arduino. También se presentan los diagramas de flujo de los procesos clave, como la función <code>actualizar_hora</code> y el procedimiento para responder una encuesta y medir la temperatura de la piel y la frecuencia cardíaca. Además, se destacan aspectos relevantes, como los horarios programados para las encuestas y las estrategias implementadas para el ahorro de la batería del reloj inteligente.</p>
 <ol type="1">
 <li><strong>Descripción de la funcionalidad de los archivos del proyecto</strong></li>
 </ol>
-<p>El proyecto se desarrolla en Arduino, empleando principalmente la librería LVGL para el diseño de la interfaz gráfica. Está compuesto por varios archivos de código, cada uno con una función específica. A continuación, se ofrece una breve descripción de cada uno de ellos:</p>
+<p>El proyecto se desarrolla en Arduino, empleando principalmente la librería LVGL para el diseño de la interfaz gráfica <span class="citation" data-cites="lvgl">(<a href="references.html#ref-lvgl" role="doc-biblioref">LVGL Project 2024</a>)</span>. Está compuesto por varios archivos de código, cada uno con una función específica. A continuación, se ofrece una breve descripción de cada uno de ellos:</p>
 <ol type="1">
-<li><p><strong>Proyecto_confort.ino</strong>: Este es el archivo principal del proyecto. En él se ejecuta el código principal, se incluyen las librerías necesarias, y se declaran tanto las variables como las funciones esenciales.</p></li>
+<li><p><strong>Proyecto_confort.ino</strong>: Este es el archivo principal del proyecto. En él se ejecuta el código principal, se incluyen las librerías necesarias, y se declaran tanto las variables como las funciones usadas.</p></li>
 <li><p><strong>ui.c</strong> y <strong>ui.h</strong>: Estos archivos se encargan de la ejecución y configuración general de la interfaz gráfica. El archivo header (<code>ui.h</code>) contiene las declaraciones de funciones y variables utilizadas en <code>ui.c</code>.</p></li>
-<li><p><strong>ui_Inicio.c</strong>: Configura la pantalla principal del reloj. En esta pantalla se muestra la hora actual, un contador regresivo que indica cuánto tiempo falta hasta el momento de contestar la siguiente encuesta, y el botón para iniciar la encuesta cuando está disponible.</p></li>
+<li><p><strong>ui_Inicio.c</strong>: Configura la pantalla principal del reloj. En la pantalla se muestra la hora actual, un contador regresivo que indica cuánto tiempo falta hasta el momento de contestar la siguiente encuesta, y el botón para iniciar la encuesta cuando esta está disponible.</p></li>
 <li><p><strong>ui_Clo.c</strong>: Configura la pantalla para la pregunta sobre el nivel de aislamiento térmico de la ropa que usa el usuario. Este archivo contiene un diccionario con distintas prendas de ropa con sus respectivos valores de aislamiento térmico.</p></li>
 <li><p><strong>ui_Met.c</strong>: Configura la pantalla para la pregunta sobre el nivel de actividad metabólica del usuario. Este archivo contiene un diccionario con diversas actividades y sus respectivos valores de nivel metabólico.</p></li>
-<li><p><strong>ui_Ubicación.c</strong>: Configura la pantalla para la pregunta sobre la ubicación del usuario. Este archivo contiene una lista de ubicaciones del lugar donde se llevan a cabo las campañas de mediciones.</p></li>
+<li><p><strong>ui_Ubicacion.c</strong>: Configura la pantalla para la pregunta sobre la ubicación del usuario. Este archivo contiene una lista de ubicaciones del lugar donde se llevan a cabo las campañas de mediciones.</p></li>
 <li><p><strong>ui_Sensacion.c</strong>: Configura la pantalla para la pregunta sobre el nivel de sensación térmica. Este archivo contiene un diccionario con la escala de sensación térmica, que va de -3 a 3, y la descripción correspondiente para cada nivel.</p></li>
-<li><p><strong>ui_Aceptación.c</strong>: Configura la pantalla destinada a la pregunta de aceptación térmica.</p></li>
-<li><p><strong>ui_events.c</strong> y <strong>ui_events.h</strong>: Contienen todas las funciones creadas específicamente para el proyecto, tanto las relacionadas con la gestión de eventos generados por la interfaz como otras funciones generales del programa. El archivo de encabezado (<code>ui\_events.h</code>) contiene las declaraciones de las funciones y variables utilizadas en <code>ui_events.c</code>.</p></li>
-<li><p><strong>ui_helpers.c</strong> y <strong>ui_helpers.h</strong>: Contienen funciones auxiliares de la librería LVGL, diseñadas para facilitar la implementación y el manejo de la interfaz gráfica. El archivo header (<code>ui_helpers-h</code>) contiene las declaraciones de funciones y variables utilizadas en <code>ui_helpers.c</code>.</p></li>
+<li><p><strong>ui_Aceptacion.c</strong>: Configura la pantalla destinada a la pregunta de aceptación térmica.</p></li>
+<li><p><strong>ui_events.c</strong> y <strong>ui_events.h</strong>: Contienen todas las funciones creadas específicamente para el proyecto, tanto las relacionadas con la gestión de eventos generados por la interfaz como otras funciones generales del programa. El archivo de encabezado (<code>ui_events.h</code>) contiene las declaraciones de las funciones y variables utilizadas en <code>ui_events.c</code>.</p></li>
+<li><p><strong>ui_helpers.c</strong> y <strong>ui_helpers.h</strong>: Contienen funciones auxiliares de la librería LVGL, diseñadas para facilitar la implementación y el manejo de la interfaz gráfica. El archivo header (<code>ui_helpers.h</code>) contiene las declaraciones de funciones y variables utilizadas en <code>ui_helpers.c</code>.</p></li>
 </ol>
-<p>El reloj está programado para realizar encuestas de confort térmico cada hora entre las 08:30 a.m. y las 09:30 p.m. Programar las encuestas para realizarse en el minuto 30 de cada hora permite proporcionar al usuario un periodo de adaptación térmica previo a responder la primera encuesta. Esto se debe a que las actividades en el IER suelen iniciar en horas exactas, lo que asegura que los usuarios tengan tiempo suficiente para estabilizar su sensación térmica antes de contestar la primera encuesta.</p>
+<p>El reloj está programado para realizar encuestas de confort térmico cada hora entre las 08:30 a.m. y las 09:30 p.m. Programar las encuestas para realizarse en el minuto 30 de cada hora permite proporcionar al usuario un periodo de adaptación térmica previo a responder la primera encuesta, asumiendo que el usuario entra a un espacio o salón a la hora en punto. Esto se debe a que las actividades en el IER suelen iniciar en horas exactas, lo que asegura que los usuarios tengan tiempo suficiente para estabilizar su sensación térmica antes de contestar la primera encuesta.</p>
 <ol start="2" type="1">
 <li><strong>Descripción de la función actualizar_hora</strong></li>
 </ol>
-<p>La función denominada <code>actualizar\_hora</code>, que se encuentra en el archivo <code>ui\_events.c</code>, se encarga de actualizar la hora en pantalla, además habilita o desahibilita el botón para realizar la encuesta según el horario o si esta ya fue o no contestada. Esta función también es la encargada de emitir la alarma para alertar al usuario la disponibilidad de una nueva encuesta. El diagram de flujo de esta función se presenta en la <a href="#fig-actualizarhora">Figura&nbsp;<span>3.6</span></a>.</p>
+<p>La función denominada <code>actualizar_hora</code>, que se encuentra en el archivo <code>ui_events.c</code>, se encarga de actualizar la hora en pantalla, además habilita o desahibilita el botón para realizar la encuesta según el horario o si esta ya fue o no contestada. Esta función también es la encargada de emitir la alarma para alertar al usuario la disponibilidad de una nueva encuesta. El diagram de flujo de esta función se presenta en la <a href="#fig-actualizarhora">Figura&nbsp;<span>3.6</span></a>.</p>
+<p>XXX Me falta actualizar la figura para corregirla</p>
 <div id="fig-actualizarhora" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../Imagenes/Actualizar_hora.svg" class="img-fluid figure-img" style="width:50.0%"></p>
@@ -1071,11 +1072,12 @@ div.csl-indent {
 </figure>
 </div>
 <ol start="3" type="1">
-<li><strong>Descripción del proceso para contestar una encuesta, medir variables fisiológicas y mandar los datos a Thingsboard</strong></li>
+<li><strong>Descripción del proceso para contestar una encuesta, medir variables fisiológicas y mandar los datos a ThingsBoard</strong></li>
 </ol>
-<p>Cuando el usuario presiona el botón para iniciar la encuesta, se da inicio a un proceso que consta de varias etapas: primero, el usuario responde a las preguntas de la encuesta; luego, se registran las variables fisiológicas; seguidamente, se validan las mediciones obtenidas; y, finalmente, se envían los datos a la plataforma Thingsboard.</p>
+<p>Cuando el usuario presiona el botón para iniciar la encuesta, se da inicio a un proceso que consta de varias etapas: primero, el usuario responde a las preguntas de la encuesta; luego, se registran las variables fisiológicas; seguidamente, se validan las mediciones obtenidas; y, finalmente, se envían los datos a la plataforma ThingsBoard.</p>
 <p>Es importante destacar que, una vez enviada la encuesta, las respuestas y mediciones no se reinician automáticamente. Esto permite que, al iniciar una nueva encuesta, el reloj conserve las respuestas de la última encuesta realizada. De esta manera, el usuario puede optar por mantener las mismas respuestas o modificarlas según sea necesario. Esta funcionalidad tiene dos objetivos principales: en primer lugar, reducir el tiempo necesario para responder encuestas de manera consecutiva; y, en segundo lugar, permitir al usuario observar cómo evolucionan sus respuestas a lo largo del día.</p>
-<p>En caso de que las mediciones de los sensores no sean aceptadas por el usuario, estas se realizan nuevamente. El diagrama de flujo que describe el proceso de la encuesta se presenta en la Figura <a href="#fig-iniciarencuesta">Figura&nbsp;<span>3.7</span></a>.</p>
+<p>En caso de que las mediciones de los sensores no sean aceptadas por el usuario, estas se realizan nuevamente. El diagrama de flujo que describe el proceso de la encuesta se presenta en la <a href="#fig-iniciarencuesta">Figura&nbsp;<span>3.7</span></a>.</p>
+<p>XXX Me falta corregir también este diagrama</p>
 <div id="fig-iniciarencuesta" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../Imagenes/Iniciar_encuesta.svg" class="img-fluid figure-img"></p>
@@ -1089,7 +1091,7 @@ div.csl-indent {
 </section>
 <section id="sec-instrucciones" class="level2" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="sec-instrucciones"><span class="header-section-number">3.6</span> Instrucciones de uso</h2>
-<p>El procedimiento de configuración e interacción con el reloj inteligente se puede dividir en cuatro etapas. La primera etapa consiste en la preparación del entorno de desarrollo, que implica la instalación del software Arduino con las paqueterías y librerías necesarias, así como la configuración del dispositivo en la plataforma Thingsboard. La segunda etapa se centra en el registro de los datos del usuario mediante un formulario de Google. La tercera etapa corresponde a la configuración y carga del código a la placa de desarrollo. Por última, la cuarta etapa consiste en las instrucciones generales para interactuar con el dispositivo a través de sus diferentes pantallas.</p>
+<p>El procedimiento de configuración e interacción con el reloj inteligente se puede dividir en cuatro etapas. La primera etapa consiste en la preparación del entorno de desarrollo, que implica la instalación del software Arduino con las paqueterías y librerías necesarias, así como la configuración del dispositivo en la plataforma ThingsBoard. La segunda etapa se centra en el registro de los datos del usuario mediante un formulario de Google. La tercera etapa corresponde a la configuración y carga del código a la placa de desarrollo. Por última, la cuarta etapa consiste en las instrucciones generales para interactuar con el dispositivo a través de sus diferentes pantallas.</p>
 <ol type="1">
 <li><strong>Preparación del entorno de desarrollo</strong></li>
 </ol>
@@ -1109,7 +1111,7 @@ div.csl-indent {
 <figcaption class="figure-caption">Figura&nbsp;3.9: Selección e instalación del paquete ESP32 de Espressif Systems en el Gestor de placas del Arduino IDE.</figcaption>
 </figure>
 </div>
-<p>Posteriormente, se configuran las librerías necesarias para el proyecto. Es importatne instalar las librerías en las versiones especificadas para garantizar el correcto funcionamiento del reloj inteligente. La <a href="#tbl-librerias">Tabla&nbsp;<span>3.12</span></a> presenta las librerías requeridas junto con las versiones recomendadas. Estas librerías pueden instalarse manualmente, una por una, o, de manera alternativa, se puede descargar la carpeta llamada “Arduino” del <a href="https://github.com/JulioLanda4/IoT_Reloj_Confort" target="_blank">repositorio del proyecto</a> y reemplazarla por la carpeta de librerías existente en la máquina local, que generalmente se encuentra en el directorio “Documentos”.</p>
+<p>Posteriormente, se configuran las librerías necesarias para el proyecto. Es importatne instalar las librerías en las versiones especificadas para garantizar el correcto funcionamiento del reloj inteligente. La <a href="#tbl-librerias">Tabla&nbsp;<span>3.12</span></a> presenta las librerías requeridas junto con las versiones recomendadas. Estas librerías pueden instalarse manualmente, una por una, o, de manera alternativa, se puede descargar la carpeta llamada “Arduino” del <a href="https://github.com/JulioLanda4/IoT_Reloj_Confort" target="_blank">repositorio del proyecto</a> y copiarla en la carpeta de librerías existente en la máquina local, que generalmente se encuentra en el directorio “Documentos”.</p>
 <div id="tbl-librerias" class="anchored">
 <table class="table-hover table-sm small table">
 <caption>Tabla&nbsp;3.12: Librerías utilizadas y sus versiones recomendadas para el funcionamiento del reloj inteligente.</caption>
@@ -1236,14 +1238,14 @@ Cargando…
 <p>Es necesario instalar la herramienta <code>git</code>, la cual puede descargarse desde el siguiente enlace: <a href="https://git-scm.com" target="_blank">descarga git</a>. Asimismo, se requiere la instalación de las siguientes librerías de Python: <code>matplotlib</code>, <code>datetime</code>, <code>pandas</code> e <code>iertools</code>. Esta ultima puede instalarse mediante el comando:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install git+https://github.com/AltamarMx/iertools.git</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Además, es necesario contar con el archivo <code>.xlsx</code> generado a partir del formulario completado con la información del usuario.</p>
-<p>Con las librerías instaladas, se procede a configurar el archivo <code>config.ini</code>, en el cual deben ingresarse las credenciales del dispositivo y de la plataforma Thingsboard. Los parámetros a configurar en este archivo son los siguientes:</p>
+<p>Con las librerías instaladas, se procede a configurar el archivo <code>config.ini</code>, en el cual deben ingresarse las credenciales del dispositivo y de la plataforma ThingsBoard. Los parámetros a configurar en este archivo son los siguientes:</p>
 <ul>
 <li><strong>dispositivo:</strong> Nombre del dispositivo, utilizado para identificarlo en la libreta</li>
-<li><strong>token:</strong> Token del dispositivo en Thingsboard</li>
+<li><strong>token:</strong> Token del dispositivo en ThingsBoard</li>
 <li><strong>device_id:</strong> ID del dispositivo</li>
-<li><strong>tenant:</strong> Cuenta de usuario en Thingsboard</li>
+<li><strong>tenant:</strong> Cuenta de usuario en ThingsBoard</li>
 <li><strong>password:</strong> Contraseña de la cuenta</li>
-<li><strong>host:</strong> Dirección del servidor de Thingsboard</li>
+<li><strong>host:</strong> Dirección del servidor de ThingsBoard</li>
 <li><strong>port:</strong> Puerto del servidor</li>
 </ul>
 <p><strong>Configuración de la libreta</strong></p>
@@ -1470,6 +1472,9 @@ Integrated, Maxim. 2015. <em>MAX30102 High-Sensitivity Pulse Oximeter and Heart-
 </div>
 <div id="ref-ISO10551" class="csl-entry" role="listitem">
 International Organization for Standardization. 2019. <span>«Ergonomics of the thermal environment – Assessment of the influence of the thermal environment using subjective judgement scales»</span>. ISO Standard 10551. <span>International Organization for Standardization</span>. <a href="https://www.iso.org/standard/45126.html">https://www.iso.org/standard/45126.html</a>.
+</div>
+<div id="ref-lvgl" class="csl-entry" role="listitem">
+LVGL Project. 2024. <span>«<span>LVGL – Light and Versatile Embedded Graphics Library</span>»</span>. <a href="https://lvgl.io/">https://lvgl.io/</a>.
 </div>
 <div id="ref-mlx90614_datasheet" class="csl-entry" role="listitem">
 Melexis. 2009. <em>MLX90614 Infra Red Thermometer in TO-39</em>. <a href="https://www.melexis.com/en/documents/documentation/datasheets/mlx90614-datasheet">https://www.melexis.com/en/documents/documentation/datasheets/mlx90614-datasheet</a>.
