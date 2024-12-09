@@ -6,9 +6,11 @@ XXX Esto aún no está listo
 
 **Resumen**
 
-El confort térmico es un aspecto crucial para la calidad de vida de las personas, afectando directamente a su bienestar físico y mental. También juega un papel muy importante en el consumo energético de las edificaciones, donde una gran parte de la energía es utilizada en sistemas de calefacción, ventilación y aire acondicionado (HVAC, por sus siglas en inglés), indirectamente afectando también a las emisiones de gases de efecto invernadero (GEI) y al cambio climático.  XXX Hablar de que para reducir el impacto climatico se deben integrar tecnologias... mencionar a las estrategias de diseño bioclimatico.
+El confort térmico es un aspecto crucial para la calidad de vida de las personas, afectando directamente a su bienestar físico y mental. También juega un papel muy importante en el consumo energético de las edificaciones, donde una gran parte de la energía es utilizada en sistemas de calefacción, ventilación y aire acondicionado (HVAC, por sus siglas en inglés), indirectamente afectando también a las emisiones de gases de efecto invernadero (GEI) y al cambio climático.  XXX Hablar de que para reducir el impacto climatico se deben integrar tecnologias... mencionar a las estrategias de diseño bioclimatico. XXX
 
  De esta manera, el estudio del confort térmico cobra importancia no unicamente para mejorar la calidad de vida de las personas, sino que también para contribuir en la lucha por el cambio climático.
+
+ El confort térmico es un aspecto crucial para la calidad de vida de las personas, afectando directamente a su bienestar físico y mental. También juega un papel muy importante en el consumo energético de las edificaciones, donde una gran parte de la energía es utilizada en sistemas de calefacción, ventilación y aire acondicionado (HVAC, por sus siglas en inglés), indirectamente afectando también a las emisiones de gases de efecto invernadero (GEI) y al cambio climático. Para mitigar este impacto climático, es fundamental integrar tecnologías accesibles y eficientes que permitan optimizar el confort térmico sin incrementar el consumo energético. Estrategias como el diseño bioclimático destacan por su capacidad para aprovechar las condiciones climáticas locales, reduciendo la dependencia de sistemas HVAC y contribuyendo a la sostenibilidad.
 
  -----------
 
