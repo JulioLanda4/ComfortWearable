@@ -2,7 +2,7 @@
 
 ## Confort térmico
 
-El confort térmico es un concepto subjetivo, ya que depende de las percepciones individuales y está influenciado por factores ambientales y personales. La sociedad estadounidense de ingenieros de calefacción, refrigeración y aire acondicionado (ASHRAE, por sus siglas en inglés) lo define como *la condición mental que expresa satisfacción con el ambiente térmico* [ASHRAE55 -@ASHRAE55], mientras que la organización internacional de normalización (ISO, por sus siglas en inglés) en su norma 7730 lo describe como *la sensación de bienestar térmico que experimenta una persona en un entorno dado, considerando aspectos físicos, fisiológicos y psicológicos* [-@ISO7730]. Podemos decir entonces que el confort térmico es la sensación de satisfacción o insatisfacción con el ambiente térmico y este se define por percepciones individuales y como los individuos reaccionan ante las condiciones térmicas de su entorno.
+El confort térmico es un concepto subjetivo, ya que depende de las percepciones individuales y está influenciado por factores ambientales y personales. La sociedad estadounidense de ingenieros de calefacción, refrigeración y aire acondicionado (ASHRAE, por sus siglas en inglés) lo define como *la condición mental que expresa satisfacción con el ambiente térmico* [ASHRAE55 -@ASHRAE55], mientras que la organización internacional de normalización (ISO, por sus siglas en inglés) en su norma 7730 lo describe como *la sensación de bienestar térmico que experimenta una persona en un entorno dado, considerando aspectos físicos, fisiológicos y psicológicos* [-@ISO7730]. Podemos decir entonces que el confort térmico es la sensación de satisfacción o insatisfacción con el ambiente térmico y está influenciado por percepciones individuales y como los individuos reaccionan ante las condiciones térmicas de su entorno.
 
 El confort térmico es más complejo que un simple estado de satisfacción o insatisfacción, se puede considerar un rango de sensaciones que van desde una percepción extrema de frío hasta una sensación de extremo calor. En este sentido, se puede considerar como un equilibrio térmico entre el cuerpo humano y su entorno, donde la temperatura corporal se regula a través de procesos fisiológicos, como la sudoración, la vasoconstricción y la vasodilatación [@tomonori_sakoi__2023]. Además, el confort térmico no solo depende de las condiciones ambientales, sino también de cómo los individuos interpretan estas condiciones según sus experiencias y expectativas personales [ASHRAE55 -@ASHRAE55].
 
@@ -16,19 +16,19 @@ Los factores ambientales incluyen la temperatura del aire, la temperatura radian
 
 - **Temperatura radiante media:**  Es la temperatura promedio de las superficies que rodean a una persona. Las superficies frías pueden absorber el calor del cuerpo humano, mientras que las superficies calientes pueden irradiar calor hacia el cuerpo, afectando la sensación de frío o calor. Este factor es crucial en el diseño de edificaciones, donde la elección de materiales influye directamente en la transferencia de calor.
 
-- **Velocidad del aire:** Juega un papel importante en la sensación de frescura o calor. El flujo de aire sobre la piel humana favorece la evaporación del sudor, lo cual genera un efecto refrescante. Según estudios, la velocidad óptima del aire mejora significativamente los niveles de confort térmico, el rendimiento cognitivo y la satisfacción general [@chao_cen__2023].
+- **Velocidad del aire:** Juega un papel importante en la sensación de frescura o calor. El flujo de aire sobre la piel humana favorece la evaporación del sudor, lo cual genera un efecto refrescante. Según estudios, la velocidad adecuada del aire mejora significativamente los niveles de confort térmico, el rendimiento cognitivo y la satisfacción general [@chao_cen__2023].
 
 - **Humedad relativa:** Afecta la capacidad del cuerpo humano para disipar el calor a través de la sudoración. En ambientes muy húmedos, la evaporación del sudor se ve disminuida, generando una mayor sensación de calor, mientras que en ambientes secos la sudoración se acelera, aumentando la sensación de frescura.
 
-- **Presión atmosférica:**  La presión atmosférica también puede influir en la percepción del confort térmico, especialmente en entornos de gran altitud o en condiciones climáticas extremas.
+- **Presión atmosférica:**  La presión atmosférica también puede influir en la percepción del confort térmico, especialmente en entornos de gran altitud, donde la menor densidad del aire afecta a la respiración.
 
 **Factores personales**
 
 Los factores personales incluyen la actividad física, la vestimenta, la edad, el sexo y aspectos culturales y socioeconómicos.
 
-- **Actividad física:** Influye directamente en la producción de calor del cuerpo. Una persona que realiza una actividad física intensa produce más calor que una persona en reposo. La producción de calor se mide en unidades de "*met*", donde 1 *met* equivale a la producción de calor de una persona en reposo, aproximadamente 58.2 W/m² [ASHRAE -@ASHRAE2009].
+- **Actividad física:** Influye directamente en la producción de calor del cuerpo. Una persona que realiza una actividad física intensa produce más calor que una persona en reposo. En el contexto de confort térmico, la producción de calor se mide en unidades de "*met*", donde 1 *met* equivale a la producción de calor de una persona en reposo, aproximadamente 58.2 W/m² [ASHRAE -@ASHRAE2009].
 
-- **Vestimenta:** Actúa como un aislante térmico que ayuda a retener el calor en el cuerpo. El nivel de aislamiento térmico de la ropa se mide en unidades de "*clo*". Un valor de 1 *clo* equivale al aislamiento proporcionado por un traje típico de negocios, aproximadamente 0.155 m²·K/W [ASHRAE -@ASHRAE2009].
+- **Vestimenta:** Actúa como un aislante térmico que ayuda a retener el calor en el cuerpo. El nivel de aislamiento térmico de la ropa se mide en unidades de "*clo*". El valor de 1 *clo* equivale al aislamiento proporcionado por un traje típico de negocios, aproximadamente 0.155 m²·K/W [ASHRAE -@ASHRAE2009].
 
 - **Edad:** La edad afecta la percepción del confort térmico debido a cambios fisiológicos asociados con el envejecimiento, que reducen la capacidad de termorregulación [@BaqueroLarriva2019].
 
@@ -81,7 +81,7 @@ Además de las encuestas utilizadas para evaluar el confort térmico, se han des
 
 **PMV-PPD**
 
-El voto medio previsto (PMV, por sus siglas en inglés) está en función de las siete variables físicas que afectan al confort térmico: temperatura del aire, temperatura radiante, humedad relativa, velocidad del aire, presión atmosférica, nivel metabólico del ocupante y nivel de aislamiento térmico de la ropa. Dispone de una escala de sensación térmica de siete puntos, donde -3 indica una sensación de mucho frío, 0 representa una sensación neutra y +3 representa una sensación de mucho calor. Este es un modelo pensado para edificaciones que cuenten con sistemas de aire acondicionado y fue desarrollado por @Fanger1970. 
+El voto medio previsto (PMV, por sus siglas en inglés) está en función de las siete variables físicas que afectan al confort térmico: temperatura del aire, temperatura radiante, humedad relativa, velocidad del aire, presión atmosférica, nivel metabólico del ocupante y nivel de aislamiento térmico de la ropa. Dispone de una escala bipolar de sensación térmica de siete puntos, donde -3 indica una sensación de mucho frío, 0 representa una sensación neutra y +3 representa una sensación de mucho calor. Este es un modelo pensado para edificaciones que cuenten con sistemas de aire acondicionado y fue desarrollado por @Fanger1970. 
 
 Las ecuaciones para calcular el PMV son: 
 
@@ -138,17 +138,17 @@ $h_c$  :  Coeficiente de transferencia de calor por convección ($W/m^2 \cdot °
 $t_{cl}$  :  Temperatura de la superficie de la ropa (°C)  
 $HR$  :  Humedad relativa (%)
 
-El Porcentaje Previsto de Insatisfacción (PPD, por sus siglas en inglés) es un modelo que predice el porcentaje de personas que se sentirán insatisfechas con las condiciones térmicas en un ambiente determinado. Este modelo está directamente relacionado con el  PMV y fue propuesto por @Fanger1970. La ecuación que lo define se expresa de la siguiente manera:
+El Porcentaje Previsto de Insatisfacción ($PPD$, por sus siglas en inglés) es un modelo que predice el porcentaje de personas que se sentirán insatisfechas con las condiciones térmicas en un ambiente determinado. Este modelo está relacionado con el  PMV y fue propuesto por @Fanger1970. La ecuación que lo define se expresa de la siguiente manera:
 
 $$
 PPD = 100 - 95 \cdot \exp\left(-0.03353 \cdot \text{PMV}^4 - 0.2179 \cdot \text{PMV}^2\right)
 $$ {#eq-ppd}
 
-ASHRAE55 [-@ASHRAE55] indica que el PPD no debe ser mayor al 10%, mientras que la ISO 7730 [-@ISO7730] indica un valor menor al 10% para edificios nuevos y 15% para edificios ya existentes. En la @fig-pmvppd observamos la relación entre el PMV y el PPD.
+ASHRAE 55 [-@ASHRAE55] indica que el $PPD$ no debe ser mayor al 10% en todos los edificios, mientras que la ISO 7730 [-@ISO7730] indica un valor menor al 10% para edificios nuevos y 15% para edificios ya existentes. En la @fig-pmvppd observamos la relación entre el PMV y el PPD.
 
 ```{python}
 #| echo: false
-#| fig-cap: Relación PMV-PPD
+#| fig-cap: Relación PMV-PPD y los límites para edificaciones nuevas y existentes.
 #| label: fig-pmvppd
 
 import numpy as np
@@ -169,8 +169,8 @@ plt.axhline(y=10, color='red', linestyle='--', label='Límite 10% (ISO 7730)')
 plt.axhline(y=15, color='green', linestyle='--', label='Límite 15% (ISO 7730, Edificios existentes)')
 
 # Configurar etiquetas y título
-plt.xlabel('PMV (Voto medio previsto)', fontsize=12)
-plt.ylabel('PPD (Porcentaje de personas insatisfechas)', fontsize=12)
+plt.xlabel('PMV [-]', fontsize=12)
+plt.ylabel('PPD [%]', fontsize=12)
 plt.legend(loc='best', fontsize=10)
 
 # Configurar límites y cuadrícula
@@ -191,28 +191,28 @@ Existen modelos pensados para aplicarse en edificaciones sin sistemas de aire ac
 
 ***ePMV***  
 
-el ePMV es una modificación al PMV. Se observó que el PMV sobrestima el voto de sensación térmica de las personas en edificios sin aire acondicionado ubicados en climas cálidos. Para corregir esto, se introdujo un factor de expectativa (*e*), el cual ajusta los cálculos del PMV teniendo en cuenta la duración del clima cálido a lo largo del año y la presencia de otros edificios en la región que cuentan con sistemas de aire acondicionado [@Fanger2002].
+El voto medio previsto extendido (ePMV, por sus siglas en inglés) es una modificación al PMV. Se observó que el PMV sobrestima el voto de sensación térmica de las personas en edificios sin aire acondicionado ubicados en climas cálidos. Para corregir esto, se introdujo un factor de expectativa (*e*), el cual ajusta los cálculos del PMV teniendo en cuenta factores como la duración del clima cálido a lo largo del año y la frecuencia con que las personas ingresan a otros edificios en la región que cuentan con sistemas de aire acondicionado [@Fanger2002].
 
 En la @tbl-factor_e se presentan los valores del factor *e* para diferentes escenarios.
 
 
-| Período Cálido | Edificios Cercanos con Aire Acondicionado | Valor \(e\)|
+| Período cálido | Edificios cercanos con aire acondicionado | Valor \(e\)|
 |:--------------:|:-----------------------------------------:|:----------:|
 | Todo el año    | No                                        | 0.5        |
 | Todo el año    | Sí                                        | 0.7        |
 | Verano         | No                                        | 0.7-0.8    |
 | Verano         | Sí                                        | 0.8-0.9    |
 | Período corto en verano | -                                | 0.9-1      |
-: Valores de *e* {#tbl-factor_e}
+: Valores de *e* según la duración del período cálido y el acceso a edificios con aire acondicionado. {#tbl-factor_e}
 
-Para el calculo del ePMV además de calcular el valor de *e*, se debe considerar el valor del estado metabólico del ocupante (MET). usualmente el MET se evalúa mediante cuestionarios que determinan el tiempo dedicado a actividades específicas como estar sentado, de pie o caminando. Sin embargo, esto no considera el comportamiento natural de las personas que al sentir calor tienden a reducir su actividad de manera inconsciente para adaptarse al clima, disminuyendo así su tasa metabólica. La solución propuesta para el ePMV es considerar esta reducción en la tasa metabólica en ambientes cálidos. Se considera una disminución del 6.7%. 
+Para el calculo del ePMV además de calcular el valor de *e*, se debe considerar el valor del estado metabólico del ocupante (MET). usualmente el MET se determina mediante tablas estandarizadas que asignan valores a diferentes actividades. Sin embargo, esto no considera el comportamiento natural de las personas que al sentir calor tienden a reducir su actividad de manera inconsciente para adaptarse al clima, disminuyendo así su tasa metabólica. La solución propuesta para el ePMV es considerar esta reducción en la tasa metabólica en ambientes cálidos. Se considera una disminución del 6.7%. 
 
 De esta manera, para calcular el ePMV se deben seguir los siguientes pasos: 
 
 1. Calcular el PMV
 2. Se calcula la nueva tasa metabólica de la siguiente manera: 
     $$
-    M_{mod} = (0.067*PMV)M
+    M_{mod} = (0.067*PMV)*M
     $$ {#eq-met-modificado}
 
 Donde $M_{mod}$ es la tasa metabólica modificada y $M$ es la tasa metabólica estimada para el PMV.
@@ -222,7 +222,7 @@ Donde $M_{mod}$ es la tasa metabólica modificada y $M$ es la tasa metabólica e
 
 **aPMV**  
 
-*Adaptative Predicted Mean Vote*, es una adaptación del PMV y fue propuesta por @YAO2009. Es un modelo que toma en cuenta la sobrestimación del PMV de los ocupantes en edificios sin aire acondicionado. Se propone un coeficiente adaptativo $\lambda$, el cual se obtiene realizando encuestas de sensación térmica a los ocupantes del edificio, y en caso de que el edificio aún se encuentre en construcción, se busca un edificio con características similares. El aPMV se calcula de la siguiente manera: 
+El voto medio previsto adaptativo (aPMV, por sus siglas en inglés), es una adaptación del PMV y fue propuesta por @YAO2009. Es un modelo que toma en cuenta la sobrestimación del PMV de los ocupantes en edificios sin aire acondicionado. Se propone un coeficiente adaptativo $\lambda$, el cual se obtiene realizando encuestas de sensación térmica a los ocupantes del edificio, y en caso de que el edificio aún se encuentre en construcción, se busca un edificio con características similares. El aPMV se calcula de la siguiente manera: 
 
 $$ 
 \text{aPMV} = \frac{\text{PMV}}{1 + \lambda \text{PMV}} 
@@ -251,18 +251,18 @@ $p_v$  :  Presión de vapor (mbar)
 
 **Índice Humidex Colima**  
 
-Se utiliza la @eq-humidex del Índice Humidex Ontario pero realizado con encuestas en la ciudad de Colima. Modifica la relación con la sensación térmica e incluye época de frío. [@gomez-azpetia2006adaptacion] 
+El Índice Humidex Colima adapta la fórmula original del Índice Humidex Ontario [@eq-humidex] para responder a las condiciones climáticas de la región de Colima, México. A diferencia del índice original, que está diseñado exclusivamente para climas cálidos, este nuevo índice considera la época de frío. Este índice se basa en encuestas de confort realizadas en la ciudad de Colima. Estas encuestas se llevaron a cabo en diferentes estaciones del año [@gomez-azpetia2006adaptacion]. 
 
 
 ## Variables fisiológicas como indicadores de confort térmico
 
 Si bien existen distintos modelos que permiten predecir el confort térmico, estos no son 100% precisos, por ello se han buscado otras formas de poder medir y predecir el confort térmico. Se ha visto que existen variables fisiológicas que pueden estar fuertemente relacionadas a la sensación de confort térmico del ser humano.
 
-Las variables fisiológicas que están relacionadas con la respuesta del cuerpo humano a las condiciones ambientales e incluyen la tasa de sudoración, la temperatura de la piel y la frecuencia cardíaca [@Bogatu2023]. La medición de estas variables permite identificar cómo una persona está reaccionando a las condiciones térmicas y si se encuentra en un estado de confort. @Sim2018 midieron la tasa de sudoración a través de una cámara de humedad y mencionaron que el estado térmico puede ser medido a través del sudor. Sin embargo, @Bogatu2023 señala que la sudoración no siempre es un indicador fiable del confort térmico debido a que la sudoración se puede ver afectada por factores emocionales o estrés. Además de que en ambientes fríos la poca sudoración de la piel dificulta la medición de esta variable. @Sim2016 llevaron a cabo un estudio donde midieron la temperatura de la piel en cuatro puntos distintos: parte superior de la muñeca, arteria radial, arteria ulnar y la punta del dedo índice. Los resultados mostraron que combinar las tres mediciones de la muñeca proporciona los mejores resultados, con una correlación de Pearson de 0.81 respecto al vot ode sensación térmica (TSV, por sus siglas en inglés). Sin embargo, las mediciones individuales de la parte superior de la muñeca y de la arteria radial también ofrecieron resultados satisfactorios, con una correlación de Pearson de 0.76. De manera similar, @Choi2017 realizaron un estudio en donde a través de un algoritmo de árbol de decisiones crearon modelos para predecir el TSV midiendo la temperatura en diferentes puntos del cuerpo: frente, cuello, espalda, brazo, muñeca (interior), muñeca (posterior), pecho, cintura, vientre. En donde el mejor resultado lo obtuvieron al hacer un modelo combinando las mediciones de la cintura, brazo y la parte interior de la muñeca, con un 95.87% de precisión.
+Las variables fisiológicas que están relacionadas con la respuesta del cuerpo humano a las condiciones ambientales e incluyen la tasa de sudoración, la temperatura de la piel y la frecuencia cardíaca [@Bogatu2023]. La medición de estas variables permite identificar cómo una persona está reaccionando a las condiciones térmicas y si se encuentra en un estado de confort. @Sim2018 midieron la tasa de sudoración a través de una cámara de humedad y mencionaron que el estado térmico puede ser medido a través del sudor. Sin embargo, @Bogatu2023 señala que la sudoración no siempre es un indicador fiable del confort térmico debido a que la sudoración se puede ver afectada por factores emocionales o estrés. Además de que en ambientes fríos la poca sudoración de la piel dificulta la medición de esta variable. @Sim2016 llevaron a cabo un estudio donde midieron la temperatura de la piel en cuatro puntos distintos: parte superior de la muñeca, arteria radial, arteria ulnar y la punta del dedo índice. Los resultados mostraron que combinar las tres mediciones de la muñeca proporciona los mejores resultados, con una correlación de Pearson de 0.81 respecto al voto de sensación térmica (TSV, por sus siglas en inglés). Sin embargo, las mediciones individuales de la parte superior de la muñeca y de la arteria radial también ofrecieron resultados satisfactorios, con una correlación de Pearson de 0.76. De manera similar, @Choi2017 realizaron un estudio en donde a través de un algoritmo de árbol de decisiones crearon modelos para predecir el TSV midiendo la temperatura en diferentes puntos del cuerpo: frente, cuello, espalda, brazo, muñeca (interior), muñeca (posterior), pecho, cintura, vientre. En donde el mejor resultado lo obtuvieron al hacer un modelo combinando las mediciones de la cintura, brazo y la parte interior de la muñeca, con un 95.87% de precisión.
 
-@Bogatu2023 también concluyeron que la temperatura de la piel es un buen indicador de confort térmico debido a su facilidad de medición, ya que representa el medio de interacción entre el cuerpo humano y su entorno, regulando el intercambio de calor mediante procesos como la vasodilatación y la vasoconstricción. Identificaron que a temperaturas más altas en la piel se registra una mayor tendencia a una sensación de calor, mientras que temperaturas más bajas de la piel se relacionan con una sensación de frío. Además, identificaron la frecuencia cardíaca y su variabilidad (VFC, variabilidad de la frecuencia cardíaca) como buenos indicadores del confort térmico. La VFC está vinculada al estado de homeostasis del cuerpo y puede reflejar el nivel de confort térmico de una persona, con estudios que muestran variaciones de HRV según el entorno térmico y una precisión del 93.7% al predecir el estado térmico de un individuo utilizando algoritmos de clasificación de aprendizaje automático. De hecho, el estudio de @Nkurikiyeyezu_2017 refuerza esta idea, mostrando que la VFC puede predecir el estado de confort térmico en diferentes condiciones ambientales. En su estudio, se analizaron índices de la VFC de individuos realizando tareas en ambientes fríos, neutros y cálidos, logrando predecir el estado térmico con una precisión de hasta el 93.7%.
+@Bogatu2023 también concluyeron que la temperatura de la piel es un buen indicador de confort térmico debido a su facilidad de medición, ya que representa el medio de interacción entre el cuerpo humano y su entorno, regulando el intercambio de calor mediante procesos como la vasodilatación y la vasoconstricción. Identificaron que a temperaturas más altas en la piel se registra una mayor tendencia a una sensación de calor, mientras que temperaturas más bajas de la piel se relacionan con una sensación de frío. Además, identificaron la frecuencia cardíaca y la variabilidad de la frecuencia cardíaca (VFC) como buenos indicadores del confort térmico. La VFC está vinculada al estado de homeostasis del cuerpo y puede reflejar el nivel de confort térmico de una persona, con estudios que muestran variaciones de HRV según el entorno térmico y una precisión del 93.7% al predecir el estado térmico de un individuo utilizando algoritmos de clasificación de aprendizaje automático. De hecho, el estudio de @Nkurikiyeyezu_2017 refuerza esta idea, mostrando que la VFC puede predecir el estado de confort térmico en diferentes condiciones ambientales. En su estudio, se analizaron índices de la VFC de individuos realizando tareas en ambientes fríos, neutros y cálidos, logrando predecir el estado térmico con una precisión de hasta el 93.7%.
 
-## Confort térmico en México
+## Modelos de confort térmico en México
 
 La mayoría de los modelos de confort térmico que se han desarrollado son para países europeos o Estados Unidos, en donde sus condiciones climáticas difieren de las condiciones climáticas de México (en donde se desarrolla este proyecto). Estos modelos y las investigaciones en confort térmico han servido como base para definir parámetros de confort térmico, sin embargo no siempre se adaptan a las diferentes condiciones climáticas. México es un país con una gran variedad de regiones bioclimáticas, desde regiones áridas, hasta regiones tropicales húmedas [@infonavit_regiones_bioclimaticas], lo cual requiere estudios específicos de confort térmico para cada una de estas regiones. Al día de hoy se han hecho diversos estudios en las diferentes regiones bioclimáticas del país. A continuación se presentan algunos de esos estudios llevados a cabo en México.
 

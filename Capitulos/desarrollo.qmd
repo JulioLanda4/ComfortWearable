@@ -314,7 +314,7 @@ La @tbl-max30102 muestra el error absoluto medio (EAM) obtenido para diferentes 
 | 20                       | 16             | 15.8          |
 : Error Absoluto Medio (EAM) para diferentes valores de RATE_SIZE en el MAX30102.  {#tbl-max30102 .hover .sm}
 
-Posteriormente, con `RATE\_SIZE` fijado en 6, se ajusta el valor de `sampleAverage` de 4 a 8, logrando un EAM de 3.6 bpm, lo cual representa una mejora en la señal. La configuración final optimizada incluye los siguientes valores: `ledBrightness` en 31, `sampleAverage` en 8, `ledMode` en 2, `sampleRate` en 400, `pulseWidth` en 411, `adcRange` en 2048 y `RATE\_SIZE` en 6.
+Posteriormente, con `RATE\_SIZE` fijado en 6, se ajusta el valor de `sampleAverage` de 4 a 8, logrando un EAM de 3.6 bpm, lo cual representa una mejora en la señal. La configuración final incluye los siguientes valores: `ledBrightness` en 31, `sampleAverage` en 8, `ledMode` en 2, `sampleRate` en 400, `pulseWidth` en 411, `adcRange` en 2048 y `RATE\_SIZE` en 6.
 
 2. **Calibración del Sensor GY-906**
 
@@ -454,7 +454,7 @@ El proyecto se desarrolla en Arduino, empleando principalmente la librería LVGL
 
 6. **ui\_Ubicacion.c**: Configura la pantalla para la pregunta sobre la ubicación del usuario. Este archivo contiene una lista de ubicaciones del lugar donde se llevan a cabo las campañas de mediciones.
 
-7. **ui\_Sensacion.c**: Configura la pantalla para la pregunta sobre el nivel de sensación térmica. Este archivo contiene un diccionario con la escala de sensación térmica, que va de -3 a 3, y la descripción correspondiente para cada nivel.
+7. **ui\_Sensacion.c**: Configura la pantalla para la pregunta sobre el nivel de sensación térmica. Este archivo contiene un diccionario con la escala de sensación térmica, que va de -3.0 a 3.0, y la descripción correspondiente para cada nivel.
 
 8. **ui\_Aceptacion.c**: Configura la pantalla destinada a la pregunta de aceptación térmica.
 
@@ -473,7 +473,7 @@ XXX Me falta actualizar la figura para corregirla
 
 ![Diagrama de flujo de la función actualizar_hora.](../Imagenes/Actualizar_hora.svg){#fig-actualizarhora width=50%}
 
-3. **Descripción del proceso para contestar una encuesta, medir variables fisiológicas y mandar los datos a ThingsBoard**
+3. **Descripción del proceso para contestar una encuesta, medir la temperatura de la piel y la frecuencia cardíaca, y mandar los datos a ThingsBoard**
 
 
 Cuando el usuario presiona el botón para iniciar la encuesta, se da inicio a un proceso que consta de varias etapas: primero, el usuario responde a las preguntas de la encuesta; luego, se registran las variables fisiológicas; seguidamente, se validan las mediciones obtenidas; y, finalmente, se envían los datos a la plataforma ThingsBoard.
@@ -488,7 +488,7 @@ XXX Me falta corregir también este diagrama
 
 ![Diagrama de flujo de encuesta y medición de variables.](../Imagenes/Iniciar_encuesta.svg){#fig-iniciarencuesta}
 
-4. **Estrategias para el ahorro de energía**
+4. **Estrategias para el ahorro de la batería del reloj inteligente**
 
 Para optimizar el consumo de energía, se implementan dos estrategias principales. La primera consiste en mantener la pantalla del reloj apagada mientras el dispositivo está en reposo. Si la pantalla está encendida y no se detecta actividad durante más de 10 segundos, se apaga automáticamente. No obstante, el usuario puede reactivarla en cualquier momento con un simple toque para consultar la hora. La segunda estrategia consiste en mantener apagados el sensor de temperatura (GY-906) y el sensor de frecuencia cardíaca (MAX30102), activándose únicamente durante el proceso de medición de las variables fisiológicas.
 
@@ -511,7 +511,7 @@ Para iniciar, se instala la versión más reciente del Arduino IDE, disponible p
 
 ![Configuración de las URLs adicionales en el gestor de tarjetas del Arduino IDE para agregar el paquete de placas ESP32.](../Imagenes/Paqueteria_arduino.png){#fig-paqueteriaArduino}
 
-A continuación, se accede al Gestor de placas dando click en "Herramientas", seguido de "Placa" y, finalmente, "Gestor de placas". En el gestor, se busca "esp32" y se procede a instalar el sistema ESP32 de Espressif, como se muestra en la @fig-esp32placas. La flecha roja en la figura señala el paquete que debe instalarse.
+A continuación, se accede al Gestor de placas dando click en "Herramientas", seguido de "Placa" y, finalmente, "Gestor de placas". En el gestor, se busca "esp32" y se procede a instalar el paquete esp32 de Espressif Systems, como se muestra en la @fig-esp32placas. La flecha roja en la figura señala el paquete que debe instalarse.
 
 ![Selección e instalación del paquete ESP32 de Espressif Systems en el Gestor de placas del Arduino IDE.](../Imagenes/esp32_placas.png){#fig-esp32placas}
 
@@ -589,7 +589,7 @@ Cuando se habilita el botón para responder una encuesta, se muestra la pantalla
 - La cuarta pregunta, relacionada con la sensación térmica del usuario, se despliega en la @fig-pantallas(f).
 - La quinta y última pregunta, relacionada con la aceptación de la sensación térmica, se presenta en la @fig-pantallas(h).
 
-Adicionalmente, el reloj cuenta con dos ventanas emergentes. La primera ventana emergente (@fig-pantallas(i)) se activa al finalizar la encuesta e indica que los sensores han comenzado a realizar mediciones. La segunda ventana emergente (@fig-pantallas(j)) se muestra una vez que los sensores han terminado de medir, presentando los resultados al usuario. En esta ventana, el usuario puede aceptar los resultados y enviarlos a ThingsBoard o rechazarlos para repetir las mediciones. Es importante mencionar que cada pantalla de la encuesta cuenta con botones que permiten navegar entre las pantallas y seleccionar las opciones según las necesidades del usuario.
+Adicionalmente, el reloj cuenta con dos ventanas emergentes. La primera ventana emergente (@fig-pantallas(i)) se activa al finalizar la encuesta e indica que los sensores han comenzado a realizar mediciones. La segunda ventana emergente (@fig-pantallas(j)) se muestra una vez que los sensores han terminado de medir, presentando los resultados al usuario. En esta pantalla, el usuario puede aceptar los resultados y enviarlos a ThingsBoard o rechazarlos para repetir las mediciones. Es importante mencionar que cada pantalla de la encuesta cuenta con botones que permiten navegar entre las pantallas y seleccionar las opciones según las necesidades del usuario.
 
 ![Interfaz del reloj inteligente: (a) pantalla principal, (b) activación de la encuesta, (c) pregunta sobre la vestimenta actual, (d) pregunta sobre la actividad realizada, (e) pregunta sobre la ubicación, (f) pregunta sobre la sensación térmica, (h) pregunta sobre la aceptación de la sensación térmica, (i) ventana emergente indicando el inicio de las mediciones, y (j) ventana emergente con los resultados de las mediciones.](../Imagenes/Pantallas.png){#fig-pantallas}
 
