@@ -14,7 +14,7 @@ Los factores ambientales incluyen la temperatura del aire, la temperatura radian
 
 - **Temperatura del aire:** Influye en la sensación de calor o frío percibida a través de la piel. Para @Sim2016, @Choi2017 y @Liu2019, la temperatura ambiente es uno de los principales factores que afecta al confort térmico.
 
-- **Temperatura radiante media:**  Es la temperatura promedio de las superficies que rodean a una persona. Las superficies frías pueden absorber el calor del cuerpo humano, mientras que las superficies calientes pueden irradiar calor hacia el cuerpo, afectando la sensación de frío o calor. Este factor es crucial en el diseño de edificaciones, donde la elección de materiales influye directamente en la transferencia de calor.
+- **Temperatura radiante media:** Es la temperatura uniforme de un entorno imaginario en el cual el intercambio de calor radiante entre una persona y las superficies circundantes sería igual al intercambio de calor radiante real en el entorno actual [ASHRAE -@ASHRAE2009]. O bien lo podemos definir como la temperatura promedio de las superficies que rodean a una persona. Las superficies realizan un intercambio de calor con el cuerpo humano, afectando la sensación de frío o calor. Este factor es crucial en el diseño de edificaciones, donde la elección de materiales influye directamente en la transferencia de calor.
 
 - **Velocidad del aire:** Juega un papel importante en la sensación de frescura o calor. El flujo de aire sobre la piel humana favorece la evaporación del sudor, lo cual genera un efecto refrescante. Según estudios, la velocidad adecuada del aire mejora significativamente los niveles de confort térmico, el rendimiento cognitivo y la satisfacción general [@chao_cen__2023].
 
@@ -87,7 +87,10 @@ Las ecuaciones para calcular el PMV son:
 
 <div style="overflow-x: auto; display: block; white-space: nowrap;">
 $$
-\text{PMV} = \left[ 0.303 \, e^{-0.036 \, M} + 0.028 \right] \Bigg\{ (M - W) - 3.05 \times 10^{-3} \, \big[ 5733 - 6.99 \, (M - W) - p_a \big] - 0.42 \, \big[ (M - W) - 58.15 \big] - 1.7 \times 10^{-5} \, M \, (5867 - p_a) - 0.0014 \, M \, (34 - T_a) - f_{cl} \, h_c \, (T_{cl} - T_a) \Bigg\}
+\text{PMV} = \left[ 0.303 \cdot \exp(-0.036 \cdot M) + 0.028 \right] \cdot \Bigg\{ (M - W) - 3.05 \times 10^{-3} \cdot \big[ 5733 - 6.99 \cdot (M - W) - P_a \big] 
+- 0.42 \cdot \big[ (M - W) - 58.15 \big] - 1.7 \times 10^{-5} \cdot M \cdot (5867 - P_a) 
+- 0.0014 \cdot M \cdot (34 - t_a) - 3.96 \times 10^{-8} \cdot f_{cl} \cdot \big[ (t_{cl} + 273)^4 - (t_r + 273)^4 \big] 
+- f_{cl} \cdot h_c \cdot (t_{cl} - t_a) \Bigg\}.
 $$ {#eq-pmv}
 </div>
 
@@ -97,12 +100,14 @@ t_{cl} = 35.7 - 0.028 \cdot (M - W) - I_{cl} \cdot \Bigg\{ 3.96 \times 10^{-8} \
 $$ {#eq-tcl}
 </div>
 
+
+
 <div style="overflow-x: auto; display: block; white-space: nowrap;">
 $$
 h_c = 
 \begin{cases} 
-\frac{2.38 \cdot |t_{cl} - t_a|^{0.25}}{12.1 \cdot \sqrt{v_{ar}}} & \text{si } 2.38 \cdot |t_{cl} - t_a|^{0.25} > 12.1 \cdot \sqrt{v_{ar}} \\
-12.1 \cdot \sqrt{v_{ar}} & \text{si } 2.38 \cdot |t_{cl} - t_a|^{0.25} \leq 12.1 \cdot \sqrt{v_{ar}}
+{2.38 \cdot |t_{cl} - t_a|^{0.25}} & \text{si } 2.38 \cdot |t_{cl} - t_a|^{0.25} > 12.1 \cdot \sqrt{v_{ar}} \\
+12.1 \cdot \sqrt{v_{ar}} & \text{si } 2.38 \cdot |t_{cl} - t_a|^{0.25} < 12.1 \cdot \sqrt{v_{ar}}
 \end{cases}
 $$ {#eq-hc}
 </div>
@@ -212,7 +217,7 @@ De esta manera, para calcular el ePMV se deben seguir los siguientes pasos:
 1. Calcular el PMV
 2. Se calcula la nueva tasa metabólica de la siguiente manera: 
     $$
-    M_{mod} = (0.067*PMV)*M
+    M_{mod} = M \cdot (1 -0.067 \cdot PMV)
     $$ {#eq-met-modificado}
 
 Donde $M_{mod}$ es la tasa metabólica modificada y $M$ es la tasa metabólica estimada para el PMV.

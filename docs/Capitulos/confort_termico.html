@@ -261,7 +261,7 @@ window.Quarto = {
 <p>Los factores ambientales incluyen la temperatura del aire, la temperatura radiante media, la velocidad del aire, la humedad relativa, y la presión atmosférica <span class="citation" data-cites="ASHRAE55">(ASHRAE55 <a href="references.html#ref-ASHRAE55" role="doc-biblioref">2017</a>)</span>. Estos factores son fundamentales para evaluar el entorno y diseñar estrategias que mejoren el confort térmico, ya que afectan directamente la capacidad del cuerpo para mantener un equilibrio térmico adecuado.</p>
 <ul>
 <li><p><strong>Temperatura del aire:</strong> Influye en la sensación de calor o frío percibida a través de la piel. Para <span class="citation" data-cites="Sim2016">S. Y. Sim et&nbsp;al. (<a href="references.html#ref-Sim2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="Choi2017">Choi y Yeom (<a href="references.html#ref-Choi2017" role="doc-biblioref">2017</a>)</span> y <span class="citation" data-cites="Liu2019">Liu et&nbsp;al. (<a href="references.html#ref-Liu2019" role="doc-biblioref">2019</a>)</span>, la temperatura ambiente es uno de los principales factores que afecta al confort térmico.</p></li>
-<li><p><strong>Temperatura radiante media:</strong> Es la temperatura promedio de las superficies que rodean a una persona. Las superficies frías pueden absorber el calor del cuerpo humano, mientras que las superficies calientes pueden irradiar calor hacia el cuerpo, afectando la sensación de frío o calor. Este factor es crucial en el diseño de edificaciones, donde la elección de materiales influye directamente en la transferencia de calor.</p></li>
+<li><p><strong>Temperatura radiante media:</strong> Es la temperatura uniforme de un entorno imaginario en el cual el intercambio de calor radiante entre una persona y las superficies circundantes sería igual al intercambio de calor radiante real en el entorno actual <span class="citation" data-cites="ASHRAE2009">(ASHRAE <a href="references.html#ref-ASHRAE2009" role="doc-biblioref">2009</a>)</span>. O bien lo podemos definir como la temperatura promedio de las superficies que rodean a una persona. Las superficies realizan un intercambio de calor con el cuerpo humano, afectando la sensación de frío o calor. Este factor es crucial en el diseño de edificaciones, donde la elección de materiales influye directamente en la transferencia de calor.</p></li>
 <li><p><strong>Velocidad del aire:</strong> Juega un papel importante en la sensación de frescura o calor. El flujo de aire sobre la piel humana favorece la evaporación del sudor, lo cual genera un efecto refrescante. Según estudios, la velocidad adecuada del aire mejora significativamente los niveles de confort térmico, el rendimiento cognitivo y la satisfacción general <span class="citation" data-cites="chao_cen__2023">(<a href="references.html#ref-chao_cen__2023" role="doc-biblioref">Cen, Cheng, y Wong 2023</a>)</span>.</p></li>
 <li><p><strong>Humedad relativa:</strong> Afecta la capacidad del cuerpo humano para disipar el calor a través de la sudoración. En ambientes muy húmedos, la evaporación del sudor se ve disminuida, generando una mayor sensación de calor, mientras que en ambientes secos la sudoración se acelera, aumentando la sensación de frescura.</p></li>
 <li><p><strong>Presión atmosférica:</strong> La presión atmosférica también puede influir en la percepción del confort térmico, especialmente en entornos de gran altitud, donde la menor densidad del aire afecta a la respiración.</p></li>
@@ -369,7 +369,10 @@ Tabla&nbsp;2.2: Escala bipolar
 <p>Las ecuaciones para calcular el PMV son:</p>
 <div style="overflow-x: auto; display: block; white-space: nowrap;">
 <p><span id="eq-pmv"><span class="math display">\[
-\text{PMV} = \left[ 0.303 \, e^{-0.036 \, M} + 0.028 \right] \Bigg\{ (M - W) - 3.05 \times 10^{-3} \, \big[ 5733 - 6.99 \, (M - W) - p_a \big] - 0.42 \, \big[ (M - W) - 58.15 \big] - 1.7 \times 10^{-5} \, M \, (5867 - p_a) - 0.0014 \, M \, (34 - T_a) - f_{cl} \, h_c \, (T_{cl} - T_a) \Bigg\}
+\text{PMV} = \left[ 0.303 \cdot \exp(-0.036 \cdot M) + 0.028 \right] \cdot \Bigg\{ (M - W) - 3.05 \times 10^{-3} \cdot \big[ 5733 - 6.99 \cdot (M - W) - P_a \big]
+- 0.42 \cdot \big[ (M - W) - 58.15 \big] - 1.7 \times 10^{-5} \cdot M \cdot (5867 - P_a)
+- 0.0014 \cdot M \cdot (34 - t_a) - 3.96 \times 10^{-8} \cdot f_{cl} \cdot \big[ (t_{cl} + 273)^4 - (t_r + 273)^4 \big]
+- f_{cl} \cdot h_c \cdot (t_{cl} - t_a) \Bigg\}.
 \tag{2.1}\]</span></span></p>
 </div>
 <div style="overflow-x: auto; display: block; white-space: nowrap;">
@@ -381,8 +384,8 @@ t_{cl} = 35.7 - 0.028 \cdot (M - W) - I_{cl} \cdot \Bigg\{ 3.96 \times 10^{-8} \
 <p><span id="eq-hc"><span class="math display">\[
 h_c =
 \begin{cases}
-\frac{2.38 \cdot |t_{cl} - t_a|^{0.25}}{12.1 \cdot \sqrt{v_{ar}}} &amp; \text{si } 2.38 \cdot |t_{cl} - t_a|^{0.25} &gt; 12.1 \cdot \sqrt{v_{ar}} \\
-12.1 \cdot \sqrt{v_{ar}} &amp; \text{si } 2.38 \cdot |t_{cl} - t_a|^{0.25} \leq 12.1 \cdot \sqrt{v_{ar}}
+{2.38 \cdot |t_{cl} - t_a|^{0.25}} &amp; \text{si } 2.38 \cdot |t_{cl} - t_a|^{0.25} &gt; 12.1 \cdot \sqrt{v_{ar}} \\
+12.1 \cdot \sqrt{v_{ar}} &amp; \text{si } 2.38 \cdot |t_{cl} - t_a|^{0.25} &lt; 12.1 \cdot \sqrt{v_{ar}}
 \end{cases}
 \tag{2.3}\]</span></span></p>
 </div>
@@ -495,7 +498,7 @@ Tabla&nbsp;2.3: Valores de <em>e</em> según la duración del período cálido y
 <ol type="1">
 <li>Calcular el PMV</li>
 <li>Se calcula la nueva tasa metabólica de la siguiente manera: <span id="eq-met-modificado"><span class="math display">\[
-M_{mod} = (0.067*PMV)*M
+M_{mod} = M \cdot (1 -0.067 \cdot PMV)
   \tag{2.7}\]</span></span></li>
 </ol>
 <p>Donde <span class="math inline">\(M_{mod}\)</span> es la tasa metabólica modificada y <span class="math inline">\(M\)</span> es la tasa metabólica estimada para el PMV.</p>
