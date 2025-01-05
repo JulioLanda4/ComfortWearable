@@ -83,24 +83,31 @@ El voto medio previsto (PMV, por sus siglas en inglés) está en función de las
 
 Las ecuaciones para calcular el PMV son: 
 
-<div style="overflow-x: auto; display: block; white-space: nowrap;">
 $$
-\text{PMV} = \left[ 0.303 \cdot \exp(-0.036 \cdot M) + 0.028 \right] \cdot \Bigg\{ (M - W) - 3.05 \times 10^{-3} \cdot \big[ 5733 - 6.99 \cdot (M - W) - P_a \big] 
-- 0.42 \cdot \big[ (M - W) - 58.15 \big] - 1.7 \times 10^{-5} \cdot M \cdot (5867 - P_a) 
-- 0.0014 \cdot M \cdot (34 - t_a) - 3.96 \times 10^{-8} \cdot f_{cl} \cdot \big[ (t_{cl} + 273)^4 - (t_r + 273)^4 \big] 
-- f_{cl} \cdot h_c \cdot (t_{cl} - t_a) \Bigg\}.
-$$ {#eq-pmv}
-</div>
+\text{PMV} = \left[ 0.303 \cdot \exp(-0.036 \cdot M) + 0.028 \right] \cdot \Bigg\{ (M - W)
+$$
+$$
+- 3.05 \times 10^{-3} \cdot \big[ 5733 - 6.99 \cdot (M - W) - P_a \big] - 0.42 \cdot \big[ (M - W) 
+$$
+$$
+ - 58.15 \big] - 1.7 \times 10^{-5} \cdot M \cdot (5867 - P_a) - 0.0014 \cdot M \cdot (34 - t_a)  
+$$ 
+$$
+- 3.96 \times 10^{-8} \cdot f_{cl} \cdot \big[ (t_{cl} + 273)^4 - (t_r + 273)^4 \big] 
+$$ 
+$$
+- f_{cl} \cdot h_c \cdot (t_{cl} - t_a) \Bigg\}
+$$ {#eq-prueba}
 
-<div style="overflow-x: auto; display: block; white-space: nowrap;">
+
 $$
-t_{cl} = 35.7 - 0.028 \cdot (M - W) - I_{cl} \cdot \Bigg\{ 3.96 \times 10^{-8} \cdot f_{cl} \cdot \big[(t_{cl} + 273)^4 - (\bar{t}_r + 273)^4\big] + f_{cl} \cdot h_c \cdot (t_{cl} - t_a) \Bigg\}
+t_{cl} = 35.7 - 0.028 \cdot (M - W) - I_{cl} \cdot \Bigg\{ 3.96 \times 10^{-8} \cdot f_{cl} \cdot \big[(t_{cl} + 273)^4
+$$
+$$
+ - (\bar{t}_r + 273)^4\big] + f_{cl} \cdot h_c \cdot (t_{cl} - t_a) \Bigg\}
 $$ {#eq-tcl}
-</div>
 
 
-
-<div style="overflow-x: auto; display: block; white-space: nowrap;">
 $$
 h_c = 
 \begin{cases} 
@@ -108,9 +115,8 @@ h_c =
 12.1 \cdot \sqrt{v_{ar}} & \text{si } 2.38 \cdot |t_{cl} - t_a|^{0.25} < 12.1 \cdot \sqrt{v_{ar}}
 \end{cases}
 $$ {#eq-hc}
-</div>
 
-<div style="overflow-x: auto; display: block; white-space: nowrap;">
+
 $$
 f_{cl} =
 \begin{cases} 
@@ -118,13 +124,11 @@ f_{cl} =
 1.00 + 0.645 \cdot I_{cl} & \text{si } I_{cl} > 0.078
 \end{cases}
 $$ {#eq-fcl}
-</div>
 
-<div style="overflow-x: auto; display: block; white-space: nowrap;">
+
 $$
 v_{ar} = v_{air} + 0.3 \cdot (M - 1)
 $$ {#eq-var}
-</div>
 
 donde:
 
@@ -140,6 +144,7 @@ $v_{air}$  :  Velocidad del aire (m/s)
 $h_c$  :  Coeficiente de transferencia de calor por convección ($W/m^2 \cdot °C$)  
 $t_{cl}$  :  Temperatura de la superficie de la ropa (°C)  
 $HR$  :  Humedad relativa (%)
+
 
 El Porcentaje Previsto de Insatisfacción ($PPD$, por sus siglas en inglés) es un modelo que predice el porcentaje de personas que se sentirán insatisfechas con las condiciones térmicas en un ambiente determinado. Este modelo está relacionado con el  PMV y fue propuesto por @Fanger1970. La ecuación que lo define se expresa de la siguiente manera:
 

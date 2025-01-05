@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.32">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Introducción – Reloj inteligente IoT basado en tecnologías abiertas para la recopilación de datos de confort térmico</title>
+<title>Reloj inteligente IoT basado en tecnologías abiertas para la recopilación de datos de confort térmico - 1&nbsp; Introducción</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,7 +24,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -57,23 +56,17 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2486e1f0a3ee9ee1fc393803a1361cdb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e2a55d7d189d9ada6bd43e0674cebc09.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "limit": 20,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -82,7 +75,6 @@ div.csl-indent {
     "search-more-match-text": "resultado adicional en este documento",
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
     "search-submit-button-title": "Enviar",
     "search-label": "Buscar"
@@ -95,11 +87,6 @@ div.csl-indent {
 }
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
-<script>
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    document.body.classList.add('hypothesis-enabled');
-  });
-</script>
 
 
 </head>
@@ -110,13 +97,13 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Capitulos/intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Capitulos/intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -125,7 +112,7 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Reloj inteligente IoT basado en tecnologías abiertas para la recopilación de datos de confort térmico</a> 
@@ -177,7 +164,7 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -209,9 +196,7 @@ div.csl-indent {
   </div>
   
 
-
 </header>
-
 
 <p>El cambio climático es una de las principales amenazas a nivel global y ha tomado gran relevancia en años recientes. Según el Grupo Intergubernamental de Expertos sobre el Cambio Climático (IPCC, por sus siglas en inglés), para limitar el calentamiento global a 1.5°C por encima de los niveles preindustriales, es imprescindible una reducción drástica de las emisiones globales de gases de efecto invernadero (GEI). Estas emisiones deben alcanzar su máximo antes del año 2025 y disminuir en un 43% para el año 2030, llegando a cero neto para el año 2050. Esto es esencial para reducir las emisiones de GEI, evitar el cambio climático y, con ello, contribuir al cumplimiento de los Objetivos de Desarrollo Sostenible planteados por la <span class="citation" data-cites="Ods2015">Organización de las Naciones Unidas (<a href="references.html#ref-Ods2015" role="doc-biblioref">2015</a>)</span>.</p>
 <p>El <span class="citation" data-cites="IPCC2023">Synthesis Report (<a href="references.html#ref-IPCC2023" role="doc-biblioref">2023</a>)</span> señala que durante el período que abarca de 2011 a 2020, las actividades humanas causaron un calentamiento de aproximadamente 1.1°C por encima de los niveles preindustriales. Este incremento ha resultado en cambios importantes a nivel climático, generando olas de calor, precipitaciones y sequías más intensas. Estos efectos no solo amenazan la biodiversidad y la salud humana, sino que también afectan directamente la eficiencia energética de las edificaciones, ya que exigen un mayor consumo de energía de los sistemas de climatización para mantener condiciones de confort térmico adecuadas, incrementando las emisiones de GEI.</p>
@@ -222,8 +207,9 @@ div.csl-indent {
 <p>En el contexto actual del cambio climático, el diseño de edificaciones que favorezcan el confort térmico de manera eficiente y sustentable se vuelve prioritario. <span class="citation" data-cites="Enescu2017">Enescu (<a href="references.html#ref-Enescu2017" role="doc-biblioref">2017</a>)</span> destaca como se puede contribuir a reducir el consumo energético de los sistemas de climatización teniendo una adecuada gestión del confort térmico en las edificaciones, un diseño eficiente reduce la dependencia de sistemas de calefacción y refrigeración. En este sentido cobra importancia el diseño bioclimático. <span class="citation" data-cites="olgyay1963">Olgyay et&nbsp;al. (<a href="references.html#ref-olgyay1963" role="doc-biblioref">1963</a>)</span> introdujo este concepto, el diseño bioclimático consiste en diseñar las edificaciones acorde al clima del lugar, es decir que se busca aprovechar las condiciones climáticas necesarias para minimizar el uso de energía y, con ello, las emisiones de GEI.</p>
 <section id="problema-específico-y-relevancia-del-proyecto" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="problema-específico-y-relevancia-del-proyecto"><span class="header-section-number">1.1</span> Problema específico y relevancia del proyecto</h2>
-<p>El confort térmico es un aspecto complejo de evaluar dada su naturaleza subjetiva, ya que depende de la percepción individual de cada individuo, por lo que tratar de evaluarlo de manera colectiva se convierte en un desafío. La forma tradicional de evaluar el confort térmico es a través de encuestas y sensores estacionarios que miden la temperatura ambiente, humedad relativa y velocidad del viento. Sin embargo, estas herramientas presentan retos, tales como la falta de accesibilidad o altos costos en equipamiento, dificultando la recolección continua de datos para la evaluación del confort térmico. Aunado a esto, estas herramientas carecen de flexibilidad para ajustarse a las necesidades individuales de los ocupantes, ya que una campaña de evaluación de confort térmico generalmente implica estar en un ambiente controlado y con limitaciones de espacio o acciones, l oque puede comprometer la calidad de los datos obtenidos.</p>
-<p>Recientemente han surgido nuevas herramientas tecnológicas como el IoT, la inteligencia artificial (IA) o los dispositivos portátiles que pueden ayudar a solucionar esta problemática. Distintos autores destacan como estas tecnologías permiten una mejor recopilación y análisis de datos para la evaluación y predicción del confort térmico <span class="citation" data-cites="Tartarini2022 Feng2023 Malakhatka2021 Garces2021 He2025IMU Nazarian2021">(<a href="references.html#ref-Tartarini2022" role="doc-biblioref">Tartarini et&nbsp;al. 2022</a>; <a href="references.html#ref-Feng2023" role="doc-biblioref">Feng et&nbsp;al. 2023</a>; <a href="references.html#ref-Malakhatka2021" role="doc-biblioref">Malakhatka et&nbsp;al. 2021</a>; <a href="references.html#ref-Garces2021" role="doc-biblioref">Garces et&nbsp;al. 2021</a>; <a href="references.html#ref-He2025IMU" role="doc-biblioref">He et&nbsp;al. 2025</a>; <a href="references.html#ref-Nazarian2021" role="doc-biblioref">Nazarian et&nbsp;al. 2021</a>)</span>. Estas tecnologías favorecen el estudio del confort térmico al permitir un monitoreo continuo y en tiempo real del confort térmico, así como la generación de bases de datos para su posterior estudio y generación de modelos de confort.</p>
+<p>El confort térmico es un aspecto complejo de evaluar dada su naturaleza subjetiva, ya que depende de la percepción individual de cada individuo, por lo que tratar de evaluarlo de manera colectiva se convierte en un desafío. La forma tradicional de evaluar el confort térmico es a través de encuestas y sensores estacionarios que miden la temperatura ambiente, humedad relativa y velocidad del viento. Sin embargo, estas herramientas presentan retos, tales como la falta de accesibilidad o altos costos en equipamiento, dificultando la recolección continua de datos para la evaluación del confort térmico. Aunado a esto, estas herramientas carecen de flexibilidad para ajustarse a las necesidades individuales de los ocupantes, ya que una campaña de evaluación de confort térmico generalmente implica estar en un ambiente controlado y con limitaciones de espacio o acciones, lo que puede comprometer la calidad de los datos obtenidos.</p>
+<p>Recientemente han surgido nuevas herramientas tecnológicas como el internet de las cosas (IoT, por sus siglas en ingles), la inteligencia artificial (IA) o los dispositivos portátiles que pueden ayudar a solucionar esta problemática. Distintos autores destacan como estas tecnologías permiten una mejor recopilación y análisis de datos para la evaluación y predicción del confort térmico <span class="citation" data-cites="Tartarini2022 Feng2023 Malakhatka2021 Garces2021 He2025IMU Nazarian2021">(<a href="references.html#ref-Tartarini2022" role="doc-biblioref">Tartarini et&nbsp;al. 2022</a>; <a href="references.html#ref-Feng2023" role="doc-biblioref">Feng et&nbsp;al. 2023</a>; <a href="references.html#ref-Malakhatka2021" role="doc-biblioref">Malakhatka et&nbsp;al. 2021</a>; <a href="references.html#ref-Garces2021" role="doc-biblioref">Garces et&nbsp;al. 2021</a>; <a href="references.html#ref-He2025IMU" role="doc-biblioref">He et&nbsp;al. 2025</a>; <a href="references.html#ref-Nazarian2021" role="doc-biblioref">Nazarian et&nbsp;al. 2021</a>)</span>. Estas tecnologías favorecen el estudio del confort térmico al permitir un monitoreo continuo y en tiempo real del confort térmico, así como la generación de bases de datos para su posterior estudio y generación de modelos de confort.</p>
+<p>Existen relojes inteligentes comerciales que integran sensores avanzados los cuales podrían ser útiles en este contexto, sin embargo, su implementación enfrenta distintos desafíos. El acceso a los datos recopilados por estos dispositivos está generalmente limitado o son de difícil acceso. Una alternativa ante esta problemática es el desarrollo de aplicaciones propias y específicas, pero esto implica programar la aplicación para diferentes sistemas operativos, como Android y watchOS, además de adaptarlas a modelos específicos de relojes inteligentes. Asimismo, el desarrollo de dichas aplicaciones requiere mantenimiento continuo para garantizar su funcionalidad.</p>
 <p><span class="citation" data-cites="Mishra2013">Mishra y Ramgopal (<a href="references.html#ref-Mishra2013" role="doc-biblioref">2013</a>)</span> y <span class="citation" data-cites="Chaudhuri2020">Chaudhuri et&nbsp;al. (<a href="references.html#ref-Chaudhuri2020" role="doc-biblioref">2020</a>)</span>, menciona también las limitaciones de estas tecnologías, pues aunque son prometedoras, su costo elevado y complejidad de implementación en muchos casos las vuelve inaccesibles. Estos estudios resaltan la necesidad de desarrollar herramientas más prácticas y económicamente viables, que permitan una evaluación más inclusiva y personalizada del confort térmico.</p>
 <p>Surge entonces la necesidad de la inclusión de tecnologías abiertas para el desarrollo de estas herramientas. El termino tecnologías abiertas se refiere a sistemas y herramientas cuyo diseño, código fuente o especificaciones están disponibles públicamente, permitiendo que cualquier persona los utilice, modifique y distribuya libremente <span class="citation" data-cites="OTD_Roadmap_Plan">(<a href="references.html#ref-OTD_Roadmap_Plan" role="doc-biblioref">Departamento de Defensa de EE.UU. 2009</a>)</span>. El uso de tecnologías abiertas permite mayor accesibilidad en la implementación de sistemas de monitoreo de confort térmico, lo cual puede resultar en soluciones más prácticas y económicas para la evaluación del confort térmico en diferentes contextos.</p>
 <p>Con las tecnologías abiertas también se pueden generar bases de datos útiles para el estudio de confort térmico y la generación de modelos de confort personalizados. <span class="citation" data-cites="Vero2023">Gnecco, Pigliautile, y Pisello (<a href="references.html#ref-Vero2023" role="doc-biblioref">2023</a>)</span> presenta una metodología para investigar la correlación entre el voto de sensación térmica (TSV, por sus siglas en inglés) diario de los individuos con variables ambientales y fisiológicas con el objetivo de desarrollar modelos de confort personalizados que permitan maximizar el bienestar de los ocupantes, a la vez que se minimiza el consumo energético.</p>
@@ -259,7 +245,7 @@ div.csl-indent {
 </ul>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-ASHRAE55" class="csl-entry" role="listitem">
 American Society of Heating, Refrigerating and Air-Conditioning Engineers, Inc. 2017. <em>Thermal Environmental Conditions for Human Occupancy</em>. ASHRAE Standard 55-2017. American Society of Heating, Refrigerating; Air-Conditioning Engineers, Inc.
 </div>
@@ -359,7 +345,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -391,50 +388,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -444,17 +402,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -466,130 +415,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
+      return note.innerHTML;
     });
   }
       let selectedAnnoteEl;
@@ -633,7 +459,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -659,32 +484,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -746,18 +545,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../index.html" class="pagination-link" aria-label="Resumen">
+      <a href="../index.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Resumen</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../Capitulos/confort_termico.html" class="pagination-link" aria-label="Antecedentes y marco teórico">
+      <a href="../Capitulos/confort_termico.html" class="pagination-link">
         <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Antecedentes y marco teórico</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-
 
 
 

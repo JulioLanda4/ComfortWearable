@@ -1,10 +1,10 @@
 # Diseño, desarrollo y validación {#cap-desarrollo}
 
 
-En este capitulo se describe el proceso completo de desarrollo, construcción y validación del reloj inteligente para la recopilación de datos de confort térmico presentado en esta tesis. La @sec-metodología presenta una descripción detallada del reloj inteligente, la selección de los componentes y la justificación de su elección. En la @sec-construccion se desarrolla la etapa de diseño y construcción del dispositivo. La @sec-encuestas se centra en el diseño y la implementación de las encuestas mediante la interfaz gráfica, mientras que la @sec-calibración detalla el proceso de calibración de los sensores. En la @sec-programación se presenta una descripción de la lógica de programación del reloj inteligente, y en la @sec-instrucciones se proporcionan instrucciones de uso. Finalmente, en la @sec-validación se verifica la funcionalidad del reloj inteligente para recopilar información de las encuestas de confort térmico y las mediciones de la temperatura de la piel y la frecuencia cardíaca, y enviar estos datos a la plataforma ThingsBoard.
+En este capitulo se describe el proceso completo de desarrollo, construcción y validación del reloj inteligente para la recopilación de datos de confort térmico presentado en esta tesis. La @sec-metodologia presenta una descripción detallada del reloj inteligente, la selección de los componentes y la justificación de su elección. En la @sec-construccion se desarrolla la etapa de diseño y construcción del dispositivo. La @sec-encuestas se centra en el diseño y la implementación de las encuestas mediante la interfaz gráfica, mientras que la @sec-calibracion detalla el proceso de calibración de los sensores. En la @sec-programacion se presenta una descripción de la lógica de programación del reloj inteligente, y en la @sec-instrucciones se proporcionan instrucciones de uso. Finalmente, en la @sec-validacion se verifica la funcionalidad del reloj inteligente para recopilar información de las encuestas de confort térmico y las mediciones de la temperatura de la piel y la frecuencia cardíaca, y enviar estos datos a la plataforma ThingsBoard.
 
 
-## Metodología {#sec-metodología}
+## Metodología {#sec-metodologia}
 1. **Descripción general del dispositivo:**
 
 
@@ -283,7 +283,7 @@ Una vez que se completa la encuesta, al pulsar el botón "Finalizar", aparece un
 
 Los datos recolectados son enviados a la plataforma ThingsBoard para su almacenamiento y análisis posterior. Esta funcionalidad permite construir una base de datos que facilite el estudio del confort térmico en diferentes espacios y condiciones dentro del IER.
 
-## Calibración {#sec-calibración}
+## Calibración {#sec-calibracion}
 
 Esta sección describe el proceso de calibración de los sensores MAX30102 y GY-906, utilizados para medir la frecuencia cardíaca y la temperatura de la piel, respectivamente.
 
@@ -431,7 +431,7 @@ plt.show()
 ```
 
 
-## Lógica de programación {#sec-programación}
+## Lógica de programación {#sec-programacion}
 
 
 A continuación, se describe el funcionamiento general del reloj inteligente, detallando la estructura del programa y la función de cada uno de los archivos que componen el proyecto desarrollado en Arduino. También se presentan los diagramas de flujo de los procesos clave, como la función `actualizar_hora` y el procedimiento para responder una encuesta y medir la temperatura de la piel y la frecuencia cardíaca. Además, se destacan aspectos relevantes, como los horarios programados para las encuestas y las estrategias implementadas para el ahorro de la batería del reloj inteligente.
@@ -504,9 +504,11 @@ El procedimiento de configuración e interacción con el reloj inteligente se pu
 Para iniciar, se instala la versión más reciente del Arduino IDE, disponible para descarga en su <a href="https://www.arduino.cc/" target="_blank">sitio oficial</a>. A continuación, se agrega el paquete de placas ESP32 al entorno del Arduino IDE. Para ello, se abre el programa, se selecciona la opción "Archivo" y luego "Preferencias". En el cuadro de texto "URLs adicionales para el gestor de tarjetas", se inserta la URL:
 
  ```bash
- https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+ https://raw.githubusercontent.com/espressif/arduino
+ -esp32/gh-pages/package_esp32_index.json
  ```
- 
+
+
  tal como se muestra en la @fig-paqueteriaArduino, la flecha roja en la figura señala al recuadro en donde debe colocarse la URL.
 
 ![Configuración de las URLs adicionales en el gestor de tarjetas del Arduino IDE para agregar el paquete de placas ESP32.](../Imagenes/Paqueteria_arduino.png){#fig-paqueteriaArduino}
@@ -593,7 +595,7 @@ Adicionalmente, el reloj cuenta con dos ventanas emergentes. La primera ventana 
 
 ![Interfaz del reloj inteligente: (a) pantalla principal, (b) activación de la encuesta, (c) pregunta sobre la vestimenta actual, (d) pregunta sobre la actividad realizada, (e) pregunta sobre la ubicación, (f) pregunta sobre la sensación térmica, (h) pregunta sobre la aceptación de la sensación térmica, (i) ventana emergente indicando el inicio de las mediciones, y (j) ventana emergente con los resultados de las mediciones.](../Imagenes/Pantallas.png){#fig-pantallas}
 
-## Validación del funcionamiento del reloj inteligente {#sec-validación}
+## Validación del funcionamiento del reloj inteligente {#sec-validacion}
 
 Los datos generados por el reloj inteligente se almacenan en la plataforma ThingsBoard, desde donde pueden descargarse para su posterior análisis. Para facilitar este proceso, se diseña una libreta de Jupyter, disponible en la carpeta  <a href="https://github.com/JulioLanda4/IoT_Reloj_Confort/tree/main/Thingsboard/descarga_thingsboard" target="_blank">descarga_thingsboard</a> del repositorio. Esta libreta, denominada `Descarga_datos.ipynb`, está programada en Python y requiere realizar configuraciones previas para su ejecución.
 
@@ -681,6 +683,13 @@ diccionario_frecuencia = {
 | 2024-11-14 20:45    | 0.40         | 1.3       | Aula 2        | 0.0     | Sí     | 35.0        | 93        | 46       | 70      | 1.70    | M        | 1       | 2       +
 +---------------------+--------------+-----------+---------------+---------+--------+-------------+-----------+----------+---------+---------+----------+---------+---------+
 : Conjunto de datos de cinco encuestas térmicas y mediciones, que incluye el nivel de aislamiento de la ropa ($I_{cl}$), la tasa metabólica ($M_r$), la ubicación, el voto de sensación térmica (TSV), la aceptación térmica (TA), la temperatura de la piel de la muñeca ($T_w$), la frecuencia cardíaca ($H_r$), la edad, el peso ($W$), la altura ($H$), el sexo, la frecuencia de uso de espacios con aire acondicionado ($F$) y el identificador del individuo que está usando el reloj inteligente ($I$). {#tbl-data_downloaded .hover .sm}
+
+
+En la @fig-relojfuncionando, se observa el dispositivo en funcionamiento. El reloj se ajusta en la muñeca del usuario y muestra la interfaz principal con la hora actual y el estado de la batería.
+
+
+![Reloj inteligente en funcionamiento, mostrando la interfaz principal.](../Imagenes/Reloj-funcionando.jpg){#fig-relojfuncionando width=50%}
+
 
 
 

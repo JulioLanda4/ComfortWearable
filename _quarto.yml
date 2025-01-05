@@ -43,9 +43,8 @@ format:
     comments:
       hypothesis: 
         theme: clean
+
   pdf:
     documentclass: scrreport
     lof: true
     lot: true
-    
-
