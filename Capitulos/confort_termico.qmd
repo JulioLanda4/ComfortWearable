@@ -12,7 +12,8 @@ Los factores que afectan la sensación de confort térmico se pueden agrupar en 
 
 Los factores ambientales incluyen la temperatura del aire, la temperatura radiante media, la velocidad del aire, la humedad relativa del aire, y la presión atmosférica [ASHRAE 55, -@ASHRAE55]. Estos factores son fundamentales para evaluar el entorno y diseñar estrategias que mejoren el confort térmico, ya que afectan directamente la capacidad del cuerpo para mantener un equilibrio térmico adecuado.
 
-- **Temperatura del aire:** Influye en la sensación de calor o frío percibida a través de la piel. Para @Sim2016, @Choi2017 y @Liu2019, la temperatura ambiente es uno de los principales factores que afecta al confort térmico.
+- **Temperatura del aire:** Influye no solo en la sensación de calor o frío percibida a través de la piel, sino también en los procesos de transferencia de calor entre el individuo y el entorno que lo rodea. Para @Sim2016, @Choi2017 y @Liu2019, la temperatura ambiente es uno de los principales factores que afecta al confort térmico.
+
 
 - **Temperatura radiante media:** Es la temperatura uniforme de un entorno imaginario en el cual el intercambio de calor radiante entre una persona y las superficies circundantes sería igual al intercambio de calor radiante real en el entorno actual [ASHRAE -@ASHRAE2009]. Las superficies realizan un intercambio de calor con el cuerpo humano, afectando la sensación de frío o calor. Este factor es crucial en el diseño de edificaciones, donde la elección de materiales influye directamente en la transferencia de calor.
 
