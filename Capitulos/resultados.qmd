@@ -1,23 +1,23 @@
 # Conclusiones
 
-Este proyecto presenta el diseño, desarrollo y validación de un reloj inteligente basado en tecnologías abiertas, capaz de recopilar datos de confort térmico. El reloj realiza encuestas simplificadas y mide variables fisiológicas como la temperatura de la piel y la frecuencia cardíaca, integrando esta información con la plataforma IoT ThingsBoard. El uso de hardware de código abierto, como la placa de desarrollo XIAO ESP32C3 y los sensores GY-906 (temperatura de la piel) y MAX30102 (frecuencia cardíaca) garantiza que el dispositivo sea replicable y adaptable a diversas investigaciones. Además, el reloj cuenta con una alarma vibrante que notifica al usuario cuando debe responder una nueva encuesta, promoviendo la regularidad y periodicidad en la recopilación de datos. En pruebas realizadas en Temixco, Morelos, el reloj logró recopilar y enviar cincuenta y dos mediciones a ThingsBoard en una campaña de cinco días, demostrando su funcionalidad en condiciones reales.
+Este proyecto presenta el diseño, desarrollo y validación de un reloj inteligente basado en tecnologías abiertas, capaz de recopilar datos de confort térmico. El reloj realiza encuestas simplificadas y mide la temperatura de la piel y la frecuencia cardíaca, integrando esta información con la plataforma IoT ThingsBoard. El uso de hardware de código abierto, como la placa de desarrollo XIAO ESP32C3 y los sensores GY-906 (temperatura de la piel) y MAX30102 (frecuencia cardíaca) garantiza que el dispositivo sea replicable y adaptable a diversas investigaciones. Además, el reloj cuenta con una alarma vibrante que notifica al usuario cuando debe responder una nueva encuesta, promoviendo la regularidad y periodicidad en la recopilación de datos. En pruebas realizadas en Temixco, Morelos, el reloj logró recopilar y enviar cincuenta y dos mediciones a ThingsBoard en una campaña de cinco días, demostrando su funcionalidad en condiciones reales.
 
 ## Contribuciones del proyecto
 
 1. **Diseño basado en tecnologías abiertas**
 
-El reloj inteligente se desarrolla por completo utilizando tecnologías abiertas, tanto en hardware como en software. Para el hardware, el dispositivo integra componentes como la placa de desarrollo XIAO ESP32C3, el sensor MAX30102, el sensor GY-906, la pantalla XIAO Round Display, y otros componentes electrónicos. Para el software, el dispositivo se programa utilizando Arduino IDE, empleando lenguajes de programación como Arduino y C++. Los datos recopilados se envían a ThingsBoard, una plataforma de Internet de las Cosas (IoT, por sus siglas en inglés) de código abierto, para su almacenamiento.
+El reloj inteligente se desarrolla por completo utilizando tecnologías abiertas, tanto en hardware como en software. Para el hardware, el dispositivo integra componentes como la placa de desarrollo XIAO ESP32C3, el sensor MAX30102, el sensor GY-906, la pantalla XIAO Round Display y otros componentes electrónicos. Para el software, el dispositivo se programa utilizando Arduino IDE, empleando lenguajes de programación como Arduino y C++. Los datos recopilados se envían a ThingsBoard, una plataforma de Internet de las Cosas (IoT, por sus siglas en inglés) de código abierto, para su almacenamiento.
 
 Todo el proyecto se encuentra disponible en un repositorio de GitHub bajo la licencia GPL-3.0, lo que garantiza que cualquier persona pueda replicar, modificar o colaborar en el desarrollo del dispositivo, fomentando la accesibilidad y colaboración en investigaciones futuras relacionadas con el confort térmico.
 
 2. **Uso en condiciones reales**
 
-El reloj inteligente está diseñado para realizar campañas de medición prolongadas en condiciones reales, recolectando datos de usuarios en sus entornos habituales sin la necesidad de equipos complejos. Para facilitar la recolección de datos de manera periódica, el reloj incluye una alarma vibrante que notifica al usuario cuando es momento de responder una encuesta simplificada de confort térmico. Los datos recopilados por el reloj se combinan con información proporcionada en el formulario de registro generando una base de datos contextualizada que permite correlacionar las respuestas del usuario con las condiciones ambientales reales. 
+El reloj inteligente está diseñado para realizar campañas de medición prolongadas en condiciones reales, recolectando datos de usuarios en sus entornos habituales sin la necesidad de equipos complejos. Para facilitar la recolección de datos de manera periódica, el reloj incluye una alarma vibrante que notifica al usuario cuando es momento de responder una encuesta simplificada de confort térmico. Los datos recopilados por el reloj se combinan con información proporcionada en el formulario de registro generando una base de datos contextualizada que permite correlacionar las respuestas del usuario con las condiciones ambientales reales. Para ello, en el Instituto de Energías Renovables (IER) se está trabajando en un ecosistema de dispositivos que miden variables ambientales (temperatura del aire, humedad relativa del aire, velocidad del viento), además de que se cuenta con una estación meteorológica que puede proporcionar la información de las variables aMBIENTALES requeridas.
 
 
 3. **Bajo costo**
 
-El desarrollo del reloj inteligente basado en tecnologías abiertas ha permitido implementar funcionalidades similares a las ofrecidas por combinaciones de dispositivos comerciales y aplicaciones existentes a un costo aproximado de $1,120 MXN. La aplicación Cozie, si bien ofrece una solución para el levantamiento de encuestas en relojes inteligentes, su uso está restringido a los Apple Watch y algunos modelos de Fitbit. Además, estos dispositivos tienen un costo elevado. El Apple Watch Series 8 (Apple Watch más económico que incluye sensor de temperatura) tiene un precio aproximado en el mercado al momento de la publicación de esta tesis de $5,500 MXN, mientras que, el Fitbit Versa 4 (compatible con Cozie) tiene un precio aproximado al momento de la publicación de esta tesis de $4,200 MXN. Existen dispositivos más económicos como el Fitbit Inspire 3 por un precio aproximado de $2,000 MXN que cumplen con la función de medir la frecuencia cardíaca y la temperatura de la piel, sin embargo no cuenta con la funcionalidad de realizar encuestas.
+La aplicación Cozie, si bien ofrece una solución para el levantamiento de encuestas en relojes inteligentes, su uso está restringido a los Apple Watch y algunos modelos de Fitbit. Además, estos dispositivos tienen un costo elevado. El Apple Watch Series 8 (Apple Watch más económico que incluye sensor de temperatura) tiene un precio aproximado en el mercado al momento de la publicación de esta tesis de $5,500 MXN, mientras que, el Fitbit Versa 4 (compatible con Cozie) tiene un precio aproximado al momento de la publicación de esta tesis de $4,200 MXN. Existen dispositivos más económicos como el Fitbit Inspire 3 por un precio aproximado de $2,000 MXN que cumplen con la función de medir la temperatura de la piel y frecuencia cardíaca, sin embargo no cuenta con la funcionalidad de realizar encuestas.
 
 El reloj desarrollado en este proyecto, tiene un costo aproximado de $1,120 MXN e integra las capacidades de medición de variables fisiológicas y realización de encuestas. Esto lo convierte en una opción accesible y funcional.
 
@@ -29,21 +29,21 @@ El reloj inteligente cuenta con un diseño que permite su adaptación a diversas
 
 A pesar de los logros alcanzados, el proyecto enfrenta algunas limitantes:
 
-1. **Precisión de los sensores de bajo costo**
+1. **Exactitud de los sensores de bajo costo**
 
 
 Los sensores utilizados son sensores comerciales de bajo costo, que si bien cumplen con la funcionalidad requerida, se pueden ver afectados en términos de exactitud. Aunque estos sensores fueron sometidos a un proceso de calibración para disminuir errores, las mediciones podrían mejorarse con sensores de mayor exactitud, aunque eso implicaría un costo más elevado del reloj.
 
 2. **Ergonomía del reloj inteligente**
 
-El diseño actual del reloj inteligente lo convierte en un dispositivo grande para un reloj, lo cual puede resultar incomodo para algunos usuarios durante su uso de manera prolongada. Además, la carcasa presenta cierta fragilidad al no estar diseñada para impactos o condiciones adversas.
+El diseño actual del reloj inteligente lo convierte en un dispositivo grande para un reloj, lo cual puede resultar incómodo para algunos usuarios durante su uso de manera prolongada. Además, la carcasa presenta cierta fragilidad al no estar diseñada para impactos o condiciones adversas.
 
 
 ## Trabajo futuro
 
 El desarrollo del reloj inteligente plantea diversas oportunidades para extender su funcionalidad y aplicabilidad:
 
-1. **Integración con el ecosistema del IER**
+1. **Integración con el ecosistema de dispositivos del IER**
 
 Una de las principales tareas de trabajo a futuro es la integración del reloj inteligente al ecosistema de dispositivos del IER, que incluye la estación meteorológica ESOLMET y los distintos dispositivos en desarrollo en el Laboratorio de Tecnologías Abiertas y Más (LATA+). La integración del reloj con este ecosistema permitirá generar una base de datos amplia y contextualizada para Temixco, Morelos. Así como también permitirá la correlación de diferentes variables para el análisis de confort térmico. 
 
@@ -68,11 +68,11 @@ La carcasa del reloj inteligente puede mejorarse con la aplicación de conocimie
 ## Conclusión general
 
 
-El reloj inteligente desarrollado en este proyecto demuestra cómo las tecnologías abiertas pueden utilizarse para crear herramientas funcionales destinadas a la investigación, en este caso especifico, en el campo del confort térmico. La simplicidad del diseño lo convierte en una solución viable para estudios de confort térmico en ambientes reales. Aunado a su capacidad para la recolección de datos de manera eficiente a través de la conexión a internet con una plataforma de IoT, abre la posibilidad de desarrollar modelos de confort térmico adaptativos.
+El reloj inteligente desarrollado en este proyecto demuestra cómo las tecnologías abiertas pueden utilizarse para crear herramientas funcionales destinadas a la investigación, en este caso específico, en el campo del confort térmico. La simplicidad del diseño lo convierte en una solución viable para estudios de confort térmico en ambientes reales. Aunado a su capacidad para la recolección de datos de manera eficiente a través de la conexión a internet con una plataforma de IoT, abre la posibilidad de desarrollar modelos de confort térmico adaptativos.
 
 No obstante, el dispositivo enfrenta algunos retos a superar, como mejorar la exactitud de los sensores y mejorar el diseño y resistencia de la carcasa.
 
-La integración del reloj inteligente al ecosistema del IER, así como las campañas de recolección de datos para la creación de bases de datos contextualizadas, permitirá a largo plazo correlacionar variables ambientales y fisiológicas para llevar a cabo estudios de confort térmico. El Desarrollo de modelos de confort adaptativos basados en estas bases de datos no solo contribuirá al estudio del confort térmico de manera general, sino que también servirá como base para el desarrollo de estrategias de diseño bioclimático especificas para regiones con bioclimas cálidos subhúmedos.
+La integración del reloj inteligente al ecosistema de dispositivos del IER, así como las campañas de recolección de datos para la creación de bases de datos contextualizadas, permitirá a largo plazo correlacionar variables ambientales y fisiológicas para llevar a cabo estudios de confort térmico. El Desarrollo de modelos de confort adaptativos basados en estas bases de datos no solo contribuirá al estudio del confort térmico de manera general, sino que también servirá como base para el desarrollo de estrategias de diseño bioclimático específicas para regiones con bioclimas cálidos subhúmedos.
 
 Este proyecto aporta una herramienta accesible para el ámbito de la investigación, al tiempo que abre nuevos retos y oportunidades de colaboración interdisciplinaria y de desarrollo tecnológico. Además, se alinea con la filosofía de las tecnologías abiertas, promoviendo su uso en beneficio de la comunidad científica y fomentando la transparencia, la colaboración y el acceso a herramientas que impulsen nuevas investigaciones.
 
