@@ -293,33 +293,48 @@ Esta sección describe el proceso de calibración de los sensores GY-906 y MAX30
 
 1. **Calibración del sensor GY-906**
 
-Para la calibración del sensor de temperatura GY-906, se utiliza una cámara termográfica Fluke Ti9 como referencia. Tanto el sensor como la cámara se configuran con una emisividad de 0.98, correspondiente a la emisividad promedio de la piel humana. Las pruebas se realizan durante tres días, entre las 10:00 a. m. y las 06:00 p. m., con mediciones cada media hora para capturar diferentes condiciones ambientales.
+Para la calibración del sensor de temperatura GY-906, se emplea como referencia el termómetro infrarrojo AET-R1B1. Este termómetro está diseñado específicamente para medir la temperatura de la piel, mientras que el sensor GY-906 se configura con una emisividad de 0.98, valor que corresponde a la emisividad promedio de la piel humana. Las pruebas de calibración se realizan en la zona de la muñeca bajo condiciones ambientales controladas, sometiendo la piel a variaciones de temperatura mediante el uso de compresas calientes y bolsas de hielo para generar un rango amplio de condiciones térmicas.  
 
-Durante cada sesión de medición, el sensor GY-906 realiza diez mediciones consecutivas en un lapso de diez segundos, y el promedio de estas mediciones se envía a la plataforma ThingsBoard, lo cual permite reducir el ruido y aumentar la precisión. Simultáneamente, las lecturas de la cámara termográfica se registran manualmente. Para minimizar el error por movimiento del sensor GY-906, el dispositivo emite una alerta vibratoria de un segundo, seguida de una pausa de cuatro segundos antes de realizar la medición, permitiendo al usuario mantener la mano inmóvil durante el proceso de medición. Se obtienen 86 pares de mediciones, la @tbl-estadisticas-camara muestra las características estadísticas de ambos conjuntos de datos.
+Para la campaña de medición, se configura el reloj inteligente con un botón que al ser pulsado inicia la medición del sensor GY-906. Este realiza 20 mediciones durante un intervalo de 10 segundos, calcula el promedio y almacena el resultado. De manera simultánea, la temperatura en el mismo punto es registrada manualmente utilizando el termómetro AET-R1B1. Tras esta campaña, se obtienen 115 pares de mediciones cuyos datos estadísticos se presentan en la @tbl-estadisticas.
 
 
-| **Estadística**          | **Sensor (°C)** | **Cámara (°C)** |
-|--------------------------|-----------------|-----------------|
-| Media                    | 34.65           | 35.25           |
-| Desviación estándar      | 0.72            | 0.65            |
-| Mínimo                   | 32.36           | 32.80           |
-| Máximo                   | 35.87           | 35.87           |
-: Estadísticas de las mediciones del sensor GY-906 y la cámara termográfica Fluke Ti9.  {#tbl-estadisticas-camara .hover .sm}
 
-Se realiza un análisis inicial entre las mediciones de la cámara respecto al sensor y se obtienen los siguientes datos: 
 
-- Error Medio (EM): 0.60°C
-- Error Absoluto Medio (EAM): 0.66°C 
+| **Estadística**          | **GY-906 [°C]** | **AET-R1B1 [°C]** |
+|--------------------------|-----------------|-------------------|
+| Media                    | 34.6            | 36.7              |
+| Desviación estándar      | 1.0             | 0.7               |
+| Mínimo                   | 30.6            | 32.8              |
+| Máximo                   | 36.9            | 38.6              |
+: Estadísticas de las mediciones del sensor GY-906 y el termómetro infrarrojo AET-R1B1.  {#tbl-estadisticas .hover .sm}
+
+Se realiza un análisis inicial entre las mediciones obtenidas por el termómetro y el sensor GY-906. Los resultados estadísticos clave son los siguientes:
+
+- Error Medio (EM): -2.1°C
+- Error Absoluto Medio (EAM): 2.1°C 
+
+La calibración se lleva a cabo de dos maneras, sin eliminar valores atípicos y eliminando valores atípicos para comparar sus resultados. 
+
+**Sin eliminar valores atípicos**
 
 Se aplica una calibración mediante un modelo de regresión lineal, obteniéndose los siguientes valores clave:
 
-- Pendiente: 0.54 ± 0.08
-- Intercepto: 16.70 ± 2.77
+- Pendiente: 0.54 ± 0.04
+- Intercepto: 18.06 ± 1.42
 
-Una vez obtenidos estos valores, se aplica la función de regresión lineal sobre los datos del sensor para generar una nueva columna con datos corregidos. Al comparar esta nueva columna con las lecturas de la cámara se obtienen los siguientes errores:
+Con estos valores, se ajustan las mediciones del sensor empleando la función de regresión lineal. Al comparar los datos ajustados con las mediciones del termómetro, se obtienen los siguientes errores:
 
-- EM: -3.39 X 10<sup>-15</sup>°C
-- EAM: 0.41°C
+- EM: 3.2 X 10<sup>-15</sup>°C
+- EAM: 0.3°C
+
+**Eliminando valores atípicos**
+
+Posteriormente, se hace un análisis para la detección de valores atípicos con la técnica de Z-score con un umbral de ± 1.5. Se identifican y se excluyen 8 valores atípicos. Con este nuevo conjunto de datos se aplica una calibración mediante un modelo de regresión lineal y se obtienen los siguientes valores clave: 
+
+- Pendiente: 0.72 ± 0.04
+- Intercepto: 11.7 ± 1.38
+
+XXXX
 
 La @fig-dispersion compara las gráficas de dispersión de los datos, donde la figura a) muestra los datos antes de la calibración y la figura b) presenta los datos después de la calibración.
 
