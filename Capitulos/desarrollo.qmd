@@ -308,6 +308,30 @@ Para la campaña de medición, se configura el reloj inteligente con un botón q
 | Máximo                   | 36.9            | 38.6              |
 : Estadísticas de las mediciones del sensor GY-906 y el termómetro infrarrojo AET-R1B1.  {#tbl-estadisticas .hover .sm}
 
+
+Para el proceso de calibración se utilizan el Error Medio (EM), Error Absoluto Medio (EAM) y la técnica de Z-score. El EM se define como una métrica para cuantificar la desviación media del sensor (GY-906) respecto a la referencia (AET-R1B1). Un valor positivo de EM indica que las lecturas del sensor son superiores a las de la referencia, mientras que un valor negativo indica que las lecturas del sensor son inferiores a las de la referencia. El EM se calcula mediante la @eq-em.
+
+$$
+EM = \frac{1}{n} \sum_{i=1}^{n} (X_{s,i} - X_{r,i})
+$$ {#eq-em}
+
+donde $X_{s,i}$ y  $X_{r,i}$ son las mediciones hechas con el sensor y la referencia, respectivamente, correspondientes a la i-esima observación en el conjunto de datos. El Error Absoluto Medio (EAM) se define como el promedio de las diferencias absolutas entre las mediciones del sensor y la referencia, este no considera el signo de las desviaciones. El EAM se calcula mediante la @eq-eam.
+
+El **Error Absoluto Medio (EAM)** mide el promedio de las diferencias absolutas entre las mediciones del sensor y la referencia, sin considerar el signo de las desviaciones, y se calcula como:
+
+$$
+EAM = \frac{1}{n} \sum_{i=1}^{n} |X_{s,i} - X_{r,i}|
+$$ {#eq-eam}
+
+Por otro lado, el Z-score se define como métrica empleada para identificar valores atípicos en un conjunto de datos. Representa la cantidad de desviaciones estándar que un valor se encuentra por encima o por debajo de la media. Sa calcula mediante la @eq-zscore.
+
+$$
+Z = \frac{X - \mu}{\sigma}
+$$ {#eq-zscore}
+
+donde $X$ es el valor del dato, $\mu$ es la media del conjunto de datos y $\sigma$ es la desviación estándar. Para emplear la técnica Z-score e identificar valores atípicos se debe definir un umbral, usualmente fijado en ±1.5, ±2 o ±3 desviaciones estándar. Los valores obtenidos por el Z-score del conjunto de datos que excedan este umbral son considerados atípicos.
+
+
 Se realiza un análisis inicial entre las mediciones obtenidas por el termómetro y el sensor GY-906. Los resultados estadísticos clave son los siguientes:
 
 - Error Medio (EM): -2.1°C
@@ -324,7 +348,7 @@ Se aplica una calibración mediante un modelo de regresión lineal, obteniéndos
 
 Con estos valores, se ajustan las mediciones del sensor empleando la función de regresión lineal. Al comparar los datos ajustados con las mediciones del termómetro, se obtienen los siguientes errores:
 
-- EM: 3.2 X 10<sup>-15</sup>°C
+- EM: $3.2 \times 10^{-15}°C$
 - EAM: 0.3°C
 
 **Eliminando valores atípicos**
@@ -334,88 +358,135 @@ Posteriormente, se hace un análisis para la detección de valores atípicos con
 - Pendiente: 0.72 ± 0.04
 - Intercepto: 11.7 ± 1.38
 
-XXXX
+Mientras que al emplear la función de regresión linea obtenida se obtienen los siguientes errores: 
 
-La @fig-dispersion compara las gráficas de dispersión de los datos, donde la figura a) muestra los datos antes de la calibración y la figura b) presenta los datos después de la calibración.
+- EM: $-2.9 \times 10^{-15}°C$
+- EAM: 0.3°C
+
+
+Debido a que tanto eliminando valores atípicos como sin eliminarlos se llegan a resultados similares, se opta por elegir la calibración sin eliminar outliers. La @fig-calibraciongy muestra la comparación entre las mediciones del sensor GY-906 y del termómetro AET-R1B1 antes y después de la calibración. En la figura a) se observa el conjunto de datos original (color azul) junto con los valores atípicos (color naranja) detectados por la técnica de Z-score, así como las lineas de regresión encontradas para el conjunto de datos original y el conjunto de datos sin outliers. En la figura b) se observa el conjunto de datos calibrado con la función de regresión lineal obtenida con el conjunto de datos completo.
 
 
 ```{python}
 #| echo: false
-#| fig-cap: Gráficos de dispersión de las mediciones del sensor GY-906 y la cámara termográfica Fluke Ti9 antes y después de la calibración.
-#| label: fig-dispersion
+#| fig-cap: "Análisis de mediciones del sensor GY-906 y el termómetro AET-R1B1: a) identificación de valores atípicos y regresiones lineales con datos originales y sin valores atípicos, b) datos calibrados utilizando la regresión lineal del conjunto de datos original."
+#| label: fig-calibraciongy
 
 import pandas as pd
+import seaborn as sns
+from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 import numpy as np
-from sklearn.linear_model import LinearRegression
+import statsmodels.api as sm
 
-ruta_excel = "../datos/DatosTemperatura.xlsx"
-datos = pd.read_excel(ruta_excel, sheet_name="Sheet1")
-datos_nuevos = pd.read_excel(ruta_excel, sheet_name="Sheet2")
-datos_unidos = pd.concat([datos, datos_nuevos], ignore_index=True)
+ruta_excel = "../datos/DatosCalibracion.xlsx"
+datos = pd.read_excel(ruta_excel, sheet_name="Hoja1")
+datos_2 = pd.read_excel(ruta_excel, sheet_name="Hoja2")
+datos_3 = pd.read_excel(ruta_excel, sheet_name="Hoja3")
 
-# Crear la figura con dos subplots (1 fila, 2 columnas)
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))
+datos_unidos = pd.concat([datos, datos_2, datos_3], ignore_index=True)
 
-# Calcular la regresión lineal para los datos originales
-x_original = datos_unidos["Sensor"].values.reshape(-1, 1)
-y_original = datos_unidos["Camara"].values
+columna_sensor= "Reloj"
+columna_referencia="Termometro"
+
+# Copia del DataFrame original para evitar modificarlo directamente
+df_con_outliers = datos_unidos.copy()
+
+# Calcular el error (sensor - referencia)
+df_con_outliers["error"] = df_con_outliers[columna_sensor] - df_con_outliers[columna_referencia]
+
+# Calcular la media y desviación estándar del error
+mu = df_con_outliers["error"].mean()
+sigma = df_con_outliers["error"].std()
+umbral = 1.5
+
+# Calcular el Z-score
+df_con_outliers["z_score"] = (df_con_outliers["error"] - mu) / sigma
+
+# Identificar outliers según el umbral
+df_con_outliers["outlier"] = df_con_outliers["z_score"].abs() > umbral
+
+# Filtrar los valores atípicos
+df_outliers = df_con_outliers[df_con_outliers["outlier"]]
+
+# Filtrar los datos sin outliers
+df_sin_outliers = df_con_outliers[~df_con_outliers["outlier"]]
+
+# Calcular la regresión lineal para los datos originales (con outliers)
+x_original = df_con_outliers["Reloj"].values.reshape(-1, 1)  # Sensor a calibrar en eje X
+y_original = df_con_outliers["Termometro"].values  # Referencia en eje Y
 modelo_original = LinearRegression().fit(x_original, y_original)
 pendiente_original = modelo_original.coef_[0]
 intercepto_original = modelo_original.intercept_
 
-datos_unidos["Valores Corregidos"] = datos_unidos["Sensor"] * pendiente_original + intercepto_original
+# Calcular la regresión lineal para los datos sin outliers
+x_filtrado = df_sin_outliers["Reloj"].values.reshape(-1, 1)
+y_filtrado = df_sin_outliers["Termometro"].values
+modelo_filtrado = LinearRegression().fit(x_filtrado, y_filtrado)
+pendiente_filtrado = modelo_filtrado.coef_[0]
+intercepto_filtrado = modelo_filtrado.intercept_
 
-# --- Primer subplot: Datos originales --- #
+# Calcular la incertidumbre de la pendiente y el intercepto (para los datos originales)
+x_with_const = sm.add_constant(x_original)
+modelo_stats = sm.OLS(y_original, x_with_const).fit()
+pendiente_se = modelo_stats.bse[1]
+intercepto_se = modelo_stats.bse[0]
 
-px = [30, 40]
-py = [30, 40]
+# Aplicar la calibración a los datos utilizando la regresión con todos los datos
+df_con_outliers["Valores Corregidos"] = df_con_outliers["Reloj"] * pendiente_original + intercepto_original
 
-ax1.plot(px, py, "r--", label="Línea de identidad")
-ax1.scatter(datos_unidos["Sensor"], datos_unidos["Camara"], s=25, alpha=0.4, label="Datos")
+# Crear la figura con dos subplots (1 fila, 2 columnas)
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 10))
 
-# Configurar los límites de la gráfica antes de graficar la línea de regresión
-limite_max_primero = datos_unidos[["Camara", "Sensor"]].max().max() + 0.1
-limite_min_primero = datos_unidos[["Camara", "Sensor"]].min().min() - 0.1
+# --- Primer subplot: Datos originales con outliers --- #
+px = [df_con_outliers["Reloj"].min()-2, df_con_outliers["Reloj"].max()+2]
+py = pendiente_original * np.array(px) + intercepto_original 
+
+ax1.plot(px, px, "r--", label="Línea de identidad")  # Línea ideal
+ax1.scatter(df_con_outliers["Reloj"], df_con_outliers["Termometro"], s=25, alpha=0.4, label="Datos originales")
+ax1.scatter(df_outliers["Reloj"], df_outliers["Termometro"], s=25, alpha=0.6, label="Outliers")
+
+# Graficar líneas de regresión
+x_vals = np.linspace(min(px), max(px), 100)
+y_vals_original = intercepto_original + pendiente_original * x_vals
+y_vals_filtrado = intercepto_filtrado + pendiente_filtrado * x_vals
+
+ax1.plot(x_vals, y_vals_original, label="Regresión con todos los datos")
+ax1.plot(x_vals, y_vals_filtrado, color="brown", label="Regresión sin outliers")
+
+# Configurar límites de la gráfica
+limite_max_primero = df_con_outliers[["Reloj", "Termometro"]].max().max() + 0.1
+limite_min_primero = df_con_outliers[["Reloj", "Termometro"]].min().min() - 0.1
 ax1.set_xlim(limite_min_primero, limite_max_primero)
 ax1.set_ylim(limite_min_primero, limite_max_primero)
 
-# Graficar la línea de regresión para los datos originales
-x_vals = np.linspace(limite_min_primero, limite_max_primero, 100)
-y_vals = intercepto_original + pendiente_original * x_vals
-ax1.plot(x_vals, y_vals, "b-", label="Línea de regresión")
-
-# Configurar la leyenda y los ejes
-ax1.set_xlabel("Sensor [°C]")
-ax1.set_ylabel("Cámara [°C]")
-ax1.grid()
-
+# Configurar etiquetas y leyenda
+ax1.set_xlabel("GY-906 [°C]")  # Sensor en el eje X
+ax1.set_ylabel("AET-R1B1 [°C]")  # Referencia en el eje Y
 ax1.legend(loc='lower right')
+ax1.grid(True, linestyle="--", alpha=0.7)
+ax1.set_aspect('equal')
 ax1.text(0.5, 1.05, 'a)', transform=ax1.transAxes, ha='center', fontsize=12)
-#ax1.set_title("Gráfica de dispersión de datos originales")
 
 # --- Segundo subplot: Datos corregidos --- #
+ax2.plot(px, px, "r--", label="Línea de identidad")  # Línea ideal
+ax2.scatter(df_con_outliers["Valores Corregidos"], df_con_outliers["Termometro"], s=25, alpha=0.4, label="Datos calibrados")
 
-ax2.plot(px, py, "r--", label="Línea de identidad")
-ax2.scatter(datos_unidos["Valores Corregidos"], datos_unidos["Camara"], s=25, alpha=0.4, label="Datos")
+# Configurar límites de la gráfica
+ax2.set_xlim(limite_min_primero, limite_max_primero)
+ax2.set_ylim(limite_min_primero, limite_max_primero)
 
-# Configurar los límites de la gráfica antes de graficar la línea de regresión
-limite_max_segundo = datos_unidos[["Camara", "Valores Corregidos"]].max().max() + 0.1
-limite_min_segundo = datos_unidos[["Camara", "Valores Corregidos"]].min().min() - 0.1
-ax2.set_xlim(limite_min_segundo, limite_max_segundo)
-ax2.set_ylim(limite_min_segundo, limite_max_segundo)
-
-
-# Configurar la leyenda y los ejes
-ax2.set_xlabel("Sensor calibrado [°C]")
-ax2.set_ylabel("Cámara [°C]")
-ax2.grid()
-
+# Configurar etiquetas y leyenda
+ax2.set_xlabel("GY-906 calibrado [°C]")  # Sensor calibrado en el eje X
 ax2.legend(loc='lower right')
+ax2.grid(True, linestyle="--", alpha=0.7)
+ax2.set_aspect('equal')
 ax2.text(0.5, 1.05, 'b)', transform=ax2.transAxes, ha='center', fontsize=12)
-#ax2.set_title("Gráfica de dispersión de datos corregidos")
+ax2.set_ylabel("")  # Elimina la etiqueta del eje Y
+ax2.set_yticklabels([])  # Elimina los valores del eje Y
+ax2.tick_params(left=False)  # Oculta las marcas del eje Y
 
-# Mostrar la figura completa con ambos subplots
+# Ajustar el diseño y guardar la figura
 plt.tight_layout()
 plt.show()
 ```
