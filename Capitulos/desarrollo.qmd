@@ -124,12 +124,11 @@ El reloj inteligente presentado en esta tesis cuenta con un sistema de alarma si
 
 El uso de baterías de polímero de litio (LiPo) es ampliamente utilizado en dispositivos portátiles debido a sus características de pequeño tamaño, bajo peso y facilidad de carga. Para este proyecto, que integra una placa de desarrollo XIAO ESP32C3, una pantalla XIAO Round Display, un sensor GY-906, un sensor MAX30102 y un circuito vibrador, es crucial seleccionar una capacidad de batería que asegure un funcionamiento continuo y confiable, considerando el consumo energético de cada componente involucrado.
 
-La XIAO ESP32C3 presenta un consumo promedio de 74.7 mA durante su operación activa [@xiaoesp32c3], mientras que la pantalla XIAO Round Display demanda aproximadamente 70.0 mA [@xiaodisplay]. Por su parte, el sensor GY-906 tiene un consumo de corriente bajo, en el rango de 1.0 a 2.0 mA [@mlx90614_datasheet], el sensor MAX30102 consume entre 0.6 y 1.2 mA durante la medición de la frecuencia cardíaca [@max30102_datasheet]. Adicionalmente, el motor vibrador registra un consumo estimado de 84.0 mA [@uelectronics_vibration_motor], dependiendo de la intensidad de la vibración y la carga aplicada.
+La XIAO ESP32C3 presenta una demanda de corriente promedio de 74.7 mA durante su operación activa [@xiaoesp32c3], mientras que la pantalla XIAO Round Display demanda aproximadamente 37.0 mA [@xiaodisplay]. Por su parte, el sensor GY-906 tiene una demanda de corriente baja, en el rango de 1.0 a 2.0 mA [@mlx90614_datasheet], el sensor MAX30102 requiere entre 0.6 y 1.2 mA durante la medición de la frecuencia cardíaca [@max30102_datasheet]. Adicionalmente, el motor vibrador presenta una corriente requerida aproximada de 84.0 mA [@uelectronics_vibration_motor], dependiendo de la intensidad de la vibración y la carga aplicada.
 
-El consumo total del dispositivo en condiciones de operación máxima puede alcanzar 232.0 mA. Sin embargo, este nivel de consumo es poco probable alcanzarse durante el uso típico del dispositivo,ya que, durante la mayor parte del tiempo los sensores y la pantalla permanecen inactivos y solo se encenderan al momento de llevar a cabo sus mediciones; el motor vibrador se enciende únicamente por breves periodos cada hora. Con el fin de asegurar autonomía del dispositivo y evitar interrupciones en su funcionamiento, se selecciona una batería de 650.0 mAh. Este capacidad satisface los requisitos energéticos, permitiendo el uso prolongado del reloj inteligente. Además, la batería seleccionada cumple en tamaño y peso, ajustándose adecuadamente al diseño del dispositivo.
+La demanda de corriente total del dispositivo en condiciones de operación máxima puede alcanzar 200.0 mA aproximadamente. Sin embargo, este nivel es poco probable alcanzarse durante el uso típico del dispositivo, ya que, durante la mayor parte del tiempo los sensores y la pantalla permanecen inactivos y solo se encenderán al momento de llevar a cabo sus mediciones; el motor vibrador se enciende únicamente por breves periodos cada hora. Con el fin de asegurar autonomía del dispositivo y evitar interrupciones en su funcionamiento, se selecciona una batería con un voltaje nominal de 3.7 V y una capacidad de 650.0 mAh. Estas características satisfacen los requisitos energéticos, permitiendo el uso prolongado del reloj inteligente. Además, la batería seleccionada cumple en tamaño y peso, ajustándose adecuadamente al diseño del dispositivo.
 
-
-La @tbl-componentes-seleccionados muestra todos los componentes seleccionados para el desarrollo del dispositivo. 
+La @tbl-componentes-seleccionados muestra todos los componentes seleccionados para el desarrollo del dispositivo, entre los que se incluye el interruptor de encendido SS12D00, que es un interruptor con dimensiones de 3.5 x 8.5 mm. Este componente, debido a su tamaño compacto, se adapta al diseño del reloj inteligente.
 
 
 | **Componente**             | **Descripción**                                            |
@@ -140,6 +139,7 @@ La @tbl-componentes-seleccionados muestra todos los componentes seleccionados pa
 | MAX30102                   | Sensor óptico de frecuencia cardíaca           |
 | Circuito vibrador          | Circuito vibrador para notificaciones silenciosas             |
 | Batería 3.7 V, 650 mAh     | Batería LiPo recargable      |
+| Interruptor SS12D00        | Interruptor de encendido y apagado del reloj inteligente   |
 : Tabla de componentes seleccionados.  {#tbl-componentes-seleccionados .hover .sm}
 
 
