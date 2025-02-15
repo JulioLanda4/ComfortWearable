@@ -84,14 +84,14 @@ La pantalla seleccionada es la Seeed Studio Round Display for XIAO. Este modelo 
 La @tbl-temp muestra una comparación entre distintos sensores de temperatura que podrían ser utilizados en el proyecto, incluyendo termistores, sensores infrarrojos y un sensor de temperatura y humedad. Estos sensores tienen un rango de operación entre los 3.3 V y 5.0 V para garantizar su compatibilidad con la placa de desarrollo seleccionada.
 
 
-| **Nombre del sensor**        | **Tipo de sensor**                  | **Rango de temperatura**           | **Precisión**                         | **Comunicación**                      | **Dimensión**  |
+| **Nombre**        | **Tipo**                  | **Rango**           | **Precisión**                         | **Comunicación**                      | **Dimensión**  |
 |---------------------------|-------------------------------------|------------------------------------|---------------------------------------|---------------------------------------|-------------|
 | **GY-906 (MLX90614)**     | Sensor de temperatura infrarrojo    | -70°C a 382.2°C                    | ±0.5°C (0°C a 50°C)                   | I2C                                   | 17.00 x 11.00 mm |
 | **ZTP-115M**              | Sensor de temperatura infrarrojo    | -20°C a 100°C                      | ±1°C (32°C a 42°C)                    | Salida analógica                      | 33.00 x 17.00 mm |
 | **NTC MF52AT**            | Termistor NTC                       | -55°C a 125°C                      | ±0.2°C (dependiendo de la resistencia) | No aplica (sensor analógico)            | 6.00 x 3.00 mm |
 | **BetaTherm 10K3A1**      | Termistor NTC                       | -50°C a 150°C                      | ±0.2°C (25°C a 45°C)                  | No aplica (sensor analógico)          | 6.00 x 2.40 mm |
 | **AHT20**                 | Sensor de temperatura y humedad | -40°C a 85°C                       | ±0.3°C (temperatura) / ±2% HR (humedad)| I2C                                   | 16.10 x 15.98 mm |
-: Características de sensores de temperatura compatibles con la placa XIAO ESP32C3. {#tbl-temp .hover .sm}
+: Características de sensores de temperatura compatibles con la placa XIAO ESP32C3. {#tbl-temp .hover .sm tbl-colwidths="[15, 15, 10, 15, 19, 16]"}
 
 Tras un análisis detallado, se selecciona el sensor GY-906 debido a su tamaño compacto, su tecnología infrarroja y comunicación digital por I2C. Aunque el termistor NTC MF52AT ofrece una alternativa viable, se descarta por ser un sensor analógico. Dado que el reloj inteligente está diseñado para operar en un espacio reducido, cualquier interferencia en las conexiones internas podría afectar la precisión de los sensores analógicos. Por esta razón, se opta por el GY-906, que garantiza transmisión de datos en entornos compactos.
 
@@ -124,11 +124,12 @@ El reloj inteligente presentado en esta tesis cuenta con un sistema de alarma si
 
 El uso de baterías de polímero de litio (LiPo) es ampliamente utilizado en dispositivos portátiles debido a sus características de pequeño tamaño, bajo peso y facilidad de carga. Para este proyecto, que integra una placa de desarrollo XIAO ESP32C3, una pantalla XIAO Round Display, un sensor GY-906, un sensor MAX30102 y un circuito vibrador, es crucial seleccionar una capacidad de batería que asegure un funcionamiento continuo y confiable, considerando el consumo energético de cada componente involucrado.
 
-La XIAO ESP32C3 presenta una demanda de corriente promedio de 74.7 mA durante su operación activa [@xiaoesp32c3], mientras que la pantalla XIAO Round Display demanda aproximadamente 37.0 mA [@xiaodisplay]. Por su parte, el sensor GY-906 tiene una demanda de corriente baja, en el rango de 1.0 a 2.0 mA [@mlx90614_datasheet], el sensor MAX30102 requiere entre 0.6 y 1.2 mA durante la medición de la frecuencia cardíaca [@max30102_datasheet]. Adicionalmente, el motor vibrador presenta una corriente requerida aproximada de 84.0 mA [@uelectronics_vibration_motor], dependiendo de la intensidad de la vibración y la carga aplicada.
+La XIAO ESP32C3 presenta un consumo promedio de 74.7 mA durante su operación activa [@xiaoesp32c3], mientras que la pantalla XIAO Round Display demanda aproximadamente 70.0 mA [@xiaodisplay]. Por su parte, el sensor GY-906 tiene un consumo de corriente bajo, en el rango de 1.0 a 2.0 mA [@mlx90614_datasheet], el sensor MAX30102 consume entre 0.6 y 1.2 mA durante la medición de la frecuencia cardíaca [@max30102_datasheet]. Adicionalmente, el motor vibrador registra un consumo estimado de 84.0 mA [@uelectronics_vibration_motor], dependiendo de la intensidad de la vibración y la carga aplicada.
 
-La demanda de corriente total del dispositivo en condiciones de operación máxima puede alcanzar 200.0 mA aproximadamente. Sin embargo, este nivel es poco probable alcanzarse durante el uso típico del dispositivo, ya que, durante la mayor parte del tiempo los sensores y la pantalla permanecen inactivos y solo se encenderán al momento de llevar a cabo sus mediciones; el motor vibrador se enciende únicamente por breves periodos cada hora. Con el fin de asegurar autonomía del dispositivo y evitar interrupciones en su funcionamiento, se selecciona una batería con un voltaje nominal de 3.7 V y una capacidad de 650.0 mAh. Estas características satisfacen los requisitos energéticos, permitiendo el uso prolongado del reloj inteligente. Además, la batería seleccionada cumple en tamaño y peso, ajustándose adecuadamente al diseño del dispositivo.
+El consumo total del dispositivo en condiciones de operación máxima puede alcanzar 232.0 mA. Sin embargo, este nivel de consumo es poco probable alcanzarse durante el uso típico del dispositivo,ya que, durante la mayor parte del tiempo los sensores y la pantalla permanecen inactivos y solo se encenderan al momento de llevar a cabo sus mediciones; el motor vibrador se enciende únicamente por breves periodos cada hora. Con el fin de asegurar autonomía del dispositivo y evitar interrupciones en su funcionamiento, se selecciona una batería de 650.0 mAh. Este capacidad satisface los requisitos energéticos, permitiendo el uso prolongado del reloj inteligente. Además, la batería seleccionada cumple en tamaño y peso, ajustándose adecuadamente al diseño del dispositivo.
 
-La @tbl-componentes-seleccionados muestra todos los componentes seleccionados para el desarrollo del dispositivo, entre los que se incluye el interruptor de encendido SS12D00, que es un interruptor con dimensiones de 3.5 x 8.5 mm. Este componente, debido a su tamaño compacto, se adapta al diseño del reloj inteligente.
+
+La @tbl-componentes-seleccionados muestra todos los componentes seleccionados para el desarrollo del dispositivo. 
 
 
 | **Componente**             | **Descripción**                                            |
@@ -139,7 +140,6 @@ La @tbl-componentes-seleccionados muestra todos los componentes seleccionados pa
 | MAX30102                   | Sensor óptico de frecuencia cardíaca           |
 | Circuito vibrador          | Circuito vibrador para notificaciones silenciosas             |
 | Batería 3.7 V, 650 mAh     | Batería LiPo recargable      |
-| Interruptor SS12D00        | Interruptor de encendido y apagado del reloj inteligente   |
 : Tabla de componentes seleccionados.  {#tbl-componentes-seleccionados .hover .sm}
 
 
@@ -148,7 +148,8 @@ La @tbl-componentes-seleccionados muestra todos los componentes seleccionados pa
 3. **Diseño del dispositivo**
 
 
-Una vez seleccionados los componentes básicos del reloj inteligente, el diseño se enfoca en crear una carcasa compacta que permita alojar los componentes sin interferencias entre ellos y en desarrollar los circuitos internos de conexión.
+Una vez seleccionados los componentes básicos del reloj inteligente, el diseño se enfoca en crear una carcasa compacta que permita alojar los componentes sin interferencias entre ellos y en desarrollar los circuitos internos de conexión.  \newline
+
 
 **Carcasa**
 
@@ -158,11 +159,12 @@ La parte central de la carcasa es la pieza que va arriba de la base y es donde s
 
 La parte superior de la carcasa está diseñada con el fin de mantener la pantalla táctil en su posición y cerrar el dispositivo. Todas las piezas se ensamblan una con otra por presión, evitando el uso de tornillos.
 
-Adicional, hay una cuarta pieza que es un seguro para fijar el interruptor de encendido. Esta se coloca por encima del interruptor una vez esté colocado en su posición en la pieza central. El seguro ensambla por presión a la parte central de la carcasa y deja fijo el interruptor.
+Adicionalmente, hay una cuarta pieza que es un seguro para fijar el interruptor de encendido. Esta se coloca por encima del interruptor una vez esté colocado en su posición en la pieza central. El seguro ensambla por presión a la parte central de la carcasa y deja fijo el interruptor.
 
-En la @fig-partescase se observan las tres partes principales de la carcasa.
+En la @fig-partescase se presentan las tres partes principales de la carcasa junto con el seguro. En la figura, se ha resaltado en color verde el área donde el seguro encaja con la parte central de la carcasa.
 
-![Partes de la carcasa del dispositivo (el seguro se muestra a mayor escala para su mejor visualización).](../Imagenes/PartesCase.png){#fig-partescase width=75%}
+
+![Partes de la carcasa del dispositivo.](../Imagenes/PartesCase.jpg){#fig-partescase width=75%}
 
 **Diseño de los circuitos**
 
@@ -192,17 +194,20 @@ Finalmente, en la @fig-DiagramaBloques se muestra el diagrama funcional de bloqu
 
 ## Construcción del dispositivo {#sec-construccion}
 
-La construcción del reloj inteligente se puede separar en tres etapas: La impresión de la carcasa, la conexión de los componentes electrónicos, junto con la integración y el montaje de todos los elementos en la carcasa.
+La construcción del reloj inteligente se puede separar en tres etapas: La impresión de la carcasa, la conexión de los componentes electrónicos, junto con la integración y el montaje de todas las piezas en la carcasa.
 
-***Carcasa:*** los archivos STL para la impresión de la carcasa los puedes encontrar en el <a href="https://github.com/JulioLanda4/IoT_Reloj_Confort" target="_blank">repositorio del proyecto</a>
+***Impresión de la carcasa:*** los archivos STL para la impresión de la carcasa los puedes encontrar en el <a href="https://github.com/JulioLanda4/IoT_Reloj_Confort" target="_blank">repositorio del proyecto</a>. Se recomienda usar una altura de capa de 0.1 mm para la impresión de las piezas.
 
- 
+***Conexión de los componentes electrónicos:*** Las conexiones de los componentes electrónicos se llevan a cabo siguiendo los diagramas de @fig-conexiones. Es importante seguir correctamente los diagramas para facilitar posteriormente su acomodo dentro de la carcasa. 
 
-***Componentes electrónicos:*** Las conexiones de los componentes electrónicos se llevan a cabo siguiendo los diagramas de @fig-conexiones. Es importante seguir correctamente los diagramas para facilitar posteriormente su acomodo dentro de la carcasa. 
+***Integración y montaje:*** Esta etapa se lleva a cabo una vez que se tengan listas las conexiones de los circuitos y las piezas de la carcasa impresas. En esta etapa se acomodan los componentes dentro la carcasa y se ensamblan las correas en la part exterior del reloj inteligente.
 
-***Integración y montaje:*** Una vez realizadas las conexiones, se lleva a cabo el montaje de los circuitos dentro de la carcasa, esta se ensambla y se colocan las correas.
+En el artículo de @Landa2024 (en revisión en la revista HardwareX), se presenta información detallada sobre el diseño y los pasos para la construcción del dispositivo.
 
-En el artículo de @Landa2024 (en revisión), se presenta información detallada sobre el diseño y los pasos para la construcción del dispositivo."
+La @fig-relojfuncionando presenta el reloj inteligente completamente ensamblado y en funcionamiento, mostrando su ajuste en la muñeca del usuario, la interfaz gráfica del reloj y la funcionalidad práctica de su diseño.
+
+
+![Reloj inteligente en funcionamiento, mostrando la interfaz principal.](../Imagenes/Reloj-funcionando.jpg){#fig-relojfuncionando width=50%}
 
 
 ## Encuestas e interfaz {#sec-encuestas}
@@ -213,7 +218,7 @@ Una de las principales características del reloj inteligente desarrollado, es l
 
 El reloj inteligente lleva a cabo encuestas simplificadas de confort térmico cada hora, en horarios específicos entre las 08:00 a.m. y las 09:00 p.m., programadas en las medias horas para alinearse con los horarios de actividades en el IER, permitiendo al usuario aclimatarse antes de responder la encuesta. Al llegar el momento de responder la encuesta, el dispositivo activa una alarma vibradora que consta de tres pulsos cortos en un lapso de un segundo, para notificar al usuario. Si el usuario ignora la alarma, el botón de 'Encuesta' permanece activo hasta que se complete la encuesta, si después de quince minutos la encuesta no ha sido respondida, la alarma se vuelve a activar una vez más. Si esta segunda notificación es ignorada, la alarma no se activa nuevamente hasta la próxima hora programada. 
 
-La encuesta consta de cinco preguntas. Las preguntas seleccionadas se basan en los lineamientos establecidos por la ISO 10551 (@ISO10551). Las cinco preguntas son las siguientes:
+La encuesta consta de cinco preguntas. Las preguntas seleccionadas se basan en los lineamientos establecidos por la ISO 10551 [@ISO10551]. Las cinco preguntas son las siguientes:
 
 
 - **Vestimenta**: Presenta la pregunta: "¿Cuál es tu vestimenta actual?" donde el usuario puede seleccionar todas las prendas que esté usando de una lista predefinida. El objetivo de esta pregunta es calcular el nivel de aislamiento térmico del usuario (clo). La interfaz muestra el cálculo del valor de clo en la parte inferior de la pantalla a medida que se seleccionan o deseleccionan las prendas. La @tbl-prendas muestra la lista de prendas disponibles para seleccionar con su respectivo valor de clo.
@@ -344,7 +349,7 @@ La calibración se lleva a cabo de dos maneras, sin eliminar valores atípicos y
 Se aplica una calibración mediante un modelo de regresión lineal, obteniéndose los siguientes valores clave:
 
 - Pendiente: 0.54 ± 0.04
-- Intercepto: 18.06 ± 1.42
+- Intercepto: 18.06 ± 1.42°C
 
 Con estos valores, se ajustan las mediciones del sensor empleando la función de regresión lineal. Al comparar los datos ajustados con las mediciones del termómetro, se obtienen los siguientes errores:
 
@@ -356,7 +361,7 @@ Con estos valores, se ajustan las mediciones del sensor empleando la función de
 Posteriormente, se hace un análisis para la detección de valores atípicos con la técnica de Z-score con un umbral de ± 1.5. Se identifican y se excluyen 8 valores atípicos. Con este nuevo conjunto de datos se aplica una calibración mediante un modelo de regresión lineal y se obtienen los siguientes valores clave: 
 
 - Pendiente: 0.72 ± 0.04
-- Intercepto: 11.7 ± 1.38
+- Intercepto: 11.7 ± 1.38°C
 
 Mientras que al emplear la función de regresión linea obtenida se obtienen los siguientes errores: 
 
@@ -534,7 +539,7 @@ A continuación, se describe el funcionamiento general del reloj inteligente, de
 El proyecto se desarrolla en Arduino, empleando principalmente la librería LVGL para el diseño de la interfaz gráfica [@lvgl]. Consta de varios archivos de código, cada uno con una función específica. A continuación, se ofrece una breve descripción de cada uno de ellos:
 
 
-1. **Proyecto\_confort.ino**: Este es el archivo principal del proyecto. En él se ejecuta el código principal, se incluyen las librerías necesarias, y se declaran tanto las variables como las funciones usadas.
+1. **Proyecto\_confort.ino**: Este es el archivo principal del proyecto. En él se ejecuta el código principal, se incluyen las librerías necesarias y se declaran tanto las variables como las funciones usadas.
 
 2. **ui.c** y **ui.h**: Estos archivos se encargan de la ejecución y configuración general de la interfaz gráfica. El archivo header (`ui.h`) contiene las declaraciones de funciones y variables utilizadas en `ui.c`.
 
@@ -546,7 +551,7 @@ El proyecto se desarrolla en Arduino, empleando principalmente la librería LVGL
 
 6. **ui\_Ubicacion.c**: Configura la pantalla para la pregunta sobre la ubicación del usuario. Este archivo contiene una lista de ubicaciones del lugar donde se llevan a cabo las campañas de mediciones.
 
-7. **ui\_Sensacion.c**: Configura la pantalla para la pregunta sobre el nivel de sensación térmica. Este archivo contiene un diccionario con la escala de sensación térmica, que va de -3.0 a 3.0, y la descripción correspondiente para cada nivel.
+7. **ui\_Sensacion.c**: Configura la pantalla para la pregunta sobre el nivel de sensación térmica. Este archivo contiene un diccionario con la escala de sensación térmica, que va de -3.0 a 3.0 y la descripción correspondiente para cada nivel.
 
 8. **ui\_Aceptacion.c**: Configura la pantalla destinada a la pregunta de aceptación térmica.
 
@@ -640,11 +645,14 @@ Al asignar el reloj inteligente a un usuario, es necesario recopilar informació
 
 El registro de estos datos al inicio de una campaña de medición permite generar una base de datos más robusta y contextualizada. Esto es importante, ya que la percepción de confort térmico personal puede estar influenciada por factores como la edad, peso, altura, sexo, la exposición frecuente a espacios con aire acondicionado y la adaptación del usuario al entorno donde reside.
 
-El formulario se desarrolla utilizando la plataforma Google Forms, lo que facilita su acceso y su rápida respuesta por parte de los usuarios. Además, esta herramienta permite almacenar automáticamente las respuestas en un archivo con formato .xlsx, el cual puede ser procesado de diversas maneras, ya sea con programas de hojas de cálculo como Excel o mediante herramientas de análisis de datos en Python. A continuación se muestra el formulario hecho en Google Forms:
+El formulario se desarrolla utilizando la plataforma Google Forms, lo que facilita su acceso y su rápida respuesta por parte de los usuarios. Además, esta herramienta permite almacenar automáticamente las respuestas en un archivo con formato .xlsx, el cual puede ser procesado de diversas maneras, ya sea con programas de hojas de cálculo como Excel o mediante herramientas de análisis de datos en Python. Se puede acceder a un formulario de muestra en el siguiente enlace:
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe1AoBZrI94svNomSRHrP5Qmx0DCZNk-GcGgRVogEUuNz49fQ/viewform?embedded=true" width="640" height="1552" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+```bash
+https://forms.gle/ZsjcZm1dNc3Wr1so7
+```
 
 <!-- Un ejemplo del formulario puede consultarse en el siguiente enlace: <a href="https://forms.gle/ZsjcZm1dNc3Wr1so7" target="_blank">formulario de muestra</a>. --> 
+
 
 3. **Configuración y carga del código**
 
@@ -666,7 +674,7 @@ Una vez realizadas estas configuraciones, el código se carga en la placa de des
 
 El reloj inteligente se carga a través de un puerto USB-C. Es importante que el interruptor del dispositivo permanezca en posición de encendido durante la carga, ya que, de lo contrario, no será posible cargar la batería. 
 
-La interfaz del reloj está compuesta por siete pantallas principales y dos ventanas emergentes. La pantalla principal (@fig-pantallas(a)) permite al usuario visualizar la hora actual y el tiempo restante para la siguiente encuesta.
+La interfaz del reloj está compuesta por siete pantallas principales y dos ventanas emergentes. La pantalla principal (@fig-pantallas(a)) permite al usuario visualizar la hora actual, el tiempo restante para la siguiente encuesta y el porcentaje de batería disponible.
 
 Cuando se habilita el botón para responder una encuesta, se muestra la pantalla de encuesta (@fig-pantallas(b)), que guía al usuario a través de las preguntas del formulario. Cada una de las preguntas está asociada con una pantalla específica:
 
@@ -678,7 +686,7 @@ Cuando se habilita el botón para responder una encuesta, se muestra la pantalla
 
 Adicionalmente, el reloj cuenta con dos ventanas emergentes. La primera ventana emergente (@fig-pantallas(i)) se activa al finalizar la encuesta e indica que los sensores han comenzado a realizar mediciones. La segunda ventana emergente (@fig-pantallas(j)) se muestra una vez que los sensores han terminado de medir, presentando los resultados al usuario. En esta pantalla, el usuario puede aceptar los resultados y enviarlos a ThingsBoard o rechazarlos para repetir las mediciones. Es importante mencionar que cada pantalla de la encuesta cuenta con botones que permiten navegar entre las pantallas y seleccionar las opciones según las necesidades del usuario.
 
-![Interfaz del reloj inteligente: (a) pantalla principal, (b) activación de la encuesta, (c) pregunta sobre la vestimenta actual, (d) pregunta sobre la actividad realizada, (e) pregunta sobre la ubicación, (f) pregunta sobre la sensación térmica, (h) pregunta sobre la aceptación de la sensación térmica, (i) ventana emergente indicando el inicio de las mediciones, y (j) ventana emergente con los resultados de las mediciones.](../Imagenes/Pantallas.png){#fig-pantallas}
+![Interfaz del reloj inteligente: (a) pantalla principal, (b) activación de la encuesta, (c) pregunta sobre la vestimenta actual, (d) pregunta sobre la actividad realizada, (e) pregunta sobre la ubicación, (f) pregunta sobre la sensación térmica, (h) pregunta sobre la aceptación de la sensación térmica, (i) ventana emergente indicando el inicio de las mediciones y (j) ventana emergente con los resultados de las mediciones.](../Imagenes/Pantallas.png){#fig-pantallas}
 
 ## Validación del funcionamiento del reloj inteligente {#sec-validacion}
 
@@ -744,7 +752,7 @@ diccionario_frecuencia = {
     "Nunca": 0
 }
 ```
-
+<!-- 
 
 +---------------------+--------------+-----------+---------------+---------+--------+-------------+-----------+----------+---------+---------+----------+---------+---------+
 | **Fecha**           | **$I_{cl}$** | **$M_r$** | **Ubicación** | **TSV** | **TA** | **$T_{w}$** | **$H_r$** | **Edad** | **$W$** | **$H$** | **Sexo** | **$F$** | **$I$** +
@@ -765,18 +773,21 @@ diccionario_frecuencia = {
 +---------------------+--------------+-----------+---------------+---------+--------+-------------+-----------+----------+---------+---------+----------+---------+---------+
 | 2024-11-14 20:45    | 0.40         | 1.3       | Aula 2        | 0.0     | Sí     | 35.0        | 93        | 46       | 70      | 1.70    | M        | 1       | 2       +
 +---------------------+--------------+-----------+---------------+---------+--------+-------------+-----------+----------+---------+---------+----------+---------+---------+
-: Conjunto de datos de cinco encuestas térmicas y mediciones, que incluye el nivel de aislamiento de la ropa ($I_{cl}$), la tasa metabólica ($M_r$), la ubicación, el voto de sensación térmica (TSV), la aceptación térmica (TA), la temperatura de la piel de la muñeca ($T_w$), la frecuencia cardíaca ($H_r$), la edad, el peso ($W$), la altura ($H$), el sexo, la frecuencia de uso de espacios con aire acondicionado ($F$) y el identificador del individuo que está usando el reloj inteligente ($I$). {#tbl-data_downloaded .hover .sm}
+: Conjunto de datos de cinco encuestas térmicas y mediciones, que incluye el nivel de aislamiento de la ropa ($I_{cl}$), la tasa metabólica ($M_r$), la ubicación, el voto de sensación térmica (TSV), la aceptación térmica (TA), la temperatura de la piel de la muñeca ($T_w$), la frecuencia cardíaca ($H_r$), la edad, el peso ($W$), la altura ($H$), el sexo, la frecuencia de uso de espacios con aire acondicionado ($F$) y el identificador del individuo que está usando el reloj inteligente ($I$). {#tbl-data_downloaded .hover .sm  tbl-colwidths="[25, 4, 4, 19, 6, 4, 4, 4, 6, 4, 6, 6, 4, 4]"}
+
+ --> 
 
 
-En la @fig-relojfuncionando, se observa el dispositivo en funcionamiento. El reloj se ajusta en la muñeca del usuario y muestra la interfaz principal con la hora actual y el estado de la batería.
-
-
-![Reloj inteligente en funcionamiento, mostrando la interfaz principal.](../Imagenes/Reloj-funcionando.jpg){#fig-relojfuncionando width=50%}
-
-
-
-
-
+| **Fecha**  <br>     *AAAA-MM-DD HH:MM*  | **$I_{cl}$** <br> *clo*| **$M_r$** <br> *met*| **Ubicación** <br> *-*| **TSV** <br> *-*| **TA** <br> *-*| **$T_{w}$** <br> *°C*| **$H_r$** <br> *bpm*| **Edad** <br> *años*| **$W$** <br> *kg*| **$H$** <br> *m*| **Sexo** <br> *-*| **$F$** <br> *-*| **$I$** <br> *-*|
+|---------------------|--------------|-----------|---------------|---------|--------|-------------|-----------|----------|---------|---------|----------|---------|---------|
+| 2024-07-17 13:32    | 0.21         | 1.5       | Aula 1        | 0.0     | Sí     | 34.3        | 66        | 28       | 65      | 1.70    | M        | 1       | 1       |
+| 2024-07-17 14:32    | 0.21         | 1.5       | Aula 1        | 0.0     | Sí     | 35.4        | 77        | 28       | 65      | 1.70    | M        | 1       | 1       |
+| 2024-07-17 16:45    | 0.21         | 2.0       | Aula 1        | 2.0     | No     | 35.2        | 85        | 28       | 65      | 1.70    | M        | 1       | 1       |
+| ...                 | ...          | ...       | ...           | ...     | ...    | ...         | ...       | ...      | ...     | ...     | ...      | ...     | ...     |
+| 2024-11-13 08:46    | 0.48         | 1.3       | Aula 2        | 0.0     | Sí     | 33.6        | 62        | 46       | 73      | 1.70    | M        | 1       | 2       |
+| 2024-11-14 16:45    | 0.40         | 1.3       | Aula 2        | 0.0     | Sí     | 36.9        | 64        | 46       | 73      | 1.70    | M        | 1       | 2       |
+| 2024-11-14 20:45    | 0.40         | 1.3       | Aula 2        | 0.0     | Sí     | 35.0        | 93        | 46       | 70      | 1.70    | M        | 1       | 2       |
+: Conjunto de datos de cinco encuestas térmicas y mediciones, que incluye el nivel de aislamiento de la ropa ($I_{cl}$), la tasa metabólica ($M_r$), la ubicación, el voto de sensación térmica (TSV), la aceptación térmica (TA), la temperatura de la piel de la muñeca ($T_w$), la frecuencia cardíaca ($H_r$), la edad, el peso ($W$), la altura ($H$), el sexo, la frecuencia de uso de espacios con aire acondicionado ($F$) y el identificador del individuo que está usando el reloj inteligente ($I$). {#tbl-data_downloaded .hover .sm  tbl-colwidths="[22, 4, 4, 16, 6, 5, 5, 5, 7, 6, 6, 7, 4, 3]"}
 
 
 

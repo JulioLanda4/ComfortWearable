@@ -58,7 +58,7 @@ La creación de una base de datos amplia y contextualizada abre la posibilidad a
 
 4. **Mejoras en los sensores**
 
-El diseño modular del reloj facilita la búsqueda e integración de sensores de mayor calidad que puedan reemplazar a los sensores actuales para facilitar el proceso de calibración, aumentar la exactitud y precisión de las lecturas, y mejorar la fiabilidad de los datos recopilados.
+El diseño modular del reloj facilita la búsqueda e integración de sensores de mayor calidad que puedan reemplazar a los sensores actuales para facilitar el proceso de calibración, aumentar la exactitud y precisión de las lecturas y mejorar la fiabilidad de los datos recopilados.
 
 
 5. **Mejoras en el diseño de la carcasa**

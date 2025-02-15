@@ -58,6 +58,14 @@ La metodología del proyecto se centra en el desarrollo y la validación de un r
 
 - **Conexión IoT y almacenamiento de datos:** Se utiliza la plataforma ThingsBoard para el almacenamiento de los datos recopilados, permitiendo la visualización en tiempo real y la descarga de los datos en cualquier momento para su análisis.
 
+Como parte del compromiso con las tecnologías abiertas en este proyecto, todos los archivos de diseño del reloj inteligente, incluidos los archivos FCStd de la carcasa, los diagramas de conexión y el código fuente están disponibles en el repositorio público bajo la licencia GNU GPL-3.0, disponible en el siguiente enlace: 
+
+```bash
+https://github.com/JulioLanda4/IoT_Reloj_Confort
+```
+
+
+
 
 ## Estructura de la tesis
 
