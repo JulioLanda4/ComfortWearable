@@ -4,13 +4,14 @@
 
 El confort térmico es un concepto subjetivo, ya que depende de las percepciones individuales y está influenciado por factores ambientales y personales. La sociedad estadounidense de ingenieros de calefacción, refrigeración y aire acondicionado (ASHRAE, por sus siglas en inglés) lo define como *la condición mental que expresa satisfacción con el ambiente térmico* [ASHRAE 55, -@ASHRAE55], mientras que la organización internacional de normalización (ISO, por sus siglas en inglés) en su norma 7730 lo describe como *la sensación de bienestar térmico que experimenta una persona en un entorno dado, considerando aspectos físicos, fisiológicos y psicológicos* [-@ISO7730]. Podemos decir entonces que el confort térmico es la sensación de satisfacción o insatisfacción con el ambiente térmico y está influenciado por percepciones individuales y como los individuos reaccionan ante las condiciones térmicas de su entorno.
 
-El confort térmico es más complejo que un simple estado de satisfacción o insatisfacción, se puede considerar un rango de sensaciones que van desde una percepción extrema de frío hasta una sensación de extremo calor. En este sentido, se puede considerar como un equilibrio térmico entre el cuerpo humano y su entorno, donde la temperatura corporal se regula a través de procesos fisiológicos, como la sudoración, la vasoconstricción y la vasodilatación [@tomonori_sakoi__2023]. Además, el confort térmico no solo depende de las condiciones ambientales, sino también de cómo los individuos interpretan estas condiciones según sus experiencias y expectativas personales [ASHRAE 55, -@ASHRAE55].
+El confort térmico es más complejo que un simple estado de satisfacción o insatisfacción, se puede considerar un rango de sensaciones que van desde una percepción extrema de frío hasta una sensación de extremo calor. Por otro lado, el equilibrio térmico hace referencia al estado en el que el cuerpo humano mantiene su temperatura interna estable a través de procesos fisiológicos incluyendo la sudoración, la vasoconstricción y la vasodilatación, así como procesos físicos de transferencia de calor, incluyendo la conducción, la convección y la radiación, que le permitan adaptarse a los cambios en el entorno [@tomonori_sakoi__2023]. El equilibrio térmico es fundamental para el bienestar fisiológico, pero también es un factor que influye en la sensación de confort térmico de cada individuo. El confort térmico depende de factores ambientales que incluyen la temperatura radiante media, la velocidad del aire, la humedad relativa y la presión atmosférica, así como de factores personales como la actividad física y el nivel de aislamiento térmico de la ropa, Sin embargo, la percepción del confort térmico también puede verse influenciada en función de las experiencias, expectativas y contexto personal de cada individuo [ASHRAE 55, -@ASHRAE55].
 
-Los factores que afectan la sensación de confort térmico se pueden agrupar en dos categorías: factores ambientales y factores personales.
+Los factores que afectan la sensación de confort térmico se pueden agrupar en dos categorías: factores ambientales y factores personales. Estos factores son fundamentales para evaluar el entorno y diseñar estrategias que mejoren el confort térmico, ya que afectan directamente la capacidad del cuerpo para mantener un equilibrio térmico adecuado.
 
 **Factores ambientales**
 
-Los factores ambientales incluyen la temperatura del aire, la temperatura radiante media, la velocidad del aire, la humedad relativa del aire, y la presión atmosférica [ASHRAE 55, -@ASHRAE55]. Estos factores son fundamentales para evaluar el entorno y diseñar estrategias que mejoren el confort térmico, ya que afectan directamente la capacidad del cuerpo para mantener un equilibrio térmico adecuado.
+Los factores ambientales incluyen la temperatura del aire, la temperatura radiante media, la velocidad del aire, la humedad relativa del aire, y la presión atmosférica [ASHRAE 55, -@ASHRAE55]. 
+
 
 - **Temperatura del aire:** Influye no solo en la sensación de calor o frío percibida a través de la piel, sino también en los procesos de transferencia de calor entre el individuo y el entorno que lo rodea. Para @Sim2016, @Choi2017 y @Liu2019, la temperatura ambiente es uno de los principales factores que afecta al confort térmico.
 
@@ -27,7 +28,7 @@ Los factores ambientales incluyen la temperatura del aire, la temperatura radian
 
 **Factores personales**
 
-Los factores personales incluyen la actividad física, la vestimenta, la edad, el sexo y aspectos culturales y socioeconómicos.
+Los factores personales más relevantes para el confort térmico son la actividad física y la vestimenta. Sin embargo, otros factores como la edad, el sexo, la complexión física, la aclimatación y los aspectos socioculturales y económicos también pueden influir, aunque en menor medida.
 
 - **Actividad física:** Influye directamente en la producción de calor del cuerpo. Una persona que realiza una actividad física intensa produce más calor que una persona en reposo. En el contexto de confort térmico, la producción de calor se mide en unidades de "*met*", donde 1 *met* equivale a la producción de energía térmica de una persona en reposo por unidad de área de la piel, aproximadamente 58.2 W/m² [ASHRAE, -@ASHRAE2009].
 
