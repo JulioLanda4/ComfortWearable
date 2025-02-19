@@ -3,14 +3,21 @@
 
 En este capítulo se describe el proceso completo de desarrollo, construcción y validación del reloj inteligente para la recopilación de datos de confort térmico presentado en esta tesis. La @sec-metodologia presenta una descripción detallada del reloj inteligente, la selección de los componentes y la justificación de su elección. En la @sec-construccion se desarrolla la etapa de diseño y construcción del dispositivo. La @sec-encuestas se centra en el diseño y la implementación de las encuestas mediante la interfaz gráfica, mientras que la @sec-calibracion detalla el proceso de calibración de los sensores. En la @sec-programacion se presenta una descripción de la lógica de programación del reloj inteligente, y en la @sec-instrucciones se proporcionan instrucciones de uso. Finalmente, en la @sec-validacion se verifica la funcionalidad del reloj inteligente para recopilar información de las encuestas de confort térmico y las mediciones de la temperatura de la piel y la frecuencia cardíaca para enviar estos datos a la plataforma ThingsBoard.
 
+\newline
+
 
 ## Metodología {#sec-metodologia}
+
+\newline
+
 1. **Descripción general del dispositivo**
 
 
 El dispositivo presentado en esta tesis es un prototipo de reloj inteligente diseñado específicamente para la investigación en el ámbito del confort térmico. Este dispositivo permite la recopilación de la temperatura de la piel en la parte posterior de la muñeca y la frecuencia cardíaca, variables cuya relación con el confort térmico se presentó en el capítulo anterior. Además, este dispositivo realiza encuestas periódicas simplificadas de confort térmico mediante una interfaz de usuario intuitiva, que permite responder la encuesta de forma rápida y sencilla. La recopilación de estos datos se realiza en la plataforma de Internet de las Cosas (IoT, por sus siglas en inglés) llamada ThingsBoard, lo que permite la creación de una base de datos de confort térmico para diversos bioclimas, incluyendo el bioclima cálido semihúmedo [@infonavit2024regiones] en Temixco, Morelos, donde se lleva a cabo el desarrollo de este reloj inteligente. Esta base de datos facilitará estudios para el entendimiento del confort térmico y el desarrollo de modelos de confort para este tipo de bioclima, así como de modelos de confort personalizados.
 
 Además, este dispositivo realiza encuestas periódicas simplificadas de confort térmico mediante una interfaz de usuario intuitiva, que permite responder la encuesta de forma rápida y sencilla. La recopilación de estos datos se realiza en la plataforma de Internet de las Cosas (IoT, por sus siglas en inglés) llamada ThingsBoard, lo que permite la creación de una base de datos de confort térmico en diversas zonas bioclimáticas, incluyendo el bioclima cálido semihúmedo de Temixco, Morelos [@infonavit2024regiones]. Esta base de datos facilitará estudios para el entendimiento del confort térmico y el desarrollo de modelos de confort aplicables a distintos bioclimas, así como de modelos de confort personalizados.
+
+\newline
 
 2. **Selección de componentes** 
 
@@ -24,6 +31,8 @@ Los componentes básicos del reloj inteligente son:
 * Sensor de frecuencia cardíaca
 * Circuito vibrador
 * Batería
+
+\newline
 
 **Placa de desarrollo**
 
@@ -63,6 +72,8 @@ Si bien todas las placas presentadas son opciones viables, Seeed Studio ha desar
 | Temperatura de trabajo                     | -40°C a 85°C                                                                          |
 : Especificaciones técnicas detalladas de la placa XIAO ESP32C3. {#tbl-esp .hover .sm} 
 
+\newline
+
 
 **Pantalla**
 
@@ -77,6 +88,8 @@ La elección de la pantalla debe alinearse con los criterios establecidos para l
 
 
 La pantalla seleccionada es la Seeed Studio Round Display for XIAO. Este modelo es compatible con la placa XIAO ESP32C3, elegida previamente, gracias al enfoque de Seeed Studio para desarrollar un ecosistema de dispositivos orientado a aplicaciones portátiles. La compatibilidad entre los componentes, tecnología táctil y diseño de la pantalla, logran que la pantalla se ajuste a las necesidades del proyecto.
+
+\newline
 
 
 **Sensor de temperatura**
@@ -95,6 +108,8 @@ La @tbl-temp muestra una comparación entre distintos sensores de temperatura qu
 
 Tras un análisis detallado, se selecciona el sensor GY-906 debido a su tamaño compacto, su tecnología infrarroja y comunicación digital por I2C. Aunque el termistor NTC MF52AT ofrece una alternativa viable, se descarta por ser un sensor analógico. Dado que el reloj inteligente está diseñado para operar en un espacio reducido, cualquier interferencia en las conexiones internas podría afectar la precisión de los sensores analógicos. Por esta razón, se opta por el GY-906, que garantiza transmisión de datos en entornos compactos.
 
+\newline
+
 **Sensor de frecuencia cardíaca**
 
 
@@ -111,6 +126,8 @@ Los fotopletismografía utilizada en sensores ópticos se ha consolidado como un
 
 El MAX30102 se elige como la mejor opción para este proyecto por su equilibrio entre funcionalidad, resolución ADC y costo. A comparación del MAX30105, este es más económico y fácil de conseguir en México, mientras que el MAX30100 se encuentra aproximadamente por el mismo precio. Además, el MAX30102 ofrece mejoras significativas respecto al MAX30100, tanto en la resolución como en el tipo de almacenamiento. Tanto la funcionalidad de detección de partículas, como la medición de oxigenación en la sangre (SpO2) no son variables que se requieran para la investigación planteada en esta tesis, pero podrían ser variables de interés en investigaciones futuras.
 
+\newline
+
 
 **Circuito vibrador**
 
@@ -118,7 +135,7 @@ El reloj inteligente presentado en esta tesis cuenta con un sistema de alarma si
 
 ![Circuito de control del motor vibrador.](../Imagenes/Circuito_motor.png){#fig-circuito_motor width=50%}
 
-
+\newline
 
 **Batería**
 
@@ -127,6 +144,8 @@ El uso de baterías de polímero de litio (LiPo) es ampliamente utilizado en dis
 La XIAO ESP32C3 presenta un consumo promedio de 74.7 mA durante su operación activa [@xiaoesp32c3], mientras que la pantalla XIAO Round Display demanda aproximadamente 70.0 mA [@xiaodisplay]. Por su parte, el sensor GY-906 tiene un consumo de corriente bajo, en el rango de 1.0 a 2.0 mA [@mlx90614_datasheet], el sensor MAX30102 consume entre 0.6 y 1.2 mA durante la medición de la frecuencia cardíaca [@max30102_datasheet]. Adicionalmente, el motor vibrador registra un consumo estimado de 84.0 mA [@uelectronics_vibration_motor], dependiendo de la intensidad de la vibración y la carga aplicada.
 
 El consumo total del dispositivo en condiciones de operación máxima puede alcanzar 232.0 mA. Sin embargo, este nivel de consumo es poco probable alcanzarse durante el uso típico del dispositivo,ya que, durante la mayor parte del tiempo los sensores y la pantalla permanecen inactivos y solo se encenderan al momento de llevar a cabo sus mediciones; el motor vibrador se enciende únicamente por breves periodos cada hora. Con el fin de asegurar autonomía del dispositivo y evitar interrupciones en su funcionamiento, se selecciona una batería de 650.0 mAh. Este capacidad satisface los requisitos energéticos, permitiendo el uso prolongado del reloj inteligente. Además, la batería seleccionada cumple en tamaño y peso, ajustándose adecuadamente al diseño del dispositivo.
+
+\newline
 
 
 La @tbl-componentes-seleccionados muestra todos los componentes seleccionados para el desarrollo del dispositivo. 
@@ -142,13 +161,15 @@ La @tbl-componentes-seleccionados muestra todos los componentes seleccionados pa
 | Batería 3.7 V, 650 mAh     | Batería LiPo recargable      |
 : Tabla de componentes seleccionados.  {#tbl-componentes-seleccionados .hover .sm}
 
-
+\newline
 
 
 3. **Diseño del dispositivo**
 
 
-Una vez seleccionados los componentes básicos del reloj inteligente, el diseño se enfoca en crear una carcasa compacta que permita alojar los componentes sin interferencias entre ellos y en desarrollar los circuitos internos de conexión.  \newline
+Una vez seleccionados los componentes básicos del reloj inteligente, el diseño se enfoca en crear una carcasa compacta que permita alojar los componentes sin interferencias entre ellos y en desarrollar los circuitos internos de conexión.  
+
+\newline
 
 
 **Carcasa**
@@ -165,6 +186,8 @@ En la @fig-partescase se presentan las tres partes principales de la carcasa jun
 
 
 ![Partes de la carcasa del dispositivo.](../Imagenes/PartesCase.jpg){#fig-partescase width=75%}
+
+\newline
 
 **Diseño de los circuitos**
 
@@ -191,6 +214,8 @@ Finalmente, en la @fig-DiagramaBloques se muestra el diagrama funcional de bloqu
 
 ![Diagrama funcional de bloques del reloj inteligente.](../Imagenes/DiagramaBloques.png){#fig-DiagramaBloques}
 
+\newline
+
 
 ## Construcción del dispositivo {#sec-construccion}
 
@@ -210,9 +235,13 @@ La @fig-relojfuncionando presenta el reloj inteligente completamente ensamblado 
 ![Reloj inteligente en funcionamiento, mostrando la interfaz principal.](../Imagenes/Reloj-funcionando.jpg){#fig-relojfuncionando width=50%}
 
 
+\newline
+
 ## Encuestas e interfaz {#sec-encuestas}
 
 Una de las principales características del reloj inteligente desarrollado, es la capacidad de realizar encuestas de confort térmico de manera periódica y en condiciones reales con el propósito de recolectar datos que permitan estudiar la percepción de confort térmico en el Instituto de Energías Renovables (IER) de la UNAM. A continuación se describe la metodología de implementación de las encuestas, la lógica de la interfaz y las funcionalidades que permiten la interacción eficiente entre el usuario y el dispositivo.
+
+\newline
 
 1. **Diseño de las encuestas**
 
@@ -277,6 +306,8 @@ La encuesta consta de cinco preguntas. Las preguntas seleccionadas se basan en l
 
 - **Aceptación térmica**: Presenta la pregunta: "¿Aceptas la sensación térmica actual?", donde el usuario puede responder "Sí" o "No". Esta pregunta busca evaluar si, independientemente de la sensación térmica reportada, el usuario la percibe como aceptable.
 
+\newline
+
 2. **Interfaz de usuario**
 
 La interfaz del dispositivo ha sido diseñada utilizando la biblioteca LVGL, que ofrece herramientas para la creación de interfaces gráficas en microcontroladores integrados con pantallas táctiles. Cada una de las preguntas descritas previamente se presenta en una pantalla distinta, permitiendo al usuario navegar de manera intuitiva y sencilla. La interfaz se diseñó con los siguientes elementos: 
@@ -285,15 +316,21 @@ La interfaz del dispositivo ha sido diseñada utilizando la biblioteca LVGL, que
 
 - Interacción con pantallas: Cada pantalla que presenta una lista predefinida de opciones cuenta con botones para moverse entre las diferentes opciones disponibles. Esto permite al usuario seleccionar fácilmente la opción deseada, asegurando una interacción fluida y precisa con el dispositivo.
 
+\newline
+
 3. **Funcionalidades adicionales y validación**
 
 Una vez que se completa la encuesta, al pulsar el botón "Finalizar", aparece un mensaje emergente que solicita al usuario mantenerse inmóvil mientras que los sensores de temperatura de la piel (GY-906) y de frecuencia cardíaca (MAX30102) llevan a cabo sus mediciones correspondientes, estas mediciones se realizan en un lapso de diez segundos. Los resultados se muestran al usuario para su validación. Si el usuario considera que los resultados son válidos, puede enviarlos; de lo contrario, tiene la opción de repetir las mediciones.
 
 Los datos recolectados son enviados a la plataforma ThingsBoard para su almacenamiento y análisis posterior. Esta funcionalidad permite construir una base de datos que facilite el estudio del confort térmico en diferentes espacios y condiciones dentro del IER.
 
+\newline
+
 ## Calibración {#sec-calibracion}
 
 Esta sección describe el proceso de calibración de los sensores GY-906 y MAX30102, utilizados para medir la temperatura de la piel y la frecuencia cardíaca, respectivamente.
+
+\newline
 
 
 1. **Calibración del sensor GY-906**
@@ -342,7 +379,9 @@ Se realiza un análisis inicial entre las mediciones obtenidas por el termómetr
 - Error Medio (EM): -2.1°C
 - Error Absoluto Medio (EAM): 2.1°C 
 
-La calibración se lleva a cabo de dos maneras, sin eliminar valores atípicos y eliminando valores atípicos para comparar sus resultados. 
+La calibración se lleva a cabo de dos maneras, sin eliminar valores atípicos y eliminando valores atípicos para comparar sus resultados.
+
+\newline
 
 **Sin eliminar valores atípicos**
 
@@ -355,6 +394,8 @@ Con estos valores, se ajustan las mediciones del sensor empleando la función de
 
 - EM: $3.2 \times 10^{-15}°C$
 - EAM: 0.3°C
+
+\newline
 
 **Eliminando valores atípicos**
 
@@ -496,6 +537,7 @@ plt.tight_layout()
 plt.show()
 ```
 
+\newline
 
 2. **Calibración del Sensor MAX30102**
 
@@ -527,11 +569,15 @@ La @tbl-max30102 muestra el error absoluto medio (EAM) obtenido para diferentes 
 
 Posteriormente, con `RATE\_SIZE` fijado en 6, se ajusta el valor de `sampleAverage` de 4 a 8, logrando un EAM de 3.6 bpm, lo cual representa una mejora en la señal. La configuración final incluye los siguientes valores: `ledBrightness` en 31, `sampleAverage` en 8, `ledMode` en 2, `sampleRate` en 400, `pulseWidth` en 411, `adcRange` en 2048 y `RATE\_SIZE` en 6.
 
+\newline
+
 
 ## Lógica de programación {#sec-programacion}
 
 
 A continuación, se describe el funcionamiento general del reloj inteligente, detallando la estructura del programa y la función de cada uno de los archivos que componen el proyecto desarrollado en Arduino. También se presentan los diagramas de flujo de los procesos clave, como la función `actualizar_hora` y el procedimiento para responder una encuesta y medir la temperatura de la piel y la frecuencia cardíaca. Además, se destacan aspectos relevantes, como los horarios programados para las encuestas y las estrategias implementadas para el ahorro de la batería del reloj inteligente.
+
+\newline
 
 1. **Descripción de la funcionalidad de los archivos del proyecto**
 
@@ -561,11 +607,15 @@ El proyecto se desarrolla en Arduino, empleando principalmente la librería LVGL
 
 El reloj está programado para realizar encuestas de confort térmico cada hora entre las 08:30 a.m. y las 09:30 p.m. Programar las encuestas para realizarse en el minuto 30 de cada hora permite proporcionar al usuario un periodo de adaptación térmica previo a responder la primera encuesta, asumiendo que el usuario entra a un espacio o salón a la hora en punto. Esto se debe a que las actividades en el IER suelen iniciar en horas exactas, lo que asegura que los usuarios tengan tiempo suficiente para adaptar al lugar su sensación térmica antes de contestar la primera encuesta.
 
+\newline
+
 2. **Descripción de la función actualizar_hora**
 
 La función denominada `actualizar_hora`, que se encuentra en el archivo `ui_events.c`, se encarga de actualizar la hora en pantalla, además habilita o desahibilita el botón para realizar la encuesta según el horario o si esta ya fue o no contestada. Esta función también es la encargada de emitir la alarma para alertar al usuario la disponibilidad de una nueva encuesta. El diagram de flujo de esta función se presenta en la @fig-actualizarhora.
 
 ![Diagrama de flujo de la función actualizar_hora.](../Imagenes/Actualizar_hora.svg){#fig-actualizarhora width=50%}
+
+\newline
 
 3. **Descripción del proceso para contestar una encuesta, medir la temperatura de la piel y la frecuencia cardíaca, y mandar los datos a ThingsBoard**
 
@@ -578,16 +628,20 @@ En caso de que las mediciones de los sensores no sean aceptadas por el usuario, 
 
 ![Diagrama de flujo de encuesta y medición de variables.](../Imagenes/Iniciar_encuesta.svg){#fig-iniciarencuesta}
 
+\newline
+
 4. **Estrategias para la optimización del consumo de energía del reloj inteligente**
 
 Para optimizar el consumo de energía, se implementan dos estrategias principales. La primera consiste en mantener la pantalla del reloj apagada mientras el dispositivo está en reposo. Si la pantalla está encendida y no se detecta actividad durante más de 10 segundos, se apaga automáticamente. No obstante, el usuario puede reactivarla en cualquier momento con un simple toque para consultar la hora. La segunda estrategia consiste en mantener apagados el sensor de temperatura (GY-906) y el sensor de frecuencia cardíaca (MAX30102), activándose únicamente durante el proceso de medición de las variables fisiológicas.
 
-
+\newline
 
 ## Instrucciones de uso {#sec-instrucciones}
 
 
 El procedimiento de configuración e interacción con el reloj inteligente se puede dividir en cuatro etapas. La primera etapa consiste en la preparación del entorno de desarrollo, que implica la instalación del software Arduino con las paqueterías y librerías necesarias, así como la configuración del dispositivo en la plataforma ThingsBoard. La segunda etapa se centra en el registro de los datos del usuario mediante un formulario de Google. La tercera etapa corresponde a la configuración y carga del código a la placa de desarrollo. Por última, la cuarta etapa consiste en las instrucciones generales para interactuar con el dispositivo a través de sus diferentes pantallas.
+
+\newline
 
 1. **Preparación del entorno de desarrollo**
 
@@ -628,6 +682,8 @@ Posteriormente, se configuran las librerías necesarias para el proyecto. Es imp
 
 Una vez configurado el entorno de Arduino, es necesario registrar el dispositivo en la plataforma IoT ThingsBoard instalada en los servidores del IER. Se requiere una cuenta activa e iniciar sesión en el servidor de ThingsBoard del IER. Una vez dentro, se accede a la sección "Devices" y se selecciona "Add new device". En la ventana de configuración, es fundamental asignar un nombre que identifique claramente el reloj inteligente asociado al usuario. Además, se puede optar por utilizar el token generado automáticamente por ThingsBoard o definir uno personalizado. Este token es indispensable para enlazar el reloj inteligente con la plataforma.
 
+\newline
+
 2. **Registro de datos del usuario**
 
 Al asignar el reloj inteligente a un usuario, es necesario recopilar información básica sobre este. Para ello, se diseña un formulario que debe ser completado con los datos del usuario una vez que se le ha asignado el dispositivo. Las preguntas incluidas en el formulario son las siguientes:
@@ -653,6 +709,7 @@ https://forms.gle/ZsjcZm1dNc3Wr1so7
 
 <!-- Un ejemplo del formulario puede consultarse en el siguiente enlace: <a href="https://forms.gle/ZsjcZm1dNc3Wr1so7" target="_blank">formulario de muestra</a>. --> 
 
+\newline
 
 3. **Configuración y carga del código**
 
@@ -669,6 +726,8 @@ const char* TOKEN = "TOKEN_DISPOSITIVO";
 const char* THINGSBOARD_SERVER = "URL_SERVIDOR";
 ```
 Una vez realizadas estas configuraciones, el código se carga en la placa de desarrollo seleccionando la opción de placa `XIAO_ESP32C3` en el Arduino IDE.
+
+\newline
 
 4. **Instrucciones generales de interacción con el reloj inteligente**
 
@@ -688,10 +747,13 @@ Adicionalmente, el reloj cuenta con dos ventanas emergentes. La primera ventana 
 
 ![Interfaz del reloj inteligente: (a) pantalla principal, (b) activación de la encuesta, (c) pregunta sobre la vestimenta actual, (d) pregunta sobre la actividad realizada, (e) pregunta sobre la ubicación, (f) pregunta sobre la sensación térmica, (h) pregunta sobre la aceptación de la sensación térmica, (i) ventana emergente indicando el inicio de las mediciones y (j) ventana emergente con los resultados de las mediciones.](../Imagenes/Pantallas.png){#fig-pantallas}
 
+\newline
+
 ## Validación del funcionamiento del reloj inteligente {#sec-validacion}
 
 Los datos generados por el reloj inteligente se almacenan en la plataforma ThingsBoard, desde donde pueden descargarse para su posterior análisis. Para facilitar este proceso, se diseña una libreta de Jupyter, disponible en la carpeta  <a href="https://github.com/JulioLanda4/IoT_Reloj_Confort/tree/main/Thingsboard/descarga_thingsboard" target="_blank">descarga_thingsboard</a> del repositorio. Esta libreta, denominada `Descarga_datos.ipynb`, está programada en Python y requiere realizar configuraciones previas para su ejecución.
 
+\newline
 
 **Requisitos previos**
 
@@ -712,6 +774,8 @@ Con las librerías instaladas, se procede a configurar el archivo `config.ini`, 
 - **password:** Contraseña de la cuenta
 - **host:** Dirección del servidor de ThingsBoard
 - **port:** Puerto del servidor
+
+\newline
 
 **Configuración de la libreta** 
 
@@ -735,10 +799,13 @@ nombre_dispositivo = 'Nombre del dispositivo'
 fecha1 = parse("2024-01-01")  
 fecha2 = datetime.datetime.now()
 ```
+\newline
 
 **Descarga y procesamiento de datos**
 
 Una vez configurada la libreta, se realiza la descarga de los datos almacenados en ThingsBoard dentro del rango de fechas especificado. Posteriormente, se genera un dataframe que combina estas mediciones con las respuestas obtenidas del formulario. Este proceso permite validar que el dispositivo es capaz de registrar encuestas, medir variables fisiológicas y enviar correctamente los datos a ThingsBoard para su almacenamiento.
+
+\newline
 
 **Resultados de la validación** 
 
