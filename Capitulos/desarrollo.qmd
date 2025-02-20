@@ -200,11 +200,14 @@ La construcción del reloj inteligente se puede separar en tres etapas: La impre
 
 En el artículo de @Landa2024 (en revisión en la revista HardwareX), se presenta información detallada sobre el diseño y los pasos para la construcción del dispositivo.
 
-La @fig-relojfuncionando presenta el reloj inteligente completamente ensamblado y en funcionamiento, mostrando su ajuste en la muñeca del usuario, la interfaz gráfica del reloj y la funcionalidad práctica de su diseño.
+La @fig-relojarmado muestra el reloj completamente ensamblado desde distintas vistas, en donde se observan los sensores de temperatura de la piel (GY-906) y de frecuencia cardiaca (MAX30102), la pantalla, el puerto de carga y el interruptor de encendido y apagado.
+
+![Reloj inteligente ensamblado: a) vista frontal del reloj inteligente, b) vista superior del reloj inteligente, c) vista inferior del reloj inteligente.](../Imagenes/Reloj%20armado.png){#fig-relojarmado}
+
+La @fig-relojfuncionando presenta el reloj inteligente en funcionamiento, mostrando su ajuste en la muñeca del usuario, la interfaz gráfica del reloj y la funcionalidad práctica de su diseño.
 
 
 ![Reloj inteligente en funcionamiento, mostrando la interfaz principal.](../Imagenes/Reloj-funcionando.jpg){#fig-relojfuncionando width=50%}
-
 
 
 ## Encuestas e interfaz {#sec-encuestas}

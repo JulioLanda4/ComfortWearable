@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.32">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Antecedentes y marco teórico  – Reloj inteligente IoT basado en tecnologías abiertas para la recopilación de datos de confort térmico</title>
+<title>Reloj inteligente IoT basado en tecnologías abiertas para la recopilación de datos de confort térmico - 2&nbsp; Antecedentes y marco teórico </title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,7 +24,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -57,23 +56,17 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2486e1f0a3ee9ee1fc393803a1361cdb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e2a55d7d189d9ada6bd43e0674cebc09.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "limit": 20,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -82,7 +75,6 @@ div.csl-indent {
     "search-more-match-text": "resultado adicional en este documento",
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
     "search-submit-button-title": "Enviar",
     "search-label": "Buscar"
@@ -95,41 +87,9 @@ div.csl-indent {
 }
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
-<script>
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    document.body.classList.add('hypothesis-enabled');
-  });
-</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -139,13 +99,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Capitulos/confort_termico.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Antecedentes y marco teórico </span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Capitulos/confort_termico.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Antecedentes y marco teórico \newline</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -154,7 +114,7 @@ window.Quarto = {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Reloj inteligente IoT basado en tecnologías abiertas para la recopilación de datos de confort térmico</a> 
@@ -206,7 +166,7 @@ window.Quarto = {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -248,13 +208,12 @@ window.Quarto = {
   </div>
   
 
-
 </header>
-
 
 <section id="confort-térmico" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="confort-térmico"><span class="header-section-number">2.1</span> Confort térmico</h2>
 <p>El confort térmico es un concepto subjetivo, ya que depende de las percepciones individuales y está influenciado por factores ambientales y personales. La sociedad estadounidense de ingenieros de calefacción, refrigeración y aire acondicionado (ASHRAE, por sus siglas en inglés) lo define como <em>la condición mental que expresa satisfacción con el ambiente térmico</em> <span class="citation" data-cites="ASHRAE55">(ASHRAE 55, <a href="references.html#ref-ASHRAE55" role="doc-biblioref">2017</a>)</span>, mientras que la organización internacional de normalización (ISO, por sus siglas en inglés) en su norma 7730 lo describe como <em>la sensación de bienestar térmico que experimenta una persona en un entorno dado, considerando aspectos físicos, fisiológicos y psicológicos</em> <span class="citation" data-cites="ISO7730">(<a href="references.html#ref-ISO7730" role="doc-biblioref">2005</a>)</span>. Podemos decir entonces que el confort térmico es la sensación de satisfacción o insatisfacción con el ambiente térmico y está influenciado por percepciones individuales y como los individuos reaccionan ante las condiciones térmicas de su entorno.</p>
+<p>Para describir las condiciones térmicas aceptables <span class="citation" data-cites="Morillon2002">D. Morillón y Miranda (<a href="references.html#ref-Morillon2002" role="doc-biblioref">2002</a>)</span> definieron la zona de confort térmico como la zona que establece un rango de temperaturas dentro de cual la mayoría de las personas experimentan una sensación térmica neutral.</p>
 <p>El confort térmico es más complejo que un simple estado de satisfacción o insatisfacción, se puede considerar un rango de sensaciones que van desde una percepción extrema de frío hasta una sensación de extremo calor. Por otro lado, el equilibrio térmico hace referencia al estado en el que el cuerpo humano mantiene su temperatura interna estable a través de procesos fisiológicos incluyendo la sudoración, la vasoconstricción y la vasodilatación, así como procesos físicos de transferencia de calor, incluyendo la conducción, la convección y la radiación, que le permitan adaptarse a los cambios en el entorno <span class="citation" data-cites="tomonori_sakoi__2023">(<a href="references.html#ref-tomonori_sakoi__2023" role="doc-biblioref">Sakoi et&nbsp;al. 2023</a>)</span>. El equilibrio térmico es fundamental para el bienestar fisiológico, pero también es un factor que influye en la sensación de confort térmico de cada individuo. El confort térmico depende de factores ambientales que incluyen la temperatura radiante media, la velocidad del aire, la humedad relativa y la presión atmosférica, así como de factores personales como la actividad física y el nivel de aislamiento térmico de la ropa, Sin embargo, la percepción del confort térmico también puede verse influenciada en función de las experiencias, expectativas y contexto personal de cada individuo <span class="citation" data-cites="ASHRAE55">(ASHRAE 55, <a href="references.html#ref-ASHRAE55" role="doc-biblioref">2017</a>)</span>.</p>
 <p>Los factores que afectan la sensación de confort térmico se pueden agrupar en dos categorías: factores ambientales y factores personales. Estos factores son fundamentales para evaluar el entorno y diseñar estrategias que mejoren el confort térmico, ya que afectan directamente la capacidad del cuerpo para mantener un equilibrio térmico adecuado. </p>
 <p><strong>Factores ambientales</strong></p>
@@ -285,15 +244,11 @@ window.Quarto = {
 <section id="escalas-para-el-estado-personal" class="level3" data-number="2.2.1">
 <h3 data-number="2.2.1" class="anchored" data-anchor-id="escalas-para-el-estado-personal"><span class="header-section-number">2.2.1</span> Escalas para el estado personal </h3>
 <ol type="1">
-<li><strong>Escala de percepción del estado personal:</strong> <em>¿Cómo te sientes ahora?</em>. Se utiliza para comprender la percepción subjetiva del estado personal de un individuo en un entorno específico. La escala puede ser unipolar o bipolar según lo requerido. En el caso de la escala unipolar, se utiliza una graduación de cuatro grados, que puede extenderse a cinco de ser necesario. El punto de origen se establece en 0, que representa un estado neutro, mientras que los grados de intensidad se enumeran como 1, 2, 3 y opcionalmente 4. En la <a href="#tbl-unipolar" class="quarto-xref">Tabla&nbsp;<span>2.1</span></a> se observa la estructura para la escala unipolar.</li>
+<li><strong>Escala de percepción del estado personal:</strong> <em>¿Cómo te sientes ahora?</em>. Se utiliza para comprender la percepción subjetiva del estado personal de un individuo en un entorno específico. La escala puede ser unipolar o bipolar según lo requerido. En el caso de la escala unipolar, se utiliza una graduación de cuatro grados, que puede extenderse a cinco de ser necesario. El punto de origen se establece en 0, que representa un estado neutro, mientras que los grados de intensidad se enumeran como 1, 2, 3 y opcionalmente 4. En la <a href="#tbl-unipolar">Tabla&nbsp;<span>2.1</span></a> se observa la estructura para la escala unipolar.</li>
 </ol>
-<div id="tbl-unipolar" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-unipolar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;2.1: Escala unipolar
-</figcaption>
-<div aria-describedby="tbl-unipolar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
+<div id="tbl-unipolar" class="anchored">
+<table class="table">
+<caption>Tabla&nbsp;2.1: Escala unipolar</caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Punto de origen</th>
@@ -308,16 +263,10 @@ Tabla&nbsp;2.1: Escala unipolar
 </tbody>
 </table>
 </div>
-</figure>
-</div>
-<p>Por otra parte, si la escala es bipolar, se utiliza una graduación de siete grados, que puede ampliarse hasta nueve de ser necesario. El punto de indiferencia también es 0, pero esta escala se divide en dos polos opuestos: el polo A y el polo B. Los grados negativos de intensidad van de -1 a -3 y -4 opcionalmente, siendo -4 el más cercano al polo A y -1 el más cercano a 0. Los grados positivos de intensidad van de 1 a 3 y 4 opcionalmente, siendo 4 el más cercano al polo B y 1 el más cercano a 0. El 0 representa la ausencia de sensación en ambas escalas. En la <a href="#tbl-bipolar" class="quarto-xref">Tabla&nbsp;<span>2.2</span></a> se observa la estructura para la escala bipolar.</p>
-<div id="tbl-bipolar" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-bipolar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;2.2: Escala bipolar
-</figcaption>
-<div aria-describedby="tbl-bipolar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
+<p>Por otra parte, si la escala es bipolar, se utiliza una graduación de siete grados, que puede ampliarse hasta nueve de ser necesario. El punto de indiferencia también es 0, pero esta escala se divide en dos polos opuestos: el polo A y el polo B. Los grados negativos de intensidad van de -1 a -3 y -4 opcionalmente, siendo -4 el más cercano al polo A y -1 el más cercano a 0. Los grados positivos de intensidad van de 1 a 3 y 4 opcionalmente, siendo 4 el más cercano al polo B y 1 el más cercano a 0. El 0 representa la ausencia de sensación en ambas escalas. En la <a href="#tbl-bipolar">Tabla&nbsp;<span>2.2</span></a> se observa la estructura para la escala bipolar.</p>
+<div id="tbl-bipolar" class="anchored">
+<table class="table">
+<caption>Tabla&nbsp;2.2: Escala bipolar</caption>
 <colgroup>
 <col style="width: 9%">
 <col style="width: 26%">
@@ -345,11 +294,9 @@ Tabla&nbsp;2.2: Escala bipolar
 </tbody>
 </table>
 </div>
-</figure>
-</div>
 <ol start="2" type="1">
-<li><p><strong>Escala evaluativa:</strong> <em>¿Cómo te encuentras?</em>. Se utiliza para medir el nivel de comodidad en un entorno. Es una escala unipolar de cuatro grados ampliable a cinco (<a href="#tbl-unipolar" class="quarto-xref">Tabla&nbsp;<span>2.1</span></a>). El 0 representa comodidad y el polo representa la incomodidad extrema.</p></li>
-<li><p><strong>Escala de preferencia:</strong> <em>¿Cómo preferirías estar?</em>. Utiliza una escala bipolar simétrica con siete grados para medir la preferencia de las personas respecto a ciertos aspectos del entorno. El 0 representa “sin cambio” en la preferencia (<a href="#tbl-bipolar" class="quarto-xref">Tabla&nbsp;<span>2.2</span></a>). </p></li>
+<li><p><strong>Escala evaluativa:</strong> <em>¿Cómo te encuentras?</em>. Se utiliza para medir el nivel de comodidad en un entorno. Es una escala unipolar de cuatro grados ampliable a cinco (<a href="#tbl-unipolar">Tabla&nbsp;<span>2.1</span></a>). El 0 representa comodidad y el polo representa la incomodidad extrema.</p></li>
+<li><p><strong>Escala de preferencia:</strong> <em>¿Cómo preferirías estar?</em>. Utiliza una escala bipolar simétrica con siete grados para medir la preferencia de las personas respecto a ciertos aspectos del entorno. El 0 representa “sin cambio” en la preferencia (<a href="#tbl-bipolar">Tabla&nbsp;<span>2.2</span></a>). </p></li>
 </ol>
 </section>
 <section id="escalas-para-describir-el-entorno-físico" class="level3" data-number="2.2.2">
@@ -417,17 +364,13 @@ v_{ar} = v_{air} + 0.3 \cdot (M - 1)
 <p><span id="eq-ppd"><span class="math display">\[
 PPD = 100 - 95 \cdot \exp\left(-0.03353 \cdot \text{PMV}^4 - 0.2179 \cdot \text{PMV}^2\right)
 \tag{2.6}\]</span></span></p>
-<p>ASHRAE 55 <span class="citation" data-cites="ASHRAE55">(<a href="references.html#ref-ASHRAE55" role="doc-biblioref">2017</a>)</span> indica que el <span class="math inline">\(PPD\)</span> no debe ser mayor al 10% en todos los edificios, mientras que la ISO 7730 <span class="citation" data-cites="ISO7730">(<a href="references.html#ref-ISO7730" role="doc-biblioref">2005</a>)</span> indica un valor menor al 10% para edificios nuevos y 15% para edificios ya existentes. En la <a href="#fig-pmvppd" class="quarto-xref">Figura&nbsp;<span>2.1</span></a> observamos la relación entre el PMV y el PPD.</p>
-<div id="cell-fig-pmvppd" class="cell" data-execution_count="1">
+<p>ASHRAE 55 <span class="citation" data-cites="ASHRAE55">(<a href="references.html#ref-ASHRAE55" role="doc-biblioref">2017</a>)</span> indica que el <span class="math inline">\(PPD\)</span> no debe ser mayor al 10% en todos los edificios, mientras que la ISO 7730 <span class="citation" data-cites="ISO7730">(<a href="references.html#ref-ISO7730" role="doc-biblioref">2005</a>)</span> indica un valor menor al 10% para edificios nuevos y 15% para edificios ya existentes. En la <a href="#fig-pmvppd">Figura&nbsp;<span>2.1</span></a> observamos la relación entre el PMV y el PPD.</p>
+<div class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
-<div id="fig-pmvppd" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-pmvppd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="confort_termico_files/figure-html/fig-pmvppd-output-1.png" width="567" height="567" class="figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pmvppd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;2.1: Relación PMV-PPD y los límites para edificaciones nuevas y existentes.
-</figcaption>
+<div id="fig-pmvppd" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="confort_termico_files/figure-html/fig-pmvppd-output-1.png" width="567" height="567" class="figure-img"></p>
+<figcaption class="figure-caption">Figura&nbsp;2.1: Relación PMV-PPD y los límites para edificaciones nuevas y existentes.</figcaption>
 </figure>
 </div>
 </div>
@@ -439,14 +382,10 @@ Figura&nbsp;2.1: Relación PMV-PPD y los límites para edificaciones nuevas y ex
 <p><strong>Adaptativos</strong></p>
 <p><strong><em>ePMV</em></strong></p>
 <p>El voto medio previsto extendido (ePMV, por sus siglas en inglés) es una modificación al PMV. Se observó que el PMV sobrestima el voto de sensación térmica de las personas en edificios sin aire acondicionado ubicados en climas cálidos. Para corregir esto, se introdujo un factor de expectativa (<em>e</em>), el cual ajusta los cálculos del PMV teniendo en cuenta factores como la duración del clima cálido a lo largo del año y la frecuencia con que las personas ingresan a otros edificios en la región que cuentan con sistemas de aire acondicionado <span class="citation" data-cites="Fanger2002">(<a href="references.html#ref-Fanger2002" role="doc-biblioref">Fanger y Toftum 2002</a>)</span>.</p>
-<p>En la <a href="#tbl-factor_e" class="quarto-xref">Tabla&nbsp;<span>2.3</span></a> se presentan los valores del factor <em>e</em> para diferentes escenarios.</p>
-<div id="tbl-factor_e" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-factor_e-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;2.3: Valores de <em>e</em> según la duración del período cálido y el acceso a edificios con aire acondicionado.
-</figcaption>
-<div aria-describedby="tbl-factor_e-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
+<p>En la <a href="#tbl-factor_e">Tabla&nbsp;<span>2.3</span></a> se presentan los valores del factor <em>e</em> para diferentes escenarios.</p>
+<div id="tbl-factor_e" class="anchored">
+<table class="table">
+<caption>Tabla&nbsp;2.3: Valores de <em>e</em> según la duración del período cálido y el acceso a edificios con aire acondicionado.</caption>
 <colgroup>
 <col style="width: 22%">
 <col style="width: 60%">
@@ -488,8 +427,6 @@ Tabla&nbsp;2.3: Valores de <em>e</em> según la duración del período cálido y
 </tbody>
 </table>
 </div>
-</figure>
-</div>
 <p>Para el cálculo del ePMV además del valor de <em>e</em>, se debe considerar el valor del estado metabólico del ocupante (MET). usualmente el MET se determina mediante tablas estandarizadas que asignan valores a diferentes actividades. Sin embargo, esto no considera el comportamiento natural de las personas que al sentir calor tienden a reducir su actividad de manera inconsciente para adaptarse al clima, disminuyendo así su tasa metabólica. La solución propuesta para el ePMV es considerar esta reducción en la tasa metabólica en ambientes cálidos. Se considera una disminución del 6.7%.</p>
 <p>De esta manera, para calcular el ePMV se deben seguir los siguientes pasos:</p>
 <ol type="1">
@@ -521,7 +458,7 @@ h = \frac{5}{9}(p_v- 10)
 <span class="math inline">\(h\)</span> : Factor de humedad (°C)<br>
 <span class="math inline">\(p_v\)</span> : Presión de vapor (mbar) </p>
 <p><strong>Índice Humidex Colima</strong></p>
-<p>El Índice Humidex Colima adapta la fórmula original del Índice Humidex Ontario <a href="#eq-humidex" class="quarto-xref">Ecuación&nbsp;<span>2.9</span></a> para responder a las condiciones climáticas de la región de Colima, México. A diferencia del índice original, que está diseñado exclusivamente para climas cálidos, este nuevo índice considera la época de frío. Este índice se basa en encuestas de confort realizadas en la ciudad de Colima. Estas encuestas se llevaron a cabo en diferentes estaciones del año <span class="citation" data-cites="gomez-azpetia2006adaptacion">(<a href="references.html#ref-gomez-azpetia2006adaptacion" role="doc-biblioref">Gómez-Azpetia, Gómez, y Peña 2006</a>)</span>. </p>
+<p>El Índice Humidex Colima adapta la fórmula original del Índice Humidex Ontario <a href="#eq-humidex">Ecuación&nbsp;<span>2.9</span></a> para responder a las condiciones climáticas de la región de Colima, México. A diferencia del índice original, que está diseñado exclusivamente para climas cálidos, este nuevo índice considera la época de frío. Este índice se basa en encuestas de confort realizadas en la ciudad de Colima. Estas encuestas se llevaron a cabo en diferentes estaciones del año <span class="citation" data-cites="gomez-azpetia2006adaptacion">(<a href="references.html#ref-gomez-azpetia2006adaptacion" role="doc-biblioref">Gómez-Azpetia, Gómez, y Peña 2006</a>)</span>. </p>
 </section>
 </section>
 <section id="variables-fisiológicas-como-indicadores-de-confort-térmico" class="level2" data-number="2.4">
@@ -532,9 +469,13 @@ h = \frac{5}{9}(p_v- 10)
 </section>
 <section id="modelos-de-confort-térmico-en-méxico" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="modelos-de-confort-térmico-en-méxico"><span class="header-section-number">2.5</span> Modelos de confort térmico en México</h2>
-<p>La mayoría de los modelos de confort térmico que se han desarrollado son para países europeos o Estados Unidos, en donde sus condiciones climáticas difieren de las condiciones climáticas de México (en donde se desarrolla este proyecto). Estos modelos y las investigaciones en confort térmico han servido como base para definir parámetros de confort térmico, sin embargo no siempre se adaptan a las diferentes condiciones climáticas. México es un país con una gran variedad de regiones bioclimáticas, desde regiones áridas, hasta regiones tropicales húmedas <span class="citation" data-cites="infonavit_regiones_bioclimaticas">(<a href="references.html#ref-infonavit_regiones_bioclimaticas" role="doc-biblioref">Fondo Nacional de la Vivienda para los Trabajadores (Infonavit) 2020</a>)</span>, lo cual requiere estudios específicos de confort térmico para cada una de estas regiones. Al día de hoy se han hecho diversos estudios en las diferentes regiones bioclimáticas del país. A continuación se presentan algunos de esos estudios llevados a cabo en México.</p>
-<p><span class="citation" data-cites="Rincon2019">Rincón-Martínez y Int (<a href="references.html#ref-Rincon2019" role="doc-biblioref">2019</a>)</span> llevaron a cabo experimentos para evaluar el confort térmico en una cámara de ambiente controlado y estudios de campo en la Universidad Autónoma Metropolitana (UAM) ubicada en la delegación Iztapalapa de la Ciudad de México, la cual cuenta con un clima templado húmedo, con la finalidad de comparar los resultados entre las condiciones del laboratorio con los estudios de campo. Los resultados mostraron una alta concordancia entre ambos escenarios, lo que sugiere que las condiciones de laboratorio pueden simular adecuadamente las condiciones de confort térmico bajo escenarios reales. <span class="citation" data-cites="Rincon2020">Martínez et&nbsp;al. (<a href="references.html#ref-Rincon2020" role="doc-biblioref">2020</a>)</span>, por su parte, desarrolló un modelo matemático adaptativo para estimar el confort térmico en edificios educativos naturalmente ventilados de Ensenada, Baja California, una región con un bioclima templado seco. Desarrollaron un modelo matemático en función de la temperatura operativa: <span class="math inline">\(𝑦 = 0.2159𝑥− 1.1115\)</span>, donde <span class="math inline">\(𝑦\)</span> representa la sensación térmica y <span class="math inline">\(𝑥\)</span> la temperatura operativa. <span class="citation" data-cites="Oropeza2017">Oropeza-Perez, Petzold-Rodriguez, y Bonilla-Lopez (<a href="references.html#ref-Oropeza2017" role="doc-biblioref">2017</a>)</span> desarrollaron un modelo adaptativo de confort térmico para cuatro principales regiones climáticas de México (clima árido, clima tropical seco, clima templado y clima tropical húmedo), analizaron edificios con y sin sistemas de aire acondicionado. Demostraron que el uso de estrategias pasivas, como la ventilación natural y el control solar, pueden mejorar el confort térmico en una edificación y reducir con ello la dependencia de sistema mecánicos de climatización. <span class="citation" data-cites="LopezPerez2019">López-Pérez, Flores-Prieto, y Ríos-Rojas (<a href="references.html#ref-LopezPerez2019" role="doc-biblioref">2019</a>)</span> hicieron algo similar al llevar a cabo un estudio en veinticiete edificaciones educativas en dos modos de operación, con aire acondicionado y con ventilación natural. El Estudio fue realizado durante la temporada cálida en Tuxtla Gutiérrez, Chiapas, en donde hay un bioclima tropical cálido húmedo. Concluyeron que los ocupantes pueden adaptarse a temperaturas interiores más altas que las recomendadas por estándares internacionales, especialmente cuando se implementan estrategias de ventilación natural. Destacando en estos dos estudios la importancia de las estrategias de diseño bioclimático. Finalmente, <span class="citation" data-cites="Zepeda2022">Zepeda-Gil y Natarajan (<a href="references.html#ref-Zepeda2022" role="doc-biblioref">2022</a>)</span> investigó el confort térmico en viviendas con ventilación natural en la Meseta Central Mexicana (Ciudad de México y alrededores), con un bioclima templado subhúmedo. El estudio mostró que solo el 42% de las horas de ocupación cumplían con los rangos de confort térmico aceptable, y este porcentaje disminuía significativamente durante el invierno. Los habitantes recurrían a estrategias como el uso de prendas adicionales para mantener el confort. El estudio subraya la importancia de implementar medidas de aislamiento térmico y el diseño de viviendas energéticamente eficientes para garantizar entornos interiores más saludables y reducir la dependencia de estrategias compensatorias ineficientes.</p>
-<p>A pesar de los avances logrados en diversos estudios de confort térmico realizados en México, es importante continuar investigando en las distintas regiones bioclimáticas del país. La gran diversidad climática de México requiere soluciones adaptadas a las características específicas de cada región, con el objetivo de garantizar tanto el confort térmico como la eficiencia energética. </p>
+<p>Los modelos de confort han sido estudiados y desarrollados en su mayoría en países europeos y en Estados Unidos, en donde las condiciones climáticas difieren a las encontradas en México. Si bien estos modelos han servido como referencia en el estudio del confort térmico en todo el mundo, aplicarlos en el contexto de los diferentes bioclimas que hay en México puede no dar los mejores resultados. México es un país ocn uan gran variedad de regiones bioclimáticas, como el bioclima templado , templado seco y cálido semihúmedo entre otros, según el listado del Instituto del Fondo Nacional de la Vivienda para los Trabajadores <span class="citation" data-cites="infonavit_regiones_bioclimaticas">(<a href="references.html#ref-infonavit_regiones_bioclimaticas" role="doc-biblioref">Fondo Nacional de la Vivienda para los Trabajadores (Infonavit) 2020</a>)</span>. Es por esta razón que se han llevado cabo estudios de confort térmico para las diferentes regiones bioclimáticas de México, así como el desarrollo de algunos modelos de confort adaptativos.</p>
+<p><span class="citation" data-cites="Zepeda2022">Zepeda-Gil y Natarajan (<a href="references.html#ref-Zepeda2022" role="doc-biblioref">2022</a>)</span> llevaron a cabo un estudio en donde analizaron el confort térmico en viviendas con ventilación natural ubicadas en Toluca, Estado de México, en donde se tiene un bioclima semifrío. Descubrieron que solo el 42% de las horas de ocupación se encontraban dentro de la zona de confort térmico y este porcentaje disminuía durante el invierno, lo que obligaba a los ocupantes a recurrir a estrategias como el uso de prendas adicionales para mantener el confort. Sin embargo, estas medidas no resultaban ser del todo efectivas durante la temporada invernal. Los resultados de este estudio resaltan la importancia de las estrategias de diseño bioclimático y de la necesidad de estudiar y entender el comportamiento térmico de las diferentes zonas bioclimáticas del país.</p>
+<p>Existen diversos estudios que han abordado el confort térmico en México. <span class="citation" data-cites="Rincon2019">Rincón-Martínez y Int (<a href="references.html#ref-Rincon2019" role="doc-biblioref">2019</a>)</span> llevaron a cabo un estudio en la Universidad Autónoma Metropolitana (UAM) ubicada en la ciudad de México con un bioclima templado subhúmedo. LLevaron a cabo mediciones para evaluar el confort térmico en laboratorio, así como en condiciones de campo para evaluar el confort térmico en espacios controlados y espacios no controlados. Encontraron una correlación entre ambas metodologías lo que indica que en este caso los experimentos de laboratorio pueden representar las condiciones reales de confort térmico en México.</p>
+<p>Por otro lado, <span class="citation" data-cites="Rincon2020">Martínez et&nbsp;al. (<a href="references.html#ref-Rincon2020" role="doc-biblioref">2020</a>)</span> desarrollaron un modelo de confort térmico adaptativo para edificios educativos en Ensenada, Baja California, una región con un bioclima templado seco. su modelo está basado en la temperatura operativa y es expresado a través de la ecuación: $ S_{t} = 0.2159T_{o} - 1.1115 $ donde <span class="math inline">\(S_{t}\)</span> representa la sensación térmica en °C y <span class="math inline">\(T_{o}\)</span> la temperatura operativa en °C.</p>
+<p>En otro estudio, <span class="citation" data-cites="Oropeza2017">Oropeza-Perez, Petzold-Rodriguez, y Bonilla-Lopez (<a href="references.html#ref-Oropeza2017" role="doc-biblioref">2017</a>)</span> consideraron cuatro principales regiones bioclimáticas en México diferenciadas entre ellas por sus condiciones de temperatura del aire al exterior y su humedad relativa del aire. Analizaron el confort térmico en estas cuatro regiones: árido, tropical seco, templado y tropical húmedo. Desarrollaron modelos de confort adaptativos para cada una de estas regiones, basados en datos recopilados en edificios en con y sin aire acondicionado. encontraron que la sensación de confort térmico varia entre regiones, además de que la implementación de estrategias pasivas, como la ventilación natural y el control solar, reducen la dependencia de sistemas mecánicos de climatización y pueden mejorar el confort térmico.</p>
+<p><span class="citation" data-cites="LopezPerez2019">López-Pérez, Flores-Prieto, y Ríos-Rojas (<a href="references.html#ref-LopezPerez2019" role="doc-biblioref">2019</a>)</span> llevaron a cabo otro estudio en edificaciones educativas en Tuxtla Gutierrez, Chiapas,, una región con un bioclima tropical húmedo. Realizaron su estudio durante la temporada cálida en edificios con y sin aire acondicionado. Analizaron la temperatura operativa en cada una de las edificaciones y encontraron que la temperatura operativa en estos edificios superaba frecuentemente los límites establecidos por las normas internacionales ASHRAE55 <span class="citation" data-cites="ASHRAE55">(<a href="references.html#ref-ASHRAE55" role="doc-biblioref">2017</a>)</span> y la ISO 7730 <span class="citation" data-cites="ISO7730">(<a href="references.html#ref-ISO7730" role="doc-biblioref">2005</a>)</span> sin que los ocupantes se sintieran en disconfort térmico, lo que sugiere la necesidad de ajustar estos criterios de confort térmico dependiendo de la región bioclimática.</p>
+<p>Si bien han existido avances en la investigación sobre el confort térmico en México, es necesario continuar explorando las distintas regiones bioclimáticas y seguir desarrollando modelos de confort adaptativos específicos para cada una de estas regiones. La diversidad climática del país requiere estudios personalizados que favorezcan el confort térmico y la eficiencia energética en las edificaciones dadas las condiciones especificas de cada región. </p>
 </section>
 <section id="dispositivos-portátiles-y-tecnologías-abiertas-en-el-confort-térmico" class="level2" data-number="2.6">
 <h2 data-number="2.6" class="anchored" data-anchor-id="dispositivos-portátiles-y-tecnologías-abiertas-en-el-confort-térmico"><span class="header-section-number">2.6</span> Dispositivos portátiles y tecnologías abiertas en el confort térmico</h2>
@@ -549,7 +490,7 @@ h = \frac{5}{9}(p_v- 10)
 <p>Estos estudios demuestran que el uso de dispositivos portátiles en el confort térmico está revolucionando la manera en que se obtienen datos fisiológicos, ambientales y datos de encuestas útiles para el estudio del confort térmico. Asimismo, el uso de tecnologías abiertas simplifica su integración al hacerlas más económicas y accesibles. Esto abre las puertas para el desarrollo de nuevos estudios, modelos adaptativos de confort térmico y diversas aplicaciones en esta área.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-ASHRAE2009" class="csl-entry" role="listitem">
 American Society of Heating, Refrigerating and Air-Conditioning Engineers. 2009. <em>ASHRAE Handbook—Fundamentals (SI Edition)</em>. Atlanta, GA: ASHRAE.
 </div>
@@ -573,6 +514,9 @@ Cho, Seonghun, Hong Jae Nam, Chuanqi Shi, Choong Yeon Kim, Sang-Hyuk Byun, Karen
 </div>
 <div id="ref-Choi2017" class="csl-entry" role="listitem">
 Choi, Joon Ho, y Dongwoo Yeom. 2017. <span>«Study of data-driven thermal sensation prediction model as a function of local body skin temperatures in a built environment»</span>. <em>Building and Environment</em> 121 (agosto): 130-47. <a href="https://doi.org/10.1016/J.BUILDENV.2017.05.004">https://doi.org/10.1016/J.BUILDENV.2017.05.004</a>.
+</div>
+<div id="ref-Morillon2002" class="csl-entry" role="listitem">
+D. Morillón, T. I. Castañeda, F. R. Saldaña, y M. U. Miranda. 2002. <span>«Atlas bioclimático de la República Mexicana»</span>. <em>Energías Renovables y Medio Ambiente</em> 10: 57-62.
 </div>
 <div id="ref-Fanger1970" class="csl-entry" role="listitem">
 Fanger, P. O. 1970. <em>Thermal Comfort: Analysis and Applications in Environmental Engineering</em>. Copenhagen: Danish Technical Press. <a href="https://archive.org/details/thermalcomfortan0000fang">https://archive.org/details/thermalcomfortan0000fang</a>.
@@ -700,7 +644,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -732,50 +687,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -785,17 +701,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -807,130 +714,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
+      return note.innerHTML;
     });
   }
       let selectedAnnoteEl;
@@ -974,7 +758,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1000,32 +783,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1087,18 +844,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../Capitulos/intro.html" class="pagination-link" aria-label="Introducción">
+      <a href="../Capitulos/intro.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../Capitulos/desarrollo.html" class="pagination-link" aria-label="Diseño, desarrollo y validación">
+      <a href="../Capitulos/desarrollo.html" class="pagination-link">
         <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Diseño, desarrollo y validación</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-
 
 
 
