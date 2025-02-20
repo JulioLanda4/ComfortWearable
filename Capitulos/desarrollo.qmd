@@ -30,7 +30,9 @@ Los componentes básicos del reloj inteligente son:
 
 La selección de la placa o tarjeta de desarrollo es una decisión crucial en el desarrollo del proyecto. Se requiere una placa de tamaño reducido que cumpla con características esenciales como conexión WiFi, velocidad de procesamiento, memoria ROM y comunicación I2C. Además, debe tener un bajo consumo energético para garantizar el uso portátil prolongado del reloj inteligente.
 
-Durante el proceso de selección se consideraron placas de desarrollo Arduino, ESP y Raspberry. En la tabla @tbl-placas se presenta una comparación de diferentes placas de desarrollo con las características requeridas. 
+Durante el proceso de selección se consideraron placas de desarrollo Arduino, ESP y Raspberry. En la tabla @tbl-placas se presenta una comparación de diferentes placas de desarrollo con las características requeridas.  \newline
+
+\clearpage
 
 <!-- La placa LILYGO TTGO, no cuenta con tecnología táctil, lo cual limita su utilidad para realizar encuestas de confort térmico. Por otro lado, la MCU RP2040 con LCD redondo de 1.28 pulgadas, aunque cuenta con una pantalla táctil, no ofrece conectividad WiFi, un requisito esencial. Aunque estas dos placas no son tomadas en cuanta por las razones ya mencionadas, sirven como referencia para la búsqueda de otras opciones. --> 
 
@@ -46,6 +48,8 @@ Durante el proceso de selección se consideraron placas de desarrollo Arduino, E
 : Comparación de características de conectividad y hardware en placas de desarrollo. {#tbl-placas .hover .sm}
 
 Si bien todas las placas presentadas son opciones viables, Seeed Studio ha desarrollado placas orientadas a aplicaciones de dispositivos portátiles. Estas placas tienen las características deseadas y además empatan perfectamente con las necesidades del proyecto debido a su tamaño compacto, conectividad, modos de bajo consumo y la posibilidad de la integración con una pantalla táctil desarrollada por la misma marca. Para el desarrollo del proyecto, se elige la XIAO ESP32C3 sobre la XIAO ESP32S3. Aunque la primera es menos potente, cumple con todos los requerimientos a un menor costo. Además, la limitada disponibilidad de la XIAO ESP32S3 en México durante el desarrollo del proyecto también influyó en la decisión. No obstante, la XIAO ESP32S3 podría ser usada sin ningún problema, ofreciendo incluso aumentar considerablemente la capacidad de memoria para futuras modificaciones o mejoras en el código. La @tbl-esp muestra las características específicas de la placa seleccionada.
+
+\clearpage
 
 
 | **Parámetro**                              | **Seeed Studio XIAO ESP32C3**                                                         |
@@ -97,7 +101,6 @@ La @tbl-temp muestra una comparación entre distintos sensores de temperatura qu
 Tras un análisis detallado, se selecciona el sensor GY-906 debido a su tamaño compacto, su tecnología infrarroja y comunicación digital por I2C. Aunque el termistor NTC MF52AT ofrece una alternativa viable, se descarta por ser un sensor analógico. Dado que el reloj inteligente está diseñado para operar en un espacio reducido, cualquier interferencia en las conexiones internas podría afectar la precisión de los sensores analógicos. Por esta razón, se opta por el GY-906, que garantiza transmisión de datos en entornos compactos. \newline
 
 **Sensor de frecuencia cardíaca**
-
 
 
 Los fotopletismografía utilizada en sensores ópticos se ha consolidado como una técnica confiable para la medición de la frecuencia cardíaca [@Allen_2007]. Por lo que se ha convertido en una opción para los dispositivos portátiles que desean medir la frecuencia cardíaca. Maxim Integrated ofrece la línea de sensores MAX3010X para este tipo de aplicaciones. Estos sensores destacan por su bajo consumo de energía, precio accesible, tamaño compacto y protocolo de comunicación I2C. La @tbl-pulso muestra las características de los sensores MAX20100, MAX30102 y MAX30105, incluyendo la resolución del convertidor analógico digital (ADC, por sus siglas en inglés).
@@ -185,7 +188,7 @@ El circuito de la batería integra un interruptor de encendido y apagado, que pe
 
 Finalmente, en la @fig-DiagramaBloques se muestra el diagrama funcional de bloques del dispositivo, destacando los componentes del dispositivo y sus conexiones, haciendo una separación entre los elementos internos y externos del reloj. Los componentes dentro del recuadro negro son aquellos que están contenidos físicamente dentro de la carcasa del reloj, como los sensores, la batería, la antena WIFI, el circuito de la pantalla, el circuito vibrador y el microcontrolador. Por otro lado, los elementos que se encuentran fuera del recuadro negro corresponden a los componentes externos con los cuales el usuario interactúa directamente, como el interruptor de encendido y apagado, la pantalla táctil y el puerto de carga USB-C. Además, el diagrama indica las interconexiones entre los diferentes componentes con líneas. Se destaca que la conexión entre los sensores y el microcontrolador es mediante el protocolo I2C.
 
-![Diagrama funcional de bloques del reloj inteligente.](../Imagenes/DiagramaBloques.png){#fig-DiagramaBloques}
+![Diagrama funcional de bloques del reloj inteligente.](../Imagenes/DiagramaBloques.png){#fig-DiagramaBloques width=80%}
 
 
 ## Construcción del dispositivo {#sec-construccion}
@@ -285,6 +288,8 @@ La interfaz del dispositivo ha sido diseñada utilizando la biblioteca LVGL, que
 
 - Interacción con pantallas: Cada pantalla que presenta una lista predefinida de opciones cuenta con botones para moverse entre las diferentes opciones disponibles. Esto permite al usuario seleccionar fácilmente la opción deseada, asegurando una interacción fluida y precisa con el dispositivo. \newline
 
+\clearpage
+
 3. **Funcionalidades adicionales y validación**
 
 Una vez que se completa la encuesta, al pulsar el botón "Finalizar", aparece un mensaje emergente que solicita al usuario mantenerse inmóvil mientras que los sensores de temperatura de la piel (GY-906) y de frecuencia cardíaca (MAX30102) llevan a cabo sus mediciones correspondientes, estas mediciones se realizan en un lapso de diez segundos. Los resultados se muestran al usuario para su validación. Si el usuario considera que los resultados son válidos, puede enviarlos; de lo contrario, tiene la opción de repetir las mediciones.
@@ -301,7 +306,7 @@ Para la calibración del sensor de temperatura GY-906, se emplea como referencia
 
 Para la campaña de medición, se configura el reloj inteligente con un botón que al ser pulsado inicia la medición del sensor GY-906. Este realiza 20 mediciones durante un intervalo de 10 segundos, calcula el promedio y almacena el resultado. De manera simultánea, la temperatura en el mismo punto es registrada manualmente utilizando el termómetro AET-R1B1. Tras esta campaña, se obtienen 115 pares de mediciones cuyos datos estadísticos se presentan en la @tbl-estadisticas.
 
-
+\clearpage
 
 
 | **Estadística**          | **GY-906 [°C]** | **AET-R1B1 [°C]** |
@@ -561,6 +566,8 @@ El proyecto se desarrolla en Arduino, empleando principalmente la librería LVGL
 
 El reloj está programado para realizar encuestas de confort térmico cada hora entre las 08:30 a.m. y las 09:30 p.m. Programar las encuestas para realizarse en el minuto 30 de cada hora permite proporcionar al usuario un periodo de adaptación térmica previo a responder la primera encuesta, asumiendo que el usuario entra a un espacio o salón a la hora en punto. Esto se debe a que las actividades en el IER suelen iniciar en horas exactas, lo que asegura que los usuarios tengan tiempo suficiente para adaptar al lugar su sensación térmica antes de contestar la primera encuesta. \newline
 
+\clearpage
+
 2. **Descripción de la función actualizar_hora**
 
 La función denominada `actualizar_hora`, que se encuentra en el archivo `ui_events.c`, se encarga de actualizar la hora en pantalla, además habilita o desahibilita el botón para realizar la encuesta según el horario o si esta ya fue o no contestada. Esta función también es la encargada de emitir la alarma para alertar al usuario la disponibilidad de una nueva encuesta. El diagram de flujo de esta función se presenta en la @fig-actualizarhora.
@@ -668,6 +675,8 @@ const char* THINGSBOARD_SERVER = "URL_SERVIDOR";
 ```
 Una vez realizadas estas configuraciones, el código se carga en la placa de desarrollo seleccionando la opción de placa `XIAO_ESP32C3` en el Arduino IDE. \newline
 
+\clearpage
+
 4. **Instrucciones generales de interacción con el reloj inteligente**
 
 El reloj inteligente se carga a través de un puerto USB-C. Es importante que el interruptor del dispositivo permanezca en posición de encendido durante la carga, ya que, de lo contrario, no será posible cargar la batería. 
@@ -690,6 +699,8 @@ Adicionalmente, el reloj cuenta con dos ventanas emergentes. La primera ventana 
 ## Validación del funcionamiento del reloj inteligente {#sec-validacion}
 
 Los datos generados por el reloj inteligente se almacenan en la plataforma ThingsBoard, desde donde pueden descargarse para su posterior análisis. Para facilitar este proceso, se diseña una libreta de Jupyter, disponible en la carpeta  <a href="https://github.com/JulioLanda4/IoT_Reloj_Confort/tree/main/Thingsboard/descarga_thingsboard" target="_blank">descarga_thingsboard</a> del repositorio. Esta libreta, denominada `Descarga_datos.ipynb`, está programada en Python y requiere realizar configuraciones previas para su ejecución. \newline
+
+\clearpage
 
 **Requisitos previos**
 
@@ -734,6 +745,8 @@ fecha1 = parse("2024-01-01")
 fecha2 = datetime.datetime.now()
 ```
 
+\clearpage
+
 **Descarga y procesamiento de datos**
 
 Una vez configurada la libreta, se realiza la descarga de los datos almacenados en ThingsBoard dentro del rango de fechas especificado. Posteriormente, se genera un dataframe que combina estas mediciones con las respuestas obtenidas del formulario. Este proceso permite validar que el dispositivo es capaz de registrar encuestas, medir variables fisiológicas y enviar correctamente los datos a ThingsBoard para su almacenamiento. \newline
@@ -774,6 +787,8 @@ diccionario_frecuencia = {
 : Conjunto de datos de cinco encuestas térmicas y mediciones, que incluye el nivel de aislamiento de la ropa ($I_{cl}$), la tasa metabólica ($M_r$), la ubicación, el voto de sensación térmica (TSV), la aceptación térmica (TA), la temperatura de la piel de la muñeca ($T_w$), la frecuencia cardíaca ($H_r$), la edad, el peso ($W$), la altura ($H$), el sexo, la frecuencia de uso de espacios con aire acondicionado ($F$) y el identificador del individuo que está usando el reloj inteligente ($I$). {#tbl-data_downloaded .hover .sm  tbl-colwidths="[25, 4, 4, 19, 6, 4, 4, 4, 6, 4, 6, 6, 4, 4]"}
 
  --> 
+
+\clearpage
 
 
 | **Fecha**  <br>     *AAAA-MM-DD HH:MM*  | **$I_{cl}$** <br> *clo*| **$M_r$** <br> *met*| **Ubicación** <br> *-*| **TSV** <br> *-*| **TA** <br> *-*| **$T_{w}$** <br> *°C*| **$H_r$** <br> *bpm*| **Edad** <br> *años*| **$W$** <br> *kg*| **$H$** <br> *m*| **Sexo** <br> *-*| **$F$** <br> *-*| **$I$** <br> *-*|

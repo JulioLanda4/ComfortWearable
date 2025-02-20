@@ -10,6 +10,9 @@ El reloj inteligente se desarrolla por completo utilizando tecnologías abiertas
 
 Todo el proyecto se encuentra disponible en un repositorio de GitHub bajo la licencia GPL-3.0, lo que garantiza que cualquier persona pueda replicar, modificar o colaborar en el desarrollo del dispositivo, fomentando la accesibilidad y colaboración en investigaciones futuras relacionadas con el confort térmico. \newline
 
+
+\clearpage
+
 2. **Uso en condiciones reales**
 
 El reloj inteligente está diseñado para realizar campañas de medición prolongadas en condiciones reales, recolectando datos de usuarios en sus entornos habituales sin la necesidad de equipos complejos. Para facilitar la recolección de datos de manera periódica, el reloj incluye una alarma vibrante que notifica al usuario cuando es momento de responder una encuesta simplificada de confort térmico. Los datos recopilados por el reloj se combinan con información proporcionada en el formulario de registro generando una base de datos contextualizada que permite correlacionar las respuestas del usuario con las condiciones ambientales reales. Para ello, en el Instituto de Energías Renovables (IER) se está trabajando en un ecosistema de dispositivos que miden variables ambientales (temperatura del aire, humedad relativa del aire, velocidad del viento), además de que se cuenta con una estación meteorológica que puede proporcionar la información de las variables aMBIENTALES requeridas. \newline
@@ -24,6 +27,8 @@ El reloj desarrollado en este proyecto, tiene un costo aproximado de $1,120 MXN 
 4. **Adaptabilidad**
 
 El reloj inteligente cuenta con un diseño que permite su adaptación a diversas aplicaciones además de las encuestas de confort térmico. Puede configurarse para implementar otros tipos de encuestas o funcionalidades específicas según las necesidades del proyecto. Además, al estar desarrollado en Arduino sobre un microcontrolador ESP32 y emplear la biblioteca LVGL, ofrece la posibilidad de migrar su software a MicroPython, ampliando su versatilidad. \newline
+
+\clearpage
 
 ## Limitantes del proyecto
 
