@@ -6,11 +6,7 @@ Este trabajo presenta el desarrollo de un reloj inteligente basado en tecnologí
 
 El reloj inteligente integra componentes de bajo costo, como la placa de desarrollo XIAO ESP32C3, los sensores GY-906 y MAX30102, una pantalla táctil XIAO Round Display, y un circuito vibrador, todo encapsulado en una carcasa diseñada e impresa en 3D. 
 
-El desarrollo de este proyecto incluye el diseño, construcción, calibración y validación del dispositivo. Este trabajo destaca y demuestra el potencial de las tecnologías abiertas y los dispositivos portátiles en el estudio del confort térmico, así como en la generación de bases de datos que pueden facilitar la creación de modelos de confort adaptativos. De esta manera, se contribuye al uso sostenible de los recursos para lograr condiciones de confort térmico.
-
-
-\newline
-
+El desarrollo de este proyecto incluye el diseño, construcción, calibración y validación del dispositivo. Este trabajo destaca y demuestra el potencial de las tecnologías abiertas y los dispositivos portátiles en el estudio del confort térmico, así como en la generación de bases de datos que pueden facilitar la creación de modelos de confort adaptativos. De esta manera, se contribuye al uso sostenible de los recursos para lograr condiciones de confort térmico. \newline
 
 # Abstract {.unnumbered}
 
@@ -22,10 +18,7 @@ This work presents the development of a smartwatch based on open-source technolo
 
 The smartwatch integrates low-cost components, including the XIAO ESP32C3 development board, GY-906 and MAX30102 sensors, a XIAO Round Display touchscreen, and a vibrating circuit, all encapsulated in a 3D-printed case designed for this purpose.
 
-The development of this project encompasses the design, construction, calibration, and validation of the device. This work highlights and demonstrates the potential of open-source technologies and wearable devices in the study of thermal comfort, as well as in the generation of databases that can facilitate the creation of adaptive comfort models. In doing so, it contributes to the sustainable use of resources to achieve thermal comfort conditions.
-
-\newline
-
+The development of this project encompasses the design, construction, calibration, and validation of the device. This work highlights and demonstrates the potential of open-source technologies and wearable devices in the study of thermal comfort, as well as in the generation of databases that can facilitate the creation of adaptive comfort models. In doing so, it contributes to the sustainable use of resources to achieve thermal comfort conditions. \newline
 
 # Agradecimientos {.unnumbered}
 

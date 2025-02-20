@@ -1,6 +1,4 @@
-# Antecedentes y marco teórico
-
-\newline
+# Antecedentes y marco teórico \newline
 
 ## Confort térmico
 
@@ -8,15 +6,11 @@ El confort térmico es un concepto subjetivo, ya que depende de las percepciones
 
 El confort térmico es más complejo que un simple estado de satisfacción o insatisfacción, se puede considerar un rango de sensaciones que van desde una percepción extrema de frío hasta una sensación de extremo calor. Por otro lado, el equilibrio térmico hace referencia al estado en el que el cuerpo humano mantiene su temperatura interna estable a través de procesos fisiológicos incluyendo la sudoración, la vasoconstricción y la vasodilatación, así como procesos físicos de transferencia de calor, incluyendo la conducción, la convección y la radiación, que le permitan adaptarse a los cambios en el entorno [@tomonori_sakoi__2023]. El equilibrio térmico es fundamental para el bienestar fisiológico, pero también es un factor que influye en la sensación de confort térmico de cada individuo. El confort térmico depende de factores ambientales que incluyen la temperatura radiante media, la velocidad del aire, la humedad relativa y la presión atmosférica, así como de factores personales como la actividad física y el nivel de aislamiento térmico de la ropa, Sin embargo, la percepción del confort térmico también puede verse influenciada en función de las experiencias, expectativas y contexto personal de cada individuo [ASHRAE 55, -@ASHRAE55].
 
-Los factores que afectan la sensación de confort térmico se pueden agrupar en dos categorías: factores ambientales y factores personales. Estos factores son fundamentales para evaluar el entorno y diseñar estrategias que mejoren el confort térmico, ya que afectan directamente la capacidad del cuerpo para mantener un equilibrio térmico adecuado.
-
- \newline
+Los factores que afectan la sensación de confort térmico se pueden agrupar en dos categorías: factores ambientales y factores personales. Estos factores son fundamentales para evaluar el entorno y diseñar estrategias que mejoren el confort térmico, ya que afectan directamente la capacidad del cuerpo para mantener un equilibrio térmico adecuado. \newline
 
 **Factores ambientales**
 
-Los factores ambientales incluyen la temperatura del aire, la temperatura radiante media, la velocidad del aire, la humedad relativa del aire, y la presión atmosférica [ASHRAE 55, -@ASHRAE55]. 
-
-\newline
+Los factores ambientales incluyen la temperatura del aire, la temperatura radiante media, la velocidad del aire, la humedad relativa del aire, y la presión atmosférica [ASHRAE 55, -@ASHRAE55].  \newline
 
 - **Temperatura del aire:** Influye no solo en la sensación de calor o frío percibida a través de la piel, sino también en los procesos de transferencia de calor entre el individuo y el entorno que lo rodea. Para @Sim2016, @Choi2017 y @Liu2019, la temperatura ambiente es uno de los principales factores que afecta al confort térmico.
 
@@ -50,9 +44,7 @@ Los factores personales más relevantes para el confort térmico son la activida
 
 - **Aclimatación:** La aclimatación influye en la sensación de confort térmico al modificar la tolerancia de los individuos a diferentes temperaturas según su exposición a estas, sus hábitos y sus expectativas. Los individuos que residen en climas cálidos suelen tener una mayor tolerancia a temperaturas elevadas con respecto a quienes viven en climas más fríos [@Olsen2024].
 
-- **Factores culturales y socioeconómicos:**  Las expectativas sobre un ambiente térmicamente confortable varían según la cultura. Además, el estatus socioeconómico puede afectar las preferencias térmicas debido al acceso desigual a recursos como sistemas de aire acondicionado y calefacción [@sanober_naheed__2021, @kun_jung_lyu__2023].
-
-\newline
+- **Factores culturales y socioeconómicos:**  Las expectativas sobre un ambiente térmicamente confortable varían según la cultura. Además, el estatus socioeconómico puede afectar las preferencias térmicas debido al acceso desigual a recursos como sistemas de aire acondicionado y calefacción [@sanober_naheed__2021, @kun_jung_lyu__2023]. \newline
 
 
 ## Evaluación de confort térmico a través de encuestas
@@ -61,9 +53,7 @@ El confort térmico es un concepto subjetivo que puede evaluarse a través de en
 
 @Calixto2021 presenta las escalas de la siguiente manera: 
 
-### Escalas para el estado personal
-
-\newline
+### Escalas para el estado personal \newline
 
 1. **Escala de percepción del estado personal:** *¿Cómo te sientes ahora?*. Se utiliza para comprender la percepción subjetiva del estado personal de un individuo en un entorno específico. La escala puede ser unipolar o bipolar según lo requerido. En el caso de la escala unipolar, se utiliza una graduación de cuatro grados, que puede extenderse a cinco de ser necesario. El punto de origen se establece en 0, que representa un estado neutro, mientras que los grados de intensidad se enumeran como 1, 2, 3 y opcionalmente 4. En la @tbl-unipolar se observa la estructura para la escala unipolar.
 
@@ -82,27 +72,19 @@ Por otra parte, si la escala es bipolar, se utiliza una graduación de siete gra
 
 2. **Escala evaluativa:** *¿Cómo te encuentras?*. Se utiliza para medir el nivel de comodidad en un entorno. Es una escala unipolar de cuatro grados ampliable a cinco ([@tbl-unipolar]). El 0 representa comodidad y el polo representa la incomodidad extrema.
 
-3. **Escala de preferencia:** *¿Cómo preferirías estar?*. Utiliza una escala bipolar simétrica con siete grados para medir la preferencia de las personas respecto a ciertos aspectos del entorno. El 0 representa "sin cambio" en la preferencia ([@tbl-bipolar]). 
-
-\newline
+3. **Escala de preferencia:** *¿Cómo preferirías estar?*. Utiliza una escala bipolar simétrica con siete grados para medir la preferencia de las personas respecto a ciertos aspectos del entorno. El 0 representa "sin cambio" en la preferencia ([@tbl-bipolar]).  \newline
 
 ### Escalas para describir el entorno físico  
 
 1. **Aceptabilidad:** Esta escala se centra en la aceptabilidad a nivel personal del entorno. Tiene dos grados, se acepta o se rechaza. 
 
-2. **Satisfacción:** Se centra en la tolerancia al entorno. Es una escala de cinco grados. 0 es perfectamente tolerable, 1 es tolerable, 2 es ligeramente incómodo, 3 es incómodo y 4 es completamente intolerable. 
-
-\newline
+2. **Satisfacción:** Se centra en la tolerancia al entorno. Es una escala de cinco grados. 0 es perfectamente tolerable, 1 es tolerable, 2 es ligeramente incómodo, 3 es incómodo y 4 es completamente intolerable.  \newline
 
 ## Modelos de confort térmico
 
-Además de las encuestas utilizadas para evaluar el confort térmico, se han desarrollado modelos diseñados específicamente para predecirlo. Estos modelos han sido desarrollados con base en mediciones experimentales y encuestas realizadas a ocupantes en distintos entornos. Se adaptan a condiciones especificas y pueden dividirse en dos categorías: los modelos para edificaciones con sistemas de aire acondicionado y los modelos para edificaciones sin aire acondicionado.
+Además de las encuestas utilizadas para evaluar el confort térmico, se han desarrollado modelos diseñados específicamente para predecirlo. Estos modelos han sido desarrollados con base en mediciones experimentales y encuestas realizadas a ocupantes en distintos entornos. Se adaptan a condiciones especificas y pueden dividirse en dos categorías: los modelos para edificaciones con sistemas de aire acondicionado y los modelos para edificaciones sin aire acondicionado. \newline
 
-\newline
-
-### Modelos para edificaciones con sistemas de aire acondicionado
-
-\newline
+### Modelos para edificaciones con sistemas de aire acondicionado \newline
 
 **PMV-PPD**
 
@@ -217,13 +199,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-\newline
-
 ### Modelos para edificaciones sin sistemas de aire acondicionado
 
-Existen modelos desarrollados para aplicarse en edificaciones sin sistemas de aire acondicionado. Existen dos tipos: adaptativos y no adaptativos. 
-
-\newline
+Existen modelos desarrollados para aplicarse en edificaciones sin sistemas de aire acondicionado. Existen dos tipos: adaptativos y no adaptativos.  \newline
 
 **Adaptativos** 
 
@@ -256,9 +234,7 @@ De esta manera, para calcular el ePMV se deben seguir los siguientes pasos:
 Donde $M_{mod}$ es la tasa metabólica modificada y $M$ es la tasa metabólica estimada para el PMV.
 
 3. Se vuelve a obtener el valor del PMV utilizando $M_{mod}$
-4. Se multiplica el nuevo valor del PMV por el factor *e*
-
-\newline
+4. Se multiplica el nuevo valor del PMV por el factor *e* \newline
 
 **aPMV**  
 
@@ -268,7 +244,6 @@ $$
 \text{aPMV} = \frac{\text{PMV}}{1 + \lambda \text{PMV}} 
 $$ {#eq-apmv}
 
-\newline
 
 **No adaptativos**
 
@@ -287,16 +262,11 @@ donde:
 
 $T$  :  Temperatura de bulbo seco (°C)  
 $h$  :  Factor de humedad (°C)  
-$p_v$  :  Presión de vapor (mbar)
-
-
-\newline
+$p_v$  :  Presión de vapor (mbar) \newline
 
 **Índice Humidex Colima**  
 
-El Índice Humidex Colima adapta la fórmula original del Índice Humidex Ontario [@eq-humidex] para responder a las condiciones climáticas de la región de Colima, México. A diferencia del índice original, que está diseñado exclusivamente para climas cálidos, este nuevo índice considera la época de frío. Este índice se basa en encuestas de confort realizadas en la ciudad de Colima. Estas encuestas se llevaron a cabo en diferentes estaciones del año [@gomez-azpetia2006adaptacion]. 
-
-\newline
+El Índice Humidex Colima adapta la fórmula original del Índice Humidex Ontario [@eq-humidex] para responder a las condiciones climáticas de la región de Colima, México. A diferencia del índice original, que está diseñado exclusivamente para climas cálidos, este nuevo índice considera la época de frío. Este índice se basa en encuestas de confort realizadas en la ciudad de Colima. Estas encuestas se llevaron a cabo en diferentes estaciones del año [@gomez-azpetia2006adaptacion].  \newline
 
 
 ## Variables fisiológicas como indicadores de confort térmico
@@ -306,21 +276,20 @@ Si bien existen distintos modelos que permiten predecir el confort térmico, est
 
 Las variables fisiológicas que están asociadas con la respuesta del cuerpo humano a las condiciones ambientales incluyen la tasa de sudoración, la temperatura de la piel y la frecuencia cardíaca [@Bogatu2023]. La medición de estas variables puede proporcionar información acerca de la respuesta fisiológica del cuerpo humano ante su entorno térmico, aunque su relación con el confort térmico no siempre sea directa. @Sim2018 midieron la tasa de sudoración mediante una cámara de humedad y demostraron que el estado térmico de una persona puede deducirse a partir de la cantidad de sudor producido. Sin embargo, @Bogatu2023 señalan que la sudoración no siempre es un indicador fiable del confort térmico, ya que puede estar influenciada por factores emocionales como el estrés. Además de que en entornos fríos la baja producción del cuerpo humano dificulta su medición, sirviendo únicamente como referencia en entornos altos con una mayor producción de calor por parte del cuerpo humano. @Sim2016 llevaron a cabo un estudio donde midieron la temperatura de la piel en cuatro puntos distintos: parte superior de la muñeca, arteria radial, arteria ulnar y la punta del dedo índice. Los resultados mostraron que combinar las tres mediciones de la muñeca proporciona los mejores resultados, con una correlación de Pearson de 0.81 respecto al voto de sensación térmica (TSV, por sus siglas en inglés). Sin embargo, las mediciones individuales de la parte superior de la muñeca y de la arteria radial también ofrecieron resultados satisfactorios, con una correlación de Pearson de 0.76. De manera similar, @Choi2017 realizaron un estudio en donde a través de un algoritmo de árbol de decisiones crearon modelos para predecir el TSV midiendo la temperatura en diferentes puntos del cuerpo: frente, cuello, espalda, brazo, muñeca (interior), muñeca (posterior), pecho, cintura, vientre. En donde el mejor resultado lo obtuvieron al hacer un modelo combinando las mediciones de la cintura, brazo y la parte interior de la muñeca, con un 95.87% de exactitud.
 
-@Bogatu2023 recopilaron evidencia sobre el uso de la temperatura de la piel como indicador de confort térmico debido a su facilidad de medición. La piel representa el medio de interacción entre el cuerpo humano y su entorno, regulando el intercambio de calor mediante procesos como la vasodilatación y la vasoconstricción. La revisión sugiere que a temperaturas más altas en la piel se registra una mayor tendencia a una sensación de calor, mientras que temperaturas más bajas de la piel se relacionan con una sensación de frío. Además, revisaron estudios sobre el uso de la frecuencia cardíaca y la variabilidad de la frecuencia cardíaca (VFC) como indicadores del confort térmico. La VFC está relacionada con la respuesta del cuerpo a diferentes entornos térmicos y puede reflejar su estado de homeostasis. Diversos estudios han empleado algoritmos de aprendizaje automático para analizar las variaciones de la VFC y han logrado predecir el estado térmico de los individuos con una precisión del 93.7%. El estudio de @Nkurikiyeyezu_2017 demuestra que la VFC puede predecir la sensación de confort térmico en diferentes condiciones ambientales. En su estudio, se analizaron índices de la VFC de individuos realizando tareas en ambientes fríos, neutros y cálidos, logrando predecir la sensación térmica con una exactitud de hasta el 93.7%.
-
-
-\newline
+@Bogatu2023 recopilaron evidencia sobre el uso de la temperatura de la piel como indicador de confort térmico debido a su facilidad de medición. La piel representa el medio de interacción entre el cuerpo humano y su entorno, regulando el intercambio de calor mediante procesos como la vasodilatación y la vasoconstricción. La revisión sugiere que a temperaturas más altas en la piel se registra una mayor tendencia a una sensación de calor, mientras que temperaturas más bajas de la piel se relacionan con una sensación de frío. Además, revisaron estudios sobre el uso de la frecuencia cardíaca y la variabilidad de la frecuencia cardíaca (VFC) como indicadores del confort térmico. La VFC está relacionada con la respuesta del cuerpo a diferentes entornos térmicos y puede reflejar su estado de homeostasis. Diversos estudios han empleado algoritmos de aprendizaje automático para analizar las variaciones de la VFC y han logrado predecir el estado térmico de los individuos con una precisión del 93.7%. El estudio de @Nkurikiyeyezu_2017 demuestra que la VFC puede predecir la sensación de confort térmico en diferentes condiciones ambientales. En su estudio, se analizaron índices de la VFC de individuos realizando tareas en ambientes fríos, neutros y cálidos, logrando predecir la sensación térmica con una exactitud de hasta el 93.7%. \newline
 
 ## Modelos de confort térmico en México
+
+Los modelos de confort térmico han sido ampliamente estudiados en países europeos y en Estados Unidos, donde las condiciones climáticas difieren de las de México. Si bien estos modelos han servido como referencia para establecer parámetros de confort, su aplicabilidad en el contexto mexicano no siempre es precisa debido a la diversidad climática del país. En México, se identifican diversas regiones bioclimáticas con características particulares, como el bioclima seco, templado y cálido húmedo, según el listado del Instituto del Fondo Nacional de la Vivienda para los Trabajadores (INFONAVIT, 2020). Dado esto, ha sido necesario realizar estudios específicos que analicen el confort térmico en distintos entornos dentro del territorio nacional.
+
+Los modelos de confort han sido estudiados y desarrollados en su mayoría en países europeso y en Estados Unidos, en donde las condiciones climaticas difieren a las encontradas en México. Si bien estos modelos han servido como referencia en el estudio del confort térmico en todo el mundo
 
 La mayoría de los modelos de confort térmico que se han desarrollado son para países europeos o Estados Unidos, en donde sus condiciones climáticas difieren de las condiciones climáticas de México (en donde se desarrolla este proyecto). Estos modelos y las investigaciones en confort térmico han servido como base para definir parámetros de confort térmico, sin embargo no siempre se adaptan a las diferentes condiciones climáticas. México es un país con una gran variedad de regiones bioclimáticas, desde regiones áridas, hasta regiones tropicales húmedas [@infonavit_regiones_bioclimaticas], lo cual requiere estudios específicos de confort térmico para cada una de estas regiones. Al día de hoy se han hecho diversos estudios en las diferentes regiones bioclimáticas del país. A continuación se presentan algunos de esos estudios llevados a cabo en México.
 
 
 @Rincon2019 llevaron a cabo experimentos para evaluar el confort térmico en una cámara de ambiente controlado y estudios de campo en la Universidad Autónoma Metropolitana (UAM) ubicada en la delegación Iztapalapa de la Ciudad de México, la cual cuenta con un clima templado húmedo, con la finalidad de comparar los resultados entre las condiciones del laboratorio con los estudios de campo. Los resultados mostraron una alta concordancia entre ambos escenarios, lo que sugiere que las condiciones de laboratorio pueden simular adecuadamente las condiciones de confort térmico bajo escenarios reales. @Rincon2020, por su parte, desarrolló un modelo matemático adaptativo para estimar el confort térmico en edificios educativos naturalmente ventilados de Ensenada, Baja California, una región con un bioclima templado seco. Desarrollaron un modelo matemático en función de la temperatura operativa: $𝑦 = 0.2159𝑥− 1.1115$, donde $𝑦$ representa la sensación térmica y $𝑥$ la temperatura operativa. @Oropeza2017 desarrollaron un modelo adaptativo de confort térmico para cuatro principales regiones climáticas de México (clima árido, clima tropical seco, clima templado y clima tropical húmedo), analizaron  edificios con y sin sistemas de aire acondicionado. Demostraron que el uso de estrategias pasivas, como la ventilación natural y el control solar, pueden mejorar el confort térmico en una edificación y reducir con ello la dependencia de sistema mecánicos de climatización. @LopezPerez2019 hicieron algo similar al llevar a cabo un estudio en veinticiete edificaciones educativas en dos modos de operación, con aire acondicionado y con ventilación natural. El Estudio fue realizado durante la temporada cálida en Tuxtla Gutiérrez, Chiapas, en donde hay un bioclima tropical cálido húmedo. Concluyeron que los ocupantes pueden adaptarse a temperaturas interiores más altas que las recomendadas por estándares internacionales, especialmente cuando se implementan estrategias de ventilación natural. Destacando en estos dos estudios la importancia de las estrategias de diseño bioclimático. Finalmente, @Zepeda2022 investigó el confort térmico en viviendas con ventilación natural en la Meseta Central Mexicana (Ciudad de México y alrededores), con un bioclima templado subhúmedo. El estudio mostró que solo el 42% de las horas de ocupación cumplían con los rangos de confort térmico aceptable, y este porcentaje disminuía significativamente durante el invierno. Los habitantes recurrían a estrategias como el uso de prendas adicionales para mantener el confort. El estudio subraya la importancia de implementar medidas de aislamiento térmico y el diseño de viviendas energéticamente eficientes para garantizar entornos interiores más saludables y reducir la dependencia de estrategias compensatorias ineficientes.
 
-A pesar de los avances logrados en diversos estudios de confort térmico realizados en México, es importante continuar investigando en las distintas regiones bioclimáticas del país. La gran diversidad climática de México requiere soluciones adaptadas a las características específicas de cada región, con el objetivo de garantizar tanto el confort térmico como la eficiencia energética.
-
-\newline
+A pesar de los avances logrados en diversos estudios de confort térmico realizados en México, es importante continuar investigando en las distintas regiones bioclimáticas del país. La gran diversidad climática de México requiere soluciones adaptadas a las características específicas de cada región, con el objetivo de garantizar tanto el confort térmico como la eficiencia energética. \newline
 
 ## Dispositivos portátiles y tecnologías abiertas en el confort térmico
 
@@ -339,9 +308,7 @@ El proyecto Coolbit, desarrollado por @Nazarian2021, utilizó relojes inteligent
 
 Un enfoque diferente fue explorado en el estudio de @He2025IMU, en el cual utilizaron sensores inerciales (IMU, por sus siglas en inglés) para correlacionar actividades humanas con estados de confort térmico. Los sensores IMU, que combinan acelerómetros, giroscopios y magnetómetros, permiten medir movimientos y orientaciones en tres ejes. En este estudio, se colocaron sensores IMU en las manos de los participantes durante actividades predefinidas a través de encuestas diseñadas para identificar actividades asociadas con estados térmicos de frío, neutro y calor. Estas actividades incluyen frotarse las manos, abanicarse con las manos, usar el teléfono o abrocharse botones, entre otras. Los sensores IMU registraron variables como aceleración, velocidad angular y ángulos de Euler, cuyos datos se utilizaron para entrenar modelos de aprendizaje automático. Estos modelos lograron identificar las actividades específicas asociadas con distintas sensaciones térmicas. Los autores destacan la viabilidad de estos sensores para aplicaciones en el control de sistemas HVAC.
 
-En el estudio de @Tartarini2022, se utilizó un reloj inteligente Fitbit, dos sensores iButton y la aplicación Cozie para evaluar el confort térmico humano. Cozie, una aplicación diseñada para relojes inteligentes, permitió la recopilación de datos subjetivos mediante encuestas rápidas, además de integrar mediciones de la frecuencia cardíaca y la ubicación de los sensores del reloj, aunque actualmente unicamente se encuentra disponible para Apple Watch y algunos modelos de Fitbit. En este estudio se midieron la temperatura de la piel en la muñeca, registrada con un sensor iButton colocado en la parte interna de la correa del reloj; la frecuencia cardíaca, obtenida directamente del Fitbit; la temperatura del aire exterior, obtenida de datos climáticos del gobierno de Singapur (lugar donde fue llevado a cabo el estudio); la temperatura del aire cercano al cuerpo, medida por un iButton colocado en la parte externa de la correa; y la temperatura y la humedad relativa del aire al interior, registradas mediante sensores adicionales instalados en los espacios ocupados por los participantes. A través de Cozie, se realizaron encuestas subjetivas en momentos aleatorios, las cuales incluían preguntas sobre la sensación térmica, la preferencia térmica, el nivel de actividad física y el aislamiento de la ropa. Los datos recopilados sirvieron para desarrollar modelos de regresión multinomial que correlacionaron las variables medidas con las respuestas subjetivas, mientras que algoritmos de aprendizaje automático ayudaron a identificar patrones complejos en los datos, mejorando la precisión de las predicciones. Para evaluar el rendimiento de los modelos, se utilizó el F1-score, una métrica que combina la precisión y la exhaustividad (recall) en de un modelo en un solo valor. El F1-score se define como la media armónica entre la precisión (al relación de predicciones correctas respecto al total de predicciones positivas realizadas) y el recall (la relación de casos positivos correctamente identificados sobre el total de casos positivos reales). Su valor oscila entre 0 y 1, donde 1 indica un modelo con un rendimiento perfecto y 0 un modelo sin capacidad predictiva. En este estudio, el modelo obtuvo un F1-score promedio de 0.78, lo que indica un buen desempeño en la predicción del confort térmico.
-
-\newline
+En el estudio de @Tartarini2022, se utilizó un reloj inteligente Fitbit, dos sensores iButton y la aplicación Cozie para evaluar el confort térmico humano. Cozie, una aplicación diseñada para relojes inteligentes, permitió la recopilación de datos subjetivos mediante encuestas rápidas, además de integrar mediciones de la frecuencia cardíaca y la ubicación de los sensores del reloj, aunque actualmente unicamente se encuentra disponible para Apple Watch y algunos modelos de Fitbit. En este estudio se midieron la temperatura de la piel en la muñeca, registrada con un sensor iButton colocado en la parte interna de la correa del reloj; la frecuencia cardíaca, obtenida directamente del Fitbit; la temperatura del aire exterior, obtenida de datos climáticos del gobierno de Singapur (lugar donde fue llevado a cabo el estudio); la temperatura del aire cercano al cuerpo, medida por un iButton colocado en la parte externa de la correa; y la temperatura y la humedad relativa del aire al interior, registradas mediante sensores adicionales instalados en los espacios ocupados por los participantes. A través de Cozie, se realizaron encuestas subjetivas en momentos aleatorios, las cuales incluían preguntas sobre la sensación térmica, la preferencia térmica, el nivel de actividad física y el aislamiento de la ropa. Los datos recopilados sirvieron para desarrollar modelos de regresión multinomial que correlacionaron las variables medidas con las respuestas subjetivas, mientras que algoritmos de aprendizaje automático ayudaron a identificar patrones complejos en los datos, mejorando la precisión de las predicciones. Para evaluar el rendimiento de los modelos, se utilizó el F1-score, una métrica que combina la precisión y la exhaustividad (recall) en de un modelo en un solo valor. El F1-score se define como la media armónica entre la precisión (al relación de predicciones correctas respecto al total de predicciones positivas realizadas) y el recall (la relación de casos positivos correctamente identificados sobre el total de casos positivos reales). Su valor oscila entre 0 y 1, donde 1 indica un modelo con un rendimiento perfecto y 0 un modelo sin capacidad predictiva. En este estudio, el modelo obtuvo un F1-score promedio de 0.78, lo que indica un buen desempeño en la predicción del confort térmico. \newline
 
 
 Estos estudios demuestran que el uso de dispositivos portátiles en el confort térmico está revolucionando la manera en que se obtienen datos fisiológicos, ambientales y datos de encuestas útiles para el estudio del confort térmico. Asimismo, el uso de tecnologías abiertas simplifica su integración al hacerlas más económicas y accesibles. Esto abre las puertas para el desarrollo de nuevos estudios, modelos adaptativos de confort térmico y diversas aplicaciones en esta área.

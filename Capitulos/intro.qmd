@@ -14,9 +14,7 @@ Ante este panorama, la digitalización se presenta como una herramienta con el p
 
 El confort térmico está fuertemente relacionado con el consumo de energía en edificaciones y es un factor crucial en la calidad de vida de los ocupantes. Una gran parte del consumo de energía en estas se ocupa en mantener condiciones adecuadas de iluminación, temperatura y humedad del aire, buscando obtener espacios con condiciones adecuadas para que los ocupantes se encuentren en confort térmico, lumínico y acústico. La American Society of Heating, Refrigerating and Air-Conditioning Engineers, Inc. [ASHRAE, -@ASHRAE55] es una organización que desarrolla estándares y guías para sistemas de construcción, eficiencia energética, calidad del aire al interior y sostenibilidad. Define al confort térmico como la condición mental que expresa satisfacción con el ambiente, y es un juicio personal cognitivo que es influenciado por procesos físicos, fisiológicos y otros factores. 
 
-En el contexto actual del cambio climático, el diseño de edificaciones que favorezcan el confort térmico de manera eficiente y sustentable se vuelve prioritario. @Enescu2017 destaca como se puede contribuir a reducir el consumo energético de los sistemas de climatización teniendo una adecuada gestión del confort térmico en las edificaciones, un diseño eficiente reduce la dependencia de sistemas de calefacción y refrigeración. En este sentido cobra importancia el diseño bioclimático. @olgyay1963 introdujo este concepto, el diseño bioclimático consiste en diseñar las edificaciones acorde al clima del lugar, es decir que se busca aprovechar las condiciones climáticas necesarias para minimizar el uso de energía y, con ello, las emisiones de GEI.
-
-\newline
+En el contexto actual del cambio climático, el diseño de edificaciones que favorezcan el confort térmico de manera eficiente y sustentable se vuelve prioritario. @Enescu2017 destaca como se puede contribuir a reducir el consumo energético de los sistemas de climatización teniendo una adecuada gestión del confort térmico en las edificaciones, un diseño eficiente reduce la dependencia de sistemas de calefacción y refrigeración. En este sentido cobra importancia el diseño bioclimático. @olgyay1963 introdujo este concepto, el diseño bioclimático consiste en diseñar las edificaciones acorde al clima del lugar, es decir que se busca aprovechar las condiciones climáticas necesarias para minimizar el uso de energía y, con ello, las emisiones de GEI. \newline
 
 
 ## Problema específico y relevancia del proyecto
@@ -31,9 +29,7 @@ Existen relojes inteligentes comerciales que integran sensores avanzados los cua
 
 Surge entonces la necesidad de la inclusión de tecnologías abiertas para el desarrollo de estas herramientas. El termino tecnologías abiertas se refiere a sistemas y herramientas cuyo diseño, código fuente o especificaciones están disponibles públicamente, permitiendo que cualquier persona los utilice, modifique y distribuya libremente [@OTD_Roadmap_Plan]. El uso de tecnologías abiertas permite mayor accesibilidad en la implementación de sistemas de monitoreo de confort térmico, lo cual puede resultar en soluciones más prácticas y económicas para la evaluación del confort térmico en diferentes contextos.
 
-Con las tecnologías abiertas también se pueden generar bases de datos útiles para el estudio de confort térmico y la generación de modelos de confort personalizados. @Vero2023 presenta una metodología para investigar la correlación entre el voto de sensación térmica (TSV, por sus siglas en inglés) diario de los individuos con variables ambientales y fisiológicas con el objetivo de desarrollar modelos de confort personalizados que permitan maximizar el bienestar de los ocupantes, a la vez que se minimiza el consumo energético. 
-
-\newline
+Con las tecnologías abiertas también se pueden generar bases de datos útiles para el estudio de confort térmico y la generación de modelos de confort personalizados. @Vero2023 presenta una metodología para investigar la correlación entre el voto de sensación térmica (TSV, por sus siglas en inglés) diario de los individuos con variables ambientales y fisiológicas con el objetivo de desarrollar modelos de confort personalizados que permitan maximizar el bienestar de los ocupantes, a la vez que se minimiza el consumo energético.  \newline
 
 
 ## Objetivos del proyecto
@@ -48,9 +44,7 @@ Desarrollar un reloj inteligente basado en tecnologías abiertas capaz de recole
 
 - Calibrar y validar el funcionamiento de los sensores utilizando equipos de referencia, como cámaras termográficas y oxímetros, para asegurar un bajo margen de error en los datos fisiológicos recuperados. 
 
-- Implementar un sistema de envío y almacenamiento de datos en una plataforma IoT para generar una base de datos con toda la información obtenida para su posterior análisis.
-
-\newline
+- Implementar un sistema de envío y almacenamiento de datos en una plataforma IoT para generar una base de datos con toda la información obtenida para su posterior análisis. \newline
 
 ## Metodología 
 
@@ -69,9 +63,6 @@ Como parte del compromiso con las tecnologías abiertas en este proyecto, todos 
 ```bash
 https://github.com/JulioLanda4/IoT_Reloj_Confort
 ```
-
-
-\newline
 
 ## Estructura de la tesis
 
