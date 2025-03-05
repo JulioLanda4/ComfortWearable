@@ -201,7 +201,7 @@ La construcción del reloj inteligente se puede separar en tres etapas: La impre
 
 ***Integración y montaje:*** Esta etapa se lleva a cabo una vez que se tengan listas las conexiones de los circuitos y las piezas de la carcasa impresas. En esta etapa se acomodan los componentes dentro la carcasa y se ensamblan las correas en la part exterior del reloj inteligente.
 
-En el artículo de @Landa2024 (en revisión en la revista HardwareX), se presenta información detallada sobre el diseño y los pasos para la construcción del dispositivo.
+En el artículo "IoT smartwatch based on open technologies for the collection of thermal comfort data" de @Landa2025, se presenta información detallada sobre el diseño y los pasos para la construcción del reloj inteligente.
 
 La @fig-relojarmado muestra el reloj completamente ensamblado desde distintas vistas, en donde se observan los sensores de temperatura de la piel (GY-906) y de frecuencia cardiaca (MAX30102), la pantalla, el puerto de carga y el interruptor de encendido y apagado.
 
