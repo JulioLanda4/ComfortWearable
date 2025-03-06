@@ -32,11 +32,6 @@ language:
   title-block-author-single: "Autor"
 format:
   html:
-    #theme: zephyr
-    #theme: yeti
-    #theme: simplex
-    #theme: pulse
-    #theme: journal
     theme: cosmo
     fontsize: 1.2em
     smooth-scroll: true
@@ -46,5 +41,11 @@ format:
 
   pdf:
     documentclass: scrreport
+    link-citations: true
     lof: true
     lot: true
+    header-includes: |
+      \usepackage{pdfpages}
+      \renewcommand{\maketitle}{}
+    include-before: 
+      - \includepdf{portada-tesis.pdf}

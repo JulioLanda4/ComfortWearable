@@ -81,7 +81,7 @@ La elección de la pantalla debe alinearse con los criterios establecidos para l
 : Características de pantallas compatibles con la XIAO ESP32C3. {#tbl-screen .hover .sm}
 
 
-La pantalla seleccionada es la Seeed Studio Round Display for XIAO. Este modelo es compatible con la placa XIAO ESP32C3, elegida previamente, gracias al enfoque de Seeed Studio para desarrollar un ecosistema de dispositivos orientado a aplicaciones portátiles. La compatibilidad entre los componentes, tecnología táctil y diseño de la pantalla, logran que la pantalla se ajuste a las necesidades del proyecto. \newline
+La pantalla seleccionada es la Seeed Studio Round Display for XIAO. Este modelo es compatible con la placa XIAO ESP32C3, elegida previamente, gracias al enfoque de Seeed Studio para desarrollar un ecosistema de dispositivos orientado a aplicaciones portátiles. La compatibilidad entre los componentes, tecnología táctil y diseño de la pantalla, logran que la pantalla se ajuste a las necesidades del proyecto. \newline \newline
 
 
 **Sensor de temperatura**
@@ -98,7 +98,9 @@ La @tbl-temp muestra una comparación entre distintos sensores de temperatura qu
 | **AHT20**                 | Sensor de temperatura y humedad | -40°C a 85°C                       | ±0.3°C (temperatura) / ±2% HR (humedad)| I2C                                   | 16.10 x 15.98 mm |
 : Características de sensores de temperatura compatibles con la placa XIAO ESP32C3. {#tbl-temp .hover .sm tbl-colwidths="[15, 15, 10, 15, 19, 16]"}
 
-Tras un análisis detallado, se selecciona el sensor GY-906 debido a su tamaño compacto, su tecnología infrarroja y comunicación digital por I2C. Aunque el termistor NTC MF52AT ofrece una alternativa viable, se descarta por ser un sensor analógico. Dado que el reloj inteligente está diseñado para operar en un espacio reducido, cualquier interferencia en las conexiones internas podría afectar la precisión de los sensores analógicos. Por esta razón, se opta por el GY-906, que garantiza transmisión de datos en entornos compactos. \newline
+Tras un análisis detallado, se selecciona el sensor GY-906 debido a su tamaño compacto, su tecnología infrarroja y comunicación digital por I2C. Aunque el termistor NTC MF52AT ofrece una alternativa viable, se descarta por ser un sensor analógico. Dado que el reloj inteligente está diseñado para operar en un espacio reducido, cualquier interferencia en las conexiones internas podría afectar la precisión de los sensores analógicos. Por esta razón, se opta por el GY-906, que garantiza transmisión de datos en entornos compactos. \newline 
+
+\clearpage
 
 **Sensor de frecuencia cardíaca**
 
@@ -118,13 +120,17 @@ El MAX30102 se elige como la mejor opción para este proyecto por su equilibrio 
 
 **Circuito vibrador**
 
-El reloj inteligente presentado en esta tesis cuenta con un sistema de alarma silenciosa compuesta por un motor vibrador circular de 8 mm de diámetro, alimentado a 3.7 V y un circuito de control. La @fig-circuito_motor muestra este circuito. 
+El reloj inteligente presentado en esta tesis cuenta con un sistema de alarma silenciosa compuesta por un motor vibrador circular de 8 mm de diámetro, alimentado a 3.7 V y un circuito de control. La @fig-circuito_motor muestra este circuito.  
+
+\clearpage
 
 ![Circuito de control del motor vibrador.](../Imagenes/Circuito_motor.png){#fig-circuito_motor width=50%}
 
+
+
 **Batería**
 
-El uso de baterías de polímero de litio (LiPo) es ampliamente utilizado en dispositivos portátiles debido a sus características de pequeño tamaño, bajo peso y facilidad de carga. Para este proyecto, que integra una placa de desarrollo XIAO ESP32C3, una pantalla XIAO Round Display, un sensor GY-906, un sensor MAX30102 y un circuito vibrador, es crucial seleccionar una capacidad de batería que asegure un funcionamiento continuo y confiable, considerando el consumo energético de cada componente involucrado.
+Las baterías de polímero de litio (LiPo) son ampliamente utilizadas en dispositivos portátiles debido a sus características de tamaño pequeño, bajo peso y facilidad de carga. Para este proyecto, que integra una placa de desarrollo XIAO ESP32C3, una pantalla XIAO Round Display, un sensor GY-906, un sensor MAX30102 y un circuito vibrador, es crucial seleccionar una capacidad de batería que asegure un funcionamiento continuo y confiable, considerando el consumo energético de cada componente involucrado.
 
 La XIAO ESP32C3 presenta un consumo promedio de 74.7 mA durante su operación activa [@xiaoesp32c3], mientras que la pantalla XIAO Round Display demanda aproximadamente 70.0 mA [@xiaodisplay]. Por su parte, el sensor GY-906 tiene un consumo de corriente bajo, en el rango de 1.0 a 2.0 mA [@mlx90614_datasheet], el sensor MAX30102 consume entre 0.6 y 1.2 mA durante la medición de la frecuencia cardíaca [@max30102_datasheet]. Adicionalmente, el motor vibrador registra un consumo estimado de 84.0 mA [@uelectronics_vibration_motor], dependiendo de la intensidad de la vibración y la carga aplicada.
 
@@ -226,6 +232,8 @@ La encuesta consta de cinco preguntas. Las preguntas seleccionadas se basan en l
 
 - **Vestimenta**: Presenta la pregunta: "¿Cuál es tu vestimenta actual?" donde el usuario puede seleccionar todas las prendas que esté usando de una lista predefinida. El objetivo de esta pregunta es calcular el nivel de aislamiento térmico del usuario (clo). La interfaz muestra el cálculo del valor de clo en la parte inferior de la pantalla a medida que se seleccionan o deseleccionan las prendas. La @tbl-prendas muestra la lista de prendas disponibles para seleccionar con su respectivo valor de clo.
 
+\clearpage
+
 | **Prenda**          | **Valor de clo** | **Prenda**          | **Valor de clo** |
 |---------------------|------------------|---------------------|------------------|
 | Zapato              | 0.02             | Shorts              | 0.06             |
@@ -260,6 +268,7 @@ La encuesta consta de cinco preguntas. Las preguntas seleccionadas se basan en l
 - **Ubicación**: Presenta la pregunta: "¿Donde te encuentras?" donde el usuario selecciona una única opción de una lista predefinida de ubicaciones dentro del nuevo edificio del IER UNAM.
 
 - **Escala de confort térmico**: Presenta la pregunta: "¿Cuál es tu sensación térmica en este momento?" donde el usuario puede elegir su sensación térmica actual en un rango de -3.0 a 3.0 en intervalos de 0.5. Cada valor tiene una descripción asociada de la sensación térmica. La @tbl-tsv muestra la descripción asociada a cada uno de los valores del voto de sensación térmica.
+
 
 | **Valor de Sensación Térmica** | **Descripción**           |
 |--------------------------------|---------------------------|
@@ -595,6 +604,8 @@ Para optimizar el consumo de energía, se implementan dos estrategias principale
 
 
 El procedimiento de configuración e interacción con el reloj inteligente se puede dividir en cuatro etapas. La primera etapa consiste en la preparación del entorno de desarrollo, que implica la instalación del software Arduino con las paqueterías y librerías necesarias, así como la configuración del dispositivo en la plataforma ThingsBoard. La segunda etapa se centra en el registro de los datos del usuario mediante un formulario de Google. La tercera etapa corresponde a la configuración y carga del código a la placa de desarrollo. Por última, la cuarta etapa consiste en las instrucciones generales para interactuar con el dispositivo a través de sus diferentes pantallas. \newline
+
+\clearpage
 
 1. **Preparación del entorno de desarrollo**
 

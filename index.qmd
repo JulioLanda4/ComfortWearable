@@ -10,7 +10,6 @@ El desarrollo de este proyecto incluye el diseño, construcción, calibración y
 
 # Abstract {.unnumbered}
 
-**Abstract**
 
 Thermal comfort is a crucial aspect of people's quality of life, as it directly impacts their physical and mental well-being. Additionally, it plays a fundamental role in the energy consumption of buildings, where a significant portion of energy is allocated to heating, ventilation, and air conditioning (HVAC) systems. While these systems help maintain suitable comfort conditions, they also indirectly contribute to greenhouse gas (GHG) emissions and climate change. To mitigate this climate impact, it is essential to integrate accessible and efficient technologies that promote thermal comfort without increasing energy consumption. Strategies such as bioclimatic design stand out for their ability to adapt and respond to local climatic conditions, reducing reliance on HVAC systems and contributing to sustainability.
 
@@ -29,7 +28,7 @@ Mi tutor, Guillermo Barrios, por todo su apoyo durante esta etapa. No solo me br
 
 Mi familia, por estar siempre a mi lado y por ser mi fuente de fortaleza.
 
-Mis amigos, ahora convertidos en familia, que hice en el Instituto de Energías Renovables. Cada uno de ellos contribuyó a hacer de esta experiencia una etapa inolvidable
+Mis amigos, ahora convertidos en familia, que hice en el Instituto de Energías Renovables. Cada uno de ellos contribuyó a hacer de esta experiencia una etapa inolvidable.
 
 
 

@@ -52,7 +52,7 @@ Los factores personales más relevantes para el confort térmico son la activida
 
 ## Evaluación de confort térmico a través de encuestas
 
-El confort térmico es un concepto subjetivo que puede evaluarse a través de encuestas de confort térmico que permiten recopilar información acerca de la percepción de los usuarios es un espacio dado sobre su entorno físico. Para ello, la ISO en su norma 10551 [-@ISO10551] establece escalas de juicio subjetivo para evaluar el entorno físico. La norma aborda cinco tipos principales de escalas, divididos en dos categorías: escalas para el estado personal y escalas para describir el entorno físico. Las escalas para el estado personal son tres: perceptual, evaluativa y preferencia. Mientras que para el entorno físico son dos: aceptabilidad y satisfacción.
+El confort térmico es un concepto subjetivo que puede evaluarse a través de encuestas de confort térmico que permiten recopilar información acerca de la percepción de los usuarios en un espacio dado sobre su entorno físico. Para ello, la ISO en su norma 10551 [-@ISO10551] establece escalas de juicio subjetivo para evaluar el entorno físico. La norma aborda cinco tipos principales de escalas, divididas en dos categorías: escalas para el estado personal y escalas para describir el entorno físico. Las escalas para el estado personal son tres: perceptual, evaluativa y preferencia. Mientras que para el entorno físico son dos: aceptabilidad y satisfacción.
 
 @Calixto2021 presenta las escalas de la siguiente manera: 
 

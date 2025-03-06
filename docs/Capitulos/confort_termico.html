@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.6.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Reloj inteligente IoT basado en tecnologías abiertas para la recopilación de datos de confort térmico - 2&nbsp; Antecedentes y marco teórico </title>
+<title>2&nbsp; Antecedentes y marco teórico  – Reloj inteligente IoT basado en tecnologías abiertas para la recopilación de datos de confort térmico</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -56,17 +57,23 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2486e1f0a3ee9ee1fc393803a1361cdb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-e2a55d7d189d9ada6bd43e0674cebc09.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -75,6 +82,7 @@ div.csl-indent {
     "search-more-match-text": "resultado adicional en este documento",
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
     "search-submit-button-title": "Enviar",
     "search-label": "Buscar"
@@ -87,9 +95,41 @@ div.csl-indent {
 }
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -99,13 +139,13 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Capitulos/confort_termico.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Antecedentes y marco teórico \newline</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Capitulos/confort_termico.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Antecedentes y marco teórico </span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -114,7 +154,7 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Reloj inteligente IoT basado en tecnologías abiertas para la recopilación de datos de confort térmico</a> 
@@ -166,7 +206,7 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -208,7 +248,9 @@ div.csl-indent {
   </div>
   
 
+
 </header>
+
 
 <section id="confort-térmico" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="confort-térmico"><span class="header-section-number">2.1</span> Confort térmico</h2>
@@ -239,16 +281,20 @@ div.csl-indent {
 </section>
 <section id="evaluación-de-confort-térmico-a-través-de-encuestas" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="evaluación-de-confort-térmico-a-través-de-encuestas"><span class="header-section-number">2.2</span> Evaluación de confort térmico a través de encuestas</h2>
-<p>El confort térmico es un concepto subjetivo que puede evaluarse a través de encuestas de confort térmico que permiten recopilar información acerca de la percepción de los usuarios es un espacio dado sobre su entorno físico. Para ello, la ISO en su norma 10551 <span class="citation" data-cites="ISO10551">(<a href="references.html#ref-ISO10551" role="doc-biblioref">2019</a>)</span> establece escalas de juicio subjetivo para evaluar el entorno físico. La norma aborda cinco tipos principales de escalas, divididos en dos categorías: escalas para el estado personal y escalas para describir el entorno físico. Las escalas para el estado personal son tres: perceptual, evaluativa y preferencia. Mientras que para el entorno físico son dos: aceptabilidad y satisfacción.</p>
+<p>El confort térmico es un concepto subjetivo que puede evaluarse a través de encuestas de confort térmico que permiten recopilar información acerca de la percepción de los usuarios en un espacio dado sobre su entorno físico. Para ello, la ISO en su norma 10551 <span class="citation" data-cites="ISO10551">(<a href="references.html#ref-ISO10551" role="doc-biblioref">2019</a>)</span> establece escalas de juicio subjetivo para evaluar el entorno físico. La norma aborda cinco tipos principales de escalas, divididas en dos categorías: escalas para el estado personal y escalas para describir el entorno físico. Las escalas para el estado personal son tres: perceptual, evaluativa y preferencia. Mientras que para el entorno físico son dos: aceptabilidad y satisfacción.</p>
 <p><span class="citation" data-cites="Calixto2021">Calixto Aguirre (<a href="references.html#ref-Calixto2021" role="doc-biblioref">2021</a>)</span> presenta las escalas de la siguiente manera:</p>
 <section id="escalas-para-el-estado-personal" class="level3" data-number="2.2.1">
 <h3 data-number="2.2.1" class="anchored" data-anchor-id="escalas-para-el-estado-personal"><span class="header-section-number">2.2.1</span> Escalas para el estado personal </h3>
 <ol type="1">
-<li><strong>Escala de percepción del estado personal:</strong> <em>¿Cómo te sientes ahora?</em>. Se utiliza para comprender la percepción subjetiva del estado personal de un individuo en un entorno específico. La escala puede ser unipolar o bipolar según lo requerido. En el caso de la escala unipolar, se utiliza una graduación de cuatro grados, que puede extenderse a cinco de ser necesario. El punto de origen se establece en 0, que representa un estado neutro, mientras que los grados de intensidad se enumeran como 1, 2, 3 y opcionalmente 4. En la <a href="#tbl-unipolar">Tabla&nbsp;<span>2.1</span></a> se observa la estructura para la escala unipolar.</li>
+<li><strong>Escala de percepción del estado personal:</strong> <em>¿Cómo te sientes ahora?</em>. Se utiliza para comprender la percepción subjetiva del estado personal de un individuo en un entorno específico. La escala puede ser unipolar o bipolar según lo requerido. En el caso de la escala unipolar, se utiliza una graduación de cuatro grados, que puede extenderse a cinco de ser necesario. El punto de origen se establece en 0, que representa un estado neutro, mientras que los grados de intensidad se enumeran como 1, 2, 3 y opcionalmente 4. En la <a href="#tbl-unipolar" class="quarto-xref">Tabla&nbsp;<span>2.1</span></a> se observa la estructura para la escala unipolar.</li>
 </ol>
-<div id="tbl-unipolar" class="anchored">
-<table class="table">
-<caption>Tabla&nbsp;2.1: Escala unipolar</caption>
+<div id="tbl-unipolar" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-unipolar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;2.1: Escala unipolar
+</figcaption>
+<div aria-describedby="tbl-unipolar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: center;">Punto de origen</th>
@@ -263,10 +309,16 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<p>Por otra parte, si la escala es bipolar, se utiliza una graduación de siete grados, que puede ampliarse hasta nueve de ser necesario. El punto de indiferencia también es 0, pero esta escala se divide en dos polos opuestos: el polo A y el polo B. Los grados negativos de intensidad van de -1 a -3 y -4 opcionalmente, siendo -4 el más cercano al polo A y -1 el más cercano a 0. Los grados positivos de intensidad van de 1 a 3 y 4 opcionalmente, siendo 4 el más cercano al polo B y 1 el más cercano a 0. El 0 representa la ausencia de sensación en ambas escalas. En la <a href="#tbl-bipolar">Tabla&nbsp;<span>2.2</span></a> se observa la estructura para la escala bipolar.</p>
-<div id="tbl-bipolar" class="anchored">
-<table class="table">
-<caption>Tabla&nbsp;2.2: Escala bipolar</caption>
+</figure>
+</div>
+<p>Por otra parte, si la escala es bipolar, se utiliza una graduación de siete grados, que puede ampliarse hasta nueve de ser necesario. El punto de indiferencia también es 0, pero esta escala se divide en dos polos opuestos: el polo A y el polo B. Los grados negativos de intensidad van de -1 a -3 y -4 opcionalmente, siendo -4 el más cercano al polo A y -1 el más cercano a 0. Los grados positivos de intensidad van de 1 a 3 y 4 opcionalmente, siendo 4 el más cercano al polo B y 1 el más cercano a 0. El 0 representa la ausencia de sensación en ambas escalas. En la <a href="#tbl-bipolar" class="quarto-xref">Tabla&nbsp;<span>2.2</span></a> se observa la estructura para la escala bipolar.</p>
+<div id="tbl-bipolar" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-bipolar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;2.2: Escala bipolar
+</figcaption>
+<div aria-describedby="tbl-bipolar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 9%">
 <col style="width: 26%">
@@ -294,9 +346,11 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
+</figure>
+</div>
 <ol start="2" type="1">
-<li><p><strong>Escala evaluativa:</strong> <em>¿Cómo te encuentras?</em>. Se utiliza para medir el nivel de comodidad en un entorno. Es una escala unipolar de cuatro grados ampliable a cinco (<a href="#tbl-unipolar">Tabla&nbsp;<span>2.1</span></a>). El 0 representa comodidad y el polo representa la incomodidad extrema.</p></li>
-<li><p><strong>Escala de preferencia:</strong> <em>¿Cómo preferirías estar?</em>. Utiliza una escala bipolar simétrica con siete grados para medir la preferencia de las personas respecto a ciertos aspectos del entorno. El 0 representa “sin cambio” en la preferencia (<a href="#tbl-bipolar">Tabla&nbsp;<span>2.2</span></a>). </p></li>
+<li><p><strong>Escala evaluativa:</strong> <em>¿Cómo te encuentras?</em>. Se utiliza para medir el nivel de comodidad en un entorno. Es una escala unipolar de cuatro grados ampliable a cinco (<a href="#tbl-unipolar" class="quarto-xref">Tabla&nbsp;<span>2.1</span></a>). El 0 representa comodidad y el polo representa la incomodidad extrema.</p></li>
+<li><p><strong>Escala de preferencia:</strong> <em>¿Cómo preferirías estar?</em>. Utiliza una escala bipolar simétrica con siete grados para medir la preferencia de las personas respecto a ciertos aspectos del entorno. El 0 representa “sin cambio” en la preferencia (<a href="#tbl-bipolar" class="quarto-xref">Tabla&nbsp;<span>2.2</span></a>). </p></li>
 </ol>
 </section>
 <section id="escalas-para-describir-el-entorno-físico" class="level3" data-number="2.2.2">
@@ -364,13 +418,17 @@ v_{ar} = v_{air} + 0.3 \cdot (M - 1)
 <p><span id="eq-ppd"><span class="math display">\[
 PPD = 100 - 95 \cdot \exp\left(-0.03353 \cdot \text{PMV}^4 - 0.2179 \cdot \text{PMV}^2\right)
 \tag{2.6}\]</span></span></p>
-<p>ASHRAE 55 <span class="citation" data-cites="ASHRAE55">(<a href="references.html#ref-ASHRAE55" role="doc-biblioref">2017</a>)</span> indica que el <span class="math inline">\(PPD\)</span> no debe ser mayor al 10% en todos los edificios, mientras que la ISO 7730 <span class="citation" data-cites="ISO7730">(<a href="references.html#ref-ISO7730" role="doc-biblioref">2005</a>)</span> indica un valor menor al 10% para edificios nuevos y 15% para edificios ya existentes. En la <a href="#fig-pmvppd">Figura&nbsp;<span>2.1</span></a> observamos la relación entre el PMV y el PPD.</p>
-<div class="cell" data-execution_count="1">
+<p>ASHRAE 55 <span class="citation" data-cites="ASHRAE55">(<a href="references.html#ref-ASHRAE55" role="doc-biblioref">2017</a>)</span> indica que el <span class="math inline">\(PPD\)</span> no debe ser mayor al 10% en todos los edificios, mientras que la ISO 7730 <span class="citation" data-cites="ISO7730">(<a href="references.html#ref-ISO7730" role="doc-biblioref">2005</a>)</span> indica un valor menor al 10% para edificios nuevos y 15% para edificios ya existentes. En la <a href="#fig-pmvppd" class="quarto-xref">Figura&nbsp;<span>2.1</span></a> observamos la relación entre el PMV y el PPD.</p>
+<div id="cell-fig-pmvppd" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
-<div id="fig-pmvppd" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="confort_termico_files/figure-html/fig-pmvppd-output-1.png" width="567" height="567" class="figure-img"></p>
-<figcaption class="figure-caption">Figura&nbsp;2.1: Relación PMV-PPD y los límites para edificaciones nuevas y existentes.</figcaption>
+<div id="fig-pmvppd" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pmvppd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="confort_termico_files/figure-html/fig-pmvppd-output-1.png" width="567" height="567" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pmvppd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.1: Relación PMV-PPD y los límites para edificaciones nuevas y existentes.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -382,10 +440,14 @@ PPD = 100 - 95 \cdot \exp\left(-0.03353 \cdot \text{PMV}^4 - 0.2179 \cdot \text{
 <p><strong>Adaptativos</strong></p>
 <p><strong><em>ePMV</em></strong></p>
 <p>El voto medio previsto extendido (ePMV, por sus siglas en inglés) es una modificación al PMV. Se observó que el PMV sobrestima el voto de sensación térmica de las personas en edificios sin aire acondicionado ubicados en climas cálidos. Para corregir esto, se introdujo un factor de expectativa (<em>e</em>), el cual ajusta los cálculos del PMV teniendo en cuenta factores como la duración del clima cálido a lo largo del año y la frecuencia con que las personas ingresan a otros edificios en la región que cuentan con sistemas de aire acondicionado <span class="citation" data-cites="Fanger2002">(<a href="references.html#ref-Fanger2002" role="doc-biblioref">Fanger y Toftum 2002</a>)</span>.</p>
-<p>En la <a href="#tbl-factor_e">Tabla&nbsp;<span>2.3</span></a> se presentan los valores del factor <em>e</em> para diferentes escenarios.</p>
-<div id="tbl-factor_e" class="anchored">
-<table class="table">
-<caption>Tabla&nbsp;2.3: Valores de <em>e</em> según la duración del período cálido y el acceso a edificios con aire acondicionado.</caption>
+<p>En la <a href="#tbl-factor_e" class="quarto-xref">Tabla&nbsp;<span>2.3</span></a> se presentan los valores del factor <em>e</em> para diferentes escenarios.</p>
+<div id="tbl-factor_e" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-factor_e-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;2.3: Valores de <em>e</em> según la duración del período cálido y el acceso a edificios con aire acondicionado.
+</figcaption>
+<div aria-describedby="tbl-factor_e-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 22%">
 <col style="width: 60%">
@@ -427,6 +489,8 @@ PPD = 100 - 95 \cdot \exp\left(-0.03353 \cdot \text{PMV}^4 - 0.2179 \cdot \text{
 </tbody>
 </table>
 </div>
+</figure>
+</div>
 <p>Para el cálculo del ePMV además del valor de <em>e</em>, se debe considerar el valor del estado metabólico del ocupante (MET). usualmente el MET se determina mediante tablas estandarizadas que asignan valores a diferentes actividades. Sin embargo, esto no considera el comportamiento natural de las personas que al sentir calor tienden a reducir su actividad de manera inconsciente para adaptarse al clima, disminuyendo así su tasa metabólica. La solución propuesta para el ePMV es considerar esta reducción en la tasa metabólica en ambientes cálidos. Se considera una disminución del 6.7%.</p>
 <p>De esta manera, para calcular el ePMV se deben seguir los siguientes pasos:</p>
 <ol type="1">
@@ -458,7 +522,7 @@ h = \frac{5}{9}(p_v- 10)
 <span class="math inline">\(h\)</span> : Factor de humedad (°C)<br>
 <span class="math inline">\(p_v\)</span> : Presión de vapor (mbar) </p>
 <p><strong>Índice Humidex Colima</strong></p>
-<p>El Índice Humidex Colima adapta la fórmula original del Índice Humidex Ontario <a href="#eq-humidex">Ecuación&nbsp;<span>2.9</span></a> para responder a las condiciones climáticas de la región de Colima, México. A diferencia del índice original, que está diseñado exclusivamente para climas cálidos, este nuevo índice considera la época de frío. Este índice se basa en encuestas de confort realizadas en la ciudad de Colima. Estas encuestas se llevaron a cabo en diferentes estaciones del año <span class="citation" data-cites="gomez-azpetia2006adaptacion">(<a href="references.html#ref-gomez-azpetia2006adaptacion" role="doc-biblioref">Gómez-Azpetia, Gómez, y Peña 2006</a>)</span>. </p>
+<p>El Índice Humidex Colima adapta la fórmula original del Índice Humidex Ontario <a href="#eq-humidex" class="quarto-xref">Ecuación&nbsp;<span>2.9</span></a> para responder a las condiciones climáticas de la región de Colima, México. A diferencia del índice original, que está diseñado exclusivamente para climas cálidos, este nuevo índice considera la época de frío. Este índice se basa en encuestas de confort realizadas en la ciudad de Colima. Estas encuestas se llevaron a cabo en diferentes estaciones del año <span class="citation" data-cites="gomez-azpetia2006adaptacion">(<a href="references.html#ref-gomez-azpetia2006adaptacion" role="doc-biblioref">Gómez-Azpetia, Gómez, y Peña 2006</a>)</span>. </p>
 </section>
 </section>
 <section id="variables-fisiológicas-como-indicadores-de-confort-térmico" class="level2" data-number="2.4">
@@ -491,7 +555,7 @@ h = \frac{5}{9}(p_v- 10)
 <p>Estos estudios demuestran que el uso de dispositivos portátiles en el confort térmico está revolucionando la manera en que se obtienen datos fisiológicos, ambientales y datos de encuestas útiles para el estudio del confort térmico. Asimismo, el uso de tecnologías abiertas simplifica su integración al hacerlas más económicas y accesibles. Esto abre las puertas para el desarrollo de nuevos estudios, modelos adaptativos de confort térmico y diversas aplicaciones en esta área.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-ASHRAE2009" class="csl-entry" role="listitem">
 American Society of Heating, Refrigerating and Air-Conditioning Engineers. 2009. <em>ASHRAE Handbook—Fundamentals (SI Edition)</em>. Atlanta, GA: ASHRAE.
 </div>
@@ -505,7 +569,7 @@ Bogatu, Dragos Ioan, Jun Shinoda, José Joaquín Aguilera, Bjarne W. Olesen, Fut
 Calixto Aguirre, Verónica Ivette. 2021. <span>«Thermal Comfort Studies»</span>. Mathesis, Temixco, Morelos, México: Universidad Nacional Autónoma de México, Programa de Maestría y Doctorado en Ingeniería, Instituto de Energías Renovables. <a href="http://132.248.9.195/ptd2021/septiembre/0814603/Index.html">http://132.248.9.195/ptd2021/septiembre/0814603/Index.html</a>.
 </div>
 <div id="ref-chao_cen__2023" class="csl-entry" role="listitem">
-Cen, Chao, Siyu Cheng, y Nyuk Hien Wong. 2023. <span>«Effect of elevated air temperature and air velocity on thermal comfort and cognitive performance in the tropics»</span>. <em>Building and Environment</em> 234: 110203-3. <a href="https://doi.org/ 10.1016/j.buildenv.2023.110203 ">https://doi.org/ 10.1016/j.buildenv.2023.110203 </a>.
+Cen, Chao, Siyu Cheng, y Nyuk Hien Wong. 2023. <span>«Effect of elevated air temperature and air velocity on thermal comfort and cognitive performance in the tropics»</span>. <em>Building and Environment</em> 234: 110203-3. <a href="https://doi.org/10.1016/j.buildenv.2023.110203">https://doi.org/10.1016/j.buildenv.2023.110203</a>.
 </div>
 <div id="ref-Chaudhuri2018" class="csl-entry" role="listitem">
 Chaudhuri, Tanaya, Deqing Zhai, Yeng Chai Soh, Hua Li, y Lihua Xie. 2018. <span>«Random forest based thermal comfort prediction from gender-specific physiological parameters using wearable sensing technology»</span>. <em>Energy and Buildings</em> 166 (mayo): 391-406. <a href="https://doi.org/10.1016/J.ENBUILD.2018.02.035">https://doi.org/10.1016/J.ENBUILD.2018.02.035</a>.
@@ -523,7 +587,7 @@ D. Morillón, T. I. Castañeda, F. R. Saldaña, y M. U. Miranda. 2002. <span>«A
 Fanger, P. O. 1970. <em>Thermal Comfort: Analysis and Applications in Environmental Engineering</em>. Copenhagen: Danish Technical Press. <a href="https://archive.org/details/thermalcomfortan0000fang">https://archive.org/details/thermalcomfortan0000fang</a>.
 </div>
 <div id="ref-Fanger2002" class="csl-entry" role="listitem">
-Fanger, P. O., y Jørn Toftum. 2002. <span>«Extension of the PMV model to non-air-conditioned buildings in warm climates»</span>. <em>Energy and Buildings</em> 34 (6): 533-36. https://doi.org/<a href="https://doi.org/10.1016/S0378-7788(02)00003-8">https://doi.org/10.1016/S0378-7788(02)00003-8</a>.
+Fanger, P. O., y Jørn Toftum. 2002. <span>«Extension of the PMV model to non-air-conditioned buildings in warm climates»</span>. <em>Energy and Buildings</em> 34 (6): 533-36. <a href="https://doi.org/10.1016/S0378-7788(02)00003-8">https://doi.org/10.1016/S0378-7788(02)00003-8</a>.
 </div>
 <div id="ref-Feng2023" class="csl-entry" role="listitem">
 Feng, Yanxiao, Julian Wang, Nan Wang, y Chenshun Chen. 2023. <span>«Alert-based wearable sensing system for individualized thermal preference prediction»</span>. <em>Building and Environment</em> 232 (marzo): 110047. <a href="https://doi.org/10.1016/J.BUILDENV.2023.110047">https://doi.org/10.1016/J.BUILDENV.2023.110047</a>.
@@ -559,7 +623,7 @@ López-Pérez, L. A., J. J. Flores-Prieto, y C. Ríos-Rojas. 2019. <span>«Adapt
 Lyu, Junmeng, Yongxiang Shi, Heng Du, y Zhiwei Lian. 2023. <span>«Sex-based thermal comfort zones and energy savings in spaces with joint operation of air conditioner and fan»</span>. <em>Building and Environment</em>. <a href="https://doi.org/ 10.1016/j.buildenv.2023.111002 ">https://doi.org/ 10.1016/j.buildenv.2023.111002 </a>.
 </div>
 <div id="ref-kun_jung_lyu__2023" class="csl-entry" role="listitem">
-Lyu, Kun Jung, Arianna Brambilla, Anastasia Globa, y Richard de Dear. 2023. <span>«2. A socio-cultural perspective to semi-outdoor thermal experience and restorative benefits – Comparison between Chinese and Australian cultural groups»</span>. <em>Building and Environment</em>. <a href="https://doi.org/ 10.1016/j.buildenv.2023.110622 ">https://doi.org/ 10.1016/j.buildenv.2023.110622 </a>.
+Lyu, Kun Jung, Arianna Brambilla, Anastasia Globa, y Richard de Dear. 2023. <span>«2. A socio-cultural perspective to semi-outdoor thermal experience and restorative benefits – Comparison between Chinese and Australian cultural groups»</span>. <em>Building and Environment</em>. <a href="https://doi.org/10.1016/j.buildenv.2023.110622">https://doi.org/10.1016/j.buildenv.2023.110622</a>.
 </div>
 <div id="ref-Rincon2020" class="csl-entry" role="listitem">
 Martínez, Rincón, Martínez torres, González Trevizo, y Fernández Melchor. 2020. <span>«Modelos matemáticos para estimar el confort térmico adaptativo en espacios interiores: Un estudio en la transición térmica de Ensenada, B.C.»</span>
@@ -568,7 +632,7 @@ Martínez, Rincón, Martínez torres, González Trevizo, y Fernández Melchor. 2
 Masterton, J. M., F. A. Richardson, y Canada. Service de l’environnement atmosphérique. 1979. <em>Humidex: A Method of Quantifying Human Discomfort Due to Excessive Heat and Humidity, by J.M. Masterton and F.A. Richardson</em>. 28cm. cli,1. Service de l’environnement atmospherique. <a href="https://books.google.com.mx/books?id=DBIazQEACAAJ">https://books.google.com.mx/books?id=DBIazQEACAAJ</a>.
 </div>
 <div id="ref-sanober_naheed__2021" class="csl-entry" role="listitem">
-Naheed, Sanober, y Salman Shooshtarian. 2021. <span>«A Review of Cultural Background and Thermal Perceptions in Urban Environments»</span>. <em>Sustainability</em> 13 (16): 9080-80. <a href="https://doi.org/ 10.3390/SU13169080 ">https://doi.org/ 10.3390/SU13169080 </a>.
+Naheed, Sanober, y Salman Shooshtarian. 2021. <span>«A Review of Cultural Background and Thermal Perceptions in Urban Environments»</span>. <em>Sustainability</em> 13 (16): 9080-80. <a href="https://doi.org/10.3390/SU13169080">https://doi.org/10.3390/SU13169080</a>.
 </div>
 <div id="ref-Nazarian2021" class="csl-entry" role="listitem">
 Nazarian, Negin, Sijie Liu, Manon Kohler, Jason K W Lee, Clayton Miller, Winston T L Chow, Sharifah Badriyah Alhadad, et&nbsp;al. 2021. <span>«Project Coolbit: can your watch predict heat stress and thermal comfort sensation?»</span> <em>Environmental Research Letters</em> 16 (marzo): 034031. <a href="https://doi.org/10.1088/1748-9326/abd130">https://doi.org/10.1088/1748-9326/abd130</a>.
@@ -592,7 +656,7 @@ Rincón-Martínez, J C, y Int. 2019. <span>«Experimental thermal comfort under 
 Romero Moreno, Ramona Alicia, y José Luis Ochoa de la Torre. 2020. <em>Confort t<span>é</span>rmico y ahorro de energ<span>ı́</span>a en la vivienda econ<span>ó</span>mica en M<span>é</span>xico: regiones de clima c<span>á</span>lido seco y h<span>ú</span>medo</em>. Universidad de Sonora. <a href="https://books.google.com.mx/books?id=q1Yo0AEACAAJ">https://books.google.com.mx/books?id=q1Yo0AEACAAJ</a>.
 </div>
 <div id="ref-tomonori_sakoi__2023" class="csl-entry" role="listitem">
-Sakoi, Tomonori, Yoshihito Kurazumi, Sri Rahma Apriliyanthi, Shin-ichi Sawada, y Chuansi Gao. 2023. <span>«5. Human body heat balance equation to consider core body temperature in assessment of heatstroke risk»</span>. <em>Building and Environment</em>. <a href="https://doi.org/ 10.1016/j.buildenv.2023.111020 ">https://doi.org/ 10.1016/j.buildenv.2023.111020 </a>.
+Sakoi, Tomonori, Yoshihito Kurazumi, Sri Rahma Apriliyanthi, Shin-ichi Sawada, y Chuansi Gao. 2023. <span>«5. Human body heat balance equation to consider core body temperature in assessment of heatstroke risk»</span>. <em>Building and Environment</em>. <a href="https://doi.org/10.1016/j.buildenv.2023.111020">https://doi.org/10.1016/j.buildenv.2023.111020</a>.
 </div>
 <div id="ref-Sim2018" class="csl-entry" role="listitem">
 Sim, Jai Kyoung, Sunghyun Yoon, y Young-Ho Cho. 2018. <span>«Wearable Sweat Rate Sensors for Human Thermal Comfort Monitoring»</span>. <em>Scientific Reports</em> 8 (enero): 1181. <a href="https://doi.org/10.1038/s41598-018-19239-8">https://doi.org/10.1038/s41598-018-19239-8</a>.
@@ -604,7 +668,7 @@ Sim, Soo Young, Myung Jun Koh, Kwang Min Joo, Seungwoo Noh, Sangyun Park, Youn H
 Tartarini, Federico, Stefano Schiavon, Matias Quintana, y Clayton Miller. 2022. <span>«Personal comfort models based on a 6‐month experiment using environmental parameters and data from wearables»</span>. <em>Indoor Air</em> 32 (noviembre). <a href="https://doi.org/10.1111/ina.13160">https://doi.org/10.1111/ina.13160</a>.
 </div>
 <div id="ref-YAO2009" class="csl-entry" role="listitem">
-Yao, Runming, Baizhan Li, y Jing Liu. 2009. <span>«A theoretical adaptive model of thermal comfort – Adaptive Predicted Mean&nbsp;Vote&nbsp;(aPMV)»</span>. <em>Building and Environment</em> 44 (10): 2089-96. https://doi.org/<a href="https://doi.org/10.1016/j.buildenv.2009.02.014">https://doi.org/10.1016/j.buildenv.2009.02.014</a>.
+Yao, Runming, Baizhan Li, y Jing Liu. 2009. <span>«A theoretical adaptive model of thermal comfort – Adaptive Predicted Mean&nbsp;Vote&nbsp;(aPMV)»</span>. <em>Building and Environment</em> 44 (10): 2089-96. <a href="https://doi.org/10.1016/j.buildenv.2009.02.014">https://doi.org/10.1016/j.buildenv.2009.02.014</a>.
 </div>
 <div id="ref-Zepeda2022" class="csl-entry" role="listitem">
 Zepeda-Gil, Carlos, y Sukumar Natarajan. 2022. <span>«Thermal comfort in naturally ventilated dwellings in the central Mexican plateau»</span>. <em>Building and Environment</em> 211 (marzo). <a href="https://doi.org/10.1016/j.buildenv.2021.108713">https://doi.org/10.1016/j.buildenv.2021.108713</a>.
@@ -648,18 +712,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -691,11 +744,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -705,8 +797,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -718,7 +819,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -762,6 +986,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -787,6 +1012,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -848,17 +1099,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../Capitulos/intro.html" class="pagination-link">
+      <a href="../Capitulos/intro.html" class="pagination-link" aria-label="Introducción">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../Capitulos/desarrollo.html" class="pagination-link">
+      <a href="../Capitulos/desarrollo.html" class="pagination-link" aria-label="Diseño, desarrollo y validación">
         <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Diseño, desarrollo y validación</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 
